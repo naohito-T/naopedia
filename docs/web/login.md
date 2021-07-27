@@ -10,3 +10,4 @@
 ## ソーシャルログインの仕組み
 
 [手間のかかる SPA のソーシャルログインを Passport.js で手軽に実装する方法](https://www.webprofessional.jp/spa-social-login-google-facebook/)
+次まとめる
