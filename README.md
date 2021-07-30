@@ -13,3 +13,10 @@ Google の Cloud API を参考にしている
 # GitHub Readme Stats がお洒落にできるらしい
 
 [URL](https://qiita.com/zizi4n5/items/f8076cb25bbf64a9bc1c)
+リファレンス
+
+次こっち(https://github.com/anuraghazra/github-readme-stats#github-extra-pins)
+
+# chery pick 導入
+
+[cherry pick](https://rfs.jp/server/git/gite-lab/git-cherry-pick.html)
