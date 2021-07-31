@@ -16,3 +16,7 @@ width auto だと flex の justify がきく
 ## プロパティ一覧
 
 flex-basic
+
+## flexbox
+
+[一番わかりやすいflexbox](https://www.webcreatorbox.com/tech/css-flexbox-cheat-sheet)
