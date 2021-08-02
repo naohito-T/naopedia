@@ -16,3 +16,17 @@ width auto だと flex の justify がきく
 ## プロパティ一覧
 
 flex-basic
+
+## flexbox
+
+[一番わかりやすいflexbox](https://www.webcreatorbox.com/tech/css-flexbox-cheat-sheet)
+
+### 親要素にFlexコンテナに指定するプロパティ
+
+- flex-direction
+row（初期値）… 子要素を左から右に配置
+row-reverse … 子要素を右から左に配置
+column … 子要素を上から下に配置
+column-reverse … 子要素を下から上に配置
+
+子要素の
