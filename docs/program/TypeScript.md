@@ -65,3 +65,5 @@ export class typeSampleModel {
 ```
 
 [
+## Three.js Typescript webpack
+[これいつかやりたいな](https://ics.media/entry/16329/)
