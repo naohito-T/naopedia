@@ -90,3 +90,7 @@ client-only タグでラップしサーバー側でのレンダリングを避�
 
 this 現Vueインスタンスを指定するとき
 context まだVueインスタンスが作られる前にVueインスタンスを使いたいとき、Storeメソッドを使いたいとき
+
+
+## Vueのリアクティブシステム
+[参考URL](https://mya-ake.com/posts/vue-composition-api-columns/)
