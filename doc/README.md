@@ -23,3 +23,8 @@ GET /console/admin/cast/1
 DELETE /console/admin/cast/1
 
 かなり散見されていると。ドキュメントが書きづらい。
+
+## とてもいいgitbook参考
+
+[gitbookをgit pageへ参考](https://r-ngtm.hatenablog.com/entry/2020/06/18/193235)
+[Unity エンジニアでの必要スキル](https://rngtm.github.io/Portfolio/markdown/01_skill.html)
