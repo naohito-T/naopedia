@@ -1,10 +1,88 @@
 # Vue
 
+[Vue3 リファレンス](https://v3.ja.vuejs.org/)
+
 ## ユビキタス ubiquitous
 
 プロパティ → props のこと
-this → Vueインスタンス
-context → Vueインスタンス生成前のインスタンス,Storeインスタンス
+this → Vue インスタンス
+context → Vue インスタンス生成前のインスタンス,Store インスタンス
+リアクティブ → `html <template></template>`から値を変更した時に Vue インスタンス内のプロパティも変更できること
+
+## Vue の this と Context
+
+this 現 Vue インスタンスを指定するとき
+context まだ Vue インスタンスが作られる前に Vue インスタンスを使いたいとき、Store メソッドを使いたいとき
+
+## Vue ref
+
+```js
+const currentPage = ref(0);
+currentPage.value = page.value;
+isRef(currentPage); // true 代入ではリアクティブは失われない。
+```
+
+## Vue Reactive
+
+```js
+const navState = reactive<{
+      pager: number[];
+    }>({
+      pager: [],
+    });
+const pages = [];
+for (let i = 0; i < displayPage; i++) {
+  pages.push(num + i);
+}
+navState.pager = pages; // 上書き
+console.log(`navState.pager が reactiveか: ${isReactive(navState.pager)}`); // true
+// 配列上書きではreactiveは失われない。
+```
+
+## Vue リアクティブになる基本
+
+[リアクティブ関連メソッド一覧](https://qiita.com/ryo2132/items/6dc51ede8082dea75812)
+
+[参考 URL](https://qiita.com/neutron63zf/items/506c7493a53cea44860e#vue-next%E3%81%AE%E3%83%AA%E3%82%A2%E3%82%AF%E3%83%86%E3%82%A3%E3%83%96%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0)
+
+vue では data()内に宣言された値に対して、mount 時に get と set を設定する。その設定により、変更がかかった時に再度仮装 DOM を描画する処理が走る。
+
+リアクティブ性というのは、
+プロパティが変更されたらそれを検知してそのプロパティが使用されている関数を自動的に再計算すること
+と言い換えることができます。つまり、これを実現するには
+
+プロパティ毎にそのプロパティがどんな関数で使われているかを保存しておく
+そのプロパティの更新時に関連する関数を全て再計算する
+機能があれば良いわけです。どうですか？なんだかできそうな気がしてきませんか？
+
+## Vue のリアクティブシステム
+
+[参考 URL](https://mya-ake.com/posts/vue-composition-api-columns/)
+
+## Vue のリアクティブシステムの落とし穴
+
+完結に言うと、Vue では配列とオブジェクトはリアクティブにならない
+配列の上書きでまず書学者はつまずく
+配列の中に新たなプロパティを生やそうとしても、Vue.js はそれを監視していないため、値の更新検知や再描画ができないよ。新しくインスタンスを作ってあげてね。ということでした。
+
+[参考 URL](https://blog.3streamer.net/vue-js/howtochange-array-812/)
+
+```js
+let arr = [1, 2, 3];
+let arr2 = [4, 5, 6];
+arr = arr2; // ここで新たな参照値になる期待をする
+console.log(arr); // しかし上書きされない [1, 2, 3]
+```
+
+### Vue 配列操作
+
+- 配列のコピー
+
+```js
+// slice() 引数無しでコピーができる
+const copy = app.$stores.user.purchasedTicket?.slice();
+const totalTicket = copy?.pop()?.tickets_count;
+```
 
 ## コンポーネント
 
@@ -86,11 +164,3 @@ client-only タグでラップしサーバー側でのレンダリングを避�
 パファーマンスを最大化するためにこの機能は無効になっています。
 
 また、ハイドレーションは最初にページがサーバーによってレンダリングされた時（初回リクエスト時）にのみ発生します。
-## Vue の thisとContext
-
-this 現Vueインスタンスを指定するとき
-context まだVueインスタンスが作られる前にVueインスタンスを使いたいとき、Storeメソッドを使いたいとき
-
-
-## Vueのリアクティブシステム
-[参考URL](https://mya-ake.com/posts/vue-composition-api-columns/)
