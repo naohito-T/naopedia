@@ -2,6 +2,7 @@
 
 [実装方法をかなり外枠から教えてくれる](https://tenderfeel.xsrv.jp/javascript/3104/)
 [一番理解できるページネーション](https://tech.arc-one.jp/pager-logic)
+[ドットを含めたページネーション](https://reffect.co.jp/vue/laravel-vue-js-pagination)
 
 - PV(ページビュー)
   ぺージビューとは、インターネット上で Web サイトや特定の Web ページが読み込まれた回数を示す値のことである。
