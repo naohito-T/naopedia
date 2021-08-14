@@ -83,7 +83,7 @@ Sass は分割した Sass ファイルを一つの CSS ファイルとしてま�
 project
 |\_css/
 | |- style.css（生成される CSS）
-|  
+|
  |\_sass/
 |- \_reset.scss（リセット用）
 |- \_extend.scss（@extend の定義）
@@ -99,3 +99,67 @@ project
 > そのため、よく使うものを一通りライブラリとして読み込んでおいて必要に応じて呼び出す、という使い方が可能です。
 > ミックスインもスコープを持つので、ルールセット内で定義するとその中でしか利用できません。
 > またミックスインでは引数を取ることができるので、より使い回しが柔軟にできます。
+
+
+## @mixin と @extendの違い
+
+- extend
+
+```scss
+.hoge1 {
+    margin:10px 0;
+    padding:5px;
+}
+.hoge2{
+  @extend .hoge1;
+  padding:0;
+}
+```
+
+↓にコンパイルされる
+
+```css
+.hoge1, .hoge2 {
+  margin: 10px 0;
+  padding: 5px;
+}
+.hoge2 {
+  padding: 0;
+}
+```
+
+@extendで呼ばれたhoge1の中身がごそっとhoge2にも反映されています。
+これだけを見ると、1か所で書けるものを2か所にわけて書くのは非効率！と思うかもしれないですが、1つのクラス内で複数回@extendすることもできますし、@extendしているクラスを@extendすることもできますので、使い方次第で絶大な効果を発揮してくれます。
+
+- mixin
+mixinは、extendとの大きな違いは2つあると思います。細かくはいっぱいあるのですが。
+extendと違いグルーピングされない
+extendの例と同じ内容をmixinで書くと一目瞭然です。
+
+```scss
+@mixin hoge {
+    margin:10px 0;
+    padding:5px;
+}
+.hoge1{
+  @include hoge;
+}
+.hoge2{
+  @include hoge;
+  padding:0;
+}
+```
+
+↓にコンパイルされる
+
+```css
+.hoge1 {
+  margin: 10px 0;
+  padding: 5px;
+}
+.hoge2 {
+  margin: 10px 0;
+  padding: 5px;
+  padding: 0;
+}
+```
