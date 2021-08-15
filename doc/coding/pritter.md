@@ -30,3 +30,10 @@ export はまとめて最後に一括置換される
 for 文のインクリメントの後置きが `js i++ → i += 1 `に変わる
 式の最後にはセミコロンが入る
 オブジェクトのスネークケースはキャメルケースに変更される
+
+## prietterを知る
+
+[参考URL](https://ai-can-fly.hateblo.jp/entry/prettier-usage)
+
+- 大事なこと
+>厳密には Prettier と VSCode の Prettier 拡張機能は別物で、しかも Prettier 拡張機能の公式が推奨している使用方法ではありません。

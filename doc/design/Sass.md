@@ -101,7 +101,9 @@ project
 > またミックスインでは引数を取ることができるので、より使い回しが柔軟にできます。
 
 
-## @mixin と @extendの違い
+## @mixin と @extend と @fucntion のコンパイル違い
+
+[参考URL](https://www.monster-dive.com/blog/web_creative/20140222_000132.php)
 
 - extend
 
@@ -163,3 +165,41 @@ extendの例と同じ内容をmixinで書くと一目瞭然です。
   padding: 0;
 }
 ```
+
+となります。
+extendで書き出されたCSSと内容は同じなのですが、「.hoge1, .hoge2 {}」のようにグルーピングされません。
+この違いだけですと、extendのほうがソースも短くなるのでいいかと思いますが、制作会社がベースをSassで作って、日々の更新はクライアント企業の担当者がCSSファイルを触るサイトなどでは、分けて書き出したほうが良い場合もあるかもしれません。
+
+extendと違い引数（パラメータ）を渡すことができる
+こちらがミックスインを使う最大の理由になるかと思います。説明するよりも例を見たほうが早いと思いますので、早速書いてみます。
+
+- function
+
+最後にfunctionですが、引数などの扱いはmixinと一緒ですが、返すものが値となります。簡単な例ですがファイル名を引数で渡してurlをセットするfunctionは下記になります。
+
+```scss
+$hoge:'img/';
+$png:'.png';
+@function urlPng($fileName) {
+  @return url($hoge+$fileName+$png);
+}
+.hoge1 {
+  background:urlPng('test');
+}
+.hoge2 {
+  background:url($hoge+'test'+$png);
+}
+```
+
+↓にコンパイルされる
+
+```css
+.hoge1 {
+  background: url("img/test.png");
+}
+.hoge2 {
+  background: url("img/test.png");
+}
+```
+
+と「.hoge1」も「.hoge2」も同じになります。「.hoge2」のように直接四則演算を行ったりしてもいいのですが、functionを作ってあげたほうが美しいですね。
