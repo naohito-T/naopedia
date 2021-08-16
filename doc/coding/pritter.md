@@ -37,3 +37,25 @@ for 文のインクリメントの後置きが `js i++ → i += 1 `に変わる
 
 - 大事なこと
 >厳密には Prettier と VSCode の Prettier 拡張機能は別物で、しかも Prettier 拡張機能の公式が推奨している使用方法ではありません。
+
+- prettier早見表
+
+Prettier is 何？
+Prettier はコードフォーマッターです。
+
+Prettier はどうやってインストールするの？
+Prettier は npm や Yarn などのパッケージマネージャーでインストールします。
+
+Prettier はどうやって実行するの？
+Prettier は CLI や Git Hooks など様々な方法で実行することができます。
+
+Prettier と VSCode の Prettier 拡張機能は違うものなの？
+VSCode の Prettier 拡張機能には Prettier がバンドルされていますが、とりあえずここでは違うものとしておきます。
+
+VSCode の Prettier 拡張機能は何をするものなの？
+VSCode 上で Prettier を実行してくれるプラグインみたいなものです。
+
+Prettier の設定はどうやってするの？
+Prettier の設定は設定ファイル (.prettierrc) で行います。
+VSCode の設定 (settings.json) に Prettier の項目があるけど？
+それは VSCode の Prettier 拡張機能の設定です。
