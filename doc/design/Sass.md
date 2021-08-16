@@ -83,7 +83,7 @@ Sass は分割した Sass ファイルを一つの CSS ファイルとしてま�
 project
 |\_css/
 | |- style.css（生成される CSS）
-|  
+|
  |\_sass/
 |- \_reset.scss（リセット用）
 |- \_extend.scss（@extend の定義）
@@ -99,3 +99,107 @@ project
 > そのため、よく使うものを一通りライブラリとして読み込んでおいて必要に応じて呼び出す、という使い方が可能です。
 > ミックスインもスコープを持つので、ルールセット内で定義するとその中でしか利用できません。
 > またミックスインでは引数を取ることができるので、より使い回しが柔軟にできます。
+
+
+## @mixin と @extend と @fucntion のコンパイル違い
+
+[参考URL](https://www.monster-dive.com/blog/web_creative/20140222_000132.php)
+
+- extend
+
+```scss
+.hoge1 {
+    margin:10px 0;
+    padding:5px;
+}
+.hoge2{
+  @extend .hoge1;
+  padding:0;
+}
+```
+
+↓にコンパイルされる
+
+```css
+.hoge1, .hoge2 {
+  margin: 10px 0;
+  padding: 5px;
+}
+.hoge2 {
+  padding: 0;
+}
+```
+
+@extendで呼ばれたhoge1の中身がごそっとhoge2にも反映されています。
+これだけを見ると、1か所で書けるものを2か所にわけて書くのは非効率！と思うかもしれないですが、1つのクラス内で複数回@extendすることもできますし、@extendしているクラスを@extendすることもできますので、使い方次第で絶大な効果を発揮してくれます。
+
+- mixin
+mixinは、extendとの大きな違いは2つあると思います。細かくはいっぱいあるのですが。
+extendと違いグルーピングされない
+extendの例と同じ内容をmixinで書くと一目瞭然です。
+
+```scss
+@mixin hoge {
+    margin:10px 0;
+    padding:5px;
+}
+.hoge1{
+  @include hoge;
+}
+.hoge2{
+  @include hoge;
+  padding:0;
+}
+```
+
+↓にコンパイルされる
+
+```css
+.hoge1 {
+  margin: 10px 0;
+  padding: 5px;
+}
+.hoge2 {
+  margin: 10px 0;
+  padding: 5px;
+  padding: 0;
+}
+```
+
+となります。
+extendで書き出されたCSSと内容は同じなのですが、「.hoge1, .hoge2 {}」のようにグルーピングされません。
+この違いだけですと、extendのほうがソースも短くなるのでいいかと思いますが、制作会社がベースをSassで作って、日々の更新はクライアント企業の担当者がCSSファイルを触るサイトなどでは、分けて書き出したほうが良い場合もあるかもしれません。
+
+extendと違い引数（パラメータ）を渡すことができる
+こちらがミックスインを使う最大の理由になるかと思います。説明するよりも例を見たほうが早いと思いますので、早速書いてみます。
+
+- function
+
+最後にfunctionですが、引数などの扱いはmixinと一緒ですが、返すものが値となります。簡単な例ですがファイル名を引数で渡してurlをセットするfunctionは下記になります。
+
+```scss
+$hoge:'img/';
+$png:'.png';
+@function urlPng($fileName) {
+  @return url($hoge+$fileName+$png);
+}
+.hoge1 {
+  background:urlPng('test');
+}
+.hoge2 {
+  background:url($hoge+'test'+$png);
+}
+```
+
+↓にコンパイルされる
+
+```css
+.hoge1 {
+  background: url("img/test.png");
+}
+.hoge2 {
+  background: url("img/test.png");
+}
+```
+
+と「.hoge1」も「.hoge2」も同じになります。「.hoge2」のように直接四則演算を行ったりしてもいいのですが、functionを作ってあげたほうが美しいですね。
