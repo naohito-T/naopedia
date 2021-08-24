@@ -6,9 +6,9 @@ HEX形式: プログラムイメージ（コードとデータを表すの 16 �
 
 ```css
 /* HEX6桁 */
-#E0E0E0
+color: #e0e0e0;
 /* HEX8桁 最後は透過 */
-#E0E0E0E0
+color: #E0E0E0E0;
 ```
 
 ## width
@@ -23,6 +23,13 @@ Media Queries をつかって width を上書きする場合はこちらが便�
 boxB に width:auto;を付与すると、boxB の幅は、以下になります。
 
 width auto だと flex の justify がきく
+
+- vw, vh, vmin, vmaxについて
+[参考URL](https://dev.classmethod.jp/articles/css-length-viewport/)
+
+>どんなシーンで使えるか
+>画像を例にすれば、ページいっぱいの背景画像などでしょうか。モバイル端末は向きによってタテ・ヨコの長さが変わるので、JavaScript で向きの判定処理をして動的にサイズを調整するといったことを自前で作る必要がなくなるかと思います。
+
 
 ## プロパティ一覧
 
