@@ -25,11 +25,15 @@ boxB に width:auto;を付与すると、boxB の幅は、以下になります�
 width auto だと flex の justify がきく
 
 - vw, vh, vmin, vmaxについて
-[参考URL](https://dev.classmethod.jp/articles/css-length-viewport/)
+[参考URL(一番わかりやすい)](https://coliss.com/articles/build-websites/operation/css/css-viewport-units.html)
 
 >どんなシーンで使えるか
 >画像を例にすれば、ページいっぱいの背景画像などでしょうか。モバイル端末は向きによってタテ・ヨコの長さが変わるので、JavaScript で向きの判定処理をして動的にサイズを調整するといったことを自前で作る必要がなくなるかと思います。
 
+vw(viewport width) ビューポートの幅に対する割合
+vh(viewport height) ビューポートの高さに対する割合
+vmin(viewport minimum) ビューポートの幅と高さのうち、値が小さい方に対する割合
+vmax(viewport max) ビューポートの幅と高さのうち、値が大きい方に対する割合
 
 ## プロパティ一覧
 
