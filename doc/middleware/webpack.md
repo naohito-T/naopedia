@@ -24,3 +24,18 @@
 - 今の時代はモジュール方式でJavaScriptを書くのが当たり前
 1つのJavaScriptファイルに長い処理を書くと、可読性が悪くなります。これを解決するには複数ファイルへ分割することでしょう。ウェブのフロントエンド界隈では、機能ごとに分割されたJavaScriptファイルのことを一般的に**モジュール**と呼ぶ。
 ※JavaScriptをモジュールで書くにはお作法があり、2020年現在は標準仕様のECMAScript Modules（略してES Modules、もしくはESM）で書くのが一般的
+
+## webpack mode
+
+>webpackの仕様として、mode値がdevelopmentであってもCSSのソースマップは自動的に有効にはなりません。逆に、mode値がproductionであってもCSSのソースマップは自動的に無効にはなりません。そのため、ソースマップの有効無効は自前の変数で管理しています。
+
+## JavaScript以外のファイルを扱う
+
+>webpackでは、JavaScriptだけではなくスタイルシート、画像、ウェブフォント等あらゆるリソースをモジュールとして取り扱えます。JavaScriptファイル以外のファイルを扱うには、webpackの**Loaders**機能を用います。
+
+## CSS
+
+※CSSのバンドルには**style-loader**と**css-loader**が必要
+
+
+
