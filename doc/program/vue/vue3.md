@@ -1,7 +1,8 @@
 # Vue3
 
 Vue3のtipsを記載しておく。
-
+[参考URL](https://ccbaxy.xyz/blog/2021/03/20/vue03/)
+[vue3の根幹について](https://zenn.dev/woo_noo/articles/8d3e666e62b966048c01)
 
 ## refとreactive
 
@@ -69,3 +70,39 @@ Vue3のtipsを記載しておく。
   });
 </script>
 ```
+
+
+## computed
+
+```js
+<template>
+  <div>
+    <div>{{ val1 }}</div>
+    <div>{{ val2 }}</div>
+  </div>
+</template>
+
+<script lang="ts">
+  import { computed, defineComponent, reactive, ref } from "vue";
+
+  export default defineComponent({
+    setup: () => {
+      // ref で作ったオブジェクトで computed
+      const tmp1 = ref(0);
+      const val1 = computed(() => tmp1.value * 10);
+
+      // reactive で作ったオブジェクトで computed
+      const tmp2 = reactive({ p1: 0 });
+      const val2 = computed(() => tmp2.p1 * 100);
+
+      setInterval(() => {
+        tmp1.value++;
+        tmp2.p1++;
+      }, 1000);
+
+      return { val1, val2 };
+    },
+  });
+</script>
+```
+
