@@ -21,7 +21,6 @@ Vue3のtipsを記載しておく。
     <div>{{ val7.p1 }}</div>
   </div>
 </template>
-
 <script lang="ts">
   import { defineComponent, reactive, readonly, ref, toRef, toRefs } from "vue";
 
