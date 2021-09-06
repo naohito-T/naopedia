@@ -11,7 +11,7 @@ const returnTop = () => {
 }
 ```
 
-## 横スクロール
+## 画面全体を横スクロールにする。
 
 [jQueryで使う](https://dsinside.digitalstage.jp/entry/2021/07/07/111850)
 
@@ -54,3 +54,7 @@ let n2 = -(-10);
 console.log(n1,n2);
 //-12,10
 ```
+
+
+
+
