@@ -59,3 +59,6 @@ context('カテゴリ名', () => {
 })
 ```
 
+## cypress React for Typescript 設定
+
+[参考URL](https://www.gixo.jp/blog/16086/)

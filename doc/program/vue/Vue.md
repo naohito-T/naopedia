@@ -199,3 +199,13 @@ template 内に computed の関数が記載されていても ↑ の条件を�
 ## computed
 
 なんと!非同期 API を呼び出すことはできない!!
+
+## v-modelディレクティブ = syntax sugar
+
+v-bind, v-onを使った記述方法をシンプルにしている。
+
+[参考URL](https://reffect.co.jp/vue/vue-js-input-v-model#v-model)
+
+>input要素などの入力フォームの要素にv-modelディレクティブを設定することで要素に入力した値とVue.jsで定義したデータプロパティで双方向のデータバインディングが行われます。
+>データバインディングが行われるとinput要素で入力した値がそのままデータプロパティに設定されます。Vue.jsで入力フォームを作成している人にとっては見慣れた書式だと思います。
+

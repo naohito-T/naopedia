@@ -61,3 +61,134 @@ Webアプリケーションの他にデスクトップアプリがあります�
 
 
 ## git push error
+
+
+## github pagesとは
+
+[github page作り方](https://techacademy.jp/magazine/6445)
+
+GitHub PagesはGitHubが提供する静的なウェブページをホスティングするサービスで、ウェブページをインターネット上に公開することができる。
+※DBを用いるような動的なウェブページは公開できない。
+※プライベートリポジトリであっても、GitHub Pagesはインターネット上で公開されるため注意が必要。
+
+- 公開手順
+下記の流れでWebページを公開していく。
+
+GitHub Pages用のリポジトリの作成
+ウェブページの作成
+GitHubへプッシュ
+GitHub Pagesへアクセスして確認
+
+- Github Pages種類
+GitHub Pagesには大きく分けて2つの種類がある。ユーザのウェブページを公開するユーザサイト(User site)とプロジェクトのウェブページを公開するプロジェクトサイト。
+
+
+### ユーザサイト用リポジトリの作成
+
+- 上記URL参照する。
+
+### プロジェクトサイト用リポジトリの作成
+
+- 上記URL参照する。
+
+1. 特定のプロジェクトで専用のブランチを切る
+`$ git ch -b gh-pages`
+
+2. gitbook buildで静的ファイルを出力する。
+
+3. _book内のファイルを全て親に**ルートディレクトリ**にコピーする。
+ディレクトリ構成は以下の通り
+```sh
+$ tree
+.
+├── architecture
+│   ├── directory.html
+│   └── index.html
+├── docs
+│   ├── README.md
+│   ├── SUMMARY.md
+│   ├── _book
+│   │   ├── architecture
+│   │   │   ├── directory.html
+│   │   │   └── index.html
+│   │   ├── gitbook
+│   │   │   ├── fonts
+│   │   │   │   └── fontawesome
+│   │   │   │       ├── FontAwesome.otf
+│   │   │   │       ├── fontawesome-webfont.eot
+│   │   │   │       ├── fontawesome-webfont.svg
+│   │   │   │       ├── fontawesome-webfont.ttf
+│   │   │   │       ├── fontawesome-webfont.woff
+│   │   │   │       └── fontawesome-webfont.woff2
+│   │   │   ├── gitbook-plugin-fontsettings
+│   │   │   │   ├── fontsettings.js
+│   │   │   │   └── website.css
+│   │   │   ├── gitbook-plugin-highlight
+│   │   │   │   ├── ebook.css
+│   │   │   │   └── website.css
+│   │   │   ├── gitbook-plugin-lunr
+│   │   │   │   ├── lunr.min.js
+│   │   │   │   └── search-lunr.js
+│   │   │   ├── gitbook-plugin-search
+│   │   │   │   ├── lunr.min.js
+│   │   │   │   ├── search-engine.js
+│   │   │   │   ├── search.css
+│   │   │   │   └── search.js
+│   │   │   ├── gitbook-plugin-sharing
+│   │   │   │   └── buttons.js
+│   │   │   ├── gitbook.js
+│   │   │   ├── images
+│   │   │   │   ├── apple-touch-icon-precomposed-152.png
+│   │   │   │   └── favicon.ico
+│   │   │   ├── style.css
+│   │   │   └── theme.js
+│   │   ├── index.html
+│   │   └── search_index.json
+│   └── architecture
+│       ├── README.md
+│       └── directory.md
+├── gitbook
+│   ├── fonts
+│   │   └── fontawesome
+│   │       ├── FontAwesome.otf
+│   │       ├── fontawesome-webfont.eot
+│   │       ├── fontawesome-webfont.svg
+│   │       ├── fontawesome-webfont.ttf
+│   │       ├── fontawesome-webfont.woff
+│   │       └── fontawesome-webfont.woff2
+│   ├── gitbook-plugin-fontsettings
+│   │   ├── fontsettings.js
+│   │   └── website.css
+│   ├── gitbook-plugin-highlight
+│   │   ├── ebook.css
+│   │   └── website.css
+│   ├── gitbook-plugin-lunr
+│   │   ├── lunr.min.js
+│   │   └── search-lunr.js
+│   ├── gitbook-plugin-search
+│   │   ├── lunr.min.js
+│   │   ├── search-engine.js
+│   │   ├── search.css
+│   │   └── search.js
+│   ├── gitbook-plugin-sharing
+│   │   └── buttons.js
+│   ├── gitbook.js
+│   ├── images
+│   │   ├── apple-touch-icon-precomposed-152.png
+│   │   └── favicon.ico
+│   ├── style.css
+│   └── theme.js
+├── index.html
+└── search_index.json
+
+```
+
+4. git add と commit を実行しpushする
+
+※プルリクは自動で作成されなかった。認識してくれてた。
+
+5. リポジトリのAboutでURLを編集
+
+example
+https://naohito-T.github.io/e2e-test-cypress
+で見れる。
