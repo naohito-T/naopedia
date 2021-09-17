@@ -24,6 +24,9 @@
 - 参考演算子を使用してもより単純な選択肢が存在しているかもと考える
 [参考URL](https://eslint.org/docs/rules/no-unneeded-ternary)
 
+
+* [1. alogorithm](alogorithm/README.md)
+* [2. test](test/README.md)
 ## 後で別ファイルに
 
 ## 抽象クラスとは

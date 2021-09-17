@@ -1,5 +1,0 @@
-# OpenAPI Specification(OAS)
-
-
-
-
