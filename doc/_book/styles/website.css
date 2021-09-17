@@ -1,0 +1,49 @@
+.book-body {
+  background-color: #1e1e1e;
+  color: #f7f7f7;
+}
+
+/* .book-body ::-moz-selection {
+  background-color: #00b0b0;
+  color: #fff;
+} */
+/* .page .section h1:before {
+  content: counter(h1) '. ';
+  padding-right: 5px;
+  counter-increment: h1;
+  color: #00b0b0;
+} */
+
+.book-summary ul.summary li a,
+.book-summary ul.summary li span {
+  color: #f7f7f7;
+}
+
+.markdown-section {
+  color: #f7f7f7;
+}
+
+.markdown-section pre {
+  background-color: #102;
+}
+
+.book-body ::selection {
+  background-color: #00b0b0;
+  color: #fff;
+}
+
+.book-summary {
+  background-color: #1e1e1e;
+  color: #f7f7f7;
+}
+
+/* コピペの色を変える */
+::-moz-selection {
+  background-color: #00b0b0;
+  color: #fff;
+}
+
+::selection {
+  background-color: #00b0b0;
+  color: #fff;
+}

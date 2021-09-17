@@ -28,3 +28,4 @@ DELETE /console/admin/cast/1
 
 [gitbookをgit pageへ参考](https://r-ngtm.hatenablog.com/entry/2020/06/18/193235)
 [Unity エンジニアでの必要スキル](https://rngtm.github.io/Portfolio/markdown/01_skill.html)
+[gitbookによるドキュメント作成](http://mebiusbox.github.io/contents/gitbook/src/customize.html)
