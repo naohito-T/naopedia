@@ -81,3 +81,6 @@ stickyは親要素の幅、高さを基準に固定されます。
 親要素（スティッキーコンテナ）に
 overflow:hidden;、overflow:auto;があるとstickyが効きません。
 
+## スクロールバーについて
+
+[スクロールバーをカスタマイズする](https://kouhekikyozou.com/css_scrollbar_design)
