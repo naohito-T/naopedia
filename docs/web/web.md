@@ -1,6 +1,7 @@
 # web application
 
 web application での機能や概念などをまとめていくディレクトリ
+※用はWeb系プログラマーとしての仕事の多くを記入する。
 
 [色々なサイトの作り方](https://commte.net/4266)
 
