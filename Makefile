@@ -1,8 +1,8 @@
 # gitbook document start
 book.start:
-		cd doc && gitbook serve . ../dist
+		cd docs && gitbook serve . ../dist
 
 # gitbook document build
 book.build:
-		cd doc && gitbook build . ../dist
+		cd docs && gitbook build . ../dist
 
