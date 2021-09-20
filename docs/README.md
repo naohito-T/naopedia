@@ -6,7 +6,7 @@ CLI version: 2.3.2
 GitBook version: 3.2.3
 ```
 
-## やるべきこと
+## 今すぐやるべきこと
 
 jq コマンドをインストールする。
 json の出力を整形するコマンド。api のテストなどにはうってつけ。誰かに提出する時見やすい。
@@ -53,4 +53,4 @@ DELETE /console/admin/cast/1
 * [9. product要件定義](requirement/README.md)
 * [10. version管理ツール](version/README.md)
 * [11. shell](shell/README.md)
-* [おわりに](contents/postscript.md)
+
