@@ -17,6 +17,8 @@ portfolioを作成する
 Skillシート(経歴書含め)作成する
 アルゴリズム(python)を作成する
 ブログを作成する
+typeorm リポジトリ(これを作るのにはdockerのmysqlを作成できるようにしないといけない。
+)
 
 ## unity エンジニア
 
