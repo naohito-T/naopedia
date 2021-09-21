@@ -33,6 +33,6 @@
     * [docker compose](infrastructure/docker/docker-compose.md)
 * [9. 設計](plan/README.md)
 * [10. product要件定義](requirement/requirement.md)
-* [11. version管理ツール](version/README.md)
+* [11. version管理ツール](version/version.md)
 * [12. shell](shell/shell.md)
 * [おわりに](contents/postscript.md)

@@ -1,8 +1,8 @@
-# version 管理ディレクトリ
+# version Page
 
 version 管理ツールなどを記載していく
 
-[Git 概要](./Git.md)
+[Git 概要](./git/.md)
 [PR_template](PULL_REQUEST_TEMPLATE.md)
 
 ## スニペット管理
