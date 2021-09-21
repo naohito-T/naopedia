@@ -1,5 +1,9 @@
 # WebGL
 
+## 対応
+
+iOS8において、WebGLが動作するようになった。
+
 ## WebGLに役立つ数学
 
 [WebGL開発に役立つ重要な三角関数の数式・概念まとめ](https://ics.media/entry/10657/)
