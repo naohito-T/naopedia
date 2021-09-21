@@ -65,7 +65,7 @@ Webアプリケーションの他にデスクトップアプリがあります�
 
 ## git push error
 
-
+---
 ## github pagesとは
 
 [github page作り方](https://techacademy.jp/magazine/6445)
@@ -195,3 +195,20 @@ $ tree
 example
 https://naohito-T.github.io/e2e-test-cypress
 で見れる。
+
+---
+
+## git tag
+
+Gitのタグには軽量版と通釈付き版の二通りがある
+軽量版のタグは変更のないブランチのようなもの。特定のコミットに対する単なるポインタでしかありません。
+注釈付きのタグはGitデータベース内に完全なオブジェクトとして格納される。チェックサムが付き、タグを作成した人の名前・メールアドレス・作成日時・タグ付け時のメッセージなども含まれる。
+>また、署名をつけて GNU Privacy Guard (GPG) で検証することもできます。 一般的には、これらの情報を含められる注釈付きのタグを使うことをおすすめします。
+
+
+
+軽量版のtag
+`$ git tag [tag name]`
+
+注釈版のtag
+`$ git tag -a v1.4 -m "my version 1.4"`
