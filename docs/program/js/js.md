@@ -73,3 +73,17 @@ false || 'fallback';
 false ?? 'fallback';
 // js: false
 ```
+
+## in 演算子
+
+[リファレンス](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/in)
+
+in演算子は、指定されたプロパティが指定されたオブジェクトにある場合にtrueを返す.
+
+```js
+const car = { make: 'Honda', model: 'Accord', year: 1998 };
+
+console.log('make' in car);
+// expected output: true
+```
+
