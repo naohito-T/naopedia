@@ -5,6 +5,15 @@
 
 >TypeScriptのコンパイラにはECMAScript Modules（ES Modules = importやexport文のこと）をまとめる機能が提供されていません。そのため、ES ModulesのJSファイルをまとめるモジュールバンドラー（例：webpack、Rollup等）をTypeScriptと合わせて使うのが一般的です。
 
+- コンパイラが追う順番
+
+ts → tsx → d.ts
+
+- デフォルトで追う@types
+デフォルトで対象範囲全ての@typesパッケージがコンパイルに含まれる。(node_modules/@types)
+typesRootsがtsconfig.jsonに指定されている場合は**そのパッケージのみが対象となる。**
+
+
 ## TypeScript とは
 
 altJS
@@ -130,15 +139,19 @@ typeRoots 設定はこれまで説明した設定項目と若干異なり、コ�
 
 ```
 
-## TypeScriptの型定義ファイルについて
+## 名前空間
 
-[参考URL](https://qiita.com/literalice/items/d83249a5646abcb0bec6#:~:text=Typings%E3%81%A8%E3%81%AF,%E3%82%8C%E3%82%8B%E3%81%AE%E3%81%8C%E7%89%B9%E9%95%B7%E3%81%A7%E3%81%99%E3%80%82)
+**名前空間はグローバルな名前空間でJavaScriptのオブジェクトに単純に名前がつけられたもの。**
 
-以前はtsdがTypeScript型定義管理ツールだった。
+namespaceではなくモジュールの仕組みを使うべし
+TypeScriptでゃnamespaceキーワードを使って名前空間を定義することができるが、通常はより柔軟性の高いモジュールの仕組みを使うのが推奨されている(といっても.tsファイルを分けるだけだが)
 
-- Typingsとは
+---
 
-tsdと同じくTypeScriptの型定義ファイルを管理するツール
-Githubから型定義を取得してくるしかなかったtsdと違って、npmやbower、githubプロジェクト、ローカルファイルシステムやhttp経由で型定義ファイルを取ってこれるのが特徴で
->tsdと違ってGitHubのAPIを叩かない
+- namespaceが非推奨な理由
+namespaceを使うと同じファイル内で階層化された名前空間を作ることができるが、あくまでその階層構造はグローバルに居言う有されている。
+一方モジュールの仕組みを使うと、ファイル単位で名前空間のコンテキストを分けることができる(大きなプロジェクトであっても、適切な単位でモジュールを分割している限り、名前の衝突は本格的に発生しない。)
+
+
+
 

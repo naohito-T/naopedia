@@ -1,5 +1,18 @@
 # JavaScript
 
+
+## CommonJSとESModule
+
+CommonJS
+まだECSでモジュールシステムが導入されていないときにnodeで実装したモジュールシステム
+
+ESM
+実質のJSの仕様を策定するもの。
+
+[CommonJS と ES6の import/export で迷うなら](https://qiita.com/rooooomania/items/4c999d93ae745e9d8657)
+
+---
+
 js の演算子ドキュメント
 [リファレンス](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Expressions_and_Operators)
 
