@@ -229,4 +229,16 @@ $ git rm <FILE_NAME>
 $ git rm --cached <FILE_NAME>
 ```
 
+## git 意味がわからない集
 
+現象
+
+topic branchで作業をしており、masterが先に進んでいたのをpullでtopicへmerge。
+もちろんコンフリクトが起こることは想定内だが、そこで以下が起きた。
+
+```sh
+$ git br
+* (no branch, rebasing feature/react-navigation_setup)
+# なぜか以下で解消ができた。
+$ git rebase --abort
+```
