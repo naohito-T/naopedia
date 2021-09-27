@@ -11,3 +11,12 @@ jsはDOMの操作apiがかなり多いため、備忘録として学んだこと
 >window.getComputedStyle() メソッドは、要素に適用されたスタイルの値を基本的な値に計算しなおした後、すべてのCSSプロパティの値を返します。
 
 ※font-size: 1em;となっていた場合もその要素のサイズも計算されて返す
+
+
+## <video>タグに対して
+
+[リファレンス](https://developer.mozilla.org/ja/docs/Web/API/HTMLMediaElement/srcObject)
+
+HTMLMedia​Element​.src​Object
+
+>HTMLMediaElement インターフェイスの srcObject プロパティは HTMLMediaElement に関連付けられたメディアソースを提供するオブジェクトを設定または取得します。 このオブジェクトは MediaStream、MediaSource、Blob や(Blobから派生している) File です。
