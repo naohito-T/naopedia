@@ -59,8 +59,25 @@ useCallbackはパフォーマンス向上のためのhook。メモ化したコ�
 メモ化とは同じ結果を返す処理について、初回のみ処理を実行記録しておき、値が必要となった2回目以降は前回の処理結果を計算することなく呼び出し値を得られるようにすること。
 
 
+## useReducer
 
+[参考URL](https://qiita.com/seira/items/2fbad56e84bda885c84c)
 
+状態管理のためのhookで**useStateと似たような機能**。useStateはuseReducerに内部実装されている。
+
+```ts
+const [state, dispatch] = useReducer(reducer, initialState);
+```
+
+dispatchを実行すればレンダリングが走る.
+
+- 使用例
+例えば、レンダリングが走らないな。とか思ったときに強制的にレンダリングをかけたい場合
+
+```ts
+const [_, dispatch] = useReducer((boolean) => !boolean, false);
+```
+あとはdispatchを特定の場所で実行すればレンダリングがかかる。
 
 ## ReactRouter
 
