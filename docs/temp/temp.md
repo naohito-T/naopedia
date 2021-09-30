@@ -7,6 +7,7 @@
 [yutkat](https://github.com/yutkat/katapedia) naopediaを作成する知見ができた人。リポジトリ見る限りかなりすごい
 [portfolio参考](https://github.com/mya-ake/portfolio) 同じ環境で色々と参考になる。
 [千葉出身のチームラボwebエンジニア](https://github.com/lollipop-onl)
+[abemaのエンジニア](https://github.com/jun06t) マネージメント側に回っていそうだが、ブログとかかなり詳しく書いているため参考になりそう。
 
 ## gitを充実させる
 
