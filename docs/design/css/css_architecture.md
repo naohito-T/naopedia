@@ -1,4 +1,6 @@
-# css
+# css architecture
+
+CSSの設計についてまとめていく
 
 (CSS 設計における 3 大メソッド[OOCSS][bem][SMACSS])[https://www.risewill.co.jp/blog/archives/5652]
 

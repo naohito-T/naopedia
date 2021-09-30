@@ -1,5 +1,7 @@
 # HTML architecture
 
+設計方法を考える
+
 ## プロジェクトのHTML / CSSスタイルガイドはGoogleを参考にする
 
 [Google](https://google.github.io/styleguide/htmlcssguide.html)

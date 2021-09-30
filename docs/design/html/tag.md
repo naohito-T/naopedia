@@ -1,4 +1,4 @@
-# html property 備忘録
+# html tag 備忘録
 
 ## seo を強くする
 
