@@ -24,5 +24,6 @@ input[ type=checkbox] {
 2. チェックボックスのラベルに装飾する.
 
 
+## Tips
 
-
+[シンプルなcheckbox](https://copypet.jp/774/)
