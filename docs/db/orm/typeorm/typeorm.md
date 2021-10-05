@@ -36,3 +36,35 @@ const user = connection.getRepository(User).find({
   ]
 });
 ```
+
+## entity
+
+entityはDBのテーブルと一対一で構成する。
+※実際はClassで作成するため関連するmethodなども記載していいかは議論が生じる
+
+[参考URL](https://qiita.com/haman0104/items/8cc69429b1d02aefed35)
+
+## @OneToOne(() => )
+
+参照される側。サッカーチーム　から　コーチを参照(コーチに@OneToOne()を付与)
+@JOinColumnは必須
+
+
+## @OneToMany()
+
+```ts
+  @OneToMany(
+    () => TicketOptionItem,
+    (ticketOptionItem) => ticketOptionItem.ticket
+  )
+  public ticketOptionItems?: TicketOptionItem[];
+```
+
+上を見ればわかるだろう。一つのチケットに対して複数のオプションがある。S
+
+
+
+
+## Tips
+
+[TypeORM知見まとめ](https://zenn.dev/uttk/scraps/343e888f62360b)
