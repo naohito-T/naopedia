@@ -144,9 +144,36 @@ const [_, dispatch] = useReducer((boolean) => !boolean, false);
 
 ## useContext
 
+[React Context APIわかりやすい](https://gotohayato.com/content/523/)
+
 **※コンポーネントの再利用をより難しくするため慎重に利用しなくてはならない。**
 useContextとは、Context機能をよりシンプルに使えるようになった機能(JSのContextのスタックの概念)
 
-**重要: useContextを呼び出すコンポーネントはコンテクストの値が変化するたびに毎回再レンダーされる。**
+**重要: useContextを呼び出すコンポーネントはコンテキストの値が変化するたびに毎回再レンダーされる。**
 
+useContext()の使う前に、ReactのContext APIを理解する上で重要な3つの概念について理解するべき
+
+1. Contextオブジェクト
+2. Context Provider
+3. Context Consumer
+
+- Context オブジェクト
+Contextオブジェクトとは、コンポーネントツリー上直接の親子関係にない(=ツリー上離れたところにいる)
+コンポーネント間で同じ値を共有するための道具。**範囲が限定されたグローバル変数のようなものと理解する**
+
+各ContextオブジェクトにはProviderとConsumerという2つのコンポーネントが備わっている
+
+```ts
+Context.Provider
+Context.Consumer
+```
+
+- Context Provider
+Context Providerとは、Contextオブジェクトが持つコンポーネントで**対象の値の利用可能な範囲を指定するために使うもの**
+具体的には**コンポーネントツリー上でContext Providerの内側にある全てのコンポーネントからそのProviderに対応したコンテキストの値を利用できる。**
+
+- Context Consumer
+Context Consumerとは、Context Providerと同じくContextオブジェクトに備わったコンポーネントのひとつで**コンテキスト値を利用したい場合で使うもの**
+
+Context Consumerを使えばコンポーネントツリーを外に見ていって一番近くにあるContext ProviderのContextに紐付けられた
 
