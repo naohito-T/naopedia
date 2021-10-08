@@ -175,5 +175,9 @@ Context Providerとは、Contextオブジェクトが持つコンポーネント
 - Context Consumer
 Context Consumerとは、Context Providerと同じくContextオブジェクトに備わったコンポーネントのひとつで**コンテキスト値を利用したい場合で使うもの**
 
-Context Consumerを使えばコンポーネントツリーを外に見ていって一番近くにあるContext ProviderのContextに紐付けられた
+Context Consumerを使えばコンポーネントツリーを外に見ていって一番近くにあるContext ProviderのContextに紐付けられた値にアクセスすることができる。
+
+Context API とは、Context オブジェクトとそれに備わった Provider と Consumer 、この 3 つを提供するものです。
+
+フックのひとつである useContext() はこの Consumer の代わりになるものです。 Consumer をそのまま使うと複雑になりがちな処理が useContext() を使うとシンプルに書けます。 今回は Consumer は使わず、この「 useContext() + Context オブジェクト + Provider コンポーネント」の組み合わせで Context API を利用する形を紹介します。
 
