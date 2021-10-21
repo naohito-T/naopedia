@@ -8,6 +8,7 @@
 [portfolio参考](https://github.com/mya-ake/portfolio) 同じ環境で色々と参考になる。
 [千葉出身のチームラボwebエンジニア](https://github.com/lollipop-onl)
 [abemaのエンジニア](https://github.com/jun06t) マネージメント側に回っていそうだが、ブログとかかなり詳しく書いているため参考になりそう。
+[ミドルウェアエンジニア](https://i-beam.org/2019/06/05/tsyringe/) ミドルウェア界のhope
 
 ## gitを充実させる
 
