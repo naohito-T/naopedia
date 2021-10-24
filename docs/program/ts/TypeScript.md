@@ -152,6 +152,11 @@ TypeScriptでゃnamespaceキーワードを使って名前空間を定義する�
 namespaceを使うと同じファイル内で階層化された名前空間を作ることができるが、あくまでその階層構造はグローバルに居言う有されている。
 一方モジュールの仕組みを使うと、ファイル単位で名前空間のコンテキストを分けることができる(大きなプロジェクトであっても、適切な単位でモジュールを分割している限り、名前の衝突は本格的に発生しない。)
 
+---
+
+## タイプガード(Type Guard)
+
+Type assertions(キャスト) Type assertionsを使うと、実際のデータがどうであろうが強制的に型情報を書き換えてしまうため、有り難いTypeScriptの型チェックをすり抜けてしまう。**TypeScriptではType assertionを使う代わりに実行時型チェックを強制するType Guardという仕組みがある。**
 
 ## undefinedなどを取り除く
 
@@ -161,3 +166,9 @@ namespaceを使うと同じファイル内で階層化された名前空間を�
 [こっちのが参考になるのかも](https://qiita.com/suin/items/cda9af4f4f1c53c05c6f)
 
 
+## is演算子
+
+[参考URL](https://www.wakuwakubank.com/posts/767-typescript-user-defined-type-guards/)
+>「is演算子」について取り上げます。is演算子は、User-Defined Type Guards(ユーザ定義型ガード)と呼ばれる機能で使われて、型を絞り込みたいシーンで活用できます。
+
+---
