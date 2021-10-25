@@ -172,3 +172,7 @@ Type assertions(キャスト) Type assertionsを使うと、実際のデータ�
 >「is演算子」について取り上げます。is演算子は、User-Defined Type Guards(ユーザ定義型ガード)と呼ばれる機能で使われて、型を絞り込みたいシーンで活用できます。
 
 ---
+
+## any vs unknown
+
+[参考URL](https://book.yyts.org/reference/statements/any-vs-unknown)
