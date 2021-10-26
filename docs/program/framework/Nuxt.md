@@ -214,3 +214,23 @@ SSR実行時のnodeにはlocalstorageがありませんから、window.localstor
 使用方法の違いは以下のとおりです:
 nuxt.config.js に modules を追加するかわりに buildModules を使います
 package.json に dependencies を追加するかわりに devDependencies を使います（yarn add --dev または npm install --save-dev）
+
+
+## tips
+
+[Vue2.xで、composition-api + TypeScript使っているときのメモ](https://zenn.dev/kawahara/scraps/38cc622c73f27a)
+
+
+- useAsync の利用上の注意
+>@nuxtjs/composition-api にあるuseAsync は、setup() 時に呼ぶ関数で、SSR時はサーバサイドで情報を取得し、SPA時にはページ遷移時に呼び出したいものを用意できるという代物。
+>Options API ベースでいうと、 asyncData でやっていたことを対応する場合に使うものだが、これを使うときには注意するべき点がある。
+
+## watch
+
+変更を検知し指定のmethodを実行する
+※複数の検知も可能
+
+```js
+
+watch(() => {},() => {}, [method1, method2])
+```
