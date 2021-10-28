@@ -27,3 +27,12 @@ input[ type=checkbox] {
 ## Tips
 
 [シンプルなcheckbox](https://copypet.jp/774/)
+
+
+## 画像ファイルを扱うときにおすすめな情報
+
+SVGファイルを扱うときにおすすめなサイト
+
+SVGOMGというサイトで、SVGのサイズを小さくしたりコードをスッキリキレイにしたり出来ます。おすすめです。
+
+[参考URL](https://jakearchibald.github.io/svgomg/)
