@@ -16,3 +16,9 @@ Google の Cloud API を参考にしている
 [参考URL](https://developers.google.com/web/fundamentals/design-and-ux/animations/animations-and-performance?hl=ja#css-vs-javascript-performance)
 
 CSS vs Jsをfpsの観点から、またパフォーマンスの観点からをブログにする
+
+
+## システム開発でよく使われる英単語
+
+[参考URL](https://hnavi.co.jp/knowledge/blog/english/)
+

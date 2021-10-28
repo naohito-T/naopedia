@@ -2,6 +2,8 @@
 
 [世界中のサイトを評価しているやばいサイト](https://www.awwwards.com/)
 
+[新しいサイトを作成する時に参考とすべきUX(google)](https://developers.google.com/web/fundamentals/design-and-ux/ux-basics?hl=ja)
+
 ## インタラクションデザインとは
 
 [参考URL](https://pantograph.co.jp/blog/uiux/interaction_design.html)
