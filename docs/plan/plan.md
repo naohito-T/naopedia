@@ -31,3 +31,24 @@ webやアプリケーションなどの設計をまとめるpage
 スパイラルモデル
 プロトタイプ開発
 
+## SPA + REST API構成のサービス開発リファレンス
+
+[](https://fintan.jp/?p=5952)
+
+## REST API
+
+APIはシンプルな機能ごとに作られてこそ威力を発揮する。
+そしてAPIは機能ごとに分けるのが定石
+機能の単位とは？？
+「リソース（何を）」と「メソッド（どうする）」で表現できる単位。
+→Web API では、URL 部分を「リソース」と見なし、HTTP メソッドと URL の組み合わせ
+
+**設計順序**
+
+[参考URL(これが全体的にわかりやすい)](https://www.hypertextcandy.com/web-api-url-design-primer)
+
+UI(画面)がある程度固まって、データベース定義の初期段階。ER図ができたあたりからAPI設計をし始めるのをお勧めする。
+
+
+## 言語選定
+[参考URL](https://teratail.com/questions/92276)
