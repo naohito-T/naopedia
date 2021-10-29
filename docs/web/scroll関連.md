@@ -84,3 +84,9 @@ overflow:hidden;、overflow:auto;があるとstickyが効きません。
 ## スクロールバーについて
 
 [スクロールバーをカスタマイズする](https://kouhekikyozou.com/css_scrollbar_design)
+
+
+## いけてるマウスカーソルを作成
+
+[参考URL](https://www.evoworx.co.jp/blog/mouse-stoker-gsap/)
+
