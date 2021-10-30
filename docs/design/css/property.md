@@ -47,3 +47,11 @@ widthやheightで幅の指定をする
 >逆にproximityの場合は境界線に近づくとピタッとくっつきますが、境界線との距離が遠い場合はくっつかなくなります。
 
 - scroll-snap-align
+
+
+## gap プロパティ
+
+[参考URL](https://ics.media/entry/210628/)
+
+CSSのgapプロパティは余白を指定できる新しい手法
+余白といえば、marginプロパティやpaddingプロパティを思い浮かべる方が多いがCSS gridやFlexboxでgapプロパティを使うと柔軟にレイアウトを組める

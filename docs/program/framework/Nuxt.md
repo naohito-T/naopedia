@@ -234,3 +234,14 @@ package.json に dependencies を追加するかわりに devDependencies を使
 
 watch(() => {},() => {}, [method1, method2])
 ```
+
+
+## setup内でのdocument使用について
+
+[参考URL](https://qiita.com/syu_ikeda/items/ea1e6931643aa812e6a2)
+
+Next.jsはサーバーサイド、クライアントサイド両方で動くフレームワーク。そのため、定義したソースはサーバー、ブラウザ両方の環境で実行されます。
+
+そして、documentやwindowはクライアントだけで定義されているグローバル変数です。サーバー環境で動かそうとすると「そんなグローバル変数は定義されていない！」とエラーが発生します。
+
+なので、if (process.browser)でブラウザのみの判定を入れればサーバー環境での実行時には無視され、クライアント環境だけで動くのです。
