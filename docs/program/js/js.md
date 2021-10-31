@@ -100,3 +100,6 @@ console.log('make' in car);
 // expected output: true
 ```
 
+## JavaScriptの配列のmapでasync/awaitを使う方法
+
+[参考URL](https://qiita.com/kwbt/items/6c0fe424c89a9f7553c1)
