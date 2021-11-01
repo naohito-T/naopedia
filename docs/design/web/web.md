@@ -49,3 +49,18 @@ SVGOMGというサイトで、SVGのサイズを小さくしたりコードを�
 
 1. スマホサイズで見やすいレイアウトを作成する。
 2. 次に要素間に**空白が多きすぎるまでブラウザのサイズを変更する。**
+
+
+## Blob(Binary Large Object)
+
+バイナリーデータを表すオブジェクト。格納するための型。
+巨大な画像/音声ファイル/動画ファイルなどを扱うことができる。
+immutable = 不変
+**blobを直接変更できないが、blobから値を切り出したり新しいblobを作ることは可能。**
+
+[JSでのBlobの扱い](https://ja.javascript.info/blob)
+
+
+## ファイルダウンロードの仕組み
+
+[参考URL](https://javascript.keicode.com/newjs/download-files.php#1)

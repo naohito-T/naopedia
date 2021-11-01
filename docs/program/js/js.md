@@ -103,3 +103,20 @@ console.log('make' in car);
 ## JavaScriptの配列のmapでasync/awaitを使う方法
 
 [参考URL](https://qiita.com/kwbt/items/6c0fe424c89a9f7553c1)
+
+## Promise
+
+[参考URL](https://qiita.com/ysk_1031/items/888a84cb259cec4e0625)
+
+Promiseの状態
+上述したとおり、Promiseには処理に応じた「状態」があり、次の3つのうちの1つになる
+
+pending: 初期状態、まだ処理が成功も失敗もしていない
+fullfilled: 処理が成功し、完了した状態
+rejected: 処理が失敗した状態
+
+## Promise.all()
+Promise.all()は
+
+all()の引数の配列内のPromiseの状態が全て fullfilled になったら、all()自体も fullfilled
+1つでも rejected になると、all()も rejected
