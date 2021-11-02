@@ -1,6 +1,6 @@
-# version Page
+# tool Page
 
-version 管理ツールなどを記載していく
+version 管理ツールやtoolを記載していく
 
 [Git 概要](./git/.md)
 [PR_template](PULL_REQUEST_TEMPLATE.md)
