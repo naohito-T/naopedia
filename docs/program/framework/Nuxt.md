@@ -4,6 +4,11 @@
 
 Nust.jsはvue.jsのフレームワーク
 >例えばNuxt.jsにはルーティングのVue Routerやデータ管理のVuex、HTMLのメタタグ管理のvue-metaなどのプラグインを使用するために必要となる設定が事前に行われているため細かな設定を行う必要がなくすぐに利用することができます。
+
+Vue.jsとは違い、Nuxt.jsには静的サイトジェネレートという強力な機能がある。
+Nuxtの静的化のための機能はOption APIで提供されていたがCompotion APIでの使い方はあまり解説記事がなかった。
+
+[Nuxtでの静的サイトジェネレート作り方](https://ics.media/entry/210120/)
 ## nuxt ディレクトリ構成
 
 [リファレンス](https://ja.nuxtjs.org/docs/2.x/get-started/directory-structure)
@@ -242,6 +247,41 @@ watch(() => {},() => {}, [method1, method2])
 
 Next.jsはサーバーサイド、クライアントサイド両方で動くフレームワーク。そのため、定義したソースはサーバー、ブラウザ両方の環境で実行されます。
 
-そして、documentやwindowはクライアントだけで定義されているグローバル変数です。サーバー環境で動かそうとすると「そんなグローバル変数は定義されていない！」とエラーが発生します。
+そして、documentやwindowはクライアント(ブラウザ)だけで定義されているグローバル変数です。サーバー環境で動かそうとすると「そんなグローバル変数は定義されていない！」とエラーが発生します。
 
 なので、if (process.browser)でブラウザのみの判定を入れればサーバー環境での実行時には無視され、クライアント環境だけで動くのです。
+
+## Nuxtでの完全静的サイトジェネレート
+[参考URL](https://ics.media/entry/210120/)
+
+Nuxt.js 2.13からasyncData()メソッド・fetch()メソッドで取得するデータが静的化された。
+nuxt.config.jsのtargetを "static"と設定しgenerateすると、asyncData()およびfetch()で取得する内容が**payload.jsという静的データで保存される。**
+それと同時に各ページで取得した内容が織り込み済みのHTMLが生成されます。
+
+**Composition APIにはasyncDataがない**
+完全静的化を強力にサポートするasyncData()とfetch()ですが、残念ながらNuxt Composition APIにはそれらが用意されていません。その代わり、useAsync(), useFetch(), useStatic()の3つの非同期処理メソッドが用意されています。
+
+この3つの非同期処理うち、完全静的化で使用するのはuseFetch()およびuseStatic()になります。useAsync()はgenerate後もページ遷移時には非同期通信を行って内容を取得します。
+
+Nuxt Composition APIのv0.20.0未満ではuseFetch()を利用してgenerateを行っても静的化されない不具合がありました。最新のバージョンでは修正されているので、完全静的化を行う場合にはuseFetch()を使うのが便利でしょう。
+
+**useFetch()はasyncData()とは違い、ページコンポーネント以外でも利用できます。最新の記事を表示するサイドバーのようなコンポーネントからでも呼び出せます。**
+## useFetch, useAsyncの違い
+
+
+
+
+## nuxt error 
+process.server, process.client による条件分岐により、必要なコードだけをそれぞれの環境（Nuxt サーバー上、ブラウザ上）で実行できるようにする
+ブラウザ上の JavaScript に慣れていると window オブジェクトはあることが当たり前だけれど、Nuxt サーバー上にはもちろん存在しない
+Nuxt サーバーによる SSR（Server Side Rendering）では、created 時までのライフサイクルのコードが実行されるため、created までに書いている API 通信結果は DOM に格納されるが、CSR（Client Side Rendering）時にも実行されるため、通信が無駄になることがある。その場合 beforeMount に書くのが良い
+SSR 時と CSR 時の情報の差がある場合、エラーを吐く。そのため、ホットリロードではなく全画面リロードして動作の確認をする必要がある。条件分岐をコントロールする変数が、asyncData や created で更新される場合は要注意
+
+
+**Nuxtでアプリを作る際は、SSRでもCSRでも問題なく表示できるように作る必要がある。**
+
+**クローラーなどからのアクセスは常にSSRになるため、クローラーなどに拾ってほしい情報はSSRの段階で確定させる必要がある。**
+
+**一方で、windowオブジェクトにアクセスするもの、例えばlocalStorageを使うようなものはクライアントサイドのみでしか実行することはできません。 mounted 以外で書く場合は process.server 変数などを使って分岐させる必要があります。**
+
+**特に注意したいのが created で（ beforeCreate も）、SSR時とCSR時の両方で呼ばれます。普通に書くと二重に処理してしまうことになるので、意識して書かないと意図しない挙動になる可能性があります。**

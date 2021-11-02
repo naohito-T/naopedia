@@ -105,3 +105,7 @@ Vue3のtipsを記載しておく。
 </script>
 ```
 
+
+## watchについて
+
+[参考URL](https://qiita.com/EdyEric/items/9c0f322b5cd86c3c661b)
