@@ -26,5 +26,14 @@ CSS vs Jsをfpsの観点から、またパフォーマンスの観点からを�
 ## これをportfolioに使用する
 [参考URL](https://coliss.com/articles/build-websites/operation/javascript/native-like-animations-for-page-transitions.html)
 
+
+## Node.jsのdebugをできるようにする(typescript版で)
+[参考URL](https://casualdevelopers.com/tech-school/how-to-debug-nodejs/)
+
+そのためには開発環境の準備(以下の2つで)
+[](https://qiita.com/techneconn/items/012bdf1b9ff3881546b3)
+[](https://qiita.com/tanakaPH/items/84aedaad8c0f5958a5f0)
+
+
 ## Web、ネイティブアプリなど区別がそれぞれ記載されている
 [とてもいい](https://ops-in.com/knowledge/application/app-development-language/)

@@ -39,21 +39,22 @@ console.log(`navState.pager が reactiveか: ${isReactive(navState.pager)}`); //
 // 配列上書きではreactiveは失われない。
 ```
 
-## Vue リアクティブになる基本
+## リアクティブ性とは
+
+>リアクティブ性というのは、
+>プロパティが変更されたらそれを検知してそのプロパティが使用されている関数を自動的に再計算すること
+>と言い換えることができます。つまり、これを実現するには
+>プロパティ毎にそのプロパティがどんな関数で使われているかを保存しておく
+>そのプロパティの更新時に関連する関数を全て再計算する
+>機能があれば良いわけです。どうですか？なんだかできそうな気がしてきませんか？
+
+## Vue リアクティブになる基本の仕組み
 
 [リアクティブ関連メソッド一覧](https://qiita.com/ryo2132/items/6dc51ede8082dea75812)
 
 [参考 URL](https://qiita.com/neutron63zf/items/506c7493a53cea44860e#vue-next%E3%81%AE%E3%83%AA%E3%82%A2%E3%82%AF%E3%83%86%E3%82%A3%E3%83%96%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0)
 
 vue では data()内に宣言された値に対して、mount 時に get と set を設定する。その設定により、変更がかかった時に再度仮装 DOM を描画する処理が走る。
-
-リアクティブ性というのは、
-プロパティが変更されたらそれを検知してそのプロパティが使用されている関数を自動的に再計算すること
-と言い換えることができます。つまり、これを実現するには
-
-プロパティ毎にそのプロパティがどんな関数で使われているかを保存しておく
-そのプロパティの更新時に関連する関数を全て再計算する
-機能があれば良いわけです。どうですか？なんだかできそうな気がしてきませんか？
 
 ## Vue のリアクティブシステム
 
@@ -209,3 +210,114 @@ v-bind, v-onを使った記述方法をシンプルにしている。
 >input要素などの入力フォームの要素にv-modelディレクティブを設定することで要素に入力した値とVue.jsで定義したデータプロパティで双方向のデータバインディングが行われます。
 >データバインディングが行われるとinput要素で入力した値がそのままデータプロパティに設定されます。Vue.jsで入力フォームを作成している人にとっては見慣れた書式だと思います。
 
+## Vue3
+
+Vue3のtipsを記載しておく。
+[参考URL](https://ccbaxy.xyz/blog/2021/03/20/vue03/)
+[vue3の根幹について](https://zenn.dev/woo_noo/articles/8d3e666e62b966048c01)
+
+## refとreactive
+
+リアクティブなオブジェクトの作成には、ref reactive toRef readonlyを使う。
+(他に、shallowReactive shallowReadonlyなどあるが、当面使わなそう。)
+```js
+<template>
+  <div>
+    <!-- val1 val4 は書き換わらない -->
+    <div>{{ val1 }}</div>
+    <div>{{ val2 }}</div>
+    <div>{{ val3.p1 }}</div>
+    <div>{{ val4 }}</div>
+    <div>{{ val5 }}</div>
+    <div>{{ val6.p1.value }}</div>
+    <div>{{ val7.p1 }}</div>
+  </div>
+</template>
+<script lang="ts">
+  import { defineComponent, reactive, readonly, ref, toRef, toRefs } from "vue";
+
+  export default defineComponent({
+    setup: () => {
+      //　リアクティブではない
+      let val1 = 0;
+
+      //　リアクティブ
+      let val2 = ref(0);
+
+      //　リアクティブ
+      let val3 = reactive({ p1: 0 });
+
+      //　リアクティブではない
+      let tmp4 = reactive({ p1: 0 });
+      let val4 = tmp4.p1;
+
+      //　リアクティブ
+      let tmp5 = reactive({ p1: 0 });
+      let val5 = toRef(tmp5, "p1");
+
+      //　リアクティブ
+      let tmp6 = reactive({ p1: 0 });
+      let val6 = toRefs(tmp6);
+
+      let tmp7 = reactive({ p1: 0 });
+      const val7 = readonly(tmp7);
+
+      setInterval(() => {
+        // toRef toRefsで作ったものは .value が必要
+        val1++;
+        val2.value++;
+        val3.p1++;
+        val4++;
+        val5.value++;
+        val6.p1.value++;
+        // readonly を使うと直接書き換えできなくなる
+        // val7.p1++
+        // 元のオブジェクトで書き換える
+        tmp7.p1++;
+      }, 1000);
+
+      return { val1, val2, val3, val4, val5, val6, val7 };
+    },
+  });
+</script>
+```
+
+
+## computed
+
+```js
+<template>
+  <div>
+    <div>{{ val1 }}</div>
+    <div>{{ val2 }}</div>
+  </div>
+</template>
+
+<script lang="ts">
+  import { computed, defineComponent, reactive, ref } from "vue";
+
+  export default defineComponent({
+    setup: () => {
+      // ref で作ったオブジェクトで computed
+      const tmp1 = ref(0);
+      const val1 = computed(() => tmp1.value * 10);
+
+      // reactive で作ったオブジェクトで computed
+      const tmp2 = reactive({ p1: 0 });
+      const val2 = computed(() => tmp2.p1 * 100);
+
+      setInterval(() => {
+        tmp1.value++;
+        tmp2.p1++;
+      }, 1000);
+
+      return { val1, val2 };
+    },
+  });
+</script>
+```
+
+
+## watchについて
+
+[参考URL](https://qiita.com/EdyEric/items/9c0f322b5cd86c3c661b)

@@ -9,14 +9,10 @@
 
 ts → tsx → d.ts
 
-- デフォルトで追う@types
+- デフォルトで追う@typesフォルダとは
 デフォルトで対象範囲全ての@typesパッケージがコンパイルに含まれる。(node_modules/@types)
 typesRootsがtsconfig.jsonに指定されている場合は**そのパッケージのみが対象となる。**
 
-
-## TypeScript とは
-
-altJS
 ## TypeScript 概念
 
 ## 参考 URL 集
@@ -42,6 +38,7 @@ export class typeSampleModel {
 
     // なんでもOKの any型
     data: any;
+    unknow: unknown;
 
    // オブジェクト型リテラル
     array: any[];                             // 配列
@@ -149,7 +146,7 @@ TypeScriptでゃnamespaceキーワードを使って名前空間を定義する�
 ---
 
 - namespaceが非推奨な理由
-namespaceを使うと同じファイル内で階層化された名前空間を作ることができるが、あくまでその階層構造はグローバルに居言う有されている。
+namespaceを使うと同じファイル内で階層化された名前空間を作ることができるが、あくまでその階層構造はグローバルに占有されている。
 一方モジュールの仕組みを使うと、ファイル単位で名前空間のコンテキストを分けることができる(大きなプロジェクトであっても、適切な単位でモジュールを分割している限り、名前の衝突は本格的に発生しない。)
 
 ---
@@ -175,4 +172,5 @@ Type assertions(キャスト) Type assertionsを使うと、実際のデータ�
 
 ## any vs unknown
 
+anyはmethodが使えるが、unknownはmethodが使えないため少しだけ保守性があがる。
 [参考URL](https://book.yyts.org/reference/statements/any-vs-unknown)

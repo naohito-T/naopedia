@@ -54,9 +54,18 @@ IT関係でカバレッジとは、開発したソフトウェアのプログラ
 ## CI/CD
 
 昨今ではソフトウェア開発における様々な工程を自動化するような技術の開発や普及が進んでいる
-その一つにCI（Continuous Integration、継続的インテグレーション)やCD（Continuous Delivery、継続的デリバリー）と呼ばれるものがある。
+その一つにCI(Continuous Integration、継続的インテグレーション)やCD（Continuous Delivery、継続的デリバリー）と呼ばれるものがある。
 
-CIはソフトウェアのビルドやテストを自動化して頻繁に実行することでソフトウェアの品質向上や開発効率化を目指す手法で、CDはCIに加えてリリースやデプロイまでも自動化する手法だ。
+CIはソフトウェアのビルドやテストを自動化して頻繁に実行することでソフトウェアの品質向上や開発効率化を目指す手法で、CDはCIに加えてリリースやデプロイまでも自動化する手法。
+
+DevOpsはアプリケーションの開発において必須の考え方となっている。
+このCI/CDを実現する方法としては、**外部のサービスを使う方法**と**自前で専用のサーバーを用意して専用のツールを導入する方法**がある。
+
+- 外部のサービス使用
+Travis CIやCircle CIなどが有名
+- 自前で専用のサーバを用意
+Jenkins
+
 
 
 ## test word
@@ -95,3 +104,15 @@ CIはソフトウェアのビルドやテストを自動化して頻繁に実行
 
 Node.js(Express)でServer Sideを構築する場合、外部のWeb APIを実行しデータを取得することも多くある。
 その際にUnitTestやAPIテストで実際に通信を行なってしまうと、テストとして動作が不安定になるなどの問題が発生してし歌め
+
+## CI/CD
+
+[参考URL](https://casualdevelopers.com/tech-tips/how-to-install-and-use-jenkins-on-docker-for-nodejs/)
+
+## Jenkins
+
+Job DSLとは
+Job DSLとはJenkinsの新しいジョブの設定をDSL(Domain Specific Language)で書いておき、それを読み込むだけでGUIをつかずに新しいジョブを作成する仕組み。
+昨今はinfrastructure as code(laC)と言われているようにインフラであっても人が手動で設定するのではなく、設定をソースコードにして自動的に設定をされるべき。
+
+[これをやる](https://casualdevelopers.com/tech-tips/how-to-install-and-use-jenkins-on-docker-for-nodejs/)
