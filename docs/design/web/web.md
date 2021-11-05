@@ -64,3 +64,35 @@ immutable = 不変
 ## ファイルダウンロードの仕組み
 
 [参考URL](https://javascript.keicode.com/newjs/download-files.php#1)
+
+## SVG(スケーラブル・ベクター・グラフィックス Scalable Vector Graphics)
+
+XMLをベースにした二次元ベクターデータで画像を描きます。
+ベクターデータとは画像を点の座標とそれを結ぶ線(ベクター、ベクトル)などの数値データをもとにして演算によって再現する方式
+
+## SVGを画像化する
+
+[参考URL](https://blog.asial.co.jp/1615)
+
+1. SVG画像を作成する
+2. XMLSerializerを使ってSVG画像のデータを取り出す
+3. Canvasを使ってPNG形式に変換する
+
+```js
+var svg = document.querySelector("svg");
+var svgData = new XMLSerializer().serializeToString(svg);
+var canvas = document.createElement("canvas");
+canvas.width = svg.width.baseVal.value;
+canvas.height = svg.height.baseVal.value;
+
+var ctx = canvas.getContext("2d");
+var image = new Image;
+image.onload = function(){
+    ctx.drawImage( image, 0, 0 );
+    var a = document.createElement("a");
+    a.href = canvas.toDataURL("image/png");
+    a.setAttribute("download", "image.png");
+    a.dispatchEvent(new MouseEvent("click"));
+}
+image.src = "data:image/svg+xml;charset=utf-8;base64," + btoa(unescape(encodeURIComponent(svgData)));
+```
