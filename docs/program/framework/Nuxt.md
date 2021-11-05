@@ -117,6 +117,9 @@ Vuexはこれまでprops, emitを利用した親子間のコンポーネント�
 ## 今日のVuexとは
 
 今までのVue2時にはVuex。しかしVue3ではprovide/injectを使ったステート管理が推進されている
+しかしVuexを導入する場合は、Nuxt.jsで公式で推奨されているvuex-module-decoratorsを使用する
+
+[参考URL](https://qiita.com/azukiazusa/items/a50b1ffe05d9937a4db0)
 
 ## composition APIとは
 
@@ -252,6 +255,7 @@ Next.jsはサーバーサイド、クライアントサイド両方で動くフ�
 なので、if (process.browser)でブラウザのみの判定を入れればサーバー環境での実行時には無視され、クライアント環境だけで動くのです。
 
 ## Nuxtでの完全静的サイトジェネレート
+
 [参考URL](https://ics.media/entry/210120/)
 
 Nuxt.js 2.13からasyncData()メソッド・fetch()メソッドで取得するデータが静的化された。
@@ -271,7 +275,7 @@ Nuxt Composition APIのv0.20.0未満ではuseFetch()を利用してgenerateを�
 
 
 
-## nuxt error 
+## nuxt error
 process.server, process.client による条件分岐により、必要なコードだけをそれぞれの環境（Nuxt サーバー上、ブラウザ上）で実行できるようにする
 ブラウザ上の JavaScript に慣れていると window オブジェクトはあることが当たり前だけれど、Nuxt サーバー上にはもちろん存在しない
 Nuxt サーバーによる SSR（Server Side Rendering）では、created 時までのライフサイクルのコードが実行されるため、created までに書いている API 通信結果は DOM に格納されるが、CSR（Client Side Rendering）時にも実行されるため、通信が無駄になることがある。その場合 beforeMount に書くのが良い
