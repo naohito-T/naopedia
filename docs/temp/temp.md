@@ -27,3 +27,7 @@ typeorm リポジトリ(これを作るのにはdockerのmysqlを作成できる
 
 [読んでいる参考書など参考になる](https://r-ngtm.hatenablog.com/entry/2020/12/31/233335)
 
+
+## googleエンジニア
+
+[これがGOAL](https://twitter.com/d0iasm)
