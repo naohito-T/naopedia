@@ -118,3 +118,10 @@ AWS CDKを使ってS3とCloudFrontを作成する
 マルチAZとは、米アマゾンドットコム（Amazon.com）社のAmazon Web Services（AWS）におけるシステム構成の一つで、複数のアベイラビリティゾーン（AZ）にまたがってシステムの配置を行う方式。
 
 AZ = アベイラビリティーゾーン
+
+## Serverless Framework
+
+LambdaはAWSコンソールから作成できるが、コードのGit管理、ローカルでのデバッグ、デプロイの自動化などを行おうとする場合、何らかしらのツールを使用することが一般的。
+
+その際に使用する代表的なツールとして、 Serverless Frameworkがある。
+Serverless Frameworkは、AWS以外のプラットフォームでも使用できるマルチクラウド対応のサーバレスアプリケーション開発支援ツールです。

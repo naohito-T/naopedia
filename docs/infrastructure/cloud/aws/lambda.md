@@ -18,3 +18,8 @@ S3のイベント発生(ファイルアップロード)などをトリガーに�
 ## 料金
 
 、毎月100万リクエストまで無料なんです。くり返します。毎月100万リクエストまで無料です！
+
+HTTPサーバとしてLambdaを実行させる場合はAPI Gatewayと連携する必要があります。 API Gatewayと連携するLambdaはAWSが用意しているサンプルを参考に、hello/main.goを以下のように実装します。
+
+
+[Lambdaでgoを実装](https://techblog.kiramex.com/entry/2020/01/23/173128)
