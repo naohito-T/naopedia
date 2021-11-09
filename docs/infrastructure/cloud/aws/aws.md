@@ -112,3 +112,9 @@ Amazon CloudFront を利用しないで直接 Amazon S3 などのオリジンサ
 AWS CDKを使ってS3とCloudFrontを作成する
 作成した後、SPAをdeployする
 まあ料金は高くなるだろう。
+
+## マルチAZ配置
+
+マルチAZとは、米アマゾンドットコム（Amazon.com）社のAmazon Web Services（AWS）におけるシステム構成の一つで、複数のアベイラビリティゾーン（AZ）にまたがってシステムの配置を行う方式。
+
+AZ = アベイラビリティーゾーン
