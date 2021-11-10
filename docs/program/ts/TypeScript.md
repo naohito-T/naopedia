@@ -39,6 +39,7 @@ export class typeSampleModel {
     // なんでもOKの any型
     data: any;
     unknow: unknown;
+    
 
    // オブジェクト型リテラル
     array: any[];                             // 配列
