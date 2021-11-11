@@ -36,10 +36,9 @@ export class typeSampleModel {
     num: number;                              // 数値
     boolean: boolean;                         // 真偽値
 
-    // なんでもOKの any型
+    // なんでもOKの any型(unknownはmethodが使えない)
     data: any;
     unknow: unknown;
-    
 
    // オブジェクト型リテラル
     array: any[];                             // 配列
