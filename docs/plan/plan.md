@@ -76,3 +76,17 @@ UI(画面)がある程度固まって、データベース定義の初期段階�
 どんなサイトにしたいのかをまずは上席、またはビジネス側に伺う。
 
 jQueryは重い。パフォーマンスは下がる
+
+## 今までのレンダリング
+
+[参考URL(これを時間あるときまとめる)](https://www.publickey1.jp/blog/17/server_side_renderingserver_side_rendering_ng-japan_2017.html)
+
+
+
+最近はブラウザの中にも、これまでサーバ側で動いていたHTMLを構築するための仕組みが入ってきた。
+
+
+## なぜServer Side Rendiringが必要なのか
+
+まずSEOが最初にあがる。
+
