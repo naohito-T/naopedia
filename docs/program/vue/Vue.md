@@ -322,4 +322,10 @@ Vue3のtipsを記載しておく。
 
 [参考URL](https://qiita.com/EdyEric/items/9c0f322b5cd86c3c661b)
 
+## 変更検知
+
+>template内でのみ変更検知ができれば良い場合は、propsの値をそのまま表示しているだけで、変更を検知してくれます。
+>今回はpropsの特定のプロパティの変更を検知して、特定のメソッドを呼び出す方法の解説です。
+
+[参考URL](https://zenn.dev/tentel/articles/e52815dd33f328)
 
