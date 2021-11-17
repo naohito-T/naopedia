@@ -41,3 +41,7 @@ CSS vs Jsをfpsの観点から、またパフォーマンスの観点からを�
 ## GitHub参考
 
 [あさみどい](https://github.com/d0iasm)
+
+## セキュリティ
+
+[毎週セキュリティのインシデントが発表されるサイト](https://www.jpcert.or.jp/)

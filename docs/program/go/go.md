@@ -28,3 +28,17 @@ Go言語は、近年注目の集まるクラウドやコンテナ技術、マイ
 GOPATHモードのときにダウンロードされるソースコード群
 開発するソースコードを置くディレクトリ(ここで開発することが必須ではない)
 
+
+**goで開発するときは基本的にはGOPATHを意識して開発することになるのでとりあえずGOPATHを設定しておく。**
+
+## Go のパッケージ管理方法
+
+[参考URL](https://nishinatoshiharu.com/go-modules-history/)
+
+Go言語のパッケージ管理方法にはGOPATHモードとmodule-awareモードの2種類が存在する。
+
+- GOPATH モードについて
+- module-awareモード
+
+
+
