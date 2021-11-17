@@ -23,3 +23,13 @@ VScodeの設定 (settings.json) に Prettier の細かい設定があるのも�
 >当然といえば当然ですが、チームで開発する場合はパッケージのバージョンや設定を揃えないといけないですし、そもそも VSCode 以外のエディタを使っている人もいるかもしれないので、設定の統一が難しくなってしまいます。
 
 >Prettier 拡張機能にバンドルされている Prettier や VSCode の設定は、あくまでもフォールバック的な位置付けで、優先される設定もローカルの Prettier 設定ファイル (.prettierrc) が上位になっています。
+
+
+## npm 固定
+
+nodeとnpmは違うからね
+
+[npm固定](https://qiita.com/hirorock/items/3a98a43f38aec39aab4f)
+
+プロジェクト内に.npmrcを作成する
+作成することで`npm install`の際にengineを確認してバージョンバージョンの問題があった場合はインストールさせない
