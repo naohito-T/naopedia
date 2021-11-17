@@ -320,6 +320,8 @@ Vue3のtipsを記載しておく。
 
 ## watchについて
 
+watchの引数はリアクティブなオブジェクトである必要がある。
+
 [参考URL](https://qiita.com/EdyEric/items/9c0f322b5cd86c3c661b)
 
 ## 変更検知

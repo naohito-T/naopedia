@@ -242,3 +242,7 @@ $ git br
 # なぜか以下で解消ができた。
 $ git rebase --abort
 ```
+
+## Github startを増やす
+
+[参考URL](https://zenn.dev/hand_dot/articles/542449fe4fc771)
