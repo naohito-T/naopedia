@@ -23,3 +23,9 @@ HTTPサーバとしてLambdaを実行させる場合はAPI Gatewayと連携す�
 
 
 [Lambdaでgoを実装](https://techblog.kiramex.com/entry/2020/01/23/173128)
+
+
+## 実行順序
+
+Lambdaではexports.handler以下が実行されます。
+
