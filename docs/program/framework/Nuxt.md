@@ -210,6 +210,7 @@ Vueインスタンスが生成される前に実行されるメソッド
 thisは使えない。contextは使える
 
 ## Nuxtの利点であるSSRもできるという点とは相性が悪い
+
 SSR実行時のnodeにはlocalstorageがありませんから、window.localstorageはさわれません。
 そのため、今回のプラグインも{... , ssr; false}として、SSR時は起動しないようにする必要があります。
 
@@ -276,6 +277,7 @@ Nuxt Composition APIのv0.20.0未満ではuseFetch()を利用してgenerateを�
 
 
 ## nuxt error
+
 process.server, process.client による条件分岐により、必要なコードだけをそれぞれの環境（Nuxt サーバー上、ブラウザ上）で実行できるようにする
 ブラウザ上の JavaScript に慣れていると window オブジェクトはあることが当たり前だけれど、Nuxt サーバー上にはもちろん存在しない
 Nuxt サーバーによる SSR（Server Side Rendering）では、created 時までのライフサイクルのコードが実行されるため、created までに書いている API 通信結果は DOM に格納されるが、CSR（Client Side Rendering）時にも実行されるため、通信が無駄になることがある。その場合 beforeMount に書くのが良い

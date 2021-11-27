@@ -11,12 +11,12 @@ Google の Cloud API を参考にしている
 [リファレンス URL](https://cloud.google.com/apis/design/naming_convention?hl=ja)
 
 
-## 記事案
+## blog記事案
 
+CSS vs JS
 [参考URL](https://developers.google.com/web/fundamentals/design-and-ux/animations/animations-and-performance?hl=ja#css-vs-javascript-performance)
 
 CSS vs Jsをfpsの観点から、またパフォーマンスの観点からをブログにする
-
 
 ## システム開発でよく使われる英単語
 
@@ -24,10 +24,12 @@ CSS vs Jsをfpsの観点から、またパフォーマンスの観点からを�
 
 
 ## これをportfolioに使用する
+
 [参考URL](https://coliss.com/articles/build-websites/operation/javascript/native-like-animations-for-page-transitions.html)
 
 
 ## Node.jsのdebugをできるようにする(typescript版で)
+
 [参考URL](https://casualdevelopers.com/tech-school/how-to-debug-nodejs/)
 
 そのためには開発環境の準備(以下の2つで)
