@@ -162,12 +162,13 @@ Vue.jsのrouter-linkを拡張しているもの
 Vueインスタンスが生成される前に実行されるメソッド
 thisは使えない。contextは使える
 
-## Nuxtの利点であるSSRもできるという点とは相性が悪い
 
 SSR実行時のnodeにはlocalstorageがありませんから、window.localstorageはさわれません。
 そのため、今回のプラグインも{... , ssr; false}として、SSR時は起動しないようにする必要があります。
 
 ## nuxt.config
+
+tsにする方法を記載する。
 
 - buildModules
 
@@ -176,7 +177,6 @@ SSR実行時のnodeにはlocalstorageがありませんから、window.localstor
 使用方法の違いは以下のとおりです:
 nuxt.config.js に modules を追加するかわりに buildModules を使います
 package.json に dependencies を追加するかわりに devDependencies を使います（yarn add --dev または npm install --save-dev）
-
 
 ## tips
 

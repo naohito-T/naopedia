@@ -1,8 +1,15 @@
 # Structure
 
-## SPA SSR SSG の仕組みをまとめる。
+[参考URL](https://qiita.com/amakawa_/items/e7d0720e1ab8632769bf)
 
-SPA(Single Page Application)
+## ブラウザがWebページを表示する仕組みについて HTML/CSS/JavaScriptのみ
+
+シンプルにHTML/CSS/JavaScriptのみで動くアプリケーションの場合
+
+- デメリット
+**変更がない部分(ヘッダーなど)のHTMLも毎回サーバから送信されるため処理に時間がかかる。**
+
+## SPA(Single Page Application)
 
 - メリット
   実装しやすい
