@@ -1,56 +1,27 @@
-# SPAについてまとめる
+# SPA
 
 近年台頭してきたSPA技術。
 
 上司にメリットを伝えられないためまとめる
-[参考URL(前編)](https://www.publickey1.jp/blog/17/server_side_renderingserver_side_rendering_ng-japan_2017.html)
-[参考URL(後半)](https://www.publickey1.jp/blog/17/server_side_renderingserver_side_rendering_ng-japan_2017_1.html)
 
-## まずServer Side Renderingとは
+## SPA 仕組み
 
-![基本のサーバーサイド](image/基本サーバーサイドレンダリング.png)
+ブラウザから初回リクエストが来ると、サーバはJSのビルドファイルと最小限のHTMLファイルを返却する(HTMLはほぼ空)
+そこでブラウザ上のJSがAPIを叩くことで、APIからのレスポンスをもとに初期表示との差分を更新する形でDOMを構築しHTML要素がレンダリングされる。
+**※返ってくるHTMLファイルは単一のためSingle Pageと呼ばれている。**
+**後述するSSRと対比してClient Side Renderingと呼ばれることも**
 
-ブラウザの動きを見ると、図の左にあるブラウザからサーバーへリクエストが出て、それがサーバーへ到達すると、その裏にDBがあり、DBから値をとってきたらコンポーネントやテンプレートエンジンなどを使ってHTMLにしてブラウザへ返すという動き。
+![SPA仕組み](image/spa仕組み.png)
 
-それに伴い、**AngularやReactなどもブラウザの中にこれまでサーバー側で動いていたHTMLを構築するための仕組みが入ってくる**
+ホスティングサーバはS3の場合もある。
 
-## なぜServer Side Rendiringが必要なのか: SEO
+## SPAメリット
 
-Googleの中の人が、AngularやReactなどのJavaScriptフレームワークを使ったサイトでは、**プリレンダリングつまりServer Side Renderingを推奨する、**という記事が海外SEOに出ている。
+ネイティブアプリの代わりとして提供可能(PWA対応など)
+ページ遷移が高速(ページごとにリクエストを送らないため)
 
-![海外SEO情報ブログ](image/google.png)
+## SPAデメリット
 
-GoogleのクローラはJSを実行できるのだが、正確に実行できる保証はない。
-だからSEOをちゃんとしたいのであれば、Server Side Renderingをしましょうとなっている。
-
-## なぜServer Side Rendiringが必要なのか: パフォーマンスの改善
-
-**Navigation Start** : ナビゲーションの開始で、それはサーバへリクエストが送られた段階。
-**First Paing** : サーバーからデータが返ってきて、なにかレンダリングが始まる。これがFirst Paint
-**First Contentful Paint** : ローディングインジケータみたいなのがぐるぐる回るとか、たいして意味はないけれどコンテンツが表示される。
-**First Meaningful Paint** : 意味のある情報が表示されるようになる。
-**Visually Ready** : 画像とかアセットと呼ばれるものが表示され、コンテンツが見やすくなっています。
-**Time to interactive** : JavaScriptがロードされ実行されて、操作が可能になる。
-**Fully Loaded** : いいね」ボタンなどのソーシャルボタンなんかはだいたい最後に読み込まれることが多いと思いますが、そこまでコンテンツが全部揃ったもの
-
-![ファーストビューの種類](image/firstview.png)
-
-
-
-じゃあServer Side RenderingにおけるFirst Viewのパフォーマンス改善とはどこを指すかというと、「Navigation Start」から「First Meaningful Paint」まで。
-SSRにおけるFirst Viewの改善とはこのFirst Meaningful Paintまでを指す
-
-![ファーストビューの改善](image/firstviewの改善.png)
-
-Server Side Renderingでは、初期データを埋め込んだHTMLをブラウザに送信するので、First Contentful PaintからFirst Meaningful Paintのあいだをすごく短縮できる。
-
-![サーバーサイドレンダリングの改善](image/サーバサイドレンダリングの改善.png)
-
-Server Side Renderingをやるというとそんなに簡単でもなかったりではない。
-
-Server Side Renderingにも課題はいくつかあって、サーバでHTMLを生成するのはCPU負荷が高い処理になる。
-
-だいたいブラウザでのレンダリングエンジンはAngularやReactなどJavaScriptで動いていることが多いので、それをサーバで動かそうとするとNode.jsを使うことになります。
-
-
+初期ローディングは時間がかかる。
+SEOで不利な可能性もある(初期状態はほぼ何もないHTMLファイルが返却されるため、Googleクローラが中身のコンテンツを認識できない可能性があるため)
 

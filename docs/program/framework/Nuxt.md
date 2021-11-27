@@ -266,7 +266,8 @@ nuxt.config.jsのtargetを "static"と設定しgenerateすると、asyncData()�
 **Composition APIにはasyncDataがない**
 完全静的化を強力にサポートするasyncData()とfetch()ですが、残念ながらNuxt Composition APIにはそれらが用意されていません。その代わり、useAsync(), useFetch(), useStatic()の3つの非同期処理メソッドが用意されています。
 
-この3つの非同期処理うち、完全静的化で使用するのはuseFetch()およびuseStatic()になります。useAsync()はgenerate後もページ遷移時には非同期通信を行って内容を取得します。
+この3つの非同期処理うち、**完全静的化で使用するのは**useFetch()およびuseStatic()になる。
+useAsync()はgenerate後もページ遷移時には非同期通信を行って内容を取得します。
 
 Nuxt Composition APIのv0.20.0未満ではuseFetch()を利用してgenerateを行っても静的化されない不具合がありました。最新のバージョンでは修正されているので、完全静的化を行う場合にはuseFetch()を使うのが便利でしょう。
 
