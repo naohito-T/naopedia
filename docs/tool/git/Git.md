@@ -246,3 +246,7 @@ $ git rebase --abort
 ## Github startを増やす
 
 [参考URL](https://zenn.dev/hand_dot/articles/542449fe4fc771)
+
+## Semantic Pull Request
+
+[参考URL](https://qiita.com/kaitaku/items/97699d579e93873a7380)
