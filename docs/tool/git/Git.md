@@ -250,3 +250,11 @@ $ git rebase --abort
 ## Semantic Pull Request
 
 [参考URL](https://qiita.com/kaitaku/items/97699d579e93873a7380)
+
+## Git 構造
+
+gitのローカルリポジトリは2種類ある。
+masterとorigin/master
+fetchはローカルのorigin/masterを更新する。
+masterリポジトリはcommitした際に更新される。
+そのためgit fetch後はgit merge origin/[fetchしたリポジトリname]となる。
