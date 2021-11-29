@@ -9,6 +9,7 @@
 [千葉出身のチームラボwebエンジニア](https://github.com/lollipop-onl)
 [abemaのエンジニア](https://github.com/jun06t) マネージメント側に回っていそうだが、ブログとかかなり詳しく書いているため参考になりそう。
 [ミドルウェアエンジニア](https://i-beam.org/2019/06/05/tsyringe/) ミドルウェア界のhope
+[どいあさみ](https://github.com/d0iasm) Googleエンジニア
 
 ## gitを充実させる
 

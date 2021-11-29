@@ -28,79 +28,28 @@ layoutディレクトリのdefault.vueファイルを追加することで全て
 レイアウトに含める必要があるのは、ページコンポーネントをレンダリングする```<Nuxt />```だけ
 
 - middlewareディレクトリ
-アプリケーションミドルウェアが含まれている。ミドルウェアを使用すると、ページまたはページのグループ(レイアウト)をレンダリングする前に実行できるカスタム関数を定義できる。
-共有ミドルウェアはmiddleware/ディレクトリに配置する必要がある。ファイル名はミドルウェアの名前になる```(middleware/auth.js)```はauthミドルウェアになる。かんｓ
+アプリケーションミドルウェアが含まれている。ミドルウェアを使用すると、**ページまたはページのグループ(レイアウト)をレンダリングする前に実行できるカスタム関数を定義できる。**
+共有ミドルウェアはmiddleware/ディレクトリに配置する必要がある。ファイル名はミドルウェアの名前になる```(middleware/auth.js)```はauthミドルウェアになる。
 
-## SPA・SSR・SSG とは
+## Nuxtでの SPA・SSR・SSG とは
 
 [URL](https://qiita.com/nishinoshake/items/f42e2f03663b00b5886d)
 
 Nuxt.jsではSPA・SSR・SSGの中から好きなものを選んで開発ができる
-初期設定ではSSRで動作するようになっている。
+**初期設定ではSSRで動作するようになっている**。
 
-SPA(Single Page Application)
+SPA・SSR・SSGでの仕組みは別pageを参照する。
 
-- メリット
-  実装しやすい
-  サーバの準備が楽
-  SPAは、最もシンプルに実装でき、ホスティング先の選択肢が多いのが魅力です。
-  ドキュメントで、NetlifyやGitHub Pagesへのデプロイ方法が紹介されていますが、単にファイルをアップすればいいだけなので、ロリポップのようなレンタルサーバーでも動きます
+---
 
-- デメリット
-  初期表示が遅い
-  SEOに不安がある
-  OGをページごとに設定ができない OGってなんだっけ
-
-SSR(Single Side Rendering)
-
-- メリット
-  SPAの欠点を解消できる
-
-- デメリット
-  実装がSPAより面倒
-  サーバーの準備が面倒
-
-  初回のリクエストをサーバーサイドでレンダリングして返すため、SPAの欠点を補うことができます。一方で、レンダリングするためのサーバーと、SSRを考慮した実装が必要になります。
-  ドキュメントで、HerokuやNowへのデプロイ方法が紹介されていますが、Node.jsが動作するサーバーを用意できればなんでも大丈夫です。インフラに弱い人にはこのハードルが高い気がしますが、インフラに強い人や、好きなPaaSがある人にとっては、SSRが魅力的な選択肢になると思います。
-
-SSG(Static Site Generation)
-
-- メリット
-  SPAの欠点を解消できる
-  **サーバーの準備が楽**
-  SSRよりも速い
-  更新が少ないWebサイト
-  ドキュメントやブログ
-
-- デメリット
-  実装が少し面倒
-  用途が限られる
-
-各ルートのHTMLをあらかじめ生成するため、SSRよりもレスポンスが速いのが魅力です。また、静的ファイルを生成するおかげで、SPAと同じようにホスティング先の選択肢が広がります。
-
-生成時にはサーバーサイドでレンダリングすることになるので、SSRを考慮した実装が必要になるのと、SSGには向き不向きがあるので、Webサイトの要件を考えて慎重に選択する必要があります。
-
-## Vueの歴史
-
-Vue2.xではコンポーネントをSFC(シングルファイルコンポーネント)ファイルに記述する
-SFCにコンポーネントのView/状態/ロジックをまとめて閉じ込めて記述することできて便利だが
-これ以上は分割ができないという欠点があった。
-これを解決するのがComposition API
-
-Composition APIによってコンポーネントのコードを整理する際に開発者により高い柔軟性を提供する。
-コンポーネント間でロジックや状態を抽出して再利用することが簡単になる。
-
-SFCに記述するのはViewの見た目に関することだけにして、ロジックや状態を外部に切り出せるようになる。
-
-つまり、SFCにはViewの見た目に関することだけを記述していく。
-## 当該プロジェクトでのVuexの導入方法
+## Vuexの導入方法
 
 [参考URL](https://qiita.com/Takabun/items/e0b0c139ccf53c7bb561)
 
 ## Vuexについて
 
-VuexはVue.jsでグローバルでのデータの状態管理を行うことができるライブラリ
-Vuexはこれまでprops, emitを利用した親子間のコンポーネントでの状態管理の複雑さを解消するために用いられてきた。
+Vuexは**Vue.jsでグローバルでのデータの状態管理を行うことができるライブラリ**
+Vuexは**これまでprops, emitを利用した親子間のコンポーネントでの状態管理の複雑さを解消するために用いられてきた。**
 このライブラリによりどのコンポーネントからでも状態にアクセスしたり、アクションを実行することができる
 
 ## Vuexを使用するにあたっての弊害
@@ -121,6 +70,8 @@ Vuexはこれまでprops, emitを利用した親子間のコンポーネント�
 
 [参考URL](https://qiita.com/azukiazusa/items/a50b1ffe05d9937a4db0)
 
+---
+
 ## composition APIとは
 
 [参考URL](https://qiita.com/karamage/items/7721c8cac149d60d4c4a)
@@ -134,6 +85,8 @@ Compositionは構成(すること),組み立て(ること)という意味
 ロジックの抽出と再利用が必要な理由は
 複雑に肥大化したコンポーネントを小分けにして関心事で分別し、クリーンな状態に整理するため
 近年Vueを使用して大規模なプロジェクトを構築することが増えた。肥大化してメンテしにくいコンポーネントを目の辺りにしエンジニアが苦しむことがあった。
+
+## composition apiが生まれた経緯
 
 - 今までのVue
 Vue2.xではコンポーネントをSFC(シングルファイルコンポーネント)ファイルに記述する
@@ -158,7 +111,8 @@ Composition APIを使用するデメリットは設計やアーキテクチャ�
 [参考URL](https://qiita.com/karamage/items/4bc90f637487d3fcecf0)
 
 - Providerパターンとは
-VueにおけるProviderパターンとはprovide/inject APIを使用してComposition APIで切り出した状態やロジックをコンポーネント間で共有することを指す。
+VueにおけるProviderパターンとはprovide/inject APIを使用して
+**Composition APIで切り出した状態やロジックをコンポーネント間で共有することを指す。**
 
 ## provide/injectの使い方
 
@@ -194,7 +148,7 @@ Prop渡しと違ってバケツリレーをする必要がない。
 Vue.jsのrouter-linkを拡張しているもの
 そのためrouter-linkと同じ使い方ができる。
 
-## nuxt-linkと<a>タグの違い
+## nuxt-linkとaタグの違い
 
 ```html<a>```は外部ページ,```vue<NuxtLink></NuxtLink>は内部ページ```
 
@@ -202,18 +156,19 @@ Vue.jsのrouter-linkを拡張しているもの
 
 >このコンポーネントは、ページコンポーネント間のナビゲーションを提供し、賢い prefetching（先読み）でパフォーマンスを高めるのに使用します。
 
-
-## nuxt専用メソッドについて
+## nuxt 専用メソッドについて
 
 - asyncData
 Vueインスタンスが生成される前に実行されるメソッド
 thisは使えない。contextは使える
 
-## Nuxtの利点であるSSRもできるという点とは相性が悪い
+
 SSR実行時のnodeにはlocalstorageがありませんから、window.localstorageはさわれません。
 そのため、今回のプラグインも{... , ssr; false}として、SSR時は起動しないようにする必要があります。
 
 ## nuxt.config
+
+tsにする方法を記載する。
 
 - buildModules
 
@@ -222,7 +177,6 @@ SSR実行時のnodeにはlocalstorageがありませんから、window.localstor
 使用方法の違いは以下のとおりです:
 nuxt.config.js に modules を追加するかわりに buildModules を使います
 package.json に dependencies を追加するかわりに devDependencies を使います（yarn add --dev または npm install --save-dev）
-
 
 ## tips
 
@@ -265,7 +219,8 @@ nuxt.config.jsのtargetを "static"と設定しgenerateすると、asyncData()�
 **Composition APIにはasyncDataがない**
 完全静的化を強力にサポートするasyncData()とfetch()ですが、残念ながらNuxt Composition APIにはそれらが用意されていません。その代わり、useAsync(), useFetch(), useStatic()の3つの非同期処理メソッドが用意されています。
 
-この3つの非同期処理うち、完全静的化で使用するのはuseFetch()およびuseStatic()になります。useAsync()はgenerate後もページ遷移時には非同期通信を行って内容を取得します。
+この3つの非同期処理うち、**完全静的化で使用するのは**useFetch()およびuseStatic()になる。
+useAsync()はgenerate後もページ遷移時には非同期通信を行って内容を取得します。
 
 Nuxt Composition APIのv0.20.0未満ではuseFetch()を利用してgenerateを行っても静的化されない不具合がありました。最新のバージョンでは修正されているので、完全静的化を行う場合にはuseFetch()を使うのが便利でしょう。
 
@@ -276,6 +231,7 @@ Nuxt Composition APIのv0.20.0未満ではuseFetch()を利用してgenerateを�
 
 
 ## nuxt error
+
 process.server, process.client による条件分岐により、必要なコードだけをそれぞれの環境（Nuxt サーバー上、ブラウザ上）で実行できるようにする
 ブラウザ上の JavaScript に慣れていると window オブジェクトはあることが当たり前だけれど、Nuxt サーバー上にはもちろん存在しない
 Nuxt サーバーによる SSR（Server Side Rendering）では、created 時までのライフサイクルのコードが実行されるため、created までに書いている API 通信結果は DOM に格納されるが、CSR（Client Side Rendering）時にも実行されるため、通信が無駄になることがある。その場合 beforeMount に書くのが良い
