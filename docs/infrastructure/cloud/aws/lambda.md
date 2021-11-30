@@ -41,3 +41,14 @@ Lambdaではexports.handler以下が実行されます。
 [参考URL](https://docs.aws.amazon.com/ja_jp/serverless-application-model/latest/developerguide/what-is-sam.html)
 
 
+## Lambdaでディレクトリを使用したい場合
+
+[参考URL](https://cloud5.jp/lambda_tmp_directory/)
+
+/tmpディレクトリ
+
+Lambdaの公式ドキュメントに、/tmpディレクトリに対して以下の記述がある。
+
+>各実行環境は、/tmp ディレクトリ内のディスク領域を 512 MB に提供します。ディレクトリのコンテンツは、実行環境が停止された際に維持され、複数の呼び出しに使用できる一時的なキャッシュを提供します。キャッシュに保存したデータが存在するかどうかを確認するための追加コードを追加できます。デプロイのサイズ制限の詳細については、「Lambda のクォータ」を参照してください。
+
+512MBの一時領域(/tmp)が提供されている。そのためそちらを使用しファイルの出力と書き込みを行える。
