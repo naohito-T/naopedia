@@ -96,3 +96,7 @@ image.onload = function(){
 }
 image.src = "data:image/svg+xml;charset=utf-8;base64," + btoa(unescape(encodeURIComponent(svgData)));
 ```
+
+## SVGファイルとは
+
+SVGという画像フォーマットはその中身はXMLファイル。XMLでこう書いたらこういう画像になるというルールが決められており、それが標準になったため今SVGとして広く知られている。
