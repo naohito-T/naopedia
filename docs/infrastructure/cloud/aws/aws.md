@@ -150,3 +150,8 @@ AWSにアクセスするにはまずアクセスキーが必要。
 バージニア北のが色々制限はゆるい。
 
 
+## CloudFrontとAPI Gatewayの違い
+
+API GatewayがListenするのはHTTPSのみで、**HTTPリクエストを受け付ける事はできない**
+一方、CloudFrontはHTTPとHTTPSの両方のリクエストを受けられるのでCloudFrontを経由することでAPI GatewayへのリクエストをHTTPで受けることができる。
+

@@ -6,6 +6,9 @@
 - スクロールイベントの間引き
 [参考](https://www.webprofessional.jp/throttle-scroll-events/)
 
+- フロントのパフォーマンス改善のいろは
+[参考URL](https://zenn.dev/kaa_a_zu/articles/7d706e3ba6a87e)
+
 
 
 ## イベントの調整

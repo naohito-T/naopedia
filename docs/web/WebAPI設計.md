@@ -7,7 +7,7 @@
 1. 名詞 「が・は」をつけて主語になれる
 2. 動詞 言い切りが   「ウ段」
 3. 形容詞 言い切りが 「い」
-4. 形容動詞 言い切りが 「だ」」
+4. 形容動詞 言い切りが「だ」」
 
 ユーザが使用する側(クライアント)
 Webアプリケーションと呼ばれる
@@ -73,3 +73,7 @@ SOAPのURLは操作と対応づけられるためURLの命名が動詞的にな�
 ## WebAPI 設計のベストプラクティス
 
 [以下の記事はこれを参考にして作成する](https://qiita.com/mserizawa/items/b833e407d89abd21ee72)
+
+## api設計のレイヤー層について詳しく記載がある。
+
+[参考URL](https://dev.classmethod.jp/articles/what-does-amazon-api-gateway-do/)
