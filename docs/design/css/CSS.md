@@ -116,3 +116,8 @@ preconnect ヒントは指定した URL の DNS 名前解決と TCP のハンド
 ```html
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 ```
+
+
+## gapで対応する。
+
+[参考URL](https://ics.media/entry/210628/)
