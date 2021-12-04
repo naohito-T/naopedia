@@ -258,3 +258,5 @@ masterとorigin/master
 fetchはローカルのorigin/masterを更新する。
 masterリポジトリはcommitした際に更新される。
 そのためgit fetch後はgit merge origin/[fetchしたリポジトリname]となる。
+
+たしかに
