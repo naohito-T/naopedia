@@ -116,3 +116,9 @@ Job DSLとはJenkinsの新しいジョブの設定をDSL(Domain Specific Languag
 昨今はinfrastructure as code(laC)と言われているようにインフラであっても人が手動で設定するのではなく、設定をソースコードにして自動的に設定をされるべき。
 
 [これをやる](https://casualdevelopers.com/tech-tips/how-to-install-and-use-jenkins-on-docker-for-nodejs/)
+
+## シナリオテスト
+
+シナリオテストとは**ユーザーが一連の流れに沿ってシステムを問題なく利用できることを確認するためのテスト**
+ユーザーがシステムを問題なく利用できることとあるように、ユーザー視点での確認がメインとなる。
+そのため、総合テスト、受け入れテストなどでこのテスト技法が用いられます

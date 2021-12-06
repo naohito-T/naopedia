@@ -28,6 +28,18 @@ XMLによってつくられたデータは、さまざまなことに利用さ�
 
 次に、この文書全体は<users> 〜 </users>で囲われています。このように、文書全体を囲う要素をルート要素などといいます。HTMLでもルート要素はありましたね。全体が<html> 〜 </html>で囲まれているから、html要素がルート要素だといえますね。
 
+## XMLルール
+
+必ず終了タグが必要
+また特別仕様のタグは名前空間を定義しないといけない。
+
+```xml
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:snf="http://www.smartnews.be/snf">
+
+<snf:analytics>
+</snf:analytics>
+```
+
 ## XML特別仕様
 
 [参考URL](https://uhyohyo.net/javascript/6_2.html)
