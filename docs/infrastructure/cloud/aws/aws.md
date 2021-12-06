@@ -155,3 +155,26 @@ AWSにアクセスするにはまずアクセスキーが必要。
 API GatewayがListenするのはHTTPSのみで、**HTTPリクエストを受け付ける事はできない**
 一方、CloudFrontはHTTPとHTTPSの両方のリクエストを受けられるのでCloudFrontを経由することでAPI GatewayへのリクエストをHTTPで受けることができる。
 
+## ~/.aws/配下のファイルについて
+
+config: AWS CLIを使うときのプロファイル別情報
+credentials: AWS SDK, AWS CLIを使う時の認証情報
+
+- ここでのプロファイルとは
+アクセスキー、シークレットキーのペアに名前をつけて管理する機能。
+
+```config
+[default]
+aws_access_key_id=AKIAIOSFODNN7EXAMPLE
+aws_secret_access_key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+
+[test-user]
+aws_access_key_id=AKIAI44QH8DHBEXAMPLE
+aws_secret_access_key=je7MtGbClwBF/2Zp9Utk/h3yCo8nvbEXAMPLEKEY
+```
+
+環境ごとに分けること。
+
+`$ aws s3 ls --profile cfc-dev`
+上記コマンドはaws クレデンシャルが反映されているか確認できる。
+
