@@ -247,3 +247,7 @@ SSR 時と CSR 時の情報の差がある場合、エラーを吐く。その�
 **特に注意したいのが created で（ beforeCreate も）、SSR時とCSR時の両方で呼ばれます。普通に書くと二重に処理してしまうことになるので、意識して書かないと意図しない挙動になる可能性があります。**
 
 [参考URL](https://nazo.hatenablog.com/entry/nuxt-ssr-lifecycle)
+
+## Nuxt でのモックサーバの作り方
+
+[参考URL](https://qiita.com/m_mitsuhide/items/b8e073cba0dae5af2359)
