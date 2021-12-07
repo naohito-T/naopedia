@@ -1,7 +1,8 @@
 # デザイン
 
 [世界中のサイトを評価しているやばいサイト](https://www.awwwards.com/)
-
+[コリスサイト(web design)](https://coliss.com/articles/build-websites/operation/css/css-tricks-dark-futuristic-web3-look.html)
+[モーション周期表を視覚化しておりそれを見れるもの](http://foxcodex.html.xdomain.jp/index.html)
 [新しいサイトを作成する時に参考とすべきUX(google)](https://developers.google.com/web/fundamentals/design-and-ux/ux-basics?hl=ja)
 
 ## インタラクションデザインとは
@@ -94,5 +95,40 @@ JPGはCPU上でデコードされてフルサイズでGPUに乗る(pngも)
 
 **固定ヘッダーは常にお問い合わせができる状態であることがポイント**
 >お問い合わせを増やしたいというホームページの場合は、ヘッダーにお問い合わせページへのリンクを設置し、固定ヘッダーにすることをオススメします。
+
+## ダークモードを際立たせるテクニック
+
+[参考URL](https://coliss.com/articles/build-websites/operation/css/css-tricks-dark-futuristic-web3-look.html)
+
+- テキスト
+グローエフェクトにする。
+テキストを白にし、テキストの外枠をわずかに光らせる。
+
+```html
+<h1 class="text-glow">text glow effect</h1>
+```
+
+```css
+.text-glow {
+  text-shadow: 0 0 80px rgb(192 219 255 / 75%), 0 0 32px rgb(65 120 255 / 24%);
+}
+```
+
+- 背景(background: color)
+[参考URL](https://coliss.com/articles/build-websites/operation/css/the-new-responsive-2021.html)
+ダークテーマ用にデザインする場合、背景色と文字色を反転させるだけでいいというわけではありません。
+意外と知られていない注意点があります。例えば、ダークテーマの背景では視覚的な振動を抑えるために暗い背景の色の彩度を下げる必要があります。
+
+- ダークモードの背景を使う必要がある理由
+
+1. ダークテーマは、スクリーンの寿命を大幅に改善する
+ダークテーマに関するAndroidの調査では、スクリーンの明るさと全体的なユーザーインターフェイスに応じて最大60%の消費電力の削減が見られました。この60%というのは、アプリのUIにダークテーマとライトテーマを使用して、YouTubeの再生画面と100％の画面の明るさで一時停止した動画を比較した結果です。
+可能な限り、ダークテーマのエクスペリエンスを提供する必要があります。
+
+
+
+## レスポンシブ
+
+[レスポンシブ](https://coliss.com/articles/build-websites/operation/css/the-new-responsive-2021.html)
 
 
