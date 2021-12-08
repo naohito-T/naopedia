@@ -3,11 +3,18 @@
 
 ## CommonJSとESModule
 
-CommonJS
+## CommonJS
 まだECSでモジュールシステムが導入されていないときにnodeで実装したモジュールシステム
+CommonJS ではブラウザ上だけでなく、サーバーサイドやクライアントでのCUI、GUI で JavaScript を使う際の仕様を作成している。
+単に仕様を作っているだけなので、ECMAScript に組み込まれるとかがない限り、それが JavaScript の標準になるというわけではないようです。
 
-ESM
+ちなみに CommonJS で作成された仕様は複数のソフトウェアによって実装が行われることで勧告段階に移るみたいです。
+
+CommonJS の仕様を実装しているソフトウェアの中にはあの有名な node.js があります。
+
+## ESM(ECMAScript)
 実質のJSの仕様を策定するもの。
+**ECMAScript はブラウザ上での JavaScript の仕様と標準を作っている。**
 
 [CommonJS と ES6の import/export で迷うなら](https://qiita.com/rooooomania/items/4c999d93ae745e9d8657)
 

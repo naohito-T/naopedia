@@ -4,6 +4,13 @@
 
 [AWSのLambdaを色々暴く](https://qiita.com/Keisuke69/items/9951a93fd711360a61c5)
 
+[Lambdaが台頭した理由](https://service.plan-b.co.jp/blog/tech/30863/)
+
+>業務で使うサーバーが、いつの間にかAWSになってから、毎日AWSを業務で利用しています。 AWSには、沢山のサービスがありますが、私のお気に入りはAWS Lambdaです。
+>理由は、とりあえずシンプルに作れるから！
+>プロジェクトが始まると、切り出せそうな処理はどんどんLambda Functionとして作ってはデプロイを繰り返します。
+>結果、案件も終わりが見えた頃には、「Lambda Functionいっぱい問題」発生。 このパターンが日常的にあり、修正や管理のコストが大きくなることが多いです。
+
 ## Lambdaを最低限ローカルで実行しテストする(簡単)
 
 [参考URL](https://qiita.com/zaburo/items/d78a0a4462007e57d5d8)
@@ -74,3 +81,4 @@ Lambdaの公式ドキュメントに、/tmpディレクトリに対して以下�
 
 Lambda上でAWS CLIを実行したいと思いました。 AWS CLIにはs3 syncコマンドのような、SDKには未実装の便利な機能があるためです。
 Lambdaの実行環境にはAWS CLIはプリインストールされていないので、ひと工夫が必要になります。
+
