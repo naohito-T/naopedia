@@ -100,3 +100,5 @@ x.y : マイナーリリース
 x.y.z : マイクロリリース
 
 
+.htaccessと.htpassword
+8文字のpassで認識している。
