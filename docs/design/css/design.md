@@ -1,6 +1,8 @@
 # css Design 集
 
-設計集
+色々な要件のdesign Tips
+
+---
 
 animationプロパティの理解が必須になるため以下リンクを貼る
 [参考URL](https://web-designer.cman.jp/css_ref/abc_list/animation/)
@@ -66,6 +68,7 @@ CSSのみで要素をふわっと表示させるにはアニメーションを�
 ただこれだとトリガーがない。
 画面を表示した瞬間に来る。
 そのためトリガーとしてjsを使用する。
+
 ## グロー
 
 [参考URL](http://foxcodex.html.xdomain.jp/Glow.html)
@@ -75,3 +78,6 @@ CSSのみで要素をふわっと表示させるにはアニメーションを�
 これにより、光源が光っていることによる光のにじみを再現する。
 PhotoshopやIllustratorにおける光彩（外側）とほぼ同じものであると考えると分かりやすい。
 
+## コンテンツが少ない量でもフッタを一番下に配置するCSSテクニック
+
+[参考URL](https://coliss.com/articles/build-websites/operation/css/clever-sticky-footer-technique.html)
