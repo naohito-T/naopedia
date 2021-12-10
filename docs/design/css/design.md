@@ -81,3 +81,7 @@ PhotoshopやIllustratorにおける光彩（外側）とほぼ同じものであ
 ## コンテンツが少ない量でもフッタを一番下に配置するCSSテクニック
 
 [参考URL](https://coliss.com/articles/build-websites/operation/css/clever-sticky-footer-technique.html)
+
+## 背景画像をブラウザいっぱいに表現するシンプルな最適テクニック
+
+[参考URL](https://coliss.com/articles/build-websites/operation/css/css-responsive-full-background-image-by-sixrevisions.html)
