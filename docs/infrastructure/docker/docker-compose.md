@@ -9,7 +9,7 @@
 ```yaml
 version: "3.7" # docker-composeのversionを指定。特にこだわりがなければ最新のものを記述する。
 
-services: # 起動するコンテナの定義を行う。p
+services: # 起動するコンテナの定義を行う。
   nginx:
     build:
       context: .
@@ -41,10 +41,25 @@ services: # 起動するコンテナの定義を行う。p
       - 13306:3306
 ```
 
+すべて3系として記載する。
+
+- version
+  versionによって書き方が変わる。3系が最新。2系だと書き方が変わる。
+
+- services
+  docker-composeでは、アプリケーションを動かすための各要素をサービスと読んでいる
+  ComposeFile内の各サービス名は、わかりやすければなんでもいい。
+  **ただ、ここで定義した名前は、dockerのログに表示されるので、わかりやすい名前にした方がいい**
+
 - build
   docker build の実行情報を記述する。ここで定義された情報を元に Docker をビルドし、そのビルドしたイメージを使用してコンテナを起動するコーナー。image もしくは build どちらかを記述する必要がある。
 
   > コマンドの場合、 `sh docker build -f docker/nginx/Dockerfile` . と同一です。
+
+  [以下参考URL](https://qiita.com/sam8helloworld/items/e7fffa9afc82aea68a7a)
+  - context
+
+  - dockerfile
 
 - volumes
   ボリュームのマウントを行う。
@@ -62,11 +77,16 @@ services: # 起動するコンテナの定義を行う。p
 
   > コマンドの場合、 -e PHP_HOST=app オプションと同一で
 
+  DBについての環境変数設定(パスワード)だが、cfcのnuxtでもやっていたからそのコンテナの環境変数を設定できそう。
+
 - env_file
   ファイルに定義された環境変数を読み取り、コンテナへ定義する。
 
 - command
   Dockerfile で定義されている CMD の上書きを行う。
+
+- depends_on
+  service同士の依存関係
 
 ## docker-compose のコマンド
 
