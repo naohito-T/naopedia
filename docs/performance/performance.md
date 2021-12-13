@@ -9,7 +9,8 @@
 - フロントのパフォーマンス改善のいろは
 [参考URL](https://zenn.dev/kaa_a_zu/articles/7d706e3ba6a87e)
 
-
+- SPAとserver Side Renderのパフォーマンス
+[参考URL](https://www.publickey1.jp/blog/17/server_side_renderingserver_side_rendering_ng-japan_2017_1.html)
 
 ## イベントの調整
 

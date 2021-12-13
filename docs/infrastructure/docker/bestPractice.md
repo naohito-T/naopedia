@@ -3,7 +3,7 @@
 [参考 URL](https://y-ohgi.com/introduction-docker/3_production/dockerfile/)
 
 1. 軽量なイメージを作る
-   Docker iamge はレイヤーが少なくサイズが軽いものが良いものとされている
+   Docker iamge は**レイヤーが少なくサイズが軽いものが良いものとされている**
    レイヤーを増やすことはオーバーヘッドに繋がり、サイズは image の pull の速度に繋がる。
 
 > どのようなアプローチで Docker Image を作成すると良いかを見ていく
@@ -47,3 +47,4 @@ RUN npm install
 
 CMD ["npm", "start"]
 ```
+

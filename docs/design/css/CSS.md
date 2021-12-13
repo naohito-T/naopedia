@@ -1,5 +1,8 @@
 # css
 
+flexbox: IE対応?
+grid layout: IE対応していないのであれば積極的に使う
+
 ## ユビキタス
 
 HEX形式: プログラムイメージ（コードとデータを表すの 16 進数列）をテキストで表現したもの
@@ -117,7 +120,80 @@ preconnect ヒントは指定した URL の DNS 名前解決と TCP のハンド
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 ```
 
+## CSS GridとCSS Flexboxの認識
+
+[参考URL](https://coliss.com/articles/build-websites/operation/css/css-grid-vs-flexbox-which-should-you-choose.html)
+
+>CSS GridとFlexboxは、CSSで現在主流となるレイアウトのテクノロジーです。
+>CSS GridとFlexboxは表面的には似ているように感じるかもしれません。しかし、実際には異なるタスクに使用され、それぞれ異なるレイアウトの問題を解決します。
+
+**CSS Gridはコンテナベースで、Flexboxはコンテンツベースです。Flexboxのレイアウトではセル（Flexアイテム）のサイズはFlexアイテム自身で定義され、CSS Gridではセル（Gridアイテム）のサイズはGridコンテナで定義されます。**
+
+- リロード時間の違い
+**Flexboxのレイアウトではコンテンツがロードされた後に計算されるのに対して、Gridのレイアウトではコンテンツに関係なく計算されることを示している。**
+**Flexboxでページ全体のレイアウトを構築することは表示が遅くなるため、避けた方がよい。**
+
+- 1次元と2次元の適している部分。
+1次元とは一方向（横行か縦列のいずれか）に配置することで、2次元とは二方向（横行と縦列）に配置することです。これはtableレイアウトの時代からあるコンセプトで、CSS GridもFlexboxもこのコンセプトに基づいています。
+1次元に要素を配置するのはFlexboxが適しています。そして2次元に要素を配置するのはCSS Gridが適しています。
+
 
 ## gapで対応する。
 
 [参考URL](https://ics.media/entry/210628/)
+
+**margin で余白を作っていたのが、gap になる点が地味に便利。**
+
+
+## Grid Layoutを極める
+
+[勉強用URL](https://qiita.com/kura07/items/e633b35e33e43240d363)
+[基本レイアウト構成URL](https://www.webcreatorbox.com/tech/css-grid-basic-layout)
+[CSSグリッドレイアウトでサイズが違う復数のボックスをタイル上に配置する](https://www.webcreatorbox.com/tech/css-grid-layout)
+
+CSS Grid Layout（グリッドレイアウト）は、**2次元レイアウト** を、HTML/CSS を使って簡単・自由に操作できる機能
+
+**gridの大きさを決めるfr(fraction(分数の意味)」)**
+
+## Grid Layoutの用語
+
+- コンテナ
+`display: grid;`または`display: inline-grid;`を指定することでその要素は**Grid Layoutのコンテナになる。**
+
+- アイテム
+コンテナの子要素。**コンテナの直接の子要素は基本的にすべてアイテムとなる。**
+
+- ライン
+グリッドを分ける垂直および水平の線のことです。グリッドの上下左右それぞれの両端にも存在します。
+ラインには、上あるいは左から1から順に正の番号が振られています。同時に、下あるいは右からは-1から順に負の番号が振られています。（0という番号のラインはないのです）
+
+- トラック
+グリッドの行および列のことです。言い換えればトラックとは、隣接する2本のラインの間を表しています。
+
+- セル
+隣接する垂直および水平方向のラインが作る、アイテムを配置できる最小の単位です。
+
+- エリア
+一つあるいは複数のセルが結合してできるセルの集まりです。
+エリアには名前を付けることができ、アイテムを配置できます。
+
+---
+
+チートシート
+![](image/contena.png)
+![](image/grid.png)
+
+---
+
+- 作成手順
+
+1. HTMLと必須のCSS(display: grid;)
+
+2. CSSで各トラックの大きさを指定する
+縦横それぞれのトラックの大きさを指定する。以下プロパティを使う。
+grid-template-rows: 行のトラックの高さを半角スペースで区切って指定
+grid-template-columns: 列のトラックの幅を半角スペースで区切って指定
+
+3. CSSでアイテムの配置を指定する
+最後にそれぞれのアイテムをグリッドのどのエリアに配置するのかを指定する。
+**アイテムを配置するのには2通りの方法がある。**

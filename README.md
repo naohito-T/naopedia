@@ -47,3 +47,7 @@ CSS vs Jsをfpsの観点から、またパフォーマンスの観点からを�
 ## セキュリティ
 
 [毎週セキュリティのインシデントが発表されるサイト](https://www.jpcert.or.jp/)
+
+## いつかfont管理や画像管理のために入れようかな
+
+[参考URL](https://coliss.com/articles/build-websites/operation/work/eagle-ver2.html)
