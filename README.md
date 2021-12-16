@@ -51,3 +51,27 @@ CSS vs Jsをfpsの観点から、またパフォーマンスの観点からを�
 ## いつかfont管理や画像管理のために入れようかな
 
 [参考URL](https://coliss.com/articles/build-websites/operation/work/eagle-ver2.html)
+
+
+---
+
+ここからは仕事用のmac
+## Docker Ci/CD
+
+[参考URL](https://circleci.com/ja/blog/docker-and-cicd-tutorial-a-deep-dive-into-containers/)
+
+## サーバーレスアーキテクチャ
+
+[参考URL](https://service.plan-b.co.jp/blog/tech/30863/)
+
+## Laravel環境のDocker
+
+[参考URL](https://qiita.com/ucan-lab/items/5fc1281cd8076c8ac9f4#%E4%BD%BF%E3%81%84%E6%96%B9)
+
+## nuxtでlambda
+
+[](https://qiita.com/kobayashi-m42/items/fbacb46f7603e5a014d7)
+
+## Redis
+
+[](https://qiita.com/gold-kou/items/966d9a0332f4e110c4f8)

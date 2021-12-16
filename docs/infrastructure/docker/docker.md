@@ -159,7 +159,9 @@ RUN npm install -g gulp@3.9.1 \
 3. 使用したい image に slim version があるか DockerHub で探す。
    ※デフォルトの NOde がかなり色々入っている。そのため slim イメージを探す。
 
+---
 
+## dokcer Script関連
 ## Docker コンテナの動作に必要な設定を起動時に渡す
 
 Dockerコンテナを起動するタイミングで、コンテナの動作に必要な設定を受け渡す方法は2つある。
@@ -173,6 +175,16 @@ Dockerコンテナを起動するタイミングで、コンテナの動作に�
 
 dockerで初回起動時のみ特定の処理を行うヘルパースクリプト
 
+>docker run とか docker-compose up -d とかの 初回起動時のみ 処理したいことがある時はどうすればいいんだろう？
+>docker restart とか docker-compose restart とか systemctl restart docker の時には動いてほしくないんだ。
+>やってみた結果 mariadb + zabbix で初回起動時のみ、構成用の .sql を流し込む。という動作ができるようになりました。
+
+## wait.sh
+
+dbの起動とかを待ってくれる。
+>内容はただのシェルスクリプトでポートが LISTEN しているかをチェックしてくれます
+
+---
 ## ローカル上にLocalStackをDockerで実行
 
 開発用にAWSのサービスをローカル環境に構築できる、LocalStackというプロジェクトがある。素晴らしい。
