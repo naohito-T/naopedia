@@ -4,6 +4,11 @@
 
 > docker-compose はローカルで Docker のオーケストレーションを行うためのツールです。Docker のビルドから Network や Volume の管理をコードベースで定義して行ってくれます。
 
+## docker-coomposeで住む場合
+
+なるべく Dockerfile を書きたくない
+特殊なことをやってないないなら docker-compose から設定できるもので基本十分。
+
 ## docker-compose.yaml を読む
 
 ```yaml
@@ -54,15 +59,17 @@ services: # 起動するコンテナの定義を行う。
 - build
   docker build の実行情報を記述する。ここで定義された情報を元に Docker をビルドし、そのビルドしたイメージを使用してコンテナを起動するコーナー。image もしくは build どちらかを記述する必要がある。
 
-  > コマンドの場合、 `sh docker build -f docker/nginx/Dockerfile` . と同一です。
+  > コマンドの場合、 `$ docker build -f docker/nginx/Dockerfile` . と同一です。
 
   [以下参考URL](https://qiita.com/sam8helloworld/items/e7fffa9afc82aea68a7a)
   - context
+  docker build コマンドを実行したときの、カレントなワーキングディレクトリのことを ビルドコンテキスト（build context）と呼ぶ。
 
   - dockerfile
 
 - volumes
   ボリュームのマウントを行う。
+  volumesではパスを指定するとDockerエンジンはボリュームを作成します
 
   > コマンドの場合、`sh -v $(pwd)/public:/var/www/html/public:ro <IMAGE ID>`オプションと同一です。
 
