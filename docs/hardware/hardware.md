@@ -7,10 +7,6 @@
 
 [参考URL](https://www.intel.co.jp/content/www/jp/ja/products/docs/processors/cpu-vs-gpu.html)
 
-
-
-
-
 ## GPU
 
 GPUは、特定の3Dレンダリング・タスクの加速化のための専門的ASICとして開発されたことに期限がらうr .
@@ -53,5 +49,12 @@ GPUは、特定の3Dレンダリング・タスクの加速化のための専門
 
 ファイルへの通り道に割り振られる番号で、ファイルを識別するための目印
 **なおUNIX系(Linuxとか)ではファイル以外もファイルとして扱われる。**
+
+---
+
+## NIC(ネットワークインターフェースカード): Network Interface Card
+
+パソコンの部品
+LANケーブルを挿す穴がくっついている。
 
 

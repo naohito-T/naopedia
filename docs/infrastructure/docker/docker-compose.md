@@ -1,8 +1,19 @@
 # docker-compose
 
+Docker操作の補佐をするPython製のツール。
+Docker Engineの一部ではない。
+
 ## docker-compose とは
 
 > docker-compose はローカルで Docker のオーケストレーションを行うためのツールです。Docker のビルドから Network や Volume の管理をコードベースで定義して行ってくれます。
+
+docker-compose.ymlをdocker-compose.ymlというツールで読み込ませて実行すると**ボリュームやネットワークが作られ**、まとめてコンテナが起動する。
+
+## docker-compose で解決できるもの
+
+Docker Composeを使えば、今までdocker runの引数で1つひとつ指定したり、起動後にdocker execでコマンドを実行していたりしたものをdocker-compose.ymlという1つの設定ファイルに集約できる。
+
+
 
 ## docker-coomposeで住む場合
 
@@ -69,7 +80,7 @@ services: # 起動するコンテナの定義を行う。
 
 - volumes
   ボリュームのマウントを行う。
-  volumesではパスを指定するとDockerエンジンはボリュームを作成します
+  volumesではパスを指定するとDockerエンジンはボリュームを作成する。
 
   > コマンドの場合、`sh -v $(pwd)/public:/var/www/html/public:ro <IMAGE ID>`オプションと同一です。
 
@@ -93,7 +104,8 @@ services: # 起動するコンテナの定義を行う。
   Dockerfile で定義されている CMD の上書きを行う。
 
 - depends_on
-  service同士の依存関係
+  service同士の依存関係を記す
+  docker-compose up を実行したら、依存関係のほうが先に実行していなければいけない。
 
 ## docker-compose のコマンド
 

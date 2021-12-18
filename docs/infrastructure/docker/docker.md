@@ -479,6 +479,15 @@ tmpfsはメモリーのため揮発性。コンテナを破棄することでな
 
 ![backup](image/backup.png)
 
+## Docker のネットワーク
+
+Dockerのネットワークは大別するとnone, host, bridghという3つの構成を取ることができる。
+
+[参考URL](https://tech-lab.sios.jp/archives/20179)
+
+![bridgh](image/docker-network.png)
+
+
 ## 本番運用
 
 本番の安全運用は、Dockerホストをマネージドサービスにしてある程度、任せてしまうのが無難。
