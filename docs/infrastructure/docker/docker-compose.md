@@ -7,6 +7,7 @@ Docker Engineの一部ではない。
 
 **docker-composeで作成したコンテナはdockerコマンドではなく、docker-composeを使った管理に一元化すべき**
 
+`$docker-compose down`はコンテナやネットワークを停止するだけではなく、それらを破棄するが、ただし規定ではボリュームは削除しない。
 
 
 ## docker-compose とは
@@ -112,6 +113,10 @@ services: # 起動するコンテナの定義を行う。
 - depends_on
   service同士の依存関係を記す
   docker-compose up を実行したら、依存関係のほうが先に実行していなければいけない。
+
+- external
+  Docker compose管理外のネットワークやボリュームであることを示す。
+  これらのオプションが指定されたネットワークやボリュームはdocker-compose downによって削除されることはない。
 
 ## docker-compose のコマンド
 
