@@ -3,6 +3,12 @@
 Docker操作の補佐をするPython製のツール。
 Docker Engineの一部ではない。
 
+## docker-compose コマンド
+
+**docker-composeで作成したコンテナはdockerコマンドではなく、docker-composeを使った管理に一元化すべき**
+
+
+
 ## docker-compose とは
 
 > docker-compose はローカルで Docker のオーケストレーションを行うためのツールです。Docker のビルドから Network や Volume の管理をコードベースで定義して行ってくれます。
