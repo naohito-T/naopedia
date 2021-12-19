@@ -59,3 +59,14 @@ DELETE /console/admin/cast/1
 * [9. product要件定義](requirement/README.md)
 * [10. version管理ツール](version/README.md)
 * [11. shell](shell/README.md)
+
+
+
+
+## 部屋の希望
+
+[第一候補](https://suumo.jp/chintai/jnc_000070614924/?bc=100263259173)
+
+
+
+
