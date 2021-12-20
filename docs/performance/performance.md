@@ -38,3 +38,11 @@ debounceでは対応しきれない部分の代替手段として、スクロー
 
 通信で取ってくるよりbase64で表示させた方がよい
 [参考URL](https://blog.kai-lab.com/load_base64_image/)
+
+## 画像遅延表示
+
+画像の遅延方法には2つの種類がある。
+以下参照
+
+[参考URL](https://paralux.co.jp/blog/358)
+
