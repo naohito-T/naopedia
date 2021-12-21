@@ -1,5 +1,37 @@
 # Nuxt
 
+- Nuxt処理順序
+
+処理順序（上から順に処理されます）
+ここからSSR
+
+nuxtServerInit（SSR）
+plugins（SSR）
+middleware（SSR）
+asyncData（SSR）
+fetch（SSR）
+beforeCreate（SSR）
+created（SSR）
+ここからCSR
+plugins（CSR）
+beforeCreate（CSR）
+created（CSR）
+beforeMount（CSR）
+mounted（CSR）
+
+内部ナビゲーション時
+**上記以外の画面遷移時には、CSRの処理のみが走ります。**
+pluginsは動かないため、どのページに遷移しても共通の処理を行いたい場合はmiddlewareなどを検討しましょう。
+
+処理順序（上から順に処理されます）
+middleware（CSR）
+asyncData（CSR）
+fetch（CSR）
+beforeCreate（CSR）
+created（CSR）
+beforeMount（CSR）
+mounted（CSR）
+
 ## Nuxt注意点
 
 まずはじめに、Nuxt.jsはSSRとCSRの境界が曖昧で、明確に分けて設計・実装することが慣れるまでは意外と難しかったりします。例えばcreated()はSSRでもCSRでもどちらでも動きますので、createdで初期化処理をする際、初回アクセス時は2回同じ処理をしていることはご存知ない方もいらっしゃるかもしれません。
@@ -271,8 +303,7 @@ NuxtではNodeの環境変数processを拡張する形で、process.server, proc
 
 ## Nuxtライフサイクルフック
 
-
-
+![lifeCycle](image/lifecycle.png)
 
 mounted()
 CSR(クライアントサイドレンダリング)の略。
@@ -290,3 +321,51 @@ created() {
   }
 }
 ```
+---
+
+## ここから超重要
+
+[参考URL](https://www.japon-line.co.jp/tech/nuxt-js%E3%81%AEssr-csr%E5%87%A6%E7%90%86%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/)
+
+- 初回アクセス
+初回アクセスやリロード時にはSSR処理とCSR処理がどちらも動作する。
+pluginsとcreated(beforeCreate)が2回走る点に注意。
+
+認証系はmiddlewareやpluginsに記述することが多いかもしれませんが、middlewareの場合は内部ナビゲーション遷移時はCSR側でしか呼ばれないため、どちらの処理も書いておく必要があります。
+
+- middleware
+内部ナビゲーション遷移時はCSR側でしか呼ばれないため、どちらの処理も書く必要がある。
+
+- plugins
+内部ナビゲーション遷移時は呼ばれない
+
+## 処理順序（上から順に処理されます）
+ここからSSR
+
+nuxtServerInit（SSR）
+plugins（SSR）
+middleware（SSR）
+asyncData（SSR）
+fetch（SSR）
+beforeCreate（SSR）
+created（SSR）
+ここからCSR
+plugins（CSR）
+beforeCreate（CSR）
+created（CSR）
+beforeMount（CSR）
+mounted（CSR）
+
+## 内部ナビゲーション時
+**上記以外の画面遷移時には、CSRの処理のみが走ります。**
+pluginsは動かないため、どのページに遷移しても共通の処理を行いたい場合はmiddlewareなどを検討しましょう。
+
+処理順序（上から順に処理されます）
+middleware（CSR）
+asyncData（CSR）
+fetch（CSR）
+beforeCreate（CSR）
+created（CSR）
+beforeMount（CSR）
+mounted（CSR）
+
