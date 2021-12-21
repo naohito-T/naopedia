@@ -271,6 +271,9 @@ NuxtではNodeの環境変数processを拡張する形で、process.server, proc
 
 ## Nuxtライフサイクルフック
 
+
+
+
 mounted()
 CSR(クライアントサイドレンダリング)の略。
 
