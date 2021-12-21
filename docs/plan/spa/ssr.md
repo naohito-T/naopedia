@@ -11,6 +11,10 @@
 
 それに伴い、**AngularやReactなどもブラウザの中にこれまでサーバー側で動いていたHTMLを構築するための仕組みが入ってくる**
 
+例
+PHPではサーバ側でPHP処理を行いHTMLを構築しブラウザに渡す。
+`<p><?php echo 'ssr'; ?></p>`といった書き方をするとサーバー側で`<p>ssr</p>`に置き換えてブラウザに渡るイメージです。
+
 ## なぜServer Side Rendiringが必要なのか: SEO
 
 Googleの中の人が、AngularやReactなどのJavaScriptフレームワークを使ったサイトでは、**プリレンダリングつまりServer Side Renderingを推奨する、**という記事が海外SEOに出ている。

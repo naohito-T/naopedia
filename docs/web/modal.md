@@ -12,4 +12,10 @@
 3. 警告メッセージ
 4. 必ず読んで欲しいお知らせなど
 
+## モーダルウィンドウ基本の作り方
 
+[参考URL](https://syncer.jp/jquery-modal-window)
+
+1. `display: none`のコンテンツを作成する。
+2. 手前に表示させる`z-index`で尚且つ`position: fixed`で固定すると尚良い
+3. オーバーレイの作成(周りの薄グレー)

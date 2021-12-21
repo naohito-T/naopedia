@@ -1,5 +1,9 @@
 # Nuxt
 
+## Nuxt注意点
+
+まずはじめに、Nuxt.jsはSSRとCSRの境界が曖昧で、明確に分けて設計・実装することが慣れるまでは意外と難しかったりします。例えばcreated()はSSRでもCSRでもどちらでも動きますので、createdで初期化処理をする際、初回アクセス時は2回同じ処理をしていることはご存知ない方もいらっしゃるかもしれません。
+
 ## Nuxt.jsとは
 
 Nust.jsはvue.jsのフレームワーク
@@ -251,3 +255,35 @@ SSR 時と CSR 時の情報の差がある場合、エラーを吐く。その�
 ## Nuxt でのモックサーバの作り方
 
 [参考URL](https://qiita.com/m_mitsuhide/items/b8e073cba0dae5af2359)
+
+## Nuxt でのprocess.client, prosess.serverについて
+
+NuxtではNodeの環境変数processを拡張する形で、process.server, process.clientが設定されている
+
+[参考定義URL](https://qiita.com/geerpm/items/64caf4ebaf5122b71549)
+
+- process.client
+**クライアントサイドでその処理が実行されるか**というのを制御できる。
+
+[nuxt pluginでのaxiosエラー](https://qiita.com/yamotuki/items/ebd5fed5d75ff80c66ee)
+
+---
+
+## Nuxtライフサイクルフック
+
+mounted()
+CSR(クライアントサイドレンダリング)の略。
+
+created()
+**SSRでも呼ばれる**
+createdで使う場合はSSRかCSRどちらで動作させるか明確にする。
+まずはじめに、Nuxt.jsはSSRとCSRの境界が曖昧で、明確に分けて設計・実装することが慣れるまでは意外と難しかったりします。例えばcreated()はSSRでもCSRでもどちらでも動きますので、createdで初期化処理をする際、初回アクセス時は2回同じ処理をしていることはご存知ない方もいらっしゃるかもしれません。
+
+
+```js
+created() {
+  if (process.client) { // ここでclientとする
+    // dom操作をここでする。
+  }
+}
+```
