@@ -174,3 +174,8 @@ Type assertions(キャスト) Type assertionsを使うと、実際のデータ�
 
 anyはmethodが使えるが、unknownはmethodが使えないため少しだけ保守性があがる。
 [参考URL](https://book.yyts.org/reference/statements/any-vs-unknown)
+
+
+## !(エクスクラメーション/感嘆符)
+
+プログラマがコンパイラに対して、この変数はundefinedやnullになることはありません、と教える記述。
