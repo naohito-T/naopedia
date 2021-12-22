@@ -11,3 +11,7 @@ Webアプリケーションという観点から一般的にはWAFといえばWe
 ※一般的なWebアプリケーションに対する攻撃手段としてSQLインジェクションやXSS(クロスサイトスクリプティング)などの脅威から保護する。
 
 ![WAF](images/waf.png)
+
+## ReDoS
+
+[ReDos](https://yamory.io/blog/about-redos-attack/)
