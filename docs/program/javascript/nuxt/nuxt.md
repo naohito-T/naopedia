@@ -369,3 +369,12 @@ created（CSR）
 beforeMount（CSR）
 mounted（CSR）
 
+## NuxtでBFFを作成する
+
+[参考URL](https://dev.appswingby.com/nuxt/nuxt-js%E3%81%AEserver-middleware%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E6%89%8B%E8%BB%BD%E3%81%ABbffbackends-for-frontends%E3%82%92%E5%B0%8E%E5%85%A5%E3%81%99%E3%82%8B/)
+
+Nuxt.jsには、serverMiddlewareという機能があります。この機能を利用するとNuxt.js内部でAPIサーバを構築することができる。
+
+
+
+
