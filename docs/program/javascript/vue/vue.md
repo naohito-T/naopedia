@@ -331,3 +331,10 @@ watchの引数はリアクティブなオブジェクトである必要がある
 
 [参考URL](https://zenn.dev/tentel/articles/e52815dd33f328)
 
+## Vueでの新規タグ
+
+`<portal>`
+`<telport>`の前衛
+vue2でのタグ
+
+`
