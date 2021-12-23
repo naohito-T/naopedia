@@ -340,8 +340,8 @@ pluginsとcreated(beforeCreate)が2回走る点に注意。
 内部ナビゲーション遷移時は呼ばれない
 
 ## 処理順序（上から順に処理されます）
-ここからSSR
 
+**ここからSSR**
 nuxtServerInit（SSR）
 plugins（SSR）
 middleware（SSR）
@@ -349,7 +349,7 @@ asyncData（SSR）
 fetch（SSR）
 beforeCreate（SSR）
 created（SSR）
-ここからCSR
+**ここからCSR**
 plugins（CSR）
 beforeCreate（CSR）
 created（CSR）
