@@ -1,30 +1,36 @@
 # Docker
 
-## Docker コマンド
-
-近年Dockerコマンドはできるだけ次の書式に統一しようとしている
-
-`$docker コマンド 操作 オプション`
-
 ## Docker 参考文献
 
 [世界一わかりみが深いコンテナ](https://tech-lab.sios.jp/archives/18811)
 [Docker での Node 環境構築](https://www.creationline.com/lab/29422)
 [Docker 環境構築best practice](https://www.forcia.com/blog/002273.html)
 
+## こうしたいんだぜという時の逆引きdocker
+
+[参考URL](https://beyondjapan.com/blog/2016/08/docker-command-reverse-resolutions/)
+
+## コマンド
+
+近年Dockerコマンドはできるだけ次の書式に統一しようとしている
+
+`$docker コマンド 操作 オプション`
+
 ## docker word
 
 デタッチモード: コンテナ内に入らずバックグラウンドで動作する状態のこと。
 
-## こうしたいんだぜという時の逆引きdocker
+## dockerの基本運用概念
 
-[参考URL](https://beyondjapan.com/blog/2016/08/docker-command-reverse-resolutions/)
+バインドマウントやボリュームマウントは別の場所に置き、コンテナ自体は破棄されても問題ないような運用を心がけるべき方針
+
+---
 
 ## 開発におけるdocker導入のメリット
 
 [参考URL](https://qiita.com/minodisk/items/5ffd20588b995523756f)
 
----
+
 **メリット**
 
 - 同一性
@@ -70,18 +76,30 @@ nginxの設定を変更したい。サーバにログインするためのSSHキ
 
 - ローカルでの開発とほぼ遜色ない環境でコードを書くことができるということを周知するためのコスト
 
----
-## DockerFile とは
+- 完全な分離ではない。
 
-docker build で image を作成するファイル
+---
+## DockerFile とは(カスタムイメージを作成した時)
+
+docker build で**カスタムimage**を作成するファイル
 **公開されている Docker イメージをそのまま使う場合は必要なく、カスタマイズしたい場合に作成する。**
 
-## Docker build
+必要な理由
+ベースとなるイメージとそのイメージに対して、どのような操作をするのかを記したDockerfileと呼ばれるファイルを用意しそのDockerfile通りにコンテナに対して変更やファイルコピーを加えることによってイメージを作成する。
 
-Dokerfile から docker image を作成するコマンド
+## カスタムイメージの作り方
 
-`$docker build`
+2つある。
 
+1. コンテナから作る
+ベースとなるイメージからコンテナを起動し、そのコンテナに対して、`docker exec`でシェルで入って操作したり`dokcer cp`でファイルをコピーしたりし調整を加える。
+その後`docker commit`コマンドを使いイメージ化する。
+
+2. Dockerfileから作る
+ベースとなるイメージとそのイメージに対して、どのような操作をするのかを記したDockerfileと呼ばれるファイルを用意しそのDockerfile通りにコンテナに対して変更やファイルコピーを加えることによってイメージを作成する。
+
+
+---
 ## docker-compose.yml 覚書
 
 コンテナの定義やマッピングするポートなどコンテナに関する設定を記述するファイル
@@ -489,6 +507,8 @@ Dockerのネットワークは大別するとnone, host, bridghという3つの�
 ![bridgh](image/docker-network.png)
 
 
+
+
 ## 本番運用
 
 本番の安全運用は、Dockerホストをマネージドサービスにしてある程度、任せてしまうのが無難。
@@ -516,3 +536,10 @@ AWSにはAmazon ECSというコンテナを運用するマネージドサービ�
 データベースにアクセスする際のrootユーザーのユーザー名、パスワード、既定のデータベースなどは、**環境変数として引き渡します**
 `docker run -e [環境変数]`
 ※もっと複雑な設定をしたい時は、MySQLの設定ファイルであるmy.cnfをファイルをバインドマウントで引き渡す方法もとれる。
+
+## Docker build
+
+Dokerfile から docker image を作成するコマンド
+
+`$docker build`
+
