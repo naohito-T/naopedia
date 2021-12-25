@@ -376,5 +376,28 @@ mounted（CSR）
 Nuxt.jsには、serverMiddlewareという機能があります。この機能を利用するとNuxt.js内部でAPIサーバを構築することができる。
 
 
+## Tokenの作成
+
+nuxtはSSRで動作をさせるのであれば、SSRとCSRのどちらでもlogin処理を行わないといけない。
+つまり、ts側とvue側
+こんな感じでapiに問い合わせてjwtを取得している。
+取得後はlocalStorageに保存。かつencordしている
+decordできないものはおかしいと判断。
+
+
+```ts
+/** トークンの取得 */
+export async function fetchTokens(code: string): Promise<ApiTokens> {
+  const ichikaraIdAPIServer = process.env.NUXT_ICHIKARA_CONNECT_ID_API_SERVER;
+  const url = `${ichikaraIdAPIServer}/v1/auth/token`;
+  const data = { code };
+  const tokens = await Axios.post<ApiTokens>(url, data, {
+    withCredentials: true,
+  }).then((r) => convertToCamelKeys<ApiTokens>(r.data));
+
+  saveApiTokens(tokens);
+  return tokens;
+}
+```
 
 
