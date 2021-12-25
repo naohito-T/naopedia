@@ -79,3 +79,7 @@ CSS vs Jsをfpsの観点から、またパフォーマンスの観点からを�
 ## Redis
 
 [](https://qiita.com/gold-kou/items/966d9a0332f4e110c4f8)
+
+## netfilx
+
+[](https://zenn.dev/gunners6518/books/4c4672f32dd100)

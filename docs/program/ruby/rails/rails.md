@@ -113,3 +113,31 @@ store            … アプリケーションのルートディレクトリ
   vendor         … アプリケーション外部に由来するコード
     plugin       … Railsプラグイン
 ```
+
+## Rails url
+
+[参考URL](https://qiita.com/190131start/items/49e2e9a42f49f17e45c6)
+
+resources :users
+６つのアクションが自動生成されますね。
+これはREST設計になっています。
+
+GET /users            users#index
+POST /users           users#create
+GET /users/:id        users#show
+PATCH /users/:id      users#update
+PUT /users/:id        users#update
+DELETE /users/:id     users#destroy
+
+
+## Puma
+
+[参考URL](https://nekorails.hatenablog.com/entry/2018/10/12/101011)
+
+## docker  rails
+
+[参考URL](https://qiita.com/eighty8/items/0288ab9c127ddb683315)
+
+## rails debug
+
+[参考URL](https://qiita.com/nishina555/items/e5886339d381db61b412)
