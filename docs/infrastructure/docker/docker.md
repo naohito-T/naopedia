@@ -6,6 +6,98 @@
 [Docker での Node 環境構築](https://www.creationline.com/lab/29422)
 [Docker 環境構築best practice](https://www.forcia.com/blog/002273.html)
 
+## Dockerコンテナ内のアプリケーションport
+
+Dockerコンテナ内のアプリケーションは、デフォルトでネットワークトラフィックを受け入れていますhttp://127.0.0.1:3000。このインターフェースは外部トラフィックを受け入れないため、機能しないのも不思議ではありません。これを機能させるには、nuxtアプリのHOST環境変数を0.0.0.0（すべてのIPアドレス）に設定する必要があります。これは、次のようにDockerfileで実行できます。
+
+---
+
+## Dockerの環境変数
+
+### docker-compose.yml => Dockerfileへ環境変数を渡す方法(1)
+
+渡す側（docker-compose.yml）と
+受け取る側（Dockerfile）**双方の設定が必要。**
+
+1. docker-compose.ymlから渡す
+args ... Dockerイメージをビルド（作成）する際に引数を渡すために使用します。
+
+この仕組みを使ってDockerfileへ環境変数を渡します。
+
+```yml
+services:
+  api:
+    build:
+      context: ./api
+      args:
+				# キー: 値
+        WORKDIR: $WORKDIR
+        # この書き方でもOK
+        - WORKDIR=$WORKDIR
+```
+
+2. Dockerfileで受け取る
+
+ARG命令を使います。
+指定する値はdocker-compose.ymlで渡したキーの名前です。
+受け取った後はDockerfile内で変数として扱うことができます
+
+```Dockerfile
+ARG WORKDIR
+
+ENV HOME=/${WORKDIR}
+```
+
+## docker-compose.yml => コンテナへ環境変数を渡す方法
+
+1. environment
+
+environmentを使用する場合は<キー: 値>形式で環境変数を指定する。
+**※これは扱う環境変数が少ない場合に使用する。**
+
+```yml
+services:
+  api:
+    environment:
+      POSTGRES_PASSWORD: $POSTGRES_PASSWORD
+      # この書き方でもOK
+      - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+```
+
+2. env_file
+
+env_fileを使用する場合は、環境変数を格納したファイルパスを指定します。
+相対パス、絶対パスどちらでも構いません。
+これは扱う環境変数が多い場合に使用します。
+
+```yml
+services:
+  api:
+    env_file: ./.env
+```
+
+---
+## ベースイメージを調べる方法
+
+ベースイメージのRubyバージョンを調べる手順
+ちょっと豆知識。これからのプログラミング人生のために。
+
+Rubyのバージョンは開発時点の安定版を使用するようにしましょう。
+
+以下の手順でバージョンを調べます。
+
+まず、Rails6に必要なRubyのバージョンを知る。
+
+Railsガイド => Ruby 2.5.0以降が必要
+
+次にRuby 2.5.0以上の安定版を知る。
+
+Ruby => 安定版は 2.7.1
+
+最後にRuby 2.7.1のベースイメージを調べる。
+
+Docker Hub => 2.7.1-alpineを採用
+
 ## こうしたいんだぜという時の逆引きdocker
 
 [参考URL](https://beyondjapan.com/blog/2016/08/docker-command-reverse-resolutions/)
@@ -590,7 +682,7 @@ build後、`docker history`で作成されたイメージの詳細情報が確�
 
 ---
 
-## Dockerfile
+## Dockerfile覚書
 
 [COPY]
 コピー元はDockerfileファイルが置かれている場所からの相対パス
@@ -627,6 +719,25 @@ CMDとENTRYPOINTはコンテナを起動したときのタイミング(docker st
 ## EXPOSE
 
 `docker run`する際、**-pオプションだけを指定し、ポート番号を省略した時にEXPOSEで指定したポートのマッピングが行なわれるようになる。**
+
+## ARG [変数名]
+
+Dockerfile内で使用する変数名を指定する。
+docker-compose.yml内で指定するのが入ってくる。
+
+## ENV[変数名=値]
+
+Dockerイメージで使用する環境変数を指定する。
+ENVを使って設定した環境変数はイメージからコンテナへ渡させる。
+コンテナへ渡させると、コンテナ内で起動したアプリケーションで参照することができる。
+
+**ENVを使って設定した環境変数はイメージからコンテナへ渡せる**
+
+## apk
+
+Alpine Linuxのコマンド
+Linuxコマンドのapt-getが使用される場合は、ベースイメージがAlpineではないということ。
+
 
 ---
 
