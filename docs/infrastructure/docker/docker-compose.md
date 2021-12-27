@@ -9,6 +9,11 @@ Docker Engineの一部ではない。
 
 `$docker-compose down`はコンテナやネットワークを停止するだけではなく、それらを破棄するが、ただし規定ではボリュームは削除しない。
 
+dockerとの対比コマンド
+docker-composeで管理しているとこにdockerコマンドで対応していると反故が生じる恐れがあるためdocker-composeコマンドを使用すること。
+
+![コマンド対比](image/コマンド対比.png)
+
 
 ## docker-compose とは
 
