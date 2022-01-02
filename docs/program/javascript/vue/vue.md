@@ -14,6 +14,15 @@ context → Vue インスタンス生成前のインスタンス,Store インス
 this 現 Vue インスタンスを指定するとき
 context まだ Vue インスタンスが作られる前に Vue インスタンスを使いたいとき、Store メソッドを使いたいとき
 
+## v-model を正しく理解して親子間コンポーネントのデータ伝播をマスターする
+
+[v-model を正しく理解して親子間コンポーネントのデータ伝播をマスターする](https://qiita.com/toshifumiimanishi/items/07c8e96eb6f8e50c5e27)
+
+基本
+親コンポーネントから子コンポーネントへデータを渡すにはv-bind属性(省略 :hoge )
+
+
+
 ## Vue ref
 
 ```js
