@@ -2,12 +2,16 @@
 
 Docker操作の補佐をするPython製のツール。
 Docker Engineの一部ではない。
+**docker-compose.yml内ではホスト側のシェルの環境変数が使える。**
+→つまり、host側で環境変数が設定されているためdirenvなどで読み込ませるのが良いのではないか？
+設定した環境変数にどのような値が挿入されるかは、 `docker-compose config`コマンドで確認ができる。
 
 ## docker-compose コマンド
 
 **docker-composeで作成したコンテナはdockerコマンドではなく、docker-composeを使った管理に一元化すべき**
 
-`$docker-compose down`はコンテナやネットワークを停止するだけではなく、それらを破棄するが、ただし規定ではボリュームは削除しない。
+`$docker-compose down`はコンテナやネットワークを停止するだけではなく、それらを破棄する。
+**※規定ではボリュームは削除しない。**
 
 dockerとの対比コマンド
 docker-composeで管理しているとこにdockerコマンドで対応していると反故が生じる恐れがあるためdocker-composeコマンドを使用すること。
@@ -24,8 +28,6 @@ docker-compose.ymlをdocker-compose.ymlというツールで読み込ませて�
 ## docker-compose で解決できるもの
 
 Docker Composeを使えば、今までdocker runの引数で1つひとつ指定したり、起動後にdocker execでコマンドを実行していたりしたものをdocker-compose.ymlという1つの設定ファイルに集約できる。
-
-
 
 ## docker-coomposeで住む場合
 
