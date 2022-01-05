@@ -80,6 +80,34 @@ LANケーブルを挿す穴がくっついている。
 
 ## 0.0.0.0
 
+[参考URL](https://qiita.com/Masato338/items/f162394fbc37fc490dfb)
+
 ローカルマシン上の全てのIPv4アドレスのこと。
 仮想環境(Docker)で起動したRailsはlocalhostのipアドレス127.0.0.1でアクセスできない。
 そのため仮想外部からアクセスできるようにip 0.0.0.0に紐付けする必要がある。
+
+前提として
+マシンというのは複数のネットワークインターフェースを持っている(つまりは複数のIPアドレスを持っている)
+`ifconfig`でネットワークインターフェースを見ることができる。
+grepで狭めた場合
+```sh
+$ ifconfig | grep "inet"
+	inet 127.0.0.1 netmask 0xff000000
+	inet6 ::1 prefixlen 128
+	inet6 fe80::1%lo0 prefixlen 64 scopeid 0x1
+	inet6 fe80::cc17:43ff:fe09:e1c3%anpi0 prefixlen 64 scopeid 0x4
+	inet6 fe80::cc17:43ff:fe09:e1c4%anpi1 prefixlen 64 scopeid 0x5
+	inet6 fe80::cbf:271e:5f59:bcc8%en0 prefixlen 64 secured scopeid 0xb
+	inet 192.168.41.129 netmask 0xfffffe00 broadcast 192.168.41.255
+	inet6 fe80::489a:4ff:fe60:9744%awdl0 prefixlen 64 scopeid 0xc
+	inet6 fe80::489a:4ff:fe60:9744%llw0 prefixlen 64 scopeid 0xd
+	inet6 fe80::1576:a19c:489f:4f7%utun0 prefixlen 64 scopeid 0x10
+	inet6 fe80::8cb0:20f5:91f6:815b%utun1 prefixlen 64 scopeid 0x11
+	inet6 fe80::ce81:b1c:bd2c:69e%utun2 prefixlen 64 scopeid 0x12
+	inet6 fe80::1e0c:7f5:3e27:321d%utun3 prefixlen 64 scopeid 0x13
+	inet6 fe80::b552:fea9:c144:f6c9%utun4 prefixlen 64 scopeid 0x14
+	inet6 fe80::b47a:b5be:25ac:5b6%utun5 prefixlen 64 scopeid 0x17
+	inet6 fe80::fc09:e8a2:beb6:2447%utun6 prefixlen 64 scopeid 0x18
+```
+
+0.0.0.0のipアドレスは表示されたipアドレス全てを表している。

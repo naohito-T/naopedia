@@ -2,6 +2,7 @@
 
 ## Docker 参考文献
 
+[お前らのDockerfileは重い。](https://speakerdeck.com/stormcat24/oqian-falsedockerimezihamadazhong-i?slide=13)
 [世界一わかりみが深いコンテナ](https://tech-lab.sios.jp/archives/18811)
 [Docker での Node 環境構築](https://www.creationline.com/lab/29422)
 [Docker 環境構築best practice](https://www.forcia.com/blog/002273.html)
@@ -14,6 +15,17 @@ container中のサーバがlocalhostでlistenしていると、ホストマシ�
 この原因はホストマシンのlocalhostとcontainerのlocalhostが異なることが原因です。
 
 ホストマシンとcontainerはnamespaceで区切られていて別のマシンと捉えて構わないため、containerのloopback interfaceにはホストマシンからはアクセスできない。
+
+---
+
+## Dockerを軽くする方法
+
+1. RUNはチェーンする(&&)とにかくつなげる。RUN毎にレイヤーが作成されてしまうため
+2. 産業廃棄物(docker build)時に生じた、アプリケーション実行には不要なツールやファイルを削除する
+3. yumやapt-getのゴミ
+4. ビルドに使用したソース
+5. gitですら産業廃棄物
+6. 成果物を残すことを意識する
 
 
 ---
@@ -85,24 +97,27 @@ services:
 ---
 ## ベースイメージを調べる方法
 
-ベースイメージのRubyバージョンを調べる手順
-ちょっと豆知識。これからのプログラミング人生のために。
+**重いイメージは本当にいいことがない。**
+[参考URL](https://qiita.com/pottava/items/970d7b5cda565b995fe7)
 
-Rubyのバージョンは開発時点の安定版を使用するようにしましょう。
+>ベースイメージのRubyバージョンを調べる手順
+>ちょっと豆知識。これからのプログラミング人生のために。
+
+Rubyのバージョンは**開発時点の安定版**を使用するようにしましょう。
 
 以下の手順でバージョンを調べます。
+1. まず、Rails6に必要なRubyのバージョンを知る。
+2. Railsガイド => Ruby 2.5.0以降が必要
+3. 次にRuby 2.5.0以上の安定版を知る。
+4. Ruby => 安定版は 2.7.1
+5. 最後にRuby 2.7.1のベースイメージを調べる。
+6. Docker Hub => 2.7.1-alpineを採用
 
-まず、Rails6に必要なRubyのバージョンを知る。
+最近はオフィシャルでもAlpine版が存在している。
 
-Railsガイド => Ruby 2.5.0以降が必要
+[Alphine参考URL](https://qiita.com/pottava/items/970d7b5cda565b995fe7)
 
-次にRuby 2.5.0以上の安定版を知る。
-
-Ruby => 安定版は 2.7.1
-
-最後にRuby 2.7.1のベースイメージを調べる。
-
-Docker Hub => 2.7.1-alpineを採用
+---
 
 ## こうしたいんだぜという時の逆引きdocker
 
