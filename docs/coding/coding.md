@@ -134,3 +134,16 @@ $delete_on = true
 const hasUserLicense = !(isSubscriptionFailed.value || isWaitingKonbiniCharge.value);
 ```
 [ドミルガンの法則](https://ja.wikipedia.org/wiki/%E3%83%89%E3%83%BB%E3%83%A2%E3%83%AB%E3%82%AC%E3%83%B3%E3%81%AE%E6%B3%95%E5%89%87)
+
+## switch 文
+
+
+スタイルシート系は抜いて、
+網羅できていないものはいい。
+
+switch文では文字を返してはいけない返すのは変数
+なぜなら変数を返すだけなら変更の影響は少ないから
+
+そして上司にはこう言える
+documentを変えたダケのためテストは入りません。
+プログラムの動作は変更がないためテストは不要だろう？という話

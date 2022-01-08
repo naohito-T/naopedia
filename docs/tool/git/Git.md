@@ -258,3 +258,12 @@ masterとorigin/master
 fetchはローカルのorigin/masterを更新する。
 masterリポジトリはcommitした際に更新される。
 そのためgit fetch後はgit merge origin/[fetchしたリポジトリname]となる。
+
+## Git Hooks
+
+gitにはコミット時やプッシュ時に特定のコマンドを自動実行するGit Hooksという仕組みがある。
+`./git/hooks/`配下に各フック用のスクリプトをおくことで実行される。
+**しかし、基本的には/.git/配下はGit管理対象にいれられないため、リポジトリ単位で管理したり他の開発者と共用するのがやや難しい。**
+
+## Lefthook
+**Lefthookは各フックからLefthookを経由させることで設定したコマンドを実行するように中継するGit Hooksのマネージャーツール**
