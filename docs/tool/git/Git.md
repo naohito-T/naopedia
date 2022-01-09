@@ -266,7 +266,10 @@ gitにはコミット時やプッシュ時に特定のコマンドを自動実�
 **しかし、基本的には/.git/配下はGit管理対象にいれられないため、リポジトリ単位で管理したり他の開発者と共用するのがやや難しい。**
 
 ## Lefthook
-**Lefthookは各フックからLefthookを経由させることで設定したコマンドを実行するように中継するGit Hooksのマネージャーツール**
+
+Lefthookは各フックからLefthookを経由させることで設定したコマンドを実行するように中継するGit Hooksのマネージャーツール
+.git/hooksは結局git管理がされないため個人でhooksを利用しているもの。そのためlefthookを利用すればチーム全体で利用できる。
+[参考URL](https://zenn.dev/questbeat/scraps/35595a0aeb397a)
 
 ## git submoduleとは
 
