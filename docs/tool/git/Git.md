@@ -267,3 +267,56 @@ gitにはコミット時やプッシュ時に特定のコマンドを自動実�
 
 ## Lefthook
 **Lefthookは各フックからLefthookを経由させることで設定したコマンドを実行するように中継するGit Hooksのマネージャーツール**
+
+## git submoduleとは
+
+メリット
+ソース管理しているプロジェクトから別のプロジェクトのソースを利用したいなという時に利用する。
+例
+アプリケーションの開発の時、ログ出力など複数のアプリケーションに共通して実装する部分を切り出しして別のプロジェクトとして管理し、アプリケーションのプロジェクトではsubmoduleとして呼び出すようにしたりとか。
+
+## サブモジュール化
+
+rootディレクトリは`git init`を初期に行っている状態。サブディレクトリは作成されている状態。
+
+git initされている状態であれば
+apiディレクトリ(もともとはmasterとなっていた)
+`$ git br -m develop`
+
+「api」リポジトリがコミットされると、当然コミットIDも変化します。
+
+その場合、「root」リポジトリもコミットする必要があります。
+
+今後のコミット手順
+Railsアプリを編集した
+apiディレクトリに移動してコミットする
+rootディレクトリに戻る
+rootリポジトリもコミットする
+
+`$ git init`
+`$ git br -m develop`
+`$ git add .`
+`$ gc`
+
+ここからgithub上でサブモジュール用のプロジェクトのリポジトリを作成する。
+
+`$ git remote -vv` 設定されていない
+`$ git remote add origin [new repository ssh url]`
+`$ git push -u `
+
+ルートディレクトリに戻りサブモジュール追加をする
+`$ git submodule add git@github.com:naohito-T/Neams-ui.git neams-ui`
+
+.gitmodulesファイルが作成されている
+[submodule "neams-ui"]
+	path = neams-ui
+	url = git@github.com:naohito-T/Neams-ui.git
+
+
+サブモジュールに追加されているか確認する(ディレクトリ名のみの情報であればOK)
+`$ git ls-files`
+
+エラー時
+.gitmodules
+.git/config内と
+.git/modules/内のディレクトリ名を変更すればいける
