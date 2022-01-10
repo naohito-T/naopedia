@@ -6,6 +6,42 @@
 
 HTTP(HyperText Transfer Protocol)はWebのサーバとクライアント(ブラウザ)の間でウェブページを送受信するためのプロトコル。
 
+## URLの説明
+
+スキーム://ホスト:Port/path
+
+## Origin(オリジン)
+
+ウェブコンテンツのオリジンOriginは、ウェブコンテンツにアクセスするために使われる URL のスキーム (プロトコル)、 ホスト (ドメイン)、 ポート によって定義される。
+**スキーム、ホスト、ポートがすべて一致した場合のみ、二つのオブジェクトは同じオリジンであると言える。**
+操作によっては同じオリジンのコンテンツに限定されており、**この制約は CORS を使用して緩和することができる。**
+
+- 同一オリジンの例
+
+```sh
+# スキーム (http) およびホスト (example.com) が同じなので同一オリジン
+http://example.com/app1/index.html
+http://example.com/app2/index.html
+
+```
+
+- 異なるオリジンの例
+
+```sh
+# スキームが異なる
+http://example.com/app1
+https://example.com/app2
+
+# ホストが異なる
+http://example.com
+http://www.example.com
+http://myapp.example.com
+
+# ポートが異なる
+http://example.com
+http://example.com:8080
+```
+
 
 ## クエリパラメータ
 
@@ -60,3 +96,6 @@ Accept-Encoding ヘッダは、HTTPクライアントがサーバーにHTTPリ�
 認証が必要なリソースに対して認証情報を伝えます。例えば、BASIC認証の場合は、Basic の文字と、ユーザ名とパスワードをコロン（:）で連結したものを BASE64 形式にエンコードしたものを転送する。
 
 `Authorization: Basic dGFuYWthOmhpbWl0c3U=`
+
+## Origin(オリジン)
+
