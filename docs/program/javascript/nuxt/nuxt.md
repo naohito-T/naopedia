@@ -1,5 +1,19 @@
 # Nuxt
 
+## Nuxt2と3の違い
+
+Nuxt 2 では Options API の asyncData() や Composition API の useAsync(), useFetch(), useStatic() などを使用し、おもに SSG などにおいて画面描画に必要なデータを非同期に取得するといった使い方をしてきました。
+Nuxt 3 ではそれらが新たに useFetch() と useAsyncData() のふたつにアップデートされています。
+（くわえてデータ取得時に画面描画をブロックしない useLazyFetch() と useLazyAsyncData() も加わりました）
+
+Nuxt2
+Options API の asyncData() や Composition API の useAsync(), useFetch(), useStatic()
+
+Nuxt3
+useFetch() と useAsyncData()
+
+**今後 Page Component は、いわばページレイアウトを記述するだけのラッパー的な存在になっていくかもしれません。**
+
 ## Nuxt処理順序
 
 処理順序（上から順に処理されます）
