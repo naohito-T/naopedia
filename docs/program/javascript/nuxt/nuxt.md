@@ -1,10 +1,9 @@
 # Nuxt
 
-- Nuxt処理順序
+## Nuxt処理順序
 
 処理順序（上から順に処理されます）
-ここからSSR
-
+**ここからSSR**
 nuxtServerInit（SSR）
 plugins（SSR）
 middleware（SSR）
@@ -12,14 +11,14 @@ asyncData（SSR）
 fetch（SSR）
 beforeCreate（SSR）
 created（SSR）
-ここからCSR
+**ここからCSR**
 plugins（CSR）
 beforeCreate（CSR）
 created（CSR）
 beforeMount（CSR）
 mounted（CSR）
 
-内部ナビゲーション時
+内部ナビゲーション時(nuxt-link)
 **上記以外の画面遷移時には、CSRの処理のみが走ります。**
 pluginsは動かないため、どのページに遷移しても共通の処理を行いたい場合はmiddlewareなどを検討しましょう。
 
@@ -32,9 +31,15 @@ created（CSR）
 beforeMount（CSR）
 mounted（CSR）
 
+## 内部リンクとは(nuxt-link)
+
+nuxt-linkを使用することでページをリロードすることなくページ固有の要素のみを追加でロードするだけで画面遷移を行うことができる。
+
+[内部リンクと外部リンク共有化](https://hafilog.com/nuxt-link-and-atag)
+
 ## Nuxt注意点
 
-まずはじめに、Nuxt.jsはSSRとCSRの境界が曖昧で、明確に分けて設計・実装することが慣れるまでは意外と難しかったりします。例えばcreated()はSSRでもCSRでもどちらでも動きますので、createdで初期化処理をする際、初回アクセス時は2回同じ処理をしていることはご存知ない方もいらっしゃるかもしれません。
+まずはじめに、Nuxt.jsはSSRとCSRの境界が曖昧で、明確に分けて設計・実装することが慣れるまでは意外と難しかったりします。例えばcreated()はSSRでもCSRでもどちらでも動きますので、**createdで初期化処理をする際、初回アクセス時は2回同じ処理をしていることはご存知ない方もいらっしゃるかもしれません。**
 
 ## Nuxt.jsとは
 
@@ -45,6 +50,7 @@ Vue.jsとは違い、Nuxt.jsには静的サイトジェネレートという強�
 Nuxtの静的化のための機能はOption APIで提供されていたがCompotion APIでの使い方はあまり解説記事がなかった。
 
 [Nuxtでの静的サイトジェネレート作り方](https://ics.media/entry/210120/)
+
 ## nuxt ディレクトリ構成
 
 [リファレンス](https://ja.nuxtjs.org/docs/2.x/get-started/directory-structure)
@@ -191,6 +197,10 @@ Vue.jsのrouter-linkを拡張しているもの
 - nuxt-linkを使うメリット
 
 >このコンポーネントは、ページコンポーネント間のナビゲーションを提供し、賢い prefetching（先読み）でパフォーマンスを高めるのに使用します。
+
+- nuxt-link注意点
+
+外部サイトには移動できない。
 
 ## nuxt 専用メソッドについて
 
