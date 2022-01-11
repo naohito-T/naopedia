@@ -1,5 +1,7 @@
 # TypeScript
 
+[TypeScript日本語ハンドブック](https://js.studio-kingdom.com/typescript/)
+
 ## TypeScript コンパイラ
 
 
@@ -176,6 +178,15 @@ anyはmethodが使えるが、unknownはmethodが使えないため少しだけ�
 [参考URL](https://book.yyts.org/reference/statements/any-vs-unknown)
 
 
-## !(エクスクラメーション/感嘆符)
+## !(エクスクラメーション/感嘆符: かんたんふ)
 
 プログラマがコンパイラに対して、この変数はundefinedやnullになることはありません、と教える記述。
+
+## トリプルスラッシュ・ディレクティブ
+
+```ts
+/// <reference path="..." />
+```
+
+1つのXMLタグを含む1行コメントになる
+**コメントの内容はコンパイラへの指令として使用される。**
