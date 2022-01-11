@@ -74,7 +74,7 @@ CSS vs Jsをfpsの観点から、またパフォーマンスの観点からを�
 
 ## nuxtでlambda
 
-[](https://qiita.com/kobayashi-m42/items/fbacb46f7603e5a014d7)
+[lambda](https://qiita.com/kobayashi-m42/items/fbacb46f7603e5a014d7)
 
 ## Redis
 
@@ -83,3 +83,23 @@ CSS vs Jsをfpsの観点から、またパフォーマンスの観点からを�
 ## netfilx
 
 [](https://zenn.dev/gunners6518/books/4c4672f32dd100)
+
+## OSS活動をする。  
+
+[OSS活動](https://knqyf263.hatenablog.com/entry/2020/08/28/074749)
+
+1~2月 portfolio作成
+この間にdockerを本番環境に反映する方法を覚える。
+家引っ越し
+3~5月 ブログ作成
+6月~ 英語習い始める
+6月~ 並行してgithubを高める(OSS活動)
+
+## ロードマップ
+
+- frontend
+![front](./images/frontend.png)
+- backend
+![backend](images/backend.png)
+- devops
+![devops](images/devops.png)
