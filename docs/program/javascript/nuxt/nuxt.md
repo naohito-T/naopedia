@@ -411,7 +411,7 @@ decordできないものはおかしいと判断。
 
 ```ts
 /** トークンの取得 */
-export async function fetchTokens(code: string): Promise<ApiTokens> {
+export async const fetchTokens(code: string): Promise<ApiTokens> => {
   const ichikaraIdAPIServer = process.env.NUXT_ICHIKARA_CONNECT_ID_API_SERVER;
   const url = `${ichikaraIdAPIServer}/v1/auth/token`;
   const data = { code };
