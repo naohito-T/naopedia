@@ -847,5 +847,15 @@ doc_swagger-merger               latest        6421e7fee9e3   6 months ago     1
 停止しているコンテナの書き込み可能なレイヤは、ディスク容量を消費し続ける。
 これらを綺麗に片付けるには、 docker container prune コマンドを使用する。
 
-
 ---
+
+## Docker コア数確認
+
+```sh
+# コンテナに入る
+$ docker-compose run --rm [service name] /bin/sh
+
+# コア数確認
+$ nproc
+2
+```
