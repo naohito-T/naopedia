@@ -2,6 +2,10 @@
 
 Go言語 = golang
 
+## Goを学ぶ時につまずきやすいポイント
+
+[参考URL](https://future-architect.github.io/articles/20190713/)
+
 ## Go とは
 
 2009年11月にGoogleから発表されたプログラミング言語で、ソースコードをコンパイルして実行するコンパイル言語。

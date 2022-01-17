@@ -33,7 +33,7 @@ TS 組み込み型定義(基本を読んでから)
 ```TS
 export class typeSampleModel {
 
-  // プリミティブな型
+    // プリミティブな型
     str: string;                              // 文字列
     num: number;                              // 数値
     boolean: boolean;                         // 真偽値
@@ -42,7 +42,7 @@ export class typeSampleModel {
     data: any;
     unknow: unknown;
 
-   // オブジェクト型リテラル
+    // オブジェクト型リテラル
     array: any[];                             // 配列
     strArray: string[];                       // 配列内に文字列
     numArray: number[];                       // 配列内に数値

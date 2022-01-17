@@ -31,7 +31,7 @@ XMLによってつくられたデータは、さまざまなことに利用さ�
 ## XMLルール
 
 必ず終了タグが必要
-また特別仕様のタグは名前空間を定義しないといけない。
+**また特別仕様のタグは名前空間を定義しないといけない(どこかで調べられる)**
 
 ```xml
 <feed xmlns="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:snf="http://www.smartnews.be/snf">

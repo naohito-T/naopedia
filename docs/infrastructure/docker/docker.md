@@ -789,6 +789,73 @@ RUNコマンドでどこかからのサイトからのファイルをダウン�
 
 たくさんのパッケージをインストールし、内部でコンパイルするようなコンテナを作ると、docker buildするときとても時間がかかる。
 そのような時は、キャッシュを活用すると高速化できる。
-RUNコマンドをあえて複数に分ける。そこで別のキャッシュが作られるため、変更されていない部分はそのRUNコマンドの実行を飛ばすことができ高速化できる。
+**RUNコマンドをあえて複数に分ける。そこで別のキャッシュが作られるため、変更されていない部分はそのRUNコマンドの実行を飛ばすことができ高速化できる。**
+
+## Dockerを更に早める
+
+Docker Daemonへの転送ファイル削除
+
+---
+
+## Docker クリーンアップ
+
+[参考URL](https://docs.docker.jp/config/pruning.html#docker-prune)
+
+Dockerは使用していないオブジェクト(イメージ・コンテナ・ボリューム・ネットワーク)に対するクリーンアップには慎重なアプローチを取っている。
+※すなわち各オブジェクトをDockerに対して明示的に削除を命令しない限り、削除はしない。
+→その結果Dockerは巨大なディスク容量を使うことになった。
 
 
+## dangling image(宙ぶらりイメージ)
+
+[参考URL](https://codechord.com/2019/08/docker-images-none-dangling/)
+
+- latestタグ
+これは最新のイメージを意味し、現在使用しているイメージとなる
+
+- noneタグ
+noneタグとは、同じイメージの中で、最新ではないイメージを指す。
+
+Dockerはイメージを作り替えると、過去のイメージを保管したまま新たなイメージを作成する。
+これではどんどんイメージが蓄積され、 PCのメモリを大きく消費してしまう。
+
+**dangling状態のイメージは特別な理由がない場合には不要。**
+
+<none>とは何？
+Dockerでは同一名のイメージを複数作成することができない。
+すでに存在するイメージと同一名のDockerイメージを作成しようとした場合は、次のような挙動となる。
+
+最新のビルド結果のイメージが、指定のイメージ名称となる。(上記例の場合はABCDEFG)
+すでに存在していた同一名称のイメージは、<none>という名称未設定の状態に置き換わる
+この症状のことを、dangling（宙ぶらりん)という。
+
+削除後、<none>のimageが消えている。
+
+```sh
+$ docker images
+REPOSITORY                       TAG           IMAGE ID       CREATED          SIZE
+neams_api                        latest        f86551e138bc   11 minutes ago   600MB
+neams_front                      latest        a665671491c1   12 hours ago     589MB
+wordpress                        latest        b6306a6a7068   4 weeks ago      616MB
+mysql                            5.7           738e7101490b   6 weeks ago      448MB
+doc_swagger-merger               latest        6421e7fee9e3   6 months ago     118MB
+```
+
+## コンテナのprune
+
+コンテナを停止しても`--rm`フラグを付けて起動していなければコンテナは自動に削除されない。
+停止しているコンテナの書き込み可能なレイヤは、ディスク容量を消費し続ける。
+これらを綺麗に片付けるには、 docker container prune コマンドを使用する。
+
+---
+
+## Docker コア数確認
+
+```sh
+# コンテナに入る
+$ docker-compose run --rm [service name] /bin/sh
+
+# コア数確認
+$ nproc
+2
+```
