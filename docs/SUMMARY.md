@@ -88,6 +88,8 @@
 * [11. テスト](test/test.md)
   * [11.1 WebUI テスト](test/webUI/Cypress.md)
 
+* [12. パフォーマンス](performance/performance.md)
+
 * [11. 設計思想](plan/plan.md)
   * [11.1 フロントエンド](plan/front/front.md)
     * [SPA](plan/spa/ssr.md)
@@ -121,3 +123,5 @@
 * [15. IT単語](word/word.md)
   * [日本語 単語](word/jword.md)
   * [ビジネス 用語](word/bword.md)
+
+* [15. 数学](mathematics/mathematics.md)
