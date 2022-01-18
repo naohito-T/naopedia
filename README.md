@@ -95,6 +95,10 @@ CSS vs Jsをfpsの観点から、またパフォーマンスの観点からを�
 6月~ 英語習い始める
 6月~ 並行してgithubを高める(OSS活動)
 
+## タイムゾーンのベストプラティクス
+
+[参考URL](https://www.m3tech.blog/entry/timezone-handling)
+
 ## 各ロードマップ一覧
 
 - frontend

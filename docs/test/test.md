@@ -6,8 +6,6 @@
 テストをしたというコードが残るのが何よりも良い。エビデンスになる。
 APIテストのエンドポイントのメソッドでWeb APIをcallしているような場合は、それをmock化してWeb APIがcallされないようにすべき。
 
-
-
 ## E2Eテスト(End to End)
 
 **E2EテストとはUI(User Interface)テスト**とも呼ばれ、システム全体を通してテストを行う。
@@ -149,4 +147,6 @@ Job DSLとはJenkinsの新しいジョブの設定をDSL(Domain Specific Languag
 本来のウォーターフォールはこのモックを一度作って設計する。
 
 
+## 単体テスト
 
+OK testとNG testを書くのが、単体テストかけますレベル
