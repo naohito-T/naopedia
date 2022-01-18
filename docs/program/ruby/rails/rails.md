@@ -256,18 +256,6 @@ Zeitwerkという仕組みがRailsには組み込まれているから
 Railsアプリケーションでは**ファイル名はそれらが定義する定数と一致する必要**があり、**ディレクトリは名前空間**として機能する
 Zeitwerkは例として、app/controllers/users_controller.rb定数を定義するUsersController(クラス)のことを期待しています。
 
-## Active Record
-
-[参考URL](https://railsguides.jp/active_record_basics.html)
-
-Active Recordとは、MVCで言うところのM、つまりモデルに相当するものであり、ビジネスデータとビジネスロジックを表すシステムの階層
-Active Recordは、データベースに恒久的に保存される必要のあるビジネスオブジェクトの作成と利用を円滑に行なえるようにする。
-Active Recordは、**ORM（オブジェクト/リレーショナルマッピング）システムに記述されている「Active Recordパターン」**を実装したものであり、このパターンと同じ名前が付けられている。
-
-- 命名ルール
-モデルのクラス名が2語以上の場合、キャメルケースにする(CamelCase)
-テーブル名はスネークケース(snake_case)とする
-
 ## Rails6からのlibディレクトリ以下のファイル読み込み
 
 Rails6のデフォルトではlibディレクトリ以下のファイルは読み込まれない
