@@ -275,6 +275,12 @@ api/lib/validator/email_validator.rbの場合
 Rails6のオートロードシステム(Zeitwerk)に読み込むパスを追加する方法
 
 
+## Pundit
 
+[参考URL](https://qiita.com/yutaro50/items/52484b7ae4ca87aa99a2)
+
+Rubyのgemライブラリ
+**認可の仕組みを提供してくれる**
+ユーザによってページ表示の許可・拒否をしたり表示情報の範囲を変えたりすることができるgem
 
 
