@@ -286,7 +286,11 @@ api/lib/validator/email_validator.rbの場合
 
 Rails6のオートロードシステム(Zeitwerk)に読み込むパスを追加する方法
 
+## rails での test
 
+Railsのデフォルトではfixture(フィクスチャー)を使ってテストデータを生成する。
 
-
+- fixtureとは
+fixtureとは、Railsが用意しているテストデータを生成するための方法です。
+この方法を使う場合、テストデータはymlファイルで生成する。
 
