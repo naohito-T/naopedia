@@ -424,4 +424,28 @@ export async const fetchTokens(code: string): Promise<ApiTokens> => {
 }
 ```
 
+## Nuxtのtargetとmodeとssrについて
 
+[参考URL](https://zenn.dev/kurosame/articles/52e96b724380d2)
+
+- targetプロパティ
+
+設定可能な値はserverかstaticのどちらかで、デフォルトは`target: server`
+**これから開発するアプリのデプロイ先によってこの値を判断する**
+
+サーバーホスティング
+
+`target: server`とする
+サーバ上でNuxtを動かすとき
+EC2, ECS, レンタルサーバーなど
+
+静的サイトホスティング
+
+`target: static`とする
+ホスティングサービスへブラウザがそのまま実行できるHTMLやJSをデプロイするとき
+
+S3+CloudFront、Netlify、Vercel、Firebase Hosting など
+
+- modeプロパティ
+
+設定可能な値はspaかuniversalのどちらかで、デフォルトは`mode: 'universal'`
