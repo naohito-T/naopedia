@@ -107,3 +107,14 @@ CSS vs Jsをfpsの観点から、またパフォーマンスの観点からを�
 ![backend](images/backend.png)
 - devops
 ![devops](images/devops.png)
+
+
+## やること
+
+[Vue Test util](https://qiita.com/daiki7nohe/items/8d29e2d9059296b75fa6)
+
+OK testとNG testをやる
+
+
+
+[](https://www.publickey1.jp/blog/22/itit202210.html)
