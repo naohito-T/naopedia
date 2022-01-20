@@ -1,5 +1,42 @@
 # Nuxt
 
+## Nuxt 導入に必要なサーバ要件について
+
+[サーバ要件](https://qiita.com/kaketechjapan/items/af5524f2bed5238aefcd)
+
+## NuxtにおけるSSR・SSG・SPAの設定方法
+
+Nuxtはnuxt.config.jsのmodeプロパティとtargetプロパティによってアプリケーションのモードが管理されている。
+
+## Nuxt 各コマンドについて
+
+[各コマンド参考](https://nishinatoshiharu.com/nuxt-build-generate-befavior/)
+
+- dev
+devコマンドはtargetの設定値に影響せず同じ仕様
+
+- start
+startコマンドはサーバーを立ち上げるが、targetの設定値によって、読み込むディレクトリが異なる
+
+- build
+アプリケーションをWebpackでビルドし、JSとCSSをミニファイするコマンド
+ビルドファイルの出力先は.nuxt配下
+**buildコマンドはtarget: server専用**
+
+- generate
+静的ウェブサイトへデプロイする静的ファイルを生成するコマンド
+静的ファイルの出力先はdist配下
+**※generateコマンドはtarget: static専用**
+静的ウェブサイトのホスティングサービスではNetlifyやAmazon S3などが有名
+
+## 運用
+
+- SSR
+SSRでアプリケーションを運用する場合、nuxt buildでファイルをビルド後、nuxt startでNuxtアプリケーションをサーバー上で起動という流れ。
+
+- SSG or SPA
+nuxt generateで静的ファイルを生成後、静的ウェブサイトにアップロードするという流れになります。
+
 ## Nuxt2と3の違い
 
 Nuxt 2 では Options API の asyncData() や Composition API の useAsync(), useFetch(), useStatic() などを使用し、おもに SSG などにおいて画面描画に必要なデータを非同期に取得するといった使い方をしてきました。
@@ -424,6 +461,31 @@ export async const fetchTokens(code: string): Promise<ApiTokens> => {
 }
 ```
 
+## Nuxtのtargetとmodeとssrについて
+
+[参考URL](https://zenn.dev/kurosame/articles/52e96b724380d2)
+
+- targetプロパティ
+
+設定可能な値はserverかstaticのどちらかで、デフォルトは`target: server`
+**これから開発するアプリのデプロイ先によってこの値を判断する**
+
+サーバーホスティング
+
+`target: server`とする
+サーバ上でNuxtを動かすとき
+EC2, ECS, レンタルサーバーなど
+
+静的サイトホスティング
+
+`target: static`とする
+ホスティングサービスへブラウザがそのまま実行できるHTMLやJSをデプロイするとき
+
+S3+CloudFront、Netlify、Vercel、Firebase Hosting など
+
+- modeプロパティ
+
+設定可能な値はspaかuniversalのどちらかで、デフォルトは`mode: 'universal'`
 
 
-
+![](./image/nuxt_ssr.png)

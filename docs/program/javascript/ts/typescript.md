@@ -190,3 +190,8 @@ anyはmethodが使えるが、unknownはmethodが使えないため少しだけ�
 
 1つのXMLタグを含む1行コメントになる
 **コメントの内容はコンパイラへの指令として使用される。**
+
+## Tips
+
+- intefaceで型を上書きしたい時
+[参考URL](https://tech-1natsu.hatenablog.com/entry/2019/02/09/014218)
