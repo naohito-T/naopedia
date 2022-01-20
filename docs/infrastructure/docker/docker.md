@@ -859,3 +859,11 @@ $ docker-compose run --rm [service name] /bin/sh
 $ nproc
 2
 ```
+
+## Tips
+
+Docker Buildにおけるリードタイム短縮
+[参考URL](https://tech.plaid.co.jp/improve_docker_build_efficiency/)
+
+Docker イメージ分析ツール
+[dive](https://kotaroooo0-dev.hatenablog.com/entry/2020/07/28/205931)
