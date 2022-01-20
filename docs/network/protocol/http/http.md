@@ -4,7 +4,7 @@
 
 ## httpとは
 
-HTTP(HyperText Transfer Protocol)はWebのサーバとクライアント(ブラウザ)の間でウェブページを送受信するためのプロトコル。
+HTTP(HyperText Transfer Protocol)は**サーバとクライアント(ブラウザ)の間でウェブページを送受信するためのプロトコル。**
 
 HTTP自体はステートレスなプロトコル
 リクエスト (GET) => レスポンス (200 OK ...) で手続きが完結。
