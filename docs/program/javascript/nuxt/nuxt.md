@@ -6,7 +6,7 @@
 
 ## NuxtにおけるSSR・SSG・SPAの設定方法
 
-Nuxtはnuxt.config.jsのmodeプロパティとtargetプロパティによってアプリケーションのモードが管理されている。
+Nuxtはnuxt.config.jsのmodeプロパティとtargetプロパティによってアプリケーションのモードが管理されている(SPA or SSR or SSG)
 
 ## Nuxt 各コマンドについて
 
@@ -37,21 +37,43 @@ SSRでアプリケーションを運用する場合、nuxt buildでファイル�
 - SSG or SPA
 nuxt generateで静的ファイルを生成後、静的ウェブサイトにアップロードするという流れになります。
 
-## Nuxt2と3の違い
+## Nuxt2と3の違い(非同期関数について)
 
-Nuxt 2 では Options API の asyncData() や Composition API の useAsync(), useFetch(), useStatic() などを使用し、おもに SSG などにおいて画面描画に必要なデータを非同期に取得するといった使い方をしてきました。
-Nuxt 3 ではそれらが新たに useFetch() と useAsyncData() のふたつにアップデートされています。
+[参考URL](https://zenn.dev/coedo/articles/cc000738a0f069)
+
+ちなみに自分のプロジェクトではNuxt2で使われている。
+
+>Nuxt 2 では Options API の asyncData() や Composition API の useAsync(), useFetch(), useStatic() などを使用し、おもに SSG などにおいて画面描画に必要なデータを非同期に取得するといった使い方をしてきました。
+>Nuxt 3 ではそれらが新たに useFetch() と useAsyncData() のふたつにアップデートされています。
 （くわえてデータ取得時に画面描画をブロックしない useLazyFetch() と useLazyAsyncData() も加わりました）
 
-Nuxt2
+**Nuxt2**
 Options API の asyncData() や Composition API の useAsync(), useFetch(), useStatic()
 
-Nuxt3
+**Nuxt3(アップデートされている)**
 useFetch() と useAsyncData()
+加えて、データ取得時に画面描画をブロックしないuseLazyFetch()と、useLazyAsyncData()も加わった。
 
 **今後 Page Component は、いわばページレイアウトを記述するだけのラッパー的な存在になっていくかもしれません。**
 
 ## Nuxt処理順序
+
+[参考URL(これはやばい)](https://www.japon-line.co.jp/tech/post/nuxt-js%E3%81%AEssr-csr%E5%87%A6%E7%90%86%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/)
+
+まず大前提でNuxtやReactなどのJSで呼ばれる時、SSRとCSRの処理に分かれる
+CSR : ブラウザで動作する部分
+
+以下例
+```html
+<p id="mode"></p>
+<script>
+  var target = document.getElementById('mode') // CSR
+  if (target != null) target.innerHTML = 'csr'
+</script>
+```
+
+SSR(Server Side Rendering) : サーバーサイドレンダリング
+CSR(Client Side Rendering) : クライアントサイドレンダリング
 
 処理順序（上から順に処理されます）
 **ここからSSR**
@@ -61,7 +83,7 @@ middleware（SSR）
 asyncData（SSR）
 fetch（SSR）
 beforeCreate（SSR）
-created（SSR）
+created（SSR）CSRでも呼ばれる
 **ここからCSR**
 plugins（CSR）
 beforeCreate（CSR）
@@ -81,6 +103,45 @@ beforeCreate（CSR）
 created（CSR）
 beforeMount（CSR）
 mounted（CSR）
+
+## どちらを使うか明記させる
+
+created()はSSR, CSRどちらでも呼ばれる。
+そのためどちらか明記させないといけない。
+以下は例
+
+```js
+created() { // or mounted()
+  if (process.client) { // ここで明記
+    const target = document.getElementById('mode')
+    if (target != null) target.innerHTML = 'csr'
+  }
+}
+```
+
+## Nuxt.jsのライフサイクル(深堀り)
+
+**初回アクセス時やリロード時には SSR処理とCSR処理がどちらも動作する。**
+lugins と created（beforeCreate）が 2 回走る点に注意です。
+
+- 初回アクセス時
+
+
+## Nuxtで少しでもセキュアに情報を扱うためにできること
+
+
+# Pluginsディレクトリで忘れてはいけないこと
+
+初回アクセス時やリロード時には、SSR処理とCSR処理がどちらも動作する。
+plugins と created（beforeCreate）が 2 回走る点に注意。
+
+>認証系は middleware や plugins に記述することが多いかもしれませんが、middleware の場合は内部ナビゲーション遷移時は CSR 側でしか呼ばれないため、どちらの処理も書いておく必要があります。 plugins の場合は、内部ナビゲーション遷移時は呼ばれないので注意が必要。
+**plugins の場合は、内部ナビゲーション遷移時は呼ばれないので注意が必要**
+
+
+
+
+
 
 ## 内部リンクとは(nuxt-link)
 

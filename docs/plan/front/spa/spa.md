@@ -22,6 +22,24 @@
 
 ## SPAデメリット
 
-初期ローディングは時間がかかる。
-SEOで不利な可能性もある(初期状態はほぼ何もないHTMLファイルが返却されるため、Googleクローラが中身のコンテンツを認識できない可能性があるため)
+1. 初期ローディングは時間がかかる。
+クライアント側ですべてのDOMを構築するとJSのダウンロード → DOM構築と、クライアント側での処理時間が長くなる傾向がる。
 
+2. SEOで不利な可能性もある(初期状態はほぼ何もないHTMLファイルが返却されるため、Googleクローラが中身のコンテンツを認識できない可能性があるため)
+
+## SPA = CSR(クライアントサイドレンダリング)
+
+まず大前提でNuxtやReactなどのJSで呼ばれる時、SSRとCSRの処理に分かれる
+
+CSR ブラウザで動作する部分
+
+以下例
+```html
+<p id="mode"></p>
+<script>
+  var target = document.getElementById('mode')
+  if (target != null) target.innerHTML = 'csr'
+</script>
+```
+
+nuxt.jsでいうと、mounted()は
