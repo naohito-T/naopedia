@@ -290,4 +290,65 @@ Rubyのgemライブラリ
 **認可の仕組みを提供してくれる**
 ユーザによってページ表示の許可・拒否をしたり表示情報の範囲を変えたりすることができるgem
 
+## module
+
+[参考URL](https://techplay.jp/column/536)
+
+moduleには部品の集まりや区分という意味になる。
+Rubyの**moduleはclassと同じようにmodule内に関数の定義ができること、**プログラム上での役割や振る舞いをまとめることができる。
+
+classとの違いは？
+1. moduleからインスタンスが生成できないこと
+2. moduleは継承ができない
+
+- moduleを使うメリット
+
+```ruby
+module Car
+  class SuperCar
+    def self.introduce
+      puts "This is SuperCar"
+    end
+  end
+end
+
+class SuperCar
+  def self.introduce
+    puts "これはスーパーカーです"
+  end
+end
+ 
+Car::SuperCar.introduce # module呼び出し
+SuperCar.introduce # class呼び出し
+```
+
+module名とclass名は同名であるが、**moduleには名前空間としての役割を持っているためコンパイル上では別のものとなっている。**
+
+## ruby独自の機能にMix-in
+
+Mix-inすることでmodule内のメソッドをインスタンスメソッドとして利用することがができる
+includeでの拡張は静的である。
+
+```ruby
+module Lion
+  def cryLion
+    puts "ガオー！"
+  end
+end
+ 
+module Cat
+  def cryCat
+    puts "ニャー"
+  end
+end
+ 
+class Animal
+  include Lion, Cat # moduleの機能をincludeしている
+end
+
+obj = Animal.new
+
+obj.cryLion # Lionクラスのmethodを利用
+obj.cryCat  # Catクラスのmethodを利用
+```
 
