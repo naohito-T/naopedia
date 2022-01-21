@@ -352,3 +352,110 @@ obj.cryLion # Lionクラスのmethodを利用
 obj.cryCat  # Catクラスのmethodを利用
 ```
 
+---
+ここから本
+
+## Rails処理順序(基本)
+
+![route](image/rails.png)
+![コントローラからモデルとDB](image/modal.png)
+
+1. ブラウザからのリクエストを受け取ると、Railsはパスを調べroutes.rbに従ってどのコントローラのどのアクションを選べば良いかを決める(Controllerの中にアクションは複数ある)
+2. Railsは選ばれたアクション(メソッド)を実行する(アクションにはモデルとの間で情報のやり取りをするプログラム)を書く
+3. モデルはDBのテーブルと対応している、アクションはモデルから取得した情報のうち、表示に必要なものをインスタンス変数に保存し返す
+
+## route
+
+RailsアプリケーションではRESTの原則に従ってデータをリソースとして扱う
+>RailsにはRESTに基づいた作法でウェブアプリケーションを作成する機能がある。
+
+## Railsにおけるリソースとは
+
+コントローラが扱う対象に名前をつけたもの。
+リソース名を設定するには`config/toutes.rb`にresourcesメソッドを追加するだけ
+
+`resources: リソース名の複数形で記述する`
+
+**上記で7つのアクションのルーティングが設定できる。**
+
+これをRESTフルなルーティング、またはリソースベースのルーティングと呼ぶ
+※リソースを扱うコントローラーはMembersControllerの様に、リソース名+Controllerという名前が一般的
+
+## config/toutes.rb
+
+```ruby
+resources :orders, only: [:index]
+```
+必ずorderのモデルが必要ではない。
+リソース名に対応したコントローラに対して、**7つのアクションのルーティングを自動的に設定するだけ**
+
+
+## リソースを扱うコントローラー
+
+コントローラでは7つのアクションを用意する
+この7つは原則としてデータベースの基本操作であるCRUDを実装したもの
+
+api/app/controllers
+
+```ruby
+module User::Apis::V1::User
+  class PaymentHistoriesController < ApiController
+
+    def index
+      params = index_params
+      offset = params[:offset] || 0
+      authorize(nil, policy_class: PaymentHistoryPolicy)
+
+      common_query = policy_scope(nil, policy_scope_class: PaymentHistoryPolicy::Scope).ransack(params[:q]).result
+      payment_histories = common_query.
+                            order(captured_at: :desc).
+                            limit(limit).
+                            offset(offset)
+      total_count = common_query.count
+
+      render json: payment_histories, root: "payment_histories", meta: total_count, meta_key: "total_count",
+             include: SERIALIZER_INCLUDE, adapter: :json
+    end
+  end
+end
+```
+
+## 7つのアクション
+
+7つのアクションを呼び出すには以下画像をみる。
+HTTPメソッドの組み合わせを使う。
+![](image/resource.png)
+
+- index
+リソースの一覧を表示する
+- new
+リソースを追加する(テーブルに新しいレコードを作成する)ためのフォームを表示する
+- create
+リソースを作成する(テーブルに新しいレコードを作成する)
+- show
+リソースの属性を表示する(レコードの内容を表示する)
+- edit
+リソースを更新する(既存のレコードのカラムを更新する)ためのフォームを表示する
+- update
+リソースを更新する(既存のレコードのカラムを更新する)
+- destroy
+リソースを削除する(テーブルからレコードを削除する)
+
+## 7つのアクション以外の追加
+
+任意のアクションを追加するには resourcesメソッドにブロックを渡しブロックの中でもHTTPメソっドを表すメソッド アクション名を記述
+
+## パスを返すメソッドが使える(resource)
+
+リソースを指定すると、コントローラーのアクションを表すパスを取得できる
+
+![パスを返す](image/パスを返す.png)
+
+## 特定のアクションを使わない場合
+
+```ruby
+resources :contents, only: [:index, :show, :create, :update]
+```
+
+onlyオプションに渡す
+上記だと:index, :show, :create, :updateアクションのルーティングだけ設定する。

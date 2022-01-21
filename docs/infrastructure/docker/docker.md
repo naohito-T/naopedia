@@ -863,6 +863,10 @@ $ nproc
 2
 ```
 
+## Docker log ディレクトリ確認
+
+[参考URL](https://it-web-life.com/docker_container_log_clear/)
+
 ## Tips
 
 Docker Buildにおけるリードタイム短縮
@@ -870,3 +874,4 @@ Docker Buildにおけるリードタイム短縮
 
 Docker イメージ分析ツール
 [dive](https://kotaroooo0-dev.hatenablog.com/entry/2020/07/28/205931)
+
