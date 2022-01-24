@@ -459,3 +459,4 @@ resources :contents, only: [:index, :show, :create, :update]
 
 onlyオプションに渡す
 上記だと:index, :show, :create, :updateアクションのルーティングだけ設定する。
+
