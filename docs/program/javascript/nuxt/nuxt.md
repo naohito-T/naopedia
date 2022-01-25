@@ -1,5 +1,7 @@
 # Nuxt
 
+[nuxt lifesycle](https://qiita.com/too/items/e8ffcf7de7d48dcb9a9b)
+
 ## Nuxt 導入に必要なサーバ要件について
 
 [サーバ要件](https://qiita.com/kaketechjapan/items/af5524f2bed5238aefcd)
