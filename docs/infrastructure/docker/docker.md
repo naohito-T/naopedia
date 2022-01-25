@@ -23,7 +23,6 @@ container中のサーバがlocalhostでlistenしていると、ホストマシ�
 1. Dockerfileを書き換えた時。
 2. パッケージ管理を行うファイルを書き換えた時
 
-
 ---
 
 ## Dockerを軽くする方法
@@ -34,6 +33,10 @@ container中のサーバがlocalhostでlistenしていると、ホストマシ�
 4. ビルドに使用したソース
 5. gitですら産業廃棄物
 6. 成果物を残すことを意識する
+
+- yarn installなどを早めたい
+
+[nodeではやく](https://tkkm.tokyo/post-495/)
 
 
 ---

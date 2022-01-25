@@ -382,7 +382,7 @@ def
 
 # 読み書き両方のメソッドを作りたいとk
 class Robot
-  attr_accessor :name 
+  attr_accessor :name
   attr_accessor :name, :name2 # いくつも作りたい時
 def
 
@@ -408,7 +408,7 @@ end
 - 定義
 
 ```ruby
-class A 
+class A
   # クラスメソッドの定義
   def self.b
   end
@@ -481,6 +481,40 @@ r = kkass.new # Robot.newと同じ
 r.kind_of?(Robot) # クラスはメソッド引数にモナれる
 
 ```
+
+## モジュールとクラスの違い
+
+どちらもクラスインスタンス(またはモジュールインスタンス)を作れる
+どちらもメソッドを定義できる
+モジュールはオブジェクトを作れない
+クラスはオブジェクトを作れる
+
+```sh
+irb(main):001:0> module Parent
+irb(main):002:1>   class Child
+irb(main):003:2>   end
+irb(main):004:1> end
+=> nil
+
+# どちらもクラスインスタンスを作れる
+irb(main):005:0> Parent.class
+=> Module
+irb(main):006:0> Parent::Child.class
+=> Class
+
+# モジュールはオブジェクトを作れない
+irb(main):008:0> Parent.new
+Traceback (most recent call last):
+        2: from /home/vagrant/.rbenv/versions/2.5.5/bin/irb:11:in `<main>'
+        1: from (irb):8
+NoMethodError (undefined method `new' for Parent:Module)
+# クラスはオブジェクトを作れる
+irb(main):009:0> Parent::Child.new
+=> #<Parent::Child:0x00005587aeab9c90>
+
+```
+
+
 
 ---
 
