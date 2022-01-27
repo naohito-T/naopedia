@@ -173,6 +173,57 @@ members = Members.find_by_sql("SELECT * FROM members WHERE number = 11")
 
 ---
 
+## Railsバリデーションまとめ
+
+[参考URL](https://qiita.com/h1kita/items/772b81a1cc066e67930ec)
+
+前提
+**バリデーションを設定しただけでは保存に失敗したときのメッセージは表示されない。**
+
+
+- presence
+presenceで値が空とみなされるのは、nil, false, 空文字
+※これはblank?メソッドがtrueを返す場合と同じ
+
+## バリデーショントリガーされるやつ
+
+create
+create!
+save
+save!
+update
+update!
+
+## validation
+
+基本saveメソッドがバリデーションを実行する。
+しかしsaveメソッドを使わずにバリデーションを行うには、valid?メソッドかinvalid?メソッドを使用する
+
+```ruby
+member.number = nil
+member.valid? # false
+member.invalid? # true
+```
+
+チェックに引っかかればvalid?はfalseを返す
+チェックに引っかかればinvalid?はtrueを返す
+
+Railsではvalid?メソッドを実行するとバリデーションが実行されます。
+バリデーションが通ればtrueを返し、引っかかればfalseを返します。
+ちなみにinvalid?メソッドは逆の振る舞いをします。
+
+
+## validatesメソッドの書き方
+
+シンボルでモデルの属性名を指定し、その後にハッシュでバリデーションの種類: trueを並べれば、その種類のバリデーションが行われる。
+
+```ruby
+validates :number, :name, presence: true
+# validates :シンボルでモデルの属性名
+```
+
+
+
 
 ## Rails ActiveRecord まとめ
 
@@ -180,3 +231,4 @@ members = Members.find_by_sql("SELECT * FROM members WHERE number = 11")
 データベースの設定はdatabase.ymlで行う。3つの環境に合わせて3つのデータベースを用意する
 データベースの中にテーブルを作成するにはマイグレーションスクリプトを記述
 データベースの作成やマイグレーションにはbin/railsコマンドを使う
+saveメソッドがバリデーションを実行する。
