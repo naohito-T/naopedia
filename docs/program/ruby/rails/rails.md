@@ -36,6 +36,14 @@ RailsではMVCでの役割を分けるだけではなく、モデルはここ、
 
 Railsでクラスを作るには、直接ファイルを作成するのではなく専用のコマンドをつかうことが多い。
 
+## Rails 3つのモード
+
+Railsには3種類ある
+
+開発 : develop : コードを書きながらブラウザで確認するための環境
+テスト : test : 自動テストのための環境
+本番 : production : ウェブサイトを一般に公開する時の環境
+
 ## マイグレーションファイル
 
 [リファレンス](https://railsguides.jp/active_record_migrations.html)
@@ -529,29 +537,4 @@ Rails::Command.invoke command, ARGV
 
 アプリケーション起動時にロードされるもので、初期化処理で使われる
 自分でrbファイルを追加して使うことも可能
-
-
-
-
-SELECT `products`.`id` AS t0_r0, `products`.`fanclub_id` AS t0_r1, `products`.`type` AS t0_r2, `products`.`slug` AS t0_r3, `products`.`plan` AS t0_r4, `products`.`name` AS t0_r5, `products`.`description` AS t0_r6, `products`.`status` AS t0_r7, `products`.`created_at` AS t0_r8, `products`.`updated_at` AS t0_r9, `products`.`visible` AS t0_r10, `fanclubs`.`id` AS t1_r0, `fanclubs`.`name` AS t1_r1, `fanclubs`.`slug` AS t1_r2, `fanclubs`.`description` AS t1_r3, `fanclubs`.`icon_url` AS t1_r4, `fanclubs`.`cover_image_url` AS t1_r5, `fanclubs`.`status` AS t1_r6, `fanclubs`.`position` AS t1_r7, `fanclubs`.`created_at` AS t1_r8, `fanclubs`.`updated_at` AS t1_r9, `fanclubs`.`liver_name` AS t1_r10, `fanclubs`.`liver_name_ruby` AS t1_r11, `payment_settings`.`id` AS t2_r0, `payment_settings`.`service_type` AS t2_r1, `payment_settings`.`payment_type` AS t2_r2, `payment_settings`.`is_subscription` AS t2_r3, `payment_settings`.`period` AS t2_r4, `payment_settings`.`status` AS t2_r5, `payment_settings`.`created_at` AS t2_r6, `payment_settings`.`updated_at` AS t2_r7, `payment_settings`.`visible` AS t2_r8, `bulletins`.`id` AS t3_r0, `bulletins`.`license_id` AS t3_r1, `bulletins`.`image_url` AS t3_r2, `bulletins`.`description` AS t3_r3, `bulletins`.`status` AS t3_r4, `bulletins`.`delivery_start_at` AS t3_r5, `bulletins`.`created_at` AS t3_r6, `bulletins`.`updated_at` AS t3_r7 FROM `products` LEFT OUTER JOIN `fanclubs` ON `fanclubs`.`id` = `products`.`fanclub_id` LEFT OUTER JOIN `products_payment_settings` ON `products_payment_settings`.`product_id` = `products`.`id` LEFT OUTER JOIN `payment_settings` ON `payment_settings`.`id` = `products_payment_settings`.`payment_setting_id` LEFT OUTER JOIN `bulletins` ON `bulletins`.`license_id` = `products`.`id` WHERE `products`.`type` = 'License' AND `products`.`fanclub_id` = 8 AND `products`.`status` IN (1, 2) AND `fanclubs`.`status` = 1 AND `payment_settings`.`status` = 1
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
