@@ -2,6 +2,11 @@
 
 [Railsガイド(本リファレンス)](https://railsguides.jp/)
 [Rails](https://atmarkit.itmedia.co.jp/ait/articles/1102/23/news109_3.html)
+[Railsのクリーンアーキテクチャ](https://qiita.com/shunjikonishi/items/e39ed8091e1dca817468)
+
+## Railsスタイルガイド
+
+シンボル名、メソッド名、変数名はスネークケースにする
 
 ## Railsの設計哲学
 
@@ -53,7 +58,6 @@ Railsには3種類ある
 
 マイグレーションファイルはテーブルの中身のカラムを作成するファイル。
 **※マイグレーションではRubyのDSLを持っているので生のSQLを作成する必要はない。そしてスキーマとスキーマへの変更をDBの種類に依存せずに済む。**
-
 
 ## Dockerを使わない場合のRails
 
@@ -735,3 +739,39 @@ end
 
 引数に名前空間の名前をシンボルで指定し、ブロックの内部で名前空間に属するルーティングを記述する
 上記の変更の結果として、URLパス/adminからAdmin::TopControllerのindexアクションにルーティングが設定されます。URLパスを生成するメソッドはadmin_root_path
+
+
+## 定数
+
+[参考URL](https://railsguides.jp/autoloading_and_reloading_constants.html)
+
+>通常のRubyプログラムのクラスであれば、依存関係のあるプログラムを明示的に読み込む必要があります。たとえば、以下のコントローラではApplicationControllerクラスやPostクラスを用いており、通常、それらを呼び出すにはrequireする必要があります。
+
+```ruby
+# Railsではこのように書かないこと
+require "application_controller"
+require "post"
+# Railsではこのように書かないこと
+
+class PostsController < ApplicationController
+  def index
+    @posts = Post.all
+  end
+end
+```
+
+>Railsアプリケーションでは上のようなことはしません。アプリケーションのクラスやモジュールはどこででも利用できます。
+
+```ruby
+class PostsController < ApplicationController
+  def index
+    @posts = Post.all
+  end
+end
+```
+
+通常のRailsアプリケーションでrequire呼び出しを行うのは、libディレクトリにあるものや、Ruby標準ライブラリ、Ruby gemなどを読み込むときだけです。そのため、これらのような自動読み込みパスに属さないものについてはすべて後述します。
+
+Railsではこの機能を提供するため、いくつものZeitwerkローダーを開発者の代わりに管理しています。
+
+
