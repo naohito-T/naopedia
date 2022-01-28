@@ -602,7 +602,94 @@ password_confirmationカラム : 確認用のパスワード
 
 ## モデル間の関連付け
 
+CarクラスとWheelsクラスがあるとする。
+関連付けを行うにはCarクラスに以下を記載する。
 
+```ruby
+class Car
+  has_many :wheels
+end
+```
+
+has_manyはモデル間の関連付けを指定するメソッド。これによりCarモデルとWheelモデルの間に**1対多の関連付け**が設定され、**Carモデルにインスタンスメソッドwheelsが追加される。**
+
+## 関連付けを作るメソッド
+
+Railsでは、モデル間の関連付けをモデクラスのメソッドhas_manyおよびbelongs_toで作る
+**has_manyによって使えるようになった参照元のメソッドが返すにはリレーションオブジェクト**
+
+- 1対多の関連付け
+has_manyを使用
+つまり、そのモデルクラスの**テーブルの複数のレコードが別のテーブルのレコード1つを**参照する結びつきを作る
+
+以下の図を見てほしい
+![has_many](image/has_many.png)
+参照先のモデルクラスでhas_many(~をたくさんもつ)を使えば、1対多を実現する。
+
+```ruby
+# こっちが参照先のクラス
+class Car < ApplicationRecord
+  has_many: wheels # has_manyに渡す名前は複数形にする。
+end
+```
+
+上記により、以下が可能となる。
+車輪を作成し、自動車に関連付けて保存するには次のように記述する。
+
+```ruby
+@wheel = Wheel.new
+@wheel.car = @car
+@wheel.save
+```
+
+自動車から車輪を関連付けるには << で追加をする。<<を使うと、関連付けと車輪のレコードの保存が同時に行われます。
+
+```ruby
+@car.wheel << @wheel
+```
+
+## 関連付けルール
+
+has_manyとbelongs_toでモデル間の関連付けを表すときには、名前について次のルールがある。
+外部キーのカラム名は、car_idのように「参照先のテーブル名（モデル名）を単数形にしたもの」＋「_id」とする。
+belongs_toに指定する名前は、テーブル名（モデル名）の単数形を使う。
+has_manyに指定する名前は、テーブル名（モデル名）の複数形を使う。
+
+**関連するキー(カラム名)を替えたい時**
+外部キーのカラム名がルールと異なるときは、foreign_keyオプションでカラム名が指定できる。
+
+```ruby
+class Car < ApplicationRecord
+  has_many :engins, foreign_key: "vehicle_id"
+end
+
+class Engine < ApplicationRecord
+  belongs_to :car, foreign_key: "vehicle_id"
+end
+```
+
+**関連付けで使われるメソッド名を替えたい時**
+class_nameオプションを使う。
+
+```ruby
+class Car < ApplicationRecord
+  has_many :engins, class_name: "Motor"
+end
+```
+
+**参照元にルールを適用したい時**
+dependent
+
+```ruby
+class Car < ApplicationRecord
+  has_many :engins, dependent: :destory # 参照先のレコードを削除した時に参照元のレコードも削除
+  has_many :engins, dependent: :nullify # 参照先のレコードを削除した時に参照元の外部キーがNULLになる
+end
+```
+
+## 外部キー成約
+
+![外部キー制約](image/外部キー成約.png)
 
 
 ---
