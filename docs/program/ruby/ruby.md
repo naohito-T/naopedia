@@ -146,6 +146,13 @@ Rubyでは変数の命名によって変数のスコープが変わる(もちろ
 
 ![変数種類](image/変数種類.png)
 
+## @_
+
+[参考URL](https://qiita.com/CASIXx1/items/98d31734e26da8982f97)
+
+@_hogeはただのインスタンス変数
+@hogeではない理由はある命名規則に則っているから
+
 
 ## Rubyでの文の終わり方
 
@@ -649,6 +656,59 @@ NoMethodError (undefined method `new' for Parent:Module)
 # クラスはオブジェクトを作れる
 irb(main):009:0> Parent::Child.new
 => #<Parent::Child:0x00005587aeab9c90>
+
+```
+
+## モジュールinclude
+
+[参考URL](https://www.techscore.com/blog/2013/03/01/rails-include%E3%81%95%E3%82%8C%E3%81%9F%E6%99%82%E3%81%AB%E3%82%AF%E3%83%A9%E3%82%B9%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89%E3%81%A8%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9%E3%83%A1/)
+
+## モジュールがincludeされた時にクラスメソッドとインスタンスメソッドを同時に追加する頻出パターン
+
+```ruby
+module Hoge
+  def self.included(base)
+    base.extend(ClassMethods)
+  end
+
+  module ClassMethods
+    # クラスメソッドとして使える
+    def hello
+      puts 'Hello!'
+    end
+  end
+
+  # インスタンスメソッドとして使える
+  def bye
+    puts 'Bye!'
+  end
+end
+```
+YourModule を include すると、bye メソッドはインスタンスメソッドとして使えるようになります。そして、ネストしている ClassMethods モジュールで定義されている hello はクラスメソッドとして使えるようになります。
+
+## モジュールのincludとextend
+
+```ruby
+module Logging
+  def log(message)
+    puts message
+  end
+end
+
+# Logging モジュールを include すると、インスタンスメソッドとして log メソッドを使えるようになります。
+class Momotaro
+  include Logging
+end
+
+momotaro = Momotaro.new
+momotaro.log('桃から生まれた')
+
+# Logging モジュールを extend すると、クラスメソッドとして log メソッドを使えるようになります。
+class Kintaro
+  extend Logging
+end
+
+Kintaro.log('マサカリを担いだ')
 
 ```
 
