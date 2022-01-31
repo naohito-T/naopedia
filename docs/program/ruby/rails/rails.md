@@ -2,6 +2,11 @@
 
 [Railsガイド(本リファレンス)](https://railsguides.jp/)
 [Rails](https://atmarkit.itmedia.co.jp/ait/articles/1102/23/news109_3.html)
+[Railsのクリーンアーキテクチャ](https://qiita.com/shunjikonishi/items/e39ed8091e1dca817468)
+
+## Railsスタイルガイド
+
+シンボル名、メソッド名、変数名はスネークケースにする
 
 ## Railsの設計哲学
 
@@ -53,7 +58,6 @@ Railsには3種類ある
 
 マイグレーションファイルはテーブルの中身のカラムを作成するファイル。
 **※マイグレーションではRubyのDSLを持っているので生のSQLを作成する必要はない。そしてスキーマとスキーマへの変更をDBの種類に依存せずに済む。**
-
 
 ## Dockerを使わない場合のRails
 
@@ -537,4 +541,237 @@ Rails::Command.invoke command, ARGV
 
 アプリケーション起動時にロードされるもので、初期化処理で使われる
 自分でrbファイルを追加して使うことも可能
+
+## 国際化 internationalization 略してi18nと呼ばれる
+
+---
+
+## 単数リソース
+
+membersリソースの重要な特徴は、それが集合的な概念であるということ。
+0人以上のメンバーからなる集まりを表現している。
+**しかしウェブアプリケーションを構成する要素の中には、多くとも1個しか存在しないものがある。**
+この種のリソースを単数リソースと呼ぶ
+
+単数リソースの例として
+セッション・自分のアカウント情報・自分のパスワード
+
+## 単数リソースのルーティング
+
+単数リソースのルーティングを設定するには、config/routes.rbの中でresourcesメソッドではなく、単数系のresourceメソッドを使う。
+
+
+```ruby
+resource :account
+```
+
+上記のように書いてもこのリソースを扱うコントローラーの名前は`AccountsController(複数形のs)に注意`
+
+![単数リソース](image/単数リソース.png)
+
+**単数リソースのため集合を扱うindexアクションはない**
+
+## Railsでのセッション
+
+Railsはセッションデータを符号化してクッキーに保存するが、暗号化はしないためユーザがデータを解読できることに注意
+ただし、セッションデータが改ざんされた場合はエラーになる仕組みになる。
+
+## Railsでの暗号化カラムを使う準備
+
+パスワードのハッシュ値(ダイジェスト)をホゾのするためのカラムは password_digestのカラム名を指定する必要がある。
+
+1. カラムにpassword_digestを追加する
+2. クラスメソッドを追加
+クラスメソッドhas_secure_passwordを用いると、パスワードの保存と認証のためのしくみをモデルクラスに追加することができる
+
+```ruby
+class Member < ApplicationRecord
+  has_secure_password
+
+  validates :number, presence: true,
+end
+```
+
+この変更の結果、Memberクラスにpasswordおよびpassword_confirmationという2つの属性が定義される。
+
+passwordカラム : パスワードそのもの
+password_confirmationカラム : 確認用のパスワード
+
+
+## アクション・コールバック
+
+上は8章まで
+
+---
+
+## モデル間の関連付け
+
+CarクラスとWheelsクラスがあるとする。
+関連付けを行うにはCarクラスに以下を記載する。
+
+```ruby
+class Car
+  has_many :wheels
+end
+```
+
+has_manyはモデル間の関連付けを指定するメソッド。これによりCarモデルとWheelモデルの間に**1対多の関連付け**が設定され、**Carモデルにインスタンスメソッドwheelsが追加される。**
+
+## 関連付けを作るメソッド
+
+Railsでは、モデル間の関連付けをモデクラスのメソッドhas_manyおよびbelongs_toで作る
+**has_manyによって使えるようになった参照元のメソッドが返すにはリレーションオブジェクト**
+
+- 1対多の関連付け
+has_manyを使用
+つまり、そのモデルクラスの**テーブルの複数のレコードが別のテーブルのレコード1つを**参照する結びつきを作る
+
+以下の図を見てほしい
+![has_many](image/has_many.png)
+参照先のモデルクラスでhas_many(~をたくさんもつ)を使えば、1対多を実現する。
+
+```ruby
+# こっちが参照先のクラス
+class Car < ApplicationRecord
+  has_many: wheels # has_manyに渡す名前は複数形にする。
+end
+```
+
+上記により、以下が可能となる。
+車輪を作成し、自動車に関連付けて保存するには次のように記述する。
+
+```ruby
+@wheel = Wheel.new
+@wheel.car = @car
+@wheel.save
+```
+
+自動車から車輪を関連付けるには << で追加をする。<<を使うと、関連付けと車輪のレコードの保存が同時に行われます。
+
+```ruby
+@car.wheel << @wheel
+```
+
+## 関連付けルール
+
+has_manyとbelongs_toでモデル間の関連付けを表すときには、名前について次のルールがある。
+外部キーのカラム名は、car_idのように「参照先のテーブル名（モデル名）を単数形にしたもの」＋「_id」とする。
+belongs_toに指定する名前は、テーブル名（モデル名）の単数形を使う。
+has_manyに指定する名前は、テーブル名（モデル名）の複数形を使う。
+
+**関連するキー(カラム名)を替えたい時**
+外部キーのカラム名がルールと異なるときは、foreign_keyオプションでカラム名が指定できる。
+
+```ruby
+class Car < ApplicationRecord
+  has_many :engins, foreign_key: "vehicle_id"
+end
+
+class Engine < ApplicationRecord
+  belongs_to :car, foreign_key: "vehicle_id"
+end
+```
+
+**関連付けで使われるメソッド名を替えたい時**
+class_nameオプションを使う。
+
+```ruby
+class Car < ApplicationRecord
+  has_many :engins, class_name: "Motor"
+end
+```
+
+**参照元にルールを適用したい時**
+dependent
+
+```ruby
+class Car < ApplicationRecord
+  has_many :engins, dependent: :destory # 参照先のレコードを削除した時に参照元のレコードも削除
+  has_many :engins, dependent: :nullify # 参照先のレコードを削除した時に参照元の外部キーがNULLになる
+end
+```
+
+## 外部キー成約
+
+![外部キー制約](image/外部キー成約.png)
+
+
+---
+
+## 名前空間
+
+名前空間を導入する理由
+例
+会員情報やニュース記事を誰でも編集できるものだった。編集権限を管理者だけにしたい
+
+大体のサイトの利用者は操作権限の観点から次の3点に分けれる
+
+- 訪問者(サイトにログインしていないユーザ)
+- 一般会員(サイトにログインしているadmin属性がfalseのユーザ)
+- 管理者(サイトにログインしているadmin属性がtrueのユーザ)
+
+## 名前空間を導入する戦術の種類
+
+2通りある
+
+1つめ
+個々の操作ごとにユーザがその権限を持つかどうかを判定して、リンクの表示・非表示を切り替えたりリレーションオブジェクトに検索条件を加えたり、例外Forbiddenを発生させたりする
+
+2つめ
+ユーザの種類ごとに別々のコントローラーを用意する。
+こちらの戦術の時に登場するのが名前空間という概念。
+
+例
+>会員の表示、追加、編集、削除を行う機能はMembersControllerクラスで実装されています。私たちは次節で別のコントローラクラスAdmin::MembersControllerを作成します。このクラスの名前は記号::で2つの部分に分かれます。Adminの部分はモジュール名です。このモジュールが付いているため、MembersControllerクラスとAdmin::MembersControllerクラスは別物として区別されます。この状況を「両者は別の名前空間にある」と表現します。
+
+## コントローラーに名前空間を導入する
+
+**app/controllersディレクトリの下に名前空間ごとのサブディレクトリを作るのが定石**
+
+1. config/routes.rbに名前空間を定義
+
+```ruby
+namespace :admin do
+  root "top#index"
+  end
+end
+```
+
+引数に名前空間の名前をシンボルで指定し、ブロックの内部で名前空間に属するルーティングを記述する
+上記の変更の結果として、URLパス/adminからAdmin::TopControllerのindexアクションにルーティングが設定されます。URLパスを生成するメソッドはadmin_root_path
+
+
+## 定数
+
+[参考URL](https://railsguides.jp/autoloading_and_reloading_constants.html)
+
+>通常のRubyプログラムのクラスであれば、依存関係のあるプログラムを明示的に読み込む必要があります。たとえば、以下のコントローラではApplicationControllerクラスやPostクラスを用いており、通常、それらを呼び出すにはrequireする必要があります。
+
+```ruby
+# Railsではこのように書かないこと
+require "application_controller"
+require "post"
+# Railsではこのように書かないこと
+
+class PostsController < ApplicationController
+  def index
+    @posts = Post.all
+  end
+end
+```
+
+>Railsアプリケーションでは上のようなことはしません。アプリケーションのクラスやモジュールはどこででも利用できます。
+
+```ruby
+class PostsController < ApplicationController
+  def index
+    @posts = Post.all
+  end
+end
+```
+
+通常のRailsアプリケーションでrequire呼び出しを行うのは、libディレクトリにあるものや、Ruby標準ライブラリ、Ruby gemなどを読み込むときだけです。そのため、これらのような自動読み込みパスに属さないものについてはすべて後述します。
+
+Railsではこの機能を提供するため、いくつものZeitwerkローダーを開発者の代わりに管理しています。
+
 

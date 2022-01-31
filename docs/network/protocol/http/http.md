@@ -10,6 +10,60 @@ HTTP自体はステートレスなプロトコル
 リクエスト (GET) => レスポンス (200 OK ...) で手続きが完結。
 SMTPのように複数の 手続き を踏む必要はなく、その時の状態も保持していない。
 
+---
+
+## http上で認証を行う場合
+
+[参考URL](https://qiita.com/h_tyokinuhata/items/ab8e0337085997be04b1)
+
+セッションによる認証
+リクエストボディにトークンを含める認証
+独自ヘッダにトークンを含める認証
+Authorizationヘッダを用いた認証(Basic, Digest, Bearer)
+JWT認証
+
+などがある。
+
+## Bearer認証 : bearerは担い手や使いといった意味を持つ
+
+Bearer認証は、トークンを利用した認証・認可に利用されることを想定しており、OAuth 2.0の仕様の一部として定義されているがその仕様内でHTTPでも使用しても良いと記述されている。
+
+**HTTPのAuthorizationヘッダにスキームとして指定でき, Authorization: Bearer <token> のようにして指定する.**
+トークンの形式はtoken68の形式で指定することが定められている。
+
+## Authorization ヘッダ
+
+Authorizationヘッダに指定できるスキームには, BasicやDigest, Bearer等が存在し, これらのスキームはIANAによって管理されている.
+
+## リクエストとレスポンスの流れ
+
+まずクライアントから`Authorization: Bearer <token>`を含めたリクエストが投げられる。
+それを受け取ったサーバは`WWW-Authenticate: Bearer realm="XXXX"`形式, 又は`WWW-Authenticate: Bearer error="XXXX"`形式のヘッダを含めたレスポンスを返す.
+
+成功パターン
+特に返したいパラメータが無い場合は realm を空にして返す.
+`WWW-Authenticate: Bearer realm=""`
+
+失敗パターン
+リクエストにAuthorizationヘッダが含まれていないケース(401 Unauthorized)
+`WWW-Authenticate: Bearer realm="token_required"`
+
+リクエストパラメータが不正なケース(400 Bad Request)
+`WWW-Authenticate: Bearer error="invalid_request"`
+
+トークンが失効, 破損しているケース(401 Unauthorized)
+`WWW-Authenticate: Bearer error="invalid_token"`
+
+トークンのスコープが不十分なケース(403 Forbidden)
+`WWW-Authenticate: Bearer error="insufficient_scope"`
+
+## トークン保存場所
+
+クライアント側はlocalStorageかsessionStorage, サーバ側はDBに保存することになる
+
+
+---
+
 ## httpとセッション
 
 HTTPは基本的に1つのリクエストと1つのレスポンスだけで完結する。
@@ -128,3 +182,6 @@ Accept-Encoding ヘッダは、HTTPクライアントがサーバーにHTTPリ�
 サーバがクライアントのセッションの状態を保持しないという制約のこと
 特徴：リクエストに対するレスポンスが変わらない。
 例：HTTP
+
+## Bearer認証について
+
