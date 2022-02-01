@@ -1,6 +1,7 @@
 # ngrok
 
 [ngrok](https://qiita.com/mininobu/items/b45dbc70faedf30f484e)
+[ngrok my account](https://dashboard.ngrok.com/get-started/your-authtoken)
 
 ## ngrokとは
 
