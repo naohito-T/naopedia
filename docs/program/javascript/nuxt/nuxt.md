@@ -3,9 +3,12 @@
 [nuxt lifesycle](https://qiita.com/too/items/e8ffcf7de7d48dcb9a9b)
 
 Nuxt.jsでSSRを使う場合は、
-
 初回の描画時はSSRとCSR
 それ以降の再描画時はCSRのみ
+
+SSRについて
+>SSRはNuxt.jsが提供している機能だと思っていましたが、大元は vue-server-render が提供しているのですね。だからVue.jsのドキュメントにもSSRについての記載があります。困ったらまずは公式ドキュメントに立ち戻るのが、やっぱり早道ですね。
+
 
 ## Nuxt 導入に必要なサーバ要件について
 
@@ -45,9 +48,27 @@ SSRでアプリケーションを運用する場合、nuxt buildでファイル�
 - SSG or SPA
 nuxt generateで静的ファイルを生成後、静的ウェブサイトにアップロードするという流れになります。
 
+## Props
+
+setupで渡されてくるpropsを分割代入してはいけない
+
+```js
+// NG
+setup({foo}) {
+  // foo を使う
+}
+// OK
+setup(props) {
+  // props.foo を使う
+}
+
+```
+
+
 ## Nuxt2と3の違い(非同期関数について)
 
 [参考URL](https://zenn.dev/coedo/articles/cc000738a0f069)
+[参考URL2](https://zenn.dev/kawahara/scraps/38cc622c73f27a)
 
 ちなみに自分のプロジェクトではNuxt2で使われている。
 
@@ -57,6 +78,51 @@ nuxt generateで静的ファイルを生成後、静的ウェブサイトにア�
 
 **Nuxt2**
 Options API の asyncData() や Composition API の useAsync(), useFetch(), useStatic()
+
+### asyncData()
+
+ページがロードされる前に(Vueインスタンスが作成される前)に呼び出される関数で、通常API呼び出しなどの非同期処理を記述する
+
+
+### useAsync() Options APIベースで言うとasyncDataでやっていたことに対応する場合
+
+@nuxtjs/composition-api にあるuseAsync は、setup() 時に呼ぶ関数で、SSR時はサーバサイドで情報を取得し、SPA時にはページ遷移時に呼び出したいものを用意できるという代物。
+
+**useAsync の利用上の注意**
+asyncDataのようにuseAsyncはサーバサイドでロードされ、結果をHTMLに書き出す挙動になっている。
+**このためクライアントでは再実行されなくて済む**
+
+```js
+// サーバでクライアントでもFunctionがコールされてしまう NG
+setup() {
+    useAsync(async () => {
+      await someFunction()
+    })
+  return {}
+}
+// SSR及び画面遷移したクライアントでのみ呼ばれる OK (1)
+setup() {
+  useAsync(async () => {
+    await someFunction()
+
+    return true
+  })
+  return {}
+}
+
+// SSR及び画面遷移したクライアントでのみ呼ばれる OK (2)
+const foo = useAsync(() => someFunction())
+return {foo}
+```
+
+### useFetch
+
+useAsyncとは別に単純に非同期な関数をSSR時と画面遷移時に実行したいという目的のためにuseFetchが存在するが、これはcomputedと同時に利用しようとするとエラーが発生する
+非常にやっかみのある問題である。。解決としては現状は、、useFetch を使いたい場合は computed を使わないか、 useAsync を使うということになりそうだ。
+
+
+----
+
 
 **Nuxt3(アップデートされている)**
 useFetch() と useAsyncData()
@@ -132,7 +198,19 @@ created() { // or mounted()
 **初回アクセス時やリロード時には SSR処理とCSR処理がどちらも動作する。**
 lugins と created（beforeCreate）が 2 回走る点に注意です。
 
+- created
+createdはVueインスタンスが作成された直後に呼ばれる関数で、Vueインスタンスの各種プロパティ、メソッドは利用できるがレンダリングが完了していないためElementは利用できな
+
+- mouted
+レンダリングが完了した直後に呼ばれる関数でElementへのアクセスも可能となる。
+※なお子コンポーネントのレンダリング完了は保証されていない。 
+
+- mounted
+
 - 初回アクセス時
+
+
+
 
 
 ## Nuxtで少しでもセキュアに情報を扱うためにできること
@@ -349,9 +427,7 @@ package.json に dependencies を追加するかわりに devDependencies を使
 [Vue2.xで、composition-api + TypeScript使っているときのメモ](https://zenn.dev/kawahara/scraps/38cc622c73f27a)
 
 
-- useAsync の利用上の注意
->@nuxtjs/composition-api にあるuseAsync は、setup() 時に呼ぶ関数で、SSR時はサーバサイドで情報を取得し、SPA時にはページ遷移時に呼び出したいものを用意できるという代物。
->Options API ベースでいうと、 asyncData でやっていたことを対応する場合に使うものだが、これを使うときには注意するべき点がある。
+
 
 ## watch
 
