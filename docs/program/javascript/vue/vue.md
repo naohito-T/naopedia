@@ -2,6 +2,8 @@
 
 [Vue3 リファレンス](https://v3.ja.vuejs.org/)
 
+[VsCodeが遅い](https://zenn.dev/tatsuhiko/articles/d7cedc5a1a3f5a)
+
 ## ユビキタス
 
 プロパティ → props のこと
