@@ -20,7 +20,7 @@ context : まだ Vue インスタンスが作られる前に Vue インスタン
 ## emit 
 
 @todoSubmitのように呼び出しています。**(v-on:todoSubmitでも良い)**
-親コンポーネントでこれに反応して実行されるメソッドを定義すると、`@todoSubmit="addTodo" # addTodoのこと` addTodoの第一引数には子から渡されたデータが入ります。
+親コンポーネントでこれに反応して実行されるメソッドを定義すると、`@todoSubmit="addTodo" # addTodoのこと`addTodoの第一引数には子から渡されたデータが入ります。
 
 [参考URL](https://note.com/vixer93/n/n85bd3a4e60ba)
 
@@ -49,7 +49,6 @@ v-onディレクティブでバインドしたメソッドは、clickやchange�
 </template>
 <style>
 </style>
-
 ```
 
 
