@@ -167,7 +167,7 @@ mounted（CSR）
 
 内部ナビゲーション時(nuxt-link)
 **上記以外の画面遷移時には、CSRの処理のみが走ります。**
-pluginsは動かないため、どのページに遷移しても共通の処理を行いたい場合はmiddlewareなどを検討しましょう。
+pluginsは動かないため**どのページに遷移しても共通の処理を行いたい場合はmiddlewareなどを検討する**
 
 処理順序（上から順に処理されます）
 middleware（CSR）
@@ -191,6 +191,59 @@ created() { // or mounted()
     if (target != null) target.innerHTML = 'csr'
   }
 }
+```
+
+## middleware
+
+[TS参考URL](https://designsupply-web.com/media/programming/6864/)
+
+ページをレンダリングする前に実行する関数。
+ライフサイクルはnuxtServerInitの後、asyncDataの前に実行される
+※pagesやlayoutsのレンダリングの前に実行される関数
+**pagesの前のため、まだrouterの設定もされていない状態で関数が実行される**
+storeの情報を扱ったりもできる
+
+
+
+middlewareの指定方法は3つある
+
+1 プロジェクト全体で指定する
+全てのページ遷移で呼び出す場合は、nuxt.config.jsに登録します。
+
+```js
+export default {
+  router: {
+    middleware: 'authenticated'
+    // 複数ファイル指定の場合は配列で
+    // middleware: ['authenticated', 'stats']
+  }
+}
+```
+
+2 特定のページで指定する
+ページ単位で指定する場合は、Vueファイルのmiddlewareプロパティにファイル名を指定します。
+レイアウト単位でも指定可能です。
+
+```js
+<script>
+  export default {
+    middleware: 'authenticated'
+  }
+</script>
+```
+
+3 特定のページで関数を指定する
+
+```js
+<script>
+  export default {
+    middleware({ store, redirect }) {
+      if (!store.state.authenticated) {
+        return redirect('/login')
+      }
+    }
+  }
+</script>
 ```
 
 ## Nuxt.jsのライフサイクル(深堀り)
