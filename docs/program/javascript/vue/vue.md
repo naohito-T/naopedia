@@ -134,6 +134,17 @@ Vue.component("button-counter", {
 普通の値だけではなく、関数を Props として渡すことができる。
 **状態は一番上のコンポーネントだけで管理し、**これを変更するメソッドを Props として渡していく手法は一般的なものなので身につける。
 
+propsのTypesは以下に限定されている
+String
+Number
+Boolean
+Aarray
+Object
+Date
+Function
+Symbol
+
+
 ## Vue の props
 
 原則として親の props から渡された、子 props は子自体で変更してはいけない。

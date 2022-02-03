@@ -43,3 +43,17 @@ axios
 // 2. interceptors.responseのログ
 // 3. then()のログ
 ```
+
+## errorハンドリングについて
+
+[参考URL](https://qiita.com/yuta-katayama-23/items/5b8bf72236eec9cadf41)
+
+エラーになるパターン
+
+1. responseがある(undefinedではない)
+2. responseがundefined
+
+1 APIのrequestは有効でresposeも返ってくるがHTTP Statusが200ではない。
+2 APIのrequestは有効だが何らかの理由でresponseが返ってこない。そもそもAPIをcallしようとしたがその前にエラー
+つまり、AxiosErrorのresponseがundefinedになる・ならないの2つで場合分けが必要という事。
+
