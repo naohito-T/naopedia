@@ -23,3 +23,16 @@ window.onload = function() {
 ## 難しくなる原因
 
 これを最新のフロントで？ってなると
+
+## ローディングの確認をするとき
+
+```js
+  const load = async () => {
+    try {
+      // simulate delay
+      await new Promise(resolve => {
+        setTimeout(resolve, 2000)
+      })
+    } catch (err) {
+  }
+```

@@ -119,9 +119,11 @@ OK testとNG testをやる(ユニットテスト)
 リグレッションテスト
 [ビジュアルリグレッションテスト](https://tech.medpeer.co.jp/entry/2020/04/10/160000)
 
-■変換がよわい
-逆とみなす
-
-
+■if変換がよわい
+逆とみなす部分で仕様を探る力
 
 [](https://www.publickey1.jp/blog/22/itit202210.html)
+
+## 有名なプログラマー
+
+[t-wada](https://t-wada.hatenablog.jp/)

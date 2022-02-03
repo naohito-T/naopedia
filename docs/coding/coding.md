@@ -6,6 +6,49 @@
 
 コーディング速度を上げる一番の考え方は**迷いをなくすこと。**
 
+## 俯瞰してみる力をつける(構造化)
+
+例えば
+TSとして関数側が
+
+```ts
+interface CarvingComponentType {
+  [k: string]: CarvingComponentReturnType;
+}
+
+const carvingType: CarvingComponentType = {
+  // card repeating or cancel or failed = 要は既に加入している
+  canPayment: { register: true, newLicense: false, canNotNewLicense: false, subscription: true },
+  // card cancel
+  undoPayment: { register: false, newLicense: false, canNotNewLicense: false, subscription: true },
+  // newLicense
+  newPayment: { register: false, newLicense: true, canNotNewLicense: false, subscription: false },
+  // konbini
+  konbiniInComplete: { register: false, newLicense: false, canNotNewLicense: false, subscription: true },
+  // まったく通らない
+  none: { register: true, newLicense: false, canNotNewLicense: false, subscription: true },
+};
+
+// 最終的にここを出力したい場合
+{ register: true, newLicense: false, canNotNewLicense: false, subscription: true }
+
+// 型定義は以下とし関数にセットし、受け取る側にもセットする
+export interface CarvingComponentReturnType {
+  register: boolean;
+  newLicense: boolean;
+  canNotNewLicense: boolean;
+  subscription: boolean;
+}
+const carvingComponent = (
+  license: License | null,
+  userLicenses: UserLicense[] | null,
+  orders: Order[],
+): CarvingComponentReturnType => {}
+
+// 受け取る側はこちらで定義ができると
+const { carvingComponent } = useCarvingComponent();
+```
+
 ## マジックナンバーをやめる
 
 別の人がコードを見たときに何の数字かわからなくなる。

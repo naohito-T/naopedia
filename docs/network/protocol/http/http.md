@@ -185,3 +185,11 @@ Accept-Encoding ヘッダは、HTTPクライアントがサーバーにHTTPリ�
 
 ## Bearer認証について
 
+
+## Webhookとは
+
+[参考URL](https://qiita.com/soarflat/items/ed970f6dc59b2ab76169)
+
+アプリケーションの更新情報を他のアプリケーションへリアルタイム提供する仕組みや概念のこと
+
+**通知する、Webhookを送るなどの言葉はPOSTリクエストのことを指している。**
