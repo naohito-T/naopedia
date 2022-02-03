@@ -203,7 +203,7 @@ createdはVueインスタンスが作成された直後に呼ばれる関数で�
 
 - mouted
 レンダリングが完了した直後に呼ばれる関数でElementへのアクセスも可能となる。
-※なお子コンポーネントのレンダリング完了は保証されていない。 
+※なお子コンポーネントのレンダリング完了は保証されていない。
 
 - mounted
 
@@ -634,3 +634,27 @@ S3+CloudFront、Netlify、Vercel、Firebase Hosting など
 
 
 ![](./image/nuxt_ssr.png)
+
+## Nuxt envについて
+
+[参考URL(結構つかえる)](https://zenn.dev/kouchanne/articles/83466e36e1c30f174ae8)
+[参考URL](https://blog.cloud-acct.com/posts/u-nuxt-module-cryptojs)
+
+2.13以降に使える
+
+publicRuntimeConfig : CSR時・SSR時どちらでも利用したいもの
+**※publicRuntimeConfigに登録した値は`window.__NUXT__.config`に登録されHTMLに展開される。**
+
+
+privateRuntimeConfig : SSR時のサーバーサイド限定で利用したいもの
+**ただ、SPAモードでは、クライアントでレンダリングを行なっているため、ここに登録した値を参照することはできません。**
+
+## .envの扱い(env プロパティの環境変数は漏洩します)
+
+プロジェクトルートに.envファイルを作成すればデフォルトの変数がセットされるようになった。
+**※envプロパティに登録した値もそうですが、基本的にクライアントで使用する環境変数はソースコード上に展開されます。**
+
+envプロパティに登録した環境変数はコンパイル中に変換され値がセットされる
+**コンパイルが実行されるタイミングは、nuxt buildコマンドが実行された時**
+buildコマンド以前に環境変数の値を定義していないとenvプロパティで参照することができない。
+>envプロパティに定義する環境変数は、DockerfileのENVで定義する必要があります。
