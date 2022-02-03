@@ -137,4 +137,40 @@ all()の引数の配列内のPromiseの状態が全て fullfilled になった�
 >電子レンジでおにぎりを温める時, 私たちはタイマーをセットして一旦待ちます. これが「関数として一度終了している状態」です.
 >そして, 時間が経つとおにぎりが食べられる状態になります. これが「渡したい値を返せるよう状態になったらその値を返す」ということです.
 
+## jsの時間の求め方
+
+jsではUNIXタイムスタンプに変更するのが一番良い
+
+```ts
+/**
+ * @desc 来月の初日のticket終了時間をsetする
+ * @example 来月の初日の 27:59:59 → 2021/10/01 03:59:59
+ * @return unix timestamp
+ */
+Date.formatYumegraTicketLastTime = (month: number = 1): number => {
+  const to = new Date();
+  to.setMonth(to.getMonth() + month); // 来月の現在時間
+  to.setDate(0); // 今月の末日
+  to.setHours(27);
+  to.setMinutes(59);
+  to.setSeconds(59);
+  return to.getTime();
+};
+
+/**
+ * @desc その月の最終日付を返す(デフォルトで今月)
+ * @param 1 2021/11/31 23:59:59 今月
+ * @param 0 2021/10/31 23:59:59 先月
+ */
+Date.formatTicketCountLastTime = (month: number = 1): number => {
+  const to = new Date();
+  to.setMonth(to.getMonth() + month); //
+  to.setDate(0); // 今月の末日
+  to.setHours(23);
+  to.setMinutes(59);
+  to.setSeconds(59);
+  return to.getTime();
+};
+
+```
  
