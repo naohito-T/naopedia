@@ -436,7 +436,7 @@ package.json に dependencies を追加するかわりに devDependencies を使
 
 ```js
 
-watch(() => {},() => {}, [method1, method2])
+watch(() => {},() => {}, [method1の結果, method2の結果])
 ```
 
 

@@ -233,6 +233,30 @@ Rails5以降はデフォルトでpumaが導入されており、自ら導入す�
 
 [参考URL](https://qiita.com/nishina555/items/e5886339d381db61b412)
 
+```ruby
+puts ps
+puts current_external_id
+puts new_external_id
+
+# get fire again22
+# <PaymentSetting:0x0000ffff50fbe668>
+# price_1GwjUCI8OazorEAhkvB0EXBI
+# price_1GwjUCI8OazorEAhtLlr784x
+# get fire again2
+
+# inspectを使えば、メモリ値の中身を見れる。
+puts ps.inspect
+puts current_external_id
+puts new_external_id
+
+# get fire again22
+#<PaymentSetting id: 1, service_type: "stripe", payment_type: "card", is_subscription: true, period: 1, status: "active", created_at: "2022-02-03 07:29:41", updated_at: "2022-02-03 07:29:41", visible: true>
+# price_1GwjUCI8OazorEAhkvB0EXBI
+# price_1GwjUCI8OazorEAhtLlr784x
+# get fire again2
+```
+
+
 
 ## -b 0.0.0.0
 

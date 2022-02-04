@@ -243,11 +243,11 @@ client-only タグでラップしサーバー側でのレンダリングを避�
 
 ## methods, computed, watch の発火タイミング
 
-・methods:関数を呼ばれたら必ず発火する
+- methods : 関数を呼ばれたら必ず発火する
 template 内に methods の関数が記載されていたら描画の度に発火する
-・computed:関数内に使われている値に変化が生じた時に発火します。
-template 内に computed の関数が記載されていても ↑ の条件を満たさない場合発火しません。
-・watch:監視対象になっている値が変化した場合発火します。
+- computed: 関数内に使われている値に変化が生じた時に発火する。,
+template 内に computed の関数が記載されていても ↑ の条件を満たさない場合発火しない。
+- watch : 監視対象になっている値が変化した場合発火します。
 
 ## template
 
@@ -401,3 +401,9 @@ vue2でのタグ
 
 data()の中でセットされたプロパティはデフォルトでリアクティブになるがsetup()の中で宣言された変数はリアクティブにはならない
 そのためrefやreactiveを使用する
+
+## Vue test util
+
+[参考URL](https://qiita.com/daiki7nohe/items/8d29e2d9059296b75fa6)
+
+Vue Test Utilは単体ではなく、JestやKarma、Mochaなどのテストランナーと組み合わせて使う。

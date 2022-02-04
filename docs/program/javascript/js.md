@@ -173,4 +173,43 @@ Date.formatTicketCountLastTime = (month: number = 1): number => {
 };
 
 ```
- 
+
+## 分割代入
+
+[参考になる](https://qiita.com/righteous/items/157e6f0e633c42dbe331)
+[参考になる](https://qiita.com/FumioNonaka/items/58358a29850afd7a0f37)
+
+
+```js
+const {a: {a1, a2}, b: {b1}} = {a: {a1: 1}, b: {}}
+```
+
+## 動的なプロパティ名
+
+オブジェクトのプロパティ名は動的にすることができる。
+
+```js
+const type = 'id';
+const item = {
+  [type]: 'abcd01234';
+};
+
+console.log(item); // { id: 'abcd01234' }
+console.log(item[type]); // 'abcd01234'
+console.log(item['id']); // 'abcd01234'
+console.log(item.id);    // 'abcd01234'
+```
+
+## 配列をオブジェクトに変換する
+
+[参考URL](https://yukiyuriweb.com/2021/04/13/javascript-techniques-you-should-know/#i-2)
+
+```js
+const array = [1, 2, 3];
+const object = { ...array };
+console.log(object); // { 0: 1, 1: 2, 2: 3 }
+```
+
+## 最新のJS Tips
+
+[参考URL](https://yukiyuriweb.com/2021/04/13/javascript-techniques-you-should-know/#i-2)
