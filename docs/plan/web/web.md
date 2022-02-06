@@ -6,7 +6,7 @@ Web APIを設計する際に様々なものを作成するかと思うがそれ�
 
 ## ユーザ認証の基本フロー
 
-[参考URL](https://applis.io/posts/how-to-authenticate-user)
+[参考URL(すばらしい)](https://applis.io/posts/how-to-authenticate-user)
 
 ### 基本的なフロー
 

@@ -7,7 +7,14 @@ Nuxt.jsでSSRを使う場合は、
 それ以降の再描画時はCSRのみ
 
 SSRについて
->SSRはNuxt.jsが提供している機能だと思っていましたが、大元は vue-server-render が提供しているのですね。だからVue.jsのドキュメントにもSSRについての記載があります。困ったらまずは公式ドキュメントに立ち戻るのが、やっぱり早道ですね。
+>SSRはNuxt.jsが提供している機能だと思っていましたが、大元は vue-server-render が提供しているのですね。だからVue.jsのドキュメントにもSSRについての記載があります。困ったらまずは公式ドキュメントに立ち戻
+るのが、やっぱり早道ですね。
+
+**stateの内容はリロードすると消えてしまう**
+それ前提で設計しないといけない
+
+[設計参考](https://logmi.jp/tech/articles/322003)
+[設計参考2compositionapi](https://zenn.dev/koudaiishigame/articles/810ce2d0ee8ade)
 
 
 ## Nuxt 導入に必要なサーバ要件について
@@ -523,8 +530,6 @@ Nuxt Composition APIのv0.20.0未満ではuseFetch()を利用してgenerateを�
 ## useFetch, useAsyncの違い
 
 
-
-
 ## nuxt error
 
 process.server, process.client による条件分岐により、必要なコードだけをそれぞれの環境（Nuxt サーバー上、ブラウザ上）で実行できるようにする
@@ -550,11 +555,15 @@ SSR 時と CSR 時の情報の差がある場合、エラーを吐く。その�
 ## Nuxt でのprocess.client, prosess.serverについて
 
 NuxtではNodeの環境変数processを拡張する形で、process.server, process.clientが設定されている
+**つまり、created()の時、SSRとCSRでどちらも実行されるため、created()内でCSR処理を行いたい時などに分岐できる。**
 
 [参考定義URL](https://qiita.com/geerpm/items/64caf4ebaf5122b71549)
 
 - process.client
 **クライアントサイドでその処理が実行されるか**というのを制御できる。
+
+- process.server
+**サーバサイドでその処理が実行されるか**というのを制御できる。
 
 [nuxt pluginでのaxiosエラー](https://qiita.com/yamotuki/items/ebd5fed5d75ff80c66ee)
 
@@ -580,6 +589,7 @@ created() {
   }
 }
 ```
+
 ---
 
 ## ここから超重要
@@ -616,6 +626,7 @@ beforeMount（CSR）
 mounted（CSR）
 
 ## 内部ナビゲーション時
+
 **上記以外の画面遷移時には、CSRの処理のみが走ります。**
 pluginsは動かないため、どのページに遷移しても共通の処理を行いたい場合はmiddlewareなどを検討しましょう。
 
@@ -634,8 +645,7 @@ mounted（CSR）
 
 Nuxt.jsには、serverMiddlewareという機能があります。この機能を利用するとNuxt.js内部でAPIサーバを構築することができる。
 
-
-## Tokenの作成
+## NuxtのTokenの作成
 
 nuxtはSSRで動作をさせるのであれば、SSRとCSRのどちらでもlogin処理を行わないといけない。
 つまり、ts側とvue側
@@ -692,15 +702,33 @@ S3+CloudFront、Netlify、Vercel、Firebase Hosting など
 
 [参考URL(結構つかえる)](https://zenn.dev/kouchanne/articles/83466e36e1c30f174ae8)
 [参考URL](https://blog.cloud-acct.com/posts/u-nuxt-module-cryptojs)
+[参考URL](https://blog.microcms.io/nuxt-secure-api-key/)
+
+**そもそもの原因**
+
+**nuxt.config.jsのenvがサーバーからもクライアントからも読み取れるようになってしまうのが原因**
+
 
 2.13以降に使える
 
 publicRuntimeConfig : CSR時・SSR時どちらでも利用したいもの
 **※publicRuntimeConfigに登録した値は`window.__NUXT__.config`に登録されHTMLに展開される。**
 
-
 privateRuntimeConfig : SSR時のサーバーサイド限定で利用したいもの
 **ただ、SPAモードでは、クライアントでレンダリングを行なっているため、ここに登録した値を参照することはできません。**
+
+```js
+export default {
+  privateRuntimeConfig: {
+    apiKey: API_KEY
+  },
+  // yarn dev時はクライアントサイドでも処理は行われるため
+  publicRuntimeConfig: {
+    apiKey: process.env.NODE_ENV !== 'production' ? API_KEY : undefined
+  },
+  // 略
+}
+```
 
 ## .envの扱い(env プロパティの環境変数は漏洩します)
 
@@ -735,3 +763,12 @@ nuxt.config.tsに以下を記載する。
 ```ts
 modules: ['@nuxtjs/style-resources'],
 ```
+
+## Nuxt で DI っぽいことをする
+
+
+## Nuxt eslint prettier stylelint 設定
+
+[nuxt typescript eslint prettier](https://inokawablog.org/vue-js/nuxt-typescript-stylelint-eslint-prettier/)
+[stylelint 設定](https://qiita.com/y-w/items/bd7f11013fe34b69f0df)
+[こちらの stylelint 設定がよい](https://toragramming.com/web/nuxtjs/nuxt-stylelint-prettier-vscode-format-scss-on-save/)

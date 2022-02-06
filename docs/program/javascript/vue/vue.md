@@ -18,11 +18,23 @@ context → Vue インスタンス生成前のインスタンス,Store インス
 this : 現在のVue インスタンスを指定するとき
 context : まだ Vue インスタンスが作られる前に Vue インスタンスを使いたいとき、Store メソッドを使いたいとき
 
+**ここでnuxt composition APIを絡めて覚える**
+router, app, store に簡単にアクセスできるのがよい(useContext を使用して)
+**つまり、contextにアクセスする**
+
+## @vue/composition-apiと@nuxtjs/composition-apiでのcontextの違い
+
+[参考URL](https://zenn.dev/hogeihogemi/articles/94c0254372defd)
+
+@vue/composition-api では**呼び出し時に context を引数として渡す**
+@nuxtjs/composition-api では**呼び出された場所の context を useContext で取得できる**
+
 ---
+
 ## emit
 
-@todoSubmitのように呼び出しています。**(v-on:todoSubmitでも良い)**
-親コンポーネントでこれに反応して実行されるメソッドを定義すると、`@todoSubmit="addTodo" # addTodoのこと`addTodoの第一引数には子から渡されたデータが入ります。
+@todoSubmitのように呼び出し、親コンポーネントでイベントを待機する **省略記法:(v-on:todoSubmitでも良い)**
+親コンポーネントでイベントを登録しこれに反応して実行されるメソッドを定義すると、`@todoSubmit="addTodo" # addTodoのこと`addTodoの**第一引数には子からemitされた際に渡されたデータが入ります。**
 
 [参考URL](https://note.com/vixer93/n/n85bd3a4e60ba)
 
