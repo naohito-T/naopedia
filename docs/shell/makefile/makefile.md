@@ -63,7 +63,6 @@ clean:
 ターゲットは基本的にターゲット名と同名のファイルを生成する処理
 そのためmakeはターゲットと同名のファイルが既にあると(依存関係がある時以外は)処理を行なわない。
 
-
 ## PHONYターゲット
 
 .PHONY ${ターゲット名} という記載で、そのターゲットは、ファイルは生成しないという事を make に知らせることができる
@@ -77,6 +76,17 @@ clean:
 $ touch clean
 $ make clean
 make: `clean' is up to date.
-
-
 ```
+
+## Makefileでの変数展開
+
+[参考URL](https://www.nooozui.com/entry/20200129/1580277274)
+
+= の場合は都度参照(つまり new Dateすると時間が都度更新される)
+:= の場合は1回のみの参照
+
+```Makefile
+# コマンド実行を変数に格納したい場合
+FROM_DEPLOY_BRANCH := $$(git branch | head -n 1)
+```
+

@@ -13,11 +13,13 @@ context → Vue インスタンス生成前のインスタンス,Store インス
 
 ## Vue の this と Context
 
+[参考URL](https://qiita.com/beanzou/items/600af8c04341459cbe3a)
+
 this : 現在のVue インスタンスを指定するとき
 context : まだ Vue インスタンスが作られる前に Vue インスタンスを使いたいとき、Store メソッドを使いたいとき
 
 ---
-## emit 
+## emit
 
 @todoSubmitのように呼び出しています。**(v-on:todoSubmitでも良い)**
 親コンポーネントでこれに反応して実行されるメソッドを定義すると、`@todoSubmit="addTodo" # addTodoのこと`addTodoの第一引数には子から渡されたデータが入ります。
