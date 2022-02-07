@@ -798,4 +798,32 @@ end
 
 Railsではこの機能を提供するため、いくつものZeitwerkローダーを開発者の代わりに管理しています。
 
+## Railsでのmemo化
 
+>Railsでマスター系のDBで何度も同じ内容を叩いたり、N+1問題対策でincludesをつけていても、結局
+>デカイSQLを発行してしまい効率的ではない場合もある。そこでメモリに保存して再利用する方法memoistを使う方法がある
+
+[参考URL](https://qiita.com/kon_yu/items/c5a1a5e5a4ef878425dd)
+
+## Railsでのミドルウェア
+
+[参考URL](https://fuqda.hatenablog.com/entry/2019/03/25/210850)
+
+- Railsでのミドルウェアとは？
+OSとアプリケーションの間に入って動作するソフトウェアのこと
+
+- 現在のRailsアプリのミドルウェアの状態を知りたいときは
+`$ bundle exec rake middleware`
+
+- どこで読み込むのか
+>config.middleware.useの引数に読み込みたいミドルウェアを指定します！
+>※ initializers配下のファイルであれば、ある程度どこに書いてもOKっぽい？けどカオスになるので、`/config/application.rb`に書くのが安全な気がします。
+
+
+## RailsでのLintツール
+
+RuboCopを使用する
+
+## 全Rubyistに今すぐ伝えたいwebpackとwebpacker
+
+[参考URL](https://qiita.com/jesus_isao/items/1f519b2c6d53f336cadd)
