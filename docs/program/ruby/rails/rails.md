@@ -819,11 +819,35 @@ OSとアプリケーションの間に入って動作するソフトウェアの
 >config.middleware.useの引数に読み込みたいミドルウェアを指定します！
 >※ initializers配下のファイルであれば、ある程度どこに書いてもOKっぽい？けどカオスになるので、`/config/application.rb`に書くのが安全な気がします。
 
+---
 
 ## RailsでのLintツール
 
 RuboCopを使用する
 
+---
 ## 全Rubyistに今すぐ伝えたいwebpackとwebpacker
 
+webpackerは、自前でwebpackをRailsに導入せずとも簡単にwebpackをRailsに取り込んで、Railsの仕様と融合させる（押し付ける？）事が出来るようにする為のGemです。
+要は、webpackの事をあまり知らなくてもRailsライクにwebpackを利用できるようにしてくれるという事ですね。
+また、JavaScriptファイルを呼び出すためのヘルパーメソッドが変わります。
+
+```ruby
+# ヘルパーメソッドが変わる
+# これまで
+<%= javascript_include_tag 'notebook', 'data-turbolinks-track': 'reload' %>
+# webpacker導入後
+<%= javascript_pack_tag 'hoge' %>
+```
+
+**つまりapi modeの時はいらないということ！！！！！！！！！！！！**
+
 [参考URL](https://qiita.com/jesus_isao/items/1f519b2c6d53f336cadd)
+
+>WebpackerはRails 7以降では使う理由がなくなり、今後は開発が止まっていきます。新規PJでwebpackerは採用しない方が良いでしょう
+
+- webpackとwebpackerの関係
+まず前提として、**webpackと、webpackerは別物**
+
+>webpackはJSのnpmのパッケージです。JSのコミュニティの中で育ちました。npmというのは、Node.jsで使えるパッケージ管理ツールのことで、つまりはRubyでいうbundlerです。JSの開発者たちは、このnpmか、その代替のyarnをみんな使っています。
+そしてwebpackerはRubyのgemです。Railsでもwebpackが楽に使えるように作られました。
