@@ -9,9 +9,19 @@ stripeのAPIを使うと、自身のサービスの決済処理を担ってく�
 といったことが可能となる。
 >私がstripeの特に良いと思ったところは、ユーザーがstripeのアカウントがなくても支払ができるということです。
 
+[Stripe Docs](https://stripe.com/docs/stripe-cli)
+
+localで3D secureをしたい
+
+3dセキュアは本人認証後、Stripeに送信されStripeで認証が取れたことを確認した後、Webhookでどこかに送信する流れ、
+そのためapi側ではwebhookを受けた後、その処理をする必要がある。
+localではそれができないが、Stripe CLIを使えばそれを実行できる。
+
 ---
 
 ## RailsでのStripeの実装
+
+[参考URL](https://qiita.com/tomokazu0112/items/89f69c47761ac782ce13#%E9%A1%A7%E5%AE%A2%E7%99%BB%E9%8C%B2)
 
 顧客情報をstripeに登録し、その際に作られた顧客IDを中心にその他の課金等の処理を実行する
 というのが実装の方針となる。

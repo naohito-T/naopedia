@@ -411,6 +411,32 @@ watchの引数はリアクティブなオブジェクトである必要がある
 `<telport>`の前衛
 vue2でのタグ
 
+---
+
+## Compositon API
+
+## Propsを監視する
+
+[【Vue3】CompositionAPIでpropsの変更を検知する](https://zenn.dev/tentel/articles/e52815dd33f328)
+
+```js
+export default defineComponent({
+ name: "Child",
+ props: {
+   msg: String,
+   aaa: Number,
+ },
+ setup(props) {
+   // props全体をwatchで囲むと、無駄な変更処理がかかってしまう。そのため監視したいプロパティを指定する。
+   const { msg } = toRefs(props);
+   watch(msg, () => {
+     // ここで任意のメソッドを呼び出す
+   });
+ },
+});
+
+```
+
 ## setup()
 
 data()の中でセットされたプロパティはデフォルトでリアクティブになるがsetup()の中で宣言された変数はリアクティブにはならない

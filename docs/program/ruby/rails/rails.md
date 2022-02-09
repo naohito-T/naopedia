@@ -4,6 +4,8 @@
 [Rails](https://atmarkit.itmedia.co.jp/ait/articles/1102/23/news109_3.html)
 [Railsのクリーンアーキテクチャ](https://qiita.com/shunjikonishi/items/e39ed8091e1dca817468)
 
+[【Rails】hashid-railsを用いてIDを難読化・暗号化させる方法](https://techtechmedia.com/hashid-rails/)
+
 ## Railsスタイルガイド
 
 シンボル名、メソッド名、変数名はスネークケースにする

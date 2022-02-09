@@ -176,6 +176,10 @@ Date.formatTicketCountLastTime = (month: number = 1): number => {
 
 ## 分割代入
 
+- 分割代入の時のデフォルト値が使われる基準
+
+Falsyの時でもなく、undefinedの時のみ使われる。Nullishの時ではなくundefinedの時
+
 [参考になる](https://qiita.com/righteous/items/157e6f0e633c42dbe331)
 [参考になる](https://qiita.com/FumioNonaka/items/58358a29850afd7a0f37)
 
