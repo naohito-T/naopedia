@@ -1,6 +1,8 @@
 # Nuxt
 
-[nuxt lifesycle](https://qiita.com/too/items/e8ffcf7de7d48dcb9a9b)
+[VueのSSR時におけるハイドレーションエラー対処法](https://zenn.dev/00_/articles/c5130802d384b8238e4c)
+[nuxt lifecycle](https://qiita.com/too/items/e8ffcf7de7d48dcb9a9b)
+[Composition API + Typescript で Vuex をリアクティブに安全に使いたい](https://tjmschk.hatenablog.com/entry/2020/12/14/231800)
 
 Nuxt.jsでSSRを使う場合は、
 初回の描画時はSSRとCSR

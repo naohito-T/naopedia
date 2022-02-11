@@ -4,6 +4,8 @@
 [Rails](https://atmarkit.itmedia.co.jp/ait/articles/1102/23/news109_3.html)
 [Railsのクリーンアーキテクチャ](https://qiita.com/shunjikonishi/items/e39ed8091e1dca817468)
 
+[【Rails】hashid-railsを用いてIDを難読化・暗号化させる方法](https://techtechmedia.com/hashid-rails/)
+
 ## Railsスタイルガイド
 
 シンボル名、メソッド名、変数名はスネークケースにする
@@ -798,4 +800,56 @@ end
 
 Railsではこの機能を提供するため、いくつものZeitwerkローダーを開発者の代わりに管理しています。
 
+## Railsでのmemo化
 
+>Railsでマスター系のDBで何度も同じ内容を叩いたり、N+1問題対策でincludesをつけていても、結局
+>デカイSQLを発行してしまい効率的ではない場合もある。そこでメモリに保存して再利用する方法memoistを使う方法がある
+
+[参考URL](https://qiita.com/kon_yu/items/c5a1a5e5a4ef878425dd)
+
+## Railsでのミドルウェア
+
+[参考URL](https://fuqda.hatenablog.com/entry/2019/03/25/210850)
+
+- Railsでのミドルウェアとは？
+OSとアプリケーションの間に入って動作するソフトウェアのこと
+
+- 現在のRailsアプリのミドルウェアの状態を知りたいときは
+`$ bundle exec rake middleware`
+
+- どこで読み込むのか
+>config.middleware.useの引数に読み込みたいミドルウェアを指定します！
+>※ initializers配下のファイルであれば、ある程度どこに書いてもOKっぽい？けどカオスになるので、`/config/application.rb`に書くのが安全な気がします。
+
+---
+
+## RailsでのLintツール
+
+RuboCopを使用する
+
+---
+## 全Rubyistに今すぐ伝えたいwebpackとwebpacker
+
+webpackerは、自前でwebpackをRailsに導入せずとも簡単にwebpackをRailsに取り込んで、Railsの仕様と融合させる（押し付ける？）事が出来るようにする為のGemです。
+要は、webpackの事をあまり知らなくてもRailsライクにwebpackを利用できるようにしてくれるという事ですね。
+また、JavaScriptファイルを呼び出すためのヘルパーメソッドが変わります。
+
+```ruby
+# ヘルパーメソッドが変わる
+# これまで
+<%= javascript_include_tag 'notebook', 'data-turbolinks-track': 'reload' %>
+# webpacker導入後
+<%= javascript_pack_tag 'hoge' %>
+```
+
+**つまりapi modeの時はいらないということ！！！！！！！！！！！！**
+
+[参考URL](https://qiita.com/jesus_isao/items/1f519b2c6d53f336cadd)
+
+>WebpackerはRails 7以降では使う理由がなくなり、今後は開発が止まっていきます。新規PJでwebpackerは採用しない方が良いでしょう
+
+- webpackとwebpackerの関係
+まず前提として、**webpackと、webpackerは別物**
+
+>webpackはJSのnpmのパッケージです。JSのコミュニティの中で育ちました。npmというのは、Node.jsで使えるパッケージ管理ツールのことで、つまりはRubyでいうbundlerです。JSの開発者たちは、このnpmか、その代替のyarnをみんな使っています。
+そしてwebpackerはRubyのgemです。Railsでもwebpackが楽に使えるように作られました。
