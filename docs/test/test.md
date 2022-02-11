@@ -6,6 +6,12 @@
 テストをしたというコードが残るのが何よりも良い。エビデンスになる。
 APIテストのエンドポイントのメソッドでWeb APIをcallしているような場合は、それをmock化してWeb APIがcallされないようにすべき。
 
+## Test自動化 3つのステップ
+
+テスト自動化には大きく3つのステップがある。
+- テスト設計
+- テストスクリプト作成
+- CI環境構築
 ## E2Eテスト(End to End)
 
 **E2EテストとはUI(User Interface)テスト**とも呼ばれ、システム全体を通してテストを行う。
@@ -125,8 +131,16 @@ Node.js(Express)でServer Sideを構築する場合、外部のWeb APIを実行�
 
 [参考URL](https://casualdevelopers.com/tech-tips/how-to-install-and-use-jenkins-on-docker-for-nodejs/)
 
+テストを自動実行することで開発中のプロダクトの品質を担保し、安全にソースコードをマージすることが出来るようになります。
+こうした一連の流れをContinuous Integration（継続的インテグレーション）と呼び、こうした環境を構築することを、そのイニシャルからCI環境構築と呼ぶ。
+
+## 昨今のCIツール
+
+環境構築は一からはやらない。既存のツールを利用することがほとんど
+基本yamlファイルで終了
 ## Jenkins
 
+Jenkinsは使用に際して色々と作りこみが必要になるので、属人化しやすいというデメリットがありますが、最近のCIツールは設定ファイルひとつで済むので属人化しづらいというメリットがあります。
 Job DSLとは
 Job DSLとはJenkinsの新しいジョブの設定をDSL(Domain Specific Language)で書いておき、それを読み込むだけでGUIをつかずに新しいジョブを作成する仕組み。
 昨今はinfrastructure as code(laC)と言われているようにインフラであっても人が手動で設定するのではなく、設定をソースコードにして自動的に設定をされるべき。

@@ -39,3 +39,7 @@ nodeとnpmは違うからね
 
 プロジェクト内に.npmrcを作成する
 作成することで`npm install`の際にengineを確認してバージョンバージョンの問題があった場合はインストールさせない
+
+## Browserslistの更新を要求された場合
+
+[参考URL](https://dev.classmethod.jp/articles/asked-to-update-the-browserslist-when-building-react-app/)
