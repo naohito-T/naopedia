@@ -46,3 +46,21 @@ debounceでは対応しきれない部分の代替手段として、スクロー
 
 [参考URL](https://paralux.co.jp/blog/358)
 [コリス](https://coliss.com/articles/build-websites/operation/work/lazy-load-images-for-maximum-performance.html)
+
+
+----
+
+## サイト パフォーマンスチェック項目
+
+## クリティカルレンダリングパス
+
+DOMとJavaScriptも含めてクリティカルレンダリングパスと呼ぶ
+
+## Chrome lighthouse (実施するときはシークレットモードにする)
+
+Lighthouseとはウェブページの品質改善の指針を
+パフォーマンス・PWA・アクセシビリティ・ベストプラクティス・SEOの点でチェックしてくれる
+
+- 経緯
+>Chrome拡張やコマンドラインで提供されていましたが、Google Chrome 60でデベロッパーツールに統合された。
+>また、オンラインでチェックしてくれるツールGoogle PageSpeed Insightsも、分析エンジンにLighthouseを採用するようになりました。とは言っても全く同じ結果とはならなくて、Google PageSpeed Insightsの判定の方が低い場合が多いようだ。

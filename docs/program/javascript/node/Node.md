@@ -13,7 +13,7 @@
 - npm script
 
 npm runで実行できるエイリアスコマンド
-npm runで実行することでローカルnode_moduleにインストールしたpackageを実行できる。
+npm runで実行することでローカルnode_moduleにインストールしたpackageを実行できる。****
 
 - 優先度
 

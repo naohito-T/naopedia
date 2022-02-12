@@ -1,5 +1,15 @@
 # Docker
 
+## 絶対覚えておけ
+
+そのイメージになにが含まれているのか確認する方法
+
+`$ docker run -it alpine:3.11`
+
+## alpine linux
+
+[alpine linuxにyarnいれる](https://scrapbox.io/keroxp/alpine-linux%E3%81%AByarn%E3%82%92%E5%85%A5%E3%82%8C%E3%82%8B)
+
 ## Docker 参考文献
 
 [お前らのDockerfileは重い。](https://speakerdeck.com/stormcat24/oqian-falsedockerimezihamadazhong-i?slide=13)
