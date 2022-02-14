@@ -3,6 +3,36 @@
 [参考URL](https://serverless.co.jp/blog/25/)
 [こちらがわかりやすい](https://service.plan-b.co.jp/blog/tech/30863/)
 
+## Serverless Framework install から deploy
+
+[参考URL(リファレンス？)](https://serverless.co.jp/blog/25/)
+[参考URL(こちらのがいい)](https://qiita.com/sugo/items/c9de09421fe8d78f5fbd)
+
+1. serverless install
+`$ npm install -g serverless`
+
+2. プロバイダーアカウントのセットアップ
+プロバイダーとは要はどのクラウドサービスを使用して、Serverlessを動かすかということ。
+AWS, GCP, Azureなど様々なクラウドプロバイダーに対応している。
+
+AWSデプロイするためには？
+[AWS setup方法](https://www.serverless.com/framework/docs/providers/aws/guide/credentials)
+
+要は以下を実施すればいい
+- Serverless用のIAMユーザを発行
+- IAMユーザにAdministratorAccessの管理ポリシーを与える
+
+デプロイするのにアクセスキーIDとシークレットアクセスキーが必用なため、それを作成。
+IAMユーザー追加して、「AdministratorAccess」のポリシーを付与。
+AWSマネジメントコンソールからぽちぽちしました。
+
+厳密には以下のような状態になってます。
+
+グループ作成
+グループに「AdministratorAccess」のポリシーを付与
+IAMユーザー作成
+グループにユーザーを追加
+
 ## Serverless Framework
 
 ServerlessはNode.jsで作られたCLIツール
@@ -42,6 +72,41 @@ Amazon Web Servicesの一部としてAmazonが提供するサーバーレスコ�
 サーバー設定担当者によって構成が微妙に違うので、デプロイしたらコードが動かない問題
 重複しますが、そんなサーバー関連の問題を減らすことができる「サーバレスアーキテクチャ」をお手軽に構築できるのが、「Serverless Framework」となります。
 
+---
+
+## サービスの作成(Lambda)
+
+Severlessはサービスという単位で実行環境を作成していく
+AWSをプロバイダーとしてNode.jsでサービスを開設する場合は以下の手順になります。
+
+`$ $ serverless create --template aws-nodejs --name my-special-service --path my-special-service`
+
+すると、my-special-serviceのディレクトリが作られ、その配下に以下のファイルが出来ているはずです。
+これでサービスの作成は完了です。
+
+serverless.yml
+handler.js
+event.json
+
+## serverless.yml
+
+各サービス全体の設定を行うためのファイル
+AWSでは以下のような設定が可能
 
 
+サービス内のLambdaファンクション群の設定
+Lambdaに設定されるIAMロールの設定
+デプロイ時にどのファイル/ディレクトリを含めるか/含めないかの設定 →**これ今回に必用**
+使用するプラグインの定義
+Lambdaファンクションごとのトリガーとなるイベントの定義
+Lambdaファンクションが他のAWSリソースを連携する場合は、そのIAMを含めた定義
+まずは、serverless.ymlの設定をしてあげましょう。もろもろサービスを実行するために必要な設定はすべてこのファイルで行います。
+
+## handler.js
+
+これはファンクションを定義するためのスケルトンとして生成されるファイルです。これを参考に実際のファンクションのプログラムを作っていきます。
+
+## event.json
+
+ServerlessのCLIでファンクションを実行する際に入力値となるデータを定義するファイルです。Lambdaファンクション内でevent変数に展開されます。
 
