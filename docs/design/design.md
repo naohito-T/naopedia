@@ -136,4 +136,7 @@ userAgentだと、昨今のデバイスが増えていく事情により現実�
 
 [レスポンシブ](https://coliss.com/articles/build-websites/operation/css/the-new-responsive-2021.html)
 
+## Tips
 
+要素をタイル上に埋めたい(masonryと調べればいい)
+[vue-masonry]()

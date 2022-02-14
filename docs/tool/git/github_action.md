@@ -4,6 +4,10 @@
 大抵はyaml形式で設定を書き込むことになる。
 
 
+## ワークフローの設定
+
+ワークフローをベースブランチにマージしないと動かない
+
 ## Github ActionでCI環境構築
 
 [参考URL](https://note.com/shift_tech/n/n5edc79df5560)

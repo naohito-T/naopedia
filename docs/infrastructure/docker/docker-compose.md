@@ -135,6 +135,17 @@ services: # 起動するコンテナの定義を行う。
   Docker compose管理外のネットワークやボリュームであることを示す。
   これらのオプションが指定されたネットワークやボリュームはdocker-compose downによって削除されることはない。
 
+- tty(teletypewriter（テレタイプライター)
+[参考URL](https://zenn.dev/hohner/articles/43a0da20181d34)
+
+ttyがないと、コンテナを起動させ続けるためのプロセスが存在しないためコンテナが正常終了してしまう。
+
+ttyとは?
+>ttyとは、標準入出力となっている端末デバイス(制御端末、controlling terminal)の名前を表示するUnix系のコマンドである。元来ttyとはteletypewriter（テレタイプライター）のことを指す。
+
+どうやらttyは標準入出力先のデバイスとのことです。
+そして、その標準入出力先のデバイスを確認する方法が、ttyコマンドで、このコマンドはUnix系のコマンドであるため、ターミナルでttyとそのまま叩けます。
+
 ## docker-compose のコマンド
 
 - up
