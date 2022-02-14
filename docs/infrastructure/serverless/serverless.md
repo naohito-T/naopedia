@@ -42,6 +42,7 @@ Amazon Web Servicesの一部としてAmazonが提供するサーバーレスコ�
 サーバー設定担当者によって構成が微妙に違うので、デプロイしたらコードが動かない問題
 重複しますが、そんなサーバー関連の問題を減らすことができる「サーバレスアーキテクチャ」をお手軽に構築できるのが、「Serverless Framework」となります。
 
+[AWS サーバーレスおさらい](https://d1.awsstatic.com/serverless-jp/seminars/20210909_Serverless_session1.pdf)
 
 
 
