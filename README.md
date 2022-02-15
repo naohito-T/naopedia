@@ -124,6 +124,8 @@ OK testとNG testをやる(ユニットテスト)
 
 [](https://www.publickey1.jp/blog/22/itit202210.html)
 
+[cdと同時にlsをする](https://m.designbits.jp/14052815/)
+
 ## 有名なプログラマー
 
 [t-wada](https://t-wada.hatenablog.jp/)
