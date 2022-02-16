@@ -129,3 +129,9 @@ OK testとNG testをやる(ユニットテスト)
 ## 有名なプログラマー
 
 [t-wada](https://t-wada.hatenablog.jp/)
+
+## パスワード生成ツールを実行
+
+[pwgen](https://qiita.com/icedpasta1832/items/57d0d9805f04b6e79875)
+
+epjZCOL?..T%vGoDmHgo#'&(8@GVuG1]

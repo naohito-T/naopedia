@@ -275,7 +275,7 @@ OGPとは、「Open Graph Protcol」の略でFacebookやTwitterなどのSNSで�
 アウトソーシングでは、自社の特定の業務を、より特化した外部の専門業者に発注することになります。
 
 ## コントリビューション(contribution)
-
+/
 寄付。 出資。 また、貢献。
 
 ## エピローグ
