@@ -14,7 +14,6 @@ book 形式でまとめる方が良いと思い、プログラマーとしての
 Google の Cloud API を参考にしている
 [リファレンス URL](https://cloud.google.com/apis/design/naming_convention?hl=ja)
 
-
 ## blog記事案
 
 CSS vs JS
@@ -26,11 +25,9 @@ CSS vs Jsをfpsの観点から、またパフォーマンスの観点からを�
 
 [参考URL](https://hnavi.co.jp/knowledge/blog/english/)
 
-
 ## これをportfolioに使用する
 
 [参考URL](https://coliss.com/articles/build-websites/operation/javascript/native-like-animations-for-page-transitions.html)
-
 
 ## Node.jsのdebugをできるようにする(typescript版で)
 
@@ -84,7 +81,7 @@ CSS vs Jsをfpsの観点から、またパフォーマンスの観点からを�
 
 [](https://zenn.dev/gunners6518/books/4c4672f32dd100)
 
-## OSS活動をする。  
+## OSS活動をする
 
 [OSS活動](https://knqyf263.hatenablog.com/entry/2020/08/28/074749)
 
@@ -108,7 +105,6 @@ CSS vs Jsをfpsの観点から、またパフォーマンスの観点からを�
 - devops
 ![devops](images/devops.png)
 
-
 ## やること
 
 [Vue Test util](https://qiita.com/daiki7nohe/items/8d29e2d9059296b75fa6)
@@ -122,16 +118,8 @@ OK testとNG testをやる(ユニットテスト)
 ■if変換がよわい
 逆とみなす部分で仕様を探る力
 
-[](https://www.publickey1.jp/blog/22/itit202210.html)
-
-[cdと同時にlsをする](https://m.designbits.jp/14052815/)
+[ITエンジニア本大賞2022](https://www.publickey1.jp/blog/22/itit202210.html)
 
 ## 有名なプログラマー
 
 [t-wada](https://t-wada.hatenablog.jp/)
-
-## パスワード生成ツールを実行
-
-[pwgen](https://qiita.com/icedpasta1832/items/57d0d9805f04b6e79875)
-
-epjZCOL?..T%vGoDmHgo#'&(8@GVuG1]
