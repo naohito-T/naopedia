@@ -1,5 +1,8 @@
 # Stripe
 
+[Stripe Docs](https://stripe.com/docs/stripe-cli)
+[Stripe card Docs](https://stripe.com/docs/testing#cards)
+
 決済代行サービス(類似サービスとしてはPayPalがある)
 stripeのAPIを使うと、自身のサービスの決済処理を担ってくれる。
 
@@ -8,8 +11,6 @@ stripeのAPIを使うと、自身のサービスの決済処理を担ってく�
 
 といったことが可能となる。
 >私がstripeの特に良いと思ったところは、ユーザーがstripeのアカウントがなくても支払ができるということです。
-
-[Stripe Docs](https://stripe.com/docs/stripe-cli)
 
 localで3D secureをしたい
 

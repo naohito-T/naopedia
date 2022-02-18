@@ -286,4 +286,6 @@ OGPとは、「Open Graph Protcol」の略でFacebookやTwitterなどのSNSで�
 
 [参考URL](https://e-words.jp/w/%E3%83%AA%E3%83%BC%E3%83%89%E3%83%AC%E3%83%97%E3%83%AA%E3%82%AB.html)
 
+## インターセプト
 
+途中で捕まえる、妨害する、封じる、途中で押さえる

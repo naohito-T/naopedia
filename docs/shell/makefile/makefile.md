@@ -1,5 +1,8 @@
 # Makefile
 
+Makefileはプロジェクトでよく使用されるタスクランナー
+JSを使用する場合はpackage.jsonを使う`npm run`
+
 [参考URL](http://masahir0y.blogspot.com/2012/02/linuxmakefile-4.html)
 [Makefile ことはじめ](https://qiita.com/kasei-san/items/ad25df63260e86c5cc71)
 

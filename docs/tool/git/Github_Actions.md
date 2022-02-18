@@ -32,3 +32,52 @@ GitHub Actionsでは、実行する処理とその処理を実行する条件を
 1. 実行する処理や実行する条件などをYAML形式(拡張式は.ymlもしくは.yaml)のファイルに記述することでワークフローを定義する
 2. 作成したファイルに関しては、リポジトリのルートディレクトリ直下にある.github/workflowsディレクトリ内に作成する必要がある.
 3. github workflowには認証情報は記載しない
+
+---
+
+## Tips
+
+ワークフローの状態バッチを作成する
+プロジェクトトップのREADMEにはバッチを作成し、現状の状態を視覚で表現するのが通例とのこと。
+[参考URL](https://docs.microsoft.com/ja-jp/dotnet/devops/dotnet-test-github-action)
+
+![これ](image/バッチ.png)
+
+
+## github action local実行 (act)
+
+[参考(これがいい)](https://dev.classmethod.jp/articles/act-for-github-actions-local-execution-tool/)
+
+[参考URL](https://zenn.dev/usagiga/articles/f44be764419e15700247)
+
+push
+`$ act`
+pull_request
+`$ act pull_request`
+
+```sh
+# Command structure:
+act [<event>] [options]
+If no event name passed, will default to "on: push"
+
+# List the actions for the default event:
+act -l
+
+# List the actions for a specific event:
+act workflow_dispatch -l
+
+# Run the default (`push`) event:
+act
+
+# Run a specific event:
+act pull_request
+
+# Run a specific job:
+act -j test
+
+# Run in dry-run mode:
+act -n
+
+# Enable verbose-logging (can be used with any of the above commands)
+act -v
+```
