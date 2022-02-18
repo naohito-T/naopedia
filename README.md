@@ -133,3 +133,15 @@ epjZCOL?..T%vGoDmHgo#'&(8@GVuG1]
 ## これやる
 
 https://blog.suzuxander.com/aws/552.html
+
+これも
+https://dev.classmethod.jp/articles/deploying-lambda-with-webpack-typescript-cdk/
+
+スナップショット
+https://www.mitsue.co.jp/knowledge/blog/frontend/202104/28_1500.html
+
+[Nuxt jest Codecov](https://gift-tech.co.jp/articles/nuxt-js-jest-codecov/)
+
+## Github Action をローカルでテストする
+
+[local](https://zenn.dev/usagiga/articles/f44be764419e15700247)

@@ -281,3 +281,9 @@ OGPとは、「Open Graph Protcol」の略でFacebookやTwitterなどのSNSで�
 ## エピローグ
 
 詩歌・小説・演劇などの終わりの部分。
+
+## リードレプリカ
+
+[参考URL](https://e-words.jp/w/%E3%83%AA%E3%83%BC%E3%83%89%E3%83%AC%E3%83%97%E3%83%AA%E3%82%AB.html)
+
+
