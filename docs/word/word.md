@@ -289,3 +289,7 @@ OGPとは、「Open Graph Protcol」の略でFacebookやTwitterなどのSNSで�
 ## インターセプト
 
 途中で捕まえる、妨害する、封じる、途中で押さえる
+
+## dispatch(ディスパッチ)
+
+発信

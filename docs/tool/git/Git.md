@@ -323,3 +323,17 @@ rootリポジトリもコミットする
 .gitmodules
 .git/config内と
 .git/modules/内のディレクトリ名を変更すればいける
+
+---
+
+## Tips
+
+[Githubで一番有名なGit TIPS集](https://qiita.com/rana_kualu/items/4d5e27244256e9689304)
+
+ローカルの変更をすて、リモートリポジトリと同期する
+`$ git fetch origin && git reset --hard origin/master && git clean -f -d`
+
+コンフリクトしたファイルだけを表示する
+`$ git diff --name-only --diff-filter=U`
+
+既にmasterにマージされているブランチを一括削除する
