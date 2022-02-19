@@ -24,10 +24,20 @@ Flow
 ## HEADとは
 
 今自分が作業している場所を示すポインタ
+HEADはGitで現在のスナップショットを参照するために使用される。
 
 ## detached HEADとは
 
 HEADがBranchを指していない状態のこと
+
+## checkout
+
+git checkoutは、ファイル・コミット・ブランチの3つの異なるエンティティに対して実行される。
+
+
+
+
+
 
 ## .gitattributes ファイルとは
 

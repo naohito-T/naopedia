@@ -1,5 +1,15 @@
 # package.json 覚書
 
+## npmのprivate registry
+
+会社など、プライベートな空間がある場合に、Node.jsパッケージ管理に npm private registryという手法がある。
+→npmのregistryにprivateでパッケージをpublishする形式
+
+**注意**
+>この移行が終わったタイミングで、GitHubがnpmを買収することが発表され、将来的にnpm private registryはGitHub Packages Registryへと統合される予定です。
+
+[npm Docs](https://docs.npmjs.com/creating-and-publishing-private-packages)
+
 ## pre/postがついたスクリプト
 
 [参考URL](https://www.twilio.com/blog/npm-scripts-jp)

@@ -217,3 +217,32 @@ jobs: # jobsの内容がname配下に表示される
           AWS_REGION: ap-northeast-1
           COMMIT_SHA: ${{ github.sha }}
 ```
+
+## envについて
+
+[github secret KEY](https://qiita.com/inouet/items/c7d39ac4641c05eec4a0)
+
+仮想環境でactionが実行されるため、それを反映させるためにdirenvで反映させるのはめんどくさそう
+
+github上で設定できる箇所があるとのこと
+
+
+```yml
+# .github/workflows/hello.yml
+
+name: Hello
+on: push
+env:
+  SECRET_HOGE_1: ${{secrets.SECRET_HOGE}} ## ※1
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    name: Hello
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: run hello action
+        env:
+          SECRET_HOGE_2: ${{secrets.SECRET_HOGE}}  ## ※2
+        uses: ./.github/actions/hello
+```
