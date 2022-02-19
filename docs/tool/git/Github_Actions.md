@@ -5,6 +5,36 @@
 >ソフトウェアのソースコードを一定の品質に保ちつつ速いサイクルで開発・デプロイするために、現代ではこれだけ多様な技術が使われるようになりました。テスト、ビルド、デプロイのパターンだけでも多くの選択肢があり、その他のツールの利用も含めると組み合わせは無限にあります。苦労してプロジェクトに最適な組み合わせを見つけ、ワークフローを作り上げたとしても、今まではそれをコードとして記述するスタンダードな方法がなかったので、GitHub上で共有したり再利用することができないという問題がありました。
 >GitHubの利用形態について分析すると、全ユーザの約60％がリポジトリと何らかの外部ツールやサービスを連携させている、という結果がわかっていました。そこでGitHubでは、ソフトウェア開発のプラットフォームとしてこの問題を解決し、開発者の体験をより良いものにするにはどうしたらいいか考え、2018年10月にGitHub Actionsを発表しました。
 
+## GitHub Actionでできること
+
+[参考URL](https://knowledge.sakura.ad.jp/23478/)
+
+GitHub Actionsは、ほかのCI/CDツールと同様、リポジトリに対するプッシュやプルリクエストといった操作、もしくは指定した時刻になるといったイベントをトリガーとして、あらかじめ定義しておいた処理を実行する機能。
+たとえばリポジトリにコミットが行われた際に特定の処理を実行したり、毎日決まった時刻に特定の処理を実行したりする、といったことを実現できる。これらの処理はGitHubが提供するサーバー上に用意された仮想マシン内で実行できるため、**ユーザーが独自にサーバーなどを準備する必要はない点が最大のメリット。**
+
+**仮想マシン上で利用できるOSとは**
+仮想マシン上で利用できるOSとしては、Linux（Ubuntu）およびWindows、macOSに対応している。
+仮想マシン上にはOSだけでなく、**さまざまな言語のコンパイラや各種ランタイム、主要ライブラリといったソフトウェア開発環境も標準でインストールされている。**さらに、sudoコマンドを使ってroot権限でコマンドを実行させることもできる。つまり、一般的なサーバー上で実行できるほとんどの処理を実行できる。
+利用規約によって禁止されている処理ですら（アカウント凍結といったペナルティなどを受ける可能性は高いが）実行自体は可能だ。
+
+また、特別なハードウェアが必要な場合や、後述する制約を回避したい場合、また仮想マシン内でなく実マシン上で実行させたいといった場合は、ユーザーのサーバー上で処理を実行させることもできるようになっている。
+
+---
+
+Github Action基本
+
+[参考URL](https://qiita.com/HeRo/items/935d5e268208d411ab5a)
+
+## workflowの定義
+
+リポジトリに次のディレクトリを作成し、その中にYAML形式で定義する
+
+.github/workflows/
+YAMLファイルの名前は自由
+
+作成したファイルに関しては、リポジトリのルートディレクトリ直下にある.github/workflowsディレクトリ内に作成する必要がある.
+github workflowには認証情報は記載しない
+
 ## workflowsの中身を確認してみる
 
 ymlのnameがActionsのtest一覧に
@@ -12,43 +42,125 @@ ymlのjogsのtest名がnameに紐付きじゃばらで出る
 
 ![workflow](image/workflow.png)
 
+## job
 
-## CI/CD
+各ジョブは**仮想環境の新しいインスタンスで実行される**
+したがって、ジョブ間で環境変数やファイル、セットアップ処理の結果などは共有されない
+ジョブ間の依存を定義して待ち合わせることができる
+→データの受け渡しが必要ならアーティファクト経由で。
 
-昨今ではソフトウェア開発における様々な工程を自動化するような技術の開発や普及が進んでいる
-その一つにCI（Continuous Integration、継続的インテグレーション)やCD（Continuous Delivery、継続的デリバリー）と呼ばれるものがある。
+## Steps
 
-CIはソフトウェアのビルドやテストを自動化して頻繁に実行することでソフトウェアの品質向上や開発効率化を目指す手法で、CDはCIに加えてリリースやデプロイまでも自動化する手法だ。
+jobが実行する処理の集合
+同じjobのstepは同じ仮想環境で実行されるのでファイルやセットアップ処理は共有できる。
+しかし各ステップは別プロセスなので**ステップ内で定義した環境変数は共有できない。**
+jobs.<job_id>.envで定義した環境変数は全step で利用できる
+※jobの中にさらに細かい粒度で、stepが存在:stepはjobと違い上から順に実行される
 
-## GitHub Actionでできること
+## アクション
 
-[参考URL](https://knowledge.sakura.ad.jp/23478/)
+ワークフローの最小構成
+runコマンドでの実行ができ、Githubやサードパーティの公開アクションを利用(use)することもできる。
 
-GitHub Actionsは、ほかのCI/CDツールと同様、リポジトリに対するプッシュやプルリクエストといった操作、もしくは指定した時刻になるといったイベントをトリガーとして、あらかじめ定義しておいた処理を実行する機能だ。たとえばリポジトリにコミットが行われた際に特定の処理を実行したり、毎日決まった時刻に特定の処理を実行したりする、といったことを実現できる。これらの処理はGitHubが提供するサーバー上に用意された仮想マシン内で実行できるため、**ユーザーが独自にサーバーなどを準備する必要はない点が最大のメリット。**
+## jobが実行される仮想環境のスペック
 
-仮想マシン上で利用できるOSとしては、Linux（Ubuntu）およびWindows、macOSに対応している。仮想マシン上にはOSだけでなく、さまざまな言語のコンパイラや各種ランタイム、主要ライブラリといったソフトウェア開発環境も標準でインストールされている。さらに、sudoコマンドを使ってroot権限でコマンドを実行させることもできる。つまり、一般的なサーバー上で実行できるほとんどの処理を実行できるわけだ。利用規約によって禁止されている処理ですら（アカウント凍結といったペナルティなどを受ける可能性は高いが）実行自体は可能だ。
+2コアCPU
+7GBのRAMメモリ
+14GBのSSDディスク容量
 
-また、特別なハードウェアが必要な場合や、後述する制約を回避したい場合、また仮想マシン内でなく実マシン上で実行させたいといった場合は、ユーザーのサーバー上で処理を実行させることもできるようになっている。
+## 料金
 
-## ActionとWorkflow
+public : 無料
+private : linuxで  $0.008/min かかる。
 
-GitHub Actionsでは、実行する処理とその処理を実行する条件を定義したものを「Workflow（ワークフロー）」と呼ぶ。ワークフローはYAML形式で記述し、リポジトリ内の.github/workflowsディレクトリ内に保存することで実行できるようになる。
+0.008/min=0.008/min=0.48/hour = 約52円/hour（$1=108.4円）
+10分かかるビルドを実行すると約9円かかる。
+Freeアカウントで2,000分/月 無料。
 
-## ワークフロー作成のルールと書式(独自に作成したい場合)
+## Permission
 
-1. 実行する処理や実行する条件などをYAML形式(拡張式は.ymlもしくは.yaml)のファイルに記述することでワークフローを定義する
-2. 作成したファイルに関しては、リポジトリのルートディレクトリ直下にある.github/workflowsディレクトリ内に作成する必要がある.
-3. github workflowには認証情報は記載しない
+リポジトリごとにどのGithub Actionを利用できるのか？
+あるいは、Workflow中でリポジトリの読み書きを許可するかを設定できる
+
+設定はリポジトリのSettings/Actionsにある。
+
+## ファイルシステム
+
+Dockerコンテナで実行されるアクションには、 /githubパスの下に静的なディレクトリがある。
+Dockerコンテナで実行されないアクションでは3つのディレクトリが作成される。これらのディレクトリパスは動的に生成されるので一定ではない。各ディレクトリの位置は対応する環境変数で取得する。
+home（HOME）： ユーザ認証情報などのユーザ関連データが書き込まれる
+workspace（GITHUB_WORKSPACE）：アクションが実行されるワークディレクトリ
+workflow：workflow/event.json（GITHUB_EVENT_PATH）が書き込まれるディレクトリ
+
+## 公開されているアクション
+
+Github自身が作成しているActionがリポジトリで公開されている。
+サードパーティが作ったものはマーケットプレイスで探せる。
+
+[Github製のアクション](https://github.com/actions)
+[サードパーティ製のアクションのレジストリ](https://github.com/actions)
 
 ---
 
 ## Tips
 
-ワークフローの状態バッチを作成する
+**ワークフローの状態バッチを作成する**
 プロジェクトトップのREADMEにはバッチを作成し、現状の状態を視覚で表現するのが通例とのこと。
 [参考URL](https://docs.microsoft.com/ja-jp/dotnet/devops/dotnet-test-github-action)
 
 ![これ](image/バッチ.png)
+
+**複数のコマンドを run: したい**
+通常のYAML文法に従ってマルチラインのテキストとして記載すればいい
+
+```yml
+   steps:
+      - name: run multi command
+        run: |  # <- ここがミソ
+          git config --global user.email "someone@sample.com"
+          git config --global user.name "github workflow"
+          git add .
+          git commit -m 'modify manifests'
+          git status
+```
+
+**プルリクエストの内容で実行するかしないかを決める**
+コンテキストgithubにワークフローに関する情報が色々入っている
+例えば、プルリクエストイベントでトリガーするワークフローだとgithub.event.pull_requestにGithub REST APIのpull_request相当のプルリクの情報が格納されている
+
+[githubコンテキスト](https://docs.github.com/ja/actions/learn-github-actions/contexts)
+
+例：WIPラベルがついている時だけ、実行するjob
+
+```yml
+  jobs:
+    <job_name>:
+      runs-on: ubuntu-latest
+      if: "contains(join(github.event.pull_request.labels.*.name), 'WIP')"
+      steps:
+        - run: <COMMAND
+        …以下略
+```
+
+**チェックアウトするブランチを指定する**
+チェックアウトしたgit状態
+
+```yml
+    steps:
+      - uses: actions/checkout@v1
+      - run: git status
+      - run: git branch
+
+    # Run git status
+    # nothing to commit, working tree clean
+    # Run git status
+    # HEAD detached at pull/21/merge
+    # nothing to commit, working tree clean
+    # Run git branch
+    # * (HEAD detached at pull/21/merge)
+```
+
+
 
 
 ## github action local実行 (act)
@@ -133,8 +245,21 @@ on:
 以下のことができるようになる
 ・Web UI から任意のタイミングで実行
 ・実行時にパラメータを渡す
-・repository_dispatch のように curl でも呼び出せる（？）
+・repository_dispatch のように curl でも呼び出せる?
 
+## workflowの構造
+
+**ワークフローは並列で実行される。**
+
+
+
+```yml
+ワークフロー（YAMLファイル）
+  └ jobs:
+    └ ジョブ(名前は任意)
+       └ steps:
+         └ アクション
+```
 
 ## 各コマンドわかっていることをかく
 
@@ -156,6 +281,7 @@ on: # Github Actionが実行されるトリガーを設定できる。
       - ".github/workflows/deploy_fanclub_ui_dev.yml"
       - "!**.md"
 
+# jobsごとに仮想環境が立ち上げられる。そのためjobsを跨いでの変数の共有は無理
 jobs: # jobsの内容がname配下に表示される
   deploy:
     runs-on: ubuntu-18.04 # ジョブを実行する仮想環境を指定
@@ -245,4 +371,34 @@ jobs:
         env:
           SECRET_HOGE_2: ${{secrets.SECRET_HOGE}}  ## ※2
         uses: ./.github/actions/hello
+```
+
+---
+
+## Github Action 種類
+
+- パブリックなアクション
+
+Github Actionsでは開発者がアクション(Lintやテストといったジョブなど)を使って公開することができる。
+この公開されたアクションは世界中の人が使える。もちろん自分のプロジェクトに持ってきて使用が可能。
+この公開されたアクションのことをパブリックアクションという。
+
+- プライベートなアクション
+[参考URL](https://yyh-gl.github.io/tech-blog/blog/github-actions-private-action/)
+
+注意
+**プライベートアクションを使用するときはチェックアウトは必須!**
+
+公開しないアクション
+ディレクトリ構造は以下となる。
+
+```sh
+.github
+├── actions
+│   └── golang-test
+│       ├── Dockerfile
+│       ├── action.yml
+│       └── entrypoint.sh
+└── workflows
+    └── golang.yml
 ```
