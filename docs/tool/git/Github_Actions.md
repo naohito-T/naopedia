@@ -299,6 +299,7 @@ jobs: # jobsの内容がname配下に表示される
           environment: develop_cfc_fanclub_ui
 
       # 再利用可能なコードで、リポジトリをチェックアウトする
+      # （あなたのリポジトリ（コード）を $GITHUB_WORKSPACE に持ってきて、ワークフローがそのコードにアクセスできるようにする）
       - uses: actions/checkout@v2
         with:
           ref: "${{ github.event.inputs.ref }}"
@@ -402,3 +403,50 @@ Github Actionsでは開発者がアクション(Lintやテストといったジ�
 └── workflows
     └── golang.yml
 ```
+
+## 重要ポイント: プライベートアクションとパブリックアクションでの設定差異
+
+プライベートアクションを使用するときは チェックアウト が必須。
+プライベートなアクションはそれを利用するリポジトリで定義する。
+パブリックなアクションと同じく action.yaml というファイルを作ってアクションを定義する。
+action.yamlの置き場所はどこでも構わない。例えば、.github/actions/<アクション名>/action.yml でアクションを定義したら、それを利用するワークフロー定義で`use: .github/actions/<アクション名> `の様に action.yaml を置いたディレクトリをリポジトリのルートからの相対パスで指定すればよい。
+
+```yml
+name: Greet Everyone
+# This workflow is triggered on pushes to the repository.
+on: [push]
+
+jobs:
+  build:
+    # Job name is Greeting
+    name: Greeting
+    # This job runs on Linux
+    runs-on: ubuntu-latest
+    steps:
+      # This step uses GitHub's hello-world-javascript-action: https://github.com/actions/hello-world-javascript-action
+      - name: Hello world
+        uses: actions/hello-world-javascript-action@v1
+        with:
+          who-to-greet: 'Mona the Octocat'
+        id: hello
+      # This step prints an output (time) from the previous step's action.
+      - name: Echo the greeting's time
+        run: echo 'The time was $｛｛ steps.hello.outputs.time ｝｝.'
+```
+
+uses: actions/hello-world-javascript-action@v1
+これは、パブリックアクションを使用している。
+
+**パブリックアクション使用時は、アクションの本体（コード）がどこからでも取得可能な場所にあるのでチェックアウトが必要ない**
+
+しかし、プライベートアクションは自分のプロジェクト内にアクションの本体がある
+**そのためチェックアウトして、プロジェクトのコードをアクション実行環境に持ってくる必要があります**
+
+「チェックアウト って何？」という方は、
+actions/checkout の README の説明がとても分かりやすい。
+
+>（あなたのリポジトリ（コード）を $GITHUB_WORKSPACE に持ってきて、ワークフローがそのコードにアクセスできるようにする）
+
+↑ これを実現するためのもの
+プライベートアクションはネット上に公開されていないから、
+手元にあるアクション本体（コード）を GtHub Actions の実行環境に持っていったというだけですね。
