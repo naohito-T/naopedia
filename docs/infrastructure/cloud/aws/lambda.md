@@ -15,7 +15,9 @@
 
 [参考URL](https://qiita.com/zaburo/items/d78a0a4462007e57d5d8)
 
-## Lambdaとても注意
+## Lambda コールドスタートとウォームスタート
+
+[これまでの常識は間違っていた？！Lambdaのコールドスタート対策にはメモリ割り当てを減らすという選択肢が有効に働く場面も](https://dev.classmethod.jp/articles/lambda-memory-alloc-and-coldstart/)
 
 グローバルな環境で変数を設定すると再利用される可能性がある。
 これはAWS Lambdaには関数実行時に実行環境として起動したコンテナをある程度の期間再利用する動作仕様(ウォームスタート)があり、それに伴い/tmpディレクトリ上のデータも次回の処理で再利用される動作となる。
@@ -25,9 +27,14 @@
 ```js
 // 以下で始まるところに変数を宣言した方が良い得策
 // グローバルに変数を定義するとウォームスタートで利用される可能性がある。
-// 再利用の可能性は不透明(そこがうざい)
-exports.handler = async (event) => {}
+// 再利用される時間と可能性はブラックボックス
 
+const global = new Date();
+exports.handler = async (event) => {}
+  const local = new Date();
+
+  console.log(global); // global は再利用されるため時間が更新されない
+  console.log(local);  // localは逐一時間が更新される
 ```
 
 ## Lambda対応言語
@@ -96,6 +103,10 @@ Lambda Function は大きく3つのレイヤに分かれたレイヤ化アーキ
 - ハンドラ層: API Gateway などから入力を受け取り、バリデーションやオブジェクトの変換を行う
 - ドメイン層: ユースケースに対するビジネスロジックとインタフェースを定義する
 - インフラストラクチャ層: AWS SDK を利用した AWS サービスとのやりとりや外部APIへのアクセスを行う
+
+## Lambda local実行
+
+簡単な実行であればexport.handlerを呼び出すやつで十分
 
 
 

@@ -1,6 +1,7 @@
 # webpack
 
 [webpackについて](https://ics.media/entry/12140/)
+[webpack 基本プロパティ一覧](https://www.webdesignleaves.com/pr/jquery/webpack_basic_01.html)
 
 ---
 
