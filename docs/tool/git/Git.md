@@ -1,15 +1,12 @@
 # Git
 
-
 Flow
 [GitHub Flowわかりやすい](https://cloudsmith.co.jp/blog/efficient/2020/08/1534208.html)
 ## プルリク
 
 [チーム開発におけるプルリクの作法](https://qiita.com/ikuwow/items/fb52a54c086398eb5b92)
 
-・十分小さくプルリクを作成する
-
-・
+- 十分小さくプルリクを作成する
 
 ## プルリク レビュー側
 
@@ -33,11 +30,6 @@ HEADがBranchを指していない状態のこと
 ## checkout
 
 git checkoutは、ファイル・コミット・ブランチの3つの異なるエンティティに対して実行される。
-
-
-
-
-
 
 ## .gitattributes ファイルとは
 
@@ -330,9 +322,10 @@ rootリポジトリもコミットする
 `$ git ls-files`
 
 エラー時
-.gitmodules
-.git/config内と
-.git/modules/内のディレクトリ名を変更すればいける
+
+- gitmodules
+- git/config内と
+- git/modules/内のディレクトリ名を変更すればいける
 
 ---
 

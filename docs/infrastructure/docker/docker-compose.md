@@ -8,8 +8,7 @@ Docker Engineの一部ではない。
 
 ## docker-compose コマンド
 
-**docker-composeで作成したコンテナはdockerコマンドではなく、docker-composeを使った管理に一元化すべき**
-
+**docker-composeで作成したコンテナはdockerコマンドではなく、docker-composeを使った管理(コマンド)に一元化すべき**
 `$docker-compose down`はコンテナやネットワークを停止するだけではなく、それらを破棄する。
 **※規定ではボリュームは削除しない。**
 
@@ -23,11 +22,11 @@ docker-composeで管理しているとこにdockerコマンドで対応してい
 Docker開発を進めていく上でコンテナは常に削除することをする
 
 理由として
+
 1. psコマンドのコンテナ一覧にどんどんコンテナリストが溜まってくる
 2. コンテナに直接インストールしたgemやパッケージがそのまま残ってしまう。
 本番環境ではDockerfileから作成されたコンテナをデプロイしますので、コンテナに直接インストールしたものは反映されません。
 常に本番環境と同じ状態で開発を進めるためにも、コンテナは一度削除して再度立ち上げることを心がけましょう。
-
 
 ## docker-compose とは
 
@@ -102,11 +101,75 @@ services: # 起動するコンテナの定義を行う。
 
   - dockerfile
 
-- volumes
-  ボリュームのマウントを行う。
-  volumesではパスを指定するとDockerエンジンはボリュームを作成する。
+---
 
-  > コマンドの場合、`sh -v $(pwd)/public:/var/www/html/public:ro <IMAGE ID>`オプションと同一です。
+## volumes
+
+[参考URL](https://pc.atsuhiro-me.net/entry/2020/03/19/105714)
+
+volumes
+ボリュームのマウントを行う。
+volumesではパスを指定するとDockerエンジンはボリュームを作成する。
+> コマンドの場合、`sh -v $(pwd)/public:/var/www/html/public:ro <IMAGE ID>`オプションと同一です。
+
+```yml
+services:
+  web:
+    image: nginx
+    volumes:
+      - type: volume
+        source: mydata # ホスト側
+        target: /data # targetはコンテナ側
+volumes:
+  mydata:
+```
+
+
+
+**docker-composeでのvolumes指定方法**
+1はバインドマウント
+2はDocker内に存在しているボリューム
+**※external: の中にnameを指定することで、docker-compose外で作成したボリュームを指定できる。**
+
+**注意**
+存在しない場合は、指定した名称でボリュームが生成される
+指定しない場合は、無名（無意味な文字列）でボリュームが生成される
+
+```yml
+version: "3"
+services:
+    mysql:
+        container_name: sample
+        image: mysql:5.7
+        environment:
+            MYSQL_DATABASE:sample
+            MYSQL_USER: root
+            MYSQL_PASSWORD: root
+            MYSQL_ROOT_PASSWORD: root
+        ports:
+            - 4306:3306
+        ##1
+        volumes:
+            - mysql-data:/var/lib/mysql
+        networks:
+            - default
+
+##2
+volumes:
+    mysql-data:
+        external:
+            name: project-mysql
+```
+
+- プロジェクトごとにMySQLのデータ用ボリュームを定義して使用したい場合
+
+```yml
+volumes:
+    mysql-data:
+        external: false
+```
+
+----
 
 - ports
   ポートの開放を行う。
