@@ -6,6 +6,15 @@ Docker Engineの一部ではない。
 →つまり、host側で環境変数が設定されているためdirenvなどで読み込ませるのが良いのではないか？
 設定した環境変数にどのような値が挿入されるかは、 `docker-compose config`コマンドで確認ができる。
 
+## Docker 掃除
+
+```sh
+$ docker image prune -f
+$ docker container prune -f
+$ docker volume prune -f
+
+```
+
 ## docker-compose コマンド
 
 **docker-composeで作成したコンテナはdockerコマンドではなく、docker-composeを使った管理(コマンド)に一元化すべき**
@@ -124,7 +133,23 @@ volumes:
   mydata:
 ```
 
+sourceはホスト側で、targetはコンテナ側です、mydataはvolumeの名前で，パスではない
+**"/"から開始すると，絶対パスとなる。**
 
+## volumes の pathの指定
+
+絶対パスではホストの環境が変わった時に動かなくなるため，相対パスを指定するのが便利です。
+相対パスはdocker-composeのymlファイルが基準となります。
+このため，ホストの環境が変わっても問題ないですが，プロジェクト内でのymlファイルの場所を変更する時は修正が必要になります。
+
+## volumes 省略記法
+
+いつも上記の例のように記載するのは面倒なので，短い表記法があります．[SOURCE:]TARGET[:MODE]と指定します．例えば，以下で，sourceの./dataディレクトリとtargetの/tmp/dataディレクトリを指定します．
+
+```yml
+  volumes:
+    - ./data:/tmp/data
+```
 
 **docker-composeでのvolumes指定方法**
 1はバインドマウント
@@ -169,13 +194,46 @@ volumes:
         external: false
 ```
 
-----
+---
+
+## ports
 
 - ports
   ポートの開放を行う。
   左にホストのポートを、右にコンテナのポートを指定する。
 
   > コマンドの場合、 -p 8080:80 オプションと同一です。
+
+docker-composeのportsとexposeの使い分け
+[参考URL](https://pc.atsuhiro-me.net/entry/2020/04/10/021555)
+
+exposeはホストからアクセスできないポート
+portsはホストからアクセルできるポート
+
+```yml
+version: '3'
+
+services:
+  postgres:
+    image: postgres:11-alpine
+    expose:
+      - "5432"
+
+  django:
+    image: django-web:latest
+    command: ash -c "
+      python3 manage.py migrate &&
+      python3 manage.py runserver 0.0.0.0:8000"
+    ports:
+      - "8000:8000"
+```
+
+postgresはdjangoからアクセスできればよいので，exposeを使用する。
+djangoはホストのブラウザーからアクセスするので，portsを使用する。
+
+ホストのポートを指定するのは必要がなければ，docker-composeに一任するのがよいです．例えば，ports: "5432:5432" と指定してpostgresを起動すると，複数のpostgresを使いたい時に，ポートで競合してエラーとなります．
+
+---
 
 - environment
   起動するコンテナへ環境変数を定義する。

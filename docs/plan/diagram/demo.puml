@@ -1,0 +1,24 @@
+@startuml demo entity
+
+usecase ユースケース
+actor アクター
+boundary バウンダリオブジェクト
+control コントローラ
+entity エンティティオブジェクト
+
+@enduml
+
+@startuml demo バウンダリオブジェクト名を二つ記述して間に-または--を書くことで線を引くことができます。-と--の違いは方向（-が横向きで--が縦向き）が違います。
+
+usecase ユースケース
+actor アクター
+boundary バウンダリオブジェクト
+control コントローラ
+entity エンティティオブジェクト
+
+アクター -- バウンダリオブジェクト
+バウンダリオブジェクト - コントローラ
+コントローラ -- エンティティオブジェクト
+
+@enduml
+
