@@ -2,6 +2,12 @@
 
 [入門Docker](https://y-ohgi.com/introduction-docker/)
 
+```sh
+$ docker image prune -f
+$ docker container prune -f
+$ docker volume prune -f
+```
+
 ## 絶対覚えておけ
 
 そのイメージになにが含まれているのか確認する方法
