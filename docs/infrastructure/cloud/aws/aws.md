@@ -7,6 +7,9 @@ aws関連
 ユーザに対してAWSのアクセスを制御する仕組みのこと
 ※CloudFrontやRoute 53と同様、グローバルサービスのためリージョンを気にする必要がない
 
+## Lambdaなどのerrorに関して
+
+LambdaなどのerrorはcloudWatchに紐づいているため、デフォルトで通知される。
 
 
 ## AWS アクセスキー

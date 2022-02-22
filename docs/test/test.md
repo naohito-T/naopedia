@@ -1,6 +1,8 @@
 # test
 
 [メルペイのテスト方針](https://engineering.mercari.com/blog/entry/20211208-test-automation-policy-in-merpay-frontend/)
+[Test管理ツール(Excelとかで管理していたのをさらに管理する)](https://gift-tech.co.jp/articles/Qase/)
+
 ## Test ガントチャート
 
 ![ガンドチャート](image/test.png)

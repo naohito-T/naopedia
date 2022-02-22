@@ -146,3 +146,7 @@ https://www.mitsue.co.jp/knowledge/blog/frontend/202104/28_1500.html
 ## Github Action をローカルでテストする
 
 [local](https://zenn.dev/usagiga/articles/f44be764419e15700247)
+
+## エディタ分割を変更した。
+
+Tab + Eで実施
