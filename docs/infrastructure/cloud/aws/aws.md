@@ -9,7 +9,7 @@ aws関連
 
 ## Lambdaなどのerrorに関して
 
-LambdaなどのerrorはcloudWatchに紐づいているため、デフォルトで通知される。
+LambdaなどのerrorはcloudWatchに紐づいているため、デフォルトで通知される。とのこと
 
 
 ## AWS アクセスキー
