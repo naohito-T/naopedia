@@ -1,18 +1,56 @@
 # Python
 
+[学ぶ前に考えること](../新たな言語を学ぶ前に.md)
+以下からは上記で記載したmd順に探っていく
+
+---
+
+## Pythonの仕組み
+
+[Pythonはどうやって動くのか](https://kaityo256.github.io/python_zero/howtowork/index.html)
+
+---
+
+## Python利用用途
+
+1. 機械学習を使った人工知能の開発 → Pythonがライブラリが充実しているため
+2. 自動データ処理や分析などの業務効率化 → 自動データ処理に関しては別でもできる。分析はPythonが強いか
+3. スクレイピングによるWEB上の画像データ・テキストデータの自動収集 → スクレイピングは結局WebDriverを使うためどれでもいい
+4. WEBサービス・WEBアプリケーション制作 → 日本だとRubyやPHPが強い。わざわざPythonでやるのであればAIなどの活用がしたいなど
+5. スマホアプリ（Android）制作 → できるのか、Kotlinが強いけど
+6. デスクトップアプリ制作 → これはWindows？
+7. 組み込みアプリケーション制作 → C++が強いはず
+
+---
+
 ## Python コードスタイル
 
 [参考URL](https://legacy.python.org/dev/peps/pep-0008/)
+
+---
+
 ## Pythonのversion管理
 
+asdfやpyenvがある
+
+参考URL
 [asdfが有名っぽい](https://dev.classmethod.jp/articles/try-asdf-settings/)
+
+**pyenvがanyenvから使える**ため、それを使用する
+またnodeのようにlocalでversion分けができる。
 
 ---
 
 ## Pythonの環境構築
 
-Docker構築がいい。
-またnodeのようにlocalでversion分けができる。
+Python自体がanacondaなど、構築自体がめんどくさい。そのためDocker構築がいいと言われている。
+あとは仮想環境でやるとか言っていた気がする....
+
+## Pythonのパッケージ管理ツールとは
+
+pipが代表格
+pipはPythonで書かれたパッケージソフトウェアをインストール・管理するためのパッケージ管理システム
+多くのPythonパッケージは、Python Package Index上にある。
 
 ---
 
