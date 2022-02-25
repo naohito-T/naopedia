@@ -229,6 +229,8 @@ ESLint単体コードフォーマットが可能だが、Prettierでは整形で
 
 ## ESLintについて
 
+[今時のeslint設定](https://dev.classmethod.jp/articles/eslint-configurations-2020/)
+
 ## pluginsとextendsの違い
 
 **plugins**
