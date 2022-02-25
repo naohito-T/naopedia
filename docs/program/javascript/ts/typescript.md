@@ -1,9 +1,7 @@
 # TypeScript
 
 [TypeScript日本語ハンドブック](https://js.studio-kingdom.com/typescript/)
-
 [typescript 型付テスト](https://qiita.com/ryo2132/items/925b96838dd8cca7cebd)
-
 [tsconfig.jsonを書くときはTSConfig Basesを使うと便利](https://qiita.com/munieru_jp/items/a67ac782bbf099d90128)
 
 ## import した時に、TypeScriptの型定義がない場合取れる対策
@@ -15,8 +13,13 @@
 
 ## TypeScript コンパイラ
 
+[参考URL](https://ics.media/entry/16329/)
 
 >TypeScriptのコンパイラにはECMAScript Modules（ES Modules = importやexport文のこと）をまとめる機能が提供されていません。そのため、ES ModulesのJSファイルをまとめるモジュールバンドラー（例：webpack、Rollup等）をTypeScriptと合わせて使うのが一般的です。
+
+- 役割
+TypeScriptの構文を下位のECMAScriptに変換する
+TypeScript → ECMAScript
 
 - コンパイラが追う順番
 

@@ -1,18 +1,18 @@
 # JavaScript
 
-
+---
 ## CommonJSとESModule
 
-## CommonJS
-まだECSでモジュールシステムが導入されていないときにnodeで実装したモジュールシステム
+## CommonJS : nodeのやつ require
+
+まだECS(ESModule)でモジュールシステムが導入されていないときにnodeで実装したモジュールシステム
 CommonJS ではブラウザ上だけでなく、サーバーサイドやクライアントでのCUI、GUI で JavaScript を使う際の仕様を作成している。
-単に仕様を作っているだけなので、ECMAScript に組み込まれるとかがない限り、それが JavaScript の標準になるというわけではないようです。
+単に仕様を作っているだけなので、ECMAScript に組み込まれるとかがない限り、それが JavaScript の標準になるというわけではないよう。
+>ちなみに CommonJS で作成された仕様は複数のソフトウェアによって実装が行われることで勧告段階に移るみたいです。
+>CommonJS の仕様を実装しているソフトウェアの中にはあの有名な node.js があります。
 
-ちなみに CommonJS で作成された仕様は複数のソフトウェアによって実装が行われることで勧告段階に移るみたいです。
+## ESM(ECMAScript) : importのやつ
 
-CommonJS の仕様を実装しているソフトウェアの中にはあの有名な node.js があります。
-
-## ESM(ECMAScript)
 実質のJSの仕様を策定するもの。
 **ECMAScript はブラウザ上での JavaScript の仕様と標準を作っている。**
 
@@ -217,3 +217,39 @@ console.log(object); // { 0: 1, 1: 2, 2: 3 }
 ## 最新のJS Tips
 
 [参考URL](https://yukiyuriweb.com/2021/04/13/javascript-techniques-you-should-know/#i-2)
+
+## ESLintとPrettierを合わせる意味
+
+ESLint単体コードフォーマットが可能だが、Prettierでは整形できないコードも整形するため
+**よくある動機としてはESLintに静的検証を行わせ、Prettierはフォーマットを担う**
+
+- TypeScript対応
+
+---
+
+## ESLintについて
+
+## pluginsとextendsの違い
+
+**plugins**
+ルールセットを持つプラグインを指定する項目。 本来であれば plugins にプラグインを指定して、且つ extends にそのプラグインが持つルールを指定しないと検証時にルールが適用されないらしいが、prettier はなぜか plugins に指定しただけでルールが適用されてる。謎。
+
+基本的には eslint-plugin-xxx というパッケージの xxx の部分を plugins に記述してあげればいいらしい。
+
+**extends**
+プラグインが提供するルールを指定する項目。 eslint-plugin-xxx というパッケージを plugins で指定した場合は、extends に xxx/yyy というふうにルールを指定してあげるらしい。
+
+また、plugins は使わずに eslint-config-zzz というパッケージをインストールし、extends に zzz と指定してあげてもなんとかなるっぽい。
+
+
+
+## ESLint 設定ファイル読み込み
+
+ESLint の設定はいくつかの形式で記述できるが、それぞれ読み込みに優先度がある。優先度は以下の通り。
+
+.eslintrc.js
+.eslintrc.yaml
+.eslintrc.yml
+.eslintrc.json
+.eslintrc
+package.json

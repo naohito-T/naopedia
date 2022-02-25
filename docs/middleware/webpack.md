@@ -12,6 +12,10 @@
 
 **※webpack4まではweb, nodeで仕様が進められていたがwebpack5からは完全にwebよりとなった。**
 
+## Webpack実行環境
+
+nodeで実行されるためrequireが使える
+
 ## webpackで実現できること
 
 - 転送の最適化

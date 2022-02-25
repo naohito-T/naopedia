@@ -1,4 +1,4 @@
-# test
+# Test
 
 [メルペイのテスト方針](https://engineering.mercari.com/blog/entry/20211208-test-automation-policy-in-merpay-frontend/)
 [Test管理ツール(Excelとかで管理していたのをさらに管理する)](https://gift-tech.co.jp/articles/Qase/)
@@ -50,7 +50,8 @@ APIテストのエンドポイントのメソッドでWeb APIをcallしている
 ## E2Eテスト(End to End)
 
 **E2EテストとはUI(User Interface)テスト**とも呼ばれ、システム全体を通してテストを行う。
-Webサービスの場合はユーザと同じようにブラウザを操作し挙動が期待通りになっているかを確認することができる。
+**Webサービスの場合はユーザと同じようにブラウザを操作し挙動が期待通りになっているかを確認すること。**
+
 
 ## ユニットテストとは(単体テスト)
 
