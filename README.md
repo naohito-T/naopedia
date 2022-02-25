@@ -149,4 +149,4 @@ https://www.mitsue.co.jp/knowledge/blog/frontend/202104/28_1500.html
 
 ## エディタ分割を変更した。
 
-Tab + Eで実施
+control + shift + +
