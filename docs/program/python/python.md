@@ -27,6 +27,10 @@
 
 [参考URL](https://legacy.python.org/dev/peps/pep-0008/)
 
+- Python インデント
+インデントはタブまたはスペースで行うが、スペース何文字分というルールは決まっていない。
+**コーディング規約では4つが推奨されている。**
+
 ---
 
 ## Pythonのversion管理
@@ -48,25 +52,19 @@ Python自体がanacondaなど、構築自体がめんどくさい。そのため
 
 ## Pythonのパッケージ管理ツールとは
 
-pipが代表格
+**pipが代表格**
 pipはPythonで書かれたパッケージソフトウェアをインストール・管理するためのパッケージ管理システム
 多くのPythonパッケージは、Python Package Index上にある。
 
----
+またパッケージには
 
-## pythonの型付け
+- 公式が配布しているもの
+- サードパーティが配布しているものがある。
 
-Pythonに型ヒントが入った。
-PylanceのVS Code拡張機能で対応する(MicroSoft製)
+サードパーティのパッケージはPyPIというサイトで配布されている。
+[PyPl](https://pypi.org/)
 
-[導入](https://blog.ntacoffee.com/mypy-and-vscode/)
-
-## Python インデント
-
-インデントはタブまたはスペースで行うが、スペース何文字分というルールは決まっていない。
-コーディング規約では4つが推奨されている。
-
-## Pythonのライブラリ
+### Pythonのライブラリ(pipについて)
 
 Pythonのライブラリは主に以下の3種類となる。
 
@@ -88,6 +86,43 @@ Type "help", "copyright", "credits" or "license" for more information.
 ```
 
 ---
+
+## pythonの型付け
+
+Pythonに型ヒントが入った。
+**VSCodeではPylanceという拡張機能で対応する**(MicroSoft製)
+
+[導入](https://blog.ntacoffee.com/mypy-and-vscode/)
+
+---
+
+## Pythonの環境変数
+
+direnvでOS環境変数にぶち込めばいける
+
+環境変数にアクセスするためには
+
+```py
+import os
+username: str=os.environ["USER_NAME"]
+```
+
+---
+
+## Python Editor
+
+VSCodeが使いやすいがどうだろうか
+PyCharmの統合IDEがある
+
+---
+
+## Python Lint(静的解析ツール)
+
+
+---
+
+
+## Python 各コーディング
 
 ## Python インポート周り徹底理解
 
