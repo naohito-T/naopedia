@@ -91,3 +91,7 @@ Selenium ServerはJavaで書かれたサーバーで、クライアントとド�
 
 **通信の仕組み**
 Selenium Serverとドライバは当然JSON Wire Protocolで通信しますが、クライアントとSelenium Server同士もJSON Wire Protocolでリクエストを行います。リクエストを受け取ったSelenium Serverは適切なブラウザのドライバを起動して、ドライバにリクエストを行う。
+
+## Tips
+
+[selenium.common.exceptions.WebDriverException: Message: Process unexpectedly closed with status 1 対応](https://qiita.com/katafuchix/items/80cbd7877c44789b040d)

@@ -14,9 +14,22 @@ $ docker volume prune -f
 
 `$ docker run -it alpine:3.11`
 
+言語のalphineだと/bin/shなどで起動する必用がある。
+
+`$ docker run -it alpine:3.11 /bin/sh`
+
+## 面白いこと
+
+[Docker内のブラウザをホストで起動する](https://takapi86.hatenablog.com/entry/2019/03/24/144008)
+
 ## alpine linux
 
+基本
+**GCC などの C コンパイラが含まれていない**
+
 [alpine linuxにyarnいれる](https://scrapbox.io/keroxp/alpine-linux%E3%81%AByarn%E3%82%92%E5%85%A5%E3%82%8C%E3%82%8B)
+
+[python:alpineにCコンパイラをインストール](https://ja.stackoverflow.com/questions/42881/docker-pythonalpine%E3%81%A7cffi%E3%81%AE%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%AB%E3%81%AB%E5%A4%B1%E6%95%97%E3%81%99%E3%82%8B)
 
 ## Docker 参考文献
 

@@ -7,6 +7,14 @@
 
 ![ガンドチャート](image/test.png)
 
+## Test フェーズ
+
+単体テスト	一部分 ( モジュール内のクラスや関数 )のテスト
+結合テスト	機能を結合したもの（単体テスト済みのモジュールを組み合わたもの）のテスト
+システムテスト	システム全体（機能・非機能）のテスト
+
+## Test 概要
+
 **1. ユニットテスト**
 ユニットテストはJestを用いて、主にTypeScriptで記述された関数ロジックをテストする。※Vuex、vueファイルは除く
 
@@ -153,7 +161,6 @@ Mockは送信メッセージのテスト。関数の実行回数、関数が正�
 
 [mockを使ったNode.js(Express)のAPIテスト](https://qiita.com/yuta-katayama-23/items/2ee51d41153359e56335)
 [Jest/Supertestを使用したnode.js(express)のAPIテスト](https://qiita.com/yuta-katayama-23/items/29b91fed629fe758a42d)
-
 
 ## node
 
