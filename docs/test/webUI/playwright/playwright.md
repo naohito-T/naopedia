@@ -27,3 +27,10 @@ Recordを押下後、ユーザのブラウザ操作からコードを作成で�
 ## PlayWright プロジェクト作成
 
 `$ npm init playwright`
+
+
+## PlayWright特徴
+
+1. seleniumではわからないが、ブラウザを起動し(selenium)コードを生成してくれるジェネレーターがある
+2. TypeScriptでやっているが環境構築が楽
+3. Test風に記載ができ、テストランナーも別パッケージで提供されているためJestを書く用にできる。
