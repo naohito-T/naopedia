@@ -27,3 +27,6 @@ Math.floor(Math.random() * 10); // 1 ~ 10
 // こうなるため、小数点切り捨てで整数が得られる
 ```
 
+## カラーコードチェック
+
+[参考URL](https://qiita.com/ck_sk42/items/f8119824ae49146ee91c)

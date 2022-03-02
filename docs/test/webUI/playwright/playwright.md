@@ -34,3 +34,12 @@ Recordを押下後、ユーザのブラウザ操作からコードを作成で�
 1. seleniumではわからないが、ブラウザを起動し(selenium)コードを生成してくれるジェネレーターがある
 2. TypeScriptでやっているが環境構築が楽
 3. Test風に記載ができ、テストランナーも別パッケージで提供されているためJestを書く用にできる。
+
+
+## Tips
+
+- pageのDOMを取得したい
+```ts
+const ogTitle = page.$("meta[property='og:title']"); // これは廃止となった
+const ogTitle = page.locator("meta[property='og:title']"); // 最新はこれを使用する
+```
