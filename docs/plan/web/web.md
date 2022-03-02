@@ -177,6 +177,10 @@ JavaScriptで参照できるローカルストレージよりはマシなだけ�
 **また、有効期限を判断するために使用されるタイムゾーンもGMTです。**
 **GMTは日本時間マイナス9時間で、UTC（世界標準時）と一致します。**
 
+## サブドメインでcookieを共有する
+
+[参考URL](https://qiita.com/il-m-yamagishi/items/9aad5737c80d5bfd5eb8)
+
 ## クロスオリジン通信でのCookie共有設定
 
 クロスオリジン通信でのCookie共有は双方に設定が必要。
@@ -193,6 +197,8 @@ trueにすることで、
 
 セッションはCookieを使って実現するのが一般的
 
+## JWT
 
+[JWT=ステートレス"から一歩踏み出すための考え方](https://zenn.dev/ritou/articles/4a5d6597a5f250)
 
 ---
