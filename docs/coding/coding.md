@@ -220,4 +220,7 @@ documentを変えたダケのためテストは入りません。
 ## if文を減らすには
 
 
+## 真偽値
+
+[参考URL](https://qiita.com/yskszk/items/5a7f99c974773f03a82a)
 
