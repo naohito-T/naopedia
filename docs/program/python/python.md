@@ -11,6 +11,19 @@
 
 ---
 
+## Pythonの歴史
+
+[参考URL](https://codezine.jp/article/detail/12457)
+
+Pythonが最初にお目見えしたのは1991年、作者であるグイド＝ヴァンロッサムがソースコードを公開した0.9です。その後、3年の期間を経て、1994年1月にPython 1.0がリリースされました。基本的な型の概念やオブジェクト指向など、Pythonの基礎となる構文は、このバージョンですでに実装されています。
+
+よく名前が聞かれるようになったのは2000年10月にPython 2がリリースされてからです。Unicode（1.5.1項）、ガベージコレクション（オブジェクトを解放するための仕組み）などが導入され、Google、Yahoo!、InstagramなどのサービスがPythonを採用したのも、この時期
+
+
+
+
+---
+
 ## Python利用用途
 
 1. 機械学習を使った人工知能の開発 → Pythonがライブラリが充実しているため
@@ -33,6 +46,25 @@
 - Python インデント
 インデントはタブまたはスペースで行うが、スペース何文字分というルールは決まっていない。
 **コーディング規約では4つが推奨されている。**
+
+---
+
+## Pythonのサードパーティ事情
+
+一般的なプログラミング言語は、アプリを開発するための便利な道具と共に提供されている。
+このような道具のことをライブラリと指す
+
+>Pythonをインストールするだけで、それこそファイルの読み書きからデータベース操作、ネットワーク通信、GUIアプリ開発など、さまざまな機能を即座に実現できるのです。
+
+### PyPl(Python Package Index)とは
+
+>サードパーティ製の拡張ライブラリに至っては、標準ライブラリの比ではありません。たとえばPythonには、サードパーティによる拡張ライブラリの集積場とも言うべきサービスとして、PyPI（Python Package Index）があります
+>Pythonを導入すれば、これらを無償で利用できるわけです。
+
+中でも、**機械学習、ディープラーニング（深層学習）などの分野のライブラリが潤沢である点はPythonの強み**
+
+
+
 
 ---
 
@@ -119,7 +151,76 @@ Pythonに型ヒントが入った。
 
 [導入](https://blog.ntacoffee.com/mypy-and-vscode/)
 
+## pythonの型付け歴史
+
+[参考URL](https://docs.google.com/presentation/d/1kxX5_bL1Rv-sW7zJDBSve9g69A_AJbAEvMXkhlMrBR4/htmlpresent)
+
+Python 3.7 で採択された PEP 561 Distributing and Packaging Type Information
+EP 561 以前は主に typeshed を通じて，標準ライブラリ・サードパーティーの型情報が配布されていました
+
 ## 各型について
+
+[型入門](https://qiita.com/papi_tokei/items/bf652696d6b98f23565a)
+
+3.8と3.9での書き方
+listなどについてはPython3.8までと3.9で変わっている
+**従来のtypingを使う方法が非推奨になり、組み込み型を利用する方法が推奨になっています。**
+
+Python3.8の書き方
+
+```py
+from typing import Dict, List, Tuple
+
+val_e: Dict[str, int] = {'size': 12, 'age': 24}
+val_f: List[str] = ['taro', 'jiro']
+val_g: Tuple[str, int] = ('name', 12)
+```
+
+Python3.9の場合
+
+```py
+val_e: dict[str, int] = {'size': 12, 'age': 24}
+val_f: list[str] = ['taro', 'jiro']
+val_g: tuple[str, int] = ('name', 12)
+```
+
+- 定数
+Python3.8からFinalがデフォルトで使用できるようになってます。定数(再代入不可)を定義することで、再代入されないようにすることができる。
+
+```py
+from typing import Final
+TABLE_NAME: Final[str] = 'sample'
+```
+
+- 定数にはtupleを積極的に使う
+listとtupleは同じような機能があるので、ついついlistを使いがちですが、tupleの方がメリットが多い場合があるので紹介します。
+listの場合、内部の情報を書き換えることが可能ですが、定数として定義するものは、内部の情報を書き換えられることを望まないことがほとんどです。そのような場合はtupleで定義すると内部情報が変更される心配がありません。
+
+Python3.8の場合
+
+```py
+from typing import Final, Tuple, List
+
+# tupleなので変更不可
+NAME_TUPLE: Final[Tuple[str, str]] = ('taro', 'jiro')
+
+# listは変更可能
+NAME_LIST: Final[List[str]] = ['taro', 'jiro']
+NAME_LIST[0] = 'saburo'
+```
+
+Python3.9の場合
+
+```py
+from typing import Final
+
+# tupleなので変更不可
+NAME_TUPLE: Final[tuple[str, str]] = ('taro', 'jiro')
+
+# listは変更可能
+NAME_LIST: Final[list[str]] = ['taro', 'jiro']
+NAME_LIST[0] = 'saburo'
+```
 
 ### dataclasses
 
