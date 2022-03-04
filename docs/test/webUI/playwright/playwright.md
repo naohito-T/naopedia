@@ -1,5 +1,6 @@
 # PlayWright
 
+[詳しく書いてある](https://takeya0x86.github.io/2020/02/07/playwright-first-impression/)
 [PlayWright を使ってE2Eテストを書いてみた](https://www.cresco.co.jp/blog/entry/14335/)
 
 ## PlayWrightとは
