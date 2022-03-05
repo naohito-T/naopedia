@@ -185,6 +185,19 @@ Accept-Encoding ヘッダは、HTTPクライアントがサーバーにHTTPリ�
 
 ## Bearer認証について
 
+---
+
+## Content-Type
+
+- application/x-www-form-urlencoded
+フォームの送信の際に、クライアントがWebサーバに送信するContent-Type名の一つ
+
+**データはid=dataの形式で、formが複数ある場合は&で区切られる(form1=data1&form2=data2)**
+dataはURLエンコードされる。
+
+[参考URL](https://www.wdic.org/w/WDIC/application/x-www-form-urlencoded#:~:text=%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E3%81%AE%E9%80%81%E4%BF%A1%E3%81%AE%E3%81%95%E3%81%84,Type%E5%90%8D%E3%81%AE%E4%B8%80%E3%81%A4%E3%80%82)
+
+
 
 ## Webhookとは
 
