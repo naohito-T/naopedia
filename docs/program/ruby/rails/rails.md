@@ -3,12 +3,19 @@
 [Railsガイド(本リファレンス)](https://railsguides.jp/)
 [Rails](https://atmarkit.itmedia.co.jp/ait/articles/1102/23/news109_3.html)
 [Railsのクリーンアーキテクチャ](https://qiita.com/shunjikonishi/items/e39ed8091e1dca817468)
-
 [【Rails】hashid-railsを用いてIDを難読化・暗号化させる方法](https://techtechmedia.com/hashid-rails/)
 
 ## Railsスタイルガイド
 
 シンボル名、メソッド名、変数名はスネークケースにする
+
+## Rails欠点
+
+[参考URL](https://techlife.cookpad.com/entry/2017/04/06/172601)
+
+RailsはDBのテーブルをそのまま読み書きするような単純なアプリケーションは簡単にできるが、より複雑なアプリケーションではそのぶん慎重な設計が必用になるため、Trailblazerのような複雑なWebアプリケーション構築を支援するライブラリが注目を集めている。
+
+Rails上でフォームオブジェクトパターンによるサービス層の実現に挑戦することにしました。
 
 ## Railsの設計哲学
 
