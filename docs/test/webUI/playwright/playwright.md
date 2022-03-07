@@ -1,6 +1,6 @@
 # PlayWright
 
-[詳しく書いてある](https://takeya0x86.github.io/2020/02/07/playwright-first-impression/)
+[詳しく書いてある(これBlog)](https://takeya0x86.github.io/2020/02/07/playwright-first-impression/)
 [PlayWright を使ってE2Eテストを書いてみた](https://www.cresco.co.jp/blog/entry/14335/)
 
 ## PlayWrightとは
@@ -16,6 +16,18 @@ Firefox と WebKit についてはブラウザ側にパッチを当て、ライ�
 テストを安定させるために setTimeout に依存しない自動化の推奨と、それを推進するための API を提供している
 
 開発は Chrome 向けのブラウザ操作ライブラリの Puppeteer を開発していたメンバーが中心となっていると、過去に Github 上の FAQ で記載されていました。ライブラリの API は、非常に Puppeteer と近いものとなっており、簡潔で使いやすい印象です。
+
+---
+
+## PlayWright仕組み
+
+### イベント駆動型APIである
+
+PlaywrightはwaitForRequestの他にもPage上のload、dom content、loaded、closeなどのイベントをきっかけにするwaitForEventなどのブラウザ側から起動するAPIが実装されています。これはPlaywrightがブラウザと双方向通信をしているため可能になっています。
+
+これらのAPIによってPlaywrightはAjax通信の終了や他のJavaScript処理の終了を確実に検知してからテストスクリプトを実行することができます。 WebDriverはこういったAPIがないため、イベントの完了を検知するには画面上の変化（ボタンの状態、メッセージの表示）をポーリングすることになります。
+
+---
 
 ## PlayWrightコード作成
 
