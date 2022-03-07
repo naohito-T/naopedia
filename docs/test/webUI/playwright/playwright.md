@@ -56,3 +56,9 @@ Recordを押下後、ユーザのブラウザ操作からコードを作成で�
 const ogTitle = page.$("meta[property='og:title']"); // これは廃止となった
 const ogTitle = page.locator("meta[property='og:title']"); // 最新はこれを使用する
 ```
+
+## XPath(XML Path Language)とは
+
+[参考URL](https://www.octoparse.jp/blog/xpath-introduction/#I.%20XPath%E3%81%AE%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5)
+
+ツリー構造となっているXML/HTMLドキュメントからの要素や属性値などを指定するための簡潔な構文(言語)です。

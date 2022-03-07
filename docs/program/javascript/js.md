@@ -255,3 +255,30 @@ ESLint の設定はいくつかの形式で記述できるが、それぞれ読�
 .eslintrc.json
 .eslintrc
 package.json
+
+
+## file
+
+- 存在確認
+
+[fs/promiseでのファイル・ディレクトリ存在確認](https://thr3a.hatenablog.com/entry/20201220/1608390044)
+
+
+## JS(感嘆符) 2つ
+
+[!!感嘆符を使う意味](https://senews.jp/bikkuri-2/)
+
+```js
+if(!true){
+
+    alert("trueです。");
+
+}else{
+
+    alert("falseです。");
+
+```
+
+```js
+
+```
