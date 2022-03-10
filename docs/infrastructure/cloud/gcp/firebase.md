@@ -1,6 +1,11 @@
 # firbase
 
 
+## firebase init
+
+Firebase の諸機能と同様 firebase init からインストールできます。
+ちなみに既に Firebase の設定が終わってる場合でも気にせず init し直して大丈夫。（エミュレーターに限らず。）　またエミュレーターだけ入れたい場合は firebase init emulator と最初から指定するとちょっと工程が短縮されるようです。
+
 ## ホスティング
 
 Frirebaseはpublicディレクトリが自動でホスティングされる。

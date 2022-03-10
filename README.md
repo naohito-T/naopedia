@@ -150,3 +150,9 @@ https://www.mitsue.co.jp/knowledge/blog/frontend/202104/28_1500.html
 ## エディタ分割を変更した。
 
 control + shift + +
+
+## githubコードプロジェクト
+
+音楽コード
+
+[参考URL](https://ja.wikipedia.org/wiki/%E6%BC%94%E5%A5%8F%E8%A8%98%E5%8F%B7)
