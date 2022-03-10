@@ -158,3 +158,6 @@ outer after all
 - Jestのalias
 例として、tsconfig.jsonにaliasが、webpackにaliasがとなるとJestにもaliasを貼らないといけない
 [Jest alias](https://qiita.com/nju33/items/8ed1823690b0348daaa7)
+
+
+[Monorepo下におけるJest実行方法のちょっとした改善](https://zenn.dev/tkiryu/articles/a6a43bd9d043b0)
