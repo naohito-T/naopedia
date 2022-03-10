@@ -346,6 +346,13 @@ rootリポジトリもコミットする
 レポジトリをアーカイブすることで、新しいPRs/issues/commentsを作成出来なく出来ます。
 削除するのも手ですが、レポジトリへのリンクが記事などで使われている場合があり、404ではなく次のレポジトリへと導線として残すのは良い手段だと思います。
 
+## git commit のハッシュ値
+
+切ったところからのハッシェ値が計算されるため
+
+develop → feautre1
+main → feature2
+
 ## GitHubのCLI
 
 [CLI(2020リリース)](https://dev.classmethod.jp/articles/shuntaka9576-gh/)

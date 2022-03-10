@@ -209,3 +209,7 @@ anyはmethodが使えるが、unknownはmethodが使えないため少しだけ�
 
 - intefaceで型を上書きしたい時
 [参考URL](https://tech-1natsu.hatenablog.com/entry/2019/02/09/014218)
+
+## TypeScript バリデーション種類
+
+[zod](https://zenn.dev/ynakamura/articles/65d58863563fbc)
