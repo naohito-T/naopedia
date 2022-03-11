@@ -3,9 +3,9 @@
 [入門Docker](https://y-ohgi.com/introduction-docker/)
 
 ```sh
-$ docker image prune -f
-$ docker container prune -f
-$ docker volume prune -f
+$docker image prune -f
+$docker container prune -f
+$docker volume prune -f
 ```
 
 ## 絶対覚えておけ
@@ -24,7 +24,7 @@ $ docker volume prune -f
 
 ## alpine linux
 
-基本
+alpine linuxは基本
 **GCC などの C コンパイラが含まれていない**
 
 [alpine linuxにyarnいれる](https://scrapbox.io/keroxp/alpine-linux%E3%81%AByarn%E3%82%92%E5%85%A5%E3%82%8C%E3%82%8B)
@@ -40,7 +40,11 @@ $ docker volume prune -f
 
 ## Dockerコンテナ内のアプリケーションport
 
-Dockerコンテナ内のアプリケーションは、デフォルトでネットワークトラフィックを受け入れていますhttp://127.0.0.1:3000。このインターフェースは外部トラフィックを受け入れないため、機能しないのも不思議ではありません。これを機能させるには、nuxtアプリのHOST環境変数を0.0.0.0（すべてのIPアドレス）に設定する必要があります。これは、次のようにDockerfileで実行できます。
+[Dockerポート仕組み](https://qiita.com/ksato9700/items/0b4c7de5d857dc731443)
+
+Dockerコンテナ内のアプリケーションは、デフォルトでネットワークトラフィックを受け入れている。
+→`http://127.0.0.1:3000`
+このインターフェースは外部トラフィックを受け入れないため、機能しないのも不思議ではありません。これを機能させるには、nuxtアプリのHOST環境変数を0.0.0.0（すべてのIPアドレス）に設定する必要があります。これは、次のようにDockerfileで実行できます。
 
 container中のサーバがlocalhostでlistenしていると、ホストマシンからアクセスした際にエラーが起きることを確認しました。
 この原因はホストマシンのlocalhostとcontainerのlocalhostが異なることが原因です。
@@ -68,7 +72,6 @@ container中のサーバがlocalhostでlistenしていると、ホストマシ�
 - yarn installなどを早めたい
 
 [nodeではやく](https://tkkm.tokyo/post-495/)
-
 
 ---
 
@@ -137,6 +140,7 @@ services:
 ```
 
 ---
+
 ## ベースイメージを調べる方法
 
 **重いイメージは本当にいいことがない。**
@@ -148,6 +152,7 @@ services:
 Rubyのバージョンは**開発時点の安定版**を使用するようにしましょう。
 
 以下の手順でバージョンを調べます。
+
 1. まず、Rails6に必要なRubyのバージョンを知る。
 2. Railsガイド => Ruby 2.5.0以降が必要
 3. 次にRuby 2.5.0以上の安定版を知る。
@@ -174,6 +179,7 @@ Rubyのバージョンは**開発時点の安定版**を使用するようにし
 ## docker word
 
 デタッチモード: コンテナ内に入らずバックグラウンドで動作する状態のこと。
+-dでやる
 
 ## dockerの基本運用概念
 
@@ -185,8 +191,7 @@ Rubyのバージョンは**開発時点の安定版**を使用するようにし
 
 [参考URL](https://qiita.com/minodisk/items/5ffd20588b995523756f)
 
-
-**メリット**
+>メリット
 
 - 同一性
 複数人で開発する際に、環境の差が生まれない。
@@ -205,7 +210,8 @@ Rubyのバージョンは**開発時点の安定版**を使用するようにし
 1台のDockerホストに2台のWebサーバを同居させることができるなど。
 >ここまでの操作では、「http://Dockerホスト:8080/」「http://Dockerホスト:8081/」･･･のように、明示的なポート番号の指定での切り替えが必要です。実運用では、きっと、それぞれ、「http://www.example.co.jp/」「http://www.example.com/」など、アクセスするドメイン名で切り替えたいことでしょう。それは可能ですが、少し工夫が必要で、Dockerの力だけではできず、リバースプロキシとして構成します。
 
-**メリットで防げる消耗**
+
+>メリットで防げる消耗
 
 1. おれの環境では動いた。
 はい。
@@ -255,9 +261,10 @@ docker build で**カスタムimage**を作成するファイル
 2. Dockerfileから作る
 ベースとなるイメージとそのイメージに対して、どのような操作をするのかを記したDockerfileと呼ばれるファイルを用意しそのDockerfile通りにコンテナに対して変更やファイルコピーを加えることによってイメージを作成する。
 イメージの作成には`docker build`を実行する。
+
 **メリット**
-- Dockerfileは、ベースとなるイメージに対する変更指示をまとめたファイル。これを見れば悪意ある操作や間違った操作が加えられていないかが一目瞭然
-- Dockerfileは改良しやすいメリットがある。
+Dockerfileは、ベースとなるイメージに対する変更指示をまとめたファイル。これを見れば悪意ある操作や間違った操作が加えられていないかが一目瞭然
+Dockerfileは改良しやすいメリットがある。
 
 ---
 
@@ -386,11 +393,10 @@ Dockerコンテナを起動するタイミングで、コンテナの動作に�
 
 ## docker-entrypoint.sh
 
-dockerで初回起動時のみ特定の処理を行うヘルパースクリプト
-
->docker run とか docker-compose up -d とかの 初回起動時のみ 処理したいことがある時はどうすればいいんだろう？
->docker restart とか docker-compose restart とか systemctl restart docker の時には動いてほしくないんだ。
->やってみた結果 mariadb + zabbix で初回起動時のみ、構成用の .sql を流し込む。という動作ができるようになりました。
+dockerで**初回起動時のみ特定の処理を行うヘルパースクリプト**
+docker run とか docker-compose up -d とかの 初回起動時のみ 処理したいことがある時はどうすればいいんだろう？
+docker restart とか docker-compose restart とか systemctl restart docker の時には動いてほしくないんだ。
+やってみた結果 mariadb + zabbix で初回起動時のみ、構成用の .sql を流し込む。という動作ができるようになりました。
 
 ## wait.sh
 
@@ -845,7 +851,7 @@ Dockerは使用していないオブジェクト(イメージ・コンテナ・�
 →その結果Dockerは巨大なディスク容量を使うことになった。
 
 
-## dangling image(宙ぶらりイメージ)
+## dangling image(宙ぶらりイメージ) : ダングリングイメージ
 
 [参考URL](https://codechord.com/2019/08/docker-images-none-dangling/)
 

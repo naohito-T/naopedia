@@ -347,3 +347,7 @@ OGPとは、「Open Graph Protcol」の略でFacebookやTwitterなどのSNSで�
 [運用してわかったモノレポに向いているプロジェクト](https://cam-inc.co.jp/p/techblog/570556215432577985)
 
 単一のリポジトリで複数のプロジェクトを管理することをモノレポという。
+
+## publish(パブリッシュ)
+
+公開

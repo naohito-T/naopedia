@@ -233,6 +233,16 @@ djangoはホストのブラウザーからアクセスするので，portsを使
 
 ホストのポートを指定するのは必要がなければ，docker-composeに一任するのがよいです．例えば，ports: "5432:5432" と指定してpostgresを起動すると，複数のpostgresを使いたい時に，ポートで競合してエラーとなります．
 
+## Docker Compose の portsとexposeの違い
+
+[参考URL](https://blog.tkt989.info/2017/12/19/Docker-Compose%E3%81%AEports%E3%81%A8expose%E3%81%AE%E9%81%95%E3%81%84)
+
+**ports**
+指定したポートが外部に公開されるため、誰でもアクセスできる
+
+**expose**
+ホストのみにポートを公開する
+
 ---
 
 - environment
@@ -256,7 +266,13 @@ djangoはホストのブラウザーからアクセスするので，portsを使
   Docker compose管理外のネットワークやボリュームであることを示す。
   これらのオプションが指定されたネットワークやボリュームはdocker-compose downによって削除されることはない。
 
-- tty(teletypewriter（テレタイプライター)
+## networks
+
+[参考URL](https://amateur-engineer.com/docker-compose-network-share/)
+networksを設定してネットワークを共有することで、複数のdocker-compose間での接続が可能になる。
+
+## tty(teletypewriter（テレタイプライター)
+
 [参考URL](https://zenn.dev/hohner/articles/43a0da20181d34)
 
 ttyがないと、コンテナを起動させ続けるためのプロセスが存在しないためコンテナが正常終了してしまう。
