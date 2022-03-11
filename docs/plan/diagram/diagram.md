@@ -52,33 +52,68 @@ PlantUML の実行には、Javaの実行環境が必要。
 
 ---
 
-## UML は大きく 振る舞い図 と 構造図 に分類される
+## UML は大きく 振る舞い図(Behavior) と 構造図(Structure) に分類される
+
+[PlantUML Cheat Sheet](https://qiita.com/ogomr/items/0b5c4de7f38fd1482a48)
 
 ## 　種類がBehavior
 
 ### ユースケース図
 
 PlantUML: Use Case
-要求される機能を実現
+ユースケース図は、要求される機能を表現します。
 
 ### ステートチャート図
 
-State
+PlantUML: State
 オブジェクトの状態を表現
 
 ### アクティビティ図
 
-Activity
+PlantUML: Activity
 プロセスの状態を表現
 アクティビティ図はシステム実行時における一連の処理の流れや状態遷移をあらわす。フローチャートのようなもの
 ![アクティビティ図](image/アクティビティ.png)
 
 ### シーケンス図
 
+PlantUML: Sequence
+
 シーケンス図はオブジェクト間のやりとりを時系列にそってあらわすもの
 ![シーケンス](image/シーケンス.png)
 
 オブジェクトごとに上から下に時系列になっています。矢印は形の違いで意味がある。
 ツールとして一番有名なのはdrawio
+
+---
+
+## 種類がStructure
+
+構造図は、システムの静的な構造や実装の物理的な要素を表現する
+
+### クラス図(Class)
+
+PlantUML: Class
+論理的なビューを表現
+
+### オブジェクト図(Object)
+
+PlantUML: Object
+論理的なビューを表現
+
+### コンポーネント図(Component)
+
+PlantUML: Component
+コンポーネントの依存関係を表現
+
+### パッケージ図(Component)
+
+PlantUML: Component
+パッケージの依存関係を表現
+
+### 配置図(Component)
+
+P
+システムの物理的な配置を表現
 
 ---
