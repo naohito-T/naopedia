@@ -6,6 +6,9 @@ Docker Engineの一部ではない。
 →つまり、host側で環境変数が設定されているためdirenvなどで読み込ませるのが良いのではないか？
 設定した環境変数にどのような値が挿入されるかは、 `docker-compose config`コマンドで確認ができる。
 
+また概念として
+**docker-composeとは複数のコンテナからなる一つのシステムの構築をラクチンするためのツール**
+
 ## Docker 掃除
 
 ```sh
@@ -116,10 +119,12 @@ services: # 起動するコンテナの定義を行う。
 
 [参考URL](https://pc.atsuhiro-me.net/entry/2020/03/19/105714)
 
-volumes
 ボリュームのマウントを行う。
-volumesではパスを指定するとDockerエンジンはボリュームを作成する。
+volumesでは**パスを指定するとDockerエンジンはボリュームを作成する**
 > コマンドの場合、`sh -v $(pwd)/public:/var/www/html/public:ro <IMAGE ID>`オプションと同一です。
+
+1行で記述
+[SOURCE:]TARGET[:MODE]
 
 ```yml
 services:
@@ -138,7 +143,7 @@ sourceはホスト側で、targetはコンテナ側です、mydataはvolumeの�
 
 ## volumes の pathの指定
 
-絶対パスではホストの環境が変わった時に動かなくなるため，相対パスを指定するのが便利です。
+絶対パスではホストの環境が変わった時に動かなくなるため，相対パスを指定するのが慣例。
 相対パスはdocker-composeのymlファイルが基準となります。
 このため，ホストの環境が変わっても問題ないですが，プロジェクト内でのymlファイルの場所を変更する時は修正が必要になります。
 
@@ -186,12 +191,34 @@ volumes:
             name: project-mysql
 ```
 
-- プロジェクトごとにMySQLのデータ用ボリュームを定義して使用したい場合
+## プロジェクトごとにMySQLのデータ用ボリュームを定義して使用したい場合
+
+externalをtrueにするとComposeの外部で作成されているボリュームを指定できます。
 
 ```yml
 volumes:
     mysql-data:
         external: false
+```
+
+## Volume 一覧
+
+```yml
+services:
+  service_name:
+
+    volumes:
+      # ボリューム
+      - /var/lib/mysql # パス指定のみ。Engine にボリュームを生成させます。
+      - datavolume:/var/lib/mysql # 名前つきボリューム。
+
+      # バインドマウント
+      - /opt/data:/var/lib/mysql # 絶対パスのマッピングを指定。
+      - ./cache:/tmp/cache # ホストからのパス指定。Compose ファイルからの相対パス。
+      - ~/configs:/etc/configs/:ro # ユーザーディレクトリからの相対パス。
+
+volumes:
+  dattavolume:
 ```
 
 ---

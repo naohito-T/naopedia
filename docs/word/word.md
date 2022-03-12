@@ -351,3 +351,7 @@ OGPとは、「Open Graph Protcol」の略でFacebookやTwitterなどのSNSで�
 ## publish(パブリッシュ)
 
 公開
+
+## サイトマップ
+
+サイトマップは特定のドメイン内のウェブサイトのページ一覧

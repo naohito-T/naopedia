@@ -3,7 +3,7 @@
 近年主流となっているクラウド型CIサービスは基本的に設定ファイルを書くだけで環境構築が済んでしまう。
 大抵はyaml形式で設定を書き込むことになる。
 [Lambdaへ自動デプロイ](https://qiita.com/homoluctus/items/412d4e81b24804d75205)
-
+[Github action ベストプラティクス](https://zenn.dev/snowcait/scraps/9d9c47dc4d0414)
 
 ## ワークフローの設定
 
