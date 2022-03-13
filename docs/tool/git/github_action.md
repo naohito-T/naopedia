@@ -37,3 +37,8 @@ jobs:
    - task1: hogehoge
    - task2: fooooooo!
 ```
+
+## Tips
+
+github cd がダサいとき
+[参考URL](https://blog.takuchalle.dev/post/2020/02/20/github_actions_change_directory/)

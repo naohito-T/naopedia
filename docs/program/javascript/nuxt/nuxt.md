@@ -774,3 +774,18 @@ modules: ['@nuxtjs/style-resources'],
 [nuxt typescript eslint prettier](https://inokawablog.org/vue-js/nuxt-typescript-stylelint-eslint-prettier/)
 [stylelint 設定](https://qiita.com/y-w/items/bd7f11013fe34b69f0df)
 [こちらの stylelint 設定がよい](https://toragramming.com/web/nuxtjs/nuxt-stylelint-prettier-vscode-format-scss-on-save/)
+
+
+## Nuxt ホスティング tips
+
+[firebase](https://kosukesaigusa.com/tech/2021-07-22-nuxtjs-ssr-firebase-hosting/)
+
+- Firebase hostingを利用する場合
+
+**静的なサイトをホスティングするため**のサービス
+SSRの場合、buildで生成されるdistディレクトリの中身をそのままデプロイすれば良いわけではない。
+
+**SSRを静的サイトホスティング**でdeployする方法
+、Nuxt.js の SSR サイトの成果物である JavaScript のファイル郡とその他の必要な静的な asset をFirebase Hosting にデプロイし、
+その URL に対するアクセスを Firebase Hosting の rewrites ルールによって、同じく Firebase で提供されている Cloud Functions に作った HTTP 関数に向けるようにし、その HTTP 関数で Nuxt.js のレンダリング関数を実行するという流れを実現すれば良いということです。
+ディレクトリ構成や使用しているパッケージ、Nuxt.js の各種設定などはこれを実現するための唯一の方法はなく、どのような方法でも上記の流れを実現することができれば問題がない
