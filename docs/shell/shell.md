@@ -83,3 +83,9 @@ curl -X [HTTPmethod] が指定可能
 ## curl クエリパラメータ
 
 url はシングルクウォーテーションで囲むことエラーになる。
+
+## 他環境へのdotfiles移行について
+
+1. まずはdotfilesを作成している SHELLに合わせる必要がある(管理主はzsh)
+
+

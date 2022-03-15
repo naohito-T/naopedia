@@ -16,7 +16,7 @@ EC2のインスタンスを停止しても勝手に新しくインスタンス�
 **グループで使うパターン**
 - ユーザごとに分けるべき
 
-## Amazon Linux 2のOSとは
+## Amazon Linux 2 OSとは
 
 [参考URL](https://www.acrovision.jp/service/aws/?p=609)
 
@@ -27,12 +27,30 @@ Amazon EC2上のOS人気は以下
 3. Debian
 
 **Amazon Linux 2**
-特に AWS の多くのサービスを容易に統合できる点が最大の特徴
+特に **AWSの多くのサービスを容易に統合できる点が最大の特徴**
 
 - AWS のサービスを運用するために必要なパッケージや設定が事前に入っており、多くの AWS サービスと容易に統合できる。
 - AWS サポートに加入することで、AWS だけでなく、Amazon Linux のインストールや使用についてもサポートを受けることができる。
 - Amazon EC2 でのパフォーマンスが向上するように最適化されたカーネルと新しいバージョンのツールチェーンが付属されている
 - デフォルトで SSH キーペアの使用およびリモートルートログインの無効化によるリモートアクセス制限の設定がされています。
+
+
+## Extrasとは
+
+Extrasは**最新のアプリケーションソフトウェア更新をインストールできるようにする Amazon Linux 2のメカニズム**
+
+```sh
+# 使用可能なトピックのリストを表示する
+$ amazon-linux-extras list
+
+# トピックを有効にし、パッケージの特定のバージョンをインストールする
+$ sudo amazon-linux-extras install topic=version topic=version
+```
+
+**注意**
+amazon Extrasに入っていないものに関してはyumからinstallする
+
+```sh
 
 
 

@@ -37,3 +37,11 @@ zsh ログイン時の一回だけ読み込まれる
 
 - .zlogout
 exit コマンドで zsh を抜けたときに読み込まれる
+
+## prezto
+
+**zshを拡張してくれるツール**
+Zshでいい感じのテーマを使いたい
+補完の設定とか楽をしたい など
+
+[参考URL](https://qiita.com/gilly/items/5ff7bd7142e963cdbb9b)
