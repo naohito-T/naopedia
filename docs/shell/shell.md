@@ -32,6 +32,7 @@ bashだと
 (多くのディストリビューションでは ~/.bashrc からbashrcが呼び出される。)
 
 
+
 ## tips
 
 `$ mkdir udemy_demoapp_v1 && cd $_`
@@ -89,3 +90,6 @@ url はシングルクウォーテーションで囲むことエラーになる�
 1. まずはdotfilesを作成している SHELLに合わせる必要がある(管理主はzsh)
 
 
+## dotfiles
+
+dotfilesとはとはLinuxやMacOSにおける設定ファイルのこと。

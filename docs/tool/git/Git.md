@@ -356,3 +356,5 @@ main → feature2
 ## GitHubのCLI
 
 [CLI(2020リリース)](https://dev.classmethod.jp/articles/shuntaka9576-gh/)
+
+## revert
