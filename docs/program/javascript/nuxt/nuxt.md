@@ -19,6 +19,9 @@ SSRについて
 [設計参考2compositionapi](https://zenn.dev/koudaiishigame/articles/810ce2d0ee8ade)
 
 
+## 
+
+
 ## Nuxt 導入に必要なサーバ要件について
 
 [サーバ要件](https://qiita.com/kaketechjapan/items/af5524f2bed5238aefcd)
