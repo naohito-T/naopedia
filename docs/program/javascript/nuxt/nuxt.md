@@ -1,12 +1,23 @@
 # Nuxt
 
-[VueのSSR時におけるハイドレーションエラー対処法](https://zenn.dev/00_/articles/c5130802d384b8238e4c)
-[nuxt lifecycle](https://qiita.com/too/items/e8ffcf7de7d48dcb9a9b)
-[Composition API + Typescript で Vuex をリアクティブに安全に使いたい](https://tjmschk.hatenablog.com/entry/2020/12/14/231800)
 
-Nuxt.jsでSSRを使う場合は、
-初回の描画時はSSRとCSR
-それ以降の再描画時はCSRのみ
+## Versionの歴史
+
+最近 2(portfolioなどに使ってる)
+現在 version 3
+
+## Nuxtを使うことでのメリット
+
+
+## 仕組み
+
+
+**SSR(Server Side レンダリング)**
+Nuxt.jsでSSRを使う場合は、**初回の描画時はSSRとCSR**
+それ以降の再描画時はCSRのみとなっている。
+
+## はまりどころ
+
 
 SSRについて
 >SSRはNuxt.jsが提供している機能だと思っていましたが、大元は vue-server-render が提供しているのですね。だからVue.jsのドキュメントにもSSRについての記載があります。困ったらまずは公式ドキュメントに立ち戻
@@ -19,7 +30,7 @@ SSRについて
 [設計参考2compositionapi](https://zenn.dev/koudaiishigame/articles/810ce2d0ee8ade)
 
 
-## 
+## フレームワークはまりどころポイント欄
 
 
 ## Nuxt 導入に必要なサーバ要件について
@@ -792,3 +803,10 @@ SSRの場合、buildで生成されるdistディレクトリの中身をその�
 、Nuxt.js の SSR サイトの成果物である JavaScript のファイル郡とその他の必要な静的な asset をFirebase Hosting にデプロイし、
 その URL に対するアクセスを Firebase Hosting の rewrites ルールによって、同じく Firebase で提供されている Cloud Functions に作った HTTP 関数に向けるようにし、その HTTP 関数で Nuxt.js のレンダリング関数を実行するという流れを実現すれば良いということです。
 ディレクトリ構成や使用しているパッケージ、Nuxt.js の各種設定などはこれを実現するための唯一の方法はなく、どのような方法でも上記の流れを実現することができれば問題がない
+
+
+## Tips(参考書類)
+
+[VueのSSR時におけるハイドレーションエラー対処法](https://zenn.dev/00_/articles/c5130802d384b8238e4c)
+[nuxt lifecycle](https://qiita.com/too/items/e8ffcf7de7d48dcb9a9b)
+[Composition API + Typescript で Vuex をリアクティブに安全に使いたい](https://tjmschk.hatenablog.com/entry/2020/12/14/231800)
