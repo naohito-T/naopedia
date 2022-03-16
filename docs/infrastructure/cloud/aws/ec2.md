@@ -48,10 +48,14 @@ $ sudo amazon-linux-extras install topic=version topic=version
 ```
 
 **注意**
-amazon Extrasに入っていないものに関してはyumからinstallする
+amazon Extrasに入っていないパッケージに関しては**yumからinstallする**
 
-```sh
+## ポート開放
 
+EC2のポートを開放するには
+>AWSには標準で「セキュリティグループ」という機能がありますので特別な理由がない限りはこちらを使用してください。
+
+後者はファイヤウォールの設定方法を覚える必要があります。またどちらの場合も、設定変更時に機器の再起動が必要になるケースもあるため必ずしも手軽とはいえません。
 
 
 

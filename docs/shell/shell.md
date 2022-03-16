@@ -31,6 +31,25 @@ bashだと
 
 (多くのディストリビューションでは ~/.bashrc からbashrcが呼び出される。)
 
+## nc(NetCat コマンド)
+
+汎用TCP/UDP接続コマンドラインツール。
+ncコマンドはNetCatの略。非常に多機能なツール
+
+`nc [-オプション] 接続先 ポート番号`
+
+- 疎通OKの場合
+
+```sh
+nc -z -v -w 3 secure-service 80
+secure-service (10.108.84.141:80) open
+```
+
+- 疎通NGの場合
+```sh
+nc -z -v -w 3 secure-service
+nc: secure-service (10.108.84.141:0): Operation timed out
+```
 
 
 ## tips
