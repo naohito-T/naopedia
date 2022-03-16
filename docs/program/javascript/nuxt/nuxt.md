@@ -1,5 +1,7 @@
 # Nuxt
 
+[これは素晴らしいBlog](https://www.i-ryo.com/entry/2020/02/13/083521)
+
 Vueのフレームワーク
 
 前提(Vueとは)
@@ -19,8 +21,12 @@ SEOが必要な動的ページがたくさんできるようなサービスで�
 
 ## Nuxtの仕組み
 
+[参考URL](https://www.i-ryo.com/entry/2020/02/13/083521)
+[SPA,SSR,プリレンダリングの違い](https://qiita.com/amakawa_/items/e7d0720e1ab8632769bf)
+
 **SSRとは**
-Vue.jsやReactがSPA(シングルページアプリケーション);
+Vue.jsやReactがSPA（シングルページアプリケーション）として行っている仮想DOMなどのHTMLレンダリングをクライアントサイド（ブラウザ上）ではなくサーバサイド（Node環境）で行うイメージ
+SSRはあくまでHTMLの生成（レンダリング）をサーバサイドで行うだけであり、JSONデータを返すことは行わない。つまりバックエンドはJSONだけを返すのに集中ができる(RESTApiになぞれる)
 
 
 そもそもSEOを改善させるために、Nuxt.jsではSSR(サーバサイドレンダリング)を利用している。

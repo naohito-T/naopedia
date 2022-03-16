@@ -21,6 +21,10 @@ CSS vs JS
 
 CSS vs Jsをfpsの観点から、またパフォーマンスの観点からをブログにする
 
+## 参考になるブログ
+
+[ii](https://www.i-ryo.com/)
+
 ## システム開発でよく使われる英単語
 
 [参考URL](https://hnavi.co.jp/knowledge/blog/english/)
@@ -151,7 +155,7 @@ https://www.mitsue.co.jp/knowledge/blog/frontend/202104/28_1500.html
 
 control + shift + +
 
-## githubコードプロジェクト
+## Naohito-T githubコードプロジェクト
 
 音楽コード
 
