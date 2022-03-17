@@ -450,3 +450,9 @@ actions/checkout の README の説明がとても分かりやすい。
 ↑ これを実現するためのもの
 プライベートアクションはネット上に公開されていないから、
 手元にあるアクション本体（コード）を GtHub Actions の実行環境に持っていったというだけですね。
+
+
+## Tips
+
+[Gitのフック（hook）を使って自動的にデプロイする](https://rfs.jp/server/git/gite-lab/git-hook-post-receive.html)
+[複数リポジトリでのGithub Actions運用](https://zenn.dev/jerome/articles/cc07ad73e017ad)

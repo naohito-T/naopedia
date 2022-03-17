@@ -160,3 +160,7 @@ control + shift + +
 音楽コード
 
 [参考URL](https://ja.wikipedia.org/wiki/%E6%BC%94%E5%A5%8F%E8%A8%98%E5%8F%B7)
+
+## 家で作るぜ
+
+[参考URL](https://takuzoo3868.hatenablog.com/entry/2017/10/29/033252)
