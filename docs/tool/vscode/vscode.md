@@ -36,3 +36,62 @@ vscodeで画像から背景を1クリックで切り抜けるようになった�
       .vscode # 対象ディレクトリにこれがあればこれが上書きされてきく
       └── settings.json
 ```
+
+## tasks.json
+
+[参考URL](https://maku.blog/p/zn2er4g/)
+
+VSCodeのビルドタスク設定(tasks.json)をしておくと、Cmd + Shift + Bで任意のビルドタスクを実行できるようになる。
+
+メリット
+VSCodeで作成したコードを実行するときに毎回ターミナルから`node main`や`npm start`とか入力するのは面倒
+VSCodeのビルドタスクを設定すると、こういったコマンドをCmd + Shift + Bとおいうショートカット一発で実行できる
+
+```json
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "npm: start",  // コマンドパレットに表示される名前
+      "detail": "node main",  // その下に表示される説明文
+      "type": "npm",          // npm によるタスク実行
+      "script": "start",      // 実行する npm スクリプト名
+      "group": {
+        "kind": "build",      // ビルドタスクとして認識させる
+        "isDefault": true     // Cmd + Shift + B で即実行
+      },
+      "problemMatcher": []
+    }
+  ]
+}
+```
+
+## launch.json
+
+[参考URL](https://amateur-engineer-blog.com/vscode-launchjson/)
+
+VSCodeでデバッグ実行するための設定ファイル
+どの言語でどのファイルを実行するかなどを設定する。
+
+**事前定義された変数**を利用できる
+
+```sh
+${file} # 現在開いているファイルのパス
+${fileBasename} # 現在開いているファイル名
+${workspaceFolder} # VSCodeで開いているフォルダのパス
+${workspaceFolderBasename} # VSCodeで開いているフォルダ名
+${cwd} # 現在の作業ディレクトリ
+```
+
+## ショートカットキーの設定画面を開く
+
+Cmd + K → Cmd + S で開く
+
+
+## Vscodeが持つデバッグ機能
+
+VSCodeが**組み込み**でサポートしているのはJSアプリ(Node.jsランタイム)のデバッグ機能
+→JS/TS/Node
+
+VSCode自体が**Electron**を用いて作られているのを考えると当然
+※他の言語で記述したアプリのデバッグを行うにはそのための拡張機能が必用

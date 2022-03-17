@@ -39,6 +39,42 @@ SSRはAJAXデータをフェッチし、**Vue.jsのコンポーネントをサ�
 Nuxt.jsでSSRを使う場合は、**初回の描画時はSSRとCSR**
 それ以降の再描画時はCSRのみとなっている。
 
+## Nuxt 各ディレクトリについて
+
+**assets**
+基本的にはcss/scss/imageはこのフォルダ内で管理します。
+
+**components**
+各ページで共通化して利用するコンポーネント置き場
+
+**layouts**
+各ページで利用するレイアウト置き場
+
+## middleware
+
+指定したページで**asyncDataやfetchよりも先に呼ばれる共通処理の置き場**
+nuxt.cofig.jsで全ページで指定するケースもあれば、必要なページからのみ呼び出して使うこともある。
+
+利用用途が多い例
+**ユーザ認証に使われる**
+
+**SSR**
+ミドルウェアはサーバサイドでは一度だけ呼び出され（Nuxt アプリケーションへの最初のリクエスト時、またはページの再読込み時）クライアントサイドでは他のルートへ移動したときに呼び出されます。
+
+**SPA**
+ミドルウェアはクライアントサイドで最初のリクエスト時と他のルートへ移動したときに呼び出されます。
+
+**plugins**
+Vueインスタンスの設定を行うファイル置き場。ここに置いたファイルをnuxt.config.jsで読み込む、というのがよくある流れです。
+
+**static**
+外部から読み込まれるfavicon.icoなど、外部から読み込まれる可能性があるファイル置き場。
+
+**store**
+コンポーネント間の値の管理。小規模なプロジェクトであれば、index.jsの1つのファイルで十分かと思います。
+途中からindex.jsのファイルを複数に分けることは可能ですが、地味に手間なので、storeをガンガン使う予定のサイトの場合は、初めからある程度分けて始めることをおすすめします。
+
+
 ## はまりどころ
 
 
@@ -76,7 +112,7 @@ startコマンドはサーバーを立ち上げるが、targetの設定値によ
 nuxt start ; 静的なホスティング(Netlify, Vercel, Surge など)のように dist/ディレクトリを提供し、デプロイ前のテストに最適です。
 
 - build
-アプリケーションをWebpackでビルドし、JSとCSSをミニファイするコマンド
+アプリケーションをWebpackでビルドし、JSとCSSをminifyするコマンド
 ビルドファイルの出力先は.nuxt配下
 **buildコマンドはtarget: server専用**
 
@@ -308,14 +344,9 @@ createdはVueインスタンスが作成された直後に呼ばれる関数で�
 
 - 初回アクセス時
 
-
-
-
-
 ## Nuxtで少しでもセキュアに情報を扱うためにできること
 
-
-# Pluginsディレクトリで忘れてはいけないこと
+## Pluginsディレクトリで忘れてはいけないこと
 
 初回アクセス時やリロード時には、SSR処理とCSR処理がどちらも動作する。
 plugins と created（beforeCreate）が 2 回走る点に注意。
@@ -323,8 +354,14 @@ plugins と created（beforeCreate）が 2 回走る点に注意。
 >認証系は middleware や plugins に記述することが多いかもしれませんが、middleware の場合は内部ナビゲーション遷移時は CSR 側でしか呼ばれないため、どちらの処理も書いておく必要があります。 plugins の場合は、内部ナビゲーション遷移時は呼ばれないので注意が必要。
 **plugins の場合は、内部ナビゲーション遷移時は呼ばれないので注意が必要**
 
+## プラグインとモジュールの違い
 
+**プラグイン**
+$rootやcontextから呼び出すことができる何かを提供する
+Vue インスタンスと、サーバコンテキストから特定のオブジェクトを利用できるようにするために利用されるもの。
 
+**モジュール**
+ビルドの動きを変えたい場合。設定により動的な挙動を持つプラグインとして提供したい場合
 
 
 
@@ -805,13 +842,11 @@ modules: ['@nuxtjs/style-resources'],
 
 ## Nuxt で DI っぽいことをする
 
-
 ## Nuxt eslint prettier stylelint 設定
 
 [nuxt typescript eslint prettier](https://inokawablog.org/vue-js/nuxt-typescript-stylelint-eslint-prettier/)
 [stylelint 設定](https://qiita.com/y-w/items/bd7f11013fe34b69f0df)
 [こちらの stylelint 設定がよい](https://toragramming.com/web/nuxtjs/nuxt-stylelint-prettier-vscode-format-scss-on-save/)
-
 
 ## Nuxt ホスティング tips
 

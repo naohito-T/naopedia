@@ -858,3 +858,7 @@ webpackerは、自前でwebpackをRailsに導入せずとも簡単にwebpackをR
 
 >webpackはJSのnpmのパッケージです。JSのコミュニティの中で育ちました。npmというのは、Node.jsで使えるパッケージ管理ツールのことで、つまりはRubyでいうbundlerです。JSの開発者たちは、このnpmか、その代替のyarnをみんな使っています。
 そしてwebpackerはRubyのgemです。Railsでもwebpackが楽に使えるように作られました。
+
+## Rails for Stripe
+
+[参考URL](https://qiita.com/tomokazu0112/items/89f69c47761ac782ce13)
