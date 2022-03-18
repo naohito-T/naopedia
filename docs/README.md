@@ -1,34 +1,5 @@
 # Introduction
 
-```sh
-$ gitbook --version
-CLI version: 2.3.2
-GitBook version: 3.2.3
-```
-
-## 今すぐやるべきこと
-
-peco コマンドをインストールする。
-→peco で ls などをコンソール上で選択できるようになる。
-→ そのため ssh コマンドなどをそれで選択できるように実装すれば良い
-
-## とてもいいgitbook参考
-
-[gitbookをgit pageへ参考](https://r-ngtm.hatenablog.com/entry/2020/06/18/193235)
-[Unity エンジニアでの必要スキル](https://rngtm.github.io/Portfolio/markdown/01_skill.html)
-[gitbookによるドキュメント作成](http://mebiusbox.github.io/contents/gitbook/src/customize.html)
-
-## ファイル命名規則
-
-
-## ディレクトリ構成
-
-- summaryは2段階までは行番号つける
-- 第一階層はREADMEでそのディレクトリについてまとめる
-- 第二階層からディレクトリごとに切っていく
-- 第三階層からプレフィックスにインデントをつけない
-- 画像は関連するディレクトリ内でimageとして作成する
-
 ## 各ディレクトリ詳細
 
 * [1. coding](coding/coding.md) コーディング関連についてまとめているtips(手法・お約束など)
