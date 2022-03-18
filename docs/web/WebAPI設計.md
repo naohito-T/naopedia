@@ -1,5 +1,7 @@
 # API設計
 
+[Clean ArchitectureでAPI Serverを構築してみる](https://qiita.com/hirotakan/items/698c1f5773a3cca6193e)
+
 ## ユビキタス
 
 名詞・動詞の見分け方

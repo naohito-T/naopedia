@@ -109,7 +109,7 @@ devコマンドはtargetの設定値に影響せず同じ仕様
 
 - start
 startコマンドはサーバーを立ち上げるが、targetの設定値によって、読み込むディレクトリが異なる
-nuxt start ; 静的なホスティング(Netlify, Vercel, Surge など)のように dist/ディレクトリを提供し、デプロイ前のテストに最適です。
+nuxt start ; 静的なホスティング(Netlify, Vercel, Surge など)のように dist/ディレクトリを提供し、**デプロイ前のテストに最適です。**
 
 - build
 アプリケーションをWebpackでビルドし、JSとCSSをminifyするコマンド

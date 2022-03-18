@@ -164,3 +164,24 @@ control + shift + +
 ## 家で作るぜ
 
 [参考URL](https://takuzoo3868.hatenablog.com/entry/2017/10/29/033252)
+
+
+[プラントUML](https://applis.io/posts/plantuml-sequence-diagram)
+[Clean アーキテクチャ](https://gist.github.com/mpppk/609d592f25cab9312654b39f1b357c60)
+[Rails APIサーバ](https://blog.cloud-acct.com/posts/u-docker-nuxtjs-vuetify-install/)
+
+[blog nuxt ssg](https://polidog.jp/2020/11/01/nuxt-microcms/)
+
+
+git参考
+
+
+https://github.com/soichiro-nitta
+https://github.com/d0iasm?tab=repositories
+https://github.com/rhythm191/nuxt-typescript-jest-cypress
+https://github.com/ka8725/migration_data/blob/master/lib/migration_data/active_record/migration.rb
+
+
+ライセンス作る
+pngを削除
+lifeを削除
