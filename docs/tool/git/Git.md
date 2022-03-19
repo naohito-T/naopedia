@@ -263,15 +263,23 @@ masterリポジトリはcommitした際に更新される。
 
 ## Git Hooks
 
-gitにはコミット時やプッシュ時に特定のコマンドを自動実行するGit Hooksという仕組みがある。
+gitには**コミット時やプッシュ時に特定のコマンドを自動実行**するGit Hooksという仕組みがある。
 `./git/hooks/`配下に各フック用のスクリプトをおくことで実行される。
 **しかし、基本的には/.git/配下はGit管理対象にいれられないため、リポジトリ単位で管理したり他の開発者と共用するのがやや難しい。**
 
 ## Lefthook
 
-Lefthookは各フックからLefthookを経由させることで設定したコマンドを実行するように中継するGit Hooksのマネージャーツール
-.git/hooksは結局git管理がされないため個人でhooksを利用しているもの。そのためlefthookを利用すればチーム全体で利用できる。
 [参考URL](https://zenn.dev/questbeat/scraps/35595a0aeb397a)
+
+LefthookはGit Hooksマネージャーの一つ
+※同様のアプローチでもっとも有名なもののひとつとして**NPMのHusky**がある
+
+**メリット**
+HuskyはNode.js実装のみだが、LefthookはNode.js, Ruby実装のほかGoやBrew経由でもインストールができる。
+そのため**フロントエンド系の開発以外でも導入しやすい**
+
+**Huskyとの比較**
+Husky(+lint-staged)と比較するとそれが依存しているライブラリもあるため、単一ライブラリのLefthookのほうが良いだろ？との主張がある。
 
 ## git submoduleとは
 
