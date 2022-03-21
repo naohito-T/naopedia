@@ -161,3 +161,5 @@ outer after all
 
 
 [Monorepo下におけるJest実行方法のちょっとした改善](https://zenn.dev/tkiryu/articles/a6a43bd9d043b0)
+
+[Jest カバレッジをプルリクに記載するkisaisuru](https://github.com/ArtiomTr/jest-coverage-report-action#usage)

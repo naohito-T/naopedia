@@ -9,9 +9,13 @@ HEX形式: プログラムイメージ（コードとデータを表すの 16 �
 
 ```css
 /* HEX6桁 */
-color: #e0e0e0;
+.class {
+  color: #e0e0e0;
+}
 /* HEX8桁 最後は透過 */
-color: #E0E0E0E0;
+.class2{
+  color: #E0E0E0E0;
+}
 ```
 
 ## width

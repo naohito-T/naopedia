@@ -42,3 +42,29 @@ jobs:
 
 github cd がダサいとき
 [参考URL](https://blog.takuchalle.dev/post/2020/02/20/github_actions_change_directory/)
+
+## woking-directoryについて
+
+**working-directory は run のときにしか適用されず、actionを使うときは適用されない**
+そのためuseで他actionを使用する時はworking-directoryを使えるか確認する必要がある。
+
+[参考URL](https://intothelambda.com/blog/github-actions-with-paths/)
+
+モノレポの時に設定ディレクトリが困る
+
+working-directory
+実行するときのワーキングディレクトリを working-directory で設定している。これは
+`jobs.<job_id>.steps[*].run` でその都度指定してもいいが、面倒なので defaults.runを使用すれば設定できる。
+
+```yml
+defaults:
+  run:
+    working-directory: python
+```
+
+注意点
+jobs.<job_id>.steps[*].uses を使うと、自分でrunを書かなくても、誰かが公開したactionを使える。だがactionによっては、今回のユースケースに合わず、使えないものがある。
+
+## Jest coverage report
+
+[Jest coverage report でプルリクエスト毎にコードカバレッジを可視化する](https://oikawa.dev/posts/20210810_jest-coverage-report-action)

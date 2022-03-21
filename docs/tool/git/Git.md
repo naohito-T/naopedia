@@ -281,6 +281,15 @@ HuskyはNode.js実装のみだが、LefthookはNode.js, Ruby実装のほかGoや
 **Huskyとの比較**
 Husky(+lint-staged)と比較するとそれが依存しているライブラリもあるため、単一ライブラリのLefthookのほうが良いだろ？との主張がある。
 
+**設定一覧**
+以下は.gitディレクトリがあるところに`lefthook.yml`が作成される
+`$ lefthook install`
+
+Git Hooks追加(.git/hooksの中に作成される)
+`$ lefthook add pre-push`
+
+あとはlefthooks.ymlを編集すればOK
+
 ## git submoduleとは
 
 メリット
@@ -366,3 +375,12 @@ main → feature2
 [CLI(2020リリース)](https://dev.classmethod.jp/articles/shuntaka9576-gh/)
 
 ## revert
+
+## github ライセンス
+
+[GitHubで公開したソースにオープンソースライセンスを適用](https://qiita.com/legitwhiz/items/bb34ef20ba23336e0c87)
+[github ライセンスをつけないとどうなるの](https://qiita.com/Tatamo/items/ae7bf4878abcf0584291)
+
+## READMEをおしゃれにする
+
+[README](https://kakakakakku.hatenablog.com/entry/2018/08/08/200903)
