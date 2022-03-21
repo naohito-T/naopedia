@@ -17,3 +17,5 @@ webブラウザでは`<a>`タグで示されたハイパーリンクをユーザ
 
 [GSAP参考](https://codepen.io/GreenSock/pen/YzygYvM)
 [参考ブログ](https://img-flow.com/blog/coding/animation/yokoscroll/)
+
+[あの技術](https://qiita.com/dorarep/items/4dc8bf1684de674abaca)
