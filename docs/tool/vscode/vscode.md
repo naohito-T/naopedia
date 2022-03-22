@@ -99,3 +99,20 @@ VSCode自体が**Electron**を用いて作られているのを考えると当�
 ## マルチルートワークスペース
 
 [参考URL](https://ichi.pro/maruchiru-towa-kusupe-su-to-kakucho-kino-o-shiyoshita-mono-repo-kaihatsu-no-tame-no-visualstudiocode-no-hinto-118099824004370)
+
+## language Server Protocol : 言語サーバプロトコル LSP
+
+プログラミング言語の開発環境は目まぐるしく進化しています。近年登場した language server protocol (LSP) という枠組みは中でも特に強力であり、Vim や Emacs、 Visual Studio Code (VSCode) といった著名なテキストエディタで広く使われるようになった。
+
+
+[language server protocolについて (前編)](https://qiita.com/atsushieno/items/ce31df9bd88e98eec5c4)
+
+language ServerとはID#が必要とするプログラムのプロジェクトソースを解析して情報を提供する機能をサービスとして実現するもの
+**プログラミング言語のサポートを、特定のエディターやIDEとは無関係に実装および配布できるようにすること**
+
+**特徴**
+LSP の特徴は、テキスト補完などの**開発支援機能**をサーバとクライアント（エディタ）の2つに分け、特定のプロトコルで互いにやり取りするという方式にある。
+従来は**各々のテキストエディタが言語ごとにそれぞれプラグインや拡張機能を開発する必要があったが、** 
+LSP の登場により**言語固有の機能はサーバ側**で、**テキストエディタ側の機能はクライアント側**で各々開発すれば良くなった。
+その結果、開発にかかる手間が大幅に減少しただけでなく、マイナーな言語や新興テキストエディタでもリッチな開発体験を気軽に提供できるようになった。
+
