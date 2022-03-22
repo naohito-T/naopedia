@@ -122,3 +122,11 @@ dotfiles
 ## dotfiles
 
 dotfilesとはとはLinuxやMacOSにおける設定ファイルのこと。
+
+## ターミナルからyoutubeの音楽を聞く
+
+[参考URL](https://www.blky.me/2018/02/02/mps-youtube/)
+
+## ターミナルで使えるファイラ
+
+[参考URL](https://qiita.com/rattcv/items/caed7dd8115b294402c8)

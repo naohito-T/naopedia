@@ -95,3 +95,7 @@ VSCodeが**組み込み**でサポートしているのはJSアプリ(Node.jsラ
 
 VSCode自体が**Electron**を用いて作られているのを考えると当然
 ※他の言語で記述したアプリのデバッグを行うにはそのための拡張機能が必用
+
+## マルチルートワークスペース
+
+[参考URL](https://ichi.pro/maruchiru-towa-kusupe-su-to-kakucho-kino-o-shiyoshita-mono-repo-kaihatsu-no-tame-no-visualstudiocode-no-hinto-118099824004370)
