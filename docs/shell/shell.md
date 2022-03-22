@@ -130,3 +130,7 @@ dotfilesとはとはLinuxやMacOSにおける設定ファイルのこと。
 ## ターミナルで使えるファイラ
 
 [参考URL](https://qiita.com/rattcv/items/caed7dd8115b294402c8)
+
+## Dotfiles
+
+[参考URL](https://github.com/takuzoo3868/dotfiles)
