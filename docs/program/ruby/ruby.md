@@ -2,6 +2,12 @@
 
 [他言語からRuby入門について](https://www.ruby-lang.org/ja/documentation/ruby-from-other-languages/)
 
+## Ruby 仕組み
+
+## Language Server Protocolは(LSP)
+
+[Rubyプロジェクトにsolargraphとrobocopを入れる](https://zenn.dev/massu_devix/articles/e400308d55011d)
+
 ## Ruby他言語との違い
 
 Perlの多くの部分を踏襲したRubyでしたが、1点決定的に異なる部分があります。それがRubyが純粋なオブジェクト指向言語である、という点。
