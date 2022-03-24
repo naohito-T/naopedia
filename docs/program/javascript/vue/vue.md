@@ -447,3 +447,7 @@ data()の中でセットされたプロパティはデフォルトでリアク�
 [参考URL](https://qiita.com/daiki7nohe/items/8d29e2d9059296b75fa6)
 
 Vue Test Utilは単体ではなく、JestやKarma、Mochaなどのテストランナーと組み合わせて使う。
+
+## Vuex
+
+cookie, localStorageどちらもfalseにした場合はVuex以外に情報を保存する場所がないのでページのリロードを行うとログイン情報がないためログアウト状態になります。Vuexはメモリ上に存在するためリロードすると値を保持することはできません。
