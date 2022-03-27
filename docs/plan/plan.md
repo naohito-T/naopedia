@@ -6,6 +6,7 @@ webやアプリケーションなどの設計をまとめるpage
 
 [設計理論がすごい](https://qiita.com/os1ma)
 
+[メルペイの事例に学ぶ、SSRとJAMstackのメリット・デメリット](https://logmi.jp/tech/articles/322575)
 ## 考え方
 
 アーキテクチャとアーキテクチャスタイルは別物

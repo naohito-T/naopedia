@@ -1,5 +1,7 @@
 # Git
 
+[きらきらgit](https://zenn.dev/yutakatay/articles/kirakira-github-profile)
+
 Flow
 [GitHub Flowわかりやすい](https://cloudsmith.co.jp/blog/efficient/2020/08/1534208.html)
 ## プルリク
