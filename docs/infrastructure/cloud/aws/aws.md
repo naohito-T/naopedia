@@ -2,6 +2,8 @@
 
 aws関連
 
+[AWS Cloud Quest](https://www.itmedia.co.jp/news/articles/2203/17/news092.html)
+
 ## IAM(Identity and Access Management)
 
 ユーザに対してAWSのアクセスを制御する仕組みのこと
