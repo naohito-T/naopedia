@@ -4,6 +4,11 @@
 
 下にこのディレクトリの各ファイルへのリンクを入れても良いかも
 
+## フレームワーク ベンチマーク
+
+[元のURL](https://gigazine.net/news/20200804-web-framework-benchmark/)
+[Web Framework Benchmarks](https://www.techempower.com/benchmarks/#section=data-r19&hw=ph&test=fortune)
+
 ## 新規のプロジェクトに入る時の心構え
 
 全体がわかっていないとコードを書くことが絶対わからない。
