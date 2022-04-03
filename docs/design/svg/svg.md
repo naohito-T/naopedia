@@ -1,11 +1,18 @@
 # SVG(スケーラブル・ベクター・グラフィックス Scalable Vector Graphics)
 
 [SVGの基本的なこと](https://www.webdesignleaves.com/pr/html/svg_basic.html)
+[10分でわかるSVGの基本的なこと2](https://atmarkit.itmedia.co.jp/ait/articles/1206/01/news143.html)
 
 SVGは画像フォーマットの一種
 SVGファイルはその名の通り、ベクタ形式のデータ。
 画像ファイルであるSVGだが、**XMLに準拠しておりテキストエディタで編集ができる**
 SVGという画像フォーマットはその中身はXMLファイル。XMLでこう書いたらこういう画像になるというルールが決められており、それが標準になったため今SVGとして広く知られている。
+
+## SVG歴史
+
+実はSVGの規格自体はかなり以前から存在したのですが、長らくInternet Explorer（以降IE）からのサポートが得られず、利用が広がらなかった。
+しかし、そのIEも最新のIE9でSVGに正式対応し、利用環境が整いつつある。
+拡大してもジャギーが出ないSVGのベクトルグラフィックスは、さまざまな解像度への対応が望まれるモバイル機器向けのサイトや、最近はやりのレスポンシブデザインにうってつけです。今後はHTML、CSSに並ぶ重要なWeb技術として普及していくことでしょう。
 
 ## ベクタ形式とは
 
@@ -23,7 +30,6 @@ JPEGやPNGは**ラスターデータ**に分類される。
 しかし、どんな場合でも万能に使えるわけではなく、多くの色を必要とする写真などはSVGの利用に向いていません。
 多くの色調を使用している風景写真を、ベクターデータで滑らかに表示させようとすれば、膨大なデータ量を必要としてしまいます。Web上で写真を表示させたい場合、ラスターデータを利用するのが普通です。
 
-
 ## SVG モーフィング
 
 モーフィングとは、**ある図形から別の図形へと自然に変形するように中間の画像を補正して映像を見せる**技法
@@ -34,16 +40,62 @@ SVGを使えば、そんなアニメーションも作成可能
 ![svg](../animation/images/svgモーフィング.png)
 ![Toon Boom](https://blog.toonboom.com/ja/-%E3%83%A2%E3%83%BC%E3%83%95%E3%82%A3%E3%83%B3%E3%82%B0-%E3%81%A8%E3%81%AF%E4%BD%95%E3%81%8B%E8%A4%87%E9%9B%91%E3%81%AA%E5%8B%95%E3%81%8D%E3%81%8C%E3%83%8C%E3%83%AB%E3%83%8C%E3%83%AB%E3%81%AB%E3%81%AA%E3%82%8B)
 
-## SVGの表示方法
+---
+
+## SVGの表示方法(HTMLでの表示方法)
 
 SVGを表示するのには、さまざまな書き方がある。
+1, 2は画像要素となり、**SVGタグ内のpathに対してcss, jsが効きません**
+4はiframeのように別documentになりcss, jsはそのdocumentに対して適用させる必要があります
 
-1. インライン
-2. imgタグでsvg画像ファイル読み込み
-3. cssでsvg画像ファイル読み込み
-4. objectタグ
+1. imgタグでsvg画像ファイル読み込み
+2. cssでsvg画像ファイル読み込み(background-imageプロパティでファイルを読み込む)
+3. インライン(htmlにインラインで直接SVGタグを記述する)
+4. object要素のdata属性でファイルを読み込む
 
-Nuxtでは`<use></use>`タグの挙動を奇妙だといっている。
+Nuxtでは`<use></use>`タグの挙動を奇妙だといっており推奨されていない。
+
+```html
+<!-- <img>のsrcでファイルを読み込む -->
+<img src="hoge.svg">
+```
+
+```css
+/* cssでsvg画像ファイル読み込み(background-imageプロパティでファイルを読み込む) */
+div {
+  background-image:url("hoge.svg");
+}
+```
+
+```html
+<!-- インライン(htmlにインラインで直接SVGタグを記述する) -->
+<div>
+  <svg width="" height="" viewBox="">
+    <!-- 略 -->
+  </svg>
+</div>
+```
+
+```html
+<!-- object要素のdata属性でファイルを読み込む -->
+<object id="mySvg" data="hoge.svg" type="image/svg+xml"></object>
+<script>
+// 4を操作するjs
+var svg_doc = document.getElementById('mySvg').contentDocument;
+var $svg = $(svg_doc).find('svg');
+</script>
+```
+
+
+
+**1 最も基本なobjectタグ**
+HTML内のSVG画像を表示したい箇所にobjectタグを挿入し、type属性に「image/svg+xml」を、data属性に表示するSVGファイルのURLを指定します。この方法は最も互換性が高く、SVGをサポートしたほぼすべてのWebブラウザで動作します。JavaScriptによるSVGドキュメントへのアクセスも可能です。特に理由がなければ、外部SVGファイルの表示にはこの方法を使用するのが無難
+
+```html
+<object type="image/svg+xml" data="sample/sample01.svg">
+```
+
+---
 
 ## 画像ファイルを扱うときにおすすめな情報
 
@@ -97,8 +149,11 @@ SVGはXMLがベースとなっており、HTMLファイル上で編集が可能�
 <svg width="100%" height="100%"><rect class="rect" x="400" y="300" width="100" height="100" fill="indigo" stroke="black" /></svg>
 ```
 
+---
+
 ## SVG CSSプロパティ一覧
 
+[SVGタグ一覧](https://qiita.com/takeshisakuma/items/777e3cb0a54ea7b1dbe7)
 [参考URL](https://ferret-plus.com/7522?page=2)
 
 - viewBox
@@ -130,6 +185,12 @@ x,yは左上からみたx座標とy座標の位置、そしてwidth,heightは描
 <!-- この中に上の参考URLのタグを入れると、簡単に描画ができる -->
 <svg></svg>
 ```
+
+## SVGをアニメーションで動かすには
+
+SVGを動かすにはCSSアニメーションやJS、JQueryなどを使う方法があるが最も簡単なのは@keyframesでアニメーションのセットを作成し、pathやcircleといったSVGの構成要素にanimationプロパティを指定すること。
+
+
 
 ---
 
