@@ -23,6 +23,21 @@ Webでアニメーションを作成するときの一番の分野
 
 ---
 
+## GSAP 単語
+
+duration : アニメーションの時間
+delay : 遅延
+repeat: -1 は無限の意味
+
+## GSAPのdefault値
+
+default settings
+
+duration(0.5), ease('power1.out')
+
+
+---
+
 ## Tween(Tweening(inbetweening)の種類
 
 Webではこの概念を使用し作成する
@@ -30,13 +45,67 @@ Webではこの概念を使用し作成する
 **静的な開始と終了の間の全ての中間フレーム**は、様々なプロパティの補完を使用して計算される
 ![tween](images/tween.png)
 
+考えとしてはこれ
+
+Key frame → frame → frame → frame → Key frame
+     このframeのプロセスをTweenという。
+
+![Tween総称](images/tweenの総称.png)
+
+一つのtweenをまとめると
+- ターゲットオブジェクト
+- アニメーションの長さ
+- キーフレーム
+- 及びその他のプロパティ
 
 ### key frame
+
+![keyframe](images/keyframe.png)
 
 **キーフレームとは、CGのアニメーションの中で主となる変化が定義されているフレームのこと**である。物体の形や位置の変化ポイントが指定され、その間を補完することで滑らかな動画像が作成される。**動画の再生に何らかの変化を起こすフレームアクションは、キーフレームにしか設定することができない。**
 
 アニメーションやコンピューターグラフィックに置いて、**動画像の作成や記録の基点となるフレーム**
 キーフレーム間の画像を保管することでアニメーションを作成したり、キーフレームからのずれ(差分フレーム)のみを記録することで動画データを圧縮できる。
+
+### GSAPでのTween 作成種類
+
+from : スタートの状態を指定します(現在の状態に戻るアニメーション)
+to : ゴールの状態を指定します(現在の状態からのアニメーション)
+fromTo : 指定した状態(初期状態)から、指定した状態(完了状態)にアニメーションさせる。durationは完了状態の方で指定(**開始パラメータと終了パラメータを自分で指定する**)
+set : 状態を指定します(CSSを使わずに、GSAP内で指定できます)fromは、実行されると初期状態に戻るアニメーションが起きてしまうので、位置は変更してそのままにしたい時に使う。
+
+## ease(イージング)
+
+[GreenSock Ease Visualizer](https://greensock.com/docs/v3/Eases)
+
+イージングとは**動きの加減速を示す**用語で、アニメーションにおいては**動きの性格**を表すもの
+適切なイージングを設定することで、ユーザへ与える印象が変わる。
+世界観やユーザ体験をデザインする上でイージングは欠かせない要素。
+
+---
+
+## Timeline
+
+タイムラインは情報を整理する方法
+**イベントを時系列に並べることによって**情報を整理する方法
+
+![timeline](images/timeline.png)
+
+### postion parameter
+
+[リファレンス](https://greensock.com/position-parameter/)
+![position parameter 一覧](images/positonparameter.png)
+
+
+```js
+let animation = gsap.timeline();
+animation
+    .to("#star", { duration: 2, x: 1150 })
+    .to("#star", { duration: 2, x: 1150 }, "+=1") // 末尾をposition parameterという。これのおかげでタイムラインの情報の整理を少しずれせる。この場合は1秒後でずらす。
+    .to("#star", { duration: 2, x: 1150 })
+```
+
+
 
 
 ---

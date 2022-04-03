@@ -29,13 +29,7 @@ input[ type=checkbox] {
 [シンプルなcheckbox](https://copypet.jp/774/)
 
 
-## 画像ファイルを扱うときにおすすめな情報
 
-SVGファイルを扱うときにおすすめなサイト
-
-SVGOMGというサイトで、SVGのサイズを小さくしたりコードをスッキリキレイにしたり出来ます。おすすめです。
-
-[参考URL](https://jakearchibald.github.io/svgomg/)
 
 ## Webサイトの作り方
 
@@ -65,38 +59,4 @@ immutable = 不変
 
 [参考URL](https://javascript.keicode.com/newjs/download-files.php#1)
 
-## SVG(スケーラブル・ベクター・グラフィックス Scalable Vector Graphics)
 
-XMLをベースにした二次元ベクターデータで画像を描きます。
-ベクターデータとは画像を点の座標とそれを結ぶ線(ベクター、ベクトル)などの数値データをもとにして演算によって再現する方式
-
-## SVGを画像化する
-
-[参考URL](https://blog.asial.co.jp/1615)
-
-1. SVG画像を作成する
-2. XMLSerializerを使ってSVG画像のデータを取り出す
-3. Canvasを使ってPNG形式に変換する
-
-```js
-var svg = document.querySelector("svg");
-var svgData = new XMLSerializer().serializeToString(svg);
-var canvas = document.createElement("canvas");
-canvas.width = svg.width.baseVal.value;
-canvas.height = svg.height.baseVal.value;
-
-var ctx = canvas.getContext("2d");
-var image = new Image;
-image.onload = function(){
-    ctx.drawImage( image, 0, 0 );
-    var a = document.createElement("a");
-    a.href = canvas.toDataURL("image/png");
-    a.setAttribute("download", "image.png");
-    a.dispatchEvent(new MouseEvent("click"));
-}
-image.src = "data:image/svg+xml;charset=utf-8;base64," + btoa(unescape(encodeURIComponent(svgData)));
-```
-
-## SVGファイルとは
-
-SVGという画像フォーマットはその中身はXMLファイル。XMLでこう書いたらこういう画像になるというルールが決められており、それが標準になったため今SVGとして広く知られている。
