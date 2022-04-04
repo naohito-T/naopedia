@@ -1,6 +1,7 @@
 # Nuxt
 
 [これは素晴らしいBlog](https://www.i-ryo.com/entry/2020/02/13/083521)
+[composition apiの違いについて](https://nansystem.com/nuxt-composition-api-v2-diff/)
 
 Vueのフレームワーク
 

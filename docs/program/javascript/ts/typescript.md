@@ -96,6 +96,7 @@ export class typeSampleModel {
 
 [
 ## Three.js Typescript webpack
+
 [これいつかやりたいな](https://ics.media/entry/16329/)
 
 
@@ -215,3 +216,25 @@ anyはmethodが使えるが、unknownはmethodが使えないため少しだけ�
 ## TypeScript バリデーション種類
 
 [zod](https://zenn.dev/ynakamura/articles/65d58863563fbc)
+
+## JSに型をつける
+
+[アンビエント宣言から既存ライブラリがJSしかない場合につける方法](https://maku.blog/p/s7wk5k3/)
+TypeScript の アンビエント宣言 (Ambient Declarations) を行うと、既存の JavaScript ライブラリに型情報を付加することができます。 この仕組みを利用すると、
+
+サードパーティ製の JavaScript ライブラリ（npm パッケージ）や、自作の JavaScript ライブラリ（ただし TypeScript 化はしたくないもの）を TypeScript コードから使用する
+jQuery などのブラウザ上でロードされるライブラリを TypeScript コードから使用する
+といったことが可能になります。 ようするに、TypeScript トランスパイラに対して、このオブジェクトはこういう型のものとして外から提供されているので、型チェックエラーを出さないでね、と知らせることができます。
+
+さらに、VisualStudio Code などのエディタを使用している場合は、アンビエント型宣言があることにより、エディタ上での補完入力ができるようになります。
+
+## DefinitelyTyped
+
+@typesスコープを管理しているDefinitely Typedは、Microsoftから支援を受けているものの、**Microsoftの脆弱性報奨金制度におけるセーフハーバーの対象ではない。**
+
+
+@typesで提供されているライブラリ
+`yarn add @types/xxx`
+
+[参考URL](https://blog.ryotak.me/post/definitelytyped-tamper-with-arbitrary-packages/)
+
