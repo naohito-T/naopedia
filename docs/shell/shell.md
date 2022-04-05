@@ -104,23 +104,19 @@ curl -X [HTTPmethod] が指定可能
 
 url はシングルクウォーテーションで囲むことエラーになる。
 
-
 ## Shellを変える際の正しい対応
 
 シェルを変える際はバックアップ用のセッションを残しておくなどして、ログインできなくならないよう慎重に作業をしましょう。
 
-
 ---
-
-dotfiles
 
 ## 他環境へのdotfiles移行について
 
 1. まずはdotfilesを作成している SHELLに合わせる必要がある(管理主はzsh)
 
-
 ## dotfiles
 
+[参考URL](https://github.com/takuzoo3868/dotfiles)
 dotfilesとはとはLinuxやMacOSにおける設定ファイルのこと。
 
 ## ターミナルからyoutubeの音楽を聞く
@@ -131,6 +127,6 @@ dotfilesとはとはLinuxやMacOSにおける設定ファイルのこと。
 
 [参考URL](https://qiita.com/rattcv/items/caed7dd8115b294402c8)
 
-## Dotfiles
+## Shellで毎回困る、ifの条件文一覧
 
-[参考URL](https://github.com/takuzoo3868/dotfiles)
+[参考URL](https://qiita.com/kazuooooo/items/163d07f694016ebd6048)

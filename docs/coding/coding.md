@@ -61,6 +61,7 @@ const { carvingComponent } = useCarvingComponent();
 
 ## 正規表現でvscodeを検索する
 
+正規表現を普段から使えるようにするための特訓として、vscodeの検索で使う。
 ゲームのランタイムで正規表現を使わないとのこと(負荷が高いパターンがあるため)
 
 ## DB 検索は 1 回で終わらせる。

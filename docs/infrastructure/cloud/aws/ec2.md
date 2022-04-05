@@ -16,6 +16,25 @@ EC2のインスタンスを停止しても勝手に新しくインスタンス�
 **グループで使うパターン**
 - ユーザごとに分けるべき
 
+## EC2に別のパッケージマネージャを入れる
+
+[AWSリファレンス(homebrew)](https://docs.aws.amazon.com/ja_jp/serverless-application-model/latest/developerguide/sam-cli-install-linux-alt.html)
+
+**ソフトウェアのコンパイルはすべての Amazon EC2 インスタンスで必要なタスクではないため、そのようなツールはデフォルトでインストールされていません。**
+ただし、「Development Tools」という名前のパッケージグループで利用でき、`$ yum groupinstall`コマンドでインスタンスに簡単に追加されます。
+
+
+## EC2のソフトウェア コンパイル事情
+
+[AWS参考URL](https://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/compile-software.html)
+
+EC2ではソフトウェアのコンパイルまでの責務は持っていない。
+そのためmake gcc autoconfなどインストールしないといけない。
+しかし、AWSではデフォルトで必要な開発ツール(make gcc autoconf)をインストールできる準備はされており、コマンド一発でインストールできる
+
+`% sudo yum groupinstall "Development Tools"`
+
+
 ## Amazon Linux 2 OSとは
 
 [参考URL](https://www.acrovision.jp/service/aws/?p=609)
