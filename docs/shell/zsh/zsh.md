@@ -1,5 +1,17 @@
 # zsh
 
+## ZLE(Zsh Line Editor)
+
+ZLEはコマンドラインに打ち込む`ls -l`などの文字列(バッファという)をプログラム的に編集する機能
+
+
+
+[Macがzshになるなら、ZLEを習得するっきゃない！](https://dev.classmethod.jp/articles/zsh-zle-introduction/)
+
+zshのメリットとして補完がすごい!と紹介されることが多いが、補完の機能は使いこなすことが難しいため
+
+
+
 ## zprofileとzshrcの違い
 
 [参考URL](https://gallard316.hatenablog.com/entry/2020/11/24/185634)
