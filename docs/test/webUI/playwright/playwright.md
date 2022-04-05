@@ -23,7 +23,7 @@ Firefox と WebKit についてはブラウザ側にパッチを当て、ライ�
 
 ### イベント駆動型APIである
 
-PlaywrightはwaitForRequestの他にもPage上のload、dom content、loaded、closeなどのイベントをきっかけにするwaitForEventなどのブラウザ側から起動するAPIが実装されています。これはPlaywrightがブラウザと双方向通信をしているため可能になっています。
+PlaywrightはwaitForRequestの他にもPage上のload、dom content、loaded、closeなどのイベントをきっかけにするwaitForEventなどのブラウザ側から起動するAPIが実装されています。これは**Playwrightがブラウザと双方向通信をしているため可能**になっています。
 
 これらのAPIによってPlaywrightはAjax通信の終了や他のJavaScript処理の終了を確実に検知してからテストスクリプトを実行することができます。 WebDriverはこういったAPIがないため、イベントの完了を検知するには画面上の変化（ボタンの状態、メッセージの表示）をポーリングすることになります。
 
@@ -48,6 +48,9 @@ Recordを押下後、ユーザのブラウザ操作からコードを作成で�
 2. TypeScriptでやっているが環境構築が楽
 3. Test風に記載ができ、テストランナーも別パッケージで提供されているためJestを書く用にできる。
 
+## PlayWright コマンドラインオプション
+
+[参考URL](https://playwright.dev/docs/test-cli)
 
 ## Tips
 

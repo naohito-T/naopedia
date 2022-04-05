@@ -387,8 +387,53 @@ main → feature2
 
 [CLI(2020リリース)](https://dev.classmethod.jp/articles/shuntaka9576-gh/)
 
+---
+
+## git 各コマンド
+
+## git clean
+
+git cleanは追跡していないファイルを一気に削除する。追跡していないファイルとは新規作成ファイルも含めたまだ一度もaddしていないファイル
+この追跡されていないファイルは**git reset --hard**を仕様しても消えないため注意が必要
+
+```sh
+# どのファイルが消えるか確認する
+$ git clean -n
+
+# ファイルを消す
+$ git clean -f
+```
+
 ## revert
 
+
+## git add -A
+
+**全ての変更**をaddする
+`git add .` + `git add -u` の合体技
+
+```sh
+# 新規作成ファイルと変更ファイルをaddする
+$ git add .
+
+# 変更部分のみadd 新規ファイルはaddされない
+$ git add -u
+```
+
+## git revert
+
+git resetは履歴を削除したが、**git revertは履歴を戻すようなコミットを新たに作成する**
+git cherry-pickとgit revertに関しては**コミットまで自動的にやってしまうため注意が必要**
+また、github上では履歴を戻すようなコミットをやっているため、新しいプルリクを立てても差分は表示されない
+
+```sh
+# -n オプションでコミットされない状態をつけることができる(addされた状態)
+$ git revert HEAD -n
+```
+
+## git resetとrevertの違い
+
+[参考URL](https://gist.github.com/satoshin2071/4b9a66e0a7ec18a6fa21)
 
 
 

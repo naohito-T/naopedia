@@ -1,5 +1,7 @@
 # SPA
 
+[SPA/SSR/プリレンダリングの違い](https://qiita.com/amakawa_/items/e7d0720e1ab8632769bf)
+
 近年台頭してきたSPA技術。
 
 上司にメリットを伝えられないためまとめる
