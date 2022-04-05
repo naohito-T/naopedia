@@ -1,9 +1,19 @@
 # Git
 
+## github ライセンス
+
+[GitHubで公開したソースにオープンソースライセンスを適用](https://qiita.com/legitwhiz/items/bb34ef20ba23336e0c87)
+[github ライセンスをつけないとどうなるの](https://qiita.com/Tatamo/items/ae7bf4878abcf0584291)
+
+## READMEをおしゃれにする
+
+[README](https://kakakakakku.hatenablog.com/entry/2018/08/08/200903)
 [きらきらgit](https://zenn.dev/yutakatay/articles/kirakira-github-profile)
 
-Flow
+## Flow
+
 [GitHub Flowわかりやすい](https://cloudsmith.co.jp/blog/efficient/2020/08/1534208.html)
+
 ## プルリク
 
 [チーム開発におけるプルリクの作法](https://qiita.com/ikuwow/items/fb52a54c086398eb5b92)
@@ -16,14 +26,14 @@ Flow
 
 ## トピックブランチ
 
-トピックブランチとは機能追加やバグ修正といったある課題に関する作業を行うために作成するブランチ
+トピックブランチとは機能追加やバグ修正といったある**課題に関する作業を行うために作成するブランチ**
 複数の課題に関する作業を同時に行う時は、その数だけトピックブランチが作成される。
-トピックブランチは安定した統合ブランチから分岐する形で作成し l、作業が完了したら統合ブランチに取り込む
+トピックブランチは安定した統合ブランチから分岐する形で作成し、作業が完了したら統合ブランチに取り込む
 
 ## HEADとは
 
 今自分が作業している場所を示すポインタ
-HEADはGitで現在のスナップショットを参照するために使用される。
+HEADはGitで**現在のスナップショットを参照するため**に使用される。
 
 ## detached HEADとは
 
@@ -58,9 +68,10 @@ Git で管理するファイルの改行コードの扱いをルール化する�
 ## Gist
 
 GitHubが提供するファイル管理サービス
-GitHubはプロジェクト(ディレクトリ)を管理するものだが、Gistはファイル単体を管理する。
+GitHubはプロジェクト(ディレクトリ)を管理するものだが、Gistは**ファイル単体を管理**する。
 
-## Cacher
+## Cacher(キャッシャー)
+
 旧サービス名GistBox。コードスニペット管理ツールです。
 100以上の言語をサポートし、Gistとの連携、チーム共有などの機能があります。
 メーラーのようなUIやラベル、言語別での管理、検索ができます。
@@ -378,13 +389,7 @@ main → feature2
 
 ## revert
 
-## github ライセンス
 
-[GitHubで公開したソースにオープンソースライセンスを適用](https://qiita.com/legitwhiz/items/bb34ef20ba23336e0c87)
-[github ライセンスをつけないとどうなるの](https://qiita.com/Tatamo/items/ae7bf4878abcf0584291)
 
-## READMEをおしゃれにする
-
-[README](https://kakakakakku.hatenablog.com/entry/2018/08/08/200903)
 
 
