@@ -10,6 +10,10 @@
 [README](https://kakakakakku.hatenablog.com/entry/2018/08/08/200903)
 [きらきらgit](https://zenn.dev/yutakatay/articles/kirakira-github-profile)
 
+## Githubにpushしてしまった場合に取り消す方法
+
+[参考URL](https://loop-never-ends.com/git-delete-pushed-file/)
+
 ## Flow
 
 [GitHub Flowわかりやすい](https://cloudsmith.co.jp/blog/efficient/2020/08/1534208.html)
