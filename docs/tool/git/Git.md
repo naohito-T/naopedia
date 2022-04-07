@@ -18,15 +18,32 @@
 
 [GitHub Flowわかりやすい](https://cloudsmith.co.jp/blog/efficient/2020/08/1534208.html)
 
+---
+
 ## プルリク
 
 [チーム開発におけるプルリクの作法](https://qiita.com/ikuwow/items/fb52a54c086398eb5b92)
 
 - 十分小さくプルリクを作成する
 
+### プルリク開発フロー
+
+種類あるのかよって感じ
+
+[Work in Progressパターン](https://qiita.com/numa08/items/b676e38e3dbabfd39d18)
+
 ## プルリク レビュー側
 
 [レビュワーの機能について詳しい](https://bake0937.hatenablog.com/entry/2019/10/24/145241)
+
+---
+
+## issue
+
+[issue](https://note.com/koushikagawa/n/n500e2f4d4019)
+
+
+---
 
 ## トピックブランチ
 
