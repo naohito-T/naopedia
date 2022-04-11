@@ -283,6 +283,20 @@ POSTは冪等性がない
 
 ---
 
+## 300系
+
+
+### 304 Not Modified
+
+[リファレンス](https://developer.mozilla.org/ja/docs/Web/HTTP/Status/304)
+[参考URL](https://uxmilk.jp/50715)
+
+未更新を表す
+このときは、Webサーバからはメッセージボディ・つまりコンテンツが返ってこない。
+
+
+---
+
 ## 400系
 
 400 Bad Request
