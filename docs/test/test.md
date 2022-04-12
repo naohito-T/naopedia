@@ -65,6 +65,7 @@ APIテストのエンドポイントのメソッドでWeb APIをcallしている
 **E2EテストとはUI(User Interface)テスト**とも呼ばれ、システム全体を通してテストを行う。
 **Webサービスの場合はユーザと同じようにブラウザを操作し挙動が期待通りになっているかを確認すること。**
 
+[E2Eテスト設計思想](https://recruit.gmo.jp/engineer/jisedai/blog/e2e-test-saas-ai-mabl/)
 
 ## ユニットテストとは(単体テスト)
 
