@@ -143,7 +143,9 @@ console.log(`navState.pager が reactiveか: ${isReactive(navState.pager)}`); //
 // 配列上書きではreactiveは失われない。
 ```
 
-### Vue 配列操作
+## 配列操作
+
+JSの配列操作には破壊的と非破壊的があることを理解しておく
 
 - 配列のコピー
 
@@ -281,9 +283,7 @@ template 内に computed の関数が記載されていても ↑ の条件を�
 
 例外もありますが、基本的にテンプレートのイベントハンドラー（v-on:xxx または@xxx）以外の場所で関数呼び出しを見つけたら「間違いかも？」と疑って良いでしょう。
 
-## computed
 
-なんと!非同期 API を呼び出すことはできない!!
 
 ## v-modelディレクティブ = syntax sugar
 
@@ -368,6 +368,9 @@ Vue3のtipsを記載しておく。
 
 
 ## computed
+
+**computed注意**
+なんと!非同期 API を呼び出すことはできない!!
 
 ```js
 <template>

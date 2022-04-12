@@ -456,6 +456,13 @@ $ git revert HEAD -n
 
 [参考URL](https://gist.github.com/satoshin2071/4b9a66e0a7ec18a6fa21)
 
+## rev-parse
+
+Gitを使っているとプログラムからGitのメタ情報を取りたい！ってこと、よくありますよね？
+でも、 git status をgrepしたりしていませんか？？
+git rev-parse から取れる情報もたくさんあるんですよ！
+
+[revParse](https://qiita.com/karupanerura/items/721962bb7da3e34187e1)
 
 
 
