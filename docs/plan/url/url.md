@@ -15,3 +15,14 @@ GETパラメータのセパレータとして機能します。URLセーフで�
 
 `unreserved  = ALPHA / DIGIT / "-" / "." / "_" / "~" `
 ALPHA:アルファベット、DIGIT:数字、そして-._~の4種の記号です。　これらの使用して良い文字のみで構成される文字列はURLセーフです。
+
+---
+
+## URL取得する
+
+1. document.referrer
+
+[参考URL](https://developer.mozilla.org/ja/docs/Web/API/Document/referrer)
+
+iOSがreferrerを廃止したとのこと。そのためやめた方がいい
+
