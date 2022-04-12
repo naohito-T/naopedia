@@ -1,33 +1,71 @@
 # Vue
 
 [Vue3 リファレンス](https://v3.ja.vuejs.org/)
-
+[Vue2 スタイルガイド](https://v3.ja.vuejs.org/style-guide/#%E3%83%AB%E3%83%BC%E3%83%AB%E3%82%AB%E3%83%86%E3%82%B3%E3%82%99%E3%83%AA)
 [VsCodeが遅い](https://zenn.dev/tatsuhiko/articles/d7cedc5a1a3f5a)
 
 ## ユビキタス
 
 プロパティ → props のこと
 this → Vue インスタンス
-context → Vue インスタンス生成前のインスタンス,Store インスタンス
+context → Vue インスタンス生成前のインスタンス, Store インスタンス
 リアクティブ → `html <template></template>`から値を変更した時に Vue インスタンス内のプロパティも変更できること
+リアクティブを考える時はスプレッドシートが一番理解しやすい
 
 ## Vue の this と Context
 
 [参考URL](https://qiita.com/beanzou/items/600af8c04341459cbe3a)
 
 this : 現在のVue インスタンスを指定するとき
-context : まだ Vue インスタンスが作られる前に Vue インスタンスを使いたいとき、Store メソッドを使いたいとき
+context : まだ**Vueインスタンスが作られる前に Vue インスタンスを使いたいとき,**Store メソッドを使いたいとき
 
 **ここでnuxt composition APIを絡めて覚える**
 router, app, store に簡単にアクセスできるのがよい(useContext を使用して)
 **つまり、contextにアクセスする**
 
+---
+
 ## Vueでのリアクティブ (v3 ドキュメント)
 
-JSではローカル変数の再代入を追跡することはできない。その仕組みがないため
-ただし**オブジェクトのプロパティの変更は追跡することができる。**
-
 [リファレンス](https://v3.ja.vuejs.org/guide/reactivity.html)
+
+JSではローカル変数の再代入を追跡することはできない。その仕組みがないため
+ただし**オブジェクトのプロパティの変更は追跡することができる。**(jsのproxyを使用して)
+
+## リアクティブ性とは
+
+>リアクティブ性というのは、
+>プロパティが変更されたらそれを検知してそのプロパティが使用されている関数を自動的に再計算することと言い換えることができます。つまり、これを実現するにはプロパティ毎にそのプロパティがどんな関数で使われているかを保存しておく、そのプロパティの更新時に関連する関数を全て再計算する、機能があれば良いわけです。どうですか？なんだかできそうな気がしてきませんか？
+
+## Vue リアクティブになる基本の仕組み
+
+[リアクティブ関連メソッド一覧](https://qiita.com/ryo2132/items/6dc51ede8082dea75812)
+
+[参考 URL](https://qiita.com/neutron63zf/items/506c7493a53cea44860e#vue-next%E3%81%AE%E3%83%AA%E3%82%A2%E3%82%AF%E3%83%86%E3%82%A3%E3%83%96%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0)
+
+vue では data()内に宣言された値に対して、mount 時に get と set を設定する。その設定により、変更がかかった時に再度仮装 DOM を描画する処理が走る。
+
+## Vue のリアクティブシステム
+
+[参考 URL](https://mya-ake.com/posts/vue-composition-api-columns/)
+
+## Vue のリアクティブシステムの落とし穴
+
+完結に言うと、Vue では配列とオブジェクトはリアクティブにならない
+配列の上書きでまず書学者はつまずく
+配列の中に新たなプロパティを生やそうとしても、Vue.js はそれを監視していないため、値の更新検知や再描画ができないよ。新しくインスタンスを作ってあげてね。ということでした。
+
+[参考 URL](https://blog.3streamer.net/vue-js/howtochange-array-812/)
+
+```js
+let arr = [1, 2, 3];
+let arr2 = [4, 5, 6];
+arr = arr2; // ここで新たな参照値になる期待をする
+console.log(arr); // しかし上書きされない [1, 2, 3]
+```
+
+---
+
 ## @vue/composition-apiと@nuxtjs/composition-apiでのcontextの違い
 
 [参考URL](https://zenn.dev/hogeihogemi/articles/94c0254372defd)
@@ -60,17 +98,7 @@ v-onディレクティブでバインドしたメソッドは、clickやchange�
 親となるコンポーネント側から、**子のコンポーネントの一部に差し込む機能。**
 3種類ある
 
-デフォルトスロット
-```html
-<template>
-  <div class="mycom">
-  <p>name: Mirai Taro<p>
-  </div>
-</template>
-<style>
-</style>
-```
-
+デフォルトslotと名前付きslotがある。
 
 ## Vueの検知ができないパターン
 
@@ -87,7 +115,10 @@ user/123456 → user/444444
 基本
 **親コンポーネントから子コンポーネント**へデータを渡すにはv-bind属性(省略 :hoge )が必要となる。
 
-## Vue ref
+---
+
+## set関連
+## ref
 
 ```js
 const currentPage = ref(0);
@@ -95,7 +126,7 @@ currentPage.value = page.value;
 isRef(currentPage); // true 代入ではリアクティブは失われない。
 ```
 
-## Vue Reactive
+## reactive
 
 ```js
 const navState = reactive<{
@@ -110,38 +141,6 @@ for (let i = 0; i < displayPage; i++) {
 navState.pager = pages; // 上書き
 console.log(`navState.pager が reactiveか: ${isReactive(navState.pager)}`); // true
 // 配列上書きではreactiveは失われない。
-```
-
-## リアクティブ性とは
-
->リアクティブ性というのは、
->プロパティが変更されたらそれを検知してそのプロパティが使用されている関数を自動的に再計算することと言い換えることができます。つまり、これを実現するにはプロパティ毎にそのプロパティがどんな関数で使われているかを保存しておく、そのプロパティの更新時に関連する関数を全て再計算する、機能があれば良いわけです。どうですか？なんだかできそうな気がしてきませんか？
-
-## Vue リアクティブになる基本の仕組み
-
-[リアクティブ関連メソッド一覧](https://qiita.com/ryo2132/items/6dc51ede8082dea75812)
-
-[参考 URL](https://qiita.com/neutron63zf/items/506c7493a53cea44860e#vue-next%E3%81%AE%E3%83%AA%E3%82%A2%E3%82%AF%E3%83%86%E3%82%A3%E3%83%96%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0)
-
-vue では data()内に宣言された値に対して、mount 時に get と set を設定する。その設定により、変更がかかった時に再度仮装 DOM を描画する処理が走る。
-
-## Vue のリアクティブシステム
-
-[参考 URL](https://mya-ake.com/posts/vue-composition-api-columns/)
-
-## Vue のリアクティブシステムの落とし穴
-
-完結に言うと、Vue では配列とオブジェクトはリアクティブにならない
-配列の上書きでまず書学者はつまずく
-配列の中に新たなプロパティを生やそうとしても、Vue.js はそれを監視していないため、値の更新検知や再描画ができないよ。新しくインスタンスを作ってあげてね。ということでした。
-
-[参考 URL](https://blog.3streamer.net/vue-js/howtochange-array-812/)
-
-```js
-let arr = [1, 2, 3];
-let arr2 = [4, 5, 6];
-arr = arr2; // ここで新たな参照値になる期待をする
-console.log(arr); // しかし上書きされない [1, 2, 3]
 ```
 
 ### Vue 配列操作
