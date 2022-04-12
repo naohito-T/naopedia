@@ -187,6 +187,8 @@ Vue.component("button-counter", {
 
 ## Props
 
+[【Vue3】CompositionAPIでpropsの変更を検知する](https://zenn.dev/tentel/articles/e52815dd33f328)
+
 ある値を親から子へ伝播させたい場合はpropsを使う。
 propsで渡された値は親の持ち物のため、子コンポーネント側で変化させてはいけない。
 しかし、propsを直接参照してしまうと誤って変更してしまう可能性がある(特に配列やオブジェクト)
@@ -207,8 +209,6 @@ Date
 Function
 Symbol
 
-
-## Vue の props
 
 原則として親の props から渡された、子 props は子自体で変更してはいけない。
 親の props を変更
