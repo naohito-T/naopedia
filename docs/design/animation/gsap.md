@@ -8,6 +8,13 @@ GSAPはCSS/HTML5 Canvas/WebGLなどさまざまなアニメーション作成に
 「GSAP」はかつてのTweenMax（高機能なトゥイーンライブラリ）やTweenLite（機能をシンプルした軽量なライブラリ）を統合したJSライブラリ
 ウェブの古い記事では「TweenMax」で紹介されていることがありますが、「GSAP」は同じJSライブラリです。
 
+## GSAP ライセンス
+
+**Standard License**
+エンドユーザーに対する利用料が無料のサービス、Webサイト、アプリなら、開発者が商用で利用しても無料
+**Business Green**
+このライセンスには3段階あり、人気があるのは中間の「Shockingly Green」だ。Shockingly Green会員は商用ライセンス（有料販売するアプリやサービスなどで必要）をのぞき、付加的なプラグインとオプションをすべて利用できる
+
 ## アニメーションを作成するアプローチ
 
 **Physics engine**
