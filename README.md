@@ -9,3 +9,8 @@ book 形式でまとめる方が良いと思い、プログラマーとしての
 
 Google の Cloud API を参考にしている
 [リファレンス URL](https://cloud.google.com/apis/design/naming_convention?hl=ja)
+
+## 文章の校正について
+
+thank you!
+[テキスト校正くん](https://ics.media/entry/18859/)
