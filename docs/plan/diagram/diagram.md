@@ -5,11 +5,11 @@
 ## PlantUML とは
 
 以下のような図をテキストで素早く描くためのオープンソースプロジェクト。
-PlantUMLは**DSL(ドメイン特化言語)**でUMLの図を描く
+PlantUMLは**DSL（ドメイン特化言語）**でUMLの図を描く
 
 ## PlantUML 必用なもの
 
-PlantUML の実行には、Javaの実行環境が必要。
+PlantUMLの実行には、Javaの実行環境が必要。
 
 [使い方ガイド](https://zenn.dev/wtkn25/articles/vscode-plantuml)
 [使い方ガイド(基本の書き方)](https://zenn.dev/msksgm/articles/20211218-robustness-with-plantuml-vscode)
@@ -21,10 +21,14 @@ PlantUML の実行には、Javaの実行環境が必要。
 
 [各図についての参考](https://qiita.com/mumucochimu/items/e97a03217588f4101849)
 
+## ステレオタイプ
+
+クラス図などで、モデル要素の意味を拡張するもの。ギルメット<<>>によるラベル表記と、アイコン表記がある。
+
 ## UML(Unified modeling Langurage)
 
-共有することの難しさを毎日感じてる場合、UML図を記載すると捗る可能性がある
-このような記法を統一したものをUMLというそう
+共有することの難しさを毎日感じてる場合、UML図を記載するとはかどる可能性がある
+このような記法を統一したものをUMLという
 
 シーケンス図 / Sequence diagram
 ユースケース図 / Usecase diagram
@@ -67,6 +71,7 @@ PlantUML: Use Case
 
 PlantUML: State
 オブジェクトの状態を表現
+ステートチャート図はシステムの動的性質をモデル化するために使用されます。イベントが発生したときにオブジェクトすべての可能な状態を記述します。そのため、このもっとも重要な目的は、オブジェクト動作の開始から終了までのライフタイムをモデル化すること
 
 ### アクティビティ図
 
@@ -82,7 +87,7 @@ PlantUML: Sequence
 シーケンス図はオブジェクト間のやりとりを時系列にそってあらわすもの
 ![シーケンス](image/シーケンス.png)
 
-オブジェクトごとに上から下に時系列になっています。矢印は形の違いで意味がある。
+オブジェクトごと上から下へ時系列になっています。矢印は形の違いで意味がある。
 ツールとして一番有名なのはdrawio
 
 ---
@@ -103,8 +108,10 @@ PlantUML: Object
 
 ### コンポーネント図(Component)
 
+[参考URL](https://www.lucidchart.com/pages/ja/uml-component-diagram)
 PlantUML: Component
 コンポーネントの依存関係を表現
+※UML2.0においてコンポーネントという用語は、システムの他の部分とインターフェイスを介した接続が可能な独立したシステムやサブシステムを示すクラスのモジュールを指す。
 
 ### パッケージ図(Component)
 
@@ -113,7 +120,12 @@ PlantUML: Component
 
 ### 配置図(Component)
 
-P
 システムの物理的な配置を表現
 
 ---
+
+## ER図(Entity Relationship)
+
+ER図は実体関連モデルDBの関連モデル
+
+[TypeORM ER図](https://dev.classmethod.jp/articles/typeorm-er-diagram/)
