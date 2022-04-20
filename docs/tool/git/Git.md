@@ -1,17 +1,16 @@
 # Git
 
-## READMEをおしゃれにする
-
-[README](https://kakakakakku.hatenablog.com/entry/2018/08/08/200903)
-[きらきらgit](https://zenn.dev/yutakatay/articles/kirakira-github-profile)
-
 ## GitHubにpushしてしまった場合に取り消す方法
 
 [参考URL](https://loop-never-ends.com/git-delete-pushed-file/)
 
-## Flow
+## Git Flowに関して
+
+2種類あるけど片方忘れた
 
 [GitHub Flowわかりやすい](https://cloudsmith.co.jp/blog/efficient/2020/08/1534208.html)
+
+
 
 ---
 
@@ -35,7 +34,10 @@
 
 ## issue
 
+「issue」直訳すると、〔議論すべき〕重要な話題［問題］、問題点、論点、争点、〔問題の〕核心、急所などの意味になる。
+
 [issue](https://note.com/koushikagawa/n/n500e2f4d4019)
+[issue開発の進め方](https://qiita.com/tkmd35/items/9612c03dc60b1c516969)
 
 
 ---
@@ -479,6 +481,10 @@ git rev-parse から取れる情報もたくさんあるんですよ！
 
 G + N : Gが最初GitHub通知にいく
 
+## GitHub Top Page READMEをおしゃれにする
+
+[README](https://kakakakakku.hatenablog.com/entry/2018/08/08/200903)
+[きらきらgit](https://zenn.dev/yutakatay/articles/kirakira-github-profile)
 
 ## GitHubでのライセンスについて
 
