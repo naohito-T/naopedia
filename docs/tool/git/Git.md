@@ -1,10 +1,5 @@
 # Git
 
-## github ライセンス
-
-[GitHubで公開したソースにオープンソースライセンスを適用](https://qiita.com/legitwhiz/items/bb34ef20ba23336e0c87)
-[github ライセンスをつけないとどうなるの](https://qiita.com/Tatamo/items/ae7bf4878abcf0584291)
-
 ## READMEをおしゃれにする
 
 [README](https://kakakakakku.hatenablog.com/entry/2018/08/08/200903)
@@ -464,5 +459,28 @@ git rev-parse から取れる情報もたくさんあるんですよ！
 
 [revParse](https://qiita.com/karupanerura/items/721962bb7da3e34187e1)
 
+## blame
+
+誰の修正なのか見つけたい。そんな時に使える
+
+[参考URL](https://qiita.com/annin_jp/items/44960964ecbac77fe19a)
+
+---
+
+ここからはGitHubについて
+
+## GitHubショートカット
+
+[リファレンス](https://docs.github.com/ja/get-started/using-github/keyboard-shortcuts)
+
+**基本 G + なにかという感じ**
+
+便利そう
+
+G + N : Gが最初GitHub通知にいく
 
 
+## GitHubでのライセンスについて
+
+[GitHubで公開したソースにオープンソースライセンスを適用](https://qiita.com/legitwhiz/items/bb34ef20ba23336e0c87)
+[github ライセンスをつけないとどうなるの](https://qiita.com/Tatamo/items/ae7bf4878abcf0584291)
