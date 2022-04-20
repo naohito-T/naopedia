@@ -8,7 +8,7 @@
 [参考URL](https://www.twilio.com/blog/a-guide-to-node-js-logging-jp)
 
 rateLimitでリクエスト回数を決める
-f5対策?
+f5対策？
 
 リクエストの検証をする
 

@@ -1,6 +1,6 @@
 # tool Page
 
-version 管理ツールやtoolを記載していく
+version管理ツールやtoolを記載していく
 
 [Git 概要](./git/.md)
 [PR_template](PULL_REQUEST_TEMPLATE.md)
@@ -11,8 +11,19 @@ version 管理ツールやtoolを記載していく
 
 [スニペット管理の参考例](https://olein-design.com/blog/github-gist-cacher-for-snippet)
 
-## どんなエディタでもEditorConfigを使ってコードの統一性を高める
+## どんなエディターでもEditorConfigを使ってコードの統一性を高める
 
-.editorconfig ファイルについて
+.editorconfigファイルについて
 
 [参考URL](https://qiita.com/naru0504/items/82f09881abaf3f4dc171)
+
+## items2 ショートカット
+
+[参考URL](https://qiita.com/0084ken/items/8aefabef4fd3cfdf8fce)
+
+## 実装を
+
+LoLoでは多分自分達のみで作る予定だった
+それらに関してレビューに俺らがいるのがおかしい
+
+
