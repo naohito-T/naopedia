@@ -12,6 +12,9 @@
 - SPAとserver Side Renderのパフォーマンス
 [参考URL](https://www.publickey1.jp/blog/17/server_side_renderingserver_side_rendering_ng-japan_2017_1.html)
 
+- webpackを使用した際のバンドルサイズ パフォーマンス改善
+[参考URL](https://dwango-js.github.io/performance-handbook/startup/reduce-size/)
+
 ## イベントの調整
 
 >解決策の1つは、イベントを延期し、何回かのイベントを一度にまとめて扱うことです。この点で役立つ、よく使われる2つの関数があります。throttleとdebounceです。

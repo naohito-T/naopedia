@@ -54,4 +54,6 @@ widthやheightで幅の指定をする
 [参考URL](https://ics.media/entry/210628/)
 
 CSSのgapプロパティは余白を指定できる新しい手法
-余白といえば、marginプロパティやpaddingプロパティを思い浮かべる方が多いがCSS gridやFlexboxでgapプロパティを使うと柔軟にレイアウトを組める
+余白といえば、marginプロパティやpaddingプロパティを思い浮かべる方が多いが**CSS grid**やFlexboxでgapプロパティを使うと柔軟にレイアウトを組める
+
+## trans

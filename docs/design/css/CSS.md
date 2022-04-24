@@ -1,7 +1,14 @@
-# css
+# CSS
+
+## CSSを本当に理解するには
+
+CSSを理解するには、レイアウトアルゴリズムがどのように機能するかを理解する必要があります。プロパティを知るだけでは不十分
+[参考URL](https://coliss.com/articles/build-websites/operation/css/about-css-layout-algorithms.html)
+
 
 flexbox: IE対応?
 grid layout: IE対応していないのであれば積極的に使う
+
 
 ## ユビキタス
 
@@ -212,4 +219,18 @@ grid-template-columns: 列のトラックの幅を半角スペースで区切っ
 最後にそれぞれのアイテムをグリッドのどのエリアに配置するのかを指定する。
 **アイテムを配置するのには2通りの方法がある。**
 
+
+
+## CSS 仕組み
+
+[参考URL](https://coliss.com/articles/build-websites/operation/css/about-css-layout-algorithms.html)
+
+多分みんなそうだろう
+CSSの学習はz-index: 10;やjustify-content: center;のようなプロパティと値に着目していました。それぞれのプロパティが何をするのかを理解すれば、CSS全体を深く理解できると考えていた...
+
+良い考え方
+そこで気づいたのは、CSSは単なるプロパティの集合体ではないということです。CSSは相互に接続されたレイアウトアルゴリズムの集合体なのです。それぞれのアルゴリズムは、独自のルールとメカニズムを持つ複雑なシステムです。
+特定のプロパティが何をするのかを学ぶだけは十分ではありません。レイアウトアルゴリズムがどのように機能するか、プロパティをどのように使用するかを学ぶ必要があります。
+
+### CSSにおけるレイアウトのアルゴリズム
 
