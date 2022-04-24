@@ -3,6 +3,10 @@
 ## フロント側
 
 ---
+
+- ドワンゴでのフロントパフォーマンスチューニング
+[参考URL](https://dwango-js.github.io/performance-handbook/)
+
 - スクロールイベントの間引き
 [参考](https://www.webprofessional.jp/throttle-scroll-events/)
 

@@ -13,7 +13,7 @@
 - npm script
 
 npm runで実行できるエイリアスコマンド
-npm runで実行することでローカルnode_moduleにインストールしたpackageを実行できる。****
+npm runで実行することローカルnode_moduleにインストールしたpackageを実行できる。****
 
 - 優先度
 
@@ -43,3 +43,10 @@ nodeとnpmは違うからね
 ## Browserslistの更新を要求された場合
 
 [参考URL](https://dev.classmethod.jp/articles/asked-to-update-the-browserslist-when-building-react-app/)
+
+## npxコマンドについて
+
+`$ npx create-nx-workspace`
+Nxは、ファーストクラスのモノレポサポートと強力な統合を備えた次世代ビルドシステム
+
+[リファレンス](https://www.npmjs.com/package/create-nx-workspace)
