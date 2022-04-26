@@ -18,5 +18,11 @@
     "statusBarItem.remoteBackground": "#ff3d00",
     "statusBarItem.remoteForeground": "#e7e7e7"
   },
-  "peacock.color": "#ff3d00"
+  "peacock.color": "#ff3d00",
+  "cSpell.words": [
+    "demoapp",
+    "mkdir",
+    "POSIX",
+    "udemy"
+  ]
 }

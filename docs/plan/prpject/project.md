@@ -41,11 +41,11 @@ figmaのコメント管理
 要件周りはドキュメント
 画面周りはfigmaで対応
 
-
 https://github.com/storybookjs/storybook
 これやる
 
+- 改行コードの違いを定める
+※これ面白いのがWindowsはWSLで作成すれば改行コードの違いは避けられる。
+ただgit CLIを純粋にWindowsのコマンドプロンプトで使用している場合は改行コードの差異が出る。
 
-次
-
-Nextの理解
+[参考URL](https://qiita.com/nacam403/items/23511637335fc221bba2)
