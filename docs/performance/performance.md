@@ -3,6 +3,10 @@
 ## フロント側
 
 ---
+
+- ドワンゴでのフロントパフォーマンスチューニング
+[参考URL](https://dwango-js.github.io/performance-handbook/)
+
 - スクロールイベントの間引き
 [参考](https://www.webprofessional.jp/throttle-scroll-events/)
 
@@ -11,6 +15,12 @@
 
 - SPAとserver Side Renderのパフォーマンス
 [参考URL](https://www.publickey1.jp/blog/17/server_side_renderingserver_side_rendering_ng-japan_2017_1.html)
+
+- webpackを使用した際のバンドルサイズ パフォーマンス改善
+[参考URL](https://dwango-js.github.io/performance-handbook/startup/reduce-size/)
+
+- video タグの圧縮
+[参考URL](https://liginc.co.jp/342227)
 
 ## イベントの調整
 
