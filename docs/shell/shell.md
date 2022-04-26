@@ -9,6 +9,9 @@
 一方で**移植性を高くするためのPOSIXという標準規格**があるためそれに準拠してシェルスクリプトを書けば問題ないはずと考える人もいるが問題がある。
 また、シェルスクリプトは**小さいstringをコネコネといじるのに非常に不向き**
 
+[シェルスクリプト御作法](https://qiita.com/autotaker1984/items/bc758fcf368c1a167353)
+[shebang(シェバンについて)](https://sechiro.hatenablog.com/entry/20120806/1344267619)
+
 ## ログインシェルとインタラクティブシェルの違い
 
 [参考URL](http://tooljp.com/windows/chigai/html/Linux/loginShell-interactiveShell-chigai.html)
@@ -143,4 +146,6 @@ dotfilesとはとはLinuxやMacOSにおける設定ファイルのこと。
 ## Shellで毎回困る、ifの条件文一覧
 
 [参考URL](https://qiita.com/kazuooooo/items/163d07f694016ebd6048)
+
+
 
