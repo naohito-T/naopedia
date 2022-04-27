@@ -20,6 +20,7 @@
   },
   "peacock.color": "#ff3d00",
   "cSpell.words": [
+    "Brewfile",
     "demoapp",
     "mkdir",
     "POSIX",
