@@ -35,7 +35,7 @@ PlaywrightはwaitForRequestの他にもPage上のload、dom content、loaded、c
 Recordを押下後、ユーザのブラウザ操作からコードを作成できる。
 `$ npx playwright open https://example/`
 
-**おそらく、全てのブラウザ自動化ツールに関してはそうなのでは**
+**おそらく、すべてのブラウザ自動化ツールに関してはそうなのでは**
 
 ## PlayWright プロジェクト作成
 

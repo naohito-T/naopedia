@@ -34,12 +34,12 @@ bashだと
 ~/.bash_profile
 ~/.bash_login
 ~/.profile
-(多くのディストリビューションでは ~/.bash_profile から ~/.bashrcを呼び出す)
+（多くのディストリビューションでは ~/.bash_profileから ~/.bashrcを呼び出す）
 
 - インタラクティブシェル
 ~/.bashrc
 
-(多くのディストリビューションでは ~/.bashrc からbashrcが呼び出される。)
+（多くのディストリビューションでは ~/.bashrcからbashrcが呼び出される）
 
 ## zsh 起動時に読み込まれるファイル群
 
@@ -128,7 +128,7 @@ set -eu
 
 ## 他環境へのdotfiles移行について
 
-1. まずはdotfilesを作成している SHELLに合わせる必要がある(管理主はzsh)
+1. まずはdotfilesを作成している SHELLに合わせる必要がある（管理主はzsh）
 
 ## dotfiles
 
