@@ -1,5 +1,10 @@
 # Nuxt
 
+絶対忘れるな
+nodeのconsole.logはターミナル上、つまりSSR時
+csr（ブラウザ）のconsole.logは検証で出力される
+
+
 [これは素晴らしいBlog](https://www.i-ryo.com/entry/2020/02/13/083521)
 [composition apiの違いについて](https://nansystem.com/nuxt-composition-api-v2-diff/)
 
