@@ -20,3 +20,12 @@ ULID : UUIDの欠点をカバー。ULIDにはタイムスタンプが先頭に�
 プライマリキーにUUIDを指定した場合はレコード数が増えていくほど、INSERT時間が増えていくことになる。
 ※性能劣化は2割程度
 
+## UPSERT
+
+[参考URL](https://blog.officekoma.co.jp/2018/06/postgresqlupdateinsertupsert.html)
+
+データがあればUPDATE、なければINSERTができるやつ
+
+postgresだと高速。mysqlだと遅いとのこと。
+
+>mysql だとそもそも upsert 周りが弱い (Postgres みたいな conflict target がない) のと primary key として使う ULID の生成を model のレイヤーでやってるせいで import が動かん
