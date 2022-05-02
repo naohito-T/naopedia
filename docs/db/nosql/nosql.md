@@ -50,6 +50,12 @@ NoSQLのメリットとして、処理速度が速い
 ### ドキュメント型
 
 
+---
+## 各NoSQL 深堀
+
+[参考URL](https://qiita.com/kanegoon/items/5ade64336d389feea4bc)
+
+
 #### 参考URL
 
 [参考URL](https://products.sint.co.jp/siob/blog/nosql#:~:text=NoSQL%E3%81%AE%E3%83%A1%E3%83%AA%E3%83%83%E3%83%88%E3%81%A8%E3%81%97%E3%81%A6%E3%80%81%E3%81%BE%E3%81%9A,%E3%81%AB%E3%81%8A%E3%81%84%E3%81%A6%E3%82%82%E5%84%AA%E3%82%8C%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82)
