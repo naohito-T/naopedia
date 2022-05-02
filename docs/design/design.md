@@ -138,10 +138,9 @@ userAgentだと、昨今のデバイスが増えていく事情により現実�
 
 ## Tips
 
-要素をタイル上に埋めたい(masonryと調べればいい)
+要素をタイル上に埋めたい（masonryと調べればいい）
 [vue-masonry]()
 
-'
 ## アイコン無料サイト
 
 [icons8.jp](https://icons8.jp/icons)
