@@ -2,6 +2,10 @@
 
 [他言語からRuby入門について](https://www.ruby-lang.org/ja/documentation/ruby-from-other-languages/)
 
+## Ruby パッケージ
+
+![Ruby](image/ruby.png)
+
 ## Ruby 仕組み
 
 ## Language Server Protocolは(LSP)
