@@ -3,6 +3,7 @@
 [Vue3 リファレンス](https://v3.ja.vuejs.org/)
 [Vue2 スタイルガイド](https://v3.ja.vuejs.org/style-guide/#%E3%83%AB%E3%83%BC%E3%83%AB%E3%82%AB%E3%83%86%E3%82%B3%E3%82%99%E3%83%AA)
 [VsCodeが遅い](https://zenn.dev/tatsuhiko/articles/d7cedc5a1a3f5a)
+[nextTickの順番](https://wood-roots.com/web/vue-js/2707)
 
 ## ユビキタス
 

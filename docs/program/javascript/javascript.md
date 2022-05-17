@@ -1,5 +1,7 @@
 # JavaScript
 
+[JavaScriptの全ての仕組み](https://ja.javascript.info/)
+
 ---
 ## CommonJSとESModule
 
