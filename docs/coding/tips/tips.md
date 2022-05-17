@@ -1,6 +1,6 @@
 # tips
 
-codingの普遍的な備忘録を記載する.
+codingの普遍的なTipsを記録する
 
 ## 連想配列と配列
 
@@ -23,8 +23,6 @@ codingの普遍的な備忘録を記載する.
 index部分をランダムにする
 `Xxx[n~nx]`
 
-
-
 ## Tips
 
 - Math.floor()
@@ -41,7 +39,7 @@ console.log(Math.floor(5));
 ```
 
 - Math.random()
-0 以上 1 未満 (0 は含むが、 1 は含まない) の範囲で浮動小数点の擬似乱数を返す
+0以上1未満（0は含むが、1は含まない）の範囲で浮動小数点の擬似乱数を返す
 ```js
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);

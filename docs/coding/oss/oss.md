@@ -11,7 +11,7 @@ OSS活動の一例として、オープンソースソフトウェアの新規�
 
 ## OSS活動どこから始める？
 
-github上でissueを出しているのを探せる
+GitHub上でissueを出しているのを探せる
 [参考URL](http://github-help-wanted.com/)
 
 私が考えたのはドキュメントの日本語整理
