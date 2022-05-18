@@ -18,6 +18,11 @@ Server-side Rendering
 検証でソースコードを見ると、h1タグなどがある。
 JSをNextがpre-Renderingをおこなっているため
 
+## Next強み
+
+Nuxtだと、SSRにした場合はすべてのページがSSRとなってしまうが
+Nextだと、**このページはCSR、次はSSRなど分けることができる。もちろんSSGも**
+
 ## 仕組み
 
 Next.jsでは、**ブラウザへ送信する前にpre-Rendering**をおこなっている。
@@ -25,3 +30,4 @@ Next.jsでは、**ブラウザへ送信する前にpre-Rendering**をおこな�
 ## _document.jsによるカスタマイズ
 
 Next.jsではindex.jsファイルにheadタグ、bodyタグ、編集できる
+

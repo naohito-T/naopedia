@@ -60,7 +60,19 @@ GoのSDKの場所を定義している
 →`$HOME/go/bin`
 ※Macなら$HOME/goに自分で設定してなくても勝手に設定されてるはず（Go1.8以降）
 
+---
+## Editor
 
+vscodeで全然いい
+
+## vscode拡張機能   
+
+## Go Language Server Protocol
+
+[参考URL](https://qiita.com/ryysud/items/1cf66ee4363aec22394a)
+
+現状ではgoplsができており、ジャンプなどもすぐにできるようになる。
+※ただし、`go.mod`があるディレクトリ内でファイルを開かないといけない
 
 ## Go getと installの違い
 
