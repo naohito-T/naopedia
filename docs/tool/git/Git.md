@@ -312,7 +312,7 @@ Husky(+lint-staged)と比較するとそれが依存しているライブラリ�
 以下は.gitディレクトリがあるところに`lefthook.yml`が作成される
 `$ lefthook install`
 
-Git Hooks追加(.git/hooksの中に作成される)
+Git Hooks追加（.git/hooksの中に作成される）
 `$ lefthook add pre-push`
 
 あとはlefthooks.ymlを編集すればOK
@@ -452,8 +452,8 @@ $ git revert HEAD -n
 ## rev-parse
 
 Gitを使っているとプログラムからGitのメタ情報を取りたい！ってこと、よくありますよね？
-でも、 git status をgrepしたりしていませんか？？
-git rev-parse から取れる情報もたくさんあるんですよ！
+でも、 git statusをgrepしたりしていませんか？？
+git rev-parseから取れる情報もたくさんあるんですよ！
 
 [revParse](https://qiita.com/karupanerura/items/721962bb7da3e34187e1)
 
