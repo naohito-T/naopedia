@@ -485,4 +485,4 @@ G + N : Gが最初GitHub通知にいく
 ## GitHubでのライセンスについて
 
 [GitHubで公開したソースにオープンソースライセンスを適用](https://qiita.com/legitwhiz/items/bb34ef20ba23336e0c87)
-[github ライセンスをつけないとどうなるの](https://qiita.com/Tatamo/items/ae7bf4878abcf0584291)
+[GitHub ライセンスをつけないとどうなるの](https://qiita.com/Tatamo/items/ae7bf4878abcf0584291)
