@@ -32,6 +32,18 @@ $ yarn start-storybook --debug-webpack
 $ yarn build-storybook --debug-webpack
 ```
 
+---
+
+## Storybook プレビューについて
+
+Storybookのプレビューは**iframe**になっており、ストーリーで設定したコンポーネントが表示される。
+Storybookは実際のサイト上での開発ではないが、CSSが同じものをベースに作らないと表示崩れを起こすので、ベースCSSを任意のものに変えることはスタイルを設定する上で非常に重要
+
+### Storybook プレビューにカスタムCSSを読み込ませる
+
+[参考URL](https://qiita.com/judah/items/ee735a899bf3782d7222)
+
+---
 
 ## Tips
 
