@@ -19,6 +19,8 @@ Gunosy（グノシー）
 ぐるなび
 ## Go 特徴
 
+[Go特徴](https://blog.y-yuki.net/entry/2017/05/23/130000)
+
 Go言語はC言語やJavaなどと同じく**静的型付け言語**でありながら、PythonやJavaScriptなどの動的型付け言語のような特徴を持つ。
 Go言語は**マルチプラットフォーム**に対応しており、Windows/macOS/Linux/Android/iOSなどの幅広いOSに対応している。
 そのため、Webアプリケーションだけでなく、**スマートフォンで動作するアプリの開発も可能。**
@@ -195,7 +197,7 @@ go mod init sampleについてはリポジトリと紐づけない一時的な�
 -tオプション : 指定されたパッケージのテストに必要なパッケージも一緒にダウンロードしてくれる。
 -vオプション :実行しているコマンドを表示する。
 -fixオプション : 依存関係を修正。ダウンロードしたパッケージを修正。修正してからgetをしてくれる。
--insecureオプション : HTTP等の安全性が確保されていない方式を使いリポジトリから取得するためのコマンド。危険が伴うため、使用はお勧めしません。
+-insecureオプション : HTTP等の安全性が確保されていない方式を使いリポジトリから取得するためのコマンド。危険が伴うため、使用はオススメしません。
 
 ## tool-version
 
@@ -203,9 +205,9 @@ asdf用のようだ、、
 
 [tool-versions参考URL](https://developers.ysd.co.jp/post/u-aiaa/golang/webapi.a/)
 
-Go 言語の準備
+Go言語の準備
 asdf
-Go 言語のインストール/バージョン管理に asdf を使ってみます。
+Go言語のインストール/バージョン管理に asdf を使ってみます。
 
 asdf とは、各言語やツールのバージョン管理等をおこなえる CLI ツールです。
 
@@ -228,6 +230,7 @@ go version go1.15.3 darwin/amd64
 ## Tips
 
 [Go並列処理](https://zenn.dev/hsaki/books/golang-concurrency/viewer)
+[とほほのGo言語入門](https://www.tohoho-web.com/ex/golang.html)
 
 ## Goを学ぶ時につまずきやすいポイント
 

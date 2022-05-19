@@ -45,6 +45,14 @@ Storybookは実際のサイト上での開発ではないが、CSSが同じも�
 
 ---
 
+## Storybook deploy
+
+静的サイトとしてエクスポートする方法
+Storybookをデプロイするには、まず静的サイトとしてエクスポートします。
+この機能はすでに組み込まれて、使える状態となっているので、設定について気にする必要はありません。
+
+[リファレンス](https://storybook.js.org/tutorials/intro-to-storybook/react/ja/deploy/)
+
 ## Tips
 
 [参考URL](https://blog.microcms.io/storybook-react-use/)
