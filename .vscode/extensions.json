@@ -1,0 +1,8 @@
+{
+    "recommendations": 
+    [
+        "streetsidesoftware.code-spell-checker", "ics.japanese-proofreading"
+    ],
+    // 非推奨な拡張機能
+    "unwantedRecommendations": []
+}
