@@ -46,5 +46,9 @@ CSSを別管理でひとまとめにするよりもコンポーネントとセ�
 またCSS in JSを使うと、表示中の要素だけCSSを書き出し不要なCSSを書き出さないという処理が可能になるためパフォーマンス性が上がる。
 またSEOの評価も上がる。
 
+## pages/apiとは
 
+[参考URL](https://maku.blog/p/qcp2coz/)
 
+next.jsでは`pages/api`ディレクトリ以下にTypeScript (JavaScript) コードを配置するだけで、クライアントサイドJavaScriptから呼び出せるAPIを定義することができる。
+※`pages/api`ディレクトリ以下の実装内容が、クライアントに見られてしまうことはない。
