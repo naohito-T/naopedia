@@ -418,6 +418,15 @@ $ git clean -n
 $ git clean -f
 ```
 
+## git stash
+
+`git stash save`がdeprecatedだった。
+これかはこちらに移行する`git stash push`
+
+git stashよりもgit branchで一時的ブランチを作った方がいいといっている記事
+[参考URL](https://qiita.com/jkr_2255/items/ea3e50a99baca37a42de)
+
+
 ## revert
 
 
