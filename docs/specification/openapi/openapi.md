@@ -7,6 +7,10 @@
 RESTful APIに関するインターフェイス定義
 Swagger 3.0からOpenAPIに名前が変わったため、OpenAPI 3.0はSwagger 3.0でもある。
 
+## OpenAPI 現在
+
+まずOAIとコミュニティのゴタゴタがあり、魅力が落ちていたこと。またgRPC、GraphQLと魅力的な競合技術があるため、Webやスマホアプリ界隈がOpenAPIから離れつつあること。そして5GCでAPI定義に採用されているものの、サービス実装者（モバイル機器ベンダー）にとってOSSで公開するメリットがないこと。
+
 ## OpenAPI（Swagger）のAPI開発Docker環境を整備した（yaml分割編集、SwaggerUI表示、モックサーバー、静的HTML出力）
 
 [参考URL(使える)](https://qiita.com/minato-naka/items/3b0bcf0788a2150f3171)

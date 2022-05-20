@@ -22,10 +22,66 @@ JSをNextがpre-Renderingをおこなっているため
 
 Nuxtだと、SSRにした場合はすべてのページがSSRとなってしまうが
 Nextだと、**このページはCSR、次はSSRなど分けることができる。もちろんSSGも**
+Next.jsの大きな特徴として、ひとつのプロジェクトの中で、SSGとSSRを混在して利用することができる
+
+---
 
 ## 仕組み
 
 Next.jsでは、**ブラウザへ送信する前にpre-Rendering**をおこなっている。
+[SSGとSSRの違い](https://blog.microcms.io/nextjs-sg-ssr/)
+
+### SSRとして動作させる(pages)
+
+※都度生成されているため以下の**ランダムな数字は変わる**
+
+```ts
+// pages/ssr.js
+export async function getServerSideProps() {
+  const random = Math.floor( Math.random() * 100 );
+  return {
+    props: {
+      random,
+    },
+  }
+}
+```
+
+### SSGとして動作させる(pages)
+
+そのpages配下をSSGとして動作させたい場合は以下
+※静的に生成されているため以下の**ランダムな数字は変わらない**
+
+```ts
+// pages/sg.js
+export async function getStaticProps() {
+  const random = Math.floor( Math.random() * 100 );
+  return {
+    props: {
+      random,
+    },
+  }
+}
+```
+
+### 各コマンド仕組み
+
+`$ next dev`
+ローカルでアプリケーションを起動します。
+※getStaticPropsを利用した場合でもsSRノドウサニナル。
+
+`$ next build`
+.nextフォルダーにプロダクション用のコードを吐き出す
+
+`$ next start`
+プロダクション環境でアプリケーションを実行する
+
+## 各メソッド
+
+ついでにuseSWRを利用してデータを取得してみます。
+SWRはRenderingの種類ではない。Stale-While-Revalidateというキャッシュ戦略の略。
+
+---
 
 ## _document.jsによるカスタマイズ
 
