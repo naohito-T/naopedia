@@ -22,13 +22,15 @@ Gunosy（グノシー）
 [Go特徴](https://blog.y-yuki.net/entry/2017/05/23/130000)
 
 Go言語はC言語やJavaなどと同じく**静的型付け言語**でありながら、PythonやJavaScriptなどの動的型付け言語のような特徴を持つ。
-Go言語は**マルチプラットフォーム**に対応しており、Windows/macOS/Linux/Android/iOSなどの幅広いOSに対応している。
+Go言語は**マルチプラットフォーム**に対応しており、Windows/macOS/Linux/Android/iOSなどの幅広いOSに対応している（クロスプラットフォームへコンパイルできる）
 そのため、Webアプリケーションだけでなく、**スマートフォンで動作するアプリの開発も可能。**
 
 Go言語のフレームワークでもある**Gobot**を使用することで、ドローンやロボットなどの高度な組込みシステムの開発も可能。
 **Gobot**にはネットワーク上のデバイスや複数のデバイス間で相互に通信できる機能があり、外出先からデバイスを操作したりセンサーが反応したときに他のデバイスと機能を連動させたりできる。
 
 Go言語は、近年注目の集まるクラウドやコンテナー技術、マイクロサービスなどの最新IT技術と親和性が高く、将来性のある言語
+
+メモリ管理の手間が少ないというメリットがありますがGC（ガベレージコレクション）のアルゴリズムが**STOP THE WORLD**を採用しているため、**ミッションクリティカルな場面やメモリが貧弱な環境**には適さない。
 
 ## Go 仕組み
 
@@ -231,6 +233,7 @@ go version go1.15.3 darwin/amd64
 
 [Go並列処理](https://zenn.dev/hsaki/books/golang-concurrency/viewer)
 [とほほのGo言語入門](https://www.tohoho-web.com/ex/golang.html)
+[GoとDockerハンズオン（最高に良い)](https://zenn.dev/tamanobi/articles/go-docker-handson)
 
 ## Goを学ぶ時につまずきやすいポイント
 

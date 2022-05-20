@@ -8,6 +8,11 @@ $docker container prune -f
 $docker volume prune -f
 ```
 
+## Dockerfile 作成の際
+
+ビルダーパターンなど（FROMが2度現れること）がある。
+つまり、xxxパターンを調べて勉強しろ
+
 ## 絶対覚えておけ
 
 そのイメージになにが含まれているのか確認する方法
