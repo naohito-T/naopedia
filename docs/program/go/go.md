@@ -8,6 +8,21 @@ Go言語 = golang
 その後**Go modules**の導入により`$GOPATH/src`にプロジェクトを置かなければならないという制約からは解放されたので、各プロジェクト毎に`GOPATH`を指定するみたいなことがいらなくなったという経緯
 そのため、こちらも現在はデフォルトから変える必要性はないです。
 
+現在の最新歴史。これを見れば大体わかる
+[参考URL](https://qiita.com/lamp7800/items/9a154e8e789261f87466)
+
+## モジュール対応モード
+
+標準ライブラリを除くすべてのパッケージをモジュールとして管理する。
+コード管理とビルドは任意のディレクトリで可能。Go1.17からは常にコレ。
+
+モジュールとは？
+パッケージ: 1つのファイルを複数に分割したもの。**1ディレクトリ＝1パッケージ**
+モジュール: **go.modファイルのあるディレクトリ以下**のすべてのパッケージ（go.modは含まれない）
+→1レポジトリ＝1モジュール
+
+---
+
 ## Go 利用例
 
 Go言語は比較的新しいプログラミング言語でありながら、世界的な動画配信サービスであるYouTubeのサーバー構築や有名Webアプリの開発などにも使用されており、人気の高い言語として世界中で愛されています。
@@ -35,6 +50,63 @@ Go言語は、近年注目の集まるクラウドやコンテナー技術、マ
 ## Go 仕組み
 
 コンパイル
+
+## Go 変数
+
+Goの関数や変数は、大文字からスタートするとほかのパッケージから参照できるようになります。
+※小文字だと参照できない
+
+## Go Optional
+
+```go
+// 引数を示す構造体
+// フィールドが未指定だったのか，ゼロ値が指定されたのかを
+// 区別するため，型はポインタにする⇨*string
+// 引数を示す構造体
+// フィールドが未指定だったのか，ゼロ値が指定されたのかを
+// 区別するため，型はポインタにする
+type GreetOpts struct {
+	GreetingWord *string
+}
+
+// オプショナルパラメータを構造体で受け取る
+func Greet(name string, opts *GreetOpts) {
+	greetingWord := "Hello"
+	if opts.GreetingWord != nil {
+      // 引数がnilだったら未指定なのでデフォルト値で埋める
+		greetingWord = *opts.GreetingWord
+	}
+	fmt.Printf("%s, %s!\n", greetingWord, name)
+}
+
+func main() {
+	Greet("gopher", &GreetOpts{}) // Hello, gopher!
+
+	word := "Hey"
+	Greet("gopher", &GreetOpts{GreetingWord: &word}) // Hey, gopher!
+}
+```
+
+## Go 型
+
+[参考URL](https://raahii.github.io/posts/optional-parameters-in-go/)
+
+```go
+Greet("gopher", &GreetOpts{}) // &nnn &はポインタで渡す（参照）)
+
+```
+
+### interface型
+
+[参考URL](https://qiita.com/sh-tatsuno/items/0c32c01eaeaf2d726fdf)
+interface{}型 -> どんな型も格納できる特殊な型・型チェックや型変換などに使える
+interface -> type structの下に関数群を紐付ける書き方。オブジェクト指向でないGoにおいてclassに近しいことができる（ただし継承などはできない）
+2つは本質には同じもので実装するためのメソッド（中身）のない型の使い方に過ぎない、が個人的には分けて考えたほうが考えやすかった
+
+### class
+
+他の言語でのクラス・メンバー変数に当たる部分はGoでは**構造体・フィールドとして存在する**
+
 
 ---
 

@@ -238,3 +238,10 @@ jQuery などのブラウザ上でロードされるライブラリを TypeScrip
 
 [参考URL](https://blog.ryotak.me/post/definitelytyped-tamper-with-arbitrary-packages/)
 
+## Ambient Module 宣言で overload する
+
+[参考URL](https://qiita.com/Takepepe/items/6addcb1b0facb8c6ff1f)
+
+ライブラリが知ることのできない（自身のプロジェクト固有の定義）型をライブラリのルートに注入し行き渡らせる手法
+interface宣言結合を利用したテクニックであり、さまざまなライブラリ型定義でも採用されている。
+

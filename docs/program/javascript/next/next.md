@@ -262,6 +262,7 @@ Next.js(12): SWCには自動で組み込まれている
 
 Next.js(12): SWCには自動で組み込まれている
 [Nextリファレンス(12)](https://nextjs.org/docs/advanced-features/compiler)
+[styled-components リファレンス](https://styled-components.com/docs/advanced#nextjs)
 
 **CSSの記述はSassと同じネストによる記述が可能**
 
@@ -277,6 +278,10 @@ ThemeProviderの利用
 styled-componentsにはThemeProviderというAPIがあります。これはContext APIを使って、子のコンポーネントに、propsでスタイルを渡すことができます。
 これで、スタイルを共通化することができる。
 ThemeProviderは、_app.jsで使用する。
+
+## styled-media-query
+
+[参考URL](https://github.com/morajabi/styled-media-query)
 
 
 

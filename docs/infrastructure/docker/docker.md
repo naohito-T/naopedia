@@ -3,8 +3,8 @@
 [入門Docker](https://y-ohgi.com/introduction-docker/)
 
 ```sh
-$docker image prune -f
 $docker container prune -f
+$docker image prune -f
 $docker volume prune -f
 ```
 
@@ -12,6 +12,10 @@ $docker volume prune -f
 
 ビルダーパターンなど（FROMが2度現れること）がある。
 つまり、xxxパターンを調べて勉強しろ
+
+## Docker image削除
+
+containerを削除してからではないとimageが削除できない。
 
 ## 絶対覚えておけ
 
