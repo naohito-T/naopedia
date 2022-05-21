@@ -24,6 +24,20 @@ Nuxtだと、SSRにした場合はすべてのページがSSRとなってしま�
 Nextだと、**このページはCSR、次はSSRなど分けることができる。もちろんSSGも**
 Next.jsの大きな特徴として、ひとつのプロジェクトの中で、SSGとSSRを混在して利用することができる
 
+## Nextを使うべき理由
+
+1. 開発サーバの高速リロード（これはNuxtと比べると本当に早い）
+React(webpack)の開発サーバは変更を検知してページ全体をリロードします。Next.jsの開発サーバはソースコードの変更を検知して、stateを保持したまま変更があった個所だけを更新してくれます。これにより、開発体験が大幅に向上します。たとえば**フォームに入力した内容を保持したまま**タイトルのfont-sizeを変更することなどができる。
+
+2. 画像最適化
+Next.js 10.0.0から専用の画像コンポーネントが追加され、**配置されるサイズに応じて元画像をトリミングして配信してくれるようになった。**
+必要なサイズのデータだけをダウンロードするので画像の表示を大幅に高速化できる。
+※レスポンス表示で幅が小さくなった場合も自動でそのサイズにトリミングした画像を生成してくれる。
+
+3. ゼロコンフィグ
+webpack等の設定の必要がない。
+
+
 ---
 
 ## 仕組み
@@ -31,12 +45,31 @@ Next.jsの大きな特徴として、ひとつのプロジェクトの中で、S
 Next.jsでは、**ブラウザへ送信する前にpre-Rendering**をおこなっている。
 [SSGとSSRの違い](https://blog.microcms.io/nextjs-sg-ssr/)
 
+### Next.js12での仕組み
+
+>Next.jsでは、すべてのアプリケーションが本番環境でより速くビルドされ、ローカル開発では即座にフィードバックが得られるようにしたいと考えています。Next.js 12には、ネイティブ・コンパイルの利点を活かしたまったく新しいRustコンパイラが搭載されています。
+
+SWCは**Rust製の高速なトランスパイラ。**
+Next.jsがSWCの利用を推進しており、Next.js 12からはデフォルトのトランスパイラがBabelからSWCに変更。
+またSWCのソースコードはいくつかに分けてクレート化されており、Next.jsのみならずDeonの内部でも利用されています。
+
+**Babel vs SWC**
+![SWC](image/swc.png)
+
+### Next-SWC(Next.js Compiler)
+
+[とても参考になる](https://www.wantedly.com/companies/wantedly/post_articles/386129)
+
+Next.jsがデフォルトで使うSWCは、SWCのラッパーになっていて、SWCで使える機能が一部制限されていたり、拡張されていたりします。このデフォルトで使われるSWCのことをNext-SWCという（公式ではNext.js Compilerとも呼ばれている）
+
+
+
+
 ### SSRとして動作させる(pages)
 
 ※都度生成されているため以下の**ランダムな数字は変わる**
 
 ```ts
-// pages/ssr.js
 export async function getServerSideProps() {
   const random = Math.floor( Math.random() * 100 );
   return {
@@ -53,7 +86,6 @@ export async function getServerSideProps() {
 ※静的に生成されているため以下の**ランダムな数字は変わらない**
 
 ```ts
-// pages/sg.js
 export async function getStaticProps() {
   const random = Math.floor( Math.random() * 100 );
   return {
@@ -64,16 +96,34 @@ export async function getStaticProps() {
 }
 ```
 
+Static（通称SSG、SG）を利用するメリット
+**CDNに静的ファイルをキャッシュ**することで表示のスピードUPを実現
+
+
 ### 各コマンド仕組み
+
+[仕組み参考](https://qiita.com/st2222/items/827407bc146ef9886f06)
+
+`$ npx next -h`で各コマンドの詳細を確認できる
+
 
 `$ next dev`
 ローカルでアプリケーションを起動します。
-※getStaticPropsを利用した場合でもsSRノドウサニナル。
+`getStaticProps`（SSGで利用するmethod）を利用した場合でも**SSR動作**になる。
+このコマンドでは、ホットリロードやエラーレポートなどの開発モードでアプリケーションを起動できる
+
+ただし、create-next-appでスキャフォールディングしたプロジェクトに用意されているdevコマンドで起動したアプリはサーバーサイドレンダリング（以下SSR）が有効になっており、**静的HTMLのみの確認ができない**
+
+そこでNext.jsで静的HTMLエクスポートしたアプリをローカルで確認する方法を調べました。
+[参考URL ](https://qiita.com/Nossa/items/bdc6a9705e89ea8fc250)
+
 
 `$ next build`
 .nextフォルダーにプロダクション用のコードを吐き出す
+本番用に最適化されたビルドを行い、各ルートの情報がコンソールに出力されます。
 
 `$ next start`
+このコマンドは、npx next buildでビルドした後に実行し、本番用としてサーバが立ち上がる。
 プロダクション環境でアプリケーションを実行する
 
 ## 各メソッド
@@ -81,16 +131,137 @@ export async function getStaticProps() {
 ついでにuseSWRを利用してデータを取得してみます。
 SWRはRenderingの種類ではない。Stale-While-Revalidateというキャッシュ戦略の略。
 
+## pages/apiとは
+
+[参考URL](https://maku.blog/p/qcp2coz/)
+
+next.jsでは`pages/api`ディレクトリ以下にTypeScript (JavaScript) コードを配置するだけで、クライアントサイドJavaScriptから呼び出せるAPIを定義することができる。
+※`pages/api`ディレクトリ以下の実装内容が、クライアントに見られてしまうことはない。
+
+## middleware
+
+ミドルウェアは、**一連のページのロジックを共有する**あらゆるものに使用できる
+そこで、Next.js 12からは、ミドルウェアとしてエッジ関数（AWSのLambda@Edge的なもの？→中身はCloudflare Workersらしい）が導入されました。
+
+エッジ関数は、リクエストが完了するまえにコードが実行できる。
+クライアントとオリジンサーバーの間にエッジサーバーをおき、エッジ関数としてデプロイ。
+エッジ関数は、認証、ボット保護、リダイレクト処理、サポートされていないブラウザ、機能フラグ、A/Bテスト、サーバー側の分析、ロギングなどあらゆるものに使用できる。
+使い方は簡単で、 _middleware.tsを配置し、そのファイルに処理を書くだけです。
+
+つまり、 VercelにReact Server Components (Next.js 12版）をデプロイするなら、それはミドルウェア上で（エッジ関数として）動作する、サーバーレスとして動くということらしいです。
+
+/pages/_middleware.js(ts)ファイルが作成されている場合、/pagesディレクトリ以下すべてのページ（route）で実行される。
+
+[参考URL](https://zenn.dev/catnose99/articles/0df722f3f025bb)
+
+Next.jsでv12~ middlewareという機能が使えるようになった。
+middlewareに書いた処理はリクエストが完了する前に実行される。
+Cookieの値に応じてルーティングを振り分けたり、Basic認証を導入したりなど幅広い用途で使えそう。
+
+**Tips**
+**Vercelでホスティング**をすると相性が良い。
+VercelとNext.jsの組み合わせが強いのは、VercelにNext.jsをデプロイするとこのmiddleware部分をEdge Functionsで捌いてくれるという点です。つまり、**静的なページに対するリクエストに対して、オリジンサーバーに触れことなくmiddlewareを実行できるということです。**
+
+_middleware.jsファイルが複数のディレクトリに配置されている場合は、**階層が浅い方から順に実行されていく。**
+### middlewareがなかった時は？
+
+_app.tsxを継承したクラスがあるファイルを作成してったっぽい
+
 ---
 
-## _document.jsによるカスタマイズ
+## _document.js(tsx)によるカスタマイズ
 
-Next.jsではindex.jsファイルにheadタグ、bodyタグ、編集できる
+[参考URL](https://qiita.com/Yuki-Kurita/items/6a0eae00999e1294a3b1)
+
+Next.jsのPageコンポーネントはデフォルトでは`<html> & <body>`タグの定義を行うが、それらを拡張したい場合は_document.js(tsx) を作成し、その中でDocumentコンポーネントを継承したクラスを実装する。
+
 
 ---
+
+## Next.js 12 の React Server Components
+
+>(React Server Componentsを使用すると、対象のコンポーネント自体を含むすべてをサーバでレンダリングすることができます。これは、サーバ上でHTMLを生成する従来のSSRとは根本的に異なります。サーバコンポーネントを使用すると、クライアント側のJavaScriptが不要になり、ページのレンダリングが高速になります。これによりサーバレンダリングの良いところとクライアントサイドのインタラクティブ性を組み合わせて、アプリケーションのUXを向上させることができます。)
+
+[参考URL](https://zenn.dev/rgbkids/articles/7be28904623b30)
+[参考URL](https://developer.so-tech.co.jp/entry/2022/01/24/121102)
+
+Next.jsのReact Server Componentsは、本家（Facebook）のReact Server Components (demo) よりも、実用的で使いやすくなっている。
+
+## 背景（レンダリング技術の歴史）
+
+WEBサイトのレンダリング技術はここ10年で、昔ながらのSSR(Server Side Rendering) からReactやVueを用いたSPA(Single Page Application) に移行した。
+
+SPAは「UXの向上」や「ページ遷移の高速化」など利点がありますが、「初期表示が遅い」「動的なOGP対応が困難」などの欠点もあります。
+
+その欠点を補うべく、NextやNuxtではSPAとSSRやSSG(Static Site Generator)を組み合わせる手法がとられるようになりました。
+
+React Server Componentsではこれまでとは別のアプローチで、**SPAとSSRの良いとこ取りを目指す。**
+
+## React Server Componentsの仕組み
+
+React Server ComponentsはHTMLをサーバ側で生成する従来のSSRとは根本的に異なる。 **サーバ側では仮想DOMの生成まで**を行う。
+サーバコンポーネントのレンダリングの結果（仮想DOM）はHTTPリクエストを介してブラウザに渡り、ブラウザ側でクライアントコンポーネントと合わせてレンダリングを完成させます。
+
+
+3種類のコンポーネント
+React Server Componentsでは次の3種類のコンポーネントが登場します。
+
+**サーバコンポーネント**
+サーバ（Node）でのみレンダリングされるコンポーネント。
+ファイル名の末尾が`.server.js` → `.server.tsx`に変更可能
+このコンポーネントで使用するコードはブラウザがダウンロードするJSにはバンドルされない
+サイズの大きいライブラリも使いやすい
+DBなどのサーバリソースにアクセス可能
+状態を持てず、イベントのハンドリングができない（要はwindowオブジェクトにアクセスできない）
+
+**クライアントコンポーネント**
+ブラウザでのみレンダリングされるコンポーネント。ファイル名の末尾が`.client.js`
+
+状態が持てる
+ブラウザAPIにアクセス可能
+イベントハンドルが可能
+
+**ユニバーサルコンポーネント**
+インポート先に応じて、両側で使用およびレンダリング可能なコンポーネント
+サーバコンポーネントとクライアントコンポーネントの両方の制約（できないこと）を持つ
+
+サーバコンポーネントから他のサーバコンポーネントやクライアントコンポーネントをインポートできます。
+クライアントコンポーネントからサーバコンポーネントをインポートすることはできません。
+（上記はコンポーネントの親子関係ではなく、ファイルのインポートの親子関係に関する制約）
+
+---
+
+## Tips
+
+[かなりのTipsが散りばめられている](https://qiita.com/Yuki_Oshima/items/5c0dfd8f7af8fb76af8f)
+[nextの仕組みを読み解く](https://zenn.dev/izumin/scraps/15c9ad1248154f)
+
+### 外部ライブラリの利用
+
+ときおり普通のReactで動くライブラリがNext.jsでビルドすると動かなかったりします。
+
+こうした場合は、動的インポート（Dynamic Import）という機能で対処できる場合があります。動的インポートしたコンポーネントはクライアントサイドでレンダリングされるため、実質的にReactと同じように処理されるためです。
+
+
+
+
+---
+
+## サードパーティ
+
+## Jest
+
+Next.js(12): SWCには自動で組み込まれている
+[Nextリファレンス(12)](https://nextjs.org/docs/advanced-features/compiler)
+
+---
+
 ## モダンなCSS → CSS in JS
 
 ## styled-components
+
+Next.js(12): SWCには自動で組み込まれている
+[Nextリファレンス(12)](https://nextjs.org/docs/advanced-features/compiler)
 
 **CSSの記述はSassと同じネストによる記述が可能**
 
@@ -102,9 +273,16 @@ CSSを別管理でひとまとめにするよりもコンポーネントとセ�
 またCSS in JSを使うと、表示中の要素だけCSSを書き出し不要なCSSを書き出さないという処理が可能になるためパフォーマンス性が上がる。
 またSEOの評価も上がる。
 
-## pages/apiとは
+ThemeProviderの利用
+styled-componentsにはThemeProviderというAPIがあります。これはContext APIを使って、子のコンポーネントに、propsでスタイルを渡すことができます。
+これで、スタイルを共通化することができる。
+ThemeProviderは、_app.jsで使用する。
 
-[参考URL](https://maku.blog/p/qcp2coz/)
 
-next.jsでは`pages/api`ディレクトリ以下にTypeScript (JavaScript) コードを配置するだけで、クライアントサイドJavaScriptから呼び出せるAPIを定義することができる。
-※`pages/api`ディレクトリ以下の実装内容が、クライアントに見られてしまうことはない。
+
+### next.js SSRでstyleを当てる
+
+Next.jsとstyled-componentsが実行される前提とする環境が異なります。（styled-componentは元々クライアント側で動くことを前提としています）そのため、サーバーサイドでもstyled-componentsが働くようにする必要がある。
+
+上記を対応するために、Next.js 12以前はBabel用styled-componentsのライブラリをダウンロードしなければいけず、めんどくさかった。
+[参考URL](https://code-log.hatenablog.com/entry/2020/01/26/200134)

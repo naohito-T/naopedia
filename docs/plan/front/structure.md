@@ -50,3 +50,17 @@ SSG(Static Site Generation)
 各ルートのHTMLをあらかじめ生成するため、SSRよりもレスポンスが速いのが魅力です。また、静的ファイルを生成するおかげで、SPAと同じようにホスティング先の選択肢が広がります。
 
 生成時にはサーバーサイドでレンダリングすることになるので、SSRを考慮した実装が必要になるのと、SSGには向き不向きがあるので、Webサイトの要件を考えて慎重に選択する必要があります。
+
+## OGP(Open Graph Protocol)
+
+FacebookやTwitterなどのSNSでシェアした際に、設定したWEBページのタイトルやイメージ画像、詳細などを正しく伝えるためのhtml要素。
+これを設定しておくと、SNS上でURLが共有された際にタイトルや画像、説明文などが表示されるようになり、ユーザーに対してページの内容を詳しく伝えることができる
+
+```html
+<meta property="og:url" content=" ページの URL" />
+<meta property="og:type" content=" ページの種類" />
+<meta property="og:title" content=" ページの タイトル" />
+<meta property="og:description" content=" ページの説明文" />
+<me ta property="og:site_name" content="サイト名" />
+<meta property="og:image" content=" サムネイル画像の URL" />
+```

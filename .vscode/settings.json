@@ -29,6 +29,7 @@
     "mkdir",
     "nodenv",
     "POSIX",
-    "udemy"
+    "udemy",
+    "Vercel"
   ]
 }
