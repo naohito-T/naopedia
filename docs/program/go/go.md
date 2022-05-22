@@ -1,6 +1,22 @@
 # Go
 
 Go言語 = golang
+[日本のGophers代表? 解説記事がある](https://docs.google.com/presentation/d/1RVx8oeIMAWxbB7ZP2IcgZXnbZokjCmTUca-AbIpORGk/edit#slide=id.g935656cef3_0_12)
+
+## Go 基本
+
+パッケージ: 1つのファイルを複数に分割したもの。**1ディレクトリ＝1パッケージ**
+モジュール: **go.modファイルのあるディレクトリ以下**のすべてのパッケージ（go.modは含まれない）
+→1レポジトリ＝1モジュール
+
+## Go CLI
+
+```sh
+go fmt：コードをGo言語の標準フォーマットに変換するツール
+go vet：間違えやすいコードを指摘するツール
+golint：スタイルの問題を指摘するツール
+godoc：コードからAPIドキュメントを作るツール
+```
 
 ## Go 歴史
 
@@ -10,6 +26,12 @@ Go言語 = golang
 
 現在の最新歴史。これを見れば大体わかる
 [参考URL](https://qiita.com/lamp7800/items/9a154e8e789261f87466)
+
+Googleが開発したプログラミング言語
+2009年11月に最初のバージョンをオープンソースで公開
+2012年3月に正式バージョンであるGo1.0を公開
+2022年5月現在の最新バージョンはGo1.18
+半年毎のペースでバージョンアップ
 
 ## モジュール対応モード
 
@@ -32,7 +54,15 @@ Go言語は比較的新しいプログラミング言語でありながら、世
 ピクシブ
 Gunosy（グノシー）
 ぐるなび
+
+---
 ## Go 特徴
+
+強力でシンプルな言語設計と文法
+並行プログラミング
+豊富な標準ライブラリ群
+周辺ツールの充実
+シングルバイナリ・クロスコンパイル
 
 [Go特徴](https://blog.y-yuki.net/entry/2017/05/23/130000)
 
@@ -46,6 +76,38 @@ Go言語のフレームワークでもある**Gobot**を使用することで、
 Go言語は、近年注目の集まるクラウドやコンテナー技術、マイクロサービスなどの最新IT技術と親和性が高く、将来性のある言語
 
 メモリ管理の手間が少ないというメリットがありますがGC（ガベレージコレクション）のアルゴリズムが**STOP THE WORLD**を採用しているため、**ミッションクリティカルな場面やメモリが貧弱な環境**には適さない。
+
+## クロスコンパイル対応をするには
+
+環境変数を設定する必要がある。
+```sh
+# Windows(32ビット)向けにコンパイル
+$ GOOS=windows GOARCH=386 go build
+# Linux(64ビット)向けにコンパイル
+$ GOOS=linux GOARCH=amd64 go build
+```
+
+## Go ディレクトリ構成
+
+[参考URL](https://qiita.com/sueken/items/87093e5941bfbc09bea8)
+[リファレンス](https://github.com/golang-standards/project-layout/tree/master/internal)
+
+## Go test
+
+golangにはgo testツールなる便利なものがある。
+
+制約
+1. ファイル名の最後を_test.goとしなければいけない。
+2. testingをimportする必要
+3. テストロジックの関数は`Test**`と始める。TestA or TestAbcdefgでOK
+4. 引数には*testing.Tを入れる。
+
+## Goにおける静的解析
+
+[参考URL](https://engineering.mercari.com/blog/entry/20220406-eea588f493/)
+
+Goはソースコードを実行せずに解析する静的解析の機能を提供するgoパッケージが標準ライブラリとして用意されている。
+そのため静的解析を用いたコードフォーマッタやLinterなどが作りやすい言語。
 
 ## Go 仕組み
 
