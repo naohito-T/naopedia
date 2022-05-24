@@ -10,11 +10,24 @@ $docker image prune -f
 $docker volume prune -f
 ```
 
+---
 ## Dockerfile 作成の際
 
 ビルダーパターンなど（FROMが2度現れること）がある。
 つまり、xxxパターンを調べて勉強しろ
 
+## マルチステージビルド
+
+マルチステージビルドは、Docker17.05以上で利用できる新機能
+前のステージでビルドされた成果物をこの新しいステージへコピーする
+最終的なイメージは取り残され**最終的なイメージへは保存されない。**
+```yml
+COPY --from=0
+```
+
+[参考URL](https://qiita.com/carimatics/items/01663d32bf9983cfbcfe)
+
+---
 ## Docker image削除
 
 containerを削除してからではないとimageが削除できない。
