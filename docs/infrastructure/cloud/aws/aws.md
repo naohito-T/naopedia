@@ -226,6 +226,9 @@ macOSであればKeyChain、Windowsであれば資格情報マネージャーに
 これにより、マルウェア経由でのアクセスは拒否されます。
 
 [aws-vaultについてのあれこれ](https://qiita.com/kangaechu/items/cb8f68e3866ee5af71c8)
+[IAM初心者がAWS CLIでスイッチロールするまで](https://dev.classmethod.jp/articles/switch-role-with-awscli/)
+[aws-vaultをLinux環境でも使う方法【セキュリティ向上】](https://hackers-high.com/aws/aws-vault-on-linux/)
+[aws-vault を使って AWS のアクセスキーを暗号化して扱おう](https://blog.microcms.io/aws-vault-introduction/)
 
 ## スイッチロールとは
 
@@ -255,9 +258,13 @@ defaultのクレデンシャルをconfigに実装することができる。
 
 ![AWSアクセスキー](image/AWSアクセスキー.png)
 
+## AWS シークレットマネージャー
+
 ## aws 基本を学んだ後
 
 [参考URL](https://blog.microcms.io/aws-vault-introduction/)
 
 
+## Tips
 
+[aws-vaultでアクセスキーをセキュアに保存しつつ、MFAもシームレスにやる](https://zenn.dev/nemolize/articles/3a5d03a7974eea)
