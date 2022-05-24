@@ -195,8 +195,11 @@ API GatewayがListenするのはHTTPSのみで、**HTTPリクエストを受け�
 
 ## ~/.aws/配下のファイルについて
 
-config: AWS CLIを使うときのプロファイル別情報
-credentials: AWS SDK, AWS CLIを使う時の認証情報
+config
+**AWS CLI**を使うときのプロファイル別情報
+
+credentials
+**AWS SDK, AWS CLI**を使う時の認証情報
 
 - ここでのプロファイルとは
 アクセスキー、シークレットキーのペアに名前をつけて管理する機能。
@@ -214,5 +217,47 @@ aws_secret_access_key=je7MtGbClwBF/2Zp9Utk/h3yCo8nvbEXAMPLEKEY
 環境ごとに分けること。
 
 `$ aws s3 ls --profile cfc-dev`
-上記コマンドはaws クレデンシャルが反映されているか確認できる。
+上記コマンドはawsクレデンシャルが反映されているか確認できる。
+
+## aws-vault
+
+aws-vaultは**AWSのアクセスキーをOSのキーストアに保存**します。これによりアクセスキーを暗号化して保持することが可能。
+macOSであればKeyChain、Windowsであれば資格情報マネージャーに保存されます。
+これにより、マルウェア経由でのアクセスは拒否されます。
+
+[aws-vaultについてのあれこれ](https://qiita.com/kangaechu/items/cb8f68e3866ee5af71c8)
+
+## スイッチロールとは
+
+スイッチロール自体のメリットは**一度ログアウトしてから、もう一度別のアカウントでログインする必要がなくなる。**
+
+[参考URL](https://dev.classmethod.jp/articles/switch-role-with-awscli/)
+
+![](image/スイッチロール.png)
+
+### CLIでのスイッチロール
+
+マネジメントコンソールからスイッチロールは可能
+AWS CLIからもスイッチロールは可能
+
+## aws configure
+
+defaultのクレデンシャルをconfigに実装することができる。
+
+## AWSアクセスキー
+
+**CLI、SDK、& APIアクセスに使用するAWSアクセスキー**
+アクセスキーを使用して、AWS CLI、Tools for PowerShell、AWS SDK、または直接AWS API呼び出しからプログラムでAWSを呼び出すことができます。一度に持つことができるアクセスキーは最大2つ (アクティブまたは非アクティブ）
+
+保護の観点から、シークレットキーは誰とも共有しないでください。また、**業界のベストプラクティスとして頻繁にキーを更新することが推奨されている。**
+シークレットキーは、作成時に表示またはダウンロードできるのみです。既存のシークレットキーを正しく配置できなかった場合は、新しいアクセスキーペアを作成する必要がある。
+
+
+![AWSアクセスキー](image/AWSアクセスキー.png)
+
+## aws 基本を学んだ後
+
+[参考URL](https://blog.microcms.io/aws-vault-introduction/)
+
+
 
