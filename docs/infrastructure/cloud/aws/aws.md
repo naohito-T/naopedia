@@ -268,3 +268,4 @@ defaultのクレデンシャルをconfigに実装することができる。
 ## Tips
 
 [aws-vaultでアクセスキーをセキュアに保存しつつ、MFAもシームレスにやる](https://zenn.dev/nemolize/articles/3a5d03a7974eea)
+[AWS Secrets Managerを使おう！](https://qiita.com/mm-Genqiita/items/f93285a6058c64b39f23)
