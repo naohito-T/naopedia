@@ -21,9 +21,5 @@ version管理ツールやtoolを記載していく
 
 [参考URL](https://qiita.com/0084ken/items/8aefabef4fd3cfdf8fce)
 
-## 実装を
-
-LoLoでは多分自分達のみで作る予定だった
-それらに関してレビューに俺らがいるのがおかしい
 
 

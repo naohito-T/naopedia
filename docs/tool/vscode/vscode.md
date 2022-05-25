@@ -1,11 +1,5 @@
 # VS Code
 
-## tips
-
-[参考URL](https://coliss.com/articles/build-websites/operation/work/removebg-for-vscode.html)
-
-VS Codeで画像から背景を1クリックで切り抜けるようになった。
-
 ## どんなエディターでもEditorConfigを使ってコードの統一性を高める
 
 [参考URL](https://qiita.com/naru0504/items/82f09881abaf3f4dc171)
@@ -31,10 +25,10 @@ VS Codeで画像から背景を1クリックで切り抜けるようになった
 [参考URL](https://ichi.pro/maruchiru-towa-kusupe-su-to-kakucho-kino-o-shiyoshita-mono-repo-kaihatsu-no-tame-no-visualstudiocode-no-hinto-118099824004370)
 
 ```sh
-.vscode
+.VS Code
 └── settings.json # これがデフォルトできく
 └── root ディレクトリ
-      .vscode # 対象ディレクトリにこれがあればこれが上書きされてきく
+      .VS Code # 対象ディレクトリにこれがあればこれが上書きされてきく
       └── settings.json
 ```
 
@@ -42,11 +36,12 @@ VS Codeで画像から背景を1クリックで切り抜けるようになった
 
 [参考URL](https://maku.blog/p/zn2er4g/)
 
-VSCodeのビルドタスク設定(tasks.json)をしておくと、Cmd + Shift + Bで任意のビルドタスクを実行できるようになる。
+VS Codeのビルドタスク設定（tasks.json）をしておくと、Cmd + Shift + Bで任意のビルドタスクを実行できるようになる。
 
 メリット
-VSCodeで作成したコードを実行するときに毎回ターミナルから`node main`や`npm start`とか入力するのは面倒
-VSCodeのビルドタスクを設定すると、こういったコマンドをCmd + Shift + Bとおいうショートカット一発で実行できる
+VS Codeで作成したコードを実行するときに毎回ターミナルから`node main`や`npm start`とか入力するのは面倒
+VS Codeのビルドタスクを設定すると、こういったコマンドをCmd + Shift + Bというショートカット一発で実行できる
+※デバッグ起動などをtasks.jsonに記載しておくと便利
 
 ```json
 {
@@ -69,9 +64,9 @@ VSCodeのビルドタスクを設定すると、こういったコマンドをCm
 
 ## launch.json
 
-[参考URL](https://amateur-engineer-blog.com/vscode-launchjson/)
+[参考URL](https://amateur-engineer-blog.com/VS Code-launchjson/)
 
-VSCodeでデバッグ実行するための設定ファイル
+VS Codeでデバッグ実行するための設定ファイル
 どの言語でどのファイルを実行するかなどを設定する。
 
 **事前定義された変数**を利用できる
@@ -117,3 +112,8 @@ LSPの特徴は、テキスト補完などの**開発支援機能**をサーバ�
 LSPの登場により**言語固有の機能はサーバ側**で、**テキストエディター側の機能はクライアント側**で各々開発すれば良くなった。
 その結果、開発にかかる手間が大幅に減少しただけでなく、マイナーな言語や新興テキストエディターでもリッチな開発体験を気軽に提供できるようになった。
 
+## tips
+
+[参考URL](https://coliss.com/articles/build-websites/operation/work/removebg-for-VS Code.html)
+
+VS Codeで画像から背景を1クリックで切り抜けるようになった。
