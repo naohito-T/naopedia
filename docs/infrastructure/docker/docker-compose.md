@@ -7,7 +7,7 @@ Docker Engineの一部ではない。
 設定した環境変数にどのような値が挿入されるかは、 `docker-compose config`コマンドで確認ができる。
 
 また概念として
-**docker-composeとは複数のコンテナからなる一つのシステムの構築をラクチンするためのツール**
+**docker-composeとは複数のコンテナーからなる一つのシステムの構築をラクチンするためのツール**
 
 ## Docker 掃除
 
@@ -15,23 +15,32 @@ Docker Engineの一部ではない。
 $ docker image prune -f
 $ docker container prune -f
 $ docker volume prune -f
-
 ```
+
+## Docker自動起動
+
+[参考URL](https://www.takunoko.com/blog/docker-compose%E3%81%A7docker%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%82%92os%E8%B5%B7%E5%8B%95%E6%99%82%E3%81%AB%E7%AB%8B%E3%81%A1%E4%B8%8A%E3%81%92%E3%82%8B/)
+
+[参考URL](https://qol-kk.com/wp2/blog/2020/03/04/post-1532/)
+
+docker-composeを使ってサーバ環境を構築した際に、ホストOSを再起動時に自動でクライアント（子機？）も起動してほしい。k8sだのを使うべきとの意見もあるが、とりあえずDocker-composeのみで戦ってみる。 systemctlコマンドを利用して、自動起動の登録をしました。
 
 ## docker-compose コマンド
 
-**docker-composeで作成したコンテナはdockerコマンドではなく、docker-composeを使った管理(コマンド)に一元化すべき**
-`$docker-compose down`はコンテナやネットワークを停止するだけではなく、それらを破棄する。
+**docker-composeで作成したコンテナーはdockerコマンドではなく、docker-composeを使った管理(コマンド)に一元化すべき**
+
+`$docker-compose down`はコンテナーやネットワークを停止するだけではなく、それらの破棄までしてくれる。
 **※規定ではボリュームは削除しない。**
+これのメリットとしてDBなどのキャッシュ問題を回避する。
 
 dockerとの対比コマンド
 docker-composeで管理しているとこにdockerコマンドで対応していると反故が生じる恐れがあるためdocker-composeコマンドを使用すること。
 
 ![コマンド対比](image/コマンド対比.png)
 
-## コンテナは常に削除する
+## コンテナーは常に削除する
 
-Docker開発を進めていく上でコンテナは常に削除することをする
+Docker開発を進めていく上でコンテナーは常に削除することをする
 
 理由として
 
@@ -318,14 +327,14 @@ ttyとは?
   `sh $docker-compose up`
 
 - down
-  カレントディレクトリの docker-compose.yaml に紐づいてる Container と Network を削除
+  カレントディレクトリのdocker-compose.yamlに紐づいてるContainerとNetworkを削除する
   `sh $ docker-compose down`
 
-image も削除する。
+imageも削除する。
 `sh $ docker-compose down --rmi all`
 
 - rm
-  Volume を削除
+  Volumeを削除
   `sh $ docker-compose rm`
 
 [ここまで記載した](https://y-ohgi.com/introduction-docker/3_production/docker-compose/)
