@@ -8,11 +8,33 @@ JSを使用する場合はpackage.jsonを使う`npm run`
 
 LinuxカーネルのMakefileで多様されている
 
+## makeコマンド種類
+
+Microsoft nmake (Windows)
+Borland make (Windows)
+GNU make（windows, UNIX系）
+Solaris make (Solaris)
+
+## makeコマンド種類
+
+```sh
+$ make --version
+GNU Make 3.81
+Copyright (C) 2006  Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.
+There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.
+
+This program built for i386-apple-darwin11.3.0
+```
+
 ## 前提
 
 Makeを理解するには**コンパイルへの理解が重要。**
 
 ## Makefile 基本
+
+[Makefileの基本](https://zenn.dev/keitean/articles/aaef913b433677)
 
 主にMakefileは**makeにプログラムのコンパイルおよびリンク方法を指示する。**
 Makefileに含まれる情報は主に3つ。
@@ -35,17 +57,13 @@ makeが生成するのはふつうCのプログラムだが、べつにCのプ�
 
 makeはプログラムのビルド作業を自動化するツール
 コンパイル・リンク・インストールなどのルールを記述したテキストファイル（Makefile）にしたがって、これらの作業を自動的に行う。
-複雑に関連し合ったファイルの依存関係を解決するのがmakeの長所である。
+複雑に関連し合ったファイルの依存関係を解決するのがmakeの長所。
 
 ## makeを利用する意味
 
 初期のホストサーバには何も入っていない。
 しかしパッケージ管理ツールではmakeなど必然的に入れる必要がある（パッケージをダウンロードした際に、C言語やPythonを使用していたりなどコンパイルが必要になるため）
 そのため比較的makeコマンドが入っている確率が上がる。そのためタスクランナーを環境差異がないようにするためMakefileの導入をする。
-
-## makefile実行
-
-デフォルトはMakefileの一番上のターゲットのルールを実行する。
 
 ## 基本的なMakefileのフォーマット
 
@@ -91,6 +109,13 @@ $ make clean
 make: `clean' is up to date.
 ```
 
+---
+
+## make データ型
+
+Make言語のデータは基本的にテキスト文字列（ストリング）です。
+しかし、文脈により文字列がワード、リスト、またはブール値（boolean）として解釈される。
+
 ## Makefileでの変数展開
 
 [参考URL](https://www.nooozui.com/entry/20200129/1580277274)
@@ -103,6 +128,23 @@ make: `clean' is up to date.
 FROM_DEPLOY_BRANCH := $$(git branch | head -n 1)
 ```
 
+### Makefile変数参照
+
+$(name)、または${name}
+```makefile
+objects = program.o foo.o utils.o # => program.o foo.o utils.o
+program : $(objects)
+        cc -o program $(objects) 
+$(objects) : defs.h
+```
+---
+
+## Makefile デバッグ方法
+
+GNU Makeの`-n`オプションは、Makefileのコマンドを実行せずに出力します。
+
 ## Makefile Tips
 
 [Makefileの関数一覧](https://qiita.com/chibi929/items/b8c5f36434d5d3fbfa4a)
+[Makefile組み込み関数](https://tex2e.github.io/blog/makefile/functions)
+[Makefileの基本](https://zenn.dev/keitean/articles/aaef913b433677)

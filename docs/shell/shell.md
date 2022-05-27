@@ -93,6 +93,10 @@ CLI環境で使えそうなTipsを記載
 
 [シェルスクリプトを書く時の注意](https://qiita.com/youcune/items/fcfb4ad3d7c1edf9dc96)
 
+## shellScript echo 色付ける
+
+[参考URL](https://qiita.com/ko1nksm/items/095bdb8f0eca6d327233#%E3%81%8A%E3%81%BE%E3%81%911-%E8%89%B2%E6%8C%87%E5%AE%9A%E6%96%B9%E6%B3%95-%E4%B8%80%E8%A6%A7)
+
 ### shellScript が落ちた時にスクリプトを止める
 
 [参考URL](https://atmarkit.itmedia.co.jp/ait/articles/1805/10/news023.html)
