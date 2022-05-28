@@ -25,6 +25,7 @@
     "demoapp",
     "Gobot",
     "godoc",
+    "GOPATH",
     "gopls",
     "iterm",
     "mkdir",
