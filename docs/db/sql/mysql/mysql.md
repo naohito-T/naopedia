@@ -19,3 +19,7 @@ utf8mb4 : 1~4バイトまで対応
 
 本来はUTF-8は1~4バイトで文字を表すルール
 なので、MySQLのutf8はそもそもUTF-8と呼べない。
+
+## mysqldump
+
+[参考URL](https://qiita.com/PlanetMeron/items/3a41e14607a65bc9b60c)
