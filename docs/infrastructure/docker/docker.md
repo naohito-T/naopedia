@@ -20,7 +20,9 @@ $docker volume prune -f
 
 マルチステージビルドは、Docker17.05以上で利用できる新機能
 前のステージでビルドされた成果物をこの新しいステージへコピーする
-最終的なイメージは取り残され**最終的なイメージへは保存されない。**
+最終的なイメージでは取り残され**最終的なイメージへは保存されない。**
+※つまり、TypeScriptをコンパイルするステージ⇨最終的なJSを実行するステージに分けることができる。
+
 ```yml
 COPY --from=0
 ```
@@ -36,29 +38,27 @@ containerを削除してからではないとimageが削除できない。
 
 そのイメージになにが含まれているのか確認する方法
 `$ docker run -it alpine:3.11`
-言語のalphineだと/bin/shなどで起動する必用がある。
+言語のalpineだと/bin/shなどで起動する必用がある。
 `$ docker run -it alpine:3.11 /bin/sh`
 
-dockerignoreとは
-docker buildでimageを作成する際に無視することができる
+### dockerignoreとは
+
+docker buildでimageを作成する際に無視するファイル・ディレクトリを設定できる。
 **※mountの場合は無視ができない。**
 
 mountディレクトリの恐ろしさ
 たとえばDockerfile内でCopyをした場合、コピーされるがバインドマウントのためではないため編集しても反映されない。
+
 **そのためDockerimageを作成するためだけを意識すること**
-また、COPYでせっかく全部コピーしてもバインドマウントで同じディレクトリを指定した場合にバインドマウントの中身で全て消される。これが注意！！
+また、COPYでせっかく全部コピーしてもバインドマウントで同じディレクトリを指定した場合にバインドマウントの中身ですべて消される。これが注意！！
 
 [参考URL](https://qiita.com/aki_55p/items/db706d0113cbdad6c51d)
 
 
-## 面白いこと
-
-[Docker内のブラウザをホストで起動する](https://takapi86.hatenablog.com/entry/2019/03/24/144008)
-
 ## alpine linux
 
 alpine linuxは基本
-**GCC などの C コンパイラが含まれていない**
+**GCC などの C コンパイラが含まれていない(つまり開発ツール)**
 
 [alpine linuxにyarnいれる](https://scrapbox.io/keroxp/alpine-linux%E3%81%AByarn%E3%82%92%E5%85%A5%E3%82%8C%E3%82%8B)
 
@@ -966,6 +966,8 @@ Docker Buildにおけるリードタイム短縮
 
 Dockerイメージ分析ツール
 [dive](https://kotaroooo0-dev.hatenablog.com/entry/2020/07/28/205931)
+
+[Docker内のブラウザをホストで起動する](https://takapi86.hatenablog.com/entry/2019/03/24/144008)
 
 
 ## image

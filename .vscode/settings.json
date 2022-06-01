@@ -23,6 +23,7 @@
     "Brewfile",
     "codic",
     "demoapp",
+    "dockerignore",
     "Gobot",
     "godoc",
     "GOPATH",
