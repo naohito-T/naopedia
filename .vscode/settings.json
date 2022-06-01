@@ -32,7 +32,9 @@
     "mkdir",
     "mysqldump",
     "nodenv",
+    "popd",
     "POSIX",
+    "pushd",
     "struct",
     "udemy",
     "Vercel"

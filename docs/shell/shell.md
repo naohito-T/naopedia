@@ -89,6 +89,19 @@ CLI環境で使えそうなTipsを記載
 
 ---
 
+## 組み込みコマンド
+
+## pushd/popd コマンド
+
+[参考URL](https://www.javadrive.jp/command/dir/index5.html)
+
+pushdディレクトリを実行すると、**現在のディレクトリをスタックに記憶した上**でカレントディレクトリを変更することができる。
+
+popdコマンドを実行するとスタックに記憶されているディレクトリを取り出しカレントディレクトリを変更することができる。
+
+
+---
+
 ## ShellScript Tips
 
 [シェルスクリプトを書く時の注意](https://qiita.com/youcune/items/fcfb4ad3d7c1edf9dc96)

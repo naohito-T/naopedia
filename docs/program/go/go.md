@@ -167,7 +167,7 @@ Goの変数名は長い名前よりも短い名前が好まれる
 
 ## Go 定数
 
-Goのconstは**コンパイル時に決定できないものはconstにできない(例えばnewとか)**
+Goのconstは**コンパイル時に決定できないものはconstにできない(たとえばnewとか)**
 
 
 ## パッケージ名
@@ -313,7 +313,6 @@ func main() {
 
 ```go
 Greet("gopher", &GreetOpts{}) // &nnn &はポインタで渡す（参照）)
-
 ```
 
 ## Go import
@@ -324,8 +323,6 @@ period importとblank importという別のimportがある。
 
 period(.) import
 あまりオススメはされていない
-
-
 
 ### interface型
 
@@ -352,8 +349,7 @@ Dockerで構築が現実てきなのかは要調査
 バージョン管理ツールはいらない
 Rubyならrbenv, Node.jsならnodenvなどがあるが
 Goでもバージョン管理ツール必要なのかなと思って調べたら結論いらない。
-理由として現状Goは広報互換性が保たれているのが理由。
-
+理由として現状Goは後方互換性が保たれているのが理由。
 現状としてGoの各種PATHは設定されているため、後は適宜Shellに対してGoのPathを追加してあげればGoのバイナリは直で打てるようになる。
 
 ## GOROOT
@@ -372,7 +368,9 @@ GoのSDKの場所を定義している
 
 vscodeで全然いい
 
-## vscode拡張機能   
+## vscode拡張機能
+
+Goをインストールすればいいだろう
 
 ## Go Language Server Protocol
 
@@ -381,11 +379,24 @@ vscodeで全然いい
 現状ではgoplsができており、ジャンプなどもすぐにできるようになる。
 ※ただし、`go.mod`があるディレクトリ内でファイルを開かないといけない
 
-## Go getと installの違い
+## go getと installの違い
 
 [参考URL](https://hodalog.com/use-go-install-instead-of-go-get/)
+[参考URL](https://qiita.com/eihigh/items/9fe52804610a8c4b7e41)
 
-go1.17から`go get`を使わなくなったが`go get`が完全に使えなくなるわけではない
+go1.17から`go get`を使わなくなったが`go get`が完全に使えなくなるわけではない（警告はでる）
+
+go1.16から以下の通りとなる。
+`go install`
+バイナリのビルドとインストールのため
+`go get`
+go.mod編集のための`go get`
+
+`go build`や`go test`で自動的に`go.mod`が更新されることはなくなった。
+go.modの編集は`go get or go mod tidy`あるいは手作業で行います。
+
+
+
 
 **モジュール内**で管理したいパッケージについてはこれまで通り`go get`
 `go install`は**モジュール外**で使いたいパッケージのインストールに使用する
