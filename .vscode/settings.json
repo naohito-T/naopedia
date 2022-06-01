@@ -29,6 +29,7 @@
     "gopls",
     "iterm",
     "mkdir",
+    "mysqldump",
     "nodenv",
     "POSIX",
     "struct",
