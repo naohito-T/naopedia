@@ -106,6 +106,8 @@ handler側でパースしてしまうのがいいかと思います！
 
 メモ化はNextの<Script>タグがわかりやすい
 
+[参考URL](https://zenn.dev/aiji42/articles/9a6ab12ab5f6e6)
+
 これはTBD
 
 - コードの省略ができるか考える（ファイル量を減らす目的）
