@@ -8,6 +8,10 @@ JSを使用する場合はpackage.jsonを使う`npm run`
 
 LinuxカーネルのMakefileで多様されている
 
+## make ファイル コマンド解析
+
+Makefileの場合、個々のコマンド列は直接シェルによって実行されるのではなく、いったんmakeによって解釈されるという点に気をつけなくてはいけません。makefile中のコマンドはほかのシェルを指定しない限り、つねに`/bin/sh`によって解釈されます
+
 ## makeコマンド種類
 
 Microsoft nmake (Windows)

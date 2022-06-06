@@ -15,6 +15,29 @@ RubyやPythonであればコードの行数は半分から1/3になる。
 C++やRust、Javaなど
 Goは実行速度では遅いが、コンパイルが圧倒的に早くネットワークなどのI/O速度が支配的なネットワークアプリケーションやコンテナーで動作するアプリケーションであれば十分な速度が出せる。
 
+## Go 1.16からのモジュール管理
+
+[参考URL](https://text.baldanders.info/golang/manage-modules/)
+
+GO111MODULE既定値の変更
+環境変数`GO111MODULE`の既定値がautoからonへ変更になった。 GO111MODULEの取りうる値は以下の通り。
+
+## go コマンド
+
+パッケージをインストールするとgo.modおよびgo.sumに情報が反映される。
+go getやgo mod tidyによってインストールされたパッケージは$GOPATH/pkg/modに保存される。
+
+```sh
+$ go get [パッケージ名] # 指定したパッケージのインストール
+$ go get #importに記載されたパッケージのインストール
+$ go mod tidy	# importに記載されたパッケージのインストール。不要なパッケージの削除
+```
+
+パッケージのインストールが必要なGoファイルを実行する場合、Go 1.16では`go mod tidy` or `go get`⇨`go build`という手順。
+
+## go get オプション
+
+[参考URL](https://qiita.com/tadaken/items/9f8fd9c8e7096b6bffde)
 
 ## Go モジュール・パッケージ
 
@@ -36,6 +59,14 @@ Goのアプリケーションとライブラリは、それぞれモジュール
 ### Go モジュール・パッケージをGitHubで外部に公開する場合
 
 `github.con/アカウント名/リポジトリ名/`を使う
+
+```sh
+### サンプルコードなどであれば以下のような感じでOK
+$ go mod init go-example
+
+### 公開前提の場合はモジュールのパスを指定する
+$ go mod init github.com/naohito-T/go-example
+```
 
 ## Go エントリーポイント
 
