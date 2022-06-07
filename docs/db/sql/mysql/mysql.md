@@ -1,6 +1,8 @@
 # MySQL
 
+## dumpとリストアについて
 
+[参考URL](https://tex2e.github.io/blog/database/mysql-dump-restore)
 
 
 ---
