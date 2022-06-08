@@ -9,6 +9,14 @@ Docker Engineの一部ではない。
 また概念として
 **docker-composeとは複数のコンテナーからなる一つのシステムの構築をラクチンするためのツール**
 
+## docker-compose depends_on
+
+depends_onはあくまで起動状態を制御しているだけであり、dbがtcp受け付ける状態（mysqld)が起動するまで待つ。みたいなのができない。
+以前までは、シェルで対応して欲しいと公式サイトが記載。そのため幾つもプロジェクトはwait.shを使用し`nc`コマンドなどでdbに意思疎通をしていた。
+最新だと、それはしなくて良くなった。
+
+[参考URL](https://gotohayato.com/content/533/)
+
 ## Docker 掃除
 
 ```sh
@@ -323,7 +331,7 @@ ttyとは?
 ## docker-compose のコマンド
 
 - up
-  カレントディレクトリに存在する docker-compose.yaml を参照して docker-compose の起動
+  カレントディレクトリに存在するdocker-compose.yamlを参照し、docker-composeの起動
   `sh $docker-compose up`
 
 - down
