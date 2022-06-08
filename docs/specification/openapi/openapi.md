@@ -25,3 +25,14 @@ Swagger 3.0からOpenAPIに名前が変わったため、OpenAPI 3.0はSwagger 3
 定義ファイルの編集
 - Swagger UI
 ドキュメント閲覧
+
+## OpenAPIに準じた設計書の作成方法
+
+[Stoplight 使い方](https://note.com/shift_tech/n/n2d0265731777)
+
+1. YAML or JSONを手作業で書く
+2. Stoplight Studioを使う
+
+
+
+
