@@ -1,6 +1,7 @@
 # GSAP(グリーン・ソック・アニメーション・プラットフォーム)
 
 [参考URL](https://ics.media/entry/200805/)
+[GSAPチートシート](https://greensock.com/cheatsheet/)
 
 Flash全盛の時代から存在する歴史あるトゥイーンライブラリ
 GSAPはCSS/HTML5 Canvas/WebGLなどさまざまなアニメーション作成に利用できる。
