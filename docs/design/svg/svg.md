@@ -2,6 +2,7 @@
 
 [SVGの基本的なこと](https://www.webdesignleaves.com/pr/html/svg_basic.html)
 [10分でわかるSVGの基本的なこと2](https://atmarkit.itmedia.co.jp/ait/articles/1206/01/news143.html)
+[SVG入門](https://www.tohoho-web.com/ex/svg.html)
 
 SVGは画像フォーマットの一種
 SVGファイルはその名の通り、ベクタ形式のデータ。
