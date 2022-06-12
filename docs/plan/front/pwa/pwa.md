@@ -1,5 +1,8 @@
 # PWA（Progressive web apps）
 
+[Nuxtでの導入方法](https://designsupply-web.com/media/development/6823/)
+[その際にfavicon一式必要なため生成ツール](https://zenn.dev/toshihide2000/articles/a41031f1003cf2)
+
 PWAはプログレッシブウェブアプリという意味。
 **アプリケーションで使われる機能を搭載したウェブサイト**のこと、特にスマートフォンなどのモバイルデバイスと相性が良い.
 
@@ -23,4 +26,9 @@ PWAはプログレッシブウェブアプリという意味。
 上記のような画像が必要になるのかも
 
 
+2. スプラッシュスクリーン画像作成
+これはWebアプリを起動した時の画像。デバイス幅によって変わるため作成数は多い
+
+
 [https://app-manifest.firebaseapp.com/](https://app-manifest.firebaseapp.com/)
+

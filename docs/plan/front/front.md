@@ -4,6 +4,11 @@
 
 [フロントの各設計について(Jamについても)](https://qiita.com/ozaki25/items/4075d03278d1fb51cc37)
 
+## Frontで使えるやつ
+
+[画像からfaviconを作ってくれる](https://realfavicongenerator.net/)
+[favicon一式必要なため生成ツール紹介](https://zenn.dev/toshihide2000/articles/a41031f1003cf2)
+
 ## JAMStack(JavaScript/APIs/Markup)
 
 事前にデータを埋め込んだ静的HTMLとJavaScriptをベースに、完全に分離したサービスやシステムのAPIを通じて動的コンテンツを扱うWebアプリ・WebサイトのアーキテクチャをJamstackといいます。
