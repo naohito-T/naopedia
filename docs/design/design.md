@@ -4,6 +4,7 @@
 [コリスサイト(web design)](https://coliss.com/articles/build-websites/operation/css/css-tricks-dark-futuristic-web3-look.html)
 [モーション周期表を視覚化しておりそれを見れるもの](http://foxcodex.html.xdomain.jp/index.html)
 [新しいサイトを作成する時に参考とすべきUX(google)](https://developers.google.com/web/fundamentals/design-and-ux/ux-basics?hl=ja)
+[clipを簡単に実装できる](https://bennettfeely.com/clippy/)
 
 ## デザイン案を探すとき
 

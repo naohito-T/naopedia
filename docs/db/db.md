@@ -2,6 +2,8 @@
 
 RDB & NoSQLなどDB関連
 
+[学習効率を上げるためのバックエンドのデータベース基礎知識](https://devsakaso.com/about-database-basics/)
+
 [瞬殺でDBを使って何かしたいとき](https://zenn.dev/takuho/articles/efc40344f3122e)
 [DockerでサクッとDBからER図を作成する](https://qiita.com/kamukiriri/items/ab1669c19831c18db9ee)
 
