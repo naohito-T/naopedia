@@ -243,5 +243,53 @@ gsap.set(
 (CSSを使わずに、GSAP内で指定できます)
 fromは、実行されると初期状態に戻るアニメーションが起きてしまうので、位置は変更してそのままにしたい時に使います
 
+## toggleActions
 
+toggleActionsで指定できるものは以下。
+
+play … アニメーションをスタートさせる
+pause … 一時停止
+resume … アニメーションを再開させる
+reset … アニメーション開始直前の状態に戻す
+restart … はじめに戻ってアニメーションを開始
+complete … アニメーション直後の状態にする
+reverse … アニメーションを逆再生する
+none … 何も指定しない
+
+
+```ts
+toggleActions: 'play pause resume reverse',
+```
+
+一番左から順番に説明していきます。
+
+① onEnter （上の例ではplayの部分）
+スクロール位置が「開始」を超えて下に移動したときのコールバック（通常、トリガーがスクロールされて表示されたとき）
+
+② onLeave（上の例ではpauseの部分）
+スクロール位置が「終了」を超えて下に移動したときのコールバック（通常、トリガーがスクロールして表示されなくなったとき）
+
+③ onEnterBack（上の例ではresumeの部分）
+スクロール位置が「終了」を超えて上に移動したときのコールバック（通常、トリガーがスクロールしてビューに戻ったとき）
+
+④ onLeaveBack （上の例ではreverseの部分）
+スクロール位置が「開始」を超えて上に移動したときのコールバック（通常、トリガーが開始を超えて後方にスクロールされたとき）
+
+## ScrollTrigger 独立型
+
+[参考URL](https://devsakaso.com/gsap-scrolltrigger-pin/)
+
+```ts
+ScrollTrigger.create({
+  trigger: '.b2',
+  pin: true,
+  markers: true,
+  // end: 'bottom 30%' //などと設定するとfixedの期間がより短くなる
+})
+```
+pinは、gsapのscrollTriggerとは独立して生成することができます。
+ScrollTriggerと大文字なので注意しましょう。
+pinはリンクさせる必要がないので大文字ScrollTriggerでcreateすることができます。
+pinはposition: fixedが付与されることで、固定することができます。
+そして、triggerに指定した要素の高さを超えると動き出します。
 

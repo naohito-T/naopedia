@@ -5,6 +5,10 @@
 [モーション周期表を視覚化しておりそれを見れるもの](http://foxcodex.html.xdomain.jp/index.html)
 [新しいサイトを作成する時に参考とすべきUX(google)](https://developers.google.com/web/fundamentals/design-and-ux/ux-basics?hl=ja)
 
+## デザイン案を探すとき
+
+[Free Frontend（海外のサイトやばい）](https://freefrontend.com/css-timelines/)
+
 ## インタラクションデザインとは
 
 [参考URL](https://pantograph.co.jp/blog/uiux/interaction_design.html)
@@ -176,3 +180,7 @@ WEBサイトなどで一般的に用いられるPCモニター画面表示用の
 
 アニメーションドロワー
 [参考URL](https://webdesignfacts.net/entry/css-drawrmenu/#gsc.tab=0)
+
+## タスク管理ツールとかいいかも
+
+[参考URL](https://codepen.io/TajShireen/pen/RwrXodK)
