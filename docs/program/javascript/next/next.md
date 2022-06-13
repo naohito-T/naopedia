@@ -6,7 +6,7 @@
 
 ## Reactとの違い
 
-Reactへブラウザは受信したJSファイルを処理することでh1タグとその内容を描写していることがわかる
+ブラウザは受信したJSファイルを処理することでh1タグとその内容を描写していることがわかる
 
 ブラウザ ページソースを確認すればわかる
 
@@ -136,7 +136,7 @@ SWRはRenderingの種類ではない。Stale-While-Revalidateというキャッ�
 [参考URL](https://maku.blog/p/qcp2coz/)
 
 next.jsでは`pages/api`ディレクトリ以下にTypeScript (JavaScript) コードを配置するだけで、クライアントサイドJavaScriptから呼び出せるAPIを定義することができる。
-※`pages/api`ディレクトリ以下の実装内容が、クライアントに見られてしまうことはない。
+※`pages/api`ディレクトリ以下の実装内容が**クライアントに見られてしまうことはない。**
 
 ## middleware
 
@@ -190,11 +190,8 @@ Next.jsのReact Server Componentsは、本家（Facebook）のReact Server Compo
 ## 背景（レンダリング技術の歴史）
 
 WEBサイトのレンダリング技術はここ10年で、昔ながらのSSR(Server Side Rendering) からReactやVueを用いたSPA(Single Page Application) に移行した。
-
-SPAは「UXの向上」や「ページ遷移の高速化」など利点がありますが、「初期表示が遅い」「動的なOGP対応が困難」などの欠点もあります。
-
-その欠点を補うべく、NextやNuxtではSPAとSSRやSSG(Static Site Generator)を組み合わせる手法がとられるようになりました。
-
+SPAは「UXの向上」や「ページ遷移の高速化」など利点があるが、「初期表示が遅い」「動的なOGP対応が困難」などの欠点もあります。
+その欠点を補うべく、NextやNuxtではSPAとSSRやSSG(Static Site Generator)を組み合わせる手法がとられるようになった。
 React Server Componentsではこれまでとは別のアプローチで、**SPAとSSRの良いとこ取りを目指す。**
 
 ## React Server Componentsの仕組み
@@ -282,8 +279,6 @@ ThemeProviderは、_app.jsで使用する。
 ## styled-media-query
 
 [参考URL](https://github.com/morajabi/styled-media-query)
-
-
 
 ### next.js SSRでstyleを当てる
 
