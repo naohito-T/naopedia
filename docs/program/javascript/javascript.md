@@ -75,7 +75,7 @@ foo.bar?.baz;
 
 ## Nullish Coalescing ??
 
-Nullish Coalescing は値が undefined もしくは null のとき、フォールバックとして別の値を返せるようにするオペレータ
+Nullish Coalescingは値が`undefined`もしくは`null`のとき、フォールバックとして別の値を返せるようにするオペレーター
 
 ```js
 undefined ?? 'fallback';
@@ -88,7 +88,7 @@ null ?? 'fallback';
 // js: 'hello'
 ```
 
-これまで || を使用していた初期値代入のうち、0 や false といった Falsy な値を正常値として扱いたいときに Nullish Coalescing で置き換えられます。
+これまで || を使用していた初期値代入のうち、0やfalseといったFalsyな値を正常値として扱いたいときにNullish Coalescingで置き換えられる。
 
 ```js
 0 || 'fallback';
@@ -106,7 +106,7 @@ false ?? 'fallback';
 
 [リファレンス](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/in)
 
-in演算子は、指定されたプロパティが指定されたオブジェクトにある場合にtrueを返す.
+in演算子は、指定されたプロパティが指定されたオブジェクトにある場合trueを返す
 
 ```js
 const car = { make: 'Honda', model: 'Accord', year: 1998 };
@@ -133,8 +133,8 @@ Promiseの状態
 ## Promise.all()
 Promise.all()は
 
-all()の引数の配列内のPromiseの状態が全て fullfilled になったら、all()自体も fullfilled
-1つでも rejected になると、all()も rejectedを返す。
+all()の引数の配列内のPromiseの状態がすべて`fullfilled`になったら、all()自体も`fullfilled`になる。
+1つでも`rejected`になると、all()も`rejected`を返す。
 
 ## 非同期処理
 
@@ -290,3 +290,10 @@ if(!true){
 ```js
 
 ```
+
+## コールバック関数
+
+[参考URL](https://sbfl.net/blog/2019/02/08/javascript-callback-func/)
+
+よく使われる解説
+>別の関数に呼び出してもらうための関数
