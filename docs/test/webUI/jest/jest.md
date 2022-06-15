@@ -150,6 +150,9 @@ outer after all
 
 ```
 
+## Jest mock化
+
+[参考URL](https://qiita.com/YSasago/items/6109c5d3fbdbffa31c9f)
 
 
 ---
