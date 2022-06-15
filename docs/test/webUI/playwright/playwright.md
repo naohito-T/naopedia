@@ -69,3 +69,6 @@ const ogTitle = page.locator("meta[property='og:title']"); // 最新はこれを
 ## PlayWright 別タブ管理方法
 
 
+## Playwright CI実行
+
+[参考URL](https://zenn.dev/keita_hino/articles/d38956a2f1880e)

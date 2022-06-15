@@ -117,3 +117,13 @@ LSPの登場により**言語固有の機能はサーバ側**で、**テキス�
 [参考URL](https://coliss.com/articles/build-websites/operation/work/removebg-for-VS Code.html)
 
 VS Codeで画像から背景を1クリックで切り抜けるようになった。
+
+## recommend
+
+そのプロジェクトで必要になり得る、拡張機能を渡せる
+recommendationsの書き方は少々癖があって、`著者名.拡張機能名`
+
+## VS codeワークスペース
+
+[参考URL](https://qiita.com/YuichiNukiyama/items/ef16a0219f46ea03a045)
+
