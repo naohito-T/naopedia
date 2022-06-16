@@ -7,6 +7,8 @@
 
 [GitHub Actionsによる作業自動化 実例集](https://qiita.com/technote-space/items/253290d1f2a0f99409ae)
 
+
+
 ## GitHub Actionでできること
 
 [参考URL](https://knowledge.sakura.ad.jp/23478/)
@@ -382,15 +384,17 @@ jobs:
 
 - パブリックなアクション
 
-Github Actionsでは開発者がアクション(Lintやテストといったジョブなど)を使って公開することができる。
+GitHub Actionsでは開発者がアクション(Lintやテストといったジョブなど)を使って公開することができる。
 この公開されたアクションは世界中の人が使える。もちろん自分のプロジェクトに持ってきて使用が可能。
 この公開されたアクションのことをパブリックアクションという。
 
 - プライベートなアクション
+自分のプロジェクトでしか使えないやつ
+
 [参考URL](https://yyh-gl.github.io/tech-blog/blog/github-actions-private-action/)
 
 注意
-**プライベートアクションを使用するときはチェックアウトは必須!**
+**プライベートアクションを使用するときはチェックアウト必須!**
 
 公開しないアクション
 ディレクトリ構造は以下となる。
@@ -408,10 +412,10 @@ Github Actionsでは開発者がアクション(Lintやテストといったジ�
 
 ## 重要ポイント: プライベートアクションとパブリックアクションでの設定差異
 
-プライベートアクションを使用するときは チェックアウト が必須。
+プライベートアクションを使用するときはチェックアウトが必須。
 プライベートなアクションはそれを利用するリポジトリで定義する。
-パブリックなアクションと同じく action.yaml というファイルを作ってアクションを定義する。
-action.yamlの置き場所はどこでも構わない。例えば、.github/actions/<アクション名>/action.yml でアクションを定義したら、それを利用するワークフロー定義で`use: .github/actions/<アクション名> `の様に action.yaml を置いたディレクトリをリポジトリのルートからの相対パスで指定すればよい。
+パブリックなアクションと同じく`action.yaml`というファイルを作ってアクションを定義する。
+action.yamlの置き場所はどこでも構わない。たとえば、`.github/actions/<アクション名>/action.yml`でアクションを定義したら、それを利用するワークフロー定義で`use: .github/actions/<アクション名> `の様に`action.yaml`を置いたディレクトリをリポジトリのルートからの相対パスで指定すればよい。
 
 ```yml
 name: Greet Everyone
@@ -444,14 +448,14 @@ uses: actions/hello-world-javascript-action@v1
 しかし、プライベートアクションは自分のプロジェクト内にアクションの本体がある
 **そのためチェックアウトして、プロジェクトのコードをアクション実行環境に持ってくる必要があります**
 
-「チェックアウト って何？」という方は、
-actions/checkout の README の説明がとても分かりやすい。
+「チェックアウトって何？」という方は、
+actions/checkoutのREADMEの説明がとても分かりやすい。
 
 >（あなたのリポジトリ（コード）を $GITHUB_WORKSPACE に持ってきて、ワークフローがそのコードにアクセスできるようにする）
 
 ↑ これを実現するためのもの
 プライベートアクションはネット上に公開されていないから、
-手元にあるアクション本体（コード）を GtHub Actions の実行環境に持っていったというだけですね。
+手元にあるアクション本体（コード）を`GitHub Actions`の実行環境に持っていったというだけですね。
 
 
 ## Tips
@@ -470,11 +474,11 @@ actions/checkout の README の説明がとても分かりやすい。
 
 ワークフローをベースブランチにマージしないと動かない
 
-## Github ActionでCI環境構築
+## GitHub ActionでCI環境構築
 
 [参考URL](https://note.com/shift_tech/n/n5edc79df5560)
 
-## Github Actionの主な構成
+## GitHub Actionの主な構成
 
 ```yaml
 #ワークフローの名前（省略可）
@@ -504,18 +508,18 @@ jobs:
 github cd がダサいとき
 [参考URL](https://blog.takuchalle.dev/post/2020/02/20/github_actions_change_directory/)
 
-## woking-directoryについて
+## working-directoryについて
 
 **working-directory は run のときにしか適用されず、actionを使うときは適用されない**
 そのためuseで他actionを使用する時はworking-directoryを使えるか確認する必要がある。
 
 [参考URL](https://intothelambda.com/blog/github-actions-with-paths/)
 
-モノレポの時に設定ディレクトリが困る
+モノレポの時に設定ディレクトリが困るため以下を設定しろ
 
 working-directory
-実行するときのワーキングディレクトリを working-directory で設定している。これは
-`jobs.<job_id>.steps[*].run` でその都度指定してもいいが、面倒なので defaults.runを使用すれば設定できる。
+実行するときのワーキングディレクトリを`working-directory`で設定している。
+これは`jobs.<job_id>.steps[*].run` でその都度指定してもいいが、面倒なので`defaults.run`を使用すれば設定できる。
 
 ```yml
 defaults:
@@ -524,10 +528,23 @@ defaults:
 ```
 
 注意点
-jobs.<job_id>.steps[*].uses を使うと、自分でrunを書かなくても、誰かが公開したactionを使える。だがactionによっては、今回のユースケースに合わず、使えないものがある。
+`jobs.<job_id>.steps[*].uses`を使うと、自分でrunを書かなくても、誰かが公開したactionを使える。だがactionによっては、今回のユースケースに合わず、使えないものがある。
 
 ## Jest coverage report
 
 [Jest coverage report でプルリクエスト毎にコードカバレッジを可視化する](https://oikawa.dev/posts/20210810_jest-coverage-report-action)
 
+## artifacts: 成果物
+
+[参考URL](https://littleengineer.jp/github-actionsunittest%E3%81%AE%E6%88%90%E6%9E%9C%E7%89%A9%E3%81%AE%E4%BF%9D%E5%AD%98%E3%81%A8%E5%8F%96%E5%BE%97/)
+
+GitHub Actionsには成果物といって
+1. ジョブからジョブに受け渡したいもの
+2. Test結果など保存しておきたいもの
+
+上記をActions上に保存できる機能がある。
+
+## GitHub Actions ワークフローファイル共通化
+
+[GitHub Actions のワークフローファイルを共通化した話](https://tech.speee.jp/entry/terraform-reusable-workflow)
 
