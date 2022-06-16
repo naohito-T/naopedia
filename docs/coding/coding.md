@@ -262,3 +262,17 @@ const hello = () => {
 ```
 
 その言語のErrorインターフェイスを満たした独自の型を定義する方法がある。
+
+## 世界対応なのか日本対応なのか
+
+[タイムゾーンの意識](https://blog.studysapuri.jp/entry/2016/12/05/090000)
+
+
+```
+Time.zone = 'UTC'
+Time.zone.now
+# => Thu, 04 Feb 2016 10:00:00 UTC +00:00
+
+Time.use_zone('Asia/Tokyo') { Time.zone.now }
+# => Thu, 04 Feb 2016 19:00:00 JST +09:00
+```

@@ -3,6 +3,10 @@
 [JavaScriptの全ての仕組み](https://ja.javascript.info/)
 [next/script には JavaScript の基本がつまっていた](https://zenn.dev/aiji42/articles/9a6ab12ab5f6e6)
 
+## JavaScriptのタイムゾーン
+
+[参考URL](https://qiita.com/konkonko/questions/62c71142f51e63a759c3)
+
 ---
 ## CommonJSとESModule
 
