@@ -16,6 +16,8 @@
 
 [シェルスクリプト御作法](https://qiita.com/autotaker1984/items/bc758fcf368c1a167353)
 [shebang(シェバンについて)](https://sechiro.hatenablog.com/entry/20120806/1344267619)
+[シェルスクリプト(コマンドライン引数)](https://maku77.github.io/linux/startup/command-line-params.html)
+[シェルスクリプト例外処理](https://cloudpack.media/532)
 
 ## ログインシェルとインタラクティブシェルの違い
 
@@ -161,5 +163,9 @@ dotfilesとはとはLinuxやmacOSにおける設定ファイルのこと。
 
 [参考URL](https://qiita.com/kazuooooo/items/163d07f694016ebd6048)
 
+## シェルスクリプト 例外処理
 
+たいていの高級なプログラミング言語では例外処理をしなければプログラムが終了する。
+しかし、シェルスクリプトでは**エラーが発生しても後続の処理が普通に実行される。**
 
+[参考URL](https://webbibouroku.com/Blog/Article/shell-try-catch-finally)
