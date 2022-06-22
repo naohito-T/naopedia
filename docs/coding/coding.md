@@ -276,3 +276,7 @@ Time.zone.now
 Time.use_zone('Asia/Tokyo') { Time.zone.now }
 # => Thu, 04 Feb 2016 19:00:00 JST +09:00
 ```
+
+## エラーメッセージは見ろ
+
+しっかりみてGitHubのissueとか探せ
