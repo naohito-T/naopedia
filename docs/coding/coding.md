@@ -279,4 +279,4 @@ Time.use_zone('Asia/Tokyo') { Time.zone.now }
 
 ## エラーメッセージは見ろ
 
-しっかりみてGitHubのissueとか探せ
+しっかりみて検索する力を、GitHubのissueとか探せ
