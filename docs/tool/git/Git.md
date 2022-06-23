@@ -472,6 +472,26 @@ git rev-parseから取れる情報もたくさんあるんですよ！
 
 [参考URL](https://qiita.com/annin_jp/items/44960964ecbac77fe19a)
 
+## デフォルトブランチ変更について
+
+[参考URL](https://qiita.com/ymm1x/items/b22bddc9fbc192ae1a70)
+
+`$ git clone`をするとその時点でのデフォルトブランチの情報が`git/refs/remotes/origin/HEAD`に書き込まれる。
+clone後にデフォルトブランチの設定を変更したりしても更新されず古い情報が残る。
+
+手順
+GitHub上で変更する。変更したあとのローカル変更手順
+
+```sh
+# リモートから最新のデフォルトブランチの情報を取得し、
+# ローカルの .git/refs/remotes/origin/HEAD に同期する
+$ git remote set-head origin --auto
+
+# 同期したデフォルトブランチを表示する
+$ git symbolic-ref refs/remotes/origin/HEAD | awk -F'[/]' '{print $NF}'
+```
+
+
 ---
 
 ここからはGitHubについて
