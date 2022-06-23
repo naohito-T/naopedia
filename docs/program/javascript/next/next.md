@@ -292,3 +292,7 @@ Next.jsとstyled-componentsが実行される前提とする環境が異なり�
 老舗のスライダー作成ツール
 
 [swiper](https://swiperjs.com/demos)
+
+## Routing/Dynamic Routes
+
+[参考URL](https://zenn.dev/unreact/articles/nextjs-routing-dynamic-routes)

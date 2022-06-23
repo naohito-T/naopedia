@@ -10,9 +10,9 @@ csr（ブラウザ）のconsole.logは検証で出力される
 
 Vueのフレームワーク
 
-前提(Vueとは)
-Vue.jsとは、Javascriptを用いたViewのライブラリのこと。
-**HTMLの見た目に関すること**を実装できる(SPAアプリケーションは作成できるよ)
+前提（Vueとは）
+Vueとは、JavaScriptを用いたViewのライブラリのこと。
+**HTMLの見た目に関すること**を実装できる（SPAアプリケーションは作成できるよ）
 
 ## Versionの歴史
 
