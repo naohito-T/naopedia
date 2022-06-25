@@ -62,7 +62,11 @@ Next.jsがSWCの利用を推進しており、Next.js 12からはデフォルト
 
 Next.jsがデフォルトで使うSWCは、SWCのラッパーになっていて、SWCで使える機能が一部制限されていたり、拡張されていたりします。このデフォルトで使われるSWCのことをNext-SWCという（公式ではNext.js Compilerとも呼ばれている）
 
+## ディレクトリ移動
 
+srcディレクトリは多くのアプリで一般的であり、nextはサポートしている。
+※しかし`next.config.js`や`tsconfig.json`のような設定ファイルは、環境変数と同様にルートディレクトリに配置してください。
+これらはsrcに配置しても動作しません。publicディレクトリについても同様
 
 
 ### SSRとして動作させる(pages)
@@ -290,8 +294,11 @@ Next.jsとstyled-componentsが実行される前提とする環境が異なり�
 ## Swiper
 
 老舗のスライダー作成ツール
+jQuery & nuxt & nextなど色々使える。
+apiが充実しているわけではないため、もはや過去の記事を見て推測し適用しないと行けない。
 
 [swiper](https://swiperjs.com/demos)
+[swiper](https://b-risk.jp/blog/2022/04/swiper/)
 
 ## Routing/Dynamic Routes
 
