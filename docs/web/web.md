@@ -22,3 +22,7 @@ webブラウザでは`<a>`タグで示されたハイパーリンクをユーザ
 ## 無限スクロール
 
 [無限スクロールは考慮することが多い](https://blog.ojisan.io/i-hate-infinite-scroll/)
+
+## hoverでのスマホ対応
+
+[参考URL](https://pengi-n.co.jp/blog/hover/)
