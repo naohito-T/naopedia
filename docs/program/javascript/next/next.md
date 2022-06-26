@@ -4,6 +4,8 @@
 
 ## 歴史
 
+NextJsバージョン > v12.0.1とSWCコンパイラを使用している。
+
 ## Reactとの違い
 
 ブラウザは受信したJSファイルを処理することでh1タグとその内容を描写していることがわかる
@@ -62,7 +64,11 @@ Next.jsがSWCの利用を推進しており、Next.js 12からはデフォルト
 
 Next.jsがデフォルトで使うSWCは、SWCのラッパーになっていて、SWCで使える機能が一部制限されていたり、拡張されていたりします。このデフォルトで使われるSWCのことをNext-SWCという（公式ではNext.js Compilerとも呼ばれている）
 
+## ディレクトリ移動
 
+srcディレクトリは多くのアプリで一般的であり、nextはサポートしている。
+※しかし`next.config.js`や`tsconfig.json`のような設定ファイルは、環境変数と同様にルートディレクトリに配置してください。
+これらはsrcに配置しても動作しません。publicディレクトリについても同様
 
 
 ### SSRとして動作させる(pages)
@@ -98,6 +104,36 @@ export async function getStaticProps() {
 
 Static（通称SSG、SG）を利用するメリット
 **CDNに静的ファイルをキャッシュ**することで表示のスピードUPを実現
+
+## ISR(Incremental Static Regeneration)
+
+[リファレンス](https://nextjs.org/docs/basic-features/data-fetching/overview#incremental-static-regeneration)
+
+[Next ISRで動的コンテンツをキャッシュするときの戦略](https://zenn.dev/catnose99/articles/8bed46fb271e44)
+ISRとは、動的なコンテンツを含むページも静的ページとしてCDNにキャッシュすることが可能になる。
+
+ISRを使うことで動的なコンテンツを含むページも静的ページとしてCDNにキャッシュすることが可能になる。Next.jsのISRはドキュメントに書かれているようにstale-while-revalidateという考え方でキャッシュが行われる。
+具体的には、リクエスト時にページのキャッシュを作成し、次のアクセスではキャッシュされた古いデータを返します。その裏で次のアクセスに向けてキャッシュが再生成されるというイメージです。
+
+getStaticProps単体だと長期間キャッシュされる静的なページが出力される（いわゆるSSGというやつ）ここに`revalidate`を追加するとISRになる。
+
+`revalidate: 10`の挙動は以下
+- キャッシュが作られた後、10秒間はそのキャッシュを返し続ける（10秒以内に100回アクセスされてもキャッシュの再生成はされない）
+- 10秒経ったあとはキャッシュが古くなったとみなされる。ただし次のリクエストでもいったんはそのキャッシュを返す（1時間後にアクセスがあった場合もいったん古いキャッシュを返す）
+  - その裏でキャッシュを再生成する
+  - その次のリクエストでは再生成されたキャッシュを返す
+
+```ts
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const posts = await getPosts();
+  return {
+    props: {
+      posts,
+    },
+    revalidate: 10 // 👈 ポイント
+  };
+};
+```
 
 
 ### 各コマンド仕組み
@@ -286,3 +322,16 @@ Next.jsとstyled-componentsが実行される前提とする環境が異なり�
 
 上記を対応するために、Next.js 12以前はBabel用styled-componentsのライブラリをダウンロードしなければいけず、めんどくさかった。
 [参考URL](https://code-log.hatenablog.com/entry/2020/01/26/200134)
+
+## Swiper
+
+老舗のスライダー作成ツール
+jQuery & nuxt & nextなど色々使える。
+apiが充実しているわけではないため、もはや過去の記事を見て推測し適用しないと行けない。
+
+[swiper](https://swiperjs.com/demos)
+[swiper](https://b-risk.jp/blog/2022/04/swiper/)
+
+## Routing/Dynamic Routes
+
+[参考URL](https://zenn.dev/unreact/articles/nextjs-routing-dynamic-routes)

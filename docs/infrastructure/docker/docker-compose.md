@@ -7,7 +7,7 @@ Docker Engineの一部ではない。
 設定した環境変数にどのような値が挿入されるかは、 `docker-compose config`コマンドで確認ができる。
 
 また概念として
-**docker-composeとは複数のコンテナーからなる一つのシステムの構築をラクチンするためのツール**
+**docker-composeとは複数のコンテナーーからなるひとつのシステムの構築をラクチンするためのツール**
 
 ## docker-compose depends_on
 
@@ -35,9 +35,9 @@ docker-composeを使ってサーバ環境を構築した際に、ホストOSを�
 
 ## docker-compose コマンド
 
-**docker-composeで作成したコンテナーはdockerコマンドではなく、docker-composeを使った管理(コマンド)に一元化すべき**
+**docker-composeで作成したコンテナーーはdockerコマンドではなく、docker-composeを使った管理(コマンド)に一元化すべき**
 
-`$docker-compose down`はコンテナーやネットワークを停止するだけではなく、それらの破棄までしてくれる。
+`$docker-compose down`はコンテナーーやネットワークを停止するだけではなく、それらの破棄までしてくれる。
 **※規定ではボリュームは削除しない。**
 これのメリットとしてDBなどのキャッシュ問題を回避する。
 
@@ -46,22 +46,22 @@ docker-composeで管理しているとこにdockerコマンドで対応してい
 
 ![コマンド対比](image/コマンド対比.png)
 
-## コンテナーは常に削除する
+## コンテナーーは常に削除する
 
-Docker開発を進めていく上でコンテナーは常に削除することをする
+Docker開発を進めていく上でコンテナーーは常に削除することをする
 
 理由として
 
-1. psコマンドのコンテナ一覧にどんどんコンテナリストが溜まってくる
-2. コンテナに直接インストールしたgemやパッケージがそのまま残ってしまう。
-本番環境ではDockerfileから作成されたコンテナをデプロイしますので、コンテナに直接インストールしたものは反映されません。
-常に本番環境と同じ状態で開発を進めるためにも、コンテナは一度削除して再度立ち上げることを心がけましょう。
+1. psコマンドのコンテナー一覧にどんどんコンテナーリストが溜まってくる
+2. コンテナーに直接インストールしたgemやパッケージがそのまま残ってしまう。
+本番環境ではDockerfileから作成されたコンテナーをデプロイしますので、コンテナーに直接インストールしたものは反映されません。
+常に本番環境と同じ状態で開発を進めるためにも、コンテナーは一度削除して再度立ち上げることを心がけましょう。
 
 ## docker-compose とは
 
 > docker-compose はローカルで Docker のオーケストレーションを行うためのツールです。Docker のビルドから Network や Volume の管理をコードベースで定義して行ってくれます。
 
-docker-compose.ymlをdocker-compose.ymlというツールで読み込ませて実行すると**ボリュームやネットワークが作られ**、まとめてコンテナが起動する。
+docker-compose.ymlをdocker-compose.ymlというツールで読み込ませて実行すると**ボリュームやネットワークが作られ**、まとめてコンテナーが起動する。
 
 ## docker-compose で解決できるもの
 
@@ -77,7 +77,7 @@ Docker Composeを使えば、今までdocker runの引数で1つひとつ指定�
 ```yaml
 version: "3.7" # docker-composeのversionを指定。特にこだわりがなければ最新のものを記述する。
 
-services: # 起動するコンテナの定義を行う。
+services: # 起動するコンテナーの定義を行う。
   nginx:
     build:
       context: .
@@ -99,7 +99,7 @@ services: # 起動するコンテナの定義を行う。
     #   - .:/var/www/html:cached
 
   mysql:
-    image: mysql:5.7 # コンテナを起動するDocker imageを指定する。
+    image: mysql:5.7 # コンテナーを起動するDocker imageを指定する。
     volumes:
       - ./mysql:/var/lib/mysql:delegated
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci
@@ -120,7 +120,7 @@ services: # 起動するコンテナの定義を行う。
   **ただ、ここで定義した名前は、dockerのログに表示されるので、わかりやすい名前にした方がいい**
 
 - build
-  docker build の実行情報を記述する。ここで定義された情報を元に Docker をビルドし、そのビルドしたイメージを使用してコンテナを起動するコーナー。image もしくは build どちらかを記述する必要がある。
+  docker build の実行情報を記述する。ここで定義された情報を元に Docker をビルドし、そのビルドしたイメージを使用してコンテナーを起動するコーナー。image もしくは build どちらかを記述する必要がある。
 
   > コマンドの場合、 `$ docker build -f docker/nginx/Dockerfile` . と同一です。
 
@@ -151,12 +151,12 @@ services:
     volumes:
       - type: volume
         source: mydata # ホスト側
-        target: /data # targetはコンテナ側
+        target: /data # targetはコンテナー側
 volumes:
   mydata:
 ```
 
-sourceはホスト側で、targetはコンテナ側です、mydataはvolumeの名前で，パスではない
+sourceはホスト側で、targetはコンテナー側です、mydataはvolumeの名前で，パスではない
 **"/"から開始すると，絶対パスとなる。**
 
 ## volumes の pathの指定
@@ -167,7 +167,7 @@ sourceはホスト側で、targetはコンテナ側です、mydataはvolumeの�
 
 ## volumes 省略記法
 
-いつも上記の例のように記載するのは面倒なので，短い表記法があります．[SOURCE:]TARGET[:MODE]と指定します．例えば，以下で，sourceの./dataディレクトリとtargetの/tmp/dataディレクトリを指定します．
+いつも上記の例のように記載するのは面倒なので，短い表記法があります．[SOURCE:]TARGET[:MODE]と指定します．たとえば，以下で，sourceの./dataディレクトリとtargetの/tmp/dataディレクトリを指定します．
 
 ```yml
   volumes:
@@ -245,7 +245,7 @@ volumes:
 
 - ports
   ポートの開放を行う。
-  左にホストのポートを、右にコンテナのポートを指定する。
+  左にホストのポートを、右にコンテナーのポートを指定する。
 
   > コマンドの場合、 -p 8080:80 オプションと同一です。
 
@@ -276,7 +276,7 @@ services:
 postgresはdjangoからアクセスできればよいので，exposeを使用する。
 djangoはホストのブラウザーからアクセスするので，portsを使用する。
 
-ホストのポートを指定するのは必要がなければ，docker-composeに一任するのがよいです．例えば，ports: "5432:5432" と指定してpostgresを起動すると，複数のpostgresを使いたい時に，ポートで競合してエラーとなります．
+ホストのポートを指定するのは必要がなければ，docker-composeに一任するのがよいです．たとえば，ports: "5432:5432" と指定してpostgresを起動すると，複数のpostgresを使いたい時に，ポートで競合してエラーとなります．
 
 ## Docker Compose の portsとexposeの違い
 
@@ -291,14 +291,14 @@ djangoはホストのブラウザーからアクセスするので，portsを使
 ---
 
 - environment
-  起動するコンテナへ環境変数を定義する。
+  起動するコンテナーへ環境変数を定義する。
 
   > コマンドの場合、 -e PHP_HOST=app オプションと同一で
 
-  DBについての環境変数設定(パスワード)だが、cfcのnuxtでもやっていたからそのコンテナの環境変数を設定できそう。
+  DBについての環境変数設定(パスワード)だが、cfcのnuxtでもやっていたからそのコンテナーの環境変数を設定できそう。
 
 - env_file
-  ファイルに定義された環境変数を読み取り、コンテナへ定義する。
+  ファイルに定義された環境変数を読み取り、コンテナーへ定義する。
 
 - command
   Dockerfile で定義されている CMD の上書きを行う。
@@ -320,7 +320,7 @@ networksを設定してネットワークを共有することで、複数のdoc
 
 [参考URL](https://zenn.dev/hohner/articles/43a0da20181d34)
 
-ttyがないと、コンテナを起動させ続けるためのプロセスが存在しないためコンテナが正常終了してしまう。
+ttyがないと、コンテナーを起動させ続けるためのプロセスが存在しないためコンテナーが正常終了してしまう。
 
 ttyとは?
 >ttyとは、標準入出力となっている端末デバイス(制御端末、controlling terminal)の名前を表示するUnix系のコマンドである。元来ttyとはteletypewriter（テレタイプライター）のことを指す。

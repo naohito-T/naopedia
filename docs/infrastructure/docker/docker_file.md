@@ -32,6 +32,6 @@ COPY Gemfile.lock /app_name/Gemfile.lock
 RUN gem install bundler
 RUN bundle install
         #ADD(アド)はローカル側のファイルをdockerイメージ側の指定したディレクトリに追加（コピー）する
-        #ローカルの(.)カレントディレクトリをコンテナのapp_nameディレクトリに追加（コピー+解凍）する
+        #ローカルの(.)カレントディレクトリをコンテナーのapp_nameディレクトリに追加（コピー+解凍）する
 ADD . /app_name
 ```

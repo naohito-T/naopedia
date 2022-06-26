@@ -57,7 +57,7 @@ CSSのバンドルには**style-loader**と**css-loader**が必要
 
 [参考URL](https://ics.media/entry/16028/#webpack-babel-esnext)
 
-webpackはあくまでも依存関係を処理し一つのJSファイルにまとめる。
+webpackはあくまでも依存関係を処理しひとつのJSファイルにまとめる。
 babelはECMAScriptの構文を下位のECMAScriptに変換する
 
 ※ts-loaderを使用するのであれば無理にbabelを使用する必要はない。

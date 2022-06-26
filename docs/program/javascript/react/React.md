@@ -19,6 +19,10 @@
 - stateが更新されるとコンポーネントは再レンダリングされる
 - 再レンダリング後もstateの値は保持され、最新のstateの値を関数に渡す
 
+### tips
+
+[useStateで配列要素を追加・削除・変更する方法](https://qiita.com/itachi/items/4184b2afc35b55b45568)
+
 ### useRouter (Next.jsのみ)
 
 以下をひとつにまとめたもの
@@ -65,7 +69,7 @@ Contextとは
 - コンポーネントの再利用を難しくするため、慎重に使う必要がある
 
 
-
+https://github.com/rpearce/react-medium-image-zoom/issues
 
 
 
@@ -76,3 +80,7 @@ Contextとは
 
 [9個のfree_templateがある](https://mui.com/getting-started/templates/)
 
+
+### onClick
+
+[React.jsで、onClick時に任意の値を渡す](https://www.yoheim.net/blog.php?q=20180411)

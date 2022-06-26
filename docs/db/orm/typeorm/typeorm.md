@@ -60,7 +60,7 @@ entityはDBのテーブルと一対一で構成する。
   public ticketOptionItems?: TicketOptionItem[];
 ```
 
-上を見ればわかるだろう。一つのチケットに対して複数のオプションがある。S
+上を見ればわかるだろう。ひとつのチケットに対して複数のオプションがある。S
 
 
 

@@ -1,6 +1,7 @@
 # コーディング(program)
 
 [新人プログラマに知ってもらいたいメソッドを読みやすくするいくつかの原則](https://qiita.com/hirokidaichi/items/c9a76191216f3cc6c4b2)
+[プログラミング英語検定(これみれば変数名とか付けられる)](https://progeigo.org/learning/essential-words-600-plus/)
 
 ## コーディング速度をあげるコツ
 
@@ -57,7 +58,7 @@ const { carvingComponent } = useCarvingComponent();
 
 文字列でもマジックナンバーと同じように変数で持っておく
 **値が変わったらぶっ壊れる**とかは変数で管理するべき。
-また、ここで念頭にconfigとして別ファイルもたせられないかなど考える。
+また、ここで念頭にconfigとして別ファイルに責務を与えられないか考える。
 
 ## 正規表現でvscodeを検索する
 
@@ -105,10 +106,23 @@ handler側でパースしてしまうのがいいかと思います！
 ## メモ化を考える
 
 メモ化はNextの<Script>タグがわかりやすい
-
 [参考URL](https://zenn.dev/aiji42/articles/9a6ab12ab5f6e6)
 
-これはTBD
+### メモ化とは
+
+メモ化とは同じ結果を返す処理について、初回のみ処理を実行記録しておき値が必要になった2回目以降は、**前回の処理結果を計算することなく**呼び出し値を得られるようにすること。
+
+イベントハンドラーのようなcallback関数をメモ化し、不要に生成される関数インスタンスの作成を抑制、再描画を減らすことにより、都度計算しなくて良くなることからパフォーマンスを向上が期待できる
+
+**わかりやすく**
+関数はオブジェクトなのでプロパティを持てる。
+そのプロパティにその関数の結果を格納しておけば、毎回計算しなくても値として格納しているものを読み込むだけのため速度が速くなるよね。ということ。
+
+[メモ化参考 JS](https://qiita.com/syakegon/items/b9ef4c4c91bfd607c771)
+
+---
+
+これはTBD（To Be Determined）: 未定、未確定
 
 - コードの省略ができるか考える（ファイル量を減らす目的）
 ※しかし極端な省略はチームによっては受け入れられない。
@@ -214,7 +228,6 @@ const hasUserLicense = !(isSubscriptionFailed.value || isWaitingKonbiniCharge.va
 
 ## switch 文
 
-
 スタイルシート系は抜いて、
 網羅できていないものはいい。
 
@@ -276,3 +289,11 @@ Time.zone.now
 Time.use_zone('Asia/Tokyo') { Time.zone.now }
 # => Thu, 04 Feb 2016 19:00:00 JST +09:00
 ```
+
+## エラーメッセージは見ろ
+
+しっかりみて検索する力を、GitHubのissueとか探せ 
+
+## 変数名を考える
+
+[参考URL](https://blog.77jp.net/guidelines-for-variables-and-method-names-summary)

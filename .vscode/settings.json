@@ -38,9 +38,12 @@
     "POSIX",
     "pushd",
     "struct",
+    "Swiper",
     "udemy",
     "ULID",
     "UPSERT",
-    "Vercel"
+    "Vercel",
+    "vmax",
+    "vmin"
   ]
 }

@@ -88,8 +88,8 @@ Freeアカウントで2,000分/月 無料。
 
 ## ファイルシステム
 
-Dockerコンテナで実行されるアクションには、 /githubパスの下に静的なディレクトリがある。
-Dockerコンテナで実行されないアクションでは3つのディレクトリが作成される。これらのディレクトリパスは動的に生成されるので一定ではない。各ディレクトリの位置は対応する環境変数で取得する。
+Dockerコンテナーで実行されるアクションには、 /githubパスの下に静的なディレクトリがある。
+Dockerコンテナーで実行されないアクションでは3つのディレクトリが作成される。これらのディレクトリパスは動的に生成されるので一定ではない。各ディレクトリの位置は対応する環境変数で取得する。
 home（HOME）： ユーザ認証情報などのユーザ関連データが書き込まれる
 workspace（GITHUB_WORKSPACE）：アクションが実行されるワークディレクトリ
 workflow：workflow/event.json（GITHUB_EVENT_PATH）が書き込まれるディレクトリ
@@ -128,7 +128,7 @@ Github自身が作成しているActionがリポジトリで公開されてい�
 
 **プルリクエストの内容で実行するかしないかを決める**
 コンテキストgithubにワークフローに関する情報が色々入っている
-例えば、プルリクエストイベントでトリガーするワークフローだとgithub.event.pull_requestにGithub REST APIのpull_request相当のプルリクの情報が格納されている
+たとえば、プルリクエストイベントでトリガーするワークフローだとgithub.event.pull_requestにGithub REST APIのpull_request相当のプルリクの情報が格納されている
 
 [githubコンテキスト](https://docs.github.com/ja/actions/learn-github-actions/contexts)
 
