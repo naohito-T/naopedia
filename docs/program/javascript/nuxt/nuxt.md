@@ -14,16 +14,11 @@ Vueのフレームワーク
 Vueとは、JavaScriptを用いたViewのライブラリのこと。
 **HTMLの見た目に関すること**を実装できる（SPAアプリケーションは作成できるよ）
 
-## Versionの歴史
-
-最近 2(portfolioなどに使ってる)
-現在 version 3
-
 ## Nuxtを使うことでのメリット
 
 **SSR(Server Side Rendering)がすぐに実装できる。**
-SEOが必要な動的ページがたくさんできるようなサービスではSSR
-が必要になる。また**VueでもSSRをできるが設定に骨が折れる**
+SEOが必要な動的ページをたくさんできるようなサービスではSSRが必要になる。
+また**VueでもSSRをできるが設定に骨が折れる**
 
 ## Nuxtの仕組み
 
@@ -32,12 +27,13 @@ SEOが必要な動的ページがたくさんできるようなサービスで�
 
 **SSRとは**
 Vue.jsやReactがSPA（シングルページアプリケーション）として行っている仮想DOMなどのHTMLレンダリングをクライアントサイド（ブラウザ上）ではなくサーバサイド（Node環境）で行うイメージ
-SSRはあくまでHTMLの生成（レンダリング）をサーバサイドで行うだけであり、JSONデータを返すことは行わない。つまりバックエンドはJSONだけを返すのに集中ができる(RESTApiになぞれる)
+SSRはあくまでHTMLの生成（レンダリング）をサーバサイドで行うだけであり、JSONデータを返すことは行わない。
+つまりバックエンドはJSONだけを返すのに集中ができる（RESTApiになぞれる）
 
-そもそもSEOを改善させるために、Nuxt.jsではSSR(サーバサイドレンダリング)を利用している。
-SSRはAJAXデータをフェッチし、**Vue.jsのコンポーネントをサーバー（Node.js）上のHTML文字列にレンダリングする。**
+そもそもSEOを改善させるために、Nuxt.jsではSSR（サーバサイドレンダリング）を利用している。
+SSRはAjaxデータをフェッチし、**Vue.jsのコンポーネントをサーバー（Node.js）上のHTML文字列にレンダリングする。**
 すべての非同期ロジックが完了すると、それらを直接ブラウザに送信し、最後にスタティックなマークアップをクライアント上の完全にインタラクティブなアプリに提供する。
-この機能により、Google SEO パーサーを使って DOM 要素を通して素晴らしい解析を行うことができます
+この機能により、GoogleSEOパーサーを使ってDOM要素を通して素晴らしい解析を行うことができます
 
 
 **SSR(Server Side レンダリング)**
@@ -47,7 +43,7 @@ Nuxt.jsでSSRを使う場合は、**初回の描画時はSSRとCSR**
 ## Nuxt 各ディレクトリについて
 
 **assets**
-基本的にはcss/scss/imageはこのフォルダ内で管理します。
+基本的にはcss/scss/imageはこのフォルダー内で管理します。
 
 **components**
 各ページで共通化して利用するコンポーネント置き場
@@ -58,13 +54,13 @@ Nuxt.jsでSSRを使う場合は、**初回の描画時はSSRとCSR**
 ## middleware
 
 指定したページで**asyncDataやfetchよりも先に呼ばれる共通処理の置き場**
-nuxt.cofig.jsで全ページで指定するケースもあれば、必要なページからのみ呼び出して使うこともある。
+`nuxt.config.js`で全ページ指定するケースもあれば、必要なページからのみ呼び出して使うこともある。
 
 利用用途が多い例
 **ユーザ認証に使われる**
 
 **SSR**
-ミドルウェアはサーバサイドでは一度だけ呼び出され（Nuxt アプリケーションへの最初のリクエスト時、またはページの再読込み時）クライアントサイドでは他のルートへ移動したときに呼び出されます。
+ミドルウェアはサーバサイドでは一度だけ呼び出され（Nuxtアプリケーションへの最初のリクエスト時、またはページの再読込み時）クライアントサイドでは他のルートへ移動したときに呼び出されます。
 
 **SPA**
 ミドルウェアはクライアントサイドで最初のリクエスト時と他のルートへ移動したときに呼び出されます。
@@ -113,12 +109,12 @@ Nuxtはnuxt.config.jsのmodeプロパティとtargetプロパティによって�
 devコマンドはtargetの設定値に影響せず同じ仕様
 
 - start
-startコマンドはサーバーを立ち上げるが、targetの設定値によって、読み込むディレクトリが異なる
-nuxt start ; 静的なホスティング(Netlify, Vercel, Surge など)のように dist/ディレクトリを提供し、**デプロイ前のテストに最適です。**
+startコマンドはサーバーを立ち上げるが、targetの設定値によって読み込むディレクトリが異なる
+nuxt start : 静的なホスティング（Netlify, Vercel, Surgeなど）のようにdist/ディレクトリを提供し、**デプロイ前のテストに最適です。**
 
 - build
-アプリケーションをWebpackでビルドし、JSとCSSをminifyするコマンド
-ビルドファイルの出力先は.nuxt配下
+アプリケーションをwebpackでビルドし、JSとCSSをminifyするコマンド
+ビルドファイルの出力先は`.nuxt/`配下
 **buildコマンドはtarget: server専用**
 
 - generate
@@ -151,6 +147,13 @@ setup(props) {
 
 ```
 
+## Vue.jsのcreated、mounted、data
+
+[Vue.jsのcreated、mounted、data](https://medium.com/veltra-engineering/in-ssr-vue-js-is-created-twice-7f9122de9b77)
+
+nuxtの前にそもそもVue.jsのライフサイクルフックとして用意されている created と mounted 、およびデータをリアクティブにする dataプロパティについて理解する。
+
+
 
 ## Nuxt2と3の違い(非同期関数について)
 
@@ -161,19 +164,24 @@ setup(props) {
 
 >Nuxt 2 では Options API の asyncData() や Composition API の useAsync(), useFetch(), useStatic() などを使用し、おもに SSG などにおいて画面描画に必要なデータを非同期に取得するといった使い方をしてきました。
 >Nuxt 3 ではそれらが新たに useFetch() と useAsyncData() のふたつにアップデートされています。
-（くわえてデータ取得時に画面描画をブロックしない useLazyFetch() と useLazyAsyncData() も加わりました）
+（くわえてデータ取得時に画面描画をブロックしない`useLazyFetch()`と`useLazyAsyncData()`も加わりました）
 
 **Nuxt2**
-Options API の asyncData() や Composition API の useAsync(), useFetch(), useStatic()
+Options APIのasyncData()やComposition APIのuseAsync(), useFetch(), useStatic()
 
 ### asyncData()
 
-ページがロードされる前に(Vueインスタンスが作成される前)に呼び出される関数で、通常API呼び出しなどの非同期処理を記述する
+ページがロードされる前に（Vueインスタンスが作成される前）に呼び出される関数で、通常API呼び出しなどの非同期処理を記述する
 
+### created()
+
+API通信を行うもの。基本はcreated()を使用しDOMを操作しないといけない時にmounted()を使用する手法
+createdは、Vueインスタンスが作成された直後に呼ばれる関数で、Vueインスタンスの各種プロパティ、メソッドは利用できますが、レンダリングが完了していないため、エレメントは利用できません。
+mounted は、レンダリングが完了した直後に呼ばれる関数で、エレメントへのアクセスも可能となります。なお、子コンポーネントのレンダリング完了は保証されていません。
 
 ### useAsync() Options APIベースで言うとasyncDataでやっていたことに対応する場合
 
-@nuxtjs/composition-api にあるuseAsync は、setup() 時に呼ぶ関数で、SSR時はサーバサイドで情報を取得し、SPA時にはページ遷移時に呼び出したいものを用意できるという代物。
+@nuxtjs/composition-apiにあるuseAsync は、setup() 時に呼ぶ関数で、SSR時はサーバサイドで情報を取得し、SPA時にはページ遷移時に呼び出したいものを用意できるという代物。
 
 **useAsync の利用上の注意**
 asyncDataのようにuseAsyncはサーバサイドでロードされ、結果をHTMLに書き出す挙動になっている。
