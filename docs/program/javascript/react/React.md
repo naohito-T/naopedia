@@ -19,6 +19,10 @@
 - stateが更新されるとコンポーネントは再レンダリングされる
 - 再レンダリング後もstateの値は保持され、最新のstateの値を関数に渡す
 
+### tips
+
+[useStateで配列要素を追加・削除・変更する方法](https://qiita.com/itachi/items/4184b2afc35b55b45568)
+
 ### useRouter (Next.jsのみ)
 
 以下をひとつにまとめたもの
