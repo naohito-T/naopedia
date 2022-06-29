@@ -4,6 +4,7 @@
 nodeのconsole.logはターミナル上、つまりSSR時
 csr（ブラウザ）のconsole.logは検証で出力される
 
+[nuxtでのfetchについてめちゃくちゃ詳しい](https://medium.com/veltra-engineering/in-ssr-vue-js-is-created-twice-7f9122de9b77)
 
 [これは素晴らしいBlog](https://www.i-ryo.com/entry/2020/02/13/083521)
 [composition apiの違いについて](https://nansystem.com/nuxt-composition-api-v2-diff/)
