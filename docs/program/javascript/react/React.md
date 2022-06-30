@@ -69,7 +69,7 @@ Contextとは
 - コンポーネントの再利用を難しくするため、慎重に使う必要がある
 
 
-
+https://github.com/rpearce/react-medium-image-zoom/issues
 
 
 
