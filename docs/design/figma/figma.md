@@ -10,6 +10,18 @@
     └── ページ（リサーチ）# ブードボードやリファレンス（参考資料）デザインのベースになるコンセプトになるような画像を突っ込む
 ```
 
+## figma tips
+
+shift
+shift押下しながら縮小すると縦横比を保ちながら縮小する。
+
+
+## figma web design作り方
+
+1. Grid Layoutを作る
+[Grid Layoutわかりやすい](https://note.com/kayo_design/n/nbeddf8975a8b)
+2. headerからdesignを作る
+
 
 ## 勉強Tips
 
