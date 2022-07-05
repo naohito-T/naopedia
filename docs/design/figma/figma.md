@@ -31,4 +31,4 @@ shift押下しながら縮小すると縦横比を保ちながら縮小する。
 
 ## Plugin
 
-[色々おすすめのプラグインを紹介している](https://wentz-design.com/post/figma-how-to-use-plugins/)git fetch
+[色々おすすめのプラグインを紹介している](https://wentz-design.com/post/figma-how-to-use-plugins/)
