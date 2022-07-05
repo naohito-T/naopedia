@@ -186,3 +186,11 @@ WEBサイトなどで一般的に用いられるPCモニター画面表示用の
 ## imageのアスペクト比計算
 
 [参考URL](https://ocadweb.com/aspectratiotools)
+
+
+## designの4大ルール
+
+- 整列
+- 近接
+- 強弱
+- 反復
