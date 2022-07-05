@@ -237,3 +237,7 @@ CSSの学習はz-index: 10;やjustify-content: center;のようなプロパテ�
 ## メディアクエリとコンテナクエリ
 
 [参考URL](https://coliss.com/articles/build-websites/operation/css/about-css-container-queries.html)
+
+## object-fit
+
+[わかりやすい](https://webdesignday.jp/inspiration/technique/css/7976/)
