@@ -291,10 +291,6 @@ if(!true){
 
 ```
 
-```js
-
-```
-
 ## コールバック関数
 
 [参考URL](https://sbfl.net/blog/2019/02/08/javascript-callback-func/)
