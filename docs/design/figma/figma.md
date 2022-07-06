@@ -22,6 +22,8 @@ shift押下しながら縮小すると縦横比を保ちながら縮小する。
 [Grid Layoutわかりやすい](https://note.com/kayo_design/n/nbeddf8975a8b)
 2. headerからdesignを作る
 
+## figmaで
+
 
 ## 勉強Tips
 
