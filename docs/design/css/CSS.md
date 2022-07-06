@@ -6,7 +6,7 @@ CSSを理解するには、レイアウトアルゴリズムがどのように�
 [参考URL](https://coliss.com/articles/build-websites/operation/css/about-css-layout-algorithms.html)
 
 
-flexbox: IE対応?
+flexbox: IE対応かは不明
 grid layout: IE対応していないのであれば積極的に使う
 
 
