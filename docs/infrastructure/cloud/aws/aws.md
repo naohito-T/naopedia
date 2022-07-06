@@ -274,7 +274,6 @@ defaultのクレデンシャルをconfigに実装することができる。
 
 [参考URL](https://blog.microcms.io/aws-vault-introduction/)
 
-
 ## Tips
 
 [aws-vaultでアクセスキーをセキュアに保存しつつ、MFAもシームレスにやる](https://zenn.dev/nemolize/articles/3a5d03a7974eea)
