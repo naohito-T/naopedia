@@ -42,6 +42,8 @@
     "udemy",
     "ULID",
     "UPSERT",
-    "Vercel"
+    "Vercel",
+    "vmax",
+    "vmin"
   ]
 }

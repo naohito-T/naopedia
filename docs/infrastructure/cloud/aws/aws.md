@@ -163,7 +163,7 @@ AWS CDKを使ってS3とCloudFrontを作成する
 
 ## マルチAZ配置
 
-マルチAZとは、米アマゾンドットコム（Amazon.com）社のAmazon Web Services（AWS）におけるシステム構成の一つで、複数のアベイラビリティゾーン（AZ）にまたがってシステムの配置を行う方式。
+マルチAZとは、米アマゾンドットコム（Amazon.com）社のAmazon Web Services（AWS）におけるシステム構成のひとつで、複数のアベイラビリティゾーン（AZ）にまたがってシステムの配置を行う方式。
 
 AZ = アベイラビリティーゾーン
 

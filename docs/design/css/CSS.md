@@ -1,5 +1,7 @@
 # CSS
 
+[CSSリファレンス](https://developer.mozilla.org/ja/docs/Learn/CSS/First_steps)
+
 ## CSSを本当に理解するには
 
 CSSを理解するには、レイアウトアルゴリズムがどのように機能するかを理解する必要があります。プロパティを知るだけでは不十分
@@ -12,7 +14,7 @@ grid layout: IE対応していないのであれば積極的に使う
 
 ## ユビキタス
 
-HEX形式: プログラムイメージ（コードとデータを表すの 16 進数列）をテキストで表現したもの
+HEX形式: プログラムイメージ（コードとデータを表すの16進数列）をテキストで表現したもの
 
 ```css
 /* HEX6桁 */
@@ -20,23 +22,23 @@ HEX形式: プログラムイメージ（コードとデータを表すの 16 �
   color: #e0e0e0;
 }
 /* HEX8桁 最後は透過 */
-.class2{
+.class2 {
   color: #E0E0E0E0;
 }
 ```
 
 ## width
 
-- 100% と auto の違い
+- 100%とautoの違い
 
 > 【width:auto】の場合は、左右の余白 10px を含んで横幅 100%になります。 【width:100%】の場合は、左右の余白 10px を含まずに横幅 100%になるため、実際の横幅は 100%+20px（左右の余白分）になります。
-例えば PC 版のコーディングから行うとして、width を px 指定したときなどはブレイクポイントを設けて SP 版用に幅を上書きする。この流れはよくあります。共に、親要素の幅に合わせるとういう意味では同じですが、padding や border を指定する場合にちょっと違ってきます。
+たとえばPC版のコーディングから行うとして、widthをpx指定したときなどはブレイクポイントを設けてSP版用に幅を上書きする。
+この流れはよくある。共に、親要素の幅に合わせるとういう意味では同じですが、paddingやborderを指定する場合にちょっと違ってきます。
 
-Media Queries をつかって width を上書きする場合はこちらが便利です。
-上の図を使って説明すると...boxA に padding:20px;があたっていて内側に boxb がある、と。
-boxB に width:auto;を付与すると、boxB の幅は、以下になります。
+MediaQueriesをつかってwidthを上書きする場合はこちらが便利です。
 
-width auto だと flex の justify がきく
+
+width autoだとflexのjustifyがきく
 
 - vw, vh, vmin, vmaxについて
 [参考URL(一番わかりやすい)](https://coliss.com/articles/build-websites/operation/css/css-viewport-units.html)
@@ -57,7 +59,7 @@ flex-basic
 
 [一番わかりやすいflexbox](https://www.webcreatorbox.com/tech/css-flexbox-cheat-sheet)
 
-### 親要素にFlexコンテナに指定するプロパティ
+### 親要素にFlexコンテナーに指定するプロパティ
 
 - flex-direction
 row（初期値）… 子要素を左から右に配置
@@ -86,6 +88,12 @@ CSS変数 : ブラウザで実行できる動的なCSSプロパティ
 プリプロセッサ(scssなど) : プリプロセッサーの変数はCSSコードにコンパイルされるためブラウザーは関与しない。
 
 スタイルシートドキュメント内のCSS変数は、インラインスタイル属性やSVGのプレゼンテーション属性で変更したり、JavaScriptで選択、操作したりできるのです。可能性が無限に広がります。**プリプロセッサーの変数では実現できません。**
+
+## アットルール
+
+[リファレンス](https://developer.mozilla.org/ja/docs/Web/CSS/At-rule)
+
+アットルールはCSS文のうち、CSSの動作を既定するもの
 
 
 ## 疑似クラス
@@ -124,7 +132,7 @@ Grid Layoutを使えば
 floatだと、親要素にdivを増やす必要があったのが、Grid Layoutを使えばそのようなムダなHTML要素を増やさなくて構わなくなる
 
 - 作り方
-Grid Layoutはレイアウトを囲むコンテナーの要素に、その子要素の配置の仕方を指定する。Flexboxと違い、要素を並べる行・列コンテナーとなる要素を用意する必要はない。
+Grid Layoutはレイアウトを囲むコンテナーーの要素に、その子要素の配置の仕方を指定する。Flexboxと違い、要素を並べる行・列コンテナーーとなる要素を用意する必要はない。
 
 ## link tag
 
@@ -148,7 +156,7 @@ preconnect ヒントは指定した URL の DNS 名前解決と TCP のハンド
 >CSS GridとFlexboxは、CSSで現在主流となるレイアウトのテクノロジーです。
 >CSS GridとFlexboxは表面的には似ているように感じるかもしれません。しかし、実際には異なるタスクに使用され、それぞれ異なるレイアウトの問題を解決します。
 
-**CSS Gridはコンテナベースで、Flexboxはコンテンツベースです。Flexboxのレイアウトではセル（Flexアイテム）のサイズはFlexアイテム自身で定義され、CSS Gridではセル（Gridアイテム）のサイズはGridコンテナで定義されます。**
+**CSS Gridはコンテナーベースで、Flexboxはコンテンツベースです。Flexboxのレイアウトではセル（Flexアイテム）のサイズはFlexアイテム自身で定義され、CSS Gridではセル（Gridアイテム）のサイズはGridコンテナーで定義されます。**
 
 - リロード時間の違い
 **Flexboxのレイアウトではコンテンツがロードされた後に計算されるのに対して、Gridのレイアウトではコンテンツに関係なく計算されることを示している。**
@@ -178,11 +186,11 @@ CSS Grid Layout（グリッドレイアウト）は、**2次元レイアウト**
 
 ## Grid Layoutの用語
 
-- コンテナ
-`display: grid;`または`display: inline-grid;`を指定することでその要素は**Grid Layoutのコンテナになる。**
+- コンテナー
+`display: grid;`または`display: inline-grid;`を指定することでその要素は**Grid Layoutのコンテナーになる。**
 
 - アイテム
-コンテナの子要素。**コンテナの直接の子要素は基本的にすべてアイテムとなる。**
+コンテナーの子要素。**コンテナーの直接の子要素は基本的にすべてアイテムとなる。**
 
 - ライン
 グリッドを分ける垂直および水平の線のことです。グリッドの上下左右それぞれの両端にも存在します。
@@ -219,8 +227,6 @@ grid-template-columns: 列のトラックの幅を半角スペースで区切っ
 最後にそれぞれのアイテムをグリッドのどのエリアに配置するのかを指定する。
 **アイテムを配置するのには2通りの方法がある。**
 
-
-
 ## CSS 仕組み
 
 [参考URL](https://coliss.com/articles/build-websites/operation/css/about-css-layout-algorithms.html)
@@ -234,7 +240,7 @@ CSSの学習はz-index: 10;やjustify-content: center;のようなプロパテ�
 
 ### CSSにおけるレイアウトのアルゴリズム
 
-## メディアクエリとコンテナクエリ
+## メディアクエリとコンテナークエリ
 
 [参考URL](https://coliss.com/articles/build-websites/operation/css/about-css-container-queries.html)
 

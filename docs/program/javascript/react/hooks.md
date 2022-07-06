@@ -136,7 +136,7 @@ const [state, dispatch] = useReducer(reducer, initialState);
 dispatchを実行すればレンダリングが走る.
 
 - 使用例
-例えば、レンダリングが走らないな。とか思ったときに強制的にレンダリングをかけたい場合
+たとえば、レンダリングが走らないな。とか思ったときに強制的にレンダリングをかけたい場合
 
 ```ts
 const [_, dispatch] = useReducer((boolean) => !boolean, false);
