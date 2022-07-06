@@ -171,7 +171,7 @@ Context.Consumer
 
 - Context Provider
 Context Providerとは、Contextオブジェクトが持つコンポーネントで**対象の値の利用可能な範囲を指定するために使うもの**
-具体的には**コンポーネントツリー上でContext Providerの内側にある全てのコンポーネントからそのProviderに対応したコンテキストの値を利用できる。**
+具体的には**コンポーネントツリー上でContext Providerの内側にあるすべてのコンポーネントからそのProviderに対応したコンテキストの値を利用できる。**
 
 - Context Consumer
 Context Consumerとは、Context Providerと同じくContextオブジェクトに備わったコンポーネントのひとつで**コンテキスト値を利用したい場合で使うもの**

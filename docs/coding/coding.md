@@ -1,6 +1,7 @@
 # コーディング(program)
 
 [新人プログラマに知ってもらいたいメソッドを読みやすくするいくつかの原則](https://qiita.com/hirokidaichi/items/c9a76191216f3cc6c4b2)
+[プログラミング英語検定(これみれば変数名とか付けられる)](https://progeigo.org/learning/essential-words-600-plus/)
 
 ## コーディング速度をあげるコツ
 
@@ -226,7 +227,6 @@ const hasUserLicense = !(isSubscriptionFailed.value || isWaitingKonbiniCharge.va
 [ドミルガンの法則](https://ja.wikipedia.org/wiki/%E3%83%89%E3%83%BB%E3%83%A2%E3%83%AB%E3%82%AC%E3%83%B3%E3%81%AE%E6%B3%95%E5%89%87)
 
 ## switch 文
-
 
 スタイルシート系は抜いて、
 網羅できていないものはいい。

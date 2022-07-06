@@ -91,7 +91,7 @@ LANケーブルを挿す穴がくっついている。
 
 [参考URL](https://qiita.com/Masato338/items/f162394fbc37fc490dfb)
 
-ローカルマシン上の全てのIPv4アドレスのこと。
+ローカルマシン上のすべてのIPv4アドレスのこと。
 仮想環境(Docker)で起動したRailsはlocalhostのipアドレス127.0.0.1でアクセスできない。
 そのため仮想外部からアクセスできるようにip 0.0.0.0に紐付けする必要がある。
 
@@ -119,4 +119,4 @@ $ ifconfig | grep "inet"
 	inet6 fe80::fc09:e8a2:beb6:2447%utun6 prefixlen 64 scopeid 0x18
 ```
 
-0.0.0.0のipアドレスは表示されたipアドレス全てを表している。
+0.0.0.0のipアドレスは表示されたipアドレスすべてを表している。
