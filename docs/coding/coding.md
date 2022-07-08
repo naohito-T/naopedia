@@ -293,3 +293,7 @@ Time.use_zone('Asia/Tokyo') { Time.zone.now }
 ## エラーメッセージは見ろ
 
 しっかりみて検索する力を、GitHubのissueとか探せ 
+
+## 変数名を考える
+
+[参考URL](https://blog.77jp.net/guidelines-for-variables-and-method-names-summary)

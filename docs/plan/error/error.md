@@ -33,7 +33,7 @@
 ---
 
 ## Tool 群について
-
+    
 ### Sentry
 
 [参考URL](https://sentry.io/welcome/)
@@ -50,3 +50,6 @@ or
 サーバ側でレスポンスがスコアの判定が返されている訳ではないため
 
 
+## 重複エラーを伝える英語フレーズ
+
+[参考URL](https://qiita.com/suin/items/b51f1434723f4979e8c8)

@@ -103,6 +103,36 @@ export async function getStaticProps() {
 Static（通称SSG、SG）を利用するメリット
 **CDNに静的ファイルをキャッシュ**することで表示のスピードUPを実現
 
+## ISR(Incremental Static Regeneration)
+
+[リファレンス](https://nextjs.org/docs/basic-features/data-fetching/overview#incremental-static-regeneration)
+
+[Next ISRで動的コンテンツをキャッシュするときの戦略](https://zenn.dev/catnose99/articles/8bed46fb271e44)
+ISRとは、動的なコンテンツを含むページも静的ページとしてCDNにキャッシュすることが可能になる。
+
+ISRを使うことで動的なコンテンツを含むページも静的ページとしてCDNにキャッシュすることが可能になる。Next.jsのISRはドキュメントに書かれているようにstale-while-revalidateという考え方でキャッシュが行われる。
+具体的には、リクエスト時にページのキャッシュを作成し、次のアクセスではキャッシュされた古いデータを返します。その裏で次のアクセスに向けてキャッシュが再生成されるというイメージです。
+
+getStaticProps単体だと長期間キャッシュされる静的なページが出力される（いわゆるSSGというやつ）ここに`revalidate`を追加するとISRになる。
+
+`revalidate: 10`の挙動は以下
+- キャッシュが作られた後、10秒間はそのキャッシュを返し続ける（10秒以内に100回アクセスされてもキャッシュの再生成はされない）
+- 10秒経ったあとはキャッシュが古くなったとみなされる。ただし次のリクエストでもいったんはそのキャッシュを返す（1時間後にアクセスがあった場合もいったん古いキャッシュを返す）
+  - その裏でキャッシュを再生成する
+  - その次のリクエストでは再生成されたキャッシュを返す
+
+```ts
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const posts = await getPosts();
+  return {
+    props: {
+      posts,
+    },
+    revalidate: 10 // 👈 ポイント
+  };
+};
+```
+
 
 ### 各コマンド仕組み
 
