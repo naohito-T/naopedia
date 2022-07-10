@@ -1,7 +1,9 @@
 # Test
 
+[E2E Test導入で嬉しいこと](https://logmi.jp/tech/articles/323523)
 [メルペイのテスト方針](https://engineering.mercari.com/blog/entry/20211208-test-automation-policy-in-merpay-frontend/)
 [Test管理ツール(Excelとかで管理していたのをさらに管理する)](https://gift-tech.co.jp/articles/Qase/)
+[webアプリケーション開発で個人的に重視しているテストの話](https://nakka-k.hatenablog.com/entry/2019/06/25/000752)
 
 ## Test ガントチャート
 
@@ -19,7 +21,7 @@
 ユニットテストはJestを用いて、主にTypeScriptで記述された関数ロジックをテストする。※Vuex、vueファイルは除く
 
 **2. インテグレーションテスト**
-インテグレーションテストは主に Web ページ単位のテストで、Nuxt でいうところの pages 配下のページコンポーネント単位のテストに相当します。Vue コンポーネントやユーティリティ関数、Nuxt middleware や plugin、Vuex Store などページに含まれるものすべてが統合されます。ユニットテストで対象外としていた、コンポーネントや Vuex Store ロジックもここで担保されます。Cypress を用いており、該当のアプリケーションと同じリポジトリにテストコードも置きます。
+インテグレーションテストは主にWebページ単位のテストで、Nuxtでいうところのpages配下のページコンポーネント単位のテストに相当します。Vueコンポーネントやユーティリティ関数、Nuxt middlewareやplugin、Vuex Storeなどページに含まれるものすべてが統合されます。ユニットテストで対象外としていた、コンポーネントやVuex Storeロジックもここで担保されます。Cypressを用いており、該当のアプリケーションと同じリポジトリにテストコードも置きます。
 
 >元々は Vue Test Utils などを用いてインテグレーションテストを行っていました。しかし、Nuxt 固有の処理や Vuex State、ブラウザ固有の処理のモックなど、テストのための設定が多くなってしまっていまいテスト運用に難がありました。代わりに Cypress を用いる方針に現在はシフトしています。Cypress の機能で API レスポンスだけモックし、それ以外はリアルなアプリケーションを実際のブラウザ上でテストすることができます。
 
@@ -234,11 +236,11 @@ OK testとNG testを書くのが、単体テストかけますレベル
 
 [TestRail](https://qiita.com/tsuyo_pon/items/b85139f2c087b8cdfc72)
 
-Excel でテストケースを管理していてこんなことで悩んでいませんか？
+Excelでテストケースを管理していてこんなことで悩んでいませんか？
 - 過去のテストケースを探すのに時間がかかる
 - 〇〇の修正をした時はこのテストしてね！っていうのを管理したい
 - テストにどれくらい時間がかかったか把握したい
-- とにかくExcel でテストケースを作成するのが面倒
+- とにかくExcelでテストケースを作成するのが面倒
 
 ## TestRailとは
 
@@ -247,3 +249,4 @@ Excel でテストケースを管理していてこんなことで悩んでい�
 ## ER
 
 [E2E テスト](https://qiita.com/mt0m/items/7e18d8802843d9f60d28)
+
