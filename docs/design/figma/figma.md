@@ -25,6 +25,16 @@ shift押下しながら縮小すると縦横比を保ちながら縮小する。
 ## figmaで
 
 
+## Google Fonts 導入
+
+[参考URL](https://note.com/wakaaaa/n/n524dc609f909)
+Googleが提供するWebフォントのサービスで、オープンソースで提供されており、基本的に無料で使用できる。
+さまざまな言語のフォントも用意されている。
+>Illustratorやphotoshopの場合だとフォントを一度ダウンロードした後、インストールしてフォントを選んで使用するということが当たり前であったと思いますが、Figmaの場合は使用したいGoogle Fontsの名前がわかっていれば、ダウンロードやインストールをせずに使用することが可能です
+
+
+
+
 ## 勉強Tips
 
 [youtube参考](https://www.youtube.com/watch?v=JuaXJ4DgItY)

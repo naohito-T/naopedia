@@ -4,6 +4,7 @@
 [メルペイのテスト方針](https://engineering.mercari.com/blog/entry/20211208-test-automation-policy-in-merpay-frontend/)
 [Test管理ツール(Excelとかで管理していたのをさらに管理する)](https://gift-tech.co.jp/articles/Qase/)
 [webアプリケーション開発で個人的に重視しているテストの話](https://nakka-k.hatenablog.com/entry/2019/06/25/000752)
+[E2E テストを導入するのか](https://commerce-engineer.rakuten.careers/entry/tech/0031)
 
 ## Test ガントチャート
 
