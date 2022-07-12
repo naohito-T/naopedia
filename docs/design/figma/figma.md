@@ -22,9 +22,6 @@ shift押下しながら縮小すると縦横比を保ちながら縮小する。
 [Grid Layoutわかりやすい](https://note.com/kayo_design/n/nbeddf8975a8b)
 2. headerからdesignを作る
 
-## figmaで
-
-
 ## Google Fonts 導入
 
 [参考URL](https://note.com/wakaaaa/n/n524dc609f909)
@@ -32,7 +29,10 @@ Googleが提供するWebフォントのサービスで、オープンソース�
 さまざまな言語のフォントも用意されている。
 >Illustratorやphotoshopの場合だとフォントを一度ダウンロードした後、インストールしてフォントを選んで使用するということが当たり前であったと思いますが、Figmaの場合は使用したいGoogle Fontsの名前がわかっていれば、ダウンロードやインストールをせずに使用することが可能です
 
+## figma での斜め事情
 
+Figmaではオブジェクトを斜めに変形させることができない。
+pluginの`SkewDat`を使うと、このIllustratorの旋回と同じような効果をFigmaだけで完結できる。
 
 
 ## 勉強Tips
