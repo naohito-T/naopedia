@@ -182,15 +182,29 @@ WEBサイトなどで一般的に用いられるPCモニター画面表示用の
 アニメーションドロワー
 [参考URL](https://webdesignfacts.net/entry/css-drawrmenu/#gsc.tab=0)
 
-
-## imageのアスペクト比計算
-
-[参考URL](https://ocadweb.com/aspectratiotools)
-
-
 ## designの4大ルール
 
 - 整列
 - 近接
 - 強弱
 - 反復
+
+---
+
+## アスペクト比とは
+
+写真や映像の縦と横の比率を表したもの
+[参考URL](https://ocadweb.com/aspectratiotools?wh=w&file1=)
+
+### 16:9
+
+16:9は、デジタルテレビのハイビジョン映像で採用されている縦横比でワイドビジョンとも言われている。
+地デジでも用いられている。
+以前までYouTubeは4:3だが、現在は16:9のアスペクト比になっています。
+ニコニコ動画では4:3、16:9が標準になっています。
+
+
+
+## imageのアスペクト比計算
+
+[参考URL](https://ocadweb.com/aspectratiotools)
