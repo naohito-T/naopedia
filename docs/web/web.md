@@ -23,9 +23,15 @@ webブラウザでは`<a>`タグで示されたハイパーリンクをユーザ
 
 [無限スクロールは考慮することが多い](https://blog.ojisan.io/i-hate-infinite-scroll/)
 
+<<<<<<< HEAD
 ## 画像をダウンロードできなくさせる
 
 管理者で設定できることはすべて突破される。
 インターネットに公開するというのはそういうこと
 
 [参考URL](https://qiita.com/shisama/items/be0e432711de359598ed)
+=======
+## hoverでのスマホ対応
+
+[参考URL](https://pengi-n.co.jp/blog/hover/)
+>>>>>>> origin/main
