@@ -14,7 +14,8 @@ grid layout: IE対応していないのであれば積極的に使う
 
 ## ユビキタス
 
-HEX形式: プログラムイメージ（コードとデータを表すの16進数列）をテキストで表現したもの
+HEX形式
+プログラムイメージ（コードとデータを表すの16進数列）をテキストで表現したもの
 
 ```css
 /* HEX6桁 */
@@ -247,3 +248,13 @@ CSSの学習はz-index: 10;やjustify-content: center;のようなプロパテ�
 ## object-fit
 
 [わかりやすい](https://webdesignday.jp/inspiration/technique/css/7976/)
+
+## calc()
+
+[参考URL(コリス)](https://coliss.com/articles/build-websites/operation/css/how-calc-works-by-ire.html)
+
+calc()は計算された値がブラウザに反映されるのではなく**ブラウザによって解析された値が実際のcalc()の計算式となる。**
+これはブラウザにおける値がより動的になり、ビューポートの変更に合わせて適応できることを意味する（都度計算される）
+たとえば、ビューポートの高さから絶対値を引いた要素をビューポートの変更に合わせて適応させることができます。
+
+
