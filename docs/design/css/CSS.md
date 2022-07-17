@@ -17,6 +17,9 @@ grid layout: IE対応していないのであれば積極的に使う
 HEX形式
 プログラムイメージ（コードとデータを表すの16進数列）をテキストで表現したもの
 
+最後の2桁透過部分
+[参考URL](https://qiita.com/CUTBOSS/items/6166cf79b9f18c45a010)
+
 ```css
 /* HEX6桁 */
 .class {

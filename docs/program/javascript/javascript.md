@@ -297,3 +297,8 @@ if(!true){
 
 よく使われる解説
 >別の関数に呼び出してもらうための関数
+
+## タグ付きテンプレートリテラル
+
+styled-componentsで使用されているやつ
+[参考URL](https://zenn.dev/nekoniki/articles/bdf79a512e057ae72613)

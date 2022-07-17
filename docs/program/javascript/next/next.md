@@ -105,6 +105,13 @@ export async function getStaticProps() {
 Static（通称SSG、SG）を利用するメリット
 **CDNに静的ファイルをキャッシュ**することで表示のスピードUPを実現
 
+## SSR回避させる
+
+[SSR回避 実装パターン集](https://nishinatoshiharu.com/next-exec-only-client/)
+
+
+
+
 ## ISR(Incremental Static Regeneration)
 
 [リファレンス](https://nextjs.org/docs/basic-features/data-fetching/overview#incremental-static-regeneration)

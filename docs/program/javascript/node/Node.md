@@ -1,5 +1,11 @@
 # node
 
+TypeScriptのコードを実行する
+TypeScript → JavaScriptに変換してからnodeでの実行
+**ts-nodeだと1ステップでTypeScriptのコードを実行できる**
+
+通常、TypeScriptで書かれたNode.jsプロジェクトは、tscでtranspileをし、生成されたJavaScriptファイルを実行する必要がある。ts-nodeを使うことでこのステップを省略する。
+
 
 ## npm自体のアップデート
 
