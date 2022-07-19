@@ -75,6 +75,18 @@ https://github.com/rpearce/react-medium-image-zoom/issues
 
 ---
 
+## styled-components
+
+[styled-components基本](https://qiita.com/taneba/items/4547830b461d11a69a20)
+
+使うメリットがなんだろうって考えた
+
+ローカルスコープができる
+cssの長い命名規則から解き放たれる
+
+
+
+
 ## Tips
 ### material-ui
 
