@@ -10,6 +10,10 @@
 
 [GitHub Flowわかりやすい](https://cloudsmith.co.jp/blog/efficient/2020/08/1534208.html)
 
+## Git default動作
+
+Gitではファイル名の大文字・小文字の変更を検知しない。
+
 
 ---
 

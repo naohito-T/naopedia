@@ -11,6 +11,10 @@ TypeScript → JavaScriptに変換してからnodeでの実行
 
 [参考URL](https://qiita.com/n0bisuke/items/b2704b6ebb84f21c03c1)
 
+## npmとyarnとpnpm
+
+[参考URL](https://zenn.dev/hibikine/articles/27621a7f95e761#discuss)
+
 ## Node jsとは
 
 ## package.json
@@ -18,8 +22,9 @@ TypeScript → JavaScriptに変換してからnodeでの実行
 
 - npm script
 
-npm runで実行できるエイリアスコマンド
-npm runで実行することローカルnode_moduleにインストールしたpackageを実行できる。****
+`$ npm run`で実行できるエイリアスコマンド
+`$ npm run`で実行するとローカルnode_moduleにインストールしたpackageのコマンドを実行できる。
+
 
 - 優先度
 
