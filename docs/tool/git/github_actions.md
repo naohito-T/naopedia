@@ -511,6 +511,8 @@ GitHub cdがダサいとき
 
 ## ブランチによって変数を分ける
 
+[参考URL](https://zenn.dev/hashito/articles/aef4de448f341b)
+
 ```yml
 name: learn-github-actions
 on: [push]

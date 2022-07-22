@@ -306,3 +306,18 @@ Time.use_zone('Asia/Tokyo') { Time.zone.now }
 
 [参考URL](https://ja.stackoverflow.com/questions/41164/%E3%82%B9%E3%82%AB%E3%83%A9%E3%83%BC-%E3%81%A8-%E3%83%97%E3%83%AA%E3%83%9F%E3%83%86%E3%82%A3%E3%83%96-%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)
 
+
+## アノテーションコメント
+
+[参考URL](https://blog.shitake4.tech/entry/2017/10/03/%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AE%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88%E3%81%A7%E8%A6%8B%E3%82%8BTODO%E3%81%A3%E3%81%A6%E4%BD%95%EF%BC%9F)
+
+Rubyのstyle guideから
+Rubyではコードの中からアノテーションコメントを見つけるライブラリがある。
+
+```ts
+// TODO: 後で追加すべき内容を表す
+// FIXME: 修正すべき箇所を表す
+// OPTIMIZE: パフォーマンスの最適化をすべき箇所を表す
+// HACK: リファクタリングすべき箇所を表す
+// REVIEW: レビューすべき箇所を記す
+```

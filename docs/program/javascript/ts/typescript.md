@@ -7,6 +7,7 @@
 
 [これまとめる](https://zenn.dev/nash/articles/bb5048a2754245)
 [これもまとめる](https://developer.hatenastaff.com/entry/2016/06/27/140931)
+[TypeScriptのモデル生成速度比較](https://blog.mamansoft.net/2019/03/17/typescript-model-created-comparison/)
 ## import した時に、TypeScriptの型定義がない場合取れる対策
 
 [参考URL](https://medium.com/@ryutamaki/npm-module-%E3%81%AB-typescript-%E3%81%AE%E5%9E%8B%E5%AE%9A%E7%BE%A9%E3%81%8C%E3%81%AA%E3%81%84%E6%99%82%E3%81%AB-%E3%81%A8%E3%82%8A%E3%81%82%E3%81%88%E3%81%9A%E3%83%93%E3%83%AB%E3%83%89%E3%81%8C%E9%80%9A%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B-fcc090804b21)
