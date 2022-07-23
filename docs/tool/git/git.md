@@ -1,5 +1,9 @@
 # Git
 
+## やること
+
+mergeしてしまい。そこから抜き出したブランチを作る方法
+
 ## GitHubにpushしてしまった場合に取り消す方法
 
 [参考URL](https://loop-never-ends.com/git-delete-pushed-file/)
