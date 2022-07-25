@@ -45,3 +45,18 @@ webブラウザでは`<a>`タグで示されたハイパーリンクをユーザ
 
 [参考1](https://web-design-textbook.com/recipe/text-responsive.html)
 [参考2](https://coliss.com/articles/build-websites/operation/css/how-calc-works-by-ire.html)
+
+## Grid Layout or Flexbox
+
+[参考URL](https://zero-plus.io/media/grid-layout/)
+
+Flexboxは縦・横いずれか一方向へのレイアウトに特化しているのに対し
+Grid Layoutは縦横自由なレイアウトが可能。
+ただしGrid Layoutはあらかじめレイアウトを決めて、そこに要素を割り当てていくので、**要素の増減に柔軟に対応しづらい側面**がある。
+ナビゲーションメニューのように要素が増減する可能性のあるセクションには向いていません。
+
+要素の増減が多いセクションや、単に横並びのレイアウトを実施したいといった場合にはFlexboxの使用を検討しましょう。
+
+## Layout Shiftを起こさないようにする
+
+[参考URL](https://web.dev/i18n/ja/optimize-cls/)

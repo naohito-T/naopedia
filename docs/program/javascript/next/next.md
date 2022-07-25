@@ -271,6 +271,26 @@ DBなどのサーバリソースにアクセス可能
 
 ---
 
+## next/image
+
+[参考URL](https://www.wantedly.com/companies/wantedly/post_articles/385515)
+
+- レイアウトシフトが起きない
+- サーバサイドでの画像リサイズ
+- 適切な画像サイズの算出
+- Lazy Loadが有効（特徴としてはNative Lazy LoadingではなくJS Lazy LoadingのためSafariなどのブラウザでも有効である。）
+
+注意点
+next/imageでは必ずしも指定したサイズの画像が返ってくるとは限らない。
+next/imageでは画像の表示領域やユーザのディスプレイ解像度に合わせて適切な画像サイズを返す。
+
+
+## next/imageを仕事で使う際に気をつけたい仕様
+
+[参考URL](https://zenn.dev/yukishinonome/articles/da315b1be98a9c)
+
+---
+
 ## Tips
 
 [かなりのTipsが散りばめられている](https://qiita.com/Yuki_Oshima/items/5c0dfd8f7af8fb76af8f)
