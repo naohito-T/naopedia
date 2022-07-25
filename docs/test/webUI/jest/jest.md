@@ -153,6 +153,38 @@ outer after all
 ## Jest mock化
 
 [参考URL](https://qiita.com/YSasago/items/6109c5d3fbdbffa31c9f)
+結構なんでもmockするイメージ
+
+## Jest テストカバレッジ 見方
+
+[参考URL](https://qiita.com/turmericN/items/e3e48f04800e8c0b723c)
+
+```sh
+-------------|----------|----------|----------|----------|-------------------|
+File         |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
+-------------|----------|----------|----------|----------|-------------------|
+All files    |       50 |        0 |       20 |       50 |                   |
+ handler.ts  |       50 |        0 |       25 |       50 |... 39,41,44,47,55 |
+ slackBot.ts |       50 |      100 |        0 |       50 |            6,7,13 |
+-------------|----------|----------|----------|----------|-------------------|
+Test Suites: 1 failed, 1 passed, 2 total
+Tests:       1 failed, 2 passed, 3 total
+Snapshots:   0 total
+Time:        1.952s, estimated 2s
+```
+
+Stmts（Statement coverage）
+プログラム内の各命令が実行されたかの網羅率（命令網羅率）)
+
+Branch（Branch coverage）
+ifやcaseなどのすべての分岐の処理が実行されたかの網羅率
+
+Funcs（Function coverage）
+プログラム内の各関数が呼び出されたかの網羅率
+
+Lines
+ソースファイルの各実行可能行が実行されたかの網羅率
+
 
 
 ---
@@ -168,4 +200,4 @@ outer after all
 
 [Monorepo下におけるJest実行方法のちょっとした改善](https://zenn.dev/tkiryu/articles/a6a43bd9d043b0)
 
-[Jest カバレッジをプルリクに記載するkisaisuru](https://github.com/ArtiomTr/jest-coverage-report-action#usage)
+[Jest カバレッジをプルリクに記載する](https://github.com/ArtiomTr/jest-coverage-report-action#usage)

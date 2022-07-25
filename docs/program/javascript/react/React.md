@@ -38,7 +38,7 @@ useCallbackは**メモ化されたコールバック関数を返す**フック�
 
 ## useEffect
 
-useEffectは関数の実行タイミングを**コンポーネントのレンダリング後**に遅らせることができるフック
+useEffectは関数の実行タイミングを**コンポーネントのレンダリング後**に遅らせることができるフック（CSR動作、nuxtでのmountに近い）
 
 ```ts
 useEffect(
@@ -85,9 +85,16 @@ https://github.com/rpearce/react-medium-image-zoom/issues
 cssの長い命名規則から解き放たれる
 
 
+## React testing-library
+
+[React testing-library で getByText, getByRole, getAllByRole を比較する](https://dev.to/kaede_io/react-testing-library-de-getbytext-getbyrole-getallbyrole-wobi-jiao-suru-2o26)
+
+
 
 
 ## Tips
+
+
 ### material-ui
 
 [9個のfree_templateがある](https://mui.com/getting-started/templates/)
@@ -96,3 +103,5 @@ cssの長い命名規則から解き放たれる
 ### onClick
 
 [React.jsで、onClick時に任意の値を渡す](https://www.yoheim.net/blog.php?q=20180411)
+
+
