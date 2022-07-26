@@ -71,6 +71,11 @@ Contextとは
 
 https://github.com/rpearce/react-medium-image-zoom/issues
 
+## useRef
+
+基本的にはあまりRefに頼らないようにと言われている。
+コンポーネントに親子関係がある場合、基本的に子コンポーネントの詳細は隠蔽されていますが、Refを利用すると親が子の詳細を知らなくてはならない=依存関係が生まれてしまうためですね。
+
 
 
 ---

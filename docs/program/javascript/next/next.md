@@ -212,11 +212,20 @@ _app.tsxを継承したクラスがあるファイルを作成してったっぽ
 
 ---
 
+## _app.js(tsx)
+
+Appはすべてのコンポーネントの初期化に使われる
+
+
 ## _document.js(tsx)によるカスタマイズ
 
 [参考URL](https://qiita.com/Yuki-Kurita/items/6a0eae00999e1294a3b1)
 
 Next.jsのPageコンポーネントはデフォルトでは`<html> & <body>`タグの定義を行うが、それらを拡張したい場合は_document.js(tsx) を作成し、その中でDocumentコンポーネントを継承したクラスを実装する。
+
+注意点
+- SSR（サーバサイドレンダリング）のみの実行
+
 
 
 ---
@@ -364,3 +373,6 @@ apiが充実しているわけではないため、もはや過去の記事を�
 ## Routing/Dynamic Routes
 
 [参考URL](https://zenn.dev/unreact/articles/nextjs-routing-dynamic-routes)
+
+
+

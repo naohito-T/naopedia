@@ -255,3 +255,16 @@ PCのディスプレイやアナログテレビの標準でテレビ放送の標
 ## imageのアスペクト比計算
 
 [参考URL](https://ocadweb.com/aspectratiotools)
+
+## パララックス
+
+[参考URL](https://www.casleyconsulting.co.jp/blog/engineer/283/)
+
+パララックスとは日本語で視差という意味。
+Webデザインの世界においては視差効果とも呼ばれ、画面をスクロールするといった動作の際に、要素を異なる速度で動かしたりすることであたかも立体による奥行きがあるように見せる。
+
+レベル1
+異なる速度ではなく、ただ背景を写す
+[レベル1](https://codepen.io/w_s-ta/pen/vWRBYg)
+
+レベル2
