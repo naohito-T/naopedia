@@ -15,6 +15,10 @@
 1. `npm install --save-dev @types/package-name` をためす
 2. 1がなければ、 declare module “package-name"; を含んだ .d.ts を自分で追加する
 
+## TypeScript <T>チートシート
+
+[参考URL](https://qiita.com/suin/items/03baa7cf7dd8e9a9f010)
+
 ## TypeScript コンパイラ
 
 [参考URL](https://ics.media/entry/16329/)

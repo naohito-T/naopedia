@@ -76,7 +76,26 @@ https://github.com/rpearce/react-medium-image-zoom/issues
 基本的にはあまりRefに頼らないようにと言われている。
 コンポーネントに親子関係がある場合、基本的に子コンポーネントの詳細は隠蔽されていますが、Refを利用すると親が子の詳細を知らなくてはならない=依存関係が生まれてしまうためですね。
 
+## 状態管理
 
+>Reactにおける状態管理の方法論は、さまざまな道を辿ってきました。ある人はReduxを使い、またある人はMobXを、またある人はuseContextで物事を解決してきたでしょう。
+
+今まではRedux + middleware
+最新はRecoil。Redux + middleware周りのすべてをまるっと置き換えてくれる
+
+**Recoil**
+
+- アプリケーション内に複数のデータストアを持てる
+- 非同期対応
+- React hooks前提
+
+
+recoil-persistはデフォルトだとlocalStorageに保存されますがstorageオプションを設定することで任意のStorageを利用することができる。
+
+## Suspense
+
+React 18で導入された。
+コンポーネントをローディング中のためまだレンダリングできない状態にする。
 
 ---
 

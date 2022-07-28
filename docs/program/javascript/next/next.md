@@ -298,6 +298,10 @@ next/imageでは画像の表示領域やユーザのディスプレイ解像度�
 
 [参考URL](https://zenn.dev/yukishinonome/articles/da315b1be98a9c)
 
+## Next.js状態管理
+
+
+
 ---
 
 ## Tips
@@ -370,9 +374,22 @@ apiが充実しているわけではないため、もはや過去の記事を�
 [swiper](https://swiperjs.com/demos)
 [swiper](https://b-risk.jp/blog/2022/04/swiper/)
 
-## Routing/Dynamic Routes
+## next/dynamic
 
+dynamic import（動的インポート）とは動的にimportを実行するための機能
+ES2020でJSの仕様として導入された。dynamic importを利用すると**非同期でモジュールを読み込む。**
+
+たとえば初期表示で読み込み不要なモジュールにdynamic importを適用すると初期ロードの負荷を軽減でき、表示速度を改善できます。
+
+Next.jsにおけるdynamic importのつかいどころは主に『SSR回避』と『ロード時のパフォーマンス改善』の2点
+
+[リフェレンス](https://nextjs.org/docs/advanced-features/dynamic-import#with-suspense)
 [参考URL](https://zenn.dev/unreact/articles/nextjs-routing-dynamic-routes)
+[default exportとnamed exportでdynamic importする](https://nishinatoshiharu.com/overview-next-dynamic-import/)
 
+## next locale
+https://postd.cc/localizing-your-nextjs-app/
 
+## next router
 
+Next.jsのrouterにはstateがありません。

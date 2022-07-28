@@ -268,3 +268,10 @@ Webデザインの世界においては視差効果とも呼ばれ、画面を�
 [レベル1](https://codepen.io/w_s-ta/pen/vWRBYg)
 
 レベル2
+背景も動かす。全面と速度は違う
+
+## ブレンドモード
+
+[参考URL](https://gokansoichiro.com/blog/css-mix-blend-mode/)
+
+ブレンドモードとは、背景色に合わせて上に重なるオブジェクトの色をさまざまな効果で表現させる方法。

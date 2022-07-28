@@ -6,4 +6,4 @@
 ## Redisとは
 
 Redisはオープンソースの永続化可能なインメモリデータベース
-Twitter・Github・PinterestなどのサービスがRedisを採用しており、大規模データの処理や処理速度の向上を実現しています。
+Twitter・GitHcub・PinterestなどのサービスがRedisを採用しており、大規模データの処理や処理速度の向上を実現しています。
