@@ -59,4 +59,11 @@ Grid Layoutは縦横自由なレイアウトが可能。
 
 ## Layout Shiftを起こさないようにする
 
-[参考URL](https://web.dev/i18n/ja/optimize-cls/)
+[参考URL](https://web.dev/i18n/ja/optimize-cls/)s
+
+## スクロールできないようにする
+
+[参考URL](https://www.ipentec.com/document/css-block-scroll-using-position-property)
+
+注意点
+- `overflow: hidden`をhtml, bodyに指定するとスクロールができなくなるがiOSには効かない。そのためevent listenerの設定が結局必要になる。
