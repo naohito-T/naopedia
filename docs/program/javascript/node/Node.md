@@ -6,6 +6,17 @@ TypeScript → JavaScriptに変換してからnodeでの実行
 
 通常、TypeScriptで書かれたNode.jsプロジェクトは、tscでtranspileをし、生成されたJavaScriptファイルを実行する必要がある。ts-nodeを使うことでこのステップを省略する。
 
+## path取得
+
+[参考URL](https://zenn.dev/ignorant_kenji/articles/25280934f2c50b0c13ff)
+
+以下を実行すればわかる
+```js
+console.log(process.argv[1], "c.js", "cwd", process.cwd());
+console.log(process.argv[1], "c.js", "__dirname", __dirname);
+console.log(process.argv[1], "c.js", "path.resolve", require("path").resolve(""));
+```
+
 
 ## npm自体のアップデート
 

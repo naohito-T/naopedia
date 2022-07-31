@@ -523,3 +523,11 @@ G + N : Gが最初GitHub通知にいく
 
 [GitHubで公開したソースにオープンソースライセンスを適用](https://qiita.com/legitwhiz/items/bb34ef20ba23336e0c87)
 [GitHub ライセンスをつけないとどうなるの](https://qiita.com/Tatamo/items/ae7bf4878abcf0584291)
+
+## mergeしたやつをリバートしたい
+
+ファイルを消したやつで新たらなコミットを作るのもいい。
+
+## 完了したmergeを取り消す
+
+[参考URL](https://rurukblog.com/post/git-merge-delete/)

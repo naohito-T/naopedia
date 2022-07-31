@@ -49,6 +49,17 @@ describeでブロック化されている場合は、describeに潜っていく�
 
 Jestはテスト対象ファイルと同じディレクトリに、__mocks__ディレクトリを作成することで、モック対象のファイルを検出し依存関係を自動的にモックします。そして、モック関数jest.fn()を定義することで、どのような引数で何回呼ばれたかなどを記録します。
 
+[jest mock調査](https://zenn.dev/dove/scraps/e537b453395ea8)
+
+## Jest file api mock
+
+[参考URL](https://qiita.com/vimyum/items/4ded9de3b784afd31025)
+
+mock化するすべての基本が詰まっている
+
+[mock関数呼び出しチェック](https://dev.classmethod.jp/articles/jest-testing-when-the-same-function-is-called-multiple-times/)
+
+
 ## Jest 前後処理について
 
 対応表作成した
@@ -184,8 +195,6 @@ Funcs（Function coverage）
 
 Lines
 ソースファイルの各実行可能行が実行されたかの網羅率
-
-
 
 ---
 
