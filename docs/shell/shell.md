@@ -206,3 +206,13 @@ dotfilesとはとはLinuxやmacOSにおける設定ファイルのこと。
 しかし、シェルスクリプトでは**エラーが発生しても後続の処理が普通に実行される。**
 
 [参考URL](https://webbibouroku.com/Blog/Article/shell-try-catch-finally)
+
+## コマンドラインで画像処理が行える便利ツール
+
+ImageMagickには脆弱性が大量に存在します。
+2017年に報告されたImageMagickの脆弱性は236件でした。
+大量にある上リモートコード実行級の脆弱性もあり、安全性という観点ではかなり厳しい評価をしなければなりません。
+
+[参考URL](https://atmarkit.itmedia.co.jp/ait/articles/1809/25/news020.html)
+
+[意味がわからんが読む価値あり](https://qiita.com/yoya/items/2076c1f5137d4041e3aa)

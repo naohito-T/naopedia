@@ -275,3 +275,24 @@ Webデザインの世界においては視差効果とも呼ばれ、画面を�
 [参考URL](https://gokansoichiro.com/blog/css-mix-blend-mode/)
 
 ブレンドモードとは、背景色に合わせて上に重なるオブジェクトの色をさまざまな効果で表現させる方法。
+
+## そもそもブレンドモードとは
+
+[参考URL](https://ics.media/entry/7258/)
+
+>ブレンドモードはクリエイティブな表現を作る上での基本機能のひとつです。Adobe PhotoshopやIllustrator、After Effects、Animateなどアドビ系のソフトで昔から搭載されていて、レイヤーを重ねたときにどのように重ねて表示するかの設定になります。ソフトによっては「ブレンドモード」や「描画モード」「モード」と異なる名称が使われていますが、機能としては同じものになります。本記事ではCSSの名称にあわせてブレンドモードと記載しています。
+
+## WebP(ウェッピー)
+
+[参考URL](https://wk-partners.co.jp/homepage/blog/hpseisaku/htmlcss/webp-how-to-use/)
+
+画像形式。Googleが主導となって開発している新しい画像形式
+最大の特徴は**画質綺麗なのに軽い**
+Googleによると、PNGに比べ26％軽く、 JPGより25〜34％軽くなるとのこと。
+Webサイトを軽くするもっとも効果的な方法は画像軽量化のためインパクトが強い。
+
+[無料で丸ごとWebpP変換(サイトがどんだけ軽量かするか見れる)](https://sim.lightfile.net/webp/)
+
+`background-image`対応がめんどい。
+
+[Googleが作成したWebP作成ツール](https://squoosh.app/)

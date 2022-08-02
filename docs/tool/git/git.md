@@ -334,6 +334,8 @@ Git Hooks追加（.git/hooksの中に作成される）
 
 ## サブモジュール化
 
+サブモジュール前提で作るとデフォルトブランチはmainがいいのかも
+
 rootディレクトリは`git init`を初期に行っている状態。サブディレクトリは作成されている状態。
 
 git initされている状態であれば
@@ -378,6 +380,24 @@ rootリポジトリもコミットする
 - gitmodules
 - git/config内と
 - git/modules/内のディレクトリ名を変更すればいける
+
+## サブモジュール更新
+
+[参考URL](https://prograshi.com/general/git/how-to-use-git-submodule/)
+
+リモートレポジトリに含まれているすべてのサブモジュールのコミット履歴などの情報を更新するには「–remote」オプションを付けて、「submodule update」コマンドを実行する。
+
+```sh
+$ git submodule update --remote
+```
+
+指定したサブモジュールのみを更新する
+
+すべてのサブモジュールではなく、指定したサブモジュールの情報のみを更新したい場合は、引数で「サブモジュール名」を指定します。
+
+```sh
+git submodule update --remote <サブモジュール名>
+```
 
 ---
 
