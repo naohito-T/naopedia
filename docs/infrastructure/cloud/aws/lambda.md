@@ -41,12 +41,18 @@ exports.handler = async (event) => {}
 
 LambdaはJava、Node.js、C#、Pythonのプログラミング言語に対応しているので、各種「機能」（プログラム）はこの言語で開発すれば良い。
 
-aws-sdkはLambdaサーバには既に入っており、node-modulesに本来含める必要はないのでnpm uninstall aws-sdkしてから再圧縮すると容量削減につながります。あまりファイルサイズが大きいとインライン編集できなくなるので注意しましょう。
+aws-sdkはLambdaサーバにはすでに入っており、node-modulesに本来含める必要はないのでnpm uninstall aws-sdkしてから再圧縮すると容量削減につながります。あまりファイルサイズが大きいとインライン編集できなくなるので注意しましょう。
 
 ## Lambda対応イベント
 
-S3のイベント発生(ファイルアップロード)などをトリガーにデータ処理を行う
+S3のイベント発生（ファイルアップロード）などをトリガーにデータ処理を行う
 リアルタ
+
+## Lambda 関数URL
+
+これまでHTTPS経由でLambdaを実行するためには前段にAPI Gatewayなどが必要だった。
+Lambda関数URLを使用することで、API GatewayなしでHTTPSから直接Lambdaを実行できる。
+Lambdaをパブリックに公開したり、シンプルな認証でも問題ない場合は、Lambda関数URLは便利。
 
 ## Lambda実行例
 

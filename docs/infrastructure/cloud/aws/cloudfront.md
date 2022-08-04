@@ -1,5 +1,22 @@
 # CloudFront
 
+台数不明で性能不明だがグローバルに配置されたキャッシュサーバ
+
+## ユビキタス
+
+ディストリビューション : ひとつのCloudFront（EC2やRDSがインスタンスと呼んだように）
+ビヘイビアー : キャッシュルールのこと
+オリジン : キャッシュ元データを配置するサーバのこと（ELB、EC2、S3、その他のサーバ）
+インバリデート : キャッシュクリア
+
+## 昔のCloudFront 無しの構成
+
+[参考URL](https://qiita.com/sasasin/items/0f0ec1a90af6295589f9)
+
+EC2のローカルディスクにすべてがあり、静的コンテンツ、動的ページ、すべてのアクセスをEC2で捌く必要があった。
+>ApacheとかNginxでキャッシュを効かせると、負荷は軽くなるかも。みたいな涙ぐましいノウハウがあったのです。
+
+
 ## invalidationとは(訳: 無効化)
 
 [参考URL](https://blog.denet.co.jp/cloudfront-invalidation/)

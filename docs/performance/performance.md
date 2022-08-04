@@ -19,7 +19,7 @@
 - webpackを使用した際のバンドルサイズ パフォーマンス改善
 [参考URL](https://dwango-js.github.io/performance-handbook/startup/reduce-size/)
 
-- video タグの圧縮
+- videoタグの圧縮
 [参考URL](https://liginc.co.jp/342227)
 
 ## イベントの調整
@@ -74,3 +74,16 @@ Lighthouseとはウェブページの品質改善の指針を
 - 経緯
 >Chrome拡張やコマンドラインで提供されていましたが、Google Chrome 60でデベロッパーツールに統合された。
 >また、オンラインでチェックしてくれるツールGoogle PageSpeed Insightsも、分析エンジンにLighthouseを採用するようになりました。とは言っても全く同じ結果とはならなくて、Google PageSpeed Insightsの判定の方が低い場合が多いようだ。
+
+---
+
+## メトリクス
+
+ソフトウェアのメトリクスとは、ソフトウェアを計測する方法およびその尺度のことを意味する。
+
+## コードメトリクス
+
+[参考URL](https://tech.pepabo.com/2022/04/25/code-metrics-dashboard/)
+
+コードメトリクスとはソースコードについてさまざまな角度から計測した値のことを指す。
+

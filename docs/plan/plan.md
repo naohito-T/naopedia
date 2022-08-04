@@ -276,3 +276,5 @@ UUIDは128bit。base64 URL Safeでエンコードするとすると22文字（12
 ---
 
 要件定義書は以下から
+
+[CHANGELOG の書き方](https://blog.yux3.net/entry/2017/05/04/035811)
