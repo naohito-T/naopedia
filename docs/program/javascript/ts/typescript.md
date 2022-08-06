@@ -18,11 +18,15 @@
 [参考URL](https://medium.com/@ryutamaki/npm-module-%E3%81%AB-typescript-%E3%81%AE%E5%9E%8B%E5%AE%9A%E7%BE%A9%E3%81%8C%E3%81%AA%E3%81%84%E6%99%82%E3%81%AB-%E3%81%A8%E3%82%8A%E3%81%82%E3%81%88%E3%81%9A%E3%83%93%E3%83%AB%E3%83%89%E3%81%8C%E9%80%9A%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B-fcc090804b21)
 
 1. `npm install --save-dev @types/package-name` をためす
-2. 1がなければ、 declare module “package-name"; を含んだ .d.ts を自分で追加する
+2. 1がなければ、 declare module “package-name"; を含んだ .d.tsを自分で追加する
 
 ## TypeScript <T>チートシート
 
 [参考URL](https://qiita.com/suin/items/03baa7cf7dd8e9a9f010)
+
+## TypeScript Index Signature を安全に使う
+
+[TypeScriptのIndex Signature"{[key:string]:string}"で特定の文字だけのIndexを扱う](https://blog.mitsuruog.info/2019/03/typescript-limited-set-of-index-signature)
 
 ## TypeScript コンパイラ
 
@@ -38,8 +42,8 @@ TypeScript → ECMAScript
 
 ts → tsx → d.ts
 
-- デフォルトで追う@typesフォルダとは
-デフォルトで対象範囲全ての@typesパッケージがコンパイルに含まれる。(node_modules/@types)
+- デフォルトで追う@typesフォルダーとは
+デフォルトで対象範囲すべての@typesパッケージがコンパイルに含まれる。(node_modules/@types)
 typesRootsがtsconfig.jsonに指定されている場合は**そのパッケージのみが対象となる。**
 
 ## TypeScript 概念
@@ -49,10 +53,10 @@ typesRootsがtsconfig.jsonに指定されている場合は**そのパッケー�
 [仕事ですぐに使える TypeScript](https://future-architect.github.io/typescript-guide/index.html)
 とある会社が作成したのかな？とてもよかった。
 
-高度な型定義の参考文献(基本)
+高度な型定義の参考文献（基本）
 [高度な型定義](https://golang.hateblo.jp/entry/2021/03/15/202502?utm_source=feed)
 
-TS 組み込み型定義(基本を読んでから)
+TS組み込み型定義（基本を読んでから）
 [URL](https://log.pocka.io/ja/posts/typescript-builtin-type-functions/)
 
 ## TypeScript 型定義集
@@ -106,7 +110,7 @@ export class typeSampleModel {
 ```
 
 [
-## Three.js Typescript webpack
+## Three.js TypeScript webpack
 
 [これいつかやりたいな](https://ics.media/entry/16329/)
 
@@ -115,7 +119,7 @@ export class typeSampleModel {
 
 [tsconfigあらかた設定](https://www.pg-fl.jp/program/tips/tsconfig_dirs.htm)
 
-- tsconfig 設定の種類の概念
+- tsconfig設定の種類の概念
 
 具体的には、ディレクトリやモジュール解決に関する以下のような設定・概念が存在する。
 
@@ -127,7 +131,7 @@ baseUrl
 paths
 rootDirs
 typeRoots
-このうち outDir, rootDir, declarationDir が出力に関する設定、baseUrl, paths, rootDirs, typeRoots が入力に関する設定となります。
+このうちoutDir, rootDir, declarationDirが出力に関する設定、baseUrl, paths, rootDirs, typeRootsが入力に関する設定となります。
 
 - プロジェクトディレクトリ
 
@@ -259,4 +263,6 @@ jQuery などのブラウザ上でロードされるライブラリを TypeScrip
 
 ライブラリが知ることのできない（自身のプロジェクト固有の定義）型をライブラリのルートに注入し行き渡らせる手法
 interface宣言結合を利用したテクニックであり、さまざまなライブラリ型定義でも採用されている。
+
+
 

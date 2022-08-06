@@ -551,3 +551,7 @@ G + N : Gが最初GitHub通知にいく
 ## 完了したmergeを取り消す
 
 [参考URL](https://rurukblog.com/post/git-merge-delete/)
+
+## CHANGELOG の書き方
+
+[参考URL](https://blog.yux3.net/entry/2017/05/04/035811)
