@@ -40,6 +40,10 @@ $ echo $0
 /bin/zsh # zshのpathが取得できる
 ```
 
+## シェルスクリプト 拡張子を取得する
+
+[参考URL](https://takuya-1st.hatenablog.jp/entry/2017/06/01/163000)
+
 ## 親ディレクトリを不変に取得する
 
 [参考URL](https://qiita.com/KEINOS/items/bfd16189894c4bdace8e)
@@ -216,3 +220,4 @@ ImageMagickには脆弱性が大量に存在します。
 [参考URL](https://atmarkit.itmedia.co.jp/ait/articles/1809/25/news020.html)
 
 [意味がわからんが読む価値あり](https://qiita.com/yoya/items/2076c1f5137d4041e3aa)
+
