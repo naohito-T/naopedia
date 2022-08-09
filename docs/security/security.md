@@ -18,6 +18,8 @@ Webアプリケーションという観点から一般的にはWAFといえばWe
 
 ## CORS(Cross-Origin Resource Sharing) : クロスオリジンソースシェアリング
 
+[参考URL](https://qiita.com/ryosuketter/items/a60a2bc0220a5cbff17e)
+
 異なるオリジン間の通信を許可する仕組み
 同一オリジンポリシーは、不正なやりとりを防止すると同時に**正当なやりとりも拒否する。**
 その回避策として用意されているのがこのCORS。

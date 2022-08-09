@@ -3,6 +3,18 @@
 [JavaScriptのすべての仕組み](https://ja.javascript.info/)
 [next/script には JavaScript の基本がつまっていた](https://zenn.dev/aiji42/articles/9a6ab12ab5f6e6)
 
+
+## JavaScriptの実行環境
+
+安心安全に利用できる理由は、サンドボックスで動作するため。
+サンドボックス上で動作していると、アクセスできるファイルや実行できるプログラムが制限されてしまう。
+その代わりに、その制限下では自由な利用が許可されています。
+JavaScriptのサンドボックスによる代表的な制約のひとつに同一オリジンポリシー (same-origin policy) がある。
+
+## SourceMapについて
+
+[SourceMap](https://fintan.jp/page/1596/)
+
 ## JavaScriptのタイムゾーン
 
 [参考URL](https://qiita.com/konkonko/questions/62c71142f51e63a759c3)

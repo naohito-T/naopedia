@@ -393,3 +393,15 @@ https://postd.cc/localizing-your-nextjs-app/
 ## next router
 
 Next.jsのrouterにはstateがありません。
+
+## next error
+
+[参考URL](https://zenn.dev/mizuneko4345/articles/c576dfce8a49be)
+
+優先順位
+
+pages/404.tsx or pages/500.tsx
+
+pages/_error.tsx
+ここにif文で条件分岐してもいいが公式のハンドリングを使用した方がいい。
+
