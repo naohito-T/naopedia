@@ -4,6 +4,19 @@
 
 >Unix は 1969 年 AT&Tの ベル研究所で誕生しました。継続していく開発の中で BSD 系 と呼ばれる分岐が生まれました。本流は最終的に System V 系と呼ばれるようになりました。その Unix の開発の過程で多数のコマンドが生まれ Unix はより便利になっていきました。しかし互換性をそれほど重視していなかったためかコマンドを含む Unix は移植性が低下していきました。そこで生まれたのが POSIX です。1988 年にシステムインターフェースが、1992 年にシェルとコマンドが標準化されました。
 
+## ログイン時に表示されるメッセージをカスタマイズする
+
+[参考URL](https://qiita.com/Possum55/items/99704f4a9c6205fac3fa)
+
+- ログイン直後のメッセージ
+/etc/motdの内容が表示される（「Message Of The Day」の略）
+
+## uname コマンド
+
+OSまたはハードウェアの情報を表示する
+
+[参考URL](http://itdoc.hitachi.co.jp/manuals/3020/30203S3530/JPAS0263.HTM)
+
 ## シェルスクリプトを作成するにあたり
 
 まず使用するシェルを決める必要がある。
@@ -160,7 +173,7 @@ popdコマンドを実行するとスタックに記憶されているディレ�
 
 ### shellScript が落ちた時にスクリプトを止める
 
-[参考URL](https://atmarkit.itmedia.co.jp/ait/articles/1805/10/news023.html)
+[setコマンドオプション一覧](https://atmarkit.itmedia.co.jp/ait/articles/1805/10/news023.html)
 [set euxについて](https://qiita.com/keitean/items/83c7d0d6221ec1b9c63c)
 setコマンドを先頭に記載する
 
@@ -174,6 +187,7 @@ set -euox pipefail
 -u : 未定義の変数使用時、打ち止めにしてくれる。
 -v : シェルの入力行を表示する
 -o : 設定したシェルオプションを「on」と表示する
+-x : トレース情報としてシェルが実行したコマンドとその引数を出力する。
 
 ---
 
@@ -197,6 +211,8 @@ dotfilesとはとはLinuxやmacOSにおける設定ファイルのこと。
 [参考URL](https://www.blky.me/2018/02/02/mps-youtube/)
 
 ## ターミナルで使えるファイラ
+
+ファイラではなくvimなどで移動した方がいいかも
 
 [参考URL](https://qiita.com/rattcv/items/caed7dd8115b294402c8)
 

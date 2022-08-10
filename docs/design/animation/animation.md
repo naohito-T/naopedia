@@ -50,9 +50,9 @@ HTML5 Canvas(Context2D)についてはCreateJSを使用するといい。
 これは勘違いWebGL=3D表現というわけではない。
 WebGLが一番効果的に使える場面は3D表現であることは間違いないが、必ずしもWebGLは3D表現だけに利用されているとは限らず、WebGLは2D表現にも利用できる。
 
-WebGLは互換性のある任意のウェブブラウザ上でプラグインを使用せずにインタラクティブな2次元および3次元のコンピューターグラフィックをレンダリングするためのJavaScript APIである。
+WebGLは互換性のある任意のウェブブラウザ上でプラグインを使用せずにインタラクティブな2次元および3次元のコンピューターーグラフィックをレンダリングするためのJavaScript APIである。
 
-WebGLのプログラムはJavaScriptで記述する制御コードと、コンピューターのGraphics Processing Unit(GPU)で実行する特殊効果コードで構成される。
+WebGLのプログラムはJavaScriptで記述する制御コードと、コンピューターーのGraphics Processing Unit(GPU)で実行する特殊効果コードで構成される。
 
 WebGLについてはJSライブラリPixi.jsなど、使うといい。
 ## WebGPU
