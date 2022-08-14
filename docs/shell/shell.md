@@ -215,6 +215,8 @@ dotfilesとはとはLinuxやmacOSにおける設定ファイルのこと。
 ファイラではなくvimなどで移動した方がいいかも
 
 [参考URL](https://qiita.com/rattcv/items/caed7dd8115b294402c8)
+[ファイラ種類](https://zenn.dev/lambdalisue/articles/3deb92360546d526381f)
+
 
 ## Shellで毎回困る、ifの条件文一覧
 

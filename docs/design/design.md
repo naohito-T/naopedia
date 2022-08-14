@@ -6,6 +6,15 @@
 [新しいサイトを作成する時に参考とすべきUX(google)](https://developers.google.com/web/fundamentals/design-and-ux/ux-basics?hl=ja)
 [clipを簡単に実装できる](https://bennettfeely.com/clippy/)
 
+## デザインツール(ブラウザ)
+
+[CSSに関して](https://photoshopvip.net/123398)
+[htmlレイアウト](https://b-risk.jp/blog/2021/12/five-convenience-tool/)
+
+## グリッドレイアウト ブラウザ作成ツール
+
+[参考URL](https://cssgrid-generator.netlify.app/)
+
 ## デザイン案を探すとき
 
 [Free Frontend（海外のサイトやばい）](https://freefrontend.com/css-timelines/)

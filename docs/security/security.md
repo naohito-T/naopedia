@@ -109,3 +109,11 @@ HTTPの認証方法のひとつ。
 ユーザ名とパスワードを暗号学的ハッシュ関数でハッシュ化して送る。
 **Basic認証では防げなかった盗聴や改ざんを防ぐために考案された**
 使用する暗号学的ハッシュ関数としては、当初MD5が規定され、後にRFC7616でSHA-2が加わっている。
+
+## UUID ULID
+
+[違いの参考URL]()
+
+Tips
+[Facebook, Twitter, Instagramなどがどうやって生成しているか](https://qiita.com/daisy1754/items/98a6e6b17d8161eab081)
+
