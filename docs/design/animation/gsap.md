@@ -2,6 +2,7 @@
 
 [参考URL](https://ics.media/entry/200805/)
 [GSAPチートシート](https://greensock.com/cheatsheet/)
+[リファレンス](https://greensock.com/docs/3)
 
 Flash全盛の時代から存在する歴史あるトゥイーンライブラリ
 GSAPはCSS/HTML5 Canvas/WebGLなどさまざまなアニメーション作成に利用できる。
@@ -13,6 +14,24 @@ GSAPはCSS/HTML5 Canvas/WebGLなどさまざまなアニメーション作成に
 
 **Standard License**
 エンドユーザーに対する利用料が無料のサービス、Webサイト、アプリなら、開発者が商用で利用しても無料
+使えるプラグインは以下（現状問題なく使えた）
+
+```ts
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { TextPlugin } from 'gsap/TextPlugin';
+
+export abstract class BaseGSAP {
+  protected readonly gsap: typeof gsap;
+
+  constructor() {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(TextPlugin);
+    this.gsap = gsap;
+  }
+}
+```
+
 **Business Green**
 このライセンスには3段階あり、人気があるのは中間の「Shockingly Green」
 Shockingly Green会員は商用ライセンス（有料販売するアプリやサービスなどで必要）をのぞき付加的なプラグインとオプションをすべて利用できる
