@@ -123,7 +123,12 @@ VS Codeで画像から背景を1クリックで切り抜けるようになった
 そのプロジェクトで必要になり得る、拡張機能を渡せる
 recommendationsの書き方は少々癖があって、`著者名.拡張機能名`
 
-## VS codeワークスペース
+## vscodeワークスペース
 
 [参考URL](https://qiita.com/YuichiNukiyama/items/ef16a0219f46ea03a045)
+
+## vscode拡張機能無効(ワークスペース)
+
+ワークスペース単位で拡張機能を無効にすることができるが、管理されているファイルなどがないため大変という話
+[参考URL](https://take4-blue.com/program/visual-studio-code%EF%BC%8D%E6%A9%9F%E8%83%BD%E6%8B%A1%E5%BC%B5%E3%81%AE%E7%84%A1%E5%8A%B9%E5%8C%96/)
 

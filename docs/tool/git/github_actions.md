@@ -60,13 +60,13 @@ ymlのjogsのtest名がnameに紐付きじゃばらで出る
 jobが実行する処理の集合
 同じjobのstepは同じ仮想環境で実行されるのでファイルやセットアップ処理は共有できる。
 しかし各ステップは別プロセスなので**ステップ内で定義した環境変数は共有できない。**
-jobs.<job_id>.envで定義した環境変数は全step で利用できる
+jobs.<job_id>.envで定義した環境変数は全stepで利用できる
 ※jobの中にさらに細かい粒度で、stepが存在:stepはjobと違い上から順に実行される
 
 ## アクション
 
 ワークフローの最小構成
-runコマンドでの実行ができ、Githubやサードパーティの公開アクションを利用(use)することもできる。
+runコマンドでの実行ができ、GitHubやサードパーティの公開アクションを利用（use）することもできる。
 
 ## jobが実行される仮想環境のスペック
 
@@ -85,7 +85,7 @@ Freeアカウントで2,000分/月 無料。
 
 ## Permission
 
-リポジトリごとにどのGithub Actionを利用できるのか？
+リポジトリごとにどのGitHub Actionを利用できるのか？
 あるいは、Workflow中でリポジトリの読み書きを許可するかを設定できる
 
 設定はリポジトリのSettings/Actionsにある。
@@ -100,10 +100,10 @@ workflow：workflow/event.json（GITHUB_EVENT_PATH）が書き込まれるディ
 
 ## 公開されているアクション
 
-Github自身が作成しているActionがリポジトリで公開されている。
+GitHub自身が作成しているActionがリポジトリで公開されている。
 サードパーティが作ったものはマーケットプレイスで探せる。
 
-[Github製のアクション](https://github.com/actions)
+[GitHub製のアクション](https://github.com/actions)
 [サードパーティ製のアクションのレジストリ](https://github.com/actions)
 
 ---
@@ -132,7 +132,7 @@ Github自身が作成しているActionがリポジトリで公開されてい�
 
 **プルリクエストの内容で実行するかしないかを決める**
 コンテキストgithubにワークフローに関する情報が色々入っている
-たとえば、プルリクエストイベントでトリガーするワークフローだとgithub.event.pull_requestにGithub REST APIのpull_request相当のプルリクの情報が格納されている
+たとえば、プルリクエストイベントでトリガーするワークフローだとgithub.event.pull_requestにGitHub REST APIのpull_request相当のプルリクの情報が格納されている
 
 [githubコンテキスト](https://docs.github.com/ja/actions/learn-github-actions/contexts)
 
@@ -246,7 +246,7 @@ on:
 
 [Workflow Dispatch最高](https://note.com/watura/n/nd9e55ceb77ac)
 
-このコンテキストは、Github上のGitHub Actionsの画面からworkflowを実行できるようにするTrigger
+このコンテキストは、GitHub上のGitHub Actionsの画面からworkflowを実行できるようにするTrigger
 
 以下のことができるようになる
 ・Web UI から任意のタイミングで実行
@@ -270,9 +270,9 @@ on:
 ## 各コマンドわかっていることをかく
 
 ```yml
-name: deploy-fanclub-ui-dev # Github Actionsのリストに表示される
+name: deploy-fanclub-ui-dev # GitHub Actionsのリストに表示される
 
-on: # Github Actionが実行されるトリガーを設定できる。
+on: # GitHub Actionが実行されるトリガーを設定できる。
   workflow_dispatch:
     inputs:
       ref:
@@ -462,14 +462,14 @@ actions/checkoutのREADMEの説明がとても分かりやすい。
 ## Tips
 
 [Gitのフック（hook）を使って自動的にデプロイする](https://rfs.jp/server/git/gite-lab/git-hook-post-receive.html)
-[複数リポジトリでのGithub Actions運用](https://zenn.dev/jerome/articles/cc07ad73e017ad)
+[複数リポジトリでのGitHub Actions運用](https://zenn.dev/jerome/articles/cc07ad73e017ad)
 
 # GitHub Action
 
 近年主流となっているクラウド型CIサービスは基本的に設定ファイルを書くだけで環境構築が済んでしまう。
 大抵はyaml形式で設定を書き込むことになる。
 [Lambdaへ自動デプロイ](https://qiita.com/homoluctus/items/412d4e81b24804d75205)
-[Github action ベストプラティクス](https://zenn.dev/snowcait/scraps/9d9c47dc4d0414)
+[GitHub action ベストプラティクス](https://zenn.dev/snowcait/scraps/9d9c47dc4d0414)
 
 ## ワークフローの設定
 
@@ -573,3 +573,6 @@ GitHub Actionsには成果物といって
 [GitHub Actions のワークフローファイルを共通化した話](https://tech.speee.jp/entry/terraform-reusable-workflow)
 
 
+## lighthouseをciで実行する
+
+[参考URL](https://zenn.dev/mryhryki/articles/2020-11-02-hatena-lighthouse-ci)

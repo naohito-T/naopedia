@@ -403,7 +403,7 @@ git submodule update --remote <サブモジュール名>
 
 ## Tips
 
-[Githubで一番有名なGit TIPS集](https://qiita.com/rana_kualu/items/4d5e27244256e9689304)
+[GitHubで一番有名なGit TIPS集](https://qiita.com/rana_kualu/items/4d5e27244256e9689304)
 
 ローカルの変更をすて、リモートリポジトリと同期する
 `$ git fetch origin && git reset --hard origin/master && git clean -f -d`
@@ -555,3 +555,19 @@ G + N : Gが最初GitHub通知にいく
 ## CHANGELOG の書き方
 
 [参考URL](https://blog.yux3.net/entry/2017/05/04/035811)
+
+## GitHub Apps
+
+[参考URL](https://qiita.com/icoxfog417/items/fe411b94b8e7ae229e3e)
+
+GitHub Appsとは、GitHubと連携するアプリケーションの新しい形式
+>この形式はアプリケーションのマーケットプレイスである、GitHub Marketplaceの公開と共にアナウンスされました。つまり、GitHub Appsを作成する、マーケットプレイスで公開する、それで収益を上げる、というエコシステムがしっかりと整備されたということです。
+
+わかりやすい説明
+[参考URL](https://note.com/teitei_tk/n/n5ad51f00a006)
+>GitHubではGitHubと連携するツールを作るための仕組みとして、Personal access tokensを使う方法と、OAuthを利用する方法がありました。しかしいずれの仕組みもユーザーに紐付いたアクセスキーが発行されてしまうため、設定したユーザーが退職したり、異動したりしてアカウントが停止されたりするとアクセスキーも無効になり、API連携がエラーになってしまうことがあります。
+>そこで新しくGitHub Appsという仕組みが導入され、リポジトリに紐づけて各種アプリケーションにアクセスを許可できるようになりました。今後はGitHub Appsを用いて連携するのが推奨されています。GitHub Enterpriseでは2.13から利用が可能です。
+
+## GitHub CIで別リポジトリを使う
+
+[参考URL](https://zenn.dev/tatsuo48/articles/72c8939bbc6329)

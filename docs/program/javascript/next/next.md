@@ -405,3 +405,17 @@ pages/404.tsx or pages/500.tsx
 pages/_error.tsx
 ここにif文で条件分岐してもいいが公式のハンドリングを使用した方がいい。
 
+## next env
+
+[これを見れば大体わかる](https://blog.ojisan.io/next-env/)
+
+`.env.local`
+`$next dev`のときに読み込まれる。
+
+`.env.development`
+NODE_ENVがdevelopmentのとき読み込まれる。
+
+`.env.production`
+NODE_ENVがproductionのときに読み込まれる。
+
+
