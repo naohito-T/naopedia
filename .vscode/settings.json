@@ -21,6 +21,7 @@
   },
   "peacock.color": "#ff3d00",
   "cSpell.words": [
+    "Autoload",
     "Brewfile",
     "codic",
     "cwebp",
@@ -53,6 +54,7 @@
     "Vercel",
     "vmax",
     "vmin",
-    "webp"
+    "webp",
+    "Zeitwerk"
   ]
 }
