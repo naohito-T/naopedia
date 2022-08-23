@@ -1,14 +1,21 @@
 # TypeScript
 
+## 参考 URL集
+
+[仕事ですぐに使える TypeScript](https://future-architect.github.io/typescript-guide/index.html)
+とある会社が作成したのかな？とてもよかった。
+高度な型定義の参考文献（基本）
+[高度な型定義](https://golang.hateblo.jp/entry/2021/03/15/202502?utm_source=feed)
+TS組み込み型定義（基本を読んでから）
+[URL](https://log.pocka.io/ja/posts/typescript-builtin-type-functions/)
 [TypeScript日本語ハンドブック](https://js.studio-kingdom.com/typescript/)
 [typescript 型付テスト](https://qiita.com/ryo2132/items/925b96838dd8cca7cebd)
 [tsconfig.jsonを書くときはTSConfig Basesを使うと便利](https://qiita.com/munieru_jp/items/a67ac782bbf099d90128)
 [TypeScriptで作るアノテーション](http://honeplus.blog50.fc2.com/blog-entry-181.html)
-
 [これまとめる](https://zenn.dev/nash/articles/bb5048a2754245)
 [これもまとめる](https://developer.hatenastaff.com/entry/2016/06/27/140931)
 [TypeScriptのモデル生成速度比較](https://blog.mamansoft.net/2019/03/17/typescript-model-created-comparison/)
-
+[Three.js TypeScript webpack（これいつかやりたいな）](https://ics.media/entry/16329/)
 ## TypeScript error ハンドリング
 
 [参考URL](https://dev.classmethod.jp/articles/error-handling-practice-of-typescript/)
@@ -39,25 +46,11 @@ TypeScriptの構文を下位のECMAScriptに変換する
 TypeScript → ECMAScript
 
 - コンパイラが追う順番
-
 ts → tsx → d.ts
 
 - デフォルトで追う@typesフォルダーとは
 デフォルトで対象範囲すべての@typesパッケージがコンパイルに含まれる。(node_modules/@types)
 typesRootsがtsconfig.jsonに指定されている場合は**そのパッケージのみが対象となる。**
-
-## TypeScript 概念
-
-## 参考 URL 集
-
-[仕事ですぐに使える TypeScript](https://future-architect.github.io/typescript-guide/index.html)
-とある会社が作成したのかな？とてもよかった。
-
-高度な型定義の参考文献（基本）
-[高度な型定義](https://golang.hateblo.jp/entry/2021/03/15/202502?utm_source=feed)
-
-TS組み込み型定義（基本を読んでから）
-[URL](https://log.pocka.io/ja/posts/typescript-builtin-type-functions/)
 
 ## TypeScript 型定義集
 
@@ -109,12 +102,6 @@ export class typeSampleModel {
 
 ```
 
-[
-## Three.js TypeScript webpack
-
-[これいつかやりたいな](https://ics.media/entry/16329/)
-
-
 ## tsconfig.json
 
 [tsconfigあらかた設定](https://www.pg-fl.jp/program/tips/tsconfig_dirs.htm)
@@ -137,31 +124,35 @@ typeRoots
 
 プロジェクトディレクトリは設定項目には存在せず、以下の項目が適用される
 
-1. tsconfig.jsonが使用される場合→そのファイルが存在するディレクトリがプロジェクトディレクトリになる
+1. tsconfig.jsonが使用される場合
+→存在するディレクトリがプロジェクトディレクトリになる
 >コンパイラー処理実行時に設定ファイルが明示的に指定された場合は、そのファイルが存在するディレクトリとなります。
 >コンパイラー処理実行時にディレクトリが明示的に指定された場合は、そのディレクトリとなります。
 
-2. それ以外の場合 → カレントディレクトリ
+1. それ以外の場合 → カレントディレクトリ
 
 >※プロジェクトディレクトリは様々なディレクトリやファイル関連の設定に使用される基準のディレクトリとなります。そのため、入力ファイルや出力ファイルの場所を考える際はプロジェクトディレクトリの位置、ひいては設定ファイル(tsconfig.json)の配置場所もある程度意識する必要があります。
 
 - outDir
-この設定項目はコンパイル結果(JSファイル)を生成するディレクトリ(出力ディレクトリ)を表す
+この設定項目はコンパイル結果（JSファイル）を生成するディレクトリ（出力ディレクトリ）を表す
 outFile設定が存在する場合は指定することができない。
 
 - rootDir
 >この設定項目は出力ファイルのディレクトリ構造を決定する際にのみ使用されます。具体的には、rootDir で指定されたディレクトリをベースに入力ファイルの相対パスを計算し、その相対パスを出力ディレクトリに適用してファイルを出力します。なお、rootDir はプロジェクトディレクトリを基準としたパスとして扱われます。
 
 >例: outDir が「dist」、rootDir が「src」である場合 → ファイル「src/hoge/Hoge.ts」は計算された相対パスが「hoge/Hoge.ts」になるので「dist/hoge/Hoge.js」にコンパイルされます。
-
+/ne
 
 - typeRoots
+typeRoots設定はこれまで説明した設定項目と若干異なり、コンパイル時に自動的に型定義ファイル（.d.ts）を持つパッケージを読み込む際の検索パスを指定する。
+ここへ指定されたディレクトリ下にあるパッケージ内の型定義ファイルが自動的に使用されます。
+また、「<reference types='...' />」ディレクティブでの型定義読み込みの検索パスとしても利用されます。
+typeRoots設定に指定するディレクトリはプロジェクトディレクトリを基準としたパスになる。
 
-typeRoots 設定はこれまで説明した設定項目と若干異なり、コンパイル時に自動的に型定義ファイル(.d.ts)を持つパッケージを読み込む際の検索パスを指定します。ここに指定されたディレクトリ下にあるパッケージ内の型定義ファイルが自動的に使用されます。また、「<reference types='...' />」ディレクティブでの型定義読み込みの検索パスとしても利用されます。typeRoots 設定に指定するディレクトリはプロジェクトディレクトリを基準としたパスとなります。
+※typeRootsに指定するディレクトリはパッケージの検索パスであるため、指定されたディレクトリには「<subdir>/index.d.ts」のようにサブディレクトリを伴ってファイルを設置するか、package.jsonのあるディレクトリ（パッケージディレクトリ）を置く必要があります。
 
-※ typeRoots に指定するディレクトリはパッケージの検索パスであるため、指定されたディレクトリには「<subdir>/index.d.ts」のようにサブディレクトリを伴ってファイルを設置するか、package.json のあるディレクトリ(パッケージディレクトリ)を置く必要があります。
-
-なお、自動的に型定義を読み込むかどうかは types 設定で制御されます。types 設定が「[]」(空配列)である場合は、typeRoots 設定にかかわらず自動的な読み込みが行われません(「includes」に含めた場合や「<reference types='...' />」ディレクティブで明示的に指定した場合を除く)。
+なお、自動的に型定義を読み込むかどうかはtypes設定で制御されます。
+types設定が「[]」（空配列）である場合は、typeRoots設定にかかわらず自動的な読み込みが行われません（「includes」に含めた場合や「<reference types='...' />」ディレクティブで明示的に指定した場合を除く）
 
 ```json
 
@@ -172,22 +163,20 @@ typeRoots 設定はこれまで説明した設定項目と若干異なり、コ�
 
 ## 名前空間
 
-**名前空間はグローバルな名前空間でJavaScriptのオブジェクトに単純に名前がつけられたもの。**
-
+**名前空間はグローバルな名前空間でJavaScriptのオブジェクトに単純に名前がつけられたもの。**
 namespaceではなくモジュールの仕組みを使うべし
-TypeScriptでゃnamespaceキーワードを使って名前空間を定義することができるが、通常はより柔軟性の高いモジュールの仕組みを使うのが推奨されている(といっても.tsファイルを分けるだけだが)
 
----
+TypeScriptでゃnamespaceキーワードを使って名前空間を定義することができるが、通常はより柔軟性の高いモジュールの仕組みを使うのが推奨されている（といってもファイルを分けるだけだが）
 
 - namespaceが非推奨な理由
 namespaceを使うと同じファイル内で階層化された名前空間を作ることができるが、あくまでその階層構造はグローバルに占有されている。
-一方モジュールの仕組みを使うと、ファイル単位で名前空間のコンテキストを分けることができる(大きなプロジェクトであっても、適切な単位でモジュールを分割している限り、名前の衝突は本格的に発生しない。)
+一方モジュールの仕組みを使うと、ファイル単位で**名前空間のコンテキストを分けることができる**（大きなプロジェクトであっても、適切な単位でモジュールを分割している限り、名前の衝突は本格的に発生しない。）
 
 ---
 
 ## タイプガード(Type Guard)
 
-Type assertions(キャスト) Type assertionsを使うと、実際のデータがどうであろうが強制的に型情報を書き換えてしまうため、有り難いTypeScriptの型チェックをすり抜けてしまう。**TypeScriptではType assertionを使う代わりに実行時型チェックを強制するType Guardという仕組みがある。**
+Type assertions（キャスト）Type assertionsを使うと、実際のデータがどうであろうが強制的に型情報を書き換えてしまうため、有り難いTypeScriptの型チェックをすり抜けてしまう。**TypeScriptではType assertionを使う代わりに実行時型チェックを強制するType Guardという仕組みがある。**
 
 ## undefinedなどを取り除く
 
@@ -205,6 +194,19 @@ Type assertions(キャスト) Type assertionsを使うと、実際のデータ�
 
 unknown型やany型、Union型の型の絞り込みを行える。
 
+## Null合体代入演算子(??=)
+
+[参考URL](https://zenn.dev/oreo2990/articles/3d780560c5e552)
+
+TypeScript4.0以降で使用可能。左辺がnullまたはundefinedの場合に代入する。
+※左辺がnullまたはundefined以外のfalsyな値の場合（''や0）代入されない
+
+```ts
+const pilot = { name: null };
+
+pilot.name ??= "shinji";
+console.log(pilot.name); //
+```
 
 ---
 
@@ -229,7 +231,7 @@ anyはmethodが使えるが、unknownはmethodが使えないため少しだけ�
 
 ## Tips
 
-- intefaceで型を上書きしたい時
+- interfaceで型を上書きしたい時
 [参考URL](https://tech-1natsu.hatenablog.com/entry/2019/02/09/014218)
 
 ## TypeScript バリデーション種類
@@ -239,13 +241,17 @@ anyはmethodが使えるが、unknownはmethodが使えないため少しだけ�
 ## JSに型をつける
 
 [アンビエント宣言から既存ライブラリがJSしかない場合につける方法](https://maku.blog/p/s7wk5k3/)
-TypeScript の アンビエント宣言 (Ambient Declarations) を行うと、既存の JavaScript ライブラリに型情報を付加することができます。 この仕組みを利用すると、
 
-サードパーティ製の JavaScript ライブラリ（npm パッケージ）や、自作の JavaScript ライブラリ（ただし TypeScript 化はしたくないもの）を TypeScript コードから使用する
-jQuery などのブラウザ上でロードされるライブラリを TypeScript コードから使用する
-といったことが可能になります。 ようするに、TypeScript トランスパイラに対して、このオブジェクトはこういう型のものとして外から提供されているので、型チェックエラーを出さないでね、と知らせることができます。
+TypeScriptのアンビエント宣言 (Ambient Declarations) を行うと、既存のJavaScriptライブラリに型情報を付加することができる。
 
-さらに、VisualStudio Code などのエディタを使用している場合は、アンビエント型宣言があることにより、エディタ上での補完入力ができるようになります。
+この仕組みを利用すると、
+- サードパーティ製のJavaScriptライブラリ（npmパッケージ）や、自作のJavaScriptライブラリ（ただしTypeScript化はしたくないもの）をTypeScriptから使用する
+- jQueryなどのブラウザ上でロードされるライブラリをTypeScriptから使用する
+といったことが可能になる。
+
+※要するにTypeScriptトランスパイラに対して、このオブジェクトはこういう型のものとして外から提供されているので、型チェックエラーを出さないでね、と知らせることができる。
+
+さらに、VS Codeなどのエディターを使用している場合は、アンビエント型宣言があることにより、エディター上での補完入力ができるようになります。
 
 ## DefinitelyTyped
 
