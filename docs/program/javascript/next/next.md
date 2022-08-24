@@ -425,6 +425,18 @@ Next.js8からサーバレスモードが実装された。
 従来であればひとつのサーバ上に乗せて動作させるものを、AWS Lambdaのような機能ごとに分割して動作させることができる。
 ただ、Next.jsとしては分割するだけにとどまる
 
+```sh
+# next buildした結果
+frontend/.next
+├── build-manifest.json
+├── cache
+├── package.json
+├── react-loadable-manifest.json
+├── server # これがserver側で動作するやつ。pages/* ディレクトリ配下
+├── static
+└── trace
+```
+
 ## Serverless Nextjs Plugin
 
 サーバレスモードで
