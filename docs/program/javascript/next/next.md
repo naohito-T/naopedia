@@ -418,4 +418,13 @@ NODE_ENVがdevelopmentのとき読み込まれる。
 `.env.production`
 NODE_ENVがproductionのときに読み込まれる。
 
+## next サーバーレスモード
 
+[参考URL](https://engineering.nifty.co.jp/blog/6864)
+Next.js8からサーバレスモードが実装された。
+従来であればひとつのサーバ上に乗せて動作させるものを、AWS Lambdaのような機能ごとに分割して動作させることができる。
+ただ、Next.jsとしては分割するだけにとどまる
+
+## Serverless Nextjs Plugin
+
+サーバレスモードで
