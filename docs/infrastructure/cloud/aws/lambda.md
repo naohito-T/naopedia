@@ -96,7 +96,7 @@ Lambda上でAWS CLIを実行したいと思いました。 AWS CLIにはs3 sync�
 Lambdaの実行環境にはAWS CLIはプリインストールされていないので、ひと工夫が必要になります。
 
 
-## LambadでのAWS-SDK
+## LambdaでのAWS-SDK
 
 >npm install で NPM パッケージをインストールするとき、実行時に必要なものは --save で、開発時のみ必要なものは --save-dev でインストールします。 この考え方からすると、AWS SDK (@aws-sdk) は --save オプションでインストールするのが自然なのですが、Lambda 関数用のプロジェクトではちょっと事情が違ってきます。 なぜなら、AWS の Lambda 実行環境にはデフォルトで AWS SDK がインストールされているからです。
 
@@ -113,6 +113,12 @@ Lambda Function は大きく3つのレイヤに分かれたレイヤ化アーキ
 ## Lambda local実行
 
 簡単な実行であればexport.handlerを呼び出すやつで十分
+
+## Lambda@Edge とは
+
+cloudfrontのエッジロケーションからコードを実行するLambda関数のことで、ユーザに近い場所でコードが実行されるので高速なコンテンツ配信が可能になる仕組み。
+コードをLambdaにアップロードするだけで自動的にコードの実行やスケーリングが行われます。ですので、Lambda@Edgeは Lambdaとcloudfrontから成り立ちます
+
 
 
 
