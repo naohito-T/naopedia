@@ -571,3 +571,11 @@ GitHub Appsとは、GitHubと連携するアプリケーションの新しい形
 ## GitHub CIで別リポジトリを使う
 
 [参考URL](https://zenn.dev/tatsuo48/articles/72c8939bbc6329)
+
+## 何も変更せずpushし
+
+```sh
+$ git commit --allow-empty
+
+$ git push
+```
