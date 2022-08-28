@@ -70,6 +70,13 @@ srcディレクトリは多くのアプリで一般的であり、nextはサポ�
 ※しかし`next.config.js`や`tsconfig.json`のような設定ファイルは、環境変数と同様にルートディレクトリに配置してください。
 これらはsrcに配置しても動作しません。publicディレクトリについても同様
 
+## SSRとSSGについて
+
+[参考URL](https://www.gaji.jp/blog/2022/03/17/9343/)
+
+Nextでクエリ文字列を使いたい時は`getServerSideProps`を使う
+`getStaticProps`では使えない。
+
 
 ### SSRとして動作させる(pages)
 
