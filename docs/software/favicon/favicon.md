@@ -1,6 +1,6 @@
 # favicon 
 
-[参考URL](https://zenn.dev/pacchiy/articles/e4dcd7bd29d387)
+[参考URL(これが一番参考になる)](https://zenn.dev/pacchiy/articles/e4dcd7bd29d387)
 
 ## 配置
 

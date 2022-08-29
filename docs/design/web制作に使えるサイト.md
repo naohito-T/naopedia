@@ -9,7 +9,7 @@ Gridが視覚的に作成できる。
 
 [参考URL](https://liginc.co.jp/502701)
 
-## css 
+## css filter:drop-shadowジェネレーター
 
 画像の形に影を落とすのによく使われるfilter関数のdrop-shadowを確認するためのジェネレーターです。
 [filter:drop-shadowジェネレーター](https://www.bad-company.jp/drop-shadow)
@@ -17,3 +17,7 @@ Gridが視覚的に作成できる。
 ## css box-shadowジェネレーター
 
 [box-shadowジェネレーター](https://www.bad-company.jp/box-shadow)
+
+## css ジェネレーター
+
+[なんか色々ある](https://front-end-tools.com/)
