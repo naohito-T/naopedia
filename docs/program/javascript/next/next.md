@@ -173,8 +173,17 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 本番用に最適化されたビルドを行い、各ルートの情報がコンソールに出力されます。
 
 `$ next start`
-このコマンドは、npx next buildでビルドした後に実行し、本番用としてサーバが立ち上がる。
+このコマンドは`next build`でビルドした後に実行すると、本番用としてサーバが立ち上がる。
 プロダクション環境でアプリケーションを実行する
+envはproduction
+
+`$ next export`
+outディレクトリに静的HTMLをエクスポートする。
+サーバーにNode.jsを必要とせずにクライアントのみで実行できる静的HTMLを出力する。
+
+localで確認する場合は
+`$ yarn add -D serve`というパッケージをインストールする
+※静的ファイルをホスティングするローカルサーバ
 
 ## 各メソッド
 
