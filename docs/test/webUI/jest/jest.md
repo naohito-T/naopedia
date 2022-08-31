@@ -125,8 +125,9 @@ test.describe('some class', () => {
     });
   });
 });
+```
 
-
+```sh
 $ yarn test
 yarn run v1.22.17
 $ playwright test
@@ -158,7 +159,6 @@ outer after each
 inner after all
 [chromium] › test.spec.ts:19:6 › afterAll
 outer after all
-
 ```
 
 ## Jest mock化
