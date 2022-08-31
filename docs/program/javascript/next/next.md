@@ -456,3 +456,8 @@ frontend/.next
 ## Serverless Nextjs Plugin
 
 サーバレスモードで
+
+## Tips
+
+- next起動時にHookを仕掛けたい
+[参考URL](https://stackoverflow.com/questions/69980706/hook-into-nextjs-server-startup)

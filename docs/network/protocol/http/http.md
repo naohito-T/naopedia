@@ -3,13 +3,28 @@
 [HTTP入門](https://www.tohoho-web.com/ex/http.htm)
 [冪等性について](https://qiita.com/suin/items/316cb8aaf8dfcf11abae)
 
-## httpとは
+## HTTPとは
 
 HTTP(HyperText Transfer Protocol)は**サーバとクライアント(ブラウザ)の間でウェブページを送受信するためのプロトコル**
+また、World Wide Web上の通信方法を示すものであり、この通信はクライアントからサーバーへのリクエストとサーバーからクライアントへのレスポンスで構成される。
+こうしたHTTPリクエストとHTTPレスポンスには、ヘッダーと呼ばれる一連のキーと値のペアが追加される。
 
-HTTP自体は**ステートレス(状態を保持せず一回で完結すること)**なプロトコル
+HTTP自体は**ステートレス（状態を保持せず1回で完結すること）**なプロトコル
 リクエスト (GET) => レスポンス (200 OK ...) で手続きが完結。
 SMTPのように複数の手続きを踏む必要はなく、その時の状態も保持していない。
+
+
+## HTTPヘッダー
+
+[参考URL](https://www.cloudflare.com/ja-jp/learning/cdn/glossary/what-is-cache-control/)
+
+ヘッダーはコロンで区切られたキーと値のペアで構成される。
+
+※値はディレクティブ（指示）とよばえれる
+```sh
+# key: 値,値
+cache-control: public, max-age=14400
+```
 
 ---
 
