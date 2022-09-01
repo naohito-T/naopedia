@@ -59,6 +59,22 @@ bundle init
 bundle exec [コマンド名]
 ```
 
+つまりlocalでインストールさせたい場合は先にgemfileを作ってそこからrails newをするのがいい
+
+- Tips
+[globalにgemをインストールする](https://teratail.com/questions/205653)
+
+## globalにインストールされているgemを確認する
+
+```sh
+$ gem environment
+- INSTALLATION DIRECTORY: /home/ubuntu/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0
+```
+で確認
+INSTALLATION DIRECTORYの項目
+
+
+
 ### Bundlerを使って管理する
 
 Bundlerでライブラリを管理するためにはGemfileを作成する必要がある。

@@ -6,6 +6,13 @@
 
 ![Ruby](image/ruby.png)
 
+## Ruby 3.0.Xの依存関係
+
+`% sudo apt install -y libssl-dev libreadline-dev zlib1g-dev`
+
+※macOSだとopensslでまかなうらしい
+
+
 ## Ruby 仕組み
 
 ## Language Server Protocolは(LSP)

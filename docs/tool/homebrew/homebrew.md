@@ -1,8 +1,35 @@
 # Homebrew
 
-忘れてはいけないのは、homebrewはユーザーレベルでインストールするパッケージマネージャー。
+忘れてはいけないのは、homebrewは**ユーザーレベルでインストールするパッケージマネージャー**
+
 ホストマシンでひとつではないため汎用性が高い。
-Homebrewではホームディレクトリ内でパッケージを管理するためsudoを使わない
+Homebrewではホームディレクトリ内でパッケージを管理するためsudoを使わないのもメリット
+
+## ユビキタス
+
+フォーミュラ: Homebrewではインストールしたパッケージのこと
+
+## コマンド
+
+[参考URL](https://parashuto.com/rriver/tools/homebrew-most-used-commands)
+
+## Homebrew 各OS ユーザーディレクトリインストール先
+
+Ubuntu
+`/home/ubuntu/.linuxbrew/bin/openssl`
+
+macOS
+`/usr/local/Cellar/`
+
+```sh
+# macOS コマンドディレクトリ
+$ which openssl
+/usr/bin/openssl
+```
+
+homebrewを指さないときは
+PATHを変更する
+
 
 ## Homebrewでのパッケージ呼び名
 

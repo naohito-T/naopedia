@@ -1,8 +1,8 @@
 # Nuxt
 
-絶対忘れるな
 nodeのconsole.logはターミナル上、つまりSSR時
 csr（ブラウザ）のconsole.logは検証で出力される
+※Nextjs
 
 [nuxtでのfetchについてめちゃくちゃ詳しい](https://medium.com/veltra-engineering/in-ssr-vue-js-is-created-twice-7f9122de9b77)
 
@@ -873,8 +873,8 @@ modules: ['@nuxtjs/style-resources'],
 SSRの場合、buildで生成されるdistディレクトリの中身をそのままデプロイすれば良いわけではない。
 
 **SSRを静的サイトホスティング**でdeployする方法
-、Nuxt.js の SSR サイトの成果物である JavaScript のファイル郡とその他の必要な静的な asset をFirebase Hosting にデプロイし、
-その URL に対するアクセスを Firebase Hosting の rewrites ルールによって、同じく Firebase で提供されている Cloud Functions に作った HTTP 関数に向けるようにし、その HTTP 関数で Nuxt.js のレンダリング関数を実行するという流れを実現すれば良いということです。
+Nuxt.jsのSSRサイトの成果物であるJavaScriptのファイル郡とその他の必要な静的なassetsをFirebase Hosting にデプロイし、
+そのURLに対するアクセスをFirebase Hosting の rewrites ルールによって、同じく Firebase で提供されている Cloud Functions に作った HTTP 関数に向けるようにし、その HTTP 関数で Nuxt.js のレンダリング関数を実行するという流れを実現すれば良いということです。
 ディレクトリ構成や使用しているパッケージ、Nuxt.js の各種設定などはこれを実現するための唯一の方法はなく、どのような方法でも上記の流れを実現することができれば問題がない
 
 
@@ -883,3 +883,9 @@ SSRの場合、buildで生成されるdistディレクトリの中身をその�
 [VueのSSR時におけるハイドレーションエラー対処法](https://zenn.dev/00_/articles/c5130802d384b8238e4c)
 [nuxt lifecycle](https://qiita.com/too/items/e8ffcf7de7d48dcb9a9b)
 [Composition API + Typescript で Vuex をリアクティブに安全に使いたい](https://tjmschk.hatenablog.com/entry/2020/12/14/231800)
+
+- nuxt buildを高速化する
+[参考URL](https://tech.contracts.co.jp/entry/2020/12/14/161147)
+
+hardSource & プロパティ共に未だNuxt.jsとしては実験的機能の扱いとなっていること。
+調べてみますとhardSourceをONにしてビルドすると稀にビルドに失敗することがあるようです。解決方法としてはnode_modules/hard_source/*(hardSourceのキャッシュファイル群)を削除するとエラー解消されるようですので
