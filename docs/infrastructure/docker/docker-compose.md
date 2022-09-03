@@ -12,10 +12,19 @@ Docker Engineの一部ではない。
 ## docker-compose depends_on
 
 depends_onはあくまで起動状態を制御しているだけであり、dbがtcp受け付ける状態（mysqld)が起動するまで待つ。みたいなのができない。
-以前までは、シェルで対応して欲しいと公式サイトが記載。そのため幾つもプロジェクトはwait.shを使用し`nc`コマンドなどでdbに意思疎通をしていた。
+以前までは、シェルで対応して欲しいと公式サイトが記載。
+そのため幾つもプロジェクトはwait.shを使用し`nc`コマンドなどでdbに意思疎通をしていた。
 最新だと、それはしなくて良くなった。
+[Docker Compose の depends_on の使い方まとめ](https://gotohayato.com/content/533/)
 
-[参考URL](https://gotohayato.com/content/533/)
+**注意**
+```yml
+depends_on:
+  service_a:
+    condition: service_started
+```
+depends_on..condition.service_startedは1回非推奨になったが、3.8ぐらいでまた元に戻った。しかしdocker-compose 2系じゃないと使えない。
+
 
 ## Docker 掃除
 
@@ -42,11 +51,11 @@ docker-composeを使ってサーバ環境を構築した際に、ホストOSを�
 これのメリットとしてDBなどのキャッシュ問題を回避する。
 
 dockerとの対比コマンド
-docker-composeで管理しているとこにdockerコマンドで対応していると反故が生じる恐れがあるためdocker-composeコマンドを使用すること。
+docker-composeで管理しているプロジェクトで、dockerコマンドを使用すると反故が生じる可能性もあるためdocker-composeコマンドを使用すること。
 
 ![コマンド対比](image/コマンド対比.png)
 
-## コンテナーーは常に削除する
+## コンテナーは常に削除する
 
 Docker開発を進めていく上でコンテナーーは常に削除することをする
 
@@ -67,10 +76,10 @@ docker-compose.ymlをdocker-compose.ymlというツールで読み込ませて�
 
 Docker Composeを使えば、今までdocker runの引数で1つひとつ指定したり、起動後にdocker execでコマンドを実行していたりしたものをdocker-compose.ymlという1つの設定ファイルに集約できる。
 
-## docker-coomposeで住む場合
+## docker-composeですむ場合
 
-なるべく Dockerfile を書きたくない
-特殊なことをやってないないなら docker-compose から設定できるもので基本十分。
+なるべくDockerfileを書きたくない
+特殊なことをやっていないのであればdocker-composeから設定できるもので基本十分。
 
 ## docker-compose.yaml を読む
 
@@ -120,13 +129,14 @@ services: # 起動するコンテナーの定義を行う。
   **ただ、ここで定義した名前は、dockerのログに表示されるので、わかりやすい名前にした方がいい**
 
 - build
-  docker build の実行情報を記述する。ここで定義された情報を元に Docker をビルドし、そのビルドしたイメージを使用してコンテナーを起動するコーナー。image もしくは build どちらかを記述する必要がある。
+  docker buildの実行情報を記述する。ここで定義された情報を元にDockerをビルドし、そのビルドしたイメージを使用してコンテナーを起動するコーナー。
+  imageもしくはbuildどちらかを記述する必要がある。
 
-  > コマンドの場合、 `$ docker build -f docker/nginx/Dockerfile` . と同一です。
+  >コマンドの場合、 `$ docker build -f docker/nginx/Dockerfile` . と同一。
 
   [以下参考URL](https://qiita.com/sam8helloworld/items/e7fffa9afc82aea68a7a)
   - context
-  docker build コマンドを実行したときの、カレントなワーキングディレクトリのことを ビルドコンテキスト（build context）と呼ぶ。
+  docker buildコマンドを実行したときの**カレントなワーキングディレクトリのこと**をビルドコンテキスト（build context）と呼ぶ。
 
   - dockerfile
 
@@ -139,7 +149,7 @@ services: # 起動するコンテナーの定義を行う。
 
 ボリュームのマウントを行う。
 volumesでは**パスを指定するとDockerエンジンはボリュームを作成する**
-> コマンドの場合、`sh -v $(pwd)/public:/var/www/html/public:ro <IMAGE ID>`オプションと同一です。
+>コマンドの場合、`sh -v $(pwd)/public:/var/www/html/public:ro <IMAGE ID>`オプションと同一です。
 
 1行で記述
 [SOURCE:]TARGET[:MODE]
@@ -273,10 +283,10 @@ services:
       - "8000:8000"
 ```
 
-postgresはdjangoからアクセスできればよいので，exposeを使用する。
-djangoはホストのブラウザーからアクセスするので，portsを使用する。
+postgresはdjangoからアクセスできればよいのでexposeを使用する。
+djangoはホストのブラウザーからアクセスするのでportsを使用する。
 
-ホストのポートを指定するのは必要がなければ，docker-composeに一任するのがよいです．たとえば，ports: "5432:5432" と指定してpostgresを起動すると，複数のpostgresを使いたい時に，ポートで競合してエラーとなります．
+ホストのポートを指定するのは必要がなければdocker-composeに一任するのがよいです．たとえば，ports: "5432:5432" と指定してpostgresを起動すると，複数のpostgresを使いたい時に，ポートで競合してエラーとなります．
 
 ## Docker Compose の portsとexposeの違い
 
@@ -295,13 +305,13 @@ djangoはホストのブラウザーからアクセスするので，portsを使
 
   > コマンドの場合、 -e PHP_HOST=app オプションと同一で
 
-  DBについての環境変数設定(パスワード)だが、cfcのnuxtでもやっていたからそのコンテナーの環境変数を設定できそう。
+  DBについての環境変数設定（パスワード）だが、cfcのnuxtでもやっていたからそのコンテナーの環境変数を設定できそう。
 
 - env_file
   ファイルに定義された環境変数を読み取り、コンテナーへ定義する。
 
 - command
-  Dockerfile で定義されている CMD の上書きを行う。
+  Dockerfileで定義されているCMDの上書きを行う。
 
 - depends_on
   service同士の依存関係を記す
@@ -322,7 +332,7 @@ networksを設定してネットワークを共有することで、複数のdoc
 
 ttyがないと、コンテナーを起動させ続けるためのプロセスが存在しないためコンテナーが正常終了してしまう。
 
-ttyとは?
+ttyとは
 >ttyとは、標準入出力となっている端末デバイス(制御端末、controlling terminal)の名前を表示するUnix系のコマンドである。元来ttyとはteletypewriter（テレタイプライター）のことを指す。
 
 どうやらttyは標準入出力先のデバイスとのことです。
