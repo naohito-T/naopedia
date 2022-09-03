@@ -25,7 +25,7 @@ ZはタイムゾーンがUTCという意味。
 
 ## UNIX TIME
 
-ただ、一般的なUnix timeと言えば、秒の単位までのケースが多い。
+ただ、一般的なUnix timeと言えば、秒の単gi位までのケースが多い。
 
 [wikipedia](https://ja.wikipedia.org/wiki/UNIX%E6%99%82%E9%96%93)
 
