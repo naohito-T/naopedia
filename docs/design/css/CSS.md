@@ -15,6 +15,48 @@ grid layout: IE対応していないのであれば積極的に使う
 
 CSSは**宣言型プログラミング言語**だが、近年JavaScriptのような命令型の要素も増えてきている。
 
+## CSSの条件分岐
+
+命令型要素について
+[参考URL](https://coliss.com/articles/build-websites/operation/css/writing-logic-in-css.html)
+
+1. 属性セレクターで対応する方法
+
+```css
+[data-attr='true'] {
+    /* if */
+}
+[data-attr='false'] {
+    /* elseif */
+}
+:not([data-attr]) {
+    /* else */
+}
+```
+
+2. 擬似クラス
+
+```css
+:checked {
+    /* if */
+}
+:not(:checked) {
+    /* else */
+}
+```
+
+3. メディアクエリ
+
+```css
+:root {
+    color: red; /* else */
+}
+@media (min-width > 600px) {
+    :root {
+        color: blue; /* if */
+    }
+}
+```
 
 ## ユビキタス
 

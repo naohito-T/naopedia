@@ -129,7 +129,7 @@ JPGはCPU上でデコードされてフルサイズでGPUに乗る（pngも）
 }
 ```
 
-- 背景(background: color)
+- 背景（background: color）
 [参考URL](https://coliss.com/articles/build-websites/operation/css/the-new-responsive-2021.html)
 ダークテーマ用にデザインする場合、背景色と文字色を反転させるだけでいいというわけではありません。
 意外と知られていない注意点があります。たとえば、ダークテーマの背景では視覚的な振動を抑えるために暗い背景の色の彩度を下げる必要があります。
