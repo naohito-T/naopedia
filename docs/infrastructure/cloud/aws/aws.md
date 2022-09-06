@@ -4,6 +4,20 @@ aws関連
 
 [AWS Cloud Quest](https://www.itmedia.co.jp/news/articles/2203/17/news092.html)
 
+## AWS CLI
+
+AWSコマンドラインインターフェイス (AWS CLI) は、AWSのサービスを管理するための統合ツール。
+ダウンロードおよび設定用の単一のツールのみを使用して、コマンドラインからAWSの複数のサービスを制御し、スクリプトを使用してこれらを自動化することができる。
+
+## AWS CDK
+
+[5分で理解するAWS CDK](https://qiita.com/Brutus/items/6c8d9bfaab7af53d154a)
+
+AWSクラウド開発キット (AWS CDK) は、最新のプログラミング言語を使用してクラウドインフラストラクチャをコードとして定義し、それを**AWS CloudFormation**を通じてデプロイするためのオープンソースのソフトウェア開発フレームワーク。
+
+TypeScriptおよびPythonなどのプログラミング言語を使用して、AWSリソースを定義し、Terraformの様にInfrastructure as Code（以降、IaC）を実現する手段として、クラウドインフラのリソースをプロビジョニングすることができる。
+
+
 ## IAM(Identity and Access Management)
 
 ユーザに対してAWSのアクセスを制御する仕組みのこと
@@ -43,7 +57,7 @@ AWS CLIを使うためにはAWSにアクセスするためのアクセスキー(
 ## レンタル
 
 コンピューターー資源を所有することは非常に大変
-しかしレンタル期間は1ヶ月単位、あるいはそれ以上になることが普通。コンピューターー資源の増減は電話やメール・書面などのやりとりとなるため今すく使いたいというニーズに答えることが難しい。インフラ障害が発生したときにもレンタル会社に依頼することしかできず、復旧が遅れる場合がある。
+しかしレンタル期間は1か月単位、あるいはそれ以上になることが普通。コンピューターー資源の増減は電話やメール・書面などのやりとりとなるため今すく使いたいというニーズに答えることが難しい。インフラ障害が発生したときにもレンタル会社に依頼することしかできず、復旧が遅れる場合がある。
 
 ## クラウド
 
@@ -278,3 +292,11 @@ defaultのクレデンシャルをconfigに実装することができる。
 
 [aws-vaultでアクセスキーをセキュアに保存しつつ、MFAもシームレスにやる](https://zenn.dev/nemolize/articles/3a5d03a7974eea)
 [AWS Secrets Managerを使おう！](https://qiita.com/mm-Genqiita/items/f93285a6058c64b39f23)
+
+## AWS KMS(Amazon Key Management Service)
+
+[参考URL](https://qiita.com/miyuki_samitani/items/c3c871e2312b9a47b9e2)
+
+鍵を管理するところ。
+元々の鍵をマスターキー
+暗号化された鍵をデータキーとしてAWSで保存ができる。
