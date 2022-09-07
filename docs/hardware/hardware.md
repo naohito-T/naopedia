@@ -127,5 +127,3 @@ $ ifconfig | grep "inet"
 
 [参考URLs](https://qiita.com/toshihirock/items/b643ed0edd30e6fd1f14)
 
-UNIX ドメインソケットもソケットもいずれもプロセス間のデータのやり取りを行うための手法の一つ
-UNIX ドメインソケットではプロセス間通信にファイルシステムを利用する(拡張子 .sock という場合が多い）その為、 同じホストでのプロセス間通信 として利用される
