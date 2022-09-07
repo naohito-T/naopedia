@@ -13,6 +13,11 @@
 
 - ネットワーク原因調査
 
+## ネットワーク疎通コマンド
+
+[参考URL](https://yaruki-strong-zero.hatenablog.jp/entry/network_debug)
+
+
 ## ping
 
 pingはICMPのエコー要求/応答機能を使った診断コマンド。

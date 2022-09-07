@@ -18,6 +18,13 @@ Linuxは1分あたり0.008ドルと安価
 Windowsは0.016ドル（2倍）
 macOSは0.08ドル（10倍）という価格
 
+## GitHub Actions実行単位
+
+3つの実行単位が存在する。
+- workflow
+- Job
+- Step
+
 
 
 ## 高速化
