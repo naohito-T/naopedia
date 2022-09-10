@@ -18,6 +18,14 @@ $ cat /etc/lsb-release
 ## openコマンドを使う
 
 macOSなどのopenコマンドは以下をインストールすればいける
+※リモートサーバー上だとできない
 
 [参考URL](https://installati.one/ubuntu/20.04/xdg-utils/)
+
+## apt と apt-getの違い
+
+aptのが新しい。基本はそっちを使う。
+
+>apt-get は最初のコマンドラインベースフロントエンドで、APT プロジェクト内で開発されました。apt は APT から提供されているもう一つのコマンドラインベースフロントエンドで、apt-get の持っていた設計上のミスを克服しています。
+
 

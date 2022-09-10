@@ -73,3 +73,7 @@ tmuxターミナル上で動作するソフトウェアであり完結にいう�
 $ ps aux | grep tmux
 $ kill "ID"
 ```
+
+## tmux起動のたびに.zshrcなどの設定ファイルが読み込まれる
+
+[参考URL](https://qiita.com/key-amb/items/ce39b0c85b30888e1e3b)
