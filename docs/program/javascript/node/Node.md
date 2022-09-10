@@ -31,6 +31,10 @@ console.log(process.argv[1], "c.js", "path.resolve", require("path").resolve("")
 
 [参考URL](https://zenn.dev/hibikine/articles/27621a7f95e761#discuss)
 
+## npm 便利スクリプト
+
+[参考URL](https://qiita.com/mysticatea/items/12bb6579b9155fd74586)
+
 ## Node jsとは
 
 ## package.json

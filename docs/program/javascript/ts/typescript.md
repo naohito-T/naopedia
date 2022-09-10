@@ -176,6 +176,8 @@ namespaceを使うと同じファイル内で階層化された名前空間を�
 
 ## タイプガード(Type Guard)
 
+[参考URL](https://qiita.com/propella/items/33433278497f290ceadb)
+
 Type assertions（キャスト）Type assertionsを使うと、実際のデータがどうであろうが強制的に型情報を書き換えてしまうため、有り難いTypeScriptの型チェックをすり抜けてしまう。**TypeScriptではType assertionを使う代わりに実行時型チェックを強制するType Guardという仕組みがある。**
 
 ## undefinedなどを取り除く

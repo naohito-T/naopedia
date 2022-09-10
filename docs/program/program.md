@@ -8,6 +8,8 @@
 
 ## Programing 言語種類
 
+コンパイルされて実行できる状態になったプログラムのことを実行形式と呼ぶ
+
 ### スクリプト言語(scripting language):軽量言語 または LL(Lightweight Language)
 
 [参考URL](https://e-words.jp/w/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E8%A8%80%E8%AA%9E.html)

@@ -9,6 +9,16 @@ Homebrewではホームディレクトリ内でパッケージを管理するた
 
 フォーミュラ: Homebrewではインストールしたパッケージのこと
 
+## Brewfileを作成
+
+[参考URL](https://kakakakakku.hatenablog.com/entry/2020/09/17/124653)
+
+```sh
+# これでカレントにBrewfileが作成される
+$ brew bundle dump
+```
+
+
 ## コマンド
 
 [参考URL](https://parashuto.com/rriver/tools/homebrew-most-used-commands)
