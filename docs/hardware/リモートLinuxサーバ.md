@@ -21,6 +21,7 @@ vimライクなrangerかlfか
 
 [lf:リファレンス](https://github.com/gokcehan/lf)
 
-- vscodeからコマンドひとつでリモートプロジェクトを開ける
+- ローカルからコマンドひとつでリモートプロジェクトをvscodeで開く
+[参考URL](https://www.kerislab.jp/posts/2021-01-16-sshcode/)
 
 - tmuxの設定をする
