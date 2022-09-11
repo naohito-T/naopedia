@@ -57,9 +57,18 @@ bundle init
 
 # Bundlerでインストールされているgemパッケージを使用してコマンドを実行する。
 bundle exec [コマンド名]
+# bundle execを実行コマンドの前につけなかった場合、グローバルのgemが適用される。
 ```
 
-つまりlocalでインストールさせたい場合は先にgemfileを作ってそこからrails newをするのがいい
+## gemがローカルインストールされているか確認
+
+[参考URL](https://qiita.com/tatsumin0206/items/af358f8c92bddb3371c0)
+
+```sh
+$ gem list | grep mechanize              # グローバルインストールされているgem一覧
+$ bundle exec gem list | grep mechanize  # ローカルインストールされているgem一覧
+mechanize (2.7.6)
+```
 
 - Tips
 [globalにgemをインストールする](https://teratail.com/questions/205653)

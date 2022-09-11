@@ -46,6 +46,7 @@
     "popd",
     "POSIX",
     "pushd",
+    "rubocop",
     "Stmts",
     "struct",
     "Swiper",
