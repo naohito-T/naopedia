@@ -908,3 +908,11 @@ defaultでは以下のURL
 `localhost:3000/admin`
 しかしこれを認可で変更は可能
 `localhost:3000/private/admin`
+
+## Active Support
+
+Active SupportはRailsに搭載されているコンポーネントの一種。
+Object/Class/String/Numeric/Enumerableなど**標準ライブラリを拡張**することで、よりRubyの表現力を向上してくれるライブラリ。
+
+
+

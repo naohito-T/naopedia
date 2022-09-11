@@ -2,6 +2,12 @@
 
 [他言語からRuby入門について](https://www.ruby-lang.org/ja/documentation/ruby-from-other-languages/)
 
+## Rubyを書く時意識すること
+
+文字列も数値も配列もすべてクラスから生成されたインスタンス（その上の基底クラスが定義されているから文字列ならこのメソッドみたいに使える）
+つまり、何が言いたいのかは
+型を意識しながら書く。そこで調査する範囲が狭まる（stringか、ならstringのメソッド一覧を探すかみたいな）
+
 ## Ruby パッケージ
 
 ![Ruby](image/ruby.png)
@@ -673,7 +679,7 @@ def
 
 アクセサメソッドはrobo.nameの様にクラス外から呼ぶ
 
-クラス内ではレシーバを省略しnameだけで呼べる
+クラス内ではレシーバーを省略しnameだけで呼べる
 
 ```ruby
 def change_name(new_name)
@@ -696,7 +702,9 @@ class A
 end
 ```
 
-- クラスメソッドの書き方(別)
+## class << self
+
+- クラスメソッドの書き方（別）
 こちらの書き方が好きなプログラマーも多い
 
 ```ruby
