@@ -25,8 +25,6 @@ macOSは0.08ドル（10倍）という価格
 - Job
 - Step
 
-
-
 ## 高速化
 
 CI/CDのビルドでは、リポジトリが依存するパッケージのダウンロードが原因でビルド時間が長くなってしまうことがある。
@@ -35,7 +33,48 @@ CI/CDのビルドでは、リポジトリが依存するパッケージのダウ
 このため、CI/CDが提供するキャッシュ機能を用いて、異なるビルド間でダウンロードしたパッケージを使い回して高速化することがよくある。
 GitHub Actionsでもキャッシュ機能が提供されている。
 
+## cache
+
+[GitHub Actionsの知見](https://papix.hatenablog.com/entry/2020/04/14/110000)
+
+**キャッシュ有効期限**
+おそらくキャッシュサーバから削除されるのは**7日間アクセスがなかったら削除**される。
+
+GitHub Actions公式のキャッシュ機能である`actions/cache`は
+- Pull Requestでコケた時にRe-run jobsするとactions/cacheアクションが正常に動作しない
+- actions/cacheアクションは時折キャッシュの取得に失敗することがある
+
+GitHub Actionsにはactions/cacheというものがあって、ビルド時の依存関係を解決したものとかをキャッシュしておくことができます。
+標準ではGitHubが提供するキャッシュサーバにファイルが保存されるんですが、さまざまな事情により自分たちが管理するストレージに置きたいことがあります。
+
+以下のusesの結果
+出力として**cache-hitというbool値が出力される。**
+GitHubにはこう書いてありますが、falseが空値で返ってくることや、後に出てくる判定で'true'を使っていることから、文字列が返ってきている気がします。
+
+```yml
+- uses: actions/cache@v1
+  with:
+    path: ~/go/pkg/mod # キャッシュの保存先（ディレクトリ）を指定する
+    key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }} # どのキャッシュを使うかなどの識別子に使う
+    restore-keys: | # keyが見つからなかった場合に、他のキャッシュを探索するのに使うキーを指定
+      ${{ runner.os }}-go-
+```
+
+
+- uses: actions/cache@v1がやっていること
+path, keyは必須で、restore-keysのみオプションです。
+
+次に、このactionが何をやっているのか、簡単に整理します。
+1. keyやrestore-keysに基づいて、キャッシュが存在するか調査します。
+2. 調査結果ごとの処理を行います。
+
+キャッシュが存在すれば、cache-hitにtrueが入る。job終了時、キャッシュの保存は行われない。
+キャッシュが存在しなかった場合、keyを予約。cache-hitには空値が入っている。job終了時、pathで指定されたディレクトリにキャッシュの保存を試みる。作られるキャッシュは、keyで識別可能になります。
+
+
 ## GitHub Actions動作環境遍歴
+
+Docker（遅い）→ Node（デファクトスタンダード）
 
 - DockerベースのGitHub Actions（よかったが動作が遅すぎる）
 - Nodeベース（早いけどシェルスクリプトでできる動作ができない場合も）
@@ -46,7 +85,12 @@ GitHub Actionsでもキャッシュ機能が提供されている。
 
 [参考URL](https://knowledge.sakura.ad.jp/23478/)
 
+- cronみたいなこと
+- webhooksで実行
+- pushなどのGitHub eventで実行
+
 GitHub Actionsは、ほかのCI/CDツールと同様、リポジトリに対するプッシュやプルリクエストといった操作、もしくは指定した時刻になるといったイベントをトリガーとして、あらかじめ定義しておいた処理を実行する機能。
+
 たとえばリポジトリにコミットが行われた際に特定の処理を実行したり、毎日決まった時刻に特定の処理を実行したりする、といったことを実現できる。これらの処理はGitHubが提供するサーバー上に用意された仮想マシン内で実行できるため、**ユーザーが独自にサーバーなどを準備する必要はない点が最大のメリット。**
 
 **仮想マシン上で利用できるOSとは**
@@ -63,6 +107,7 @@ GitHub Actionsは、ほかのCI/CDツールと同様、リポジトリに対す�
 
 GitHub Action基本
 
+[これがわかりやすい](https://helve-blog.com/posts/git/introduction-to-github-actions/)
 [参考URL](https://qiita.com/HeRo/items/935d5e268208d411ab5a)
 
 ## workflowの定義
@@ -79,20 +124,55 @@ ymlのjogsのtest名がnameに紐付きじゃばらで出る
 
 ![workflow](image/workflow.png)
 
+## 拡張子
+
+`.yml` `.yaml`のどちらでも可能。
+
+
 ## job
 
-各ジョブは**仮想環境の新しいインスタンスで実行される**
-したがって、ジョブ間で環境変数やファイル、セットアップ処理の結果などは共有されない
-ジョブ間の依存を定義して待ち合わせることができる
-→データの受け渡しが必要ならアーティファクト経由で。
+ひとつのファイルに複数のjobを指定可能。
+原則として各jobは並列に実行されるが依存関係（他のジョブ終了を待つ）を設定することも可能。
+
+[複数Job間でデータを共有する](https://qiita.com/yokawasa/items/dc46ae6936b745af8b80)
+
+各ジョブは**仮想環境の新しいインスタンスで実行される**（つまり別々のGitHub Actions Runner（別々のOS）で実行される）
+したがって**ジョブ間で環境変数やファイル/セットアップ処理の結果などは共有されない**
+
+- 共有したい場合
+解決策の1つにArtifactsのUpload/Downloadがある。
+残念ながら今のところGitHub ActionsにはJob間で共有可能なグローバルスコープの変数などはなく...
+
+
+```yml
+# job1の成果物をjob2にはdefaultでは共有ができない。
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+  job2:
+    runs-on: 
+```
 
 ## Steps
 
+
 jobが実行する処理の集合
-同じjobのstepは同じ仮想環境で実行されるのでファイルやセットアップ処理は共有できる。
+同じjobのstepは同じ仮想環境で実行されるので**ファイルやセットアップ処理は共有できる。**
 しかし各ステップは別プロセスなので**ステップ内で定義した環境変数は共有できない。**
-jobs.<job_id>.envで定義した環境変数は全stepで利用できる
-※jobの中にさらに細かい粒度で、stepが存在:stepはjobと違い上から順に実行される
+`jobs.<job_id>.env`で定義した環境変数は全stepで利用できる
+※jobの中にさらに細かい粒度で、stepが存在:stepはjobと違い**上から順に実行される**
+
+```yml
+# job1の成果物をjob2にはdefaultでは共有ができない。
+jobs:
+  build:
+  job1:
+    steps:
+      - uses: actions/checkout@v3
+  job2:
+    steps:
+      - uses: actions/checkout@v3
+```
 
 ## アクション
 
@@ -108,11 +188,11 @@ runコマンドでの実行ができ、GitHubやサードパーティの公開�
 ## 料金
 
 public : 無料
-private : linuxで  $0.008/min かかる。
+private : linuxで  $0.008/minかかる。
 
 0.008/min=0.008/min=0.48/hour = 約52円/hour（$1=108.4円）
 10分かかるビルドを実行すると約9円かかる。
-Freeアカウントで2,000分/月 無料。
+Freeアカウントで2,000分/月無料。
 
 ## Permission
 
@@ -123,7 +203,7 @@ Freeアカウントで2,000分/月 無料。
 
 ## ファイルシステム
 
-Dockerコンテナーで実行されるアクションには、 /githubパスの下に静的なディレクトリがある。
+Dockerコンテナーで実行されるアクションには、`/github`パスの下に静的なディレクトリがある。
 Dockerコンテナーで実行されないアクションでは3つのディレクトリが作成される。これらのディレクトリパスは動的に生成されるので一定ではない。各ディレクトリの位置は対応する環境変数で取得する。
 home（HOME）： ユーザ認証情報などのユーザ関連データが書き込まれる
 workspace（GITHUB_WORKSPACE）：アクションが実行されるワークディレクトリ
@@ -562,7 +642,7 @@ jobs:
 ## working-directoryについて
 
 **working-directory は run のときにしか適用されず、actionを使うときは適用されない**
-そのためuseで他actionを使用する時はworking-directoryを使えるか確認する必要がある。
+そのためuseで他actionを使用する時はworking-directoryを使えるか確認する必要がある（ただし使用するGitHubアプリが対応していないこともある）
 
 [参考URL](https://intothelambda.com/blog/github-actions-with-paths/)
 
@@ -599,6 +679,14 @@ GitHub Actionsには成果物といって
 
 上記をActions上に保存できる機能がある。
 
+
+[参考URL2](https://zenn.dev/jordan/articles/b6c1e905adab31)
+
+Artifactsとはfileやfileのコレクションのことをartifactという
+引用の内容はartifactsはjobの終了後にデータを保持し、同じworkflow内の他のjobとデータを共有することができると書いてます。
+例えばbuildとtest終了後のデータをartifactとして保存が可能
+
+
 ## GitHub Actions ワークフローファイル共通化
 
 [GitHub Actions のワークフローファイルを共通化した話](https://tech.speee.jp/entry/terraform-reusable-workflow)
@@ -606,3 +694,57 @@ GitHub Actionsには成果物といって
 ## lighthouseをciで実行する
 
 [参考URL](https://zenn.dev/mryhryki/articles/2020-11-02-hatena-lighthouse-ci)
+
+## debug設定
+
+[参考URL](https://dev.classmethod.jp/articles/set-secrets-before-actions-test/)
+
+## GHES(GitHub Enterprise Server)
+
+GitHub Enterprise Serverはオンプレミス用のアプライアンス（意:特化）サーバ
+
+
+[DeNAのblog](https://engineering.dena.com/blog/2019/12/dena-github-enterprise-server/#:~:text=GHES%E3%81%AF%E5%88%A9%E7%94%A8%E8%80%85%E3%81%AE,%E3%81%A8%E5%A4%A7%E3%81%8D%E3%81%8F%E7%95%B0%E3%81%AA%E3%82%8B%E7%89%B9%E6%80%A7%E3%81%A7%E3%81%99%E3%80%82)
+
+GHESはGitHubサービスアプライアンスサーバ。
+以前は単にGitHub Enterpriseと呼ばれていましたが、GitHub.comのbusiness cloudサービスを拡充し、クラウド側の GitHub.com business cloudとオンプレミス側のGitHub Enterpriseを合わせて、GitHub Enterpriseと呼ぶようになりました。そしてクラウド側に限定する場合はGitHub Enterprise Cloud、そしてここで取り上げるオンプレミス側をGitHub Enterprise Serverと呼ぶようになりました。昨今は単に「GitHub Enterprise」で検索などすると、GitHub Enterprise Cloudな記事が多くなったような気がして寂しい限りです。
+
+## Private ActionsWorkflow Stepを共有する
+
+[PrivateリポジトリのActionsWorkflow内Stepを共有するためCompositeRunStepを外部参照無しに同リポジトリ内で完結させてみた](https://dev.classmethod.jp/articles/composite-run-step-with-private-repos/)
+
+## ホームディレクトリ
+
+debugで試しに`ls -a`をしたらホームディレクトリがこんな感じだった。
+
+```sh
+Run mkdir -p ~/.cache/yarn
+  mkdir -p ~/.cache/yarn
+  mkdir -p /home/runner/work/parrot/parrot/.next/cache
+  ls -a ~/
+  shell: /usr/bin/bash -e {0}
+.
+..
+.bash_logout
+.bash_profile
+.bashrc
+.cache # これは作った
+.cargo
+.composer
+.config
+.docker
+.dotnet
+.ghcup
+.nvm
+.profile
+.rustup
+factory
+perflog
+runners
+warmup
+work
+```
+
+## 作業ディレクトリ(default)
+
+[参考URL](https://www.bioerrorlog.work/entry/github-actions-default-workspace)

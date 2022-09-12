@@ -30,6 +30,20 @@ JavaやC#のような言語では、宣言という行為を経て始めてデ�
 Rubyでは？
 Rubyでも変数の宣言は必要だが、スクリプト上で**変数に初めて値を格納したタイミングで変数のための領域が自動的にメモリ上に確保される。**
 
+### require, include, extend
+
+[違いについて](https://qiita.com/suzukiry/items/db936ff7312ba7d97315)
+
+require
+ファイルをメモリに読み込む
+loadとの違いは、requireはすでにメモリに展開されていた場合はたとえ対象ファイルに変更があっても読み込みしないが、loadはする、そうです。
+読み込み先が頻繁に更新されるときは、loadを使ってその変更をタイムリーにひろう、ために使うそうです。
+
+include
+
+
+
+
 
 
 ## Language Server Protocolは(LSP)
@@ -1034,3 +1048,22 @@ bundle exec rubocop --auto-gen-config
 ## rubocop version up作業
 
 [参考URL](https://qiita.com/tonluqclml/items/e41bceece33e000e0b53)
+
+## アノテーションコメント
+
+[参考URL](https://qiita.com/tbpgr/items/1c046a877c6be4d89876)
+
+TODO
+あとで追加すべき不足している機能を記す
+
+FIXME
+修正すべき壊れたコードを記す
+
+OPTIMIZE
+パフォーマンスに影響を与える最適化すべき箇所を記す
+
+HACK
+リファクタリングすべきコードの臭いのする箇所を記す
+
+REVIEW
+レビューすべき箇所を記す
