@@ -33,6 +33,8 @@ CI/CDのビルドでは、リポジトリが依存するパッケージのダウ
 このため、CI/CDが提供するキャッシュ機能を用いて、異なるビルド間でダウンロードしたパッケージを使い回して高速化することがよくある。
 GitHub Actionsでもキャッシュ機能が提供されている。
 
+---
+
 ## cache
 
 [GitHub Actionsの知見](https://papix.hatenablog.com/entry/2020/04/14/110000)
@@ -71,6 +73,14 @@ path, keyは必須で、restore-keysのみオプションです。
 キャッシュが存在すれば、cache-hitにtrueが入る。job終了時、キャッシュの保存は行われない。
 キャッシュが存在しなかった場合、keyを予約。cache-hitには空値が入っている。job終了時、pathで指定されたディレクトリにキャッシュの保存を試みる。作られるキャッシュは、keyで識別可能になります。
 
+## cache生存確認
+
+[参考URL](https://stackoverflow.com/questions/63521430/clear-cache-in-github-actions)
+2022年6月27日以降
+GitHub Actions Cache APIを介してキャッシュのクエリと管理ができるようになった。
+
+
+---
 
 ## GitHub Actions動作環境遍歴
 
