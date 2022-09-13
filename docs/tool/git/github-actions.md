@@ -38,9 +38,13 @@ GitHub Actionsでもキャッシュ機能が提供されている。
 ## cache
 
 [GitHub Actionsの知見](https://papix.hatenablog.com/entry/2020/04/14/110000)
+[リファレンスv3](https://github.com/actions/cache)
 
 **キャッシュ有効期限**
 おそらくキャッシュサーバから削除されるのは**7日間アクセスがなかったら削除**される。
+
+**キャッシュスコープ**
+キャッシュのスコープはキーとブランチです。デフォルトのブランチ キャッシュは、他のブランチで使用できる。
 
 GitHub Actions公式のキャッシュ機能である`actions/cache`は
 - Pull Requestでコケた時にRe-run jobsするとactions/cacheアクションが正常に動作しない
@@ -73,12 +77,22 @@ path, keyは必須で、restore-keysのみオプションです。
 キャッシュが存在すれば、cache-hitにtrueが入る。job終了時、キャッシュの保存は行われない。
 キャッシュが存在しなかった場合、keyを予約。cache-hitには空値が入っている。job終了時、pathで指定されたディレクトリにキャッシュの保存を試みる。作られるキャッシュは、keyで識別可能になります。
 
+## プロジェクトにcacheを適用する
+
+これが助けてくれた
+[参考URL](https://qiita.com/akubi0w1/items/2f4bf5d3ce7e5e77dfd7)
+
 ## cache生存確認
 
 [参考URL](https://stackoverflow.com/questions/63521430/clear-cache-in-github-actions)
 2022年6月27日以降
 GitHub Actions Cache APIを介してキャッシュのクエリと管理ができるようになった。
 
+新しいキャッシュを使用したい場合は`key`および`restore-keys`どちらかを変更する必要。
+
+## GitHub アクションのキャッシュが古くなる。
+
+[参考URL](https://github.com/vercel/next.js/issues/27129)
 
 ---
 
@@ -165,6 +179,8 @@ jobs:
 
 ## Steps
 
+実行コンテキストという観点
+GitHub Actionsでは**Stepごとに1つのシェルが与えられる。**（つまり異なるStepに書かれたコマンドは違うシェル上で実行される）
 
 jobが実行する処理の集合
 同じjobのstepは同じ仮想環境で実行されるので**ファイルやセットアップ処理は共有できる。**
@@ -679,7 +695,7 @@ defaults:
 
 [Jest coverage report でプルリクエスト毎にコードカバレッジを可視化する](https://oikawa.dev/posts/20210810_jest-coverage-report-action)
 
-## artifacts: 成果物
+## artifacts: 成果物をuploadする。
 
 [参考URL](https://littleengineer.jp/github-actionsunittest%E3%81%AE%E6%88%90%E6%9E%9C%E7%89%A9%E3%81%AE%E4%BF%9D%E5%AD%98%E3%81%A8%E5%8F%96%E5%BE%97/)
 
@@ -694,7 +710,7 @@ GitHub Actionsには成果物といって
 
 Artifactsとはfileやfileのコレクションのことをartifactという
 引用の内容はartifactsはjobの終了後にデータを保持し、同じworkflow内の他のjobとデータを共有することができると書いてます。
-例えばbuildとtest終了後のデータをartifactとして保存が可能
+たとえばbuildとtest終了後のデータをartifactとして保存が可能
 
 
 ## GitHub Actions ワークフローファイル共通化

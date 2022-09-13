@@ -57,7 +57,107 @@ brew services list
 
 インストールしたパッケージを一覧に出す
 
-## brew uninstall 
+## brew uninstall
+
+## brew shellenv
+
+homebrewnの設定ファイルが確認できる。
+
+```sh
+$ brew shellenv
+export HOMEBREW_PREFIX="/usr/local";
+export HOMEBREW_CELLAR="/usr/local/Cellar";
+export HOMEBREW_REPOSITORY="/usr/local/Homebrew";
+export PATH="/usr/local/bin:/usr/local/sbin${PATH+:$PATH}";
+export MANPATH="/usr/local/share/man${MANPATH+:$MANPATH}:";
+export INFOPATH="/usr/local/share/info:${INFOPATH:-}";
+```
+
+## homebrew仕組み
+
+過去の仕組み（arm（m1）ではなく、インテルの）
+[参考URL](https://qiita.com/omega999/items/6f65217b81ad3fffe7e6)
+
+
+```sh
+# コマンド実体
+/usr/local/Cellar
+
+# コマンドのエイリアス
+/usr/local/bin
+```
+
+
+| キーワード | 本来の意味|  たとえ|
+| --- | --- | --- |
+|brew     |  ビールを醸造する   |   makeする  |
+| homebrew    |  自家醸造   |  ユーザ自らがビルドする   |
+| celler    |  ビール貯蔵庫   |  インストール（保存）先   |
+| keg    |  樽、醸成用   |  make材料   |
+|  formula   | 調理法、手順    |   ビルド方法、手順が書かれたスクリプト  |
+
+## Homebrew インストーラー
+
+現時点のHomebrewのインストーラーは、
+Rosettaを有効にしているターミナルでは`/usr/local/`を基準にしたディレクトリ下でIntel向けのバイナリを
+Rosettaを無効にしているターミナルでは`/opt/homebrew/`を基準にしたディレクトリ下でM1向けのバイナリを
+展開するように動きます。(2021年1月初めごろにはすでにこの挙動になっていました）
+
+/usr/local/binはもともとパスが通っているのでそこに入ったbrewコマンドはそのまま動きますが、/opt/homebrew/binにはパスが通っていないのでそこに入ったbrewコマンドを動かすにはパスを通す必要があります。
+その時"パスを通す"という作業をさせるのではなく、他に必要なもろもろをおこなうeval $(/opt/homebrew/bin/brew shellenv)を実行するように上記メッセージでは促しています。
+
+## 
+
+macOS各環境インストール
+
+[参考URL](https://webrandum.net/cannot-install-under-rosetta2-in-arm-default-prefix/)
+
+```sh
+$ arch -x86_64 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+==> Checking for `sudo` access (which may request your password)...
+Password:
+Sorry, try again.
+Password:
+==> This script will install:
+/usr/local/bin/brew
+/usr/local/share/doc/homebrew
+/usr/local/share/man/man1/brew.1
+/usr/local/share/zsh/site-functions/_brew
+/usr/local/etc/bash_completion.d/brew
+/usr/local/Homebrew
+
+Press RETURN/ENTER to continue or any other key to abort:
+
+🎊: ~
+$ arch -arm64 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+==> Checking for `sudo` access (which may request your password)...
+Password:
+Sorry, try again.
+Password:
+==> This script will install:
+/opt/homebrew/bin/brew
+/opt/homebrew/share/doc/homebrew
+/opt/homebrew/share/man/man1/brew.1
+/opt/homebrew/share/zsh/site-functions/_brew
+/opt/homebrew/etc/bash_completion.d/brew
+/opt/homebrew
+==> The following new directories will be created:
+/opt/homebrew/bin
+/opt/homebrew/etc
+/opt/homebrew/include
+/opt/homebrew/lib
+/opt/homebrew/sbin
+/opt/homebrew/share
+/opt/homebrew/var
+/opt/homebrew/opt
+/opt/homebrew/share/zsh
+/opt/homebrew/share/zsh/site-functions
+/opt/homebrew/var/homebrew
+/opt/homebrew/var/homebrew/linked
+/opt/homebrew/Cellar
+/opt/homebrew/Caskroom
+/opt/homebrew/Frameworks
+```
 
 ---
 

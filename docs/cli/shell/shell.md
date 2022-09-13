@@ -13,7 +13,7 @@
 
 ## uname コマンド
 
-OSまたはハードウェアの情報を表示する
+**OSまたはハードウェアの情報を表示**する
 
 [参考URL](http://itdoc.hitachi.co.jp/manuals/3020/30203S3530/JPAS0263.HTM)
 
@@ -78,6 +78,10 @@ nc: secure-service (10.108.84.141:0): Operation timed out
 
 shellにより変わるため注意が必要
 順番は関係ない。（エラーにならない）
+
+### json読み込み
+
+json読み込みは`@`をつけないとファイルを読み込んでくれない
 
 ---
 
@@ -228,3 +232,10 @@ i=$((1 + $RANDOM % 10))
 ## ユーザー利用のシェルスクリプトを作成する
 
 [参考URL](https://language-and-engineering.hatenablog.jp/entry/20101028/p1)
+
+## anyenv
+
+
+## rbenv
+
+`rbenv rehash`を使用することでshimsディレクトリが更新される。

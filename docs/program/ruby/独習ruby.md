@@ -334,6 +334,53 @@ sets = Set.new([15, 32, 33]) {}
 
 10章
 
+## 例外処理
+
+すべての例外クラスはExceptionを基底クラスとしている。
+※**アプリ固有のビジネスロジックに起因する問題に対しては、適切な例外クラスを用意しておく**のが望ましい（もちろん標準例外で事足りるのであればそちらを優先すべき）
+
+- rescue節が呼び出される方式
+**発生した例外がrescue節に記述されたものと一致した場合、または発生した例外の基底クラスである場合**
+
+- rescue節実行順序
+複数のrescue節がある場合には、記述が先にあるものが優先される。
+最初は下位の例外クラスで捉え、より範囲を広げていくイメージで作成していく。
+
+バックトレース情報に関して
+例外が発生するまでに経てきた**メソッドの一覧**（スタックトレースともいう）
+エントリーポイント（トップレベル）から呼び出し順に記録される（エラー文は下からentrypointとなる）
+※一般的にはバックトレースの末尾を確認することで例外の直接原因を特定できる。
+
+
+- ensure節
+finalと同一。
+
+- raise
+例外を発生させる
+
+```rb
+raise [exp], [message]
+```
+
+### アプリロジックの例外を作成
+
+```rb
+class MyAppError < StandardError
+
+end
+
+# アプリ独自例外の個別クラス
+class MyInputError < MyAppError
+    attr_reader :code
+
+    def initialize(code)
+        super("Invalid Input: #{code}")
+        @code = code
+    end
+end
+```
+
+
 ## 構造体(Struct)
 
 [参考URL](https://qiita.com/ex_SOUL/items/696b3ac2869a2f71f3c0)

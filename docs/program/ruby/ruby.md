@@ -152,7 +152,9 @@ Time.now
 
 ## Ruby 定数
 
-Rubyにおける定数は不変の値というよりグローバル変数に近い。
+[参考URL](https://yulii.github.io/ruby-freeze-method-20150922.html)
+
+Rubyにおける定数は不変の値というよりグローバル変数に近い（ミュータブルのため目立たないバグを埋め込む可能性がある。）
 またRubyでは先頭が大文字になっている識別子のことを定数としていることからクラス名であるStringやArrayなども定数として扱っている。
 
 [参考URL](https://qiita.com/fursich/items/a1b742795cf10eebc73f)
