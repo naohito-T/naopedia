@@ -952,6 +952,19 @@ Railsにはrequire関連で特殊な機能がある。
 - Gemへ公開する場合
 `$ bundle gem [gem name]`
 
+## bundle
+
+`bundle init`
+Gemfileを作る
+
+`bundle install`
+bundle installはGemfile.lockがある場合、Gemfileではなく、Gemfile.lockを基に必要なGemをインストールします。
+
+option
+`bundle install`では`--without`オプションを使用することで不要なgroupをインストール対象から外すことが可能。
+
+[参考URL](https://kojinjigyou.org/17707/)
+
 ## Gemfile
 
 [Gemfileの書き方](https://zenn.dev/lunarxlark/articles/gem-gemfile-format)
@@ -1004,6 +1017,12 @@ mechanize (2.7.6)
 bundle execを付けた方だけ、mechanize (2.7.6)が表示されているのでローカルでのみ
 mechanizeのインストールが完了しています。
 
+## require: false
+
+コマンドラインから実行する必要があるが**コード内では必要のないGem**の時に記載する。
+
+[参考URL](https://qiita.com/hryau6/items/c327d444fd364a8a1c9b)
+
 ---
 
 ## rubocop
@@ -1050,6 +1069,9 @@ bundle exec rubocop --auto-gen-config
 ## rubocop version up作業
 
 [参考URL](https://qiita.com/tonluqclml/items/e41bceece33e000e0b53)
+
+---
+
 
 ## アノテーションコメント
 
