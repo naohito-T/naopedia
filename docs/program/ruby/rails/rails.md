@@ -148,26 +148,30 @@ bundlerによってインストールされるgemはどこで管理されてい�
 
 [参考URL](http://programing-kiso-note.blogspot.com/2014/01/ruby-on-rails.html)
 
-Railsには開発モードと本番モードという２つのモードがあり、それぞれ役割ごとにデータベースを切り替えて使う機能が備わっている。
+Railsには開発モードと本番モードという2つのモードがあり、それぞれ**役割ごとにデータベースを切り替えて使う機能**が備わっている。
 
 本番環境への切り替え方は以下の用にする
-1.環境変数の設定
-export RAILS_ENV=production(linuxの場合,windowsの場合はset RAILS_ENV=production)
-2.モードが変わったかどうかは以下のコマンドで確認
-ーrails consoleでコンソールを開く。
-ーRails.envとコマンドを叩く、これで現在の開発モードが出てくる。
+1. 環境変数の設定
+```sh
+# Linuxの場合
+export RAILS_ENV=production
+# windowsの場合は
+set RAILS_ENV=production
+```
+
+2. モードが変わったかどうかは以下のコマンドで確認
+
+`rails console`でコンソールを開く。
+`Rails.env`とコマンドを叩く、これで現在の開発モードが出てくる。
+
 3.precompileをする。
-ーassetsの圧縮ファイルを作成する事が目的？SASSのbuild、JSファイルの圧縮などを行っておくのだと思われる。これを行う事により高速に動作する?
+assetsの圧縮ファイルを作成する事が目的？SASSのbuild、JSファイルの圧縮などを行っておくのだと思われる。これを行う事により高速に動作する。
 確認したところ圧縮しているわけではなさそう。キャッシュファイルの生成と書いてはいる。
-4.本番モードに切り替えた場合データベースをシードから作っていないので
+
+4. 本番モードに切り替えた場合データベースをシードから作っていないので
 作成する。
 rake db:create
 rake db:migrate
-
-
-## Active Recordについて
-
-Active RecordとはMVCで言うところのMつまりモデルに相当するものであり
 
 ---
 
