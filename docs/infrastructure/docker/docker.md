@@ -5,9 +5,9 @@
 [かなりすごいDockerfile ベストプラティクス](https://zenn.dev/esaka/articles/cae40a30bbbfa495e6a9)
 
 ```sh
-$docker container prune -f
-$docker image prune -f
-$docker volume prune -f
+docker container prune -f;
+docker image prune -f;
+docker volume prune -f 
 ```
 
 ## リモートサーバー内のDockerにローカルから接続する
