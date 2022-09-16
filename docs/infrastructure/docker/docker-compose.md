@@ -1,17 +1,27 @@
 # docker-compose
 
-Docker操作の補佐をするPython製のツール。
+Docker操作の補佐をするPython製のツール（ver2ではGo製に変わっている）
+
 Docker Engineの一部ではない。
 **docker-compose.yml内ではホスト側のシェルの環境変数が使える。**
 →つまり、host側で環境変数が設定されているためdirenvなどで読み込ませるのが良いのではないか？
 設定した環境変数にどのような値が挿入されるかは、 `docker-compose config`コマンドで確認ができる。
 
-また概念として
-**docker-composeとは複数のコンテナーーからなるひとつのシステムの構築をラクチンするためのツール**
+> docker-compose はローカルで Docker のオーケストレーションを行うためのツールです。Docker のビルドから Network や Volume の管理をコードベースで定義して行ってくれます。
+docker-compose.ymlをdocker-compose.ymlというツールで読み込ませて実行すると**ボリュームやネットワークが作られ**、まとめてコンテナーが起動する。
+
+## docker-compose で解決できるもの
+
+Docker Composeを使えば、今までdocker runの引数で1つひとつ指定したり、起動後にdocker execでコマンドを実行していたりしたものをdocker-compose.ymlという1つの設定ファイルに集約できる。
+
+## docker-composeですむ場合
+
+なるべくDockerfileを書きたくない
+特殊なことをやっていないのであればdocker-composeから設定できるもので基本十分。
 
 ## docker-compose depends_on
 
-depends_onはあくまで起動状態を制御しているだけであり、dbがtcp受け付ける状態（mysqld)が起動するまで待つ。みたいなのができない。
+depends_onはあくまで**起動状態を制御**しているだけであり、dbがtcp受け付ける状態（mysqld)が起動するまで待つ。みたいなのができない。
 以前までは、シェルで対応して欲しいと公式サイトが記載。
 そのため幾つもプロジェクトはwait.shを使用し`nc`コマンドなどでdbに意思疎通をしていた。
 最新だと、それはしなくて良くなった。
@@ -23,16 +33,8 @@ depends_on:
   service_a:
     condition: service_started
 ```
-depends_on..condition.service_startedは1回非推奨になったが、3.8ぐらいでまた元に戻った。しかしdocker-compose 2系じゃないと使えない。
 
-
-## Docker 掃除
-
-```sh
-$ docker image prune -f
-$ docker container prune -f
-$ docker volume prune -f
-```
+`depends_on.condition.service_started`は1回非推奨になったが、3.8ぐらいでまた元に戻った。しかしdocker-compose 2系じゃないと使えない。
 
 ## Docker自動起動
 
@@ -44,9 +46,9 @@ docker-composeを使ってサーバ環境を構築した際に、ホストOSを�
 
 ## docker-compose コマンド
 
-**docker-composeで作成したコンテナーーはdockerコマンドではなく、docker-composeを使った管理(コマンド)に一元化すべき**
+**docker-composeで作成したコンテナーはdockerコマンドではなく、docker-composeを使った管理(コマンド)に一元化すべき**
 
-`$docker-compose down`はコンテナーーやネットワークを停止するだけではなく、それらの破棄までしてくれる。
+`$docker-compose down`はコンテナーやネットワークを停止するだけではなく、それらの破棄までしてくれる。
 **※規定ではボリュームは削除しない。**
 これのメリットとしてDBなどのキャッシュ問題を回避する。
 
@@ -55,31 +57,15 @@ docker-composeで管理しているプロジェクトで、dockerコマンドを
 
 ![コマンド対比](image/コマンド対比.png)
 
-## コンテナーは常に削除する
+## コンテナーは常に削除する方がいい
 
-Docker開発を進めていく上でコンテナーーは常に削除することをする
+Docker開発を進めていく上でコンテナーは常に削除することをオススメ。
 
 理由として
-
-1. psコマンドのコンテナー一覧にどんどんコンテナーリストが溜まってくる
+1. psコマンドで確認すると一覧にコンテナーリストが溜まってくる
 2. コンテナーに直接インストールしたgemやパッケージがそのまま残ってしまう。
 本番環境ではDockerfileから作成されたコンテナーをデプロイしますので、コンテナーに直接インストールしたものは反映されません。
-常に本番環境と同じ状態で開発を進めるためにも、コンテナーは一度削除して再度立ち上げることを心がけましょう。
-
-## docker-compose とは
-
-> docker-compose はローカルで Docker のオーケストレーションを行うためのツールです。Docker のビルドから Network や Volume の管理をコードベースで定義して行ってくれます。
-
-docker-compose.ymlをdocker-compose.ymlというツールで読み込ませて実行すると**ボリュームやネットワークが作られ**、まとめてコンテナーが起動する。
-
-## docker-compose で解決できるもの
-
-Docker Composeを使えば、今までdocker runの引数で1つひとつ指定したり、起動後にdocker execでコマンドを実行していたりしたものをdocker-compose.ymlという1つの設定ファイルに集約できる。
-
-## docker-composeですむ場合
-
-なるべくDockerfileを書きたくない
-特殊なことをやっていないのであればdocker-composeから設定できるもので基本十分。
+常に本番環境と同じ状態で開発を進めるためにも、コンテナーは一度削除して再度立ち上げることを心がける。
 
 ## docker-compose.yaml を読む
 
