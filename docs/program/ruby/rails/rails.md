@@ -50,6 +50,19 @@ RailsではMVCでの役割をフォルダーごとに分けることで開発も
 
 ---
 
+## Rails 便利コマンド
+
+Railsでは`rails generate controller`などのコマンドでcontrollerやmodelをコマンドラインから生成することができる。
+※設定で生成するファイルを絞ることができる。
+
+
+
+---
+
+## Rails タイムゾーン
+
+デフォルトではUTC
+そのため`created_at`や`update_at`は日本時刻の9時間前になる。
 
 
 ## Railsで新規タグ

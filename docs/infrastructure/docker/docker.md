@@ -1,5 +1,6 @@
 # Docker
 
+[Dockerfile(リフェレンス)](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 [入門Docker](https://y-ohgi.com/introduction-docker/)
 [軽量なDockerfileの作り方](https://qiita.com/watawuwu/items/d547d0cb1ab1db5e079c)
 [かなりすごいDockerfile ベストプラティクス](https://zenn.dev/esaka/articles/cae40a30bbbfa495e6a9)
@@ -22,8 +23,8 @@ docker volume prune -f
 
 ## Docker パーミッション
 
-LinuxではDockerを実行した場合、作成されたファイルの所有権が`root`
-セキュリティ的によろしくない。
+LinuxではDockerを実行した場合、作成されたファイルの所有権が`root`になる。
+それはセキュリティ的によろしくない。
 変更できる方で考える
 
 ---
@@ -36,8 +37,9 @@ LinuxではDockerを実行した場合、作成されたファイルの所有権
 セキュリティと一貫性の観点から期待通りのイメージがダウンロードされることの保証が重要。
 Dockerのイメージタグは便利だが常に一貫した特定のイメージを指すとは限らないため一般的なアドバイスとしては、SHA-256ハッシュを使ってイメージを識別すること。
 
-## Dockerfile 作成の際
+## Dockerfile ビルダーパターン
 
+マルチステージビルドとも呼ばれていることがある。
 ビルダーパターンなど（FROMが2度現れること）がある。
 つまり、xxxパターンを調べて勉強しろ
 
