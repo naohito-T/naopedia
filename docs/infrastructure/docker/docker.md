@@ -41,6 +41,7 @@ LinuxではDockerを実行した場合、作成されたファイルの所有権
 セキュリティと一貫性の観点から期待通りのイメージがダウンロードされることの保証が重要。
 Dockerのイメージタグは便利だが常に一貫した特定のイメージを指すとは限らないため一般的なアドバイスとしては、SHA-256ハッシュを使ってイメージを識別すること。
 
+
 ## Dockerfile ビルダーパターン
 
 マルチステージビルドとも呼ばれていることがある。
@@ -894,7 +895,9 @@ ENVを使って設定した環境変数はイメージからコンテナーへ�
 
 ## apk
 
-Alpine Linuxのコマンド
+[参考URL](https://kleinblog.net/alpine-apk-cmd.html)
+
+Alpine Linuxで使用できるパッケージ管理コマンド（Alpine Linux package managementの略）
 Linuxコマンドのapt-getが使用される場合は、ベースイメージがAlpineではないということ。
 
 
@@ -1021,3 +1024,7 @@ Dockerイメージ分析ツール
 ## image
 
 alpineを使っては最近はダメな傾向
+
+## scriptsに分ける
+
+キャッシュを

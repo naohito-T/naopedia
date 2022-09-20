@@ -4,6 +4,8 @@
 [Rubyist Magazine](https://magazine.rubyist.net/articles/0061/0061-ForeWord.html)
 [ruby リファレンス](https://www.ruby-lang.org/ja/documentation/)
 
+[Ruby paint](https://hawksnowlog.blogspot.com/2020/09/output-ansi-color-code-with-ruby-paint.html)
+
 ## Rubyを書く時意識すること
 
 文字列も数値も配列もすべてクラスから生成されたインスタンス（その上の基底クラスが定義されているから文字列ならこのメソッドみたいに使える）
