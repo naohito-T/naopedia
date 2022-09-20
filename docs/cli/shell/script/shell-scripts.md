@@ -1,20 +1,17 @@
-# Shell Script
-
+# ShellScript
+  
 [作成する前に見ろ](https://qiita.com/jpshadowapps/items/d6f9b55026637519347f)
-
-## シェルスクリプト
-
 [コーディング規約](https://qiita.com/mashumashu/items/f5b5ff62fef8af0859c5)
 
 ## ShellScript Tips
 
 [シェルスクリプトを書く時の注意](https://qiita.com/youcune/items/fcfb4ad3d7c1edf9dc96)
 
-## shellScript echo 色付ける
+## ShellScript echo 色付ける
 
 [参考URL](https://qiita.com/ko1nksm/items/095bdb8f0eca6d327233#%E3%81%8A%E3%81%BE%E3%81%911-%E8%89%B2%E6%8C%87%E5%AE%9A%E6%96%B9%E6%B3%95-%E4%B8%80%E8%A6%A7)
 
-### shellScript が落ちた時にスクリプトを止める
+### ShellScript が落ちた時にスクリプトを止める
 
 [setコマンドオプション一覧](https://atmarkit.itmedia.co.jp/ait/articles/1805/10/news023.html)
 [set euxについて](https://qiita.com/keitean/items/83c7d0d6221ec1b9c63c)
@@ -42,7 +39,6 @@ set -euox pipefail
 しかし、シェルスクリプトでは**エラーが発生しても後続の処理が普通に実行される。**
 
 [参考URL](https://webbibouroku.com/Blog/Article/shell-try-catch-finally)
-
 
 ## OSを分別する
 

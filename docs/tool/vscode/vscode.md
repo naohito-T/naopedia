@@ -18,6 +18,11 @@
 
 そこでEditorConfigがあれば統一できる
 
+## vscode リモート接続をCLIから実行する
+
+[参考URL](https://www.kerislab.jp/posts/2021-01-16-sshcode/)
+[参考URL2](https://qiita.com/Slowhand0309/items/293fc5db362df9ceba67)
+
 ## モノレポの運用
 
 複数のルートディレクトリがある場合のvscodeディレクトリの優先度
