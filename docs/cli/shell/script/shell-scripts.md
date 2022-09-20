@@ -57,6 +57,24 @@ $ echo $0
 /bin/zsh # zshのpathが取得できる
 ```
 
+## シェルスクリプト実行後参照したい場合
+
+[参考URL](https://atmarkit.itmedia.co.jp/ait/articles/1810/03/news001.html)
+実行後も参照したい場合は、「source」コマンドを使って、シェルスクリプトを“現在動作している”bashに読み込ませる必要がある。
+
+## シェルスクリプト　オプションをparse(解析)する
+
+[参考URL](https://programwiz.org/2022/03/22/how-to-write-shell-script-for-option-parsing/)
+
+2つのコマンドがある。
+`getopts` POSIX準拠シェルの組み込みコマンド
+`getopt` 高機能だが環境依存が多くなる。
+
+**一番大事な考え方**
+複雑なオプション解析が必要な処理の場合は、シェルスクリプトでやるのではなく`rust`や`go`でCLI実装するのがいい選択。
+
+
+
 ## シェルスクリプト 拡張子を取得する
 
 [参考URL](https://takuya-1st.hatenablog.jp/entry/2017/06/01/163000)

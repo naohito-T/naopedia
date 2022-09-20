@@ -28,4 +28,18 @@ aptのが新しい。基本はそっちを使う。
 
 >apt-get は最初のコマンドラインベースフロントエンドで、APT プロジェクト内で開発されました。apt は APT から提供されているもう一つのコマンドラインベースフロントエンドで、apt-get の持っていた設計上のミスを克服しています。
 
+## apt
 
+[オプション](http://www.ne.jp/asahi/it/life/it/linux/linux_command/linux_apt-get.html)
+
+`apt-get update`
+インストール可能なパッケージの一覧を更新する
+
+`apt-get update -qq`オプション
+エラー以外は表示しない。
+
+`apt-get upgrade`
+インストール済みのパッケージ更新を行い、新しいバージョンにアップグレードする
+有効なパッケージ一覧をもとに実行されるため`apt-get update`と組み合わせて使う必要がある。
+
+#

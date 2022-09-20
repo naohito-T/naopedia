@@ -126,6 +126,14 @@ services: # 起動するコンテナーの定義を行う。
 
   - dockerfile
 
+- image
+イメージが存在していなければ、Composeはpullを試みます。
+しかしbuildを指定している場合は除きます。その場合、指定されたタグやオプションを使って構築します。
+
+- stdin_open: true
+stdin_openとは標準入出力とエラー出力をコンテナに結びつける設定です。
+`docker run -it <container_name>`の`-i`にあたる設定
+
 ---
 
 ## volumes
@@ -171,8 +179,8 @@ sourceはホスト側で、targetはコンテナー側です、mydataはvolume�
 ```
 
 **docker-composeでのvolumes指定方法**
-1はバインドマウント
-2はDocker内に存在しているボリューム
+1. バインドマウント
+2. Docker内に存在しているボリューム
 **※external: の中にnameを指定することで、docker-compose外で作成したボリュームを指定できる。**
 
 **注意**
@@ -215,7 +223,7 @@ volumes:
         external: false
 ```
 
-## Volume 一覧
+## volume 一覧
 
 ```yml
 services:
