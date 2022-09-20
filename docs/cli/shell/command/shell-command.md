@@ -3,7 +3,35 @@
 忘れそうなものをとりあえず記述しておく。
 各Shellなどにカテゴライズせず、とりあえず載っけていく
 
+## CLI Tips
+
+CLI環境で使えそうなTipsを記載
+
+`$ mkdir udemy_demoapp_v1 && cd $_`
+`$_` ... 直前のコマンド引数を取得する。
+
+`$ mkdir {api,front}`
+{} ... 波カッコで囲むと一度に複数のディレクトリやファイルが作成できるできる。
+注意する点は、カンマの後に**スペースを入れるとエラー**になります。
+
 ---
+
+## 組み込みコマンド
+
+## pushd/popd コマンド
+
+[参考URL](https://www.javadrive.jp/command/dir/index5.html)
+
+pushdディレクトリを実行すると、**現在のディレクトリをスタックに記憶した上**でカレントディレクトリを変更することができる。
+
+popdコマンドを実行するとスタックに記憶されているディレクトリを取り出しカレントディレクトリを変更することができる。
+
+
+## uname コマンド
+
+**OSまたはハードウェアの情報を表示**する
+
+[参考URL](http://itdoc.hitachi.co.jp/manuals/3020/30203S3530/JPAS0263.HTM)
 
 ## test
 
@@ -21,13 +49,38 @@ testコマンドとは別に、test文は以下のように書くことができ
 ""空文字
 明示的にunset VARされた変数
 
----
-
 ## shift
 
 引数をずらして格納しなおす
 
----
+## nc(NetCat コマンド)
+
+汎用TCP/UDP接続コマンドラインツール。
+ncコマンドはNetCatの略
+
+`nc [-オプション] 接続先 ポート番号`
+
+- 疎通OKの場合
+
+```sh
+nc -z -v -w 3 secure-service 80
+secure-service (10.108.84.141:80) open
+```
+
+- 疎通NGの場合
+```sh
+nc -z -v -w 3 secure-service
+nc: secure-service (10.108.84.141:0): Operation timed out
+```
+
+## curl
+
+shellにより変わるため注意が必要
+順番は関係ない。（エラーにならない）
+
+### json読み込み
+
+json読み込みは`@`をつけないとファイルを読み込んでくれない
 
 ## sourceコマンド
 

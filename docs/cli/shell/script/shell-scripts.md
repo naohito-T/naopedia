@@ -2,6 +2,48 @@
 
 [作成する前に見ろ](https://qiita.com/jpshadowapps/items/d6f9b55026637519347f)
 
+## シェルスクリプト
+
+[コーディング規約](https://qiita.com/mashumashu/items/f5b5ff62fef8af0859c5)
+
+## ShellScript Tips
+
+[シェルスクリプトを書く時の注意](https://qiita.com/youcune/items/fcfb4ad3d7c1edf9dc96)
+
+## shellScript echo 色付ける
+
+[参考URL](https://qiita.com/ko1nksm/items/095bdb8f0eca6d327233#%E3%81%8A%E3%81%BE%E3%81%911-%E8%89%B2%E6%8C%87%E5%AE%9A%E6%96%B9%E6%B3%95-%E4%B8%80%E8%A6%A7)
+
+### shellScript が落ちた時にスクリプトを止める
+
+[setコマンドオプション一覧](https://atmarkit.itmedia.co.jp/ait/articles/1805/10/news023.html)
+[set euxについて](https://qiita.com/keitean/items/83c7d0d6221ec1b9c63c)
+setコマンドを先頭に記載する
+
+```sh
+#!/bin/bash -eu  # とするか
+set -eu # を書いておく
+set -euox pipefail
+```
+
+-e : エラーがあったらシェルスクリプトをそこで打ち止めにする。`exit 0` 以外が返ってきた場合、止まるようになる。
+-u : 未定義の変数使用時、打ち止めにしてくれる。
+-v : シェルの入力行を表示する
+-o : 設定したシェルオプションを「on」と表示する
+-x : トレース情報としてシェルが実行したコマンドとその引数を出力する。
+
+## Shellで毎回困る、ifの条件文一覧
+
+[参考URL](https://qiita.com/kazuooooo/items/163d07f694016ebd6048)
+
+## シェルスクリプト 例外処理
+
+たいていの高級なプログラミング言語では例外処理をしなければプログラムが終了する。
+しかし、シェルスクリプトでは**エラーが発生しても後続の処理が普通に実行される。**
+
+[参考URL](https://webbibouroku.com/Blog/Article/shell-try-catch-finally)
+
+
 ## OSを分別する
 
 ```sh
@@ -83,6 +125,9 @@ $ echo $0
 
 [参考URL](https://qiita.com/KEINOS/items/bfd16189894c4bdace8e)
 
+## ユーザー利用のシェルスクリプトを作成する
+
+[参考URL](https://language-and-engineering.hatenablog.jp/entry/20101028/p1)
 
 ## Shell script
 
