@@ -55,7 +55,15 @@ RailsではMVCでの役割をフォルダーごとに分けることで開発も
 Railsでは`rails generate controller`などのコマンドでcontrollerやmodelをコマンドラインから生成することができる。
 ※設定で生成するファイルを絞ることができる。
 
+### bin/railsとbundle exec railsの違い
 
+[参考URL](https://k-koh.hatenablog.com/entry/2020/05/15/124256)
+
+>bin/rails読むと
+>config/bootを読み込んでいる事が分かると思います。
+>config/boot.rbを読むとbundler/setupを読んでいます。
+>bundler/setupが実行されるとbundle execと同じ事が行われるので
+>結論としては違いはありません。
 
 ---
 

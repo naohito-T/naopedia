@@ -967,6 +967,15 @@ option
 
 [参考URL](https://kojinjigyou.org/17707/)
 
+### bundle install
+
+`bundle install`したgemは`/home/ubuntu/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems`に入る。
+
+例
+`~/.rbenv/versions/projectのrubyバージョン/lib/ruby/gems/projectのrubyバージョン（x.x.0）/gems`になります。
+
+---
+
 ## Gemfile
 
 [Gemfileの書き方](https://zenn.dev/lunarxlark/articles/gem-gemfile-format)

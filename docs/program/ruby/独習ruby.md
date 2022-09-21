@@ -132,6 +132,14 @@ data = {
 puts data[:name]
 ```
 
+さらにシンプルな構文
+```ruby
+data = {
+    name: '鈴木'
+    address: '営業',
+}
+```
+
 ## 参照/値渡し
 
 Integer/Floatの一部の値/true/false/nil/シンボル

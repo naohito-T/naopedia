@@ -12,3 +12,7 @@ AESは通信データの暗号化でよく使われる暗号化技術。
 経緯
 米国の国立標準技術研究所（NIST）は1997年、当時標準的に使われていた共通鍵暗号のDES（DataEncryption Standard）の安全性の低下から、DESに代わる共通鍵暗号を募集した。
 そのときに集まった応募案の1つ、「Rijndael（ラインダール）」は暗号の解かれにくさ（強度）だけでなく、処理負荷や計算の速さでも評価され、2000年に選定された。これが、AESになった。
+
+## GPG(GNU Privacy Guard)
+
+[参考URL](https://lecture.ecc.u-tokyo.ac.jp/~yama/2021S-JOHO/GPG/GPG/gpg_1.html)

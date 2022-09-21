@@ -336,18 +336,19 @@ ttyとは
 
 - up
   カレントディレクトリに存在するdocker-compose.yamlを参照し、docker-composeの起動
-  `sh $docker-compose up`
+  `docker-compose up`
 
 - down
   カレントディレクトリのdocker-compose.yamlに紐づいてるContainerとNetworkを削除する
-  `sh $ docker-compose down`
+  `docker-compose down`
+  ※`docker-compose volume ls`で確認するとわかるが、ボリュームは残っている。そのため再度`up`するとMySQLコンテナーが保持しているボリュームが再利用される。
 
 imageも削除する。
-`sh $ docker-compose down --rmi all`
+`docker-compose down --rmi all`
 
 - rm
   Volumeを削除
-  `sh $ docker-compose rm`
+  `docker-compose rm`
 
 [ここまで記載した](https://y-ohgi.com/introduction-docker/3_production/docker-compose/)
 
