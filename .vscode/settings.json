@@ -58,6 +58,7 @@
     "vmax",
     "vmin",
     "webp",
+    "Webpacker",
     "Zeitwerk"
   ]
 }

@@ -312,8 +312,6 @@ puts new_external_id
 # get fire again2
 ```
 
-
-
 ## -b 0.0.0.0
 
 Rails側がとくに説明しなく仕様変更したっぽい
@@ -330,8 +328,7 @@ Rails側がとくに説明しなく仕様変更したっぽい
 >とやらないといけなくなったようです。
 >今まで、何も指定しなくても接続できたものを、
 >-b 0.0.0.0
->を指定しないと、localhost からしか接続できない仕様変更をして、
->説明をするのを怠っているのです。
+>を指定しないと、localhost からしか接続できない仕様変更をして、説明をするのを怠っているのです。
 
 [参考URL](https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q10142609100)
 
@@ -359,6 +356,27 @@ $ rails c
 
 Railsにはアプリのタイムゾーンとは別に、DBの読み書きに使用するタイムゾーンがある。
 ※これはどのバックエンドでも言えることだろう
+
+## 定数管理
+
+自分で作るパターンもあればgemを使うパターンもある。
+[参考URL](https://techblog.kyamanak.com/entry/2017/07/05/002655)
+
+gemを使わないパターンがあるとしたら以下がオーソドックス
+
+1. `application_controller.rb`で定数を管理する方法
+2. `config/initializers/constants.rb`のようなファイルを用意して、そこで定数を管理する方法
+
+`application_controller.rb`は**アプリケーション共通の処理を管理する場所**なので、ここで定数を管理するのはあまり相応しくない。
+
+`config/initializers/constants.rb`のようにファイルを用意して、そこで定数を管理する方法のがいい。
+
+gemを使うパターン
+[参考URL](https://qiita.com/sazumy/items/8d3b06d0d42af114a383)
+
+config
+Settingslogic
+あたりが有名であり`config`のがスターが多い。
 
 ---
 
@@ -506,9 +524,12 @@ RailsアプリケーションではRESTの原則にしたがってデータを�
 **上記で7つのアクションのルーティングが設定できる。**
 
 これをRESTフルなルーティング、またはリソースベースのルーティングと呼ぶ
-※リソースを扱うコントローラーはMembersControllerの様に、リソース名+Controllerという名前が一般的
+
 
 ## コントローラー
+
+コントローラーは複数系で定義する。
+※リソースを扱うコントローラーはMembersControllerの様に、リソース名+Controllerという名前が一般的
 
 DHH（railsを作った人）が述べているコントローラーの作りかた
 [参考URL](https://postd.cc/how-dhh-organizes-his-rails-controllers/)
@@ -519,7 +540,7 @@ DHH（railsを作った人）が述べているコントローラーの作りか
 resources :orders, only: [:index]
 ```
 必ずorderのモデルが必要ではない。
-リソース名に対応したコントローラに対して、**7つのアクションのルーティングを自動的に設定するだけ**
+リソース名に対応したコントローラーに対して、**7つのアクションのルーティングを自動的に設定するだけ**
 
 
 ## リソースを扱うコントローラー
@@ -697,6 +718,11 @@ end
 
 passwordカラム : パスワードそのもの
 password_confirmationカラム : 確認用のパスワード
+
+## Rails Auth
+
+deviseが有名
+通常Railsのモデル作成は`rails g model User`などだが、deviseで新規登録やログインをしたいためdeviseのgenerateコマンドを使用する。
 
 
 ## アクション・コールバック
