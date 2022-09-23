@@ -1,5 +1,5 @@
 # ShellScript
-  
+
 [作成する前に見ろ](https://qiita.com/jpshadowapps/items/d6f9b55026637519347f)
 [コーディング規約](https://qiita.com/mashumashu/items/f5b5ff62fef8af0859c5)
 
@@ -111,7 +111,9 @@ $ echo $0
 **一番大事な考え方**
 複雑なオプション解析が必要な処理の場合は、シェルスクリプトでやるのではなく`rust`や`go`でCLI実装するのがいい選択。
 
+## シェルスクリプト errorハンドリング
 
+[参考URL](https://qiita.com/kobake@github/items/8d14f42ef5f36d4b80e4)
 
 ## シェルスクリプト 拡張子を取得する
 

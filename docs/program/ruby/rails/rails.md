@@ -4,6 +4,12 @@
 [Rails](https://atmarkit.itmedia.co.jp/ait/articles/1102/23/news109_3.html)
 [Railsのクリーンアーキテクチャ](https://qiita.com/shunjikonishi/items/e39ed8091e1dca817468)
 [【Rails】hashid-railsを用いてIDを難読化・暗号化させる方法](https://techtechmedia.com/hashid-rails/)
+[Railsでの名前空間について(わかりやすい)](https://ja.stackoverflow.com/questions/86424/rails%E3%81%AE%E5%90%8D%E5%89%8D%E7%A9%BA%E9%96%93%E3%81%AE%E7%9B%AE%E7%9A%84%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E7%96%91%E5%95%8F)
+
+## Rails作者
+
+DHHが語っているシリーズ
+[大規模開発に強い理由](https://pr.forkwell.com/articles/dhh-rails-large-scale-development/)
 
 ## Railsスタイルガイド
 
@@ -162,13 +168,13 @@ RubyGemsが提供するgemコマンドを通じてインストール等ができ
 Ruby on RailsでWebアプリケーション（以降ではRailsアプリと略します）を開発をするにあたり、gemの活用は開発効率をあげるために重要
 
 
-- bundler(node_modulesみたいな)
+- bundler（yarn, npmと同一）
 bundlerは依存関係にあるgemの依存関係やバージョンを管理してくれるgem
 **bundlerを利用することで依存関係にあるgemの一括インストール。gemのバージョン管理ができるようになる**
 `$ bundle install`を使って、Gemfileに記載されたgemをインストールする。
+※`--without`なしに`bundle install`した場合は、すべてのgemがインストールされる。
 
-
-- Gemfile (package.jsonみたいな)
+- Gemfile (package.jsonみたいな）
 GemfileとはRailesアプリで利用されるgemの一覧を管理するファイル
 bundlerによってインストールされるgemはどこで管理されているのか。
 
@@ -222,7 +228,7 @@ store            … アプリケーションのルートディレクトリ
     locales      … 国際化に関するリソース
   db             … データベースに関するファイル
   doc            … rdocなどのドキュメント
-  lib            … アプリケーションが使うライブラリコード全般
+  lib            … アプリケーションが使うライブラリコード全般（taskは`lib/tasks/*`に配置する）
   log            … アプリケーションが出力するログ
   public         … Webの静的なコンテンツ
   script         … ユーティリティースクリプト
@@ -231,6 +237,11 @@ store            … アプリケーションのルートディレクトリ
   vendor         … アプリケーション外部に由来するコード
     plugin       … Railsプラグイン
 ```
+
+`app`にはモデル、コントローラー、ヘルパー等の決まった物以外は置かない方がいい。
+`app`内のパス構成は、Railsで決められた通りであることが前提となっているため、将来のバージョンアップで予期せぬ衝突が発生する可能性。
+それらではない自作のクラスやモジュールは"lib"内に置く方が良いでしょう。
+
 
 ## Rails url
 
@@ -369,7 +380,7 @@ Rails6から自動読み込みモードZeitwerkが追加された。
 ## プロジェクト構造
 
 Railsアプリケーションでは**ファイル名はそれらが定義する定数と一致する必要**があり、**ディレクトリは名前空間**として機能する
-Zeitwerkは例として、app/controllers/users_controller.rb定数を定義するUsersController(クラス)のことを期待しています。
+Zeitwerkは例として、app/controllers/users_controller.rb定数を定義するUsersController（クラス）のことを期待しています。
 
 ## Rails6からのlibディレクトリ以下のファイル読み込み
 
@@ -387,7 +398,7 @@ api/lib/validator/email_validator.rbの場合
 
 2. application.rbで呼び出し
 
-Rails6のオートロードシステム(Zeitwerk)に読み込むパスを追加する方法
+Rails6のオートロードシステム（Zeitwerk）に読み込むパスを追加する方法
 
 ## rails での test
 
@@ -441,8 +452,8 @@ module名とclass名は同名であるが、**moduleには名前空間として�
 
 ## ruby独自の機能にMix-in
 
-Mix-inすることでmodule内のメソッドをインスタンスメソッドとして利用することがができる
-includeでの拡張は静的である。
+Mix-inすることでmodule内のメソッドをインスタンスメソッドとして利用することがができる。
+※includeでの拡張は静的となる。
 
 ```ruby
 module Lion
@@ -468,6 +479,7 @@ obj.cryCat  # Catクラスのmethodを利用
 ```
 
 ---
+
 ここから本
 
 ## Rails処理順序(基本)
@@ -486,7 +498,7 @@ RailsアプリケーションではRESTの原則にしたがってデータを�
 
 ## Railsにおけるリソースとは
 
-コントローラが扱う対象に名前をつけたもの。
+**コントローラーが扱う対象に名前をつけたもの。**
 リソース名を設定するには`config/routes.rb`にresourcesメソッドを追加するだけ
 
 `resources: リソース名の複数形で記述する`
@@ -495,6 +507,11 @@ RailsアプリケーションではRESTの原則にしたがってデータを�
 
 これをRESTフルなルーティング、またはリソースベースのルーティングと呼ぶ
 ※リソースを扱うコントローラーはMembersControllerの様に、リソース名+Controllerという名前が一般的
+
+## コントローラー
+
+DHH（railsを作った人）が述べているコントローラーの作りかた
+[参考URL](https://postd.cc/how-dhh-organizes-his-rails-controllers/)
 
 ## config/routes.rb
 
@@ -883,6 +900,15 @@ OSとアプリケーションの間に入って動作するソフトウェアの
 - どこで読み込むのか
 >config.middleware.useの引数に読み込みたいミドルウェアを指定します！
 >※ initializers配下のファイルであれば、ある程度どこに書いてもOKっぽい？けどカオスになるので、`/config/application.rb`に書くのが安全な気がします。
+
+## Rake
+
+rakeはcronみたいに使えるやつ
+引数を渡すのに癖があるため`thor`を使う場合が多い。
+
+## thro
+
+[参考URL](https://qiita.com/yatmsu/items/5ba7016db33c13d7a882)
 
 ---
 

@@ -1046,12 +1046,12 @@ rubocopはバージョンごとに新しいCop（Lintのツール）が追加さ
 そのためバージョンアップ後には、大抵は設定やソースコードを見直さなければならない。
 だいたい2週間に1回は行う作業らしい
 
-## 出力の見方
+### 出力の見方
 
 155 files inspected, 16 offenses detected
 155ファイル中16個の指摘があると言う意味
 
-## 違反レベル(5段階)
+### 違反レベル(5段階)
 
 Warning以上は直す方針
 
@@ -1066,6 +1066,12 @@ R Refactor危険度1
 ```sh
 rubocop --fail-level W --display-only-fail-level-offenses
 ```
+
+### 自動修正
+
+[参考URL](https://koic.hatenablog.com/entry/change-rubocop-auto-correct-to-rubocop-autocorrect)
+
+`rubocop -a`で修正できる。
 
 ### .rubocop_todo.ymlを作成する
 
@@ -1102,3 +1108,11 @@ HACK
 
 REVIEW
 レビューすべき箇所を記す
+
+## ruby 記号の意味
+
+[参考URL](https://docs.ruby-lang.org/ja/latest/doc/symref.html)
+
+
+
+

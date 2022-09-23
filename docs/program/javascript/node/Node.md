@@ -15,6 +15,11 @@ TypeScript → JavaScriptに変換してからnodeでの実行
 console.log(process.argv[1], "c.js", "cwd", process.cwd());
 console.log(process.argv[1], "c.js", "__dirname", __dirname);
 console.log(process.argv[1], "c.js", "path.resolve", require("path").resolve(""));
+
+// 実行結果
+// ~/Hoge/foo.js/a.js   a.js   cwd            ~/Hoge/foo.js
+// ~/Hoge/foo.js/a.js   a.js   __dirname      ~/Hoge/foo.js
+// ~/Hoge/foo.js/a.js   a.js   path.resolve   ~/Hoge/foo.js
 ```
 
 ## package.jsonのライブラリupdate
