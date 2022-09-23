@@ -1,0 +1,5 @@
+#!/bin/bash
+
+TEST=$(cd "$(dirname "$0")/.." && pwd)
+
+echo ${TEST}
