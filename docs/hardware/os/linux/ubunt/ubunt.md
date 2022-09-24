@@ -55,3 +55,7 @@ aptはエンドユーザー向けでインララクティブに使いたい場�
 [参考URL](https://www.kimoton.com/entry/20181123/1542961698)
 
 >APT の場合、基準になる Packages ファイルは Debian アーカイブミラーから提供されます。ですから、利用できるパッケージのデータベース内を検索する際に、毎回ネットワークを使うのはとても非効率的です。このため、APT は (/var/lib/apt/lists/ に) データベースのコピーを保存し、このコピーを使って検索します。同様に、/var/cache/apt/archives/ にはこれまでにダウンロードしたパッケージのキャッシュを保存しています。これは削除後の再インストール時に同じファイルをダウンロードするのを避けるためです。
+
+## Ubuntuにpostgresをインストールする
+
+[リファレンス](https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-20-04-quickstart-ja)

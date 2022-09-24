@@ -48,6 +48,7 @@
     "pnpm",
     "popd",
     "POSIX",
+    "psql",
     "pushd",
     "rubocop",
     "Sidekiq",

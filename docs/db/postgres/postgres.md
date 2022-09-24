@@ -7,3 +7,42 @@
 ## テーブル構造を確認
 
 `\d <テーブル名>`
+
+## 仕組み
+
+PostgreSQL では「ロール」という用語を使用して「ユーザー」または「ログイン」を意味するため、エラー メッセージは、ユーザー名 で PostgreSQL データベースに接続しようとしているubuntuが、そのようなユーザーが存在しないことを意味します。
+
+ログインするユーザーを PostgreSQL に明示的に指定しない場合、オペレーティング システムの資格情報が使用されます。つまり、ユーザーとして Linux にログインしている場合ubuntu、PostgreSQL は という名前の PostgreSQL ユーザーとしてログインしようとしますubuntu。
+
+PostgreSQL 認証は、.xml というファイルで構成されますpg_hba.conf。http://www.postgresql.org/docs/current/static/auth-pg-hba-conf.htmlを参照してください。pg_hba.confただし、Rails を使用している場合は、ファイルを手動で編集せずに PostgreSQL の認証設定を制御する方法があるのではないかと思います。
+
+## Ubuntu postgres
+
+[参考URL](https://qiita.com/sibakenY/items/407b721ad1bd0975bd00)
+
+## 初期パスワード
+
+user
+postgres
+
+password
+postgres
+
+## ユーザとパスワードの設定
+
+PostgresSQLをインストールした時点で、自動的にDBの**管理ユーザーであるpostgresユーザが作成される。**
+ただ、このユーザのパスワードは未設定の状態であるためアカウントロック状態となり**このままではrootユーザーからsuコマンドでスイッチする方法以外でのログインができない。**
+
+そこで、postgresユーザーでログインできるようにパスワードを設定する。
+パスワードの設定は`passwd user名`コマンドで行う。
+
+
+## postgres user に切り替える
+
+`$ sudo -i -u postgres`
+
+ちなみにホームディレクトリはこれ`/var/lib/postgresql`
+
+## cli login
+
+postgres userに切り替えて`psql`

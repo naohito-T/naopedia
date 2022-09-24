@@ -17,14 +17,53 @@ DHHが語っているシリーズ
 
 [Rails7変更点](https://qiita.com/jnchito/items/5c41a7031404c313da1f)
 
-## Rails 7.0 フロントエンドまわり
+## Rails 7.0 Node
+
+importmap
+Rails 7といえば、Node.jsを裏で使う必要がなくなった。
+`importmap-rails`が目玉のリリース。
+`importmap-rails`を使うことで、フロントエンドのJavaScriptのライブラリを管理してくれるようになる。
+
+## importmap-rails
+
+[参考URL](https://www.bokukoko.info/entry/2022/02/15/153751)
+
+>これで初期化した Rails アプリには なんと、package.json, yarn.lock が存在しない！
+>その代わりに、config/importmap.rb にて以下の記載がある。
+
+初期化
+```sh
+$ vim Gemfile
+gem 'importmap-rails'
+
+$ bundle install
+$ bundle exec rails importmap:install
+```
+
+## Rails 7.0 assetsまわり
 
 [参考URL](https://qiita.com/suketa/items/837eb97bdb48dd8c4688)
 [JavaScript BundlingとCSS Bundlingのしくみ](https://qiita.com/kazutosato/items/1ae1cf0ec380a75d4dc4)
-[Rails7にあとからフロントエンドに入れる](https://qiita.com/kazutosato/items/1ae1cf0ec380a75d4dc4)
 
-Rails 5-6時代に使われたwebpackerは、公式に「has been retired」とされ、Rails 7では`importmap`が標準となりました。
-Rails7はimportmapとは別に、JavaScriptのバンドラやCSSのフレームワークを導入するしくみを用意している。
+railsではJS/CSSなどを総称してassetsと呼んでいる
+
+>Rails 5-6時代に使われたwebpackerは、公式に「has been retired」とされ、Rails 7では`importmap`が標準となりました。
+>Rails7はimportmapとは別に、JavaScriptのバンドラやCSSのフレームワークを導入するしくみを用意している。
+
+### Rails7.0でのアセット管理
+
+[参考URL](https://re-engines.com/2021/12/27/rails7-frontend/)
+
+>Rails 7.0 では、新たに4つのGemが登場します。これまでとは異なり、開発者はこれらのGemを自分のプロジェクトに合う組み合わせで採用することになります。
+
+
+
+
+---
+
+## Rails7にあとからフロントエンドに入れる
+
+[Rails7にあとからフロントエンドに入れる](https://qiita.com/kazutosato/items/1ae1cf0ec380a75d4dc4)
 
 2つのgem
 1. JavaScript Bundling（jsbundling-rails）

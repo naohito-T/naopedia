@@ -16,6 +16,7 @@ TS組み込み型定義（基本を読んでから）
 [これもまとめる](https://developer.hatenastaff.com/entry/2016/06/27/140931)
 [TypeScriptのモデル生成速度比較](https://blog.mamansoft.net/2019/03/17/typescript-model-created-comparison/)
 [Three.js TypeScript webpack（これいつかやりたいな）](https://ics.media/entry/16329/)
+
 ## TypeScript error ハンドリング
 
 [参考URL](https://dev.classmethod.jp/articles/error-handling-practice-of-typescript/)
@@ -30,6 +31,32 @@ TS組み込み型定義（基本を読んでから）
 ## TypeScript <T>チートシート
 
 [参考URL](https://qiita.com/suin/items/03baa7cf7dd8e9a9f010)
+
+## TypeScriptコンパイラについて
+
+[参考URL](https://typescriptbook.jp/overview/typescript-is-not-that)
+
+結論はTypeScriptの実行パフォーマンスはJavaScriptと同じ。
+これを理解するには理解するべきことがある。
+- TypeScriptのランタイムはない
+- TypeScriptコンパイラは最適化しない。
+
+>TypeScriptにはランタイムがありません。どういうことかというと、TypeScriptを直接実行するエンジンがないということです。TypeScriptを開発しているMicrosoftのブラウザMicrosoft Edgeであっても、TypeScriptは実行できません。サーバーのNode.jsもそうです1。TypeScriptで書いたコードを実行するには、一度JavaScriptコードに変換する必要があります。そのため、TypeScriptのパフォーマンスは、コンパイル後のJavaScriptがどうなっているかで決まるわけです。
+
+一般的にコンパイラは次の3つの仕事がある
+
+- ソースコードを解析し、問題点をチェックする
+- ソースコードを別の言語に変換する
+**以下のことはTypeScriptコンパイラは実行しない。**
+- 最適化する
+  - 実行速度が速くなるようにする
+  - 少ないメモリで動くようにする
+  - 少ない電力で済むようにする
+  - 実行ファイルのサイズを小さくする
+
+>このうち、TypeScriptコンパイラがするのは上の2つです。3つ目の最適化はしません。TypeScriptコンパイラは、基本的に型に関する部分を消すだけで、それ以外の部分はほぼそのままJavaScriptに変換します。
+
+
 
 ## TypeScript Index Signature を安全に使う
 
