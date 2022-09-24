@@ -37,6 +37,7 @@
     "godoc",
     "GOPATH",
     "gopls",
+    "Grafana",
     "Honkit",
     "importmap",
     "iterm",
