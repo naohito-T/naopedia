@@ -11,6 +11,59 @@
 DHHが語っているシリーズ
 [大規模開発に強い理由](https://pr.forkwell.com/articles/dhh-rails-large-scale-development/)
 
+---
+
+## 最新Railsについて
+
+[Rails7変更点](https://qiita.com/jnchito/items/5c41a7031404c313da1f)
+
+## Rails 7.0 フロントエンドまわり
+
+[参考URL](https://qiita.com/suketa/items/837eb97bdb48dd8c4688)
+[JavaScript BundlingとCSS Bundlingのしくみ](https://qiita.com/kazutosato/items/1ae1cf0ec380a75d4dc4)
+[Rails7にあとからフロントエンドに入れる](https://qiita.com/kazutosato/items/1ae1cf0ec380a75d4dc4)
+
+Rails 5-6時代に使われたwebpackerは、公式に「has been retired」とされ、Rails 7では`importmap`が標準となりました。
+Rails7はimportmapとは別に、JavaScriptのバンドラやCSSのフレームワークを導入するしくみを用意している。
+
+2つのgem
+1. JavaScript Bundling（jsbundling-rails）
+2. CSS Bundling（cssbundling-rails）
+
+### JavaScript Bundling（jsbundling-rails）
+
+JSファイルを`app/assets`の下に出力するもの。
+
+### CSS Bundling（cssbundling-rails）
+
+CSSフレームワーク（Bootstrapやbulma）をsassコマンドでapp/assetsの下に出力する。
+バンドラやCSSフレームワークはyarnコマンドでnode_modules下にインストールされる
+
+### 後から入れる
+
+各コマンドは、package.jsonの中で指定されます。
+開発環境では、foreman（bin/dev）を使ってRailsサーバー、JSの変更監視、CSSの変更監視、の3つを動かす。
+
+```sh
+# 後からbootstrapを入れる
+bin/rails css:install:bootstrap
+
+# Procfile.dev
+# package.json
+# bin/dev
+# 3つができる
+```
+
+### Procfile.dev
+
+アプリケーションのルートにできる`Procfile.dev`では、一度に3つのプログラム（rails、JSバンドラ、sass）が常駐するように設定してある。
+`--watch`オプションによってファイルを監視し、変更があれば自動的に変換する。
+
+binディレクトリの下のdevコマンドでは、foremanを使って`Procfile.dev`のコマンドを動かしている。
+foremanがないときは自動的にインストールされる。
+
+---
+
 ## Railsスタイルガイド
 
 シンボル名、メソッド名、変数名は**スネークケース**にする
@@ -156,8 +209,16 @@ API作成に特化したモードのことで、Rails5で実装された機能�
 gemはRubyGemsと呼ばれるRuby用のパッケージ管理システムによって管理されたライブラリ
 RubyGemsが提供するgemコマンドを通じてインストール等ができます。
 
+**インストールしたgemを削除する**
+Gemfileから記述を消し`bundle install`する。
 
+## gem version up 作成
 
+>Railsアプリケーションの開発現場で、いつどのようにgemをバージョンアップしたらよいかは悩ましい問題です。こまめにバージョンアップしていくのが一番ですが、テストコードが書かれておらず確認のコストが高いなどの理由で、リリース後にまったくバージョンを上げられないようなプロジェクトも少なくありません。しかし、Railsアプリケーションの開発でgemのバージョンをまったく上げずにすませることはほぼ不可能です。もし利用しているgemに脆弱性が発見されたらどうしたらよいでしょうか？バージョンが上げられないと、そのまま脆弱性のあるコードを使い続けるか、自分たちでパッチを当てる必要があります。ただ、gemのバージョンを固定している環境であれば、脆弱性対策は何もしない、となる可能性が高そうです。これはビジネスにおける大きなリスクになるでしょう。
+
+上記にもあるように
+gemのバージョンを上げていくには**まずテストを書き、その上でバージョンアップを続けられる仕組みを作ることが重要。**
+自動でgemバージョンアップ用のプルリクエストを作成してくれるサービスを使ったりする（GitHub Dependabotなど）
 
 ---
 
@@ -241,7 +302,6 @@ store            … アプリケーションのルートディレクトリ
 `app`にはモデル、コントローラー、ヘルパー等の決まった物以外は置かない方がいい。
 `app`内のパス構成は、Railsで決められた通りであることが前提となっているため、将来のバージョンアップで予期せぬ衝突が発生する可能性。
 それらではない自作のクラスやモジュールは"lib"内に置く方が良いでしょう。
-
 
 ## Rails url
 

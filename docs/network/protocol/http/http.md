@@ -49,6 +49,19 @@ HTTPの仕様ではステータスコードが決まるまでレスポンスを�
 これを解決するのが**EarlyHintsと呼ばれる仕様。**
 ステータスコード103として、本来のレスポンスを送る前に、リソースのヒントを送ることができます。
 
+上記で起きた他の言語影響
+
+主要なブラウザが軒並みES6をサポートした事により、 ES6で書かれたコードをトランスパイルすることなく、そのまま動作するようになったこと。
+HTTP/2が普及したことによりwebpackでファイルを結合するメリットが薄れたこと。
+
+
+## HTTP 3.0
+
+
+## 閲覧ページのHTTP versionを調べる
+
+[参考URL](https://laboradian.com/hot-to-know-http-version/)
+
 ## HTTPヘッダー
 
 [参考URL](https://www.cloudflare.com/ja-jp/learning/cdn/glossary/what-is-cache-control/)

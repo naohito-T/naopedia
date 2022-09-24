@@ -23,6 +23,7 @@
   "cSpell.words": [
     "Autoload",
     "Brewfile",
+    "bulma",
     "codic",
     "cwebp",
     "demoapp",
@@ -37,6 +38,7 @@
     "GOPATH",
     "gopls",
     "Honkit",
+    "importmap",
     "iterm",
     "mkdir",
     "mysqldump",
@@ -48,6 +50,7 @@
     "POSIX",
     "pushd",
     "rubocop",
+    "Sidekiq",
     "Stmts",
     "struct",
     "Swiper",
