@@ -315,6 +315,9 @@ djangoはホストのブラウザーからアクセスするのでportsを使用
   Docker compose管理外のネットワークやボリュームであることを示す。
   これらのオプションが指定されたネットワークやボリュームはdocker-compose downによって削除されることはない。
 
+- links
+  linksオプションはDockerで非推奨になっているためnetworksオプションに切り替える。
+
 ## networks
 
 [参考URL](https://amateur-engineer.com/docker-compose-network-share/)
@@ -351,4 +354,8 @@ imageも削除する。
   `docker-compose rm`
 
 [ここまで記載した](https://y-ohgi.com/introduction-docker/3_production/docker-compose/)
+
+## docker-compose 同士を繋げる
+
+[参考URL](https://qiita.com/kai_kou/items/d568fe94ee92f837e274)
 

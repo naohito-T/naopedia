@@ -1034,3 +1034,10 @@ alpineを使っては最近はダメな傾向
 安全性を高めるために
 **バイナリダウンロード元にチェックサムや署名について情報があるのであれば**Docker
 fileの中で検証ロジックを入れておくと良い、
+
+---
+
+## M1 macでのdocker
+
+[参考URL](https://zenn.dev/suzuki_hoge/books/2021-12-m1-docker-5ac3fe0b1c05de)
+
