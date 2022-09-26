@@ -42,6 +42,8 @@ $ bundle exec rails importmap:install
 
 ## Rails 7.0 assetsまわり
 
+webpackerはなくなっている！
+
 [参考URL](https://qiita.com/suketa/items/837eb97bdb48dd8c4688)
 [JavaScript BundlingとCSS Bundlingのしくみ](https://qiita.com/kazutosato/items/1ae1cf0ec380a75d4dc4)
 
@@ -52,7 +54,7 @@ railsではJS/CSSなどを総称してassetsと呼んでいる
 
 ### Rails7.0でのアセット管理
 
-[参考URL](https://re-engines.com/2021/12/27/rails7-frontend/)
+[Rails 7でフロントエンド開発が大きく変わる](https://re-engines.com/2021/12/27/rails7-frontend/)
 
 >Rails 7.0 では、新たに4つのGemが登場します。これまでとは異なり、開発者はこれらのGemを自分のプロジェクトに合う組み合わせで採用することになります。
 

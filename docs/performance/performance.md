@@ -2,7 +2,8 @@
 
 ## フロント側
 
----
+- JSコードのパフォーマンスを比較したいとき
+[オンライン比較ツール](https://perf.link/)
 
 - ドワンゴでのフロントパフォーマンスチューニング
 [参考URL](https://dwango-js.github.io/performance-handbook/)

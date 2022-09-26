@@ -17,6 +17,15 @@ TS組み込み型定義（基本を読んでから）
 [TypeScriptのモデル生成速度比較](https://blog.mamansoft.net/2019/03/17/typescript-model-created-comparison/)
 [Three.js TypeScript webpack（これいつかやりたいな）](https://ics.media/entry/16329/)
 
+## TypeScriptでグローバルな型定義ファイルを用意する
+
+[参考URL](https://zenn.dev/fagai/articles/7f76a3b3b5a415)
+
+## 自作の型定義ファイル .ts or d.ts？
+
+Typescriptで型定義用のファイルを作る際に、ライブラリが生成する型定義ファイルの名前にならって .d.ts と付けると、定義していない型が any として使えてしまい型チェック時にもエラーになりません。
+よって`.ts`で宣言する。
+
 ## TypeScript error ハンドリング
 
 [参考URL](https://dev.classmethod.jp/articles/error-handling-practice-of-typescript/)
