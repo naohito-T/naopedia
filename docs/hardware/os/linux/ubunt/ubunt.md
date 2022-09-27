@@ -59,3 +59,27 @@ aptはエンドユーザー向けでインララクティブに使いたい場�
 ## Ubuntuにpostgresをインストールする
 
 [リファレンス](https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-20-04-quickstart-ja)
+
+## useraddとadduserの違い
+
+[参考URL](https://qiita.com/kaitoland/items/386ebc94c3efa17bbecb)
+
+Fedora/CentOS系では両方は同じコマンド
+
+Debian系だと
+useraddは**コマンド一発で作るタイプ**
+adduserは**対話形式で作るタイプ**
+
+※ubuntuで**useraddだとデフォルトではホームが作成されない。**
+
+adduserの設定は
+/etc/adduser.confで変えられます。
+
+こちらはデフォルトでホームディレクトリを作ってくれます。
+useraddのようにコマンド一発で作れるのは大量のユーザーを作る時に便利なようです。
+単にユーザーを追加したい時にはadduserのほうが良さそうですね。
+
+
+
+
+

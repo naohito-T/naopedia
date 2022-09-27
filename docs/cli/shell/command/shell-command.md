@@ -135,3 +135,7 @@ json読み込みは`@`をつけないとファイルを読み込んでくれな�
 `$?`
 コマンドの戻り値
 直前のコマンドの戻り値判定は2重括弧を使ってif (( $? ))と書ける
+
+## useradd
+
+[参考URL](https://atmarkit.itmedia.co.jp/ait/articles/1811/02/news035.html)

@@ -136,3 +136,8 @@ JSのconsole.errorはこれにあたる
 
 ![改行コード図](image/改行コード図.png)
 
+## UID
+
+UIDとはUNIX系のOSで使用される、利用者識別用の番号のこと。
+
+
