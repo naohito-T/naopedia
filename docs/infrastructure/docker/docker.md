@@ -3,7 +3,7 @@
 [Dockerfile(リフェレンス)](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 [入門Docker](https://y-ohgi.com/introduction-docker/)
 [軽量なDockerfileの作り方](https://qiita.com/watawuwu/items/d547d0cb1ab1db5e079c)
-[かなりすごいDockerfile ベストプラティクス](https://zenn.dev/esaka/articles/cae40a30bbbfa495e6a9)
+[Dockerfile ベストプラティクス(かなりすごい)](https://zenn.dev/esaka/articles/cae40a30bbbfa495e6a9)
 
 ```sh
 docker container prune -f;
@@ -15,40 +15,64 @@ docker volume prune -f
 
 [効率的に安全な Dockerfile を作るには](https://qiita.com/pottava/items/452bf80e334bc1fee69a)
 
+## docker 仕組み
+
+Dockerは**ビルドのステップごとにファイルシステムの変更差分を積み重ねることでイメージを作成する。**
+先にGemfileをイメージに組み込んでbundle installを実行しておかなければソースコードを変更するたびに毎回bundle installをする必要がある。
+
+```Dockerfile
+# 先にGemfileを転送しbundle installする
+COPY --chown=rails Gemfile Gemfile.lock package.json yarn.lock /app/
+
+RUN bundle install
+RUN yarn install
+```
+上記のような工夫をすることでGemfileの内容に変化がなかった場合は`bundle install`の工程までキャッシュを利用することが可能になり2回目以降のビルドが大きく高速化される。
+
+---
+
+## インストールするimageの中を確認する
+
+そのイメージになにが含まれているのか確認する方法
+`$ docker run -it alpine:3.11`
+言語のalpineだと/bin/shなどで起動する必用がある。
+`$ docker run -it alpine:3.11 /bin/sh`
+
+
 ## リモートサーバー内のDockerにローカルから接続する
 
-リモートのDockerソケットに対し
-
-2つありそう
-
-1. リモートの中でコンテナーを起動し、そのコンテナーの中でsshdを立ち上げておいてローカルからローカルポートフォワーディングを利用してコンテナー内へsshアクセスしていた。
-
-2. リモートのDockerソケットに対しポートフォワードで直アクセス
-
-## Docker パーミッション
-
-LinuxではDockerを実行した場合、作成されたファイルの所有権が`root`になる。
-それはセキュリティ的によろしくない。
-変更できる方で考える
+Dockerでもlocalhostでも起動した時に`0.0.0.0`などパブリックドメインで公開すればアクセスできる。
 
 ---
 
 ## Docker セキュリティ
-
 [参考URL](https://www.creationline.com/lab/aquasecurity/42049)
 
 コンテナセキュリティの課題は、ダウンロードしたコンテナイメージが期待通りであるか。
 セキュリティと一貫性の観点から期待通りのイメージがダウンロードされることの保証が重要。
-Dockerのイメージタグは便利だが常に一貫した特定のイメージを指すとは限らないため一般的なアドバイスとしては、SHA-256ハッシュを使ってイメージを識別すること。
+Dockerのイメージタグは便利だが常に一貫した特定のイメージを指すとは限らないため**SHA-256ハッシュを使ってイメージを識別すること**
 
+---
 
-## Dockerfile ビルダーパターン
+## Docker パーミッション
+
+LinuxではDockerを実行した場合、作成されたファイルの所有権が`root`になる（公式はrootで対応するなと言っている）
+そのためDockerfileの`ADD/COPY`に`--chown`オプションができており、それ用のuserを作成するルールになっている。
+
+Dockerfile ---chown
+[参考URL](https://ken5scal.hatenablog.com/entry/2017/10/13/Dockerfile%E3%81%AEADD/COPY%E3%81%AB--chown%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%8C%E3%81%A7%E3%81%8D%E3%81%9F)
+
+---
+
+## Dockerイメージを軽くする
+
+### Dockerfile ビルダーパターン
 
 マルチステージビルドとも呼ばれていることがある。
 ビルダーパターンなど（FROMが2度現れること）がある。
 つまり、xxxパターンを調べて勉強しろ
 
-## マルチステージビルド
+### マルチステージビルド
 
 マルチステージビルドは、Docker17.05以上で利用できる新機能
 前のステージでビルドされた成果物をこの新しいステージへコピーする
@@ -65,13 +89,6 @@ COPY --from=0
 ## Docker image削除
 
 containerを削除してからではないとimageが削除できない。
-
-## 絶対覚えておけ
-
-そのイメージになにが含まれているのか確認する方法
-`$ docker run -it alpine:3.11`
-言語のalpineだと/bin/shなどで起動する必用がある。
-`$ docker run -it alpine:3.11 /bin/sh`
 
 ### dockerignoreとは
 
@@ -92,7 +109,6 @@ alpine linuxは基本
 **GCC などの C コンパイラが含まれていない(つまり開発ツール)**
 
 [alpine linuxにyarnいれる](https://scrapbox.io/keroxp/alpine-linux%E3%81%AByarn%E3%82%92%E5%85%A5%E3%82%8C%E3%82%8B)
-
 [python:alpineにCコンパイラをインストール](https://ja.stackoverflow.com/questions/42881/docker-pythonalpine%E3%81%A7cffi%E3%81%AE%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%AB%E3%81%AB%E5%A4%B1%E6%95%97%E3%81%99%E3%82%8B)
 
 ## Docker 参考文献

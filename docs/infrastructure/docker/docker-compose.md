@@ -141,6 +141,11 @@ stdin_openとは標準入出力とエラー出力をコンテナーに結びつ�
 [参考URL](https://pc.atsuhiro-me.net/entry/2020/03/19/105714)
 [Docker for Mac のボリュームの遅さを cached オプションで解消](https://qiita.com/koshigoe/items/52749db8836b4e3fbfc4)
 
+バインドマウントはローカルのファイルをマウントする。
+ボリュームマウントはdockerシステム（ローカル）内に存在しているボリュームを指定。
+存在しない場合は、指定した名称でボリュームが生成されます。
+指定しない場合は、無名（無意味な文字列）でボリュームが生成されます。
+
 ボリュームのマウントを行う。
 volumesでは**パスを指定するとDockerエンジンはボリュームを作成する**
 >コマンドの場合、`sh -v $(pwd)/public:/var/www/html/public:ro <IMAGE ID>`オプションと同一です。
@@ -162,6 +167,39 @@ volumes:
 
 sourceはホスト側で、targetはコンテナー側です、mydataはvolumeの名前で，パスではない
 **"/"から開始すると，絶対パスとなる。**
+
+```yml
+version: "3"
+services:
+    mysql:
+        container_name: sample
+        image: mysql:5.7
+        environment:
+            MYSQL_DATABASE:sample
+            MYSQL_USER: root
+            MYSQL_PASSWORD: root
+            MYSQL_ROOT_PASSWORD: root
+        ports:
+            - 4306:3306
+        ##1
+        volumes:
+            - mysql-data:/var/lib/mysql
+        networks:
+            - default
+
+##2
+volumes:
+    mysql-data:
+        external:
+            name: project-mysql
+```
+
+services内で定義しているvolumes: は、いわゆるバインドマウントです。
+実際のコンテナ内では、何を参照するか？をホスト側から明示しています。
+
+2に関して
+トップレベルのvolumes: は、Dockerシステム（ローカル）内に存在しているボリュームを指定しています。いわゆるボリュームです。
+external: の中にnameを指定することで、docker-compose外で作成したボリュームを指定できます。
 
 ## volumes の pathの指定
 
