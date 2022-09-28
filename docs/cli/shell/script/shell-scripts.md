@@ -40,6 +40,10 @@ set -euox pipefail
 
 [参考URL](https://webbibouroku.com/Blog/Article/shell-try-catch-finally)
 
+## コマンドのlogを表示させたくない
+
+`> /dev/null 2>&1`をつけるとログが表示されない
+
 ## OSを分別する
 
 ```sh

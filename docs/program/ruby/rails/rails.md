@@ -270,13 +270,25 @@ gemのバージョンを上げていくには**まずテストを書き、その
 Ruby on RailsでWebアプリケーション（以降ではRailsアプリと略します）を開発をするにあたり、gemの活用は開発効率をあげるために重要
 
 
-- bundler（yarn, npmと同一）
+### bundler（yarn, npmと同一）
 bundlerは依存関係にあるgemの依存関係やバージョンを管理してくれるgem
 **bundlerを利用することで依存関係にあるgemの一括インストール。gemのバージョン管理ができるようになる**
 `$ bundle install`を使って、Gemfileに記載されたgemをインストールする。
 ※`--without`なしに`bundle install`した場合は、すべてのgemがインストールされる。
 
-- Gemfile (package.jsonみたいな）
+bundle configとは
+[参考URL](https://qiita.com/ren0826jam/items/1a2131f8e0f6921a0b98)
+Bundlerの設定システムと対話をできるもの。
+
+Bundlerは設定を下記の優先順位にしたがって取得する。
+1. ローカルアプリケーション（app/.bundle/configp）
+2. 環境変数
+3. ユーザのホームディレクトリ（~/.bundle/config）
+
+
+
+
+### Gemfile (package.jsonみたいな）
 GemfileとはRailesアプリで利用されるgemの一覧を管理するファイル
 bundlerによってインストールされるgemはどこで管理されているのか。
 

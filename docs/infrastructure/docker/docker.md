@@ -11,7 +11,6 @@ docker image prune -f;
 docker volume prune -f 
 ```
 
-
 ## docker security  
 
 [効率的に安全な Dockerfile を作るには](https://qiita.com/pottava/items/452bf80e334bc1fee69a)
@@ -1117,4 +1116,22 @@ fileの中で検証ロジックを入れておくと良い、
 ## M1 macでのdocker
 
 [参考URL](https://zenn.dev/suzuki_hoge/books/2021-12-m1-docker-5ac3fe0b1c05de)
+
+## Docker マルチCPUアーキテクチャ
+
+[参考URL](https://dev.classmethod.jp/articles/docker-multi-architecture-image-build/)
+[参考URL](https://gihyo.jp/dev/serial/01/mysql-road-construction-news/0167)
+
+Docker Hubにおける**マルチCPUアーキテクチャサポート**とは、x86 (AMD64) やARM64など複数のアーキテクチャ向けのイメージを**同一のイメージ名・タグ名で管理する**ことができる仕組み
+Docker Hubで公開されている公式イメージの多くはマルチCPUアーキテクチャに対応している。
+
+公開されているイメージが「マルチCPUアーキテクチャ」に対応している場合、Docker Hubからプルを実行した際に、特にアーキテクチャを明示しなくても自動的に適切なアーキテクチャのイメージがダウンロードされます。
+
+```yml
+db:
+    # これを指定しなくてもM1であれば自動ダウンロード？
+    platform: linux/amd64
+    image: mysql:5.7
+```
+
 

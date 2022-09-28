@@ -57,6 +57,10 @@ HTTP/2が普及したことによりwebpackでファイルを結合するメリ�
 
 ## HTTP 3.0
 
+## localhostのhttps化
+
+[参考URL](https://blog.jxck.io/entries/2020-06-29/https-for-localhost.html)
+
 
 ## 閲覧ページのHTTP versionを調べる
 

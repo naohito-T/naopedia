@@ -122,4 +122,11 @@ Tips
 [参考URL](https://wa3.i-3-i.info/word1240.html)
 
 その**送られてきたデータは途中でおかしくなっていないか**をチェックする方法のひとつ。
+ruby gemsとかはチェックサムが表記されているためダウンロードした際に、データがおかしくないか確認できる。
 
+## サニタイズ(sanitize) / サニタイジング(sanitizing)
+
+[参考URL](https://ssaits.jp/promapedia/technology/sanitize.htmlc)
+[処理参考](https://qiita.com/tnemotox/items/b4b8f0f627e23dd62447)
+サニタイジングとは**利用者が入力した文字データを受け取る際**に、プログラムにとって特別な意味を持つ可能性のある文字や文字列を検知して、一定の規則にしたがって別の表記に置き換えること。
+これはクロスサイトスクリプティングを防ぐことになる。
