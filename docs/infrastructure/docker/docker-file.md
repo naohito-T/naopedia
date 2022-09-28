@@ -5,7 +5,9 @@
 - 軽量を考える（ビルダーパターンができるか）
 - アプリケーション起動用ユーザを作る
 
+## Dockerfile 命令
 
+[リファレンス](https://docs.docker.jp/engine/reference/builder.html)
 
 ## Dockerfile のベストプラクティス
 
@@ -57,3 +59,12 @@ RUN npm install
 CMD ["npm", "start"]
 ```
 
+## Dockerfileのベストプラティクス
+
+[参考URL](https://sysdig.jp/blog/dockerfile-best-practices/)
+
+- root（UID0）で実行してはいけない
+私たちの最近のレポートでは、58% のイメージが root (UID 0) としてコンテナーのエントリポイントを実行していることを発表しています。しかし、Dockerfileのベストプラクティスとして、そのようなことは避けるべき。
+コンテナーをrootで実行する必要があるユースケースはほとんどないので、デフォルトの実効UIDをrootではないユーザに変更するためのUSER命令を含めることを忘れないでください。
+
+アプリのユーザが必要とするのはファイルの実行権限だけで所有権ではない。
