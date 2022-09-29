@@ -36,6 +36,22 @@ depends_on:
 
 `depends_on.condition.service_started`は1回非推奨になったが、3.8ぐらいでまた元に戻った。しかしdocker-compose 2系じゃないと使えない。
 
+## docker-compose オプション
+
+基本オプション
+```sh
+-f, --f ファイル名
+# プロジェクト名は現在いるディレクトリがデフォルトになるが明示的に指定することができる。
+-p, --project--name プロジェクト
+```
+
+upオプション
+```sh
+# バックグランドで実行する。
+-d, --detach
+
+```
+
 ## Docker自動起動
 
 [参考URL](https://www.takunoko.com/blog/docker-compose%E3%81%A7docker%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%82%92os%E8%B5%B7%E5%8B%95%E6%99%82%E3%81%AB%E7%AB%8B%E3%81%A1%E4%B8%8A%E3%81%92%E3%82%8B/)
@@ -129,6 +145,7 @@ services: # 起動するコンテナーの定義を行う。
 - image
 イメージが存在していなければ、Composeはpullを試みます。
 しかしbuildを指定している場合は除きます。その場合、指定されたタグやオプションを使って構築します。
+[Docker Composeでビルド時に任意のイメージ名を指定する方法](https://amaya382.hatenablog.jp/entry/2017/04/03/034002)
 
 - stdin_open: true
 stdin_openとは標準入出力とエラー出力をコンテナーに結びつける設定です。
@@ -397,3 +414,6 @@ imageも削除する。
 
 [参考URL](https://qiita.com/kai_kou/items/d568fe94ee92f837e274)
 
+## Tips
+
+[postgres health check](https://kobe-systemdesign.work/2022/03/29/dockerpostgresql%E3%81%AE%E3%83%98%E3%83%AB%E3%82%B9%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%82%92%E5%AE%9F%E8%A1%8C%E3%81%99%E3%82%8B%E9%9A%9B%E3%81%AE%E6%B3%A8%E6%84%8F%E7%82%B9/)

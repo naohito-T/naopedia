@@ -285,7 +285,12 @@ Bundlerは設定を下記の優先順位にしたがって取得する。
 2. 環境変数
 3. ユーザのホームディレクトリ（~/.bundle/config）
 
+## bundle install時に --path vendor/bundleをつける必要性
 
+[bundle install時に--path vendor/bundleを付ける必要性は本当にあるのか、もう一度よく考えてみよう](https://qiita.com/jnchito/items/99b1dbea1767a5095d85)
+
+`bundle install`コマンドを実行するときRuby界には大きく分けて2つの流派がある。
+それは「--path vendor/bundleを付ける派」と「付けない派」
 
 
 ### Gemfile (package.jsonみたいな）

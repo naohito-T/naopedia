@@ -30,7 +30,7 @@ postgres
 
 ## ユーザとパスワードの設定
 
-PostgresSQLをインストールした時点で、自動的にDBの**管理ユーザーであるpostgresユーザが作成される。**
+PostgreSQLをインストールした時点で、自動的にDBの**管理ユーザーであるpostgresユーザが作成される。**
 ただ、このユーザのパスワードは未設定の状態であるためアカウントロック状態となり**このままではrootユーザーからsuコマンドでスイッチする方法以外でのログインができない。**
 
 そこで、postgresユーザーでログインできるようにパスワードを設定する。
@@ -46,3 +46,11 @@ PostgresSQLをインストールした時点で、自動的にDBの**管理ユ�
 ## cli login
 
 postgres userに切り替えて`psql`
+
+## リモートサーバのpostgresに繋げる
+
+[参考URL](https://qiita.com/ume-san/items/6417390507fc3c710c54)
+
+## postgres疎通
+
+postgresはHTTPサーバではない。そのためcurlなどの疎通通信は対応しない。

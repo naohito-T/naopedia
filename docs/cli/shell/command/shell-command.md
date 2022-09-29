@@ -139,3 +139,17 @@ json読み込みは`@`をつけないとファイルを読み込んでくれな�
 ## useradd
 
 [参考URL](https://atmarkit.itmedia.co.jp/ait/articles/1811/02/news035.html)
+
+## lsof
+
+`lsof -i:5432`出力が表示されない場合は`sudo ss -lptn 'sport = :5432'`
+
+```sh
+$ lsof -i -P | grep "LISTEN"
+```
+
+## ss(socket statistics)
+
+netstatに代わるLinux標準のネットワーク状態確認コマンド。
+[参考URL](https://milestone-of-se.nesuke.com/sv-basic/linux-basic/ss-netstat/)
+
