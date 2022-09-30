@@ -11,6 +11,15 @@ docker image prune -f;
 docker volume prune -f 
 ```
 
+## dockerでvolumeをマウントした時のファイルowner問題
+
+[参考URL](https://qiita.com/yohm/items/047b2e68d008ebb0f001)
+
+ホスト側のファイルをコンテナー内で使いたい場合や、逆にコンテナーで作ったファイルにホストからアクセスしたい場合に有用なのだが、ファイルのアクセス権限について考慮すべき点がある。
+ちなみにdocker for macで試したところ、上記の問題は起きない。
+コンテナー内からはownerがrootとして表示されるが、mac上からは自ユーザーがownerとして表示されている。docker for macの中でうまく解決してくれているようだ。
+
+
 ## docker security  
 
 [効率的に安全な Dockerfile を作るには](https://qiita.com/pottava/items/452bf80e334bc1fee69a)

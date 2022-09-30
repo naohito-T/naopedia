@@ -7,6 +7,10 @@
 
 [シェルスクリプトを書く時の注意](https://qiita.com/youcune/items/fcfb4ad3d7c1edf9dc96)
 
+## シェルスクリプト コーディングスタイル
+
+[参考URL](https://sechiro.hatenablog.com/entry/2013/05/12/%E3%82%B7%E3%82%A7%E3%83%AB%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E3%81%AE%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%BC)
+
 ## ShellScript echo 色付ける
 
 [参考URL](https://qiita.com/ko1nksm/items/095bdb8f0eca6d327233#%E3%81%8A%E3%81%BE%E3%81%911-%E8%89%B2%E6%8C%87%E5%AE%9A%E6%96%B9%E6%B3%95-%E4%B8%80%E8%A6%A7)
@@ -151,3 +155,7 @@ $ echo $0
 [shebang(シェバンについて)](https://sechiro.hatenablog.com/entry/20120806/1344267619)
 [シェルスクリプト(コマンドライン引数)](https://maku77.github.io/linux/startup/command-line-params.html)
 [シェルスクリプト例外処理](https://cloudpack.media/532)
+
+## シェルスクリプトとMakefileの使い分け
+
+[参考URL](https://www.clear-code.com/blog/2012/10/24.html)

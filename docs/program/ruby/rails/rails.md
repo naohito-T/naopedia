@@ -361,6 +361,12 @@ store            … アプリケーションのルートディレクトリ
 `app`内のパス構成は、Railsで決められた通りであることが前提となっているため、将来のバージョンアップで予期せぬ衝突が発生する可能性。
 それらではない自作のクラスやモジュールは"lib"内に置く方が良いでしょう。
 
+### initializers
+
+initializers以下においたファイルはサーバ起動時にのみ読み込まれるため、追加や編集をした場合は**サーバを再起動する必要がある。**
+
+---
+
 ## Rails url
 
 [参考URL](https://qiita.com/190131start/items/49e2e9a42f49f17e45c6)
@@ -1115,6 +1121,30 @@ defaultでは以下のURL
 
 Active SupportはRailsに搭載されているコンポーネントの一種。
 Object/Class/String/Numeric/Enumerableなど**標準ライブラリを拡張**することで、よりRubyの表現力を向上してくれるライブラリ。
+
+## 国際化対応(18n)
+
+Railsにはユーザーの国ごとに表示を簡易に切り替えられる国際化機能（i18n）が搭載されている。
+日本のみで使用する場合でもこの機能を利用することでエラーメッセージの表示やラベルの表示を簡潔に記述することができるようになる（つまりはmessage定数管理）
+
+### 導入
+
+```sh
+# add file
+touch config/initializers/locale.rb
+```
+
+### 翻訳ファイルの管理は
+
+翻訳ファイルはライブラリごと、モデルごとにディレクトリやファイルを分割して管理。
+たとえばdeviseの翻訳ファイルであればconfig/locales/gemsディレクトリで日本語翻訳ファイルは`devise.ja.yml`として管  理できるようにする。``
+
+ユーザーモデルの翻訳ファイルは`config/locales/models`ディレクトリで、日本語翻訳ファイルは`user.ja.yml`として管理できるようにします。
+config/locales以下に作成したディレクトリ、ファイルが翻訳ファイルとして読み込まれるように設定をする。
+
+### localeファイルが提供されている。
+
+[提供URL](https://github.com/svenfuchs/rails-i18n/blob/master/rails/locale/ja.yml)
 
 
 

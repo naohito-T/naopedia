@@ -11,7 +11,7 @@ CLI環境で使えそうなTipsを記載
 `$_` ... 直前のコマンド引数を取得する。
 
 `$ mkdir {api,front}`
-{} ... 波カッコで囲むと一度に複数のディレクトリやファイルが作成できるできる。
+{} ... 波カッコで囲むと一度に複数のディレクトリやファイルが作成できる。
 注意する点は、カンマの後に**スペースを入れるとエラー**になります。
 
 ---
@@ -153,3 +153,7 @@ $ lsof -i -P | grep "LISTEN"
 netstatに代わるLinux標準のネットワーク状態確認コマンド。
 [参考URL](https://milestone-of-se.nesuke.com/sv-basic/linux-basic/ss-netstat/)
 
+## whoami
+
+'Who am I?'
+現在のユーザを確認する。
