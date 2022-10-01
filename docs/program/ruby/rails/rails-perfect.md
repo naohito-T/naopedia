@@ -193,6 +193,10 @@ POST → create
 UPDATE → put
 DELETE → destroy
 
+---
+
+2章
+
 ## MVCアーキテクチャ
 
 M=Model
@@ -219,6 +223,12 @@ DBと接続する箇所であり、ActiveRecordを利用するところ。
 - scopeメリット
 クラスメソッドで検索を実行した場合、何もない場合はnilを返すが
 scopeで結果がnilの場合は該当Scopeの検索条件を除外したクエリを発行し必ずActiveRecord::Relationをかえす
+
+## 多対多
+
+本と著者の関係がわかりやすい
+本は共著という形で複数の著者に書かれることもあり、逆にある著者には複数の著作が存在する場合もある。
+ActiveRecordでこれを表現するには中間モデルを作成することになる。
 
 
 ---

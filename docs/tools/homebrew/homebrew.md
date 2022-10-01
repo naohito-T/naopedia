@@ -163,7 +163,7 @@ Password:
 
 ## Homebrew 各OS ユーザーディレクトリインストール先
 
-Ubuntu
+Ubuntun
 `/home/ubuntu/.linuxbrew/bin/openssl`
 
 macOS
@@ -240,3 +240,8 @@ Ubuntu標準パッケージマネージャー aptと比べて次のような特�
 - 使用しているディストリビューションでパッケージ化されていないソフトウェアもインストール可能
 - 最新バージョンのパッケージをインストールできる
 - クロスプラットフォームであるためmacOSとWindows（WSL）とLinuxで同じパッケージマネージャーを使える
+
+## 自作Formulaの作成
+[参考URL](https://qiita.com/sh0nk/items/6bbc241b7c0d9f18fcfa)
+
+自身のGitHubレポジトリの中身をまるっとインストール対象にしたい場合は、Download Zipからzipファイルのリンクを取得して指定することができる。

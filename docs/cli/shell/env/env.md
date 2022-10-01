@@ -58,3 +58,5 @@ aws上にDockerを立ち上げている。docker-composeで
 
 - direnvができているか確認する。
 対象の環境変数をechoすればいい。
+
+[direnv上手い使い方](https://eidera.com/blog/2018/12/28/direnv_alias/)

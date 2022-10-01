@@ -26,10 +26,25 @@ end
 Blog.published
 ```
 
+## 1対多の考え方
+
+本から見れば出版社は1つ。出版社から見ればたくさんの本を発行している。
+
 ## has_many, belongs_to
 
 has_many
-テーブル同士を関連づけるためのもの
-関連付けているのでテーブルの操作等が効率的にできる。
+**テーブル同士を関連**づけるためのもの
+関連付けをすることによって、データをまとめて扱えるようになるので、より効率的にデータベースを操作できる。
 
+## belongs_to
+
+所有されているという関係になる。
+
+## rails db:migrateとrails dbの違い
+
+[参考URl](https://teratail.com/questions/157411)
+
+`rails db:migrate`や`rails db:create`に関してはrails側からdbへ接続して実行する（コアライブラリがあれば良い）
+
+`rails db`に関してはrailsから`database.yml`で設定されているDBに対して、各DBに対応した「コマンドラインインタフェース」を起動する。PostgreSQLであれば、psqlコマンドが必要。
 

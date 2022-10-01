@@ -285,13 +285,15 @@ Bundlerは設定を下記の優先順位にしたがって取得する。
 2. 環境変数
 3. ユーザのホームディレクトリ（~/.bundle/config）
 
+`bundle list`
+プラグインが入っているか確認ができる。
+
 ## bundle install時に --path vendor/bundleをつける必要性
 
 [bundle install時に--path vendor/bundleを付ける必要性は本当にあるのか、もう一度よく考えてみよう](https://qiita.com/jnchito/items/99b1dbea1767a5095d85)
 
 `bundle install`コマンドを実行するときRuby界には大きく分けて2つの流派がある。
 それは「--path vendor/bundleを付ける派」と「付けない派」
-
 
 ### Gemfile (package.jsonみたいな）
 GemfileとはRailesアプリで利用されるgemの一覧を管理するファイル
@@ -650,9 +652,9 @@ RailsアプリケーションではRESTの原則にしたがってデータを�
 これをRESTフルなルーティング、またはリソースベースのルーティングと呼ぶ
 
 
-## コントローラー
+## controllers コントローラー
 
-コントローラーは複数系で定義する。
+コントローラーは**複数系で定義**する。
 ※リソースを扱うコントローラーはMembersControllerの様に、リソース名+Controllerという名前が一般的
 
 DHH（railsを作った人）が述べているコントローラーの作りかた
@@ -666,10 +668,23 @@ resources :orders, only: [:index]
 必ずorderのモデルが必要ではない。
 リソース名に対応したコントローラーに対して、**7つのアクションのルーティングを自動的に設定するだけ**
 
+## strong parameter
+[参考URL](https://qiita.com/ozackiee/items/f100fd51f4839b3fdca8)
+ストロングパラメーターは**Web上から受けつけたパラメーターが本当に安全なデータかどうか**を検証した上で、取得するための仕組み。Rails4から実装されている。
+
+命名規則慣例
+メソッド名に命名規則はないようですが`モデル名_params`とするのが一般的。
+また実行結果として、許可されたカラムの値だけを抽出しハッシュ形式で呼び出し元に値を返す。
+
+permit
+permitメソッドを使用する事で**許可された値のみ**を取得することができる。
+そのため、permitメソッドの引数には登録を許可するすべてのカラム名を指定しておく必要があります。もし、許可されいないカラムがparams内に存在した場合、そのデータは取得されず無視されます。
+
+
 
 ## リソースを扱うコントローラー
 
-コントローラでは7つのアクションを用意する
+コントローラーでは7つのアクションを用意する
 この7つは原則としてデータベースの基本操作であるCRUDを実装したもの
 
 api/app/controllers
@@ -1122,7 +1137,9 @@ defaultでは以下のURL
 Active SupportはRailsに搭載されているコンポーネントの一種。
 Object/Class/String/Numeric/Enumerableなど**標準ライブラリを拡張**することで、よりRubyの表現力を向上してくれるライブラリ。
 
-## 国際化対応(18n)
+## 国際化対応(i18n)
+
+i18nの理由 => internationalizationが「i」から「n」まで18文字あるから
 
 Railsにはユーザーの国ごとに表示を簡易に切り替えられる国際化機能（i18n）が搭載されている。
 日本のみで使用する場合でもこの機能を利用することでエラーメッセージの表示やラベルの表示を簡潔に記述することができるようになる（つまりはmessage定数管理）
@@ -1146,5 +1163,31 @@ config/locales以下に作成したディレクトリ、ファイルが翻訳フ
 
 [提供URL](https://github.com/svenfuchs/rails-i18n/blob/master/rails/locale/ja.yml)
 
+## 日本語対応
 
+[参考URL](https://qiita.com/kusu_tweet/items/b534c808ac1ee0382f05)
+
+## enum
+
+enumを追加すると自動でメソッドが追加される。
+`User.male`とすると男性一覧 (users.gender が 1 のレコード) のレコードを取得することが可能になる。
+またUserモデルのインスタンスに`#male?`とすると男性の場合は`true`, 男性ではない場合は`false`が 返る。
+`#male!`とすると`update`文が実行される
+unanswered,female に対しても 同様のメソッドが自動で追加されます。
+
+```rb
+# 0, 1, 2はdbに保存されてしまうので後から変更は難しい
+class User < ApplicationRecord
+  enum gender: {
+    unanswered: 0,
+    # 男性
+    male: 1,
+    # 女性
+    female: 2
+  }
+end 
+```
+
+TODO
+enumは別gemを使っていたような..
 
