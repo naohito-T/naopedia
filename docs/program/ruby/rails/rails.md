@@ -1209,3 +1209,7 @@ class User < ApplicationRecord
 end 
 ```
 
+## rails routing constraints
+
+routingにさまざまな制限を設定することができる。
+

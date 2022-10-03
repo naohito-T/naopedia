@@ -130,3 +130,10 @@ ruby gemsとかはチェックサムが表記されているためダウンロ�
 [処理参考](https://qiita.com/tnemotox/items/b4b8f0f627e23dd62447)
 サニタイジングとは**利用者が入力した文字データを受け取る際**に、プログラムにとって特別な意味を持つ可能性のある文字や文字列を検知して、一定の規則にしたがって別の表記に置き換えること。
 これはクロスサイトスクリプティングを防ぐことになる。
+
+## CSRF(クロスサイトリクエストフォージェリ)
+[参考URL](https://www.trendmicro.com/ja_jp/security-intelligence/research-reports/threat-solution/csrf.html)
+
+リクエストする際にランダムな数字をURLに付与する。
+サーバからのレスポンスでsession storageに保存したランダムな数字で検証する。
+→ネットワーク越しに改ざんなどされていないことを確認する。

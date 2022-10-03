@@ -1112,6 +1112,6 @@ REVIEW
 
 [参考URL](https://docs.ruby-lang.org/ja/latest/doc/symref.html)
 
+## ヒアドキュメント
 
-
-
+[リフェレンス](https://docs.ruby-lang.org/ja/latest/doc/spec=2fliteral.html)
