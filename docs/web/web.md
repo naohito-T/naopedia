@@ -65,10 +65,16 @@ Grid Layoutは縦横自由なレイアウトが可能。
 
 [参考URL](https://www.ipentec.com/document/css-block-scroll-using-position-property)
 
-注意点
+注意点 
 - `overflow: hidden`をhtml, bodyに指定するとスクロールができなくなるがiOSには効かない。そのためevent listenerの設定が結局必要になる。
 
 ## flash メッセージ
 
 flashは**直後のリクエスト**でのみ参照可能になるという特徴。
 そのためログインの成功時や、エラーメッセージをビューに渡したりする際に使用する。
+
+## 電話番号認証
+
+userが電話番号で送る。一意な認証コードを発行しSMSでユー ザに送信。送信した認証コードをユーザに入力してもらい認証を完了する。
+
+ユーザが電話番号を入力したらSMSを送信するのはtwilioなどを使用する。

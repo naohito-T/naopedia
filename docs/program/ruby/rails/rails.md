@@ -384,6 +384,22 @@ PATCH /users/:id      users#update
 PUT /users/:id        users#update
 DELETE /users/:id     users#destroy
 
+### リソースベースのルーティング(Rails default)
+[リファレンス](https://railsguides.jp/routing.html)
+
+リソースベースのルーティング（以下リソースルーティング）を使うことで以下が勝手に定義される。
+
+**ルーティング**
+リソースベースで構成されたコントローラーに対応する共通のルーティングを手軽に宣言できます。resourcesを宣言するだけで、コントローラーのindex、show、new、edit、create、update、destroyアクションを個別に宣言しなくても1行で宣言が完了します。
+
+**ヘルパーメソッド**
+リソースフルなルーティングを作成すると、アプリケーションのコントローラで多くのヘルパーが利用できるようになります。resources :photosというルーティングを例に取ってみましょう。
+
+photos_pathは/photosを返します
+new_photo_pathは/photos/newを返します
+edit_photo_path(:id)は/photos/:id/editを返します（edit_photo_path(10)であれば/photos/10/editを返します）
+photo_path(:id)は/photos/:idを返します（photo_path(10)であれば/photos/10を返します）
+
 ## Rails  ルーティングを確認する方法
 
 [参考URL](https://sakurawi.hateblo.jp/entry/rails-route)
@@ -671,6 +687,7 @@ resources :orders, only: [:index]
 ## strong parameter
 [参考URL](https://qiita.com/ozackiee/items/f100fd51f4839b3fdca8)
 ストロングパラメーターは**Web上から受けつけたパラメーターが本当に安全なデータかどうか**を検証した上で、取得するための仕組み。Rails4から実装されている。
+フォームから送信されてきたparameterで**どのparameterを許可するかホワイトリストを実装する。**
 
 命名規則慣例
 メソッド名に命名規則はないようですが`モデル名_params`とするのが一般的。
@@ -862,6 +879,10 @@ password_confirmationカラム : 確認用のパスワード
 
 deviseが有名
 通常Railsのモデル作成は`rails g model User`などだが、deviseで新規登録やログインをしたいためdeviseのgenerateコマンドを使用する。
+
+## devise
+
+[Rails deviseで使えるようになるヘルパーメソッド一覧](https://qiita.com/tobita0000/items/866de191635e6d74e392)
 
 
 ## アクション・コールバック
@@ -1187,7 +1208,4 @@ class User < ApplicationRecord
   }
 end 
 ```
-
-TODO
-enumは別gemを使っていたような..
 
