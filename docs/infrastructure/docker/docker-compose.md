@@ -417,3 +417,6 @@ imageも削除する。
 ## Tips
 
 [postgres health check](https://kobe-systemdesign.work/2022/03/29/dockerpostgresql%E3%81%AE%E3%83%98%E3%83%AB%E3%82%B9%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%82%92%E5%AE%9F%E8%A1%8C%E3%81%99%E3%82%8B%E9%9A%9B%E3%81%AE%E6%B3%A8%E6%84%8F%E7%82%B9/)
+
+## ローカル環境の異なるDocker Compose間の通信をhost.docker.internalで解決する
+[参考URL](https://nishinatoshiharu.com/access-container-via-localhost/#_Railshostdockerinternal)

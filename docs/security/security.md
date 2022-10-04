@@ -117,6 +117,9 @@ HTTPの認証方法のひとつ。
 Tips
 [Facebook, Twitter, Instagramなどがどうやって生成しているか](https://qiita.com/daisy1754/items/98a6e6b17d8161eab081)
 
+ULID（Universally Unique Lexicographically Sortable Identifier）はUUIDを改良したもので、UUIDと同じ128ビットでありながら、UUIDは**36文字**ですが、ULIDは**26文字**で表される。
+
+
 ## チェックサム(checksum)
 
 [参考URL](https://wa3.i-3-i.info/word1240.html)

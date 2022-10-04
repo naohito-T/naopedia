@@ -11,6 +11,7 @@ docker image prune -f;
 docker volume prune -f 
 ```
 
+
 ## dockerでvolumeをマウントした時のファイルowner問題
 
 [参考URL](https://qiita.com/yohm/items/047b2e68d008ebb0f001)
