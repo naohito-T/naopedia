@@ -1213,3 +1213,6 @@ end
 
 routingにさまざまな制限を設定することができる。
 
+## beforeバリデーションをやめてセッターメソッドにする。
+[参考URL](https://techracho.bpsinc.jp/hachi8833/2022_03_09/59016)
+
