@@ -31,5 +31,12 @@ Passport.jsは一般的に、セッション（session）と組み合わせて�
 
 ## passportとStrategyの紐づけ
 
-passportとStrategyの紐づけは`passport.use(new Strategy(～))`で行う。
+- passportとStrategyの紐づけは`passport.use(new Strategy(～))`で行う。
+- new Strategy()の2番目の引数に**認証が成功した後に呼ばれる関数**を定義する
+
+## passportとセッションの紐づけ
+
+- セッションIDとユニークユーザー識別子を紐づけて、セッションデータとして保存する。
+- ユーザーデータから、ユニークユーザー識別子を取り出して、セッションIDと紐づけする方法を、passport.serializerUser()で定義する
+
 
