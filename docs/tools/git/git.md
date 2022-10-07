@@ -1,5 +1,26 @@
 # Git
 
+## wiki
+[これをやる](https://dev.classmethod.jp/articles/editing-wiki-content-locally-on-github/)
+
+## 多分一番これがいい
+
+[参考URL](https://zenn.dev/mstssk/articles/4051e3df72a84c)
+
+これ取り入れる
+
+PRをレビュー依頼出す前にrebaseする
+```sh
+$ git fetch
+$ git rebase origin/master topic
+$ git push origin topic --force-with-lease
+
+```
+
+--force-with-leaseとは
+PUSHの際、ローカルrefとリモートrefを比較しローカルが最新か判定し、最新でなければPUSHが失敗するというもの。
+※ただし、直前にfetchしているとPUSHが成功してしまうので注意
+
 ## やること
 
 mergeしてしまい。そこから抜き出したブランチを作る方法
@@ -526,6 +547,7 @@ $ git symbolic-ref refs/remotes/origin/HEAD | awk -F'[/]' '{print $NF}'
 
 便利そう
 
+notificationsにいく（通知）
 G + N : Gが最初GitHub通知にいく
 
 ## GitHub Top Page READMEをおしゃれにする

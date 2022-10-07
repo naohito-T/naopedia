@@ -226,7 +226,7 @@ external: の中にnameを指定することで、docker-compose外で作成し�
 
 ## volumes 省略記法
 
-いつも上記の例のように記載するのは面倒なので，短い表記法があります．[SOURCE:]TARGET[:MODE]と指定します．たとえば，以下で，sourceの./dataディレクトリとtargetの/tmp/dataディレクトリを指定します．
+いつも上記の例のように記載するのは面倒なので短い表記法があります．[SOURCE:]TARGET[:MODE]と指定します．たとえば，以下で，sourceの./dataディレクトリとtargetの/tmp/dataディレクトリを指定します．
 
 ```yml
   volumes:

@@ -93,6 +93,11 @@ nc: secure-service (10.108.84.141:0): Operation timed out
 shellにより変わるため注意が必要
 順番は関係ない。（エラーにならない）
 
+
+## curlとブラウザアクセスでサイト挙動が変わるとき
+[参考URL](https://travelingresearcher.com/entry/2017/04/30/115255)
+
+
 ### json読み込み
 
 json読み込みは`@`をつけないとファイルを読み込んでくれない

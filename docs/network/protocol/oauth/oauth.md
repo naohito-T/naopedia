@@ -61,3 +61,7 @@ Web上で認証コードが入力されると、API経由でSMS送信サービ�
 正しいことが確認されたら認証完了
 SMS送信サービスで認証を行うためには、自社システムとのAPI連携が必須です。サービスによってAPI連携の仕様が異なるため、連携可能かどうか確認しておく必要があります。
 
+## OAuth flow
+
+[参考URL](https://qiita.com/TakahikoKawasaki/items/200951e5b5929f840a1f)
+[これ実装するのにいいかもしれない。](https://qiita.com/TakahikoKawasaki/items/e508a14ed960347cff11)
