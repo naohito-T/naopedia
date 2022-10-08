@@ -22,24 +22,22 @@ AWSコマンドラインインターフェイス (AWS CLI) は、AWSのサービ
 AWS CLIはaws configureで指定された機密性の高い認証情報を**ホームディレクトリの`.aws`という名前のフォルダーにあるcredentialsへ保存する**
 
 **config**
-aws configureで指定された機密性の低いオプションを保存する
+aws configureで指定された**機密性の低い**オプションを保存する
 cliを使う上での設定を記載したファイル。
 
 **credentials**
-aws configureで指定された機密性の高い認証情報を保存する
+aws configureで指定された**機密性の高い**認証情報を保存する
 AWSに接続するための認証情報
 
 ## config credentials
+[リファレンス](https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/cli-configure-files.html)
 
 頻繁に利用される構成設定および認証情報をAWS CLIが維持するファイルに保存できる。
 CLIは`default`という名前のプロファイルにある設定を使用する。
 
-
-[リファレンス](https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/cli-configure-files.html)
-
 ## 名前付きプロファイル
-
 [リファレンス](https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/cli-configure-profiles.html)
+
 
 ---
 
@@ -334,3 +332,8 @@ defaultのクレデンシャルをconfigに実装することができる。
 鍵を管理するところ。
 元々の鍵をマスターキー
 暗号化された鍵をデータキーとしてAWSで保存ができる。
+
+## AWS Serverless Application Model (AWS SAM) とは
+
+
+

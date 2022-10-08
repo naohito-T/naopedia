@@ -1,12 +1,33 @@
-# Authentication(認証)
+# Authentication(認証): オーゼンティケーション
 [参考URL](https://dev.classmethod.jp/articles/authentication-and-authorization-again/)
+[認証と認可の歴史](https://dev.classmethod.jp/articles/authentication-and-authorization/)
 
-認証とは、相手の身元を確認すること。
+認証とは相手の身元を確認すること。
 
 認証: Authentication AuthCやAuthNと略されることも
 **リソースや権限には無関係**
 通信相手のID（もっというと属性）をなりすましでないと確信すること。
 
+## 認証の3要素
+
+コンピュータの世界も含め、現実世界で「認証」を行うための要素には以下の3つがある。
+
+1. WHAT YOU ARE (inherence factor)
+顔貌、声、指紋、署名など、その人自身を提示して、相手にアイデンティティを確認させる方法です。
+小さなコミュニティでは、お互いの顔や声を相互に知っているため、面と向かえば相手が誰かはわかりますね。
+認証が完了する、ということです。
+
+2. WHAT YOU HAVE (possession factor)
+身分証、携帯電話等、その人だけが持っているものを提示することによって認証をします。ある程度コミュニティが大きくなってくると、お互いの特徴を覚えきれなくなります。そんな場合は身分証明書を提示して、相手を認証すると思います。
+
+また、その身分証には顔写真がプリントしてあることも多く、結果として WYA に依存するものも少なくありません。
+
+3. WHAT YOU KNOW (knowledge factor)
+パスワード、秘密の質問等、その人だけが知っていることを提示して認証をします。
+コンピュータの世界で最も多く使われるファクターでしょう。
+
+一般的に、上記3つのうちいずれか1つを満たすことで、認証が完了することが多いです。
+しかし、より確実な認証を行いたい場合は**Multi-Factor Authentication (MFA) という考え方**で、複数のファクターを確認することもあります。
 
 ## OpenID Connect
 

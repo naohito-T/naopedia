@@ -1,5 +1,8 @@
 # TypeScript
 
+## TSDoc
+[参考URL](https://blog.pokutuna.com/entry/tsdoc-tag-list)
+
 ## 参考 URL集
 
 [仕事ですぐに使える TypeScript](https://future-architect.github.io/typescript-guide/index.html)

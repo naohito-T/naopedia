@@ -2,7 +2,8 @@
 
 [AWS サーバーレスおさらい](https://d1.awsstatic.com/serverless-jp/seminars/20210909_Serverless_session1.pdf)
 
-- サーバレスとは
+## サーバレスとは
+
 サーバーがない ×
 サーバーの存在を意識しない ◯
 
@@ -33,7 +34,6 @@
 
 **サーバレスに対するゆ**
 ![](image/認識.png)
-
 
 ---
 
