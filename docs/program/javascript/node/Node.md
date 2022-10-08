@@ -6,6 +6,10 @@ TypeScript → JavaScriptに変換してからnodeでの実行
 
 通常、TypeScriptで書かれたNode.jsプロジェクトは、tscでtranspileをし、生成されたJavaScriptファイルを実行する必要がある。ts-nodeを使うことでこのステップを省略する。
 
+## NODE_ENV
+
+NODE_ENV=production yarn install とすれば devDependenciesがインストールされない
+
 ## node path取得
 
 [参考URL](https://zenn.dev/ignorant_kenji/articles/25280934f2c50b0c13ff)
@@ -86,3 +90,5 @@ nodeとnpmは違うからね
 Nxは、ファーストクラスのモノレポサポートと強力な統合を備えた次世代ビルドシステム
 
 [リファレンス](https://www.npmjs.com/package/create-nx-workspace)
+
+
