@@ -17,9 +17,12 @@ express-sessionは**CookieにセッションIDのみを保存**して、セッ�
 ストレージ（セッションストア）は、他のものに変更することができます。
 セッションストアに`dynamoDB`や`redis`を使用できる。
 
+---
+
 ## 実稼働環境におけるベスト・プラクティス: セキュリティー
 [参考URL](https://expressjs.com/ja/advanced/best-practice-security.html)
 
+### TSLを使用する
 
-
+アプリケーションが機密データを処理または送信する場合は`Transport Layer Security（TLS）`を使用して、接続とデータを保護する。
 
