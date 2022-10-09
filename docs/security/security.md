@@ -71,9 +71,6 @@ scheme hostname  port
 ハッシュ値から元のデータを復元することはできない。
 また異なる2つのデータから作ったハッシュ値同士が同じ値になる可能性は極めてひくい
 
-## CSRF(クロスサイトリクエストフォージェリ)
-
-
 
 ## IPA 
 
@@ -171,6 +168,15 @@ ruby gemsとかはチェックサムが表記されているためダウンロ�
 ## CSRF(クロスサイトリクエストフォージェリ)
 [参考URL](https://www.trendmicro.com/ja_jp/security-intelligence/research-reports/threat-solution/csrf.html)
 
+ALBでは
 リクエストする際にランダムな数字をURLに付与する。
 サーバからのレスポンスでsession storageに保存したランダムな数字で検証する。
 →ネットワーク越しに改ざんなどされていないことを確認する。
+
+## セッションハイジャック
+
+## SQL インジェクション
+
+## XSS
+ 
+## クリックジャッキング
