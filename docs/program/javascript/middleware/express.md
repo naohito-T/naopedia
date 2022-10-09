@@ -1,0 +1,23 @@
+# express
+
+http serverでnodeで動作する
+
+## session
+[参考URL](https://kazuhira-r.hatenablog.com/entry/2021/12/29/023347)
+
+Expressには、以下の2つのセッションモジュールがある
+
+- cookie-session
+cookie-sessionはCookieにセッションデータを保存するミドルウェア。
+
+- express-session
+express-sessionは**CookieにセッションIDのみを保存**して、セッションデータは別のストレージに保存するミドルウェア。
+デフォルトのストレージはインメモリです。こちらはメモリーリークが発生する可能性が高く、本番環境での
+利用を意図して設計されたものではないことに注意が必要そうです。
+ストレージ（セッションストア）は、他のものに変更することができます。
+セッションストアに`dynamoDB`や`redis`を使用できる。
+
+
+
+
+

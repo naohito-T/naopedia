@@ -1,6 +1,28 @@
 # TypeORM
 
-記載していこう
+TypeORMは、TypeScriptおよびJavaScriptで使用できるORMとされている。
+Node.jsやブラウザ上など、様々なプラットフォームをサポートしているともされています。
+
+## スタイル
+
+スタイルとしては、Active RecordとData Mapperの2つのパターンをサポートしている。
+
+## version
+
+0.2系が現在主流であるが0.3系が最新（2022/10/09現在）
+
+## 0.3系 参考
+
+[参考URL](https://zenn.dev/hasegawasatoshi/articles/8110ce79119dd0)
+[参考URL](https://kazuhira-r.hatenablog.com/entry/2022/03/13/235304)
+[参考URL](https://qiita.com/Aurum64/items/f5962bd2a643447dbef9)
+[参考URL](https://blog.open.tokyo.jp/2022/05/04/upgrade-typeorm-0-3.html)
+
+## config file
+
+0.2 では`ormconfig.ts`に接続オプションを記述していたようですが、0.3 では非推奨になった。
+以下のように、モジュールを作成して、 app.module.ts でインポートします。
+
 
 ## TypeORM & Express & Dockerで環境構築
 

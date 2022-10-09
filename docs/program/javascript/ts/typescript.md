@@ -29,6 +29,15 @@ TS組み込み型定義（基本を読んでから）
 Typescriptで型定義用のファイルを作る際に、ライブラリが生成する型定義ファイルの名前にならって .d.ts と付けると、定義していない型が any として使えてしまい型チェック時にもエラーになりません。
 よって`.ts`で宣言する。
 
+## import と default import 
+
+```ts
+// default import
+import myModule from './myModule';
+
+```
+
+
 ## TypeScript error ハンドリング
 
 [参考URL](https://dev.classmethod.jp/articles/error-handling-practice-of-typescript/)

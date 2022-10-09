@@ -13,6 +13,11 @@ log監視ツールが色々あるためそれをまとめる。
 - メトリクス
 [metrics](https://e-words.jp/w/%E3%83%A1%E3%83%88%E3%83%AA%E3%82%AF%E3%82%B9.html)
 
+## ログレベル
+
+おそらくほとんどのライブラリで使用するのではないか。
+`all < trace < debug < info < warn < error < fatal < mark < off`
+
 ## Tips
 
 [zozoでの](https://techblog.zozo.com/entry/zozotown-backend-monitoring)
