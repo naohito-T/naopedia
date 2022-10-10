@@ -17,6 +17,7 @@ Node.jsやブラウザ上など、様々なプラットフォームをサポー�
 [参考URL](https://kazuhira-r.hatenablog.com/entry/2022/03/13/235304)
 [参考URL](https://qiita.com/Aurum64/items/f5962bd2a643447dbef9)
 [参考URL](https://blog.open.tokyo.jp/2022/05/04/upgrade-typeorm-0-3.html)
+[これが一番参考になるかも](https://blog.rhyztech.net/typeorm_0.2_to_0.3/)
 
 ## config file
 

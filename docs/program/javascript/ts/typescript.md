@@ -1,5 +1,24 @@
 # TypeScript
 
+## TypeScriptのクラス
+
+- クラスを生成した時に
+
+```ts
+class A {
+  private readonly a = 'a'
+  private all(hello: string) {
+    console.log(hello)
+  }
+}
+
+// privateも呼び出せる。
+const result = new A()['a']
+// all methodに呼び出される。引数も渡せる。
+const result = new A()['all']('aa')
+console.log(result)
+```
+
 ## TSDoc
 [参考URL](https://blog.pokutuna.com/entry/tsdoc-tag-list)
 
