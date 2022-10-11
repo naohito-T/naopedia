@@ -13,3 +13,15 @@ Twitter・GitHub・ピンタレストなどのサービスがRedisを採用し�
 
 ## RedisとDynamoDBの違い
 [参考URL](https://higelog.brassworks.jp/2843)
+
+## redis CLI
+
+cliあるらしい。
+GUIで検索したらあるかも
+
+```sh
+$ bin/redis-cli -a redispass
+
+# 設定されたkeyが見れる。
+> keys *
+```

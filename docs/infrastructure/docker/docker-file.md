@@ -144,3 +144,4 @@ shell形式で記述すると`PID 1`のプロセスがシェルとなり、kuber
 ## Tips
 
 [Nodeでの作り方](https://blog.shinonome.io/nodejs-docker/)
+[healthCheckについて](https://kakakakakku.hatenablog.com/entry/2019/11/22/094832)

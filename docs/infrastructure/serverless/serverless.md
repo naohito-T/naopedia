@@ -1,6 +1,7 @@
 # サーバーレス
 
 [AWS サーバーレスおさらい](https://d1.awsstatic.com/serverless-jp/seminars/20210909_Serverless_session1.pdf)
+[サーバーレスコマンドチートシート](https://qiita.com/kohashi/items/537a2c702b937b91078e)
 
 ## サーバレスとは
 
@@ -138,4 +139,12 @@ Lambdaファンクションが他のAWSリソースを連携する場合は、�
 ## event.json
 
 ServerlessのCLIでファンクションを実行する際に入力値となるデータを定義するファイルです。Lambdaファンクション内でevent変数に展開されます。
+
+## dynamoDB
+[ServerlessFrameworkでDynamoDBLocalを使う](https://qiita.com/marchin_1989/items/1a5ad220bee030fef111)
+
+DynamoDB Local自体はそもそもaws公式のツール
+JRE上で動作するので、Java6以上の実行環境が必要。
+それを`Serverless Framework`で使うためのServerless DynamoDB Localというプラグインがある。
+プラグインを利用しなくても DynamoDB Localを利用することはできますが、serverless frameworkの設定と一緒にかけたり、seedなどのオプションがあり便利です。
 
