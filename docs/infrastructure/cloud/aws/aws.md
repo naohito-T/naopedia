@@ -286,6 +286,8 @@ macOSであればKeyChain、Windowsであれば資格情報マネージャーに
 [aws-vaultをLinux環境でも使う方法【セキュリティ向上】](https://hackers-high.com/aws/aws-vault-on-linux/)
 [aws-vault を使って AWS のアクセスキーを暗号化して扱おう](https://blog.microcms.io/aws-vault-introduction/)
 
+[aws-vaultのセッションをきる](https://www.qualimente.com/2018/10/22/how-to-use-aws-vault-to-managing-credentials-for-an-aws-account/)
+
 ## スイッチロールとは
 
 スイッチロール自体のメリットは**一度ログアウトしてから、もう一度別のアカウントでログインする必要がなくなる。**

@@ -263,6 +263,11 @@ Type assertions（キャスト）Type assertionsを使うと、実際のデー�
 
 unknown型やany型、Union型の型の絞り込みを行える。
 
+## keyof
+
+オブジェクト型のプロパティ名(key名)を取得する。
+型に対して使用する。
+
 ## Null合体代入演算子(??=)
 
 [参考URL](https://zenn.dev/oreo2990/articles/3d780560c5e552)
