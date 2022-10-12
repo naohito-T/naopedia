@@ -41,8 +41,7 @@ CLIは`default`という名前のプロファイルにある設定を使用す�
 
 ---
 
-## AWS CDK
-
+## AWS CDK¥
 [5分で理解するAWS CDK](https://qiita.com/Brutus/items/6c8d9bfaab7af53d154a)
 
 AWSクラウド開発キット (AWS CDK) は、最新のプログラミング言語を使用してクラウドインフラストラクチャをコードとして定義し、それを**AWS CloudFormation**を通じてデプロイするためのオープンソースのソフトウェア開発フレームワーク。
