@@ -3,6 +3,8 @@
 [HTTP入門](https://www.tohoho-web.com/ex/http.htm)
 [冪等性について](https://qiita.com/suin/items/316cb8aaf8dfcf11abae)
 [ブラウザからサーバまでわかりやすい](https://techracho.bpsinc.jp/hachi8833/2022_08_02/77493)
+[プロトコル](https://atmarkit.itmedia.co.jp/ait/articles/1507/31/news004.html)
+[HTTPの仕組み再入門](https://atmarkit.itmedia.co.jp/ait/articles/1508/31/news016.html)
 
 ## HTTPとは
 
