@@ -18,19 +18,19 @@
 **サーバー確保型**
 - 処理量を予測して環境を確保しないといけない
 - 確保分の課金
-- 使わない時は(意識して)解放
+- 使わない時は（意識して）解放
 - 自分で冗長化
 
 **サーバーレス**
 - 処理要求に応じて自動で環境を確保
 - 負荷なし = ゼロ課金
-- ms単位の実行時間課金(AWS Lambda)
+- ms単位の実行時間課金（AWS Lambda）
 - 自動で冗長化
 
 サーバーを常時起動している場合、使用していない時間も料金がかかる問題
 起動しているサーバーは、誰がメンテナンスするの問題
 サーバー設定担当者によって構成が微妙に違うので、デプロイしたらコードが動かない問題
-重複しますが、そんなサーバー関連の問題を減らすことができる「サーバレスアーキテクチャ」をお手軽に構築できるのが、「Serverless Framework」となります。
+重複しますが、そんなサーバー関連の問題を減らすことができるサーバレスアーキテクチャ「Serverless Framework」となります。
 
 
 **サーバレスに対するゆ**
@@ -53,7 +53,7 @@
 
 2. プロバイダーアカウントのセットアップ
 プロバイダーとは要はどのクラウドサービスを使用して、Serverlessを動かすかということ。
-AWS, GCP, Azureなど様々なクラウドプロバイダーに対応している。
+AWS, GCP, Azureなどさまざまなクラウドプロバイダーに対応している。
 
 AWSデプロイするためには？
 [AWS setup方法](https://www.serverless.com/framework/docs/providers/aws/guide/credentials)
@@ -76,9 +76,9 @@ IAMユーザー作成
 ## Serverless Framework
 
 ServerlessはNode.jsで作られたCLIツール
-Serverless Framework（サーバーレスフレームワーク）は、Node.jsを使用して記述された無料のオープンソースWebフレームワークである
+Serverless Framework（サーバーレスフレームワーク）は、Node.jsを使用して記述された無料のオープンソースWebフレームワーク。
 
-**Serverless Frameworkでは、Lambda Functionで使用する周辺リソース（S3,SQS(Amazon Simple Queue Service)など）も同時にデプロイ管理することができます。手動で作成した既存のリソースも使用しても問題ありません**
+**Serverless Frameworkでは、Lambda Functionで使用する周辺リソース（S3,SQS(Amazon Simple Queue Service)など）も同時にデプロイ管理ができます。手動で作成した既存のリソースも使用しても問題ありません**
 
 ## Serverless Frameworkが台頭した理由
 
@@ -90,7 +90,19 @@ Lambdaの管理が煩雑になり、その管理を担う形でフレームワ�
 
 プロバイダーのアカウントをセットアップする。
 プロバイダーとは、要はどのクラウドサービスを使用してServerlessを動かすか。
-AWS, GCP, Azure, IBM Cloudなど様々なクラウドプロバイダーに対応している。
+AWS, GCP, Azure, IBM Cloudなどさまざまなクラウドプロバイダーに対応している。
+
+## 事前準備
+
+Serverless FrameworkでAWS上にデプロイするためには以下の設定が必要。
+
+- AWSのアカウント
+- aws-cliをインストールしてクレデンシャルを設定しておく
+
+## 事前準備が終われば
+[serverless概要](https://serverless.co.jp/blog/25/)
+
+
 
 ## 各プロバイダーによって
 
@@ -146,5 +158,7 @@ ServerlessのCLIでファンクションを実行する際に入力値となる�
 DynamoDB Local自体はそもそもaws公式のツール
 JRE上で動作するので、Java6以上の実行環境が必要。
 それを`Serverless Framework`で使うためのServerless DynamoDB Localというプラグインがある。
-プラグインを利用しなくても DynamoDB Localを利用することはできますが、serverless frameworkの設定と一緒にかけたり、seedなどのオプションがあり便利です。
+プラグインを利用しなくてもDynamoDB Localを利用することはできますが、serverless frameworkの設定と一緒にかけたり、seedなどのオプションがあり便利です。
+
+
 

@@ -411,15 +411,24 @@ https://postd.cc/localizing-your-nextjs-app/
 Next.jsのrouterにはstateがありません。
 
 ## next error
-
 [参考URL](https://zenn.dev/mizuneko4345/articles/c576dfce8a49be)
 
+
+### カスタムエラーページ
+[参考URL](https://nextjs.org/docs/advanced-features/custom-error-page)
+
 優先順位
-
 pages/404.tsx or pages/500.tsx
-
+↓
 pages/_error.tsx
 ここにif文で条件分岐してもいいが公式のハンドリングを使用した方がいい。
+
+**404ページ**
+頻繁にアクセスされる可能性を考慮し、NextJSではデフォルトでビルド時に静的に生成されます。
+
+
+
+--
 
 ## next env
 
