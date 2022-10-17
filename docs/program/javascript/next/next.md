@@ -416,6 +416,12 @@ Next.jsのrouterにはstateがありません。
 
 ### カスタムエラーページ
 [参考URL](https://nextjs.org/docs/advanced-features/custom-error-page)
+[デフォルト挙動](https://zenn.dev/kobayashi_m42/scraps/dedcf88361928b)
+[プライベートでやれば綺麗にできそう](https://zenn.dev/nalo/articles/next-api-routes-error-handling)
+
+>page/404.tsxを作成せずに、page/ _error.tsxを設定すると下記の警告が表示される。
+>なお、存在しないURLにアクセスするとpage/ _error.tsxの内容が表示されている。
+
 
 優先順位
 pages/404.tsx or pages/500.tsx
@@ -423,12 +429,55 @@ pages/404.tsx or pages/500.tsx
 pages/_error.tsx
 ここにif文で条件分岐してもいいが公式のハンドリングを使用した方がいい。
 
+>pages/404.jsが"設置されていなければ"pages/_error.js"、"next/error"の優先順位
+
 **404ページ**
-頻繁にアクセスされる可能性を考慮し、NextJSではデフォルトでビルド時に静的に生成されます。
+頻繁にアクセスされる可能性を考慮し、NextJSではデフォルトでビルド時に静的に生成される。
+※getStaticPropsビルド時にデータをフェッチする必要がある場合は、このページ内で使用できる。
+
+**500ページ**
+頻繁にアクセスされる可能性を考慮し、NextJSではデフォルトでビルド時に静的に生成される。
+※getStaticPropsビルド時にデータをフェッチする必要がある場合は、このページ内で使用できる。
+
+**pages/_error.tsx**
+pages/_error.jsを設定した場合の挙動
+getServerSidePropsで`{notFound: true}`を返した場合、_error.jsが表示される (pages/404.jsがない場合)
+getServerSidePropsでErrorをthrowした場合、_error.jsが表示される
+下記のようにstatusCodeを指定した場合、デフォルトのエラーページが表示される。
+-> pages/_error.jsを定義したからといって、 next/errorが変更される訳ではない
+
+```ts
+import Error from 'next/error'
+
+export default function Test() {
+  return (
+    <Error statusCode={500} />
+  )
+}
+```
+
+pages/500.jsを設定した場合の挙動
+-> getServerSidePropsでErrorをthrowした場合、デフォルトのエラーページが表示される
+
+## import NextErrorComponent from 'next/error'について
+
+[Next.jsで任意のタイミングにエラーページを表示する](https://wp-kyoto.net/nextjs-show-error-component-and-statuscode/)
+
+- メッセージ表示は一部のみ
+HTTP 400 / 404 / 405 / 500以外のステータスコードを投げ込むと、「An unexpected error has occurred」扱いされる。
+※他のメッセージを使用したい場合は`titleプロパティ`を使う。
+
+- HTTP Status Code
+**SSGではerrorを出してもHTTP上は200が返る。**
+
+### Next error ハンドリング
+[リファレンス](https://nextjs.org/docs/advanced-features/error-handling)
+[参考URL](https://zenn.dev/mizuneko4345/articles/c576dfce8a49be)
 
 
 
---
+
+---
 
 ## next env
 

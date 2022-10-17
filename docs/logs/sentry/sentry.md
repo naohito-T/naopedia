@@ -73,6 +73,10 @@ sentry.properties
 sentry-cliを使用するための、auth.tokenを格納
 
 
+- error試し撃ち
+defaultでsentry試し撃ちができる（pages配下にファイルができるため）
+`http://localhost:3001/sentry_sample_error`
+
 
 ## バックエンドTips
 

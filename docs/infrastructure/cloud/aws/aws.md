@@ -334,7 +334,9 @@ defaultのクレデンシャルをconfigに実装することができる。
 元々の鍵をマスターキー
 暗号化された鍵をデータキーとしてAWSで保存ができる。
 
-## AWS Serverless Application Model (AWS SAM) とは
 
+## Serverless FrameworkとSAMを比較してみる
 
-
+AWSでサーバレスアーキテクチャ構築するときに代表的なフレームワークであるServerless FrameworkとSAMを比較してみたよ
+筆者の判定だとServerless Frameworkに軍配かな
+SAMはプラグインがやや少ないのと癖が強いから今後に期待！
