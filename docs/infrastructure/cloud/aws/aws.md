@@ -275,19 +275,6 @@ aws_secret_access_key=je7MtGbClwBF/2Zp9Utk/h3yCo8nvbEXAMPLEKEY
 `$ aws s3 ls --profile cfc-dev`
 上記コマンドはawsクレデンシャルが反映されているか確認できる。
 
-## aws-vault
-
-aws-vaultは**AWSのアクセスキーをOSのキーストアに保存**します。これによりアクセスキーを暗号化して保持することが可能。
-macOSであればKeyChain、Windowsであれば資格情報マネージャーに保存されます。
-これにより、マルウェア経由でのアクセスは拒否されます。
-
-[aws-vaultについてのあれこれ](https://qiita.com/kangaechu/items/cb8f68e3866ee5af71c8)
-[IAM初心者がAWS CLIでスイッチロールするまで](https://dev.classmethod.jp/articles/switch-role-with-awscli/)
-[aws-vaultをLinux環境でも使う方法【セキュリティ向上】](https://hackers-high.com/aws/aws-vault-on-linux/)
-[aws-vault を使って AWS のアクセスキーを暗号化して扱おう](https://blog.microcms.io/aws-vault-introduction/)
-
-[aws-vaultのセッションをきる](https://www.qualimente.com/2018/10/22/how-to-use-aws-vault-to-managing-credentials-for-an-aws-account/)
-
 ## スイッチロールとは
 
 スイッチロール自体のメリットは**一度ログアウトしてから、もう一度別のアカウントでログインする必要がなくなる。**
@@ -340,3 +327,20 @@ defaultのクレデンシャルをconfigに実装することができる。
 AWSでサーバレスアーキテクチャ構築するときに代表的なフレームワークであるServerless FrameworkとSAMを比較してみたよ
 筆者の判定だとServerless Frameworkに軍配かな
 SAMはプラグインがやや少ないのと癖が強いから今後に期待！
+
+Serverless Frameworkとの違いは色々あるのですが、開発したAPIをローカルで実行する場合の最大の違いは……
+
+リクエストをローカルで受け取る
+Dockerプロセスが立ち上がる
+Lambdaが実行される
+という三段階にあると考えています。
+特に2番が曲者で、上記の記事では
+
+DynamoDBをDockerでローカルに構築する
+DynamoDBが起動するネットワークを作成
+Lambda実行のDockerプロセスが機動するネットワークを指定
+という流れで、LambdaがDynamoDBにアクセスできるようにしています。
+
+……これ、デバッグが難しいです……
+DynamoDBが動いているネットワークが指定されちゃってるので、逆にローカル実行した際にネックになっちゃってるみたいでアクセスが上手くできなかったです。
+

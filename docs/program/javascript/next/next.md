@@ -519,3 +519,6 @@ frontend/.next
 
 - next起動時にHookを仕掛けたい
 [参考URL](https://stackoverflow.com/questions/69980706/hook-into-nextjs-server-startup)
+
+- Lambda@EdgeでSSRする
+[参考URL](https://qiita.com/fumiki/items/5f4408ce844520a922c2)
