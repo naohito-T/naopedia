@@ -334,3 +334,8 @@ z-indexによる重なり位置の指定もこのスタッキングコンテキ�
 ## box-shadowは古い？
 
 [参考URL](https://ferret-plus.com/8961?page=2)
+
+## fit-content
+
+`width: fit-content`
+[参考URL](https://pulpxstyle.com/fit-content/)

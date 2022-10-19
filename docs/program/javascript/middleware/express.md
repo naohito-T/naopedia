@@ -26,3 +26,6 @@ express-sessionは**CookieにセッションIDのみを保存**して、セッ�
 
 アプリケーションが機密データを処理または送信する場合は`Transport Layer Security（TLS）`を使用して、接続とデータを保護する。
 
+## app.use
+[参考URL](https://expressjs.com/ja/guide/using-middleware.html)
+
