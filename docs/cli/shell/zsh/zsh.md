@@ -62,3 +62,7 @@ Zshでいい感じのテーマを使いたい
 補完の設定とか楽をしたい など
 
 [参考URL](https://qiita.com/gilly/items/5ff7bd7142e963cdbb9b)
+
+## abbr
+TODO
+[参考URL](https://qiita.com/n3_x/items/2a7d5aa0cdc6cdcff40a)
