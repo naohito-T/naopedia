@@ -4,8 +4,7 @@
 [これをやる](https://dev.classmethod.jp/articles/editing-wiki-content-locally-on-github/)
 
 ## 多分一番これがいい
-
-[参考URL](https://zenn.dev/mstssk/articles/4051e3df72a84c)
+[参考URL(御作法)](https://zenn.dev/mstssk/articles/4051e3df72a84c)
 
 これ取り入れる
 
@@ -14,12 +13,17 @@ PRをレビュー依頼出す前にrebaseする
 $ git fetch
 $ git rebase origin/master topic
 $ git push origin topic --force-with-lease
-
 ```
 
 --force-with-leaseとは
 PUSHの際、ローカルrefとリモートrefを比較しローカルが最新か判定し、最新でなければPUSHが失敗するというもの。
 ※ただし、直前にfetchしているとPUSHが成功してしまうので注意
+
+## git reset (git commitを取り消す)
+[参考URL](https://tech-blog.rakus.co.jp/entry/20210528/git)
+
+- リモートにpushしていないコミットを取り消す際に使用する。
+- 取り消した。というログが残れないため便利。しかしそれでpushしてしまっていたら生合成が取れなくなる。
 
 ## やること
 
