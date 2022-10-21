@@ -18,11 +18,11 @@ Node.jsやブラウザ上など、様々なプラットフォームをサポー�
 [参考URL](https://qiita.com/Aurum64/items/f5962bd2a643447dbef9)
 [参考URL](https://blog.open.tokyo.jp/2022/05/04/upgrade-typeorm-0-3.html)
 [これが一番参考になるかも](https://blog.rhyztech.net/typeorm_0.2_to_0.3/)
+[参考URL](https://developer.mamezou-tech.com/blogs/2022/07/27/typeorm-with-typescript/)
 
 ## config file
 
-0.2 では`ormconfig.ts`に接続オプションを記述していたようですが、0.3 では非推奨になった。
-以下のように、モジュールを作成して、 app.module.ts でインポートします。
+0.2では`ormconfig.ts`に接続オプションを記述していたようですが、0.3では非推奨になった。
 
 
 ## TypeORM & Express & Dockerで環境構築

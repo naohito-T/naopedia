@@ -1,7 +1,9 @@
 # CloudFront
-
-台数不明で性能不明だがグローバルに配置されたキャッシュサーバ
 [cloud front解説](http://itlib1.sakura.ne.jp/test380/pdfichuran/0453/003-CloudFront.pdf)
+
+台数不明で性能不明だがグローバルに配置されたキャッシュサーバ。
+デフォルトで**リージョンがグローバルに展開**されている。
+
 
 ## ユビキタス
 

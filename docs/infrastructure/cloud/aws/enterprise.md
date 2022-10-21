@@ -6,3 +6,6 @@
 
 ---
 以下からは本：AWSで始めるインフラ構築入門安全で堅牢な本番環境の作り方を参照する
+
+
+Enterprise Application Patternsというやつがあるらしい。

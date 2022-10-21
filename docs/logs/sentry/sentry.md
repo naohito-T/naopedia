@@ -45,6 +45,18 @@ AUTH_TOKENはSentryのOrganizationと接続するための認証情報なので�
 
 @sentry/nextjsを設定すると、ローカル開発時はdryRunモードで動くため実際のsourcemapのアップロードは行われないのですが、コンソールにデバッグログが流れてしまうのが邪魔でした。
 
+---
+
+## SentryでのReleaseの導入方法
+[参考URL](https://qiita.com/scent_y/items/626df631b0537bd5e915)
+
+### Sentry Releasesとは
+
+Sentry Releasesを利用するとどのバージョンでエラーが発生したのか特定できるようになり、バージョン別のエラーモニタリングが可能になります。
+Sentryにリリースのバージョンとリリースのアーティファクトをアップロードすることで、利用できるようになります。
+また、ソースマップをアップロードすることでstack traceがソースマップと関連付けられ、Minifyされてないコードで表示されるようになります。そうすることで、エラー原因となるコードが特定しやすくなります。
+※ソースマップとは、デプロイされたコードを元のソースコードにマッピングする方法を含むファイルです。ソースマップによりstack traceから得たコードを、変換されてない元の形で見ることが可能になります。
+
 
 ---
 
@@ -72,10 +84,10 @@ sentry.properties
 .sentryclirc
 sentry-cliを使用するための、auth.tokenを格納
 
-
 - error試し撃ち
 defaultでsentry試し撃ちができる（pages配下にファイルができるため）
 `http://localhost:3001/sentry_sample_error`
+onClickなどのイベントハンドラー内のエラーに関しては、何も設定せずにエラーをSentryに送信することができる。
 
 
 ## バックエンドTips

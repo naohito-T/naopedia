@@ -41,12 +41,26 @@ CLIは`default`という名前のプロファイルにある設定を使用す�
 
 ---
 
-## AWS CDK¥
+## AWS CDK
 [5分で理解するAWS CDK](https://qiita.com/Brutus/items/6c8d9bfaab7af53d154a)
 
 AWSクラウド開発キット (AWS CDK) は、最新のプログラミング言語を使用してクラウドインフラストラクチャをコードとして定義し、それを**AWS CloudFormation**を通じてデプロイするためのオープンソースのソフトウェア開発フレームワーク。
 
 TypeScriptおよびPythonなどのプログラミング言語を使用して、AWSリソースを定義し、Terraformの様にInfrastructure as Code（以降、IaC）を実現する手段として、クラウドインフラのリソースをプロビジョニングすることができる。
+
+## アベイラビリティゾーン(AZ):Availability Zone
+[参考URL](https://e-words.jp/w/%E3%82%A2%E3%83%99%E3%82%A4%E3%83%A9%E3%83%93%E3%83%AA%E3%83%86%E3%82%A3%E3%82%BE%E3%83%BC%E3%83%B3.html)
+
+アベイラビリティゾーンとは、AWSである地域に立地する**データセンター群をひとつの論理的な管理単位**にまとめたもの。
+各リージョン内は2つ以上のAZで構成されている。
+
+## マルチAZ
+[参考URL](https://e-words.jp/w/%E3%83%9E%E3%83%AB%E3%83%81AZ.html#:~:text=%E3%83%9E%E3%83%AB%E3%83%81AZ%E3%81%A8%E3%81%AF%E3%80%81%E7%B1%B3,%E3%81%AE%E9%85%8D%E7%BD%AE%E3%82%92%E8%A1%8C%E3%81%86%E6%96%B9%E5%BC%8F%E3%80%82)
+
+マルチAZ配置は同じリージョンのAZを同時に2つ以上使用し、サーバや機能、データを分散して配置する。
+バックアップやフェイルオーバーをAZをまたいで行うことで可用性や耐障害性を高めることができる。
+サービスの種類にもよるが、単一のAZのみで運用するシングルAZ（Single-AZ）に比べ利用料金が高額となる（他の構成が同じなら2倍程度
+
 
 
 ## IAM(Identity and Access Management)
