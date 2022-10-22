@@ -20,8 +20,8 @@ useStateやuseEffectなどロジックは分離できる。
 
 1. hooksを書く場所について
 /src/hooks/ﾅｲで
-2. setXxxを関数でラップする(汎用性が上がるため)
-3. イベントの型付け(eの型推論ができなくなるため型付けが必要となる。)
+2. setXxxを関数でラップする（汎用性が上がるため）
+3. イベントの型付け（eの型推論ができなくなるため型付けが必要となる。）
 
 
 ```ts
@@ -73,9 +73,8 @@ export const useUserPage = () => {
 
 
 ## useEffect
-
+[useEffect が API 呼び出しを行うのに適していない理由](https://medium.com/wesionary-team/why-useeffect-is-a-bad-place-to-make-api-calls-98a606735c1c)
 関数内のある状態に着目して処理をほどこす。
-watchだね。
 
 - useEffect無限ループ
 

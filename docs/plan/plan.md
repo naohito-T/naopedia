@@ -320,3 +320,9 @@ UUIDは128bit。base64 URL Safeでエンコードするとすると22文字（12
 - 後方互換性を伴うバグ修正をした場合はパッチバージョンを上げます。
 
 プレリリースやビルドナンバーなどのラベルに関しては`メジャー.マイナー.パッチ`の形式を拡張する形で利用することができます。
+
+
+## クロスサイトプロジェクト
+[参考URL](https://medium.com/swlh/how-the-new-chrome-80-cookie-rule-samesite-none-secure-affects-web-development-c06380220ced)
+
+身近だとAnycolor id
