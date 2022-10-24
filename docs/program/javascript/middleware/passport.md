@@ -39,4 +39,10 @@ Passport.jsは一般的に、セッション（session）と組み合わせて�
 - セッションIDとユニークユーザー識別子を紐づけて、セッションデータとして保存する。
 - ユーザーデータから、ユニークユーザー識別子を取り出して、セッションIDと紐づけする方法を、passport.serializerUser()で定義する
 
+## 認証を実装(ログイン)
+[Express.js(Node.js)で認証(ハッシュ化/JWT)](https://www.memory-lovers.blog/entry/2021/11/19/033401)
 
+パスワードのハッシュ化やJWTトークン周りは自前で用意する必要がある。
+以下がセオリー
+- パスワードのハッシュ化はBcrypt or Crypto
+- JWTトークンはjsonwebtoken

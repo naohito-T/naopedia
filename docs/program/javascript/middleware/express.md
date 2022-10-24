@@ -29,3 +29,5 @@ express-sessionは**CookieにセッションIDのみを保存**して、セッ�
 ## app.use
 [参考URL](https://expressjs.com/ja/guide/using-middleware.html)
 
+## expressでライブラリを使わずBasic認証を簡単に導入する
+[参考URL](https://qiita.com/s2mr/items/f795b5202286085543a4)

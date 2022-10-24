@@ -17,6 +17,39 @@
 - 承認は？
 - 監視、可観測性、ログ
 
+## API設計に関するまとめ
+[参考URL](https://qiita.com/kudojp/items/47b7486ee2f02e841a95)
+[REST_APIのコツ](https://www.slideshare.net/pospome/rest-api-57207424)
+
+- LSUDs
+Large Set of Unknown Developers（不特定多数のユーザーに提供するAPI）
+
+- SSKDs
+Small Set of Unknown Developers（特定のシステムのみで利用する専用のAPI）
+
+- HATEOS
+Hypermedia As The Engine Of Application State（リソース同士に関連性のあるAPIのこと）
+
+## APIリクエスト(POST/PUT)のcontent-type
+
+- application/x-www-form-urlencoded
+body部分にkey-value形式で送信したいデータを格納する。
+
+- application/json（こっちのが主流）
+body部分にJSON形式で送信したいデータを格納する。
+
+## APIレスポンスのcontent-typeとフォーマット
+
+- application/json(JSON-RPC)
+
+- application/hal+json(HAL)
+
+- application/vnd.api+json(JSON API)
+
+- application/vnd.collection+json(Collection JSON)
+
+
+
 ## Web API
 
 Web APIを設計する際にさまざまなものを作成するかと思うがそれを記載する。
@@ -161,10 +194,51 @@ api&DBまでを確認するのが基本っぽい。
 
 運用しているYELL BANKというサービスは、以前公開した『ECS(Fargate)でコンテナアプリケーションを動かすための設定情報の扱い方』という記事でも紹介した通り、コンテナー上で動作することを前提としたアプリケーションとして機能提供しています。 コンテナー  内で動かすアプリケーションにおいても、外形監視は重要と感じていますが、
 
+## パスワード保存
+
+平文は基本NG
+dbにパスワードが保存される時によく使われる（平文で保存はだめ）
+[dbに平文を保存してはいけない理由](https://medium-company.com/bcrypt/)
+
+もし外部へパスワードの「ハッシュ値」が漏洩してしまった場合、「レインボーテーブル攻撃」や「総当り攻撃（ブルートフォース攻撃）」で「ハッシュ値」からパスワードを推測されてしまう危険性があります。
+そのため、パスワードは「ソルト」と「ストレッチング」を実施した形でハッシュ値に変換します。
+この「ソルト」や「ストレッチング」を考慮した形でハッシュ値へと変換してくれるのが、bcryptです。
+
+ソルトは個別に分けるべき
+
 
 ## query
 
->はい、OKです。
 >これらのqueryは基本的にAND条件が多いです。例えばYouTube APIとかでもqueryは色々ありますが、複数指定した場合はそれらのANDでの結果が返ってきますね。
 >ORにする場合は複雑なcombinatorとかをqueryで実現する実装が必要だったりして面倒なのですが、とりあえず今回の件ではどちらも考慮したものでOKです
 >矛盾する２つのqueryを指定されたらエラーを返す、みたいなAPIもよくあります。(例えば日付の絶対指定と相対指定を両方提供しているAPIで両方値が入っていたケースなど)
+
+## json apiのフォーマット
+[Web APIにはJSONベースのフォーマットを使おう](https://qiita.com/tkawa/items/2841e155e5b51c09ed40)
+
+Web APIを作るとき、JSONのデータ構造をどうするか悩んだことはあると思う。
+それを決めてくれる。
+
+
+- JSON API（parrotで使用）
+- HAL
+
+
+### JSON API
+
+
+## チェックリスト
+
+- レスポンスヘッダーにセキュリティを追加したか
+- dbに
+- レスポンスは決めたか？（json or xml）
+
+## path tips
+
+- APIにける/users/{userId}と/meについて　どっちを採用するか
+[参考URL](https://www.utakata.work/entry/20190112/1547262000)
+
+`/v1/me/images`でアクセスした場合は非公開の画像が帰ってくるようにする。
+`/v1/users/{userId}`では非公開の情報は（たとえ本人によるアクセスでも）帰ってこない。
+`/v1/users/{userId}`で本人によるアクセスの場合のみ非公開の情報を返す。
+
