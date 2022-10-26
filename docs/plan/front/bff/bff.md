@@ -1,8 +1,10 @@
-# BFF(Backends For Frontends)
+# BFF(Backends For Frontend)
 
 [参考URL](https://atmarkit.itmedia.co.jp/ait/articles/1803/12/news012.html)
+[Next.js BFFとかExpress記事](https://zenn.dev/peg/articles/1878a6d6661295)
+[Next.js BFF for Proxy + SSR](https://scrapbox.io/ebiken/Next.js_BFF_for_Proxy_+_SSR)
 
-## BFF(Backends For Frontends)とは
+## BFF(Backends For Frontend)とは
 
 名前の通り、フロントエンドのためのバックエンド
 **フロントエンドのためにAPIをコールしたり、HTMLを生成したりするサーバのこと**を指す。
