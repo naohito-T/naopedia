@@ -1,6 +1,7 @@
 # OpenAPI
 [参考URL](https://zenn.dev/chida/articles/25f4016560f6bf)
 [参考URL(これが一番参考になる)](https://zenn.dev/mabubu0203/articles/a34937c9d5892f)
+[openapiをチームに共有する](https://zenn.dev/d_forest/articles/bec25d3a1b111ed37a09)
 
 - OpenAPI
 RESTful APIの仕様を記述するためのフォーマット
@@ -114,7 +115,16 @@ APIレスポンス
 リクエストヘッダー
 
 - parameters
-リクエストパラメーター
+[更なる拡張](https://developer.ntt.com/ja/blog/4d6d9b81-5a86-4828-9cee-cec6062342cc)
+各リクエストパラメーターを配列で定義します。inはパラメーターをセットする場所。
+query : クエリストリング
+formData : フォーム
+header : HTTPヘッダー
+path : パス
+body : ボディー
+
+
+
 
 API定義で**再利用可能なオブジェクト**を定義できる。
 
@@ -125,3 +135,6 @@ API定義で**再利用可能なオブジェクト**を定義できる。
 
 - vscodeプラグインオススメ一覧
 [参考URL](https://zenn.dev/s_t_pool/articles/954dfe51b950c18d08e9)
+
+- descriptionを改行したい
+description: の後に "|"を入れることで、それ以降の文章に空白文字があった場合、改行として認識してくれる。

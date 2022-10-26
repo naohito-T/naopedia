@@ -357,6 +357,18 @@ POSTは冪等性がない
 
 ## HTTP header
 
+リクエストとレスポンスで分ける必要
+
+## リクエスト
+
+## withCredentials
+[参考URL](https://developer.mozilla.org/ja/docs/Web/API/XMLHttpRequest/withCredentials)
+
+>クロスオリジンのAJAXリクエストでクレデンシャル（クッキーの送信またはBASIC認証）を必要とする場合は、それを許可するオプションをフロント側Javascriptで付けておく必要があります。デフォルトではCORSリクエストでクッキーは送信されませんし、BASIC認証は送れません。
+
+`XMLHttpRequest.withCredentials`プロパティは論理値で、サイト間のAccess-ControlリクエストがCookie、認証ヘッダー、 TLSクライアント証明書などの資格情報を使用して行うべきかどうかを示します。 
+
+---
 
 ### referer(リファラー)
 

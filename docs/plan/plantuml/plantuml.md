@@ -127,5 +127,5 @@ PlantUML: Component
 ## ER図(Entity Relationship)
 
 ER図は実体関連モデルDBの関連モデル
-
-[TypeORM ER図](https://dev.classmethod.jp/articles/typeorm-er-diagram/)
+[ER図基本](https://qiita.com/ramuneru/items/32fbf3032b625f71b69d)
+[TypeORMからER図を生成](https://dev.classmethod.jp/articles/typeorm-er-diagram/)

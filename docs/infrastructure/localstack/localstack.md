@@ -32,3 +32,7 @@ v0.11.0以前は、サービスごとにポートが指定されていたがv0.1
 ## コンテナー内にあるコマンド
 
 `awslocal`というコマンドがあるとのこと。
+
+## LocalStack上にServerlessでAPI Gateway、Lambda、DynamoDBを構築してみる
+
+[LocalStack上にServerlessでAPI Gateway、Lambda、DynamoDBを構築してみる](https://zenn.dev/s_ryuuki/articles/5bbbeea5a88c0c)
