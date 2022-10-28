@@ -210,3 +210,6 @@ ALBでは
 ## XSS
  
 ## クリックジャッキング
+
+## Webhookとセキュリティー
+[参考URL](https://qiita.com/en30/items/6a5dfae217c1f9ebc2dd)

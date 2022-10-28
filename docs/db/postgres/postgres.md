@@ -53,4 +53,12 @@ postgres userに切り替えて`psql`
 
 ## postgres疎通
 
-postgresはHTTPサーバではない。そのためcurlなどの疎通通信は対応しない。
+当たり前だがpostgresはHTTPサーバではない。
+そのためcurlなどの疎通通信は対応しない。
+慣例としてhealth_checkなどが用意されているためそれらを使用する。
+
+## postgres データ型
+
+
+### 時間
+[参考URL](https://amg-solution.jp/blog/14955#toc___1)

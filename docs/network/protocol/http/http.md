@@ -63,22 +63,9 @@ HTTP/2が普及したことによりwebpackでファイルを結合するメリ�
 
 [参考URL](https://blog.jxck.io/entries/2020-06-29/https-for-localhost.html)
 
-
 ## 閲覧ページのHTTP versionを調べる
 
 [参考URL](https://laboradian.com/hot-to-know-http-version/)
-
-## HTTPヘッダー
-
-[参考URL](https://www.cloudflare.com/ja-jp/learning/cdn/glossary/what-is-cache-control/)
-
-ヘッダーはコロンで区切られたキーと値のペアで構成される。
-
-※値はディレクティブ（指示）とよばえれる
-```sh
-# key: 値,値
-cache-control: public, max-age=14400
-```
 
 ---
 
@@ -247,6 +234,18 @@ numberなどで送ってもどうやらstringに変換されるっぽい。
 
 ---
 
+## HTTPヘッダー
+
+[参考URL](https://www.cloudflare.com/ja-jp/learning/cdn/glossary/what-is-cache-control/)
+
+ヘッダーはコロンで区切られたキーと値のペアで構成される。
+
+※値はディレクティブ（指示）と呼ばれる。
+```sh
+# key: 値,値
+cache-control: public, max-age=14400
+```
+
 ## リクエストヘッダー
 
 - Accept（要求）
@@ -305,19 +304,6 @@ Accept-Encoding ヘッダーは、HTTPクライアントがサーバーにHTTP�
 
 ## Bearer認証について
 
----
-
-## Content-Type
-
-- application/x-www-form-urlencoded
-フォームの送信の際に、クライアントがWebサーバに送信するContent-Type名のひとつ
-
-**データはid=dataの形式で、formが複数ある場合は&で区切られる(form1=data1&form2=data2)**
-dataはURLエンコードされる。
-
-[参考URL](https://www.wdic.org/w/WDIC/application/x-www-form-urlencoded#:~:text=%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E3%81%AE%E9%80%81%E4%BF%A1%E3%81%AE%E3%81%95%E3%81%84,Type%E5%90%8D%E3%81%AE%E4%B8%80%E3%81%A4%E3%80%82)
-
-
 
 ## Webhookとは
 
@@ -357,9 +343,26 @@ POSTは冪等性がない
 
 ## HTTP header
 
-リクエストとレスポンスで分ける必要
+リクエストとレスポンスで分ける必要があるが両方に記載する場合があるため、どちらで使われるか必ず書くこと
 
-## リクエスト
+## Content-Type
+[リファレンス](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Content-Type)
+[わかりやすい](https://tech.stmn.co.jp/entry/2021/03/15/183722)
+`Content-Type`表現ヘッダーは、リソースのメディア種別を示すために使用する（リクエストボディのメディアタイプを指定）
+※GETに`Content-Type`は必要ない
+
+- application/json
+
+
+
+- application/x-www-form-urlencoded
+フォームの送信の際に、クライアントがWebサーバに送信するContent-Type名のひとつ
+
+**データはid=dataの形式で、formが複数ある場合は&で区切られる(form1=data1&form2=data2)**
+dataはURLエンコードされる。
+
+[参考URL](https://www.wdic.org/w/WDIC/application/x-www-form-urlencoded#:~:text=%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E3%81%AE%E9%80%81%E4%BF%A1%E3%81%AE%E3%81%95%E3%81%84,Type%E5%90%8D%E3%81%AE%E4%B8%80%E3%81%A4%E3%80%82)
+
 
 ## withCredentials
 [参考URL](https://developer.mozilla.org/ja/docs/Web/API/XMLHttpRequest/withCredentials)
@@ -561,7 +564,3 @@ HTTP Status Codesの401と403は、それぞれ認証・認可の失敗を意味
 **認可の失敗**を意味しています
 つまり「認証はしました。だけどあなたにはリクエストを通すための権限がありません」というメッセージ
 
-
-
-
-"protocol":"http:","slashes":true,"auth":"alb-basic-auth-user:alb-basic-auth-pass","host":"localhost:5000","port":"5000","hostname":"localhost","hash":null,"search":null,"query":null,"pathname":"/api/callback","path":"/api/callback","href":"http://localhost:5000/api/callback"}

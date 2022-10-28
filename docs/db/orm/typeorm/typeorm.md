@@ -1,7 +1,7 @@
 # TypeORM
 
 TypeORMは、TypeScriptおよびJavaScriptで使用できるORMとされている。
-Node.jsやブラウザ上など、様々なプラットフォームをサポートしているともされています。
+Node.jsやブラウザ上など、さまざまなプラットフォームをサポートしているともされています。
 
 ## スタイル
 
@@ -24,12 +24,8 @@ Node.jsやブラウザ上など、様々なプラットフォームをサポー�
 
 0.2では`ormconfig.ts`に接続オプションを記述していたようですが、0.3では非推奨になった。
 
-
 ## TypeORM & Express & Dockerで環境構築
-
 [TypeORM をサクッと試せる Docker 環境を TypeORM CLI を使って構築する方法](https://dev.classmethod.jp/articles/typeorm-sandbox-in-docker-by-typeorm-cli/)
-
-
 
 ## Find option 一覧
 
@@ -37,9 +33,7 @@ Node.jsやブラウザ上など、様々なプラットフォームをサポー�
 
 ---
 
-- Raw(生クエリ発行)
-
-
+- Raw（生クエリ発行）
 
 - equal
 
@@ -93,5 +87,16 @@ entityはDBのテーブルと一対一で構成する。
 
 
 ## Tips
-
 [TypeORM知見まとめ](https://zenn.dev/uttk/scraps/343e888f62360b)
+
+
+## Entityファイル
+
+`@Entity`をつけたものがテーブル対象になる。
+データベースの列の型は、使用したプロパティの型から推測
+
+データ型
+[サポートされている列の型](https://typeorm.io/entities#column-types)
+
+データベースの列の型は、使用したプロパティの型から推測されます。
+ただし、列の型をデコレータに明示的に指定することで、データベースがサポートする任意の列の型を使用できる。
