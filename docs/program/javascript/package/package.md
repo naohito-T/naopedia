@@ -41,8 +41,10 @@ jsでのpackage管理システムからpackage.jsonまで記載する
 ※これはスクリプトを複雑にすることなくコマンドを繋げる便利な方法。
 
 ## package.jsonにある未使用のライブラリを確認する方法
-
 [参考URL](https://yukimasablog.com/check-for-unused-package)
+
+## package.jsonのscriptsに引数を渡す
+[参考URL](https://zenn.dev/jojojo/articles/df1ff83890f83b)
 
 ## npm run のスクリプトの中でディレクトリの削除を行う (rimraf)
 

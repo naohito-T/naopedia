@@ -23,6 +23,10 @@ doubleも小数点以下の精度に悩まされることがあります。金�
 - 商品のお届け日など、日付を入れる場合は DatetimeやTimestamp型ではなくDATE型を使うようにします。DatetimeやTimestampはタイムゾーンの影響を受けるためです。
 - JSON型を使ったら負け
 
+
+郵便番号や電話番号のnumberかstringかの悩み
+- 算術計算の対象ではないのでstringにする。
+
 ## 命名規則
 [参考URL](https://qiita.com/genzouw/items/35022fa96c120e67c637)
 
@@ -42,8 +46,6 @@ doubleも小数点以下の精度に悩まされることがあります。金�
 [参考URL](https://qiita.com/siinai/items/d4274c95fcdde3fd7295)
 
 実際のところWEB系のフレームワークなどは複数形を好むため、複数形のテーブル名に慣れ親しんでいる人は多い。
-
-
 
 ## OAuth2.0のユーザーテーブル設計
 [これが分かりやすい](https://zenn.dev/pyhrinezumi/articles/8455f0d61e856f)
