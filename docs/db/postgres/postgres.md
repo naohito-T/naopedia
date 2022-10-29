@@ -61,4 +61,4 @@ postgres userに切り替えて`psql`
 
 
 ### 時間
-[参考URL](https://amg-solution.jp/blog/14955#toc___1)
+[参考URL](https://ja.stackoverflow.com/questions/27969/timestamp%E5%9E%8B-date%E5%9E%8B-time%E5%9E%8B%E7%AD%89%E6%97%A5%E4%BB%98%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E5%9E%8B%E3%81%AE%E4%BD%BF%E3%81%84%E5%88%86%E3%81%91%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)
