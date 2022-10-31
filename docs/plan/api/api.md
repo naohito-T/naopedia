@@ -1,9 +1,11 @@
 # API
-
 [参考URL](https://www.infoq.com/jp/articles/ballerina-fullstack-rest-api/?itm_source=infoq&itm_medium=related_content_link&itm_campaign=relatedContent_news_clk)
 [実稼働環境におけるベスト・プラクティス: パフォーマンスと信頼性](https://expressjs.com/ja/advanced/best-practice-performance.html#proxy)
 [Express×Helmetでウェブセキュリティを学ぶ](https://qiita.com/qianer-fengtian/items/148602c437e1703aa764)
+[WebLogic Server のチューニングにおける重要推奨事項](https://docs.oracle.com/cd/F25597_01/document/products/wls/docs92/perform/topten.html)
 
+補足すると
+>Oracle WebLogic Serverは、Javaなどのエンタープライズ・アプリケーションをオンプレミスやクラウドで開発、導入、稼働するために統合された拡張可能なプラットフォームです。WebLogic Serverは、Java Enterprise Edition（EE）とJakarta EEの堅牢でマチュア、そしてスケーラブルな実装を提供します。
 
 ## API種類
 
@@ -125,8 +127,14 @@ Content-Typeがapplication/x-www-form-urlencodedのケース
 ---
 
 ## JWT
-
 [JWT=ステートレス"から一歩踏み出すための考え方](https://zenn.dev/ritou/articles/4a5d6597a5f250)
+
+---
+
+## Mockデータに関して
+
+テストデータ作成ライブラリを使うか
+自作を使うか
 
 ---
 

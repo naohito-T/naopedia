@@ -64,3 +64,5 @@ SQLにおけるDDLには、データベースやテーブル、ビューなど�
 大量のデータを1回の命令でデータベースに入れられる、insert文っぽいやつ
 
 
+## SQLクエリのN+1問題
+[参考URL](https://qiita.com/muroya2355/items/d4eecbe722a8ddb2568b)

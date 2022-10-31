@@ -6,9 +6,18 @@ TypeScript → JavaScriptに変換してからnodeでの実行
 
 通常、TypeScriptで書かれたNode.jsプロジェクトは、tscでtranspileをし、生成されたJavaScriptファイルを実行する必要がある。ts-nodeを使うことでこのステップを省略する。
 
+## Node.jsとは
+
+Node.jsは`ノンブロッキングI/O`という仕組みにより、「大量の小さな通信」の処理を得意としており、チャットアプリや小規模なゲームのサーバープログラム開発言語として用いられることが増えている。
+また、クライアントサイドと同じJavaScriptでサーバーサイドのプログラムを書けるため、新たにサーバーサイド言語を覚える必要がないという利点もある。
+
+## Node.jsのREPL環境をカスタマイズする
+[参考URL](https://kazamori.jp/blogs/2021/07/20/customize-node-repl/)
+[リポジトリ](https://github.com/kazamori/typeorm-performance-issues-sample)
+
 ## NODE_ENV
 
-NODE_ENV=production yarn install とすれば devDependenciesがインストールされない
+`NODE_ENV=production yarn install`とすればdevDependenciesがインストールされない
 
 ## node path取得
 

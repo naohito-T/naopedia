@@ -12,7 +12,7 @@ Node.jsやブラウザ上など、さまざまなプラットフォームをサ�
 0.2系が現在主流であるが0.3系が最新（2022/10/09現在）
 
 ## 0.3系 参考
-
+[参考URL](https://blog.open.tokyo.jp/2022/05/04/upgrade-typeorm-0-3.html)
 [参考URL](https://zenn.dev/hasegawasatoshi/articles/8110ce79119dd0)
 [参考URL](https://kazuhira-r.hatenablog.com/entry/2022/03/13/235304)
 [参考URL](https://qiita.com/Aurum64/items/f5962bd2a643447dbef9)
@@ -124,3 +124,6 @@ entityはDBのテーブルと一対一で構成する。
 
 名前的にDB側のテーブル設定かと思いきや違うので、設定を変更してもmigrationは発生しない。
 親Entityを各種更新した際、いっしょに子も更新するかどうか。取得時には影響しない
+
+## TypeORMのrelationメモリ使用について
+[これはすごい（リレーションの違いでメモリ使用量が変わる）](https://kazamori.jp/blogs/2021/07/12/typeorm-lazy-relations-memory/)
