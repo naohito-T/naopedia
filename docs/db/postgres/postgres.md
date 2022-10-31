@@ -1,4 +1,5 @@
 # Postgres
+[Postgres超入門](https://lets.postgresql.jp/)
 
 ## テーブル一覧表示コマンド
 
@@ -58,7 +59,7 @@ postgres userに切り替えて`psql`
 慣例としてhealth_checkなどが用意されているためそれらを使用する。
 
 ## postgres データ型
-
+[データ型一覧](https://plus-info-tech.com/postgresql-typelist)
 
 ### 時間
 [参考URL](https://ja.stackoverflow.com/questions/27969/timestamp%E5%9E%8B-date%E5%9E%8B-time%E5%9E%8B%E7%AD%89%E6%97%A5%E4%BB%98%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E5%9E%8B%E3%81%AE%E4%BD%BF%E3%81%84%E5%88%86%E3%81%91%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)
@@ -68,3 +69,10 @@ postgres userに切り替えて`psql`
 
 redisなどのデータストアに移動することもあるとのこと。
 しかしdefaultのDBに備え付けてあるキャッシュを使用することが多い。
+
+## スキーマ(Schema)
+[参考URLN](https://tech.pscsrv.co.jp/2021/08/02/%E3%80%90postgresql%E3%80%91postgresql%E3%81%AE%E3%82%B9%E3%82%AD%E3%83%BC%E3%83%9E%EF%BC%88schema%EF%BC%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/)
+
+スキーマ（Schema）とは、1つのデータベースの中に複数設定することができる名前空間のことを指す。
+デフォルトではpublicが作成される。
+

@@ -251,3 +251,6 @@ Excelでテストケースを管理していてこんなことで悩んでいま
 
 [E2E テスト](https://qiita.com/mt0m/items/7e18d8802843d9f60d28)
 
+## mockデータ作成ツール
+
+https://fakerjs.dev/api/
