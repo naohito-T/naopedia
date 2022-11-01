@@ -99,7 +99,7 @@ Webアプリケーションの規模が大きくなると応答速度の低下�
 ## リレーションの読み込み方
 [わかりやすい](https://cloudsmith.co.jp/blog/backend/laravel/2020/07/1506704.html)
 
-### Eager Loading 訳：熱望的なローディング
+### Eager Loading 訳：熱望的なローディング or 積極的なリレーションシップ
 
 Eager Loadingでは、2つのテーブルのデータを1度に取得する（関連のも）
 Eager Loadingを使うと、クエリの発行回数を減らすことができるので、いわゆる「N＋1問題」の回避策として用いられます。

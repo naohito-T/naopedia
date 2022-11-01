@@ -412,7 +412,49 @@ Next.jsのrouterにはstateがありません。
 
 ## next error
 [参考URL](https://zenn.dev/mizuneko4345/articles/c576dfce8a49be)
+[参考URL](https://blog.shibayu36.org/entry/2020/01/08/193000)
 
+- `pages/_error.tsx`を作ると、SSR時やCSR時、例外が起きるなどした時やルーティング存在しないエラーが発生した時にそのページを表示してくれる。
+※このページで400エラー、404エラー、500エラーをハンドリングして、自前のページを作成すれば良い。
+
+- `pages/_error.tsx`はproduction環境時（next build -> next start）にしか使われないので注意。
+※デバッグするときはnext buildをする必要がある
+
+- next/errorのgetInitialPropsではCSR時に例外が起きた時、err.statusCodeに何も入っていないという問題がある
+
+- ビルトインのエラーページを表示させたい場合は`Error`コンポーネントをインポートする。
+
+
+```ts
+import React from 'react';
+import { NextPage, NextPageContext } from 'next';
+
+// production時(next buildの成果物を使っている時)のエラー表示に使われる
+// See Also: https://nextjs.org/docs/advanced-features/custom-error-page
+
+interface Props {
+  statusCode: number;
+}
+const Error: NextPage<Props> = ({ statusCode }) => {
+  // ここでエラーページをちゃんと構築する。statusCodeが400の時BadRequest、
+  // 404/405の時Not Found、500の問Internal Server Errorが出るように正しく処理すれば良いだろう
+  return <div>{statusCode}エラーが発生しました</div>;
+};
+
+Error.getInitialProps = async ({ res, err }: NextPageContext) => {
+  // statusCodeを算出する。
+  // - resが存在する時はSSRであり、res.statusCodeをそのまま利用すれば良い。
+  // - resがない場合はCSRである。
+  //   - err.statusCodeがあればそれをそのまま利用する
+  //   - 意図しない例外が起きてerrがここに渡ってくる場合、単なるErrorオブジェクトが入っていてstatusCodeプロパティがない。errがある時点でISEなので500にする
+  // See Also: https://nextjs.org/docs/advanced-features/custom-error-page
+  const statusCode = res ? res.statusCode : err ? err.statusCode ?? 500 : 404;
+
+  return { statusCode };
+};
+
+export default Error;
+```
 
 ### カスタムエラーページ
 [参考URL](https://nextjs.org/docs/advanced-features/custom-error-page)
@@ -480,7 +522,6 @@ HTTP 400 / 404 / 405 / 500以外のステータスコードを投げ込むと、
 ---
 
 ## next env
-
 [これを見れば大体わかる](https://blog.ojisan.io/next-env/)
 
 `.env.local`

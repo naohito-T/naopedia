@@ -125,5 +125,19 @@ entityはDBのテーブルと一対一で構成する。
 名前的にDB側のテーブル設定かと思いきや違うので、設定を変更してもmigrationは発生しない。
 親Entityを各種更新した際、いっしょに子も更新するかどうか。取得時には影響しない
 
-## TypeORMのrelationメモリ使用について
-[これはすごい（リレーションの違いでメモリ使用量が変わる）](https://kazamori.jp/blogs/2021/07/12/typeorm-lazy-relations-memory/)
+## TypeORMのEager relationsとLazy relationsについて
+[参考URL](https://kazamori.jp/blogs/2021/07/12/typeorm-lazy-relations-memory/)
+
+Eager relations
+Entityと関連Entityを同じタイミングで読み込む。
+
+Lazy relations
+Promiseを使って任意のタイミングで遅延して読み込む。
+オプションで`{lazy: true}`を設定しなくても型として`Promise`を指定するとTypeORMは自動的に`Lazy relations`として扱います。 
+
+## TypeORMをREPLで実行する
+[参考URL](https://kazamori.jp/blogs/2021/07/12/typeorm-lazy-relations-memory/)
+
+## TypeORM の Bulk Insert と psql の \copy を比較する
+[参考URL](https://kazamori.jp/blogs/2021/07/21/typeorm-bulk-insert/)
+

@@ -9,7 +9,8 @@ ORM用語
 
 ## クエリビルダー
 
-ORMからそのままSQLを生で生成すること。
+ORMよりでQuery builderを使う。
+もっとも低レベルのAPIになる。そのままSQLを生で生成すること。
 ベストワンクルーズは生SQLだったな。
 
 
@@ -18,6 +19,11 @@ ORMからそのままSQLを生で生成すること。
 TypeORMより
 >TypeORM では、Active Record パターンと Data Mapper パターンの両方を使用できます。
 
+## ORMデザインパターン
+
+Repositoryパターン
+[参考URL](https://qiita.com/mikesorae/items/ff8192fb9cf106262dbf)
+Repositoryパターンとは永続化を隠蔽するためのデザインパターンで、DAO(DataAccessObject)パターンに似ていますが、より高い抽象度でエンティティの操作から永続化ストレージを完全に隠蔽する。
 
 
 ## ORMパターン参考
