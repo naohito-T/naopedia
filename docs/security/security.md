@@ -19,11 +19,14 @@ Webアプリケーションという観点から一般的にはWAFといえばWe
 ---
 
 ## CORS(Cross-Origin Resource Sharing) : クロスオリジンソースシェアリング
+[リファレンス](https://develwoper.mozilla.org/ja/docs/Glossary/CORS)
 [参考URL](https://qiita.com/ryosuketter/items/a60a2bc0220a5cbff17e)
-[こっちのが仕組みが書いてある](https://www.twilio.com/blog/add-cors-support-express-typescript-api-jp)
+[仕組みが書いてある](https://www.twilio.com/blog/add-cors-support-express-typescript-api-jp)
 
 オリジン間リソース共有（CORS）とは、最新ブラウザに装備されている**セキュリティプロトコル。**
 HTTPリクエストを開始したオリジンに応じて、異なるオリジンで共有するリソースの許可、制限を行う。
+>フロントエンドの JavaScript コードがアクセスすることをブロックするかどうかを決めるものです。
+
 
 ```
 https://www.twilio.com
@@ -36,6 +39,11 @@ http://localhost:5000
   |       |       |
 scheme hostname  port
 ```
+
+## Preflight request (プリフライトリクエスト)
+[リファレンス](https://developer.mozilla.org/ja/docs/Glossary/Preflight_request#:~:text=CORS%20%E3%81%AE%E3%83%97%E3%83%AA%E3%83%95%E3%83%A9%E3%82%A4%E3%83%88%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88,%E3%81%97%E3%81%A6%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%81%97%E3%81%BE%E3%81%99%E3%80%82)
+
+
 
 ## ブラウザの仕組み
 
