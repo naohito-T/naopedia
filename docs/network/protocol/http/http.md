@@ -130,17 +130,27 @@ WEBサーバーとしては、この処理は定形処理といっていいぐ�
 [Authorization Bearer ヘッダを用いた認証 API の実装](https://www.getto.systems/entry/2017/10/19/004734)
 Bearer認証は、トークンを利用した認証・認可に利用されることを想定しており、OAuth 2.0の仕様の一部として定義されているがその仕様内でHTTPでも使用しても良いと記述されている。
 
-**HTTPのAuthorizationヘッダーにスキームとして指定でき, Authorization: Bearer <token> のようにして指定する.**
+HTTPの**Authorizationヘッダーにスキーム**として指定でき`Authorization: Bearer <token>`のようにして指定する。
 トークンの形式は**token68の形式**で指定することが定められている。
 
 ## Authorization ヘッダー
 
-Authorizationヘッダーに指定できるスキームにはBasicやDigest, Bearer等が存在しこれらのスキームはIANAによって管理されている。
+Authorizationヘッダーに指定できるスキームには以下がある。
+- Basic
+- Digest
+- Bearer
+これらのスキームはIANAによって管理されている。
+
+## token68
+
+>token68は1文字以上の半角英数字 -(ハイフン), . (ドット), _ (アンダーバー), ~ (チルダ), + (プラス), / (スラッシュ)から構成された文字列を指す.
+>文字列の末尾に任意個の = (イコール)が挿入されていても良い.
 
 ## リクエストとレスポンスの流れ
 
 まずクライアントから`Authorization: Bearer <token>`を含めたリクエストが投げられる。
-それを受け取ったサーバは`WWW-Authenticate: Bearer realm="XXXX"`形式, 又は`WWW-Authenticate: Bearer error="XXXX"`形式のヘッダーを含めたレスポンスを返す。
+それを受け取ったサーバは`WWW-Authenticate: Bearer realm="XXXX"`形式を返す。
+又は`WWW-Authenticate: Bearer error="XXXX"`形式のヘッダーを含めたレスポンスを返す。
 
 成功パターン
 とくに返したいパラメーターがない場合はrealmを空にして返す。
@@ -150,19 +160,23 @@ Authorizationヘッダーに指定できるスキームにはBasicやDigest, Bea
 リクエストにAuthorizationヘッダーが含まれていないケース（401 Unauthorized）
 `WWW-Authenticate: Bearer realm="token_required"`
 
-リクエストパラメータが不正なケース(400 Bad Request)
+リクエストパラメーターが不正なケース（400 Bad Request）
 `WWW-Authenticate: Bearer error="invalid_request"`
 
-トークンが失効, 破損しているケース(401 Unauthorized)
+トークンが失効、破損しているケース（401 Unauthorized）
 `WWW-Authenticate: Bearer error="invalid_token"`
 
-トークンのスコープが不十分なケース(403 Forbidden)
+トークンのスコープが不十分なケース（403 Forbidden）
 `WWW-Authenticate: Bearer error="insufficient_scope"`
 
 ## トークン保存場所
 
-クライアント側はlocalStorageかsessionStorage, サーバ側はDBに保存することになる
+クライアント側はlocalStorageかsessionStorage。
+サーバ側はDBに保存することへなる。
 
+## トークンの有効期限
+
+トークンが漏れてしまうと第三者がそのトークンを使ってあらゆる操作ができてしまうため, 有効期限は設けておくべき。
 
 ---
 
@@ -239,7 +253,6 @@ numberなどで送ってもどうやらstringに変換されるっぽい。
 [参考URL](https://www.cloudflare.com/ja-jp/learning/cdn/glossary/what-is-cache-control/)
 
 ヘッダーはコロンで区切られたキーと値のペアで構成される。
-
 ※値はディレクティブ（指示）と呼ばれる。
 ```sh
 # key: 値,値

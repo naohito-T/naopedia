@@ -21,7 +21,7 @@ aws-vault execは**認証情報を含んだ環境変数を追加**し、`--`以�
 
 ## aws-vault ls
 
-保存を確認
+aws-vaultで登録しているプロファイルを確認できる。
 
 ## 保存したキーチェーンで絵中身を見る
 [参考URL](https://qiita.com/minamijoyo/items/5ed3113434e51308ded1)

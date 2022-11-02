@@ -525,7 +525,7 @@ HTTP 400 / 404 / 405 / 500以外のステータスコードを投げ込むと、
 [これを見れば大体わかる](https://blog.ojisan.io/next-env/)
 
 `.env.local`
-`$next dev`のときに読み込まれる。
+`$ next dev`のときに読み込まれる。
 
 `.env.development`
 NODE_ENVがdevelopmentのとき読み込まれる。
