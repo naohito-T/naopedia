@@ -1,9 +1,10 @@
 # JavaScript
-
 [JavaScriptのすべての仕組み](https://ja.javascript.info/)
 [next/script には JavaScript の基本がつまっていた](https://zenn.dev/aiji42/articles/9a6ab12ab5f6e6)
 [JavaScript アニメーション仕組み](https://ja.javascript.info/js-animation)
 
+## npm人気なパッケージを見つける
+[本当に必要なnpmパッケージを見つけるために知っておきたい5つのサイト](https://www.gaji.jp/blog/2022/06/29/10259/)
 
 ## JavaScriptの実行環境
 
@@ -13,17 +14,15 @@
 JavaScriptのサンドボックスによる代表的な制約のひとつに同一オリジンポリシー (same-origin policy) がある。
 
 ## SourceMapについて
-
 [SourceMap](https://fintan.jp/page/1596/)
 
 ## JavaScriptのタイムゾーン
-
 [参考URL](https://qiita.com/konkonko/questions/62c71142f51e63a759c3)
 
 ---
 ## CommonJSとESModule
 
-## CommonJS : nodeのやつ require
+### CommonJS : nodeのやつ require
 
 まだECS(ESModule)でモジュールシステムが導入されていないときにnodeで実装したモジュールシステム
 CommonJSではブラウザ上だけでなく、サーバーサイドやクライアントでのCUI、GUIでJavaScriptを使う際の仕様を作成している。
@@ -31,7 +30,7 @@ CommonJSではブラウザ上だけでなく、サーバーサイドやクライ
 >ちなみに CommonJS で作成された仕様は複数のソフトウェアによって実装が行われることで勧告段階に移るみたいです。
 >CommonJS の仕様を実装しているソフトウェアの中にはあの有名な node.js があります。
 
-## ESM(ECMAScript) : importのやつ
+### ESM(ECMAScript) : importのやつ
 
 実質のJSの仕様を策定するもの。
 **ECMAScript はブラウザ上での JavaScript の仕様と標準を作っている。**

@@ -21,6 +21,12 @@ TypeORMより
 
 ## ORMデザインパターン
 
+
+### Data Mapperパターン == Repositoryパターン
+[TypeORMリファレンス](https://orkhan.gitbook.io/typeorm/docs/active-record-data-mapper)
+Data Mapperアプローチを使用して、すべてのクエリメソッドを**リポジトリ**と呼ばれる個別のクラスに定義し、リポジトリを使用してオブジェクトを保存・削除・読み込みができる。
+Data Mapperアプローチはe
+
 Repositoryパターン
 [参考URL](https://qiita.com/mikesorae/items/ff8192fb9cf106262dbf)
 Repositoryパターンとは永続化を隠蔽するためのデザインパターンで、DAO(DataAccessObject)パターンに似ていますが、より高い抽象度でエンティティの操作から永続化ストレージを完全に隠蔽する。

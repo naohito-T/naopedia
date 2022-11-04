@@ -50,6 +50,7 @@ body部分にJSON形式で送信したいデータを格納する。
 - application/hal+json(HAL)
 
 - application/vnd.api+json(JSON API)
+これがParrotだとbackendが返す。
 
 - application/vnd.collection+json(Collection JSON)
 

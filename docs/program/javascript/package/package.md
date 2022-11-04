@@ -1,12 +1,8 @@
-# Package
+# package.json 覚書
 
-jsでのpackage管理システムからpackage.jsonまで記載する
+npmの管理ファイルであるpackage.jsonについて記載する。
 
----
-
-## package.json 覚書
-
-## npmのprivate registry
+## npmのprivate registry(なくなった)
 
 会社など、プライベートな空間がある場合に、Node.jsパッケージ管理にnpm private registryという手法がある。
 **npmのレジストリ**にprivateでパッケージをpublishする形式
@@ -129,14 +125,35 @@ yarn list --pattern glob-parent
 ```
 
 ## yarn workspace
-
+[リファレンス](https://classic.yarnpkg.com/en/docs/workspaces/)
 [参考URL](https://qiita.com/suzukalight/items/0b22f11ad05308f638a6)
+[これがわかりやすい ](https://qiita.com/frozenbonito/items/8230d4a3cb5ea1b32802)
+[tsで導入し](https://ito-u-oti.com/react-monorepo/)
 
 >デフォルトで利用できるパッケージのアーキテクチャを設定する新しい方法です。ワークスペースにより複数のパッケージを設定する際に、 yarn install を一度実行するだけで、それらのすべてが単一のパスにインストールされるようになります。
-
 
 1つのプロジェクトを立ち上げるとき
 クライアント・サーバ・共通ロジック・Lambda・デザインシステム・LPなどのさまざまなサブプロジェクトが必要になることは多い。
 これらを1つのリポジトリで扱えるようにする考え方がmonorepoであり、それを実現する手段がワークスペースとなります。
+monorepo環境の管理には、現在においては**Lerna**などが方法として存在するが、ワークスペースはより低レベルでプリミティブな、内部依存関係の解決に特化した仕組みを提供してくれる。
+※**lerna**は開発があまり活発ではない。
 
-monorepo環境の管理には、現在においては**Lerna**などが方法として存在するが、ワークスペースはより低レベルでプリミティブな、内部依存関係の解決に特化した仕組みを提供してくれるもので
+### やるべきこと
+
+`private: true`が必要であること。
+
+### 追加方法
+
+`$ npm init -w packages/a`
+
+### TypeScriptでのモノレポ
+[リファレンス](https://www.typescriptlang.org/docs/handbook/project-references.html)
+[参考URL](https://zenn.dev/katsumanarisawa/articles/58103deb4f12b4)
+プロジェクト参照と言われている。
+TypeScriptプログラムをより小さな部分に構造化できる。
+これを行うことで、ビルド時間を大幅に短縮し、コンポーネント間の論理的な分離を強化し、新しいより優れた方法でコードを編成できます。
+
+tscまた、--buildフラグの新しいモードを導入しています。これは、プロジェクト参照と連携して動作し、より高速な TypeScript ビルドを可能にします。
+
+
+
