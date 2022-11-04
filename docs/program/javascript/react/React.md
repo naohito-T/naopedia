@@ -96,20 +96,47 @@ refの動き
 ---
 
 ## 状態管理
-
+[Reactステート管理比較考察(かなり詳しい)](https://blog.uhy.ooo/entry/2021-07-24/react-state-management/)
 >Reactにおける状態管理の方法論は、さまざまな道を辿ってきました。ある人はReduxを使い、またある人はMobXを、またある人はuseContextで物事を解決してきたでしょう。
 
 今まではRedux + middleware
 最新はRecoil。Redux + middleware周りのすべてをまるっと置き換えてくれる
 
-**Recoil**
+### useState + バケツリレー
 
+Reactにおける基本的なステート管理は`useState`
+
+メリット
+ひとつのコンポーネント内で完結するようなステートならばuseStateは非常に適しており、他の選択肢はほぼないと言っていい。
+
+デメリット
+バケツリレーはただ子コンポーネントに渡すだけという責務を発生させてしまう
+useState + バケツリレーはパフォーマンス上不利になる可能性があります。使用者までの途中のコンポーネントも含めて多くのコンポーネントが実際にpropsとしてステートを受け取るということは、（たとえReact.memoなどで再レンダリングを抑制していたとしても）ステートが変化した際にはそれらのコンポーネントが再レンダリングされることになります。
+これにより、実際に必要なよりも多くのコンポーネントがレンダリングされることになります。
+
+### useContext
+
+useState + バケツリレーの問題点を避けたい場合、プレーンなReactで可能な選択肢としてuseContextの使用が挙げられます。useContextは、props以外でコンポーネント間の伝達を可能にする。
+ただし**親から子という原則は維持**されます。
+
+メリット
+パフォーマンスの観点からは、useContextのほうがuseState + バケツリレーよりは有利です。なぜなら、useContextを使うことで、ステートが変わった際には本当にそのステートを使用しているコンポーネントのみが再レンダリングされるようになるからです。
+コンポーネントツリーの頂点と使用者の間にある中間コンポーネントは、useContextを使っていなければ再レンダリングされません。
+※ただし、デフォルトでは親コンポーネントが再レンダリングされた場合は子コンポーネントも自動的に再レンダリングされます。これを防ぐにはReact.memoを適切に使用する必要があります。この記事ではReact.memoを必要に応じて使用することを前提としています。
+
+### Recoil
+
+※状態の格納先は**atom**と呼ぶ。
 - アプリケーション内に複数のデータストアを持てる
 - 非同期対応
 - React hooks前提
+- デフォルトではlocalStorageに保存される（変更可能）
 
+AtomからだけではなくSelectorからのsubscribeも可能。
+Selectorを使うことで、複数のAtomのデータを合成して必要なデータを計算することも可能です。AtomとSelectorを総称して**RecoilState**と呼びます。
 
-recoil-persistはデフォルトだとlocalStorageに保存されますがstorageオプションを設定することで任意のStorageを利用することができる。
+メリット
+またReduxとは異なり**Dispatch-Reducerのような中間操作がなく+**コンポーネントから直接atomにアクセスできる他、UseRecoilStateだけで状態を設定・更新することも読むこともできます。Reduxに置き換えると、Actionだけで直接stateを更新できるイメージ。
 
 ## Suspense
 
@@ -151,7 +178,6 @@ cssの長い命名規則から解き放たれる
 
 
 ### material-ui
-
 [9個のfree_templateがある](https://mui.com/getting-started/templates/)
 
 
@@ -159,4 +185,6 @@ cssの長い命名規則から解き放たれる
 
 [React.jsで、onClick時に任意の値を渡す](https://www.yoheim.net/blog.php?q=20180411)
 
-
+## これ面白そう
+[参考URL](https://qiita.com/FumioNonaka/items/be00620c14e8955ea869)
+[これも面白い](https://liginc.co.jp/587025)

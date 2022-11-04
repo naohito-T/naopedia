@@ -57,25 +57,6 @@ body部分にJSON形式で送信したいデータを格納する。
 ## レスポンス圧縮
 [gzip圧縮方法について徹底解説](https://digitalidentity.co.jp/blog/creative/gzipcompress.html)
 
-## Web API
-
-Web APIを設計する際にさまざまなものを作成するかと思うがそれを記載する。
-
-GET/POST
-
-HTML4.0 `<form>`タグはmethod属性に追加できるのがGETとPOSTだけ。
-初期のHTML5のドラフトではPUTやDELETEも使える仕様が盛り込まれたが、結局削除となった。
-
-しかしapiがGETとPOSTにしか対応していないは使いにくい。
-そういったケースにそなえ、よく利用されているケースはAPI側でGETとPOST以外のメソッドをPOSTを使って表現する方法が2つある。
-
-どちらもメソッドとしてはPOSTを利用して、メタ情報として本当はこのメソッドが使いたいというふうにする
-
-1. X-HTTP-Method-OverrideというHTTPリクエストヘッダーにDELETE or PUT入れる
-こっちのが利用しやすい。
-
-2. _methodパラメーター
-railsで使用されている。
 
 ---
 

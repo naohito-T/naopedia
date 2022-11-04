@@ -3,9 +3,9 @@
 [MVC, 3層アーキテクチャから設計を学び始めるための基礎知識](https://qiita.com/os1ma/items/7a229585ebdd8b7d86c2)
 [設計理論がすごい](https://qiita.com/os1ma)
 [メルペイの事例に学ぶ、SSRとJAMstackのメリット・デメリット](https://logmi.jp/tech/articles/322575)
+[DDDでアプリを作成する(これはすごい)](https://qiita.com/APPLE4869/items/d210ddc2cb1bfeea9338)
 
 webやアプリケーションなどの設計をまとめるpage
-[DDDでアプリを作成する(これはすごい)](https://qiita.com/APPLE4869/items/d210ddc2cb1bfeea9338)
 
 ## 考え方
 
