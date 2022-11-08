@@ -1,4 +1,5 @@
 # TypeScript
+[TypeScript特有の組み込み型関数](https://log.pocka.io/ja/posts/typescript-builtin-type-functions/#thistype)
 
 ## TypeScriptのクラス
 
@@ -12,7 +13,7 @@ class A {
   }
 }
 
-// privateも呼び出せる。
+// privateも呼び出せる（これはおかしい）
 const result = new A()['a']
 // all methodに呼び出される。引数も渡せる。
 const result = new A()['all']('aa')
