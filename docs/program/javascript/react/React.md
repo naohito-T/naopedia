@@ -2,8 +2,15 @@
 
 ---
 
-## React hooks
+[onClickが2度呼ばれる](https://numb86-tech.hatenablog.com/entry/2019/10/19/175907)
 
+## 関数コンポーネントのレンダリング
+[参考URL](https://www.hypertextcandy.com/when-hook-is-called)
+- 内部状態またはプロパティが変更されると、コンポーネントの関数が再実行される。
+- 関数の結果が前回の呼び出し時と同じであれば、レンダリングは発生しない。
+- レンダリングが完了すると、useEffectが実行される。
+
+## React hooks
 [基本的なReact Hooksについてまとめた](https://yutaro-blog.net/2021/09/15/react-hooks/)
 
 >フック (hook) は React 16.8 で追加された新機能です。state などの React の機能を、クラスを書かずに使えるようになります。

@@ -3,8 +3,12 @@
 [他言語からRuby入門について](https://www.ruby-lang.org/ja/documentation/ruby-from-other-languages/)
 [Rubyist Magazine](https://magazine.rubyist.net/articles/0061/0061-ForeWord.html)
 [ruby リファレンス](https://www.ruby-lang.org/ja/documentation/)
-
 [Ruby paint](https://hawksnowlog.blogspot.com/2020/09/output-ansi-color-code-with-ruby-paint.html)
+
+## ruby document
+[参考URL](https://techblg.app/articles/how-to-generate-document-by-yard-ruby/)
+
+YARDで書くというのがある。やはり`@example`が重要。
 
 ## Rubyを書く時意識すること
 
