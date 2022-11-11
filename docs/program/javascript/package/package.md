@@ -2,6 +2,9 @@
 
 npmの管理ファイルであるpackage.jsonについて記載する。
 
+## 今まで知らずにいたnpmスクリプトでできる3つのこと
+[今まで知らずにいたnpmスクリプトでできる3つのこと](https://www.twilio.com/blog/npm-scripts-jp)
+
 ## npmのprivate registry(なくなった)
 
 会社など、プライベートな空間がある場合に、Node.jsパッケージ管理にnpm private registryという手法がある。
