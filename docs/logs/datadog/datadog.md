@@ -30,3 +30,6 @@ AWS Integration機能によって、 AWS上のリソースを統合的に監視�
 - エラーの分析を改修目的ではなく統計目的で利用する場合などは、sampleRateというパラメーターを調整するのかなと思います
 - 同じサイトのサブドメイン間でセッションを保持しない
 - `セッションCookie`、`クロスサイトセッション Cookie`は使わない
+
+## Datadogの活用ノウハウを一挙に公開・それを支える全社管理者の工夫とは #datadog_japan_meetup
+[Datadogの活用ノウハウを一挙に公開・それを支える全社管理者の工夫とは](https://techblog.zozo.com/entry/datadog-japan-meetup-2022-summer)

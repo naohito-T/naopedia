@@ -1,5 +1,10 @@
 # TypeScript
 [TypeScript特有の組み込み型関数](https://log.pocka.io/ja/posts/typescript-builtin-type-functions/#thistype)
+[Type challenge](https://github.com/type-challenges/type-challenges)
+
+## TypeScriptのエラー
+
+>TypeScript には Java の throws のように関数が throw する例外を宣言する方法がないので、どのような例外が throw され得るかを知るにはコードを読むしかありません。
 
 ## TypeScriptのクラス
 

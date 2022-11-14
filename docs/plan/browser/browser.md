@@ -60,3 +60,12 @@ Expressには、以下の2つのセッションモジュールがある
 - express-session
 cookie-sessionはCookieにセッションデータを保存するミドルウェアです。
 express-sessionはCookieにセッションIDのみを保存して、セッションデータは別のストレージに保存するミドルウェアです
+
+## スクロール位置の復元
+[Next.jsはどうやってスクロール位置を復元するのか](https://zenn.dev/akfm/articles/next-js-scroll-restore)
+
+デフォルトでのブラウザ挙動
+>ブラウザのhistory entryに格納されるstateにはscroll position dataというものがあり、「scroll restoration modeがautoならscroll position dataをもとにuser agentはスクロール位置を復元することができる」とされています。scroll restoration modeはhistory.scrollRestoration にauto(初期値)かmanualを代入することで設定できます。
+
+
+

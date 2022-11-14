@@ -1,6 +1,15 @@
 # Next
-
 [NextJS リファレンス](https://nextjs.org/docs/api-reference/next/image)
+
+
+## SPAで軽視されがちな部分
+
+- ブラウザバックによるスクロール位置の復元
+[参考URL](https://zenn.dev/akfm/articles/next-js-scroll-restore)
+- UI状態の復元
+[参考URL](https://zenn.dev/akfm/articles/react-state-scope)
+
+
 
 ## 歴史
 
