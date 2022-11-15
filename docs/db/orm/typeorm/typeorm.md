@@ -106,6 +106,7 @@ entityはDBのテーブルと一対一で構成する。
 [TypeORM知見まとめ](https://zenn.dev/uttk/scraps/343e888f62360b)
 
 ## Entityファイル
+[postgres entity 種類](https://github.com/typeorm/typeorm/blob/master/test/functional/database-schema/column-types/postgres/entity/Post.ts)
 
 `@Entity`をつけたものがテーブル対象になる。
 データベースの列の型は、使用したプロパティの型から推測

@@ -1,10 +1,8 @@
 # Docker
-
 [Dockerfile(リフェレンス)](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 [入門Docker](https://y-ohgi.com/introduction-docker/)
 [軽量なDockerfileの作り方](https://qiita.com/watawuwu/items/d547d0cb1ab1db5e079c)
 [Dockerfile ベストプラティクス(かなりすごい)](https://zenn.dev/esaka/articles/cae40a30bbbfa495e6a9)
-
 [Dockerセキュリティ（これもLTに入れる）](https://qiita.com/ohhara_shiojiri/items/08909bfaed8073af57f0)
 
 ```sh
@@ -12,6 +10,17 @@ docker container prune -f;
 docker image prune -f;
 docker volume prune -f 
 ```
+
+## Docker node_modules テクニック
+[参考URL](https://zenn.dev/yumemi_inc/articles/3d327557af3554)
+
+- そもそもnode_modulesはgitと同じで除外する。
+>まず、node_modulesはDockerイメージにホストからコピーしてはいけません。node_modulesはgitでも無視するはずなので、新しく環境構築する人のディレクトリにはそもそも入ってませんし、イメージをリビルドするときにホストのnode_modulesからイメージ内のnode_modulesが上書きされることも避ける必要があるからです。
+
+- Volume Trickでnode_modulesがバインドマウントされるのを回避する
+
+- VSCodeでnode_modulesを参照できない問題を解決する。
+
 
 ## Docker mysql
 [参考URL](https://qiita.com/nanakenashi/items/180941699dc7ba9d0922)

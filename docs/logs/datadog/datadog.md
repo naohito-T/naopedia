@@ -33,3 +33,8 @@ AWS Integration機能によって、 AWS上のリソースを統合的に監視�
 
 ## Datadogの活用ノウハウを一挙に公開・それを支える全社管理者の工夫とは #datadog_japan_meetup
 [Datadogの活用ノウハウを一挙に公開・それを支える全社管理者の工夫とは](https://techblog.zozo.com/entry/datadog-japan-meetup-2022-summer)
+
+## datadog nextjs
+[参考URL](https://qiita.com/kotarella1110/items/0a1578e8a1be09dc7c1a)
+
+sentryにあるソースマップ対応もしているとのこと。
