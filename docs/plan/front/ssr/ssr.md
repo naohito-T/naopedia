@@ -1,7 +1,8 @@
 # SSR
 
-[参考URL(前編)](https://www.publickey1.jp/blog/17/server_side_renderingserver_side_rendering_ng-japan_2017.html)
+[Server Side Renderingについて知るべきこと(前半))](https://www.publickey1.jp/blog/17/server_side_renderingserver_side_rendering_ng-japan_2017.html)
 [参考URL(後半)](https://www.publickey1.jp/blog/17/server_side_renderingserver_side_rendering_ng-japan_2017_1.html)
+
 
 ## まずServer Side Renderingとは
 

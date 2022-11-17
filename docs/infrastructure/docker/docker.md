@@ -21,7 +21,6 @@ docker volume prune -f
 
 - VSCodeでnode_modulesを参照できない問題を解決する。
 
-
 ## Docker mysql
 [参考URL](https://qiita.com/nanakenashi/items/180941699dc7ba9d0922)
 

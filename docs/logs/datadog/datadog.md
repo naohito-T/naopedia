@@ -19,8 +19,16 @@ CloudWatchで収集したメトリクスは、 DataDogのAWS Integration機能�
 AWS Integration機能によって、 AWS上のリソースを統合的に監視する。
 また、 CloudWatchのメトリクスを連携できるため、 DataDogでなにか独自のメトリクスを収集したい際は、 CloudWatch Custom Metricsを利用することを検討する。
 
+## フロントエンドのエラー
+[リファレンス](https://docs.datadoghq.com/ja/real_user_monitoring/data_collected/error/)
+
+フロントエンドのエラーはリアルタイムモニタリング（RUM）で自動的に収集されます。エラーメッセージとスタックトレースが利用できる場合は含まれます。
+フロントエンドのエラーは、それぞれの`error.origin`により3つのカテゴリーに分類されます。
+
+
 ## Datadog を利用したブラウザのエラー収集
 [Datadog を利用したブラウザのエラー収集](https://zenn.dev/kurosame/articles/482601fa0f422df9390d)
+[こっちも参考になる。参考URL](https://qiita.com/kotarella1110/items/0a1578e8a1be09dc7c1a)
 
 デフォルトの挙動は以下のようになっています
 - console.errorのログ
@@ -34,7 +42,10 @@ AWS Integration機能によって、 AWS上のリソースを統合的に監視�
 ## Datadogの活用ノウハウを一挙に公開・それを支える全社管理者の工夫とは #datadog_japan_meetup
 [Datadogの活用ノウハウを一挙に公開・それを支える全社管理者の工夫とは](https://techblog.zozo.com/entry/datadog-japan-meetup-2022-summer)
 
+## beforeSend を使用してブラウザ RUM データを強化および制御する
+[beforeSend を使用してブラウザ RUM データを強化および制御する](https://docs.datadoghq.com/ja/real_user_monitoring/guide/enrich-and-control-rum-data/?tab=%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88)
+
 ## datadog nextjs
-[参考URL](https://qiita.com/kotarella1110/items/0a1578e8a1be09dc7c1a)
+
 
 sentryにあるソースマップ対応もしているとのこと。
