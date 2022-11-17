@@ -6,8 +6,13 @@
 
 >TypeScript には Java の throws のように関数が throw する例外を宣言する方法がないので、どのような例外が throw され得るかを知るにはコードを読むしかありません。
 
-## TypeScriptのクラス
+result型は確かにいいけど可読性がいいかと言われたら違う。
+そのためこれが一番セオリーかも
+[セオリーなerrorハンドリング](https://qiita.com/shibukawa/items/ffe7264ecff78f55b296)
 
+## TypeScriptのクラスの変な問題
+
+クラス === オブジェクトだからか
 - クラスを生成した時に
 
 ```ts

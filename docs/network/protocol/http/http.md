@@ -1,5 +1,5 @@
 # HTTP(HyperText Transfer Protocol)
-
+[リファレンス(一番わかりやすい)](https://developer.mozilla.org/ja/docs/Web/HTTP)
 [HTTP入門](https://www.tohoho-web.com/ex/http.htm)
 [冪等性について](https://qiita.com/suin/items/316cb8aaf8dfcf11abae)
 [ブラウザからサーバまでわかりやすい](https://techracho.bpsinc.jp/hachi8833/2022_08_02/77493)
@@ -96,6 +96,13 @@ HTTP内でのクライアント
 >今回POSTメソッドについて言及しましたが、HTTPプロトコル（rfc2616）では、メッセージボディをセットできるメソッドについては特に言及していないため、POST以外のメソッド（たとえばGETメソッド）でもメッセージボディをセットすることはできます。
 >ですが、ブラウザからGETメソッドでリクエストを送信する場合、通常はメッセージボディではなくHTTPパラメータとして設定されます。
 >このため、サーバー側の処理としてGETメソッドの処理ではメッセージボディに何かデータが設定されてくるということは一般的には期待しません。
+
+
+## HTTP content negotiation(コンテントネゴシエーション)
+[リファレンス](https://developer.mozilla.org/ja/docs/Web/HTTP/Content_negotiation)
+
+>HTTP においてコンテンツ交渉 (content negotiation) は、同じ URI におけるさまざまな表現のリソースを提供するために使用する仕組みであり、ユーザーエージェントはどのリソースがユーザーにもっとも適しているか (例えば文書の言語はどれか、画像形式はどれか、コンテンツエンコード方式はどれか) を指定することができます。
+
 
 
 ## HTTP body-parserとは

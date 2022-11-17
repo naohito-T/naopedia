@@ -199,6 +199,13 @@ localで確認する場合は
 ついでにuseSWRを利用してデータを取得してみます。
 SWRはRenderingの種類ではない。Stale-While-Revalidateというキャッシュ戦略の略。
 
+## SWRとは
+[SWRを使ってハマったところ](https://zenn.dev/yodaka/articles/f5f93877b7a19f)
+
+Vercelが開発する、HTTP RFC 5861で提唱された、SWRというキャッシュ無効化戦略に基づくライブラリ。
+簡単に言うと、最初は普通にデータを取得してキャッシュとしてセット、次に参照された時にいったんキャッシュを返し裏でまたフェッチして、フェッチが完了したらキャッシュを最新のものに置き換えるというキャッシュ戦略をよしなにやってくれる。
+
+
 ## pages/apiとは
 
 [参考URL](https://maku.blog/p/qcp2coz/)
