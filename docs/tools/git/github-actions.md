@@ -1,5 +1,4 @@
 # GitHub Actionsとは
-
 [GitHub Actionsベストプラティクス](https://developers.cyberagent.co.jp/blog/archives/36423/)
 
 - 現在のソフトウェア開発における課題
@@ -8,6 +7,9 @@
 >GitHubの利用形態について分析すると、全ユーザの約60％がリポジトリと何らかの外部ツールやサービスを連携させている、という結果がわかっていました。そこでGitHubでは、ソフトウェア開発のプラットフォームとしてこの問題を解決し、開発者の体験をより良いものにするにはどうしたらいいか考え、2018年10月にGitHub Actionsを発表しました。
 
 [GitHub Actionsによる作業自動化 実例集](https://qiita.com/technote-space/items/253290d1f2a0f99409ae)
+
+## 一つのジョブが終われずにおなじジョブが再度実行された時に止める
+[参考URL](https://zenn.dev/korosuke613/scraps/4e465aad5538d0)
 
 ## GitHub Actions 料金
 
