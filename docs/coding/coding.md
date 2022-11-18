@@ -50,6 +50,11 @@ const carvingComponent = (
 const { carvingComponent } = useCarvingComponent();
 ```
 
+## 共通化したい時の考え方
+
+- 一階層上を作りwrapする
+- 共通化処理に対しapiを外から渡すようにすればいい。
+
 ## マジックナンバーをやめる
 
 別の人がコードを見たときに何の数字かわからなくなる。
@@ -369,4 +374,6 @@ Setは**特定の要素を出し入れするような用途には適していな
 
 ## DDD
 [参考URL](https://neos21.net/blog/2021/10/13-01.html)
+
+## 関数型プログラミング
 

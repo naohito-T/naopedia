@@ -4,6 +4,18 @@
 
 [onClickが2度呼ばれる](https://numb86-tech.hatenablog.com/entry/2019/10/19/175907)
 
+## React再レンダリング
+[React の再レンダリングを防ぐ3つのパターン](https://zenn.dev/azukiazusa/articles/react-rerender-patterns)
+
+基本中の基本
+Reactは以下条件の時再レンダリングされる。
+- コンポーネントのstateが更新された
+- 親のコンポーネントが再レンダリングされた
+パフォーマンス上で問題になるのは不必要な再レンダリングが実行されている場合。
+
+### Reactの基本中の基本再レンダリングテクニック
+
+
 ## 関数コンポーネントのレンダリング
 [参考URL](https://www.hypertextcandy.com/when-hook-is-called)
 - 内部状態またはプロパティが変更されると、コンポーネントの関数が再実行される。
@@ -46,6 +58,11 @@ useRouteMatch
 
 useCallbackは**メモ化されたコールバック関数を返す**フックです。
 使用用途はコンポーネントのレンダリング最適化によるパフォーマンス向上。
+
+## useCallback と useMemoのパフォーマンス以外のメリット
+[参考URL](https://zukucode.com/2021/06/react-useeffect-loop.html)
+
+useMemoやuseCallbackはパフォーマンス対策として使用する記事が多いですが、useMemoやuseCallbackを使用することにより、依存関係をはっきりさせて、useEffectの予期せぬ処理を防ぐことができます。
 
 ## useEffect
 
