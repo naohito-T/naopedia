@@ -1,10 +1,9 @@
 # Makefile
+[参考URL](http://masahir0y.blogspot.com/2012/02/linuxmakefile-4.html)
+[Makefile ことはじめ](https://qiita.com/kasei-san/items/ad25df63260e86c5cc71)
 
 Makefileはプロジェクトでよく使用されるタスクランナー
 JSを使用する場合はpackage.jsonを使う`npm run`
-
-[参考URL](http://masahir0y.blogspot.com/2012/02/linuxmakefile-4.html)
-[Makefile ことはじめ](https://qiita.com/kasei-san/items/ad25df63260e86c5cc71)
 
 LinuxカーネルのMakefileで多様されている
 
@@ -94,7 +93,7 @@ clean:
 ```
 
 ## 疑似ターゲット
-
+[参考URL](https://yu-nix.com/archives/makefile-phony/)
 ターゲットは基本的にターゲット名と同名のファイルを生成する処理
 そのためmakeはターゲットと同名のファイルがすでにあると（依存関係がある時以外は）処理を行なわない。
 

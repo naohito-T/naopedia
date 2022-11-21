@@ -7,6 +7,17 @@
 ## npm人気なパッケージを見つける
 [本当に必要なnpmパッケージを見つけるために知っておきたい5つのサイト](https://www.gaji.jp/blog/2022/06/29/10259/)
 
+## JavaScriptの時間
+[参考URL](https://qiita.com/shirokurotaitsu/items/5efd855900ec6135bbab)
+
+`Date`がミリ秒のため`* 1000`が必要
+※UNIXタイムスタンプは10桁
+```js
+// 13桁でミリ秒までやっている
+new Date().getTime()
+// 1668826244442
+```
+
 ## JavaScriptの実行環境
 
 安心安全に利用できる理由は、サンドボックスで動作するため。
