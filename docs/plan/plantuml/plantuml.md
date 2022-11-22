@@ -1,11 +1,24 @@
 # 図について記す
-
 [状況によって使い分ける構成図](https://qiita.com/e99h2121/items/eaca084ae7b0488ab686)
+
+## 図作成ツールについて比較
+[図の種類について記載がある。](https://qiita.com/ryamate/items/3779418172c4f5a83212)
+
+- Draw.io
+- PlantUML
+- Mermaid
+
+## plantUML完全ガイド
+[参考URL](https://pdf.plantuml.net/PlantUML_Language_Reference_Guide_ja.pdf)
 
 ## PlantUML とは
 
 以下のような図をテキストで素早く描くためのオープンソースプロジェクト。
 PlantUMLは**DSL（ドメイン特化言語）**でUMLの図を描く
+
+## VS Codeでの見方
+
+`Option + D`で見ることができる。
 
 ## PlantUML 必用なもの
 
@@ -25,7 +38,7 @@ PlantUMLの実行には、Javaの実行環境が必要。
 
 クラス図などで、モデル要素の意味を拡張するもの。ギルメット<<>>によるラベル表記と、アイコン表記がある。
 
-## UML(Unified modeling Langurage)
+## UML(Unified modeling Language)
 
 共有することの難しさを毎日感じてる場合、UML図を記載するとはかどる可能性がある
 このような記法を統一したものをUMLという
