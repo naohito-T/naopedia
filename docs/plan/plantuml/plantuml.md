@@ -17,7 +17,7 @@
 PlantUMLは**DSL（ドメイン特化言語）**でUMLの図を描く
 
 ## VS Codeでの見方
-
+ay
 `Option + D`で見ることができる。
 
 ## PlantUML 必用なもの
