@@ -6,6 +6,19 @@
 アプリケーションをユーザに公開する場合、それがGUIであってもインターフェイスが必要になる。
 Webアプリケーションを公開する場合にはWeb APIを利用するのが一般的であり、AWSもAPIをフルマネージドで活用するためのAPI Gatewayを提供している。
 
+## API Gatewayの種類
+[参考URL](https://zenn.dev/marokanatani/articles/aws_api_gateway_behavior_go_around)
+
+2種類ある。
+REST API（v1）やHTTP API（v2）
+※HTTP APIの方が後発で機能が少ない分、高速かつ料金が安い。
+
+## Serverless Frameworkを使用する場合
+[API GatewayでServerless Frameworkを使用する場合の注意点](https://zenn.dev/marokanatani/articles/aws_api_gateway_behavior_go_around)
+Serverless Frameworkを使用する場合
+REST APIを使用する場合はhttp
+HTTP APIを使用する場合はhttpApiを設定する。
+
 ## そもそもAPIとは?
 
 アプリケーションが呼び出せば、予期した結果を返されるような仕組み。
@@ -47,3 +60,4 @@ API Gatewayの前でCloudFront Distributionを使用する理由
 - セキュリティを強化する
 - キャッシング動作を制御する
 - APIのTLS設定を制御する。
+

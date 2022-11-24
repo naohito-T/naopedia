@@ -101,6 +101,7 @@ paths:
 [参考URL](https://qiita.com/shigeru10/items/8f20fafd04f7901da939)
 
 componentsはpaths等から使えるコンポーネントを書く（別フィールドから`$ref`で参照する。）
+componentsを使うと記述量が減る、APIのSchemaとして登録されるのでAPI利用者によりわかりやすく表記されr。
 
 - schemas
 UserやProduct等のモデル
@@ -124,17 +125,33 @@ path : パス
 body : ボディー
 
 
-
-
 API定義で**再利用可能なオブジェクト**を定義できる。
+
+## allOf
+
+allOfはスキーマを合わせるときに使用します。下記の例はMessagesのcomponentとWebhooksのcomponentを合わせるという意味になります。
+```yml
+allOf:
+    - $ref: '#/components/schemas/Messages'
+    - $ref: '#/components/schemas/Webhooks'
+```
+
+## oneOf
+
+oneOfはどちらかが適用されるという意味で、選択肢を表したい時に便利です。
+```yml
+allOf:
+    - $ref: '#/components/schemas/Messages'
+    - $ref: '#/components/schemas/Webhooks'
+```
 
 ## Tips
 
 - Redoc
 [参考URL](https://qiita.com/rhirabay/items/59c134aa052dbc4b982b)
-
 - vscodeプラグインオススメ一覧
 [参考URL](https://zenn.dev/s_t_pool/articles/954dfe51b950c18d08e9)
-
 - descriptionを改行したい
 description: の後に "|"を入れることで、それ以降の文章に空白文字があった場合、改行として認識してくれる。
+- 作成したopenapiを公開する（できるの？）
+[swaggerhubを使ってAPI作成後、公開まで](https://qiita.com/koki-iwaizumi/items/9235fb69f2773c95f21b)

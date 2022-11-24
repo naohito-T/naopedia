@@ -27,6 +27,56 @@ AWSをプロバイダーとしてNode.jsでサービスを開設する場合は�
 一覧
 [リファレンス](https://serverless.co.jp/blog/25/)
 
+---
+
+## serverless初心者講座
+[流れからわかりやすい](https://tech-broccoli.life/articles/engineer/sls-environment/)
+
+## serverless 初期化コマンド
+
+選択できる
+- 実行フォルダー直下にファイル群を作成するか（`-p`をつける）
+- フォルダーの中にまとめた状態で作成するか（`-p`をつけない）
+
+## 初期化コマンド終了後
+
+serverlessのパッケージが存在していないため以下のコマンドを実行する。
+
+`yarn` or ` yarn add serverless`
+
+
+## serverlessが実行できることの確認
+
+`$ sls create`をした時点で、エンドポイントを叩くとサンプルのJSONが返ってくる参考用の`helloメソッド`が用意されています
+
+- localのメソッドを試す
+localのメソッドを試すには`$ sls invoke`コマンドを使用します。
+```sh
+# ローカルのsls invokeを使い hello メソッドを試す
+$ npx sls invoke local --function hello
+or
+# --function は -f と省略する事が可能
+$ npx sls invoke local -f hello
+```
+
+- deployされたメソッドを試す
+デプロイしたものは`$ sls invoke hello`とすればOK！
+
+
+## serverless invoke
+
+Serverless Frameworkで作成するメソッドは、
+
+- エンドポイントを叩く
+- cronで決めた時間に実行する
+等、何かしらトリガーがある。そのため
+`$ sls invoke`はそれらのメソッドをすぐに実行し試す事ができる。
+※**ローカルだけではなくデプロイしたもの**も実行できる
+デプロイしたものは`$ sls invoke hello`とすればOK！
+
+
+---
+
 ## serverless.yml
 
 トップに関してはセクションという。

@@ -17,11 +17,8 @@
   - EC2にSSHして手で直接設定を触り、その設定変更の記録を残し忘れ、EC2再作成時永遠にその設定が失われる…などというよくある事故を防げる
 
 
-
 ## Lambdaが台頭した理由
 [Lambdaが台頭した理由](https://service.plan-b.co.jp/blog/tech/30863/)
-
-
 [AWSのLambdaを色々暴く](https://qiita.com/Keisuke69/items/9951a93fd711360a61c5)
 
 >業務で使うサーバーが、いつの間にかAWSになってから、毎日AWSを業務で利用しています。 AWSには、沢山のサービスがありますが、私のお気に入りはAWS Lambdaです。
@@ -136,7 +133,21 @@ cloudfrontのエッジロケーションからコードを実行するLambda関�
 コードをLambdaにアップロードするだけで自動的にコードの実行やスケーリングが行われる。
 そのためLambda@EdgeはLambdaとcloudfrontから成り立つ。
 
+## Lambdaをexpressでdeployする
+[参考URL](https://dev.classmethod.jp/articles/vendia-serverless-express/)
 
+`@vendia/serverless-express`を使用する。
+APIGateway+Lambda上でExpressを動かせるというライブラリ。
+※昔はaws-serverless-expressというパッケージがあってこちらが使われていた認識なのですが、@vendia/serverless-expressがその後継という形。
+
+>この手法のメリットとは
+- 1つのLambda関数だけを用いた構成だと、Lambda関数が1つであるためデプロイの時間を短くすることができるというメリット
+- 通常のだるさを解消
+だるさはこれ→複数のAPIを作るために1つのLambda関数内で、httpメソッド（GET,POST,PUT,DELETE）ごとに条件分岐を行い、さらにURLごとに条件分岐する必要があります。
+
+>この手法のデメリット
+
+>- 気になる点を挙げるとすれば、王道のAPIgw+Lambda Wayとはいえず、ややHackyな手法ではあると思います。ExpressのようなWeb Application Frameworkを使うならECSやAppRunnerを使う方が素直な感じはします。それでもECSなどを使う場合と比べてLambdaにはゼロスケール1できるという強みがあるので、存外悪くない手法だと思います。
 
 
 ---
