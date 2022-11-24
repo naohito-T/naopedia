@@ -30,6 +30,7 @@
     "demoapp",
     "dockerignore",
     "envrc",
+    "esbuild",
     "Etag",
     "Flexbox",
     "Funcs",
