@@ -10,6 +10,22 @@ result型は確かにいいけど可読性がいいかと言われたら違う�
 そのためこれが一番セオリーかも
 [セオリーなerrorハンドリング](https://qiita.com/shibukawa/items/ffe7264ecff78f55b296)
 
+### Uncaught (in promise) 
+[リファレンス](https://developer.mozilla.org/ja/docs/Web/API/Window/unhandledrejection_event)
+
+以下の場合が起こる。そしてブラウザでハンドリングができる。
+```ts
+window.addEventListener('unhandledrejection', function(event) {
+  // イベントオブジェクトは2つの特別なプロパティを持っています:
+  alert(event.promise); // [object Promise] - エラーを生成した promise
+  alert(event.reason); // Error: Whoops! - 未処理のエラーオブジェクト
+});
+
+new Promise(function() {
+  throw new Error("Whoops!");
+}); // エラーを処理する catch がない
+```
+
 ## TypeScriptのクラスの変な問題
 
 クラス === オブジェクトだからか

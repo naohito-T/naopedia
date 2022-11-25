@@ -1,6 +1,7 @@
 # JWT(JSON Web Token) : ジョット
-
 [参考URL](https://techblog.yahoo.co.jp/advent-calendar-2017/jwt/)
+[JWTハンドブック(今度読む)](https://assets.ctfassets.net/2ntc334xpx65/5HColfm15cUhMmDQnupNzd/30d5913d94e79462043f6d8e3f557351/jwt-handbook-jp.pdf)
+
 
 ## JWTとは
 
