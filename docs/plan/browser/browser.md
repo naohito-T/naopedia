@@ -9,8 +9,6 @@
 JSは基本的にブラウザのメインスレッド（UIスレッドとも呼ばれる）で実行されるため。
 メインスレッドは表示の更新といったUIに関する処理も行なっているためメインスレッドが他の処理で占有されると表示が更新されなくなりフリーズしたようになる。
 
-
-
 ## ブラウザにデータを保存する他の技術
 
 |         | sessionStorage | localStorage | cookie |
@@ -67,5 +65,7 @@ express-sessionはCookieにセッションIDのみを保存して、セッショ
 デフォルトでのブラウザ挙動
 >ブラウザのhistory entryに格納されるstateにはscroll position dataというものがあり、「scroll restoration modeがautoならscroll position dataをもとにuser agentはスクロール位置を復元することができる」とされています。scroll restoration modeはhistory.scrollRestoration にauto(初期値)かmanualを代入することで設定できます。
 
+## リモートVPSでe2eテストをする。
+[参考URL](https://dreamerdream.hateblo.jp/entry/2019/04/24/170000)
 
-
+画面のないVPSサーバーでSeleniumを使ってChromeブラウザを操作してみる

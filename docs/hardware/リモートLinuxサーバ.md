@@ -45,3 +45,26 @@ $ hostname -I
 3. 接続（PCからリモートのDocker確認）
 
 nc -vz 18.181.164.122 3000
+
+---
+## VPSでブラウザを開く
+[参考URL](https://www.kagoya.jp/howto/cloud/vps/ubuntu_gui/)
+ホストマシンのメモリ枯渇が腹たつため対応。
+
+### 前提
+
+CUIと同じようにTera Termなどのターミナルエミュレーターから接続しても、GUIでの画面表示はできません。
+表示にはリモート接続の設定が必要です。
+ご自身の手の届く範囲にサーバーがあり、サーバーにモニターを接続すればGUIの画面が確認できます。
+VPSではそれができないため最初に用意する必要がある。
+
+- リモートデスクトップを受け付けるライブラリをインストールする
+Windows OSやmacOSには「リモートデスクトップ接続」機能があり、これを使って接続する方法があります。リモートデスクトップ接続でUbuntuにGUIでログインできるようにするには`xrdp`をインストールしておく必要があります。インストール方法は以下の通りです。
+
+```sh
+apt update
+apt upgrade
+apt -y install xrdp tigervnc-standalone-server
+systemctl enable xrdp
+```
+
