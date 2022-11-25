@@ -35,6 +35,17 @@ JWTでは
 
 <ヘッダー>.<ペイロード>.<署名>
 
+## JWTのClaimについて
+[参考URL](https://kamichidu.github.io/post/2017/01/24-about-json-web-token/)
+
+JWTで表現されるJSONオブジェクトはClaims Set（Claimの集合）と呼ばれます。 
+ClaimとはJSONのkey, valueの一対を意味します。
+
+## exp
+
+- 期限を無期限にする
+JWT内に存在する場合にのみ、`exp`フィールドを検証します。JWTにこのフィールドが含まれていない場合、トークンは無期限に有効とみなされます。
+
 ### ヘッダー
 
 ヘッダーはJWTの署名検証を行うために必要な情報を格納するためのパートとなっている
