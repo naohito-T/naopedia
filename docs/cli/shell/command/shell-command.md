@@ -162,6 +162,9 @@ json読み込みは`@`をつけないとファイルを読み込んでくれな�
 $ lsof -i -P | grep "LISTEN"
 ```
 
+## grepコマンド
+[参考URL](https://tech-blog.rakus.co.jp/entry/20220912/grep)
+
 ## ss(socket statistics)
 
 netstatに代わるLinux標準のネットワーク状態確認コマンド。

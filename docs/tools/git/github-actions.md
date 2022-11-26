@@ -14,7 +14,6 @@
 ## GitHub Actions 料金
 
 ※前提としてプライベートリポジトリが料金かかる。パブリックは無料。
-
 OSによって料金が変わる。
 Linuxは1分あたり0.008ドルと安価
 Windowsは0.016ドル（2倍）
@@ -30,8 +29,7 @@ macOSは0.08ドル（10倍）という価格
 ## 高速化
 
 CI/CDのビルドでは、リポジトリが依存するパッケージのダウンロードが原因でビルド時間が長くなってしまうことがある。
-理由として、近年のCI/CDではビルドごとに完全にクリーンな実行環境が用意され、前回のビルドでダウンロードしたファイルが持ち越されないため
-
+理由として、近年のCI/CDではビルドごとに完全にクリーンな実行環境が用意され、前回のビルドでダウンロードしたファイルが持ち越されないため。
 このため、CI/CDが提供するキャッシュ機能を用いて、異なるビルド間でダウンロードしたパッケージを使い回して高速化することがよくある。
 GitHub Actionsでもキャッシュ機能が提供されている。
 
@@ -776,3 +774,24 @@ work
 ## 作業ディレクトリ(default)
 
 [参考URL](https://www.bioerrorlog.work/entry/github-actions-default-workspace)
+
+## 重複したStepを分ける 'Composite Run Step'
+[参考URL](https://dev.classmethod.jp/articles/composite-run-step-with-private-repos/)
+[usesも使えるようになった](https://dev.classmethod.jp/articles/using-uses-on-composite-steps/)
+
+public & privateどっちもできる。
+
+注意点
+>checkout actionはcompositeに含めないようにします。checkoutすることでworkflowやcomposite run stepsのファイルがダウンロードされるため、composite stepのファイルが見つからずにエラーとなります。
+
+現時点でできないこと
+[参考URL](https://blog.beachside.dev/entry/2021/09/24/220000)
+
+>現時点では、steps の中で run を使う際は必ず shell を指定する必要があります。defaults の設定はできないので毎回書くのはちょっと面倒と感じたり...
+>以下のような | を使った multi line でのコマンドも実行もできないってのも注意ですね。
+```yml
+# "|" を使うと syntax error になる
+run: |
+  echo hello
+  echo world
+```
