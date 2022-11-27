@@ -224,7 +224,8 @@ Expires
 
 
 ## SWR(Stale-While-Revalidate)
-[Stale-While-Revalidate ヘッダによるブラウザキャッシュの非同期更新](https://blog.jxck.io/entries/2016-04-16/stale-while-revalidate.html)
+[Stale-While-Revalidate ヘッダによるブラウザキャッシュの非同期更新(これはすごい)](https://blog.jxck.io/entries/2016-04-16/stale-while-revalidate.html)
+[Stale-While-Revalidateに関するメモ](https://zenn.dev/dadayama/scraps/fab5d32fdbd87b)
 
 HTTP RFC 5861で提唱された、SWRというキャッシュ無効化戦略
 

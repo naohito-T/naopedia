@@ -26,9 +26,13 @@ RDB & NoSQLなどDB関連
   1. 外部キー制約をつける
   2. ユニークキー制約をつける
 
-## 設計ツール
+## Table Entity関係を書く
 
-ER図を書いていくことになる。
+ER図を書いていくことになる（デファクトスタンダード）
+
+## SQL設計
+[DB・テーブル設計のプラクティス](https://neos21.net/tech/design/db-table-practices.html#%E3%83%80%E3%83%9F%E3%83%BC%E3%83%87%E3%83%BC%E3%82%BF)
+[「SQLアンチパターン」を避けるためのチェックリスト①（DB論理設計編）](https://www.ketancho.net/entry/2018/03/07/080000)
 
 
 ## 触る時に考えること

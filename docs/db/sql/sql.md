@@ -1,6 +1,22 @@
-# sql
+# SQL
 
 SQLの普遍的なものについて記載していく。
+
+## チューニング
+[WebLogic Server参照から学ぶ](https://docs.oracle.com/cd/F25597_01/document/products/wls/docs92/perform/topten.html#wp1132669)
+
+項目
+- プール サイズのチューニング
+- プリペアド ステートメント キャッシュの使用
+- ロギング ラスト リソースの最適化の使用
+- 接続バックログのバッファリングのチューニング
+- チャンク サイズのチューニング
+- Optimistic または Read-only 同時方式の使用
+- ローカル インタフェースの使用
+- eager-relationship-caching の使用
+- HTTP セッションのチューニング
+- メッセージング アプリケーションのチューニング
+ 
 
 ## 生クエリ
 
