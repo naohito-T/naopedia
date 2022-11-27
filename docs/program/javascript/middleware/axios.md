@@ -1,21 +1,15 @@
 # axios
+[リファレンス](https://axios-http.com/docs/intro)
 
 ## axios とは
 
-JS の HTTP 通信 API のデファクトスタンダード
-axios は Promise ベースの HTTP Client ライブラリで GET や POST の HTTP リクエストを使って
-サーバからデータの取得・講師を行うライブラリ
-
-> async, await を利用した場合は上記の基本書式と記述方法が変わり、try,catch を利用します。
-
-axios は Browser・Node.js の両方で利用可能な Promise ベースの HTTP クライアント
-
+axiosは`Browser・Node.js`の両方で利用可能なPromiseベースのHTTPクライアント
 > Browser では XMLHttpRequest でリクエストします。
 > Node.js では HTTP モジュール でリクエストします。
 
 ## interceptors
 
-intercept は途中で捕まえるといった意味。
+interceptは途中で捕まえるといった意味。
 
 ```js
 import axios from "axios";

@@ -1,6 +1,11 @@
 # SPA
-
 [SPA/SSR/プリレンダリングの違い](https://qiita.com/amakawa_/items/e7d0720e1ab8632769bf)
+
+## SPAとは
+[参考URL](https://www.azusuki.com/spa-mpa/)
+
+通信パターンの単語とのこと（Webサイトの通信について）
+
 
 ## SPAで軽視されがちな部分
 

@@ -77,11 +77,47 @@ const user = connection.getRepository(User).find({
 ```
 
 ## entity
-
+[参考URL](https://qiita.com/haman0104/items/8cc69429b1d02aefed35)
+[参考URL(詳しい)](https://www.infoq.com/jp/articles/typescript-mysql/)
 entityはDBのテーブルと一対一で構成する。
 ※実際はClassで作成するため関連するmethodなども記載していいかは議論が生じる
 
-[参考URL](https://qiita.com/haman0104/items/8cc69429b1d02aefed35)
+## サポートしている関係
+
+TypeORMはエンティティ間のいくつかの種類の関係をサポートします。
+
+1対1
+1対多、多対1
+多対多
+
+## サポートしている関数についての関係
+
+関数
+
+表5で説明されているように、これらのそれぞれに対してデコレータと関数がtypeormで提供されています。
+説明
+
+OneToOne
+エンティティ間の1対1の関係を指定する
+
+JoinColumn
+1対1リレーションの所有側を指定する
+
+OneToMany
+エンティティ間の1対多の関係を指定する
+
+ManyToOne
+エンティティ間の多対1の関係を指定する
+
+ManyToMany
+エンティティ間の多対多の関係を指定する
+
+JoinTable
+多対多関係の所有側を指定する
+
+## 1対1
+
+
 
 ## @OneToOne(() => )
 
@@ -107,6 +143,7 @@ entityはDBのテーブルと一対一で構成する。
 
 ## Entityファイル
 [postgres entity 種類](https://github.com/typeorm/typeorm/blob/master/test/functional/database-schema/column-types/postgres/entity/Post.ts)
+[全entity](https://github.com/typeorm/typeorm/tree/master/test/functional/database-schema/column-types)
 
 `@Entity`をつけたものがテーブル対象になる。
 データベースの列の型は、使用したプロパティの型から推測

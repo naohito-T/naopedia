@@ -19,7 +19,15 @@ docker volume prune -f
 
 - Volume Trickでnode_modulesがバインドマウントされるのを回避する
 
-- VSCodeでnode_modulesを参照できない問題を解決する。
+- VS codeでnode_modulesを参照できない問題を解決する。
+
+## Docker imageの中身を見る(レイヤー)
+[参考URL](https://zenn.dev/kirisaki/scraps/89bf93bfd9a0d6)
+
+作成したイメージがどうなっているかを確認したいとき。
+レイヤーについて詳しく見れる。
+
+`docker save -o [name].tar [image id]`
 
 ## Docker mysql
 [参考URL](https://qiita.com/nanakenashi/items/180941699dc7ba9d0922)

@@ -1,6 +1,9 @@
 # Postgres
 [Postgres超入門](https://lets.postgresql.jp/)
 
+## postgres 運用コマンド
+[参考URL](https://amg-solution.jp/blog/23077#h2_1)
+
 ## テーブル一覧表示コマンド
 
 `\d`
