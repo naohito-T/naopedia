@@ -198,6 +198,14 @@ Lines
 
 ---
 
+## Jest typescript parserを変更する。
+[参考URL](https://miyauchi.dev/ja/posts/speeding-up-jest/)
+
+>Typescript コードをテストする際、多くの場合ts-jestやbabel-jestをトランスフォーマーとして使用していると思います。しかし、これらによってテストの速度が低下することがあります。
+そのため、以下のライブラリを使用する
+- esbuild
+- swc
+
 ## Tips
 
 [Node-fetchでのJest Test](https://jestjs.io/ja/docs/bypassing-module-mocks)
