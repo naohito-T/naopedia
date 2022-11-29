@@ -59,3 +59,28 @@ errorコードがレスポンスされてもレスポンスがあったってこ
 
 axios
 errorコードがレスポンスされるとthenが処理されない。
+
+## application/x-www-form-urlencoded形式でPOSTする
+
+application/x-www-form-urlencoded形式でPOSTする場合は、URLSearchParamsを使用する。
+
+```ts
+var params = new URLSearchParams()
+params.append('id', 123)
+params.append('name', 'Yamada Tarou')
+const res = await axios.post('/user', params)
+```
+
+## ファイルをアップロードする
+
+```ts
+var params = new FormData()
+var file = document.getElementById("file-input")
+
+params.append('file', file.files[0])
+const res = await axios.post(url, params, {
+    headers: {
+      'Content-Type': 'multipart/form-data'
+    }
+})
+```
