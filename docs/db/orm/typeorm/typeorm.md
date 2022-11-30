@@ -19,6 +19,7 @@ Node.jsやブラウザ上など、さまざまなプラットフォームをサ�
 [参考URL](https://blog.open.tokyo.jp/2022/05/04/upgrade-typeorm-0-3.html)
 [これが一番参考になるかも](https://blog.rhyztech.net/typeorm_0.2_to_0.3/)
 [参考URL](https://developer.mamezou-tech.com/blogs/2022/07/27/typeorm-with-typescript/)
+[参考URL](https://developer.mamezou-tech.com/blogs/2022/07/27/typeorm-with-typescript/#%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E3%81%AB%E6%8E%A5%E7%B6%9A%E3%81%99%E3%8%8B)
 
 ## config file
 
@@ -178,4 +179,17 @@ Promiseを使って任意のタイミングで遅延して読み込む。
 
 ## TypeORM の Bulk Insert と psql の \copy を比較する
 [参考URL](https://kazamori.jp/blogs/2021/07/21/typeorm-bulk-insert/)
+
+## TypeORMにおいて、`date` は `Date` でなく `string` にmapされるので気をつけましょう
+[参考URL](https://dev.to/e_ntyo/typeorm-date-date-string-map-3el1)
+
+
+
+
+
+
+
+
+
+
 

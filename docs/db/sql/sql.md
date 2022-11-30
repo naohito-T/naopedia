@@ -17,7 +17,6 @@ SQLの普遍的なものについて記載していく。
 - HTTP セッションのチューニング
 - メッセージング アプリケーションのチューニング
  
-
 ## 生クエリ
 
 生クエリとは、SQLそのままのこと、、？
@@ -43,7 +42,6 @@ ULID : UUIDの欠点をカバー。ULIDにはタイムスタンプが先頭に�
 2台のサーバ運用だと衝突する可能性がある（auto_increment）ため、
 
 ## UPSERT
-
 [参考URL](https://blog.officekoma.co.jp/2018/06/postgresqlupdateinsertupsert.html)
 
 データがあればUPDATE、なければINSERTができるやつ。
@@ -63,7 +61,6 @@ SQLにおけるDDLには、データベースやテーブル、ビューなど�
 プロジェクトのマイグレーションファイルで管理をするのはDDLまでじゃないの？
 
 ## マイグレーション
-
 [リファレンス](https://railsguides.jp/active_record_migrations.html)
 
 マイグレーションファイルはDBへの変更を記述しておくファイル
@@ -78,7 +75,6 @@ SQLにおけるDDLには、データベースやテーブル、ビューなど�
 バルクインサートとは、RDBのテーブルに行を追加する際、複数の行を1回のSQL文の実行で追加すること。
 データベースに対する命令のひとつでありたくさんのデータを、まとめて一気にデータベースに突っ込むときに使う命令
 大量のデータを1回の命令でデータベースに入れられる、insert文っぽいやつ
-
 
 ## SQLクエリのN+1問題
 [参考URL](https://qiita.com/muroya2355/items/d4eecbe722a8ddb2568b)
@@ -105,3 +101,6 @@ userIDs = [3, 1, 2, 1, 4]
 SELECT * FROM 利用者 WHERE ID IN (3, 1, 2, 1, 4);
 ```
 これで必要な書籍情報と、利用者情報がすべて取得できました。今後クエリは発行しません。
+
+## SQLアンチパターン
+[SQLアンチパターン勉強会　第三回：IDリクワイアド](https://qiita.com/ayayo/items/ba38853bca0c2cc2acb7)
