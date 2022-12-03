@@ -1,11 +1,11 @@
 # OAuth
-
 [一番分かりやすい OAuth の説明](https://qiita.com/TakahikoKawasaki/items/e37caf50776e00e733be)
+[passportの説明](https://www.passportjs.org/concepts/oauth2/?utm_source=github&utm_medium=referral&utm_campaign=passport-google-oauth20&utm_content=nav-concept)
 
-OAuth = 認可（権限の認可） : 行動やリソースの許可をすること
+OAuthはプロトコルのひとつ。
 
-**権限の認可を行うため**のオープンスタンダードである。
-
+OAuth = 認可（権限の認可:行動やリソースの許可をすること）
+**権限の認可を行う**オープンスタンダードライブラリ。
 まず、前提知識として、OAuthという『アクセストークンを発行する仕組み』がある。
 アクセストークンは、アプリケーションをAPI経由で操作するときなんかに使われる。
 例としてTwitterクライアントを自作するときにアクセストークンを使ったりします。
@@ -13,6 +13,14 @@ OAuth = 認可（権限の認可） : 行動やリソースの許可をするこ
 **このOAuthは前述のとおりアクセストークンを発行する仕組みであって、認証については定められていません。認証に必要な、ユーザー情報などの取得については決まっていない。**
 
 このOAuthを拡張し、ユーザー情報の取得についてなどを標準化したのがOpenID Connectが策定された。
+
+## OAuthにとってのGoogleやFacebook
+[参考URL](https://www.passportjs.org/concepts/oauth2/terminology/)
+
+OAuth 2.0の用語では、Facebookは承認サーバー(AS) です。
+認可サーバーの目的は、ユーザーを認証して認可を取得することです。承認は通常、ユーザーに同意を求めるプロンプトによって取得されます。承認が取得されると、承認サーバーはアプリケーションにアクセス トークンを発行します。
+
+
 
 ## OAuthがないと
 

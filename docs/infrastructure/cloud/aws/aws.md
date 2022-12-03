@@ -43,10 +43,22 @@ CLIは`default`という名前のプロファイルにある設定を使用す�
 
 ## AWS CDK
 [5分で理解するAWS CDK](https://qiita.com/Brutus/items/6c8d9bfaab7af53d154a)
-
+[リファレンス](https://aws.amazon.com/jp/cdk/faqs/)
 AWSクラウド開発キット (AWS CDK) は、最新のプログラミング言語を使用してクラウドインフラストラクチャをコードとして定義し、それを**AWS CloudFormation**を通じてデプロイするためのオープンソースのソフトウェア開発フレームワーク。
 
 TypeScriptおよびPythonなどのプログラミング言語を使用して、AWSリソースを定義し、Terraformの様にInfrastructure as Code（以降、IaC）を実現する手段として、クラウドインフラのリソースをプロビジョニングすることができる。
+
+`CDK（TypeScripts or Python ...etc → CloudFormation Template（JSON or YAML）`
+
+
+## AWS CDK と CloudFormationの関係
+
+`AWS CDK`は、最新のプログラミング言語のすべての機能を活用して`AWS Infrastructure as Code`を定義する、デベロッパー中心のツールキットと考えることができる。
+AWS CDKアプリケーションが実行されると、それらは**完全に形成されたCloudFormation JSON/YAMLテンプレートにコンパイル**され、プロビジョニング用にCloudFormationサービスへ送信される。
+AWS CDKはCloudFormationを利用しているため、CloudFormationの安全なデプロイ、自動ロールバック、ドリフト検出などのすべての利点がそのまま提供されます。
+
+## AWS CDK と AWS SAMの関係
+
 
 ## アベイラビリティゾーン(AZ):Availability Zone
 [参考URL](https://e-words.jp/w/%E3%82%A2%E3%83%99%E3%82%A4%E3%83%A9%E3%83%93%E3%83%AA%E3%83%86%E3%82%A3%E3%82%BE%E3%83%BC%E3%83%B3.html)
