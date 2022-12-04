@@ -163,7 +163,7 @@ Password:
 
 ## Homebrew 各OS ユーザーディレクトリインストール先
 
-Ubuntun
+Ubuntu
 `/home/ubuntu/.linuxbrew/bin/openssl`
 
 macOS

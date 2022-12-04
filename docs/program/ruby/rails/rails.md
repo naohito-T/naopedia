@@ -14,8 +14,18 @@ DHHが語っているシリーズ
 ---
 
 ## 最新Railsについて
-
 [Rails7変更点](https://qiita.com/jnchito/items/5c41a7031404c313da1f)
+
+## Rails apiモード
+[リファレンス（apiモードについて）](https://railsguides.jp/api_app.html)
+
+以下の3つが行われる。
+- 利用するミドルウェアを通常よりも絞り込んでアプリケーションを起動するよう設定する。特に、ブラウザ向けアプリケーションで有用なミドルウェア（cookiesのサポートなど）はデフォルトでは利用しません。
+
+- ApplicationControllerが通常のActionController::BaseではなくActionController::APIを継承します。ミドルウェアと同様、Action Controllerモジュールのうち、ブラウザ向けアプリケーションでしか使われないモジュールをすべて除外します。
+
+- ビュー、ヘルパー、アセットを生成しないようジェネレーターを設定します。
+
 
 ## Rails 7.0 Node
 
@@ -59,12 +69,9 @@ railsではJS/CSSなどを総称してassetsと呼んでいる
 >Rails 7.0 では、新たに4つのGemが登場します。これまでとは異なり、開発者はこれらのGemを自分のプロジェクトに合う組み合わせで採用することになります。
 
 
-
-
 ---
 
 ## Rails7にあとからフロントエンドに入れる
-
 [Rails7にあとからフロントエンドに入れる](https://qiita.com/kazutosato/items/1ae1cf0ec380a75d4dc4)
 
 2つのgem
@@ -1215,4 +1222,17 @@ routingにさまざまな制限を設定することができる。
 
 ## beforeバリデーションをやめてセッターメソッドにする。
 [参考URL](https://techracho.bpsinc.jp/hachi8833/2022_03_09/59016)
+
+## ridgepole
+[GitHub](https://github.com/ridgepole/ridgepole)
+[参考URL](https://qiita.com/tetz-akaneya/items/d10570aeb028fc603b86)
+
+Cookpadの菅原さんという方が作成したライブラリ
+ridgepoleはRailsのデフォルトのMigrationシステムの代わりになり得るライブラリ。
+
+### 従来のMigrationシステム
+
+>Railsのデフォルトのマイグレーションシステムを利用する場合、DBスキーマの変更を行う際にはその都度新たなMigrationファイルを作って、そこに現在の状態からの差分を記述するという使い方をすると思います。
+>この手法は広く使われていますが、差分を記述する度に新たにひとつファイルを作るのは大げさで面倒だと感じる人もいるでしょう。
+>今回紹介するridgepoleを利用すると、Migrationファイルをいちいち作らずとも単一のSchemafileというファイルを編集するだけでスキーマの変更が可能になります。
 

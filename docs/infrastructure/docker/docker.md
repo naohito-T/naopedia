@@ -472,8 +472,8 @@ services:
 
 - コンテナーイメージサイズが大きいことによる弊害
   イメージのビルド時間が長い
-  イメージを Docker Registory にプッシュする時間が長い
-  イメージを Pull する時間が長い
+  イメージを`Docker registory`にプッシュする時間が長い
+  イメージを`PULL`する時間が長い
 
 それらが起因して下記の弊害が起こる
 
@@ -510,7 +510,7 @@ RUN npm install -g gulp@3.9.1 \
 
 ---
 
-## dokcer Script関連
+## docker Script関連
 
 ## Docker コンテナーの動作に必要な設定を起動時に渡す
 
@@ -524,14 +524,11 @@ Dockerコンテナーを起動するタイミングで、コンテナーの動�
 ## docker-entrypoint.sh
 
 dockerで**初回起動時のみ特定の処理を行うヘルパースクリプト**
-docker run とか docker-compose up -d とかの 初回起動時のみ 処理したいことがある時はどうすればいいんだろう？
+`docker run`とか`docker-compose up -d`などの初回起動時のみ処理したいことがある場合に使用する。
+
 docker restart とか docker-compose restart とか systemctl restart docker の時には動いてほしくないんだ。
 やってみた結果 mariadb + zabbix で初回起動時のみ、構成用の .sql を流し込む。という動作ができるようになりました。
 
-## wait.sh
-
-dbの起動とかを待ってくれる。
->内容はただのシェルスクリプトでポートが LISTEN しているかをチェックしてくれます
 
 ---
 

@@ -50,6 +50,14 @@ TypeScriptおよびPythonなどのプログラミング言語を使用して、A
 
 `CDK（TypeScripts or Python ...etc → CloudFormation Template（JSON or YAML）`
 
+## CDK メリット
+
+`$ cdk deploy`コマンドが優秀
+CloudFormationで同じことをしようとしたら
+- 初回実行時は普通にデプロイ
+- 二度目以降は変更セットを作成して差分デプロイ（みたいなヘルパースクリプトが必要）
+- クロスリージョン参照ができる（cdk-remote-stackパッケージを使用）（us-east-1 で作らないといけないリソースがあっても安心）
+- S3 バケットの同期や CloudFront のキャッシュ削除までできる
 
 ## AWS CDK と CloudFormationの関係
 
@@ -59,6 +67,11 @@ AWS CDKはCloudFormationを利用しているため、CloudFormationの安全な
 
 ## AWS CDK と AWS SAMの関係
 
+>AWS サーバーレスアプリケーションモデル（SAM）と AWS CDK はどちらも`AWSインフラストラクチャをコード`として抽象化しているため、クラウドインフラストラクチャを簡単に定義できる。
+>AWS SAM は特にサーバーレスのユースケースとアーキテクチャに焦点を当てており、コンパクトで宣言型の JSON/YAMLテンプレートでインフラストラクチャを定義できる。
+>AWS CDK は、AWS のすべてのサービスを幅広くカバーしており、TypeScript、Python、C#、Java などの最新のプログラミング言語でクラウドインフラストラクチャを定義できます。AWS SAM と AWS CDK は、どちらも CloudFormation をインフラストラクチャスタックのプロビジョニングエンジンとして利用します。
+
+つまりAWS SAMはサーバーレスに特化している。
 
 ## アベイラビリティゾーン(AZ):Availability Zone
 [参考URL](https://e-words.jp/w/%E3%82%A2%E3%83%99%E3%82%A4%E3%83%A9%E3%83%93%E3%83%AA%E3%83%86%E3%82%A3%E3%82%BE%E3%83%BC%E3%83%B3.html)
