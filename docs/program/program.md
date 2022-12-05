@@ -337,3 +337,66 @@ num1 += 1 # 値の更新によって常に参照先が変わる。
 複数の作業が本当の意味で同時に進行している状態。
 これが本当の意味で複数
 
+## 型精査方法
+[参考URL](https://qiita.com/suin/items/52cf80021361168f6b0e)
+型の互換性判断について2種類ある。
+
+### 公称型 - 継承関係に着目する(nominal typing)
+
+公称型では型の互換性は**オブジェクト同士の継承関係(is-a関係)に着目して判断している。**
+JavaやPHPなどはこの型システムを採用している。
+>例えば、AnimalとUserの2つのクラスが、全く同じnameプロパティを持っていて、同じように取り扱えたとしても、お互いに継承関係が無い場合は、User型の変数にAnimalインスタンスを代入することも、その逆もできません。互換性がないわけです。逆に、CatクラスがAnimalを継承している場合、Animal型の変数にCatは代入可能です。CatはAnimalとの互換性があることになります。
+
+つまり同じ継承先（親）を継承していれば互換性があるとみなす。
+>あくまで、継承関係があるかが大事。「能力」よりも「血統」重視の型システムと言えそうです。
+
+- TypeScriptでも公称型を実現したい
+[参考URL](https://qiita.com/suin/items/ae9ed911ebab48c98835)
+
+1. 適当なプロパティを増やしてまったく同じ構造へならないようにする。
+```ts
+type Book = { name: string, hoge: any }
+type Person = { name: string, fuga: any }
+```
+
+2. シンボルを使用
+うっかり事故は防げない。そのためシンボルを使用する。
+```ts
+const bookNominality = Symbol()
+type Book = { name: string, [bookNominality]: any }
+const personNominality = Symbol()
+type Person = { name: string, [personNominality]: any }
+
+// 上で定義したシンボルは実行時には不要のため、コンパイル後のJSコードに残ら内容declareする
+declare const bookNominality: unique symbol
+type Book = { name: string, [bookNominality]: any }
+
+declare const personNominality: unique symbol
+type Person = { name: string, [personNominality]: any }
+```
+
+### 構造的部分型 - プロパティに着目する(structural sub typing)
+
+構造的部分型は継承関係ではなく**オブジェクトが持っているプロパティが互換しているかどうかに着目して判断している。**
+つまり構造が同じかどうか。
+TypeScriptやGolang?が採用している。
+
+>例えば、AnimalとUserの2つのクラスに、継承関係がなかったとしても、同じnameプロパティを持っていれば、User型の変数にAnimalを代入できます。その逆も可能です。つまり、お互いに互換性があるわけです。
+
+```ts
+class Animal {
+  public name: string = ''
+}
+
+class User {
+  public name: string = ''
+}
+
+let user: User = new User()
+let animal: Animal = new Animal()
+user = animal // OK
+animal = user // OK
+```
+
+>「血統」よりも「能力」重視なのが構造的部分型と言えそうです。
+

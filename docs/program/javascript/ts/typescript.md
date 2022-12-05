@@ -3,12 +3,15 @@
 [Type challenge](https://github.com/type-challenges/type-challenges)
 
 ## TypeScriptのエラー
+[セオリーなerrorハンドリング](https://qiita.com/shibukawa/items/ffe7264ecff78f55b296)
 
 >TypeScript には Java の throws のように関数が throw する例外を宣言する方法がないので、どのような例外が throw され得るかを知るにはコードを読むしかありません。
 
 result型は確かにいいけど可読性がいいかと言われたら違う。
-そのためこれが一番セオリーかも
-[セオリーなerrorハンドリング](https://qiita.com/shibukawa/items/ffe7264ecff78f55b296)
+そのためこれが一番セオリーかも。プロジェクトに導入した。
+
+## TypeScript型確認仕組み
+[参考URL](https://qiita.com/suin/items/52cf80021361168f6b0e)
 
 ### Uncaught (in promise) 
 [リファレンス](https://developer.mozilla.org/ja/docs/Web/API/Window/unhandledrejection_event)
