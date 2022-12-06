@@ -24,6 +24,7 @@ Datadogは監視に必要なひととおりの機能を備えたMonitoring Sass
 ### Datadog Application Performance Monitoring (APM) 
 [リファレンス](https://docs.datadoghq.com/ja/tracing/)
 [zozoでの導入](https://techblog.zozo.com/entry/fbz-serverless-with-datadog-apm)
+[クラメソでの説明](https://dev.classmethod.jp/articles/datadog-apm-released/)
 Webサービス、キュー、データベースがリクエスト、エラー、レイテンシーを監視するための標準のパフォーマンスダッシュボードを使用して、アプリケーションを詳細に可視化
 
 分散トレーシングが導入できる
@@ -59,6 +60,16 @@ Webサービス、キュー、データベースがリクエスト、エラー�
 - 余計なheaderを追加しない（Sentryだど追加するためCORSに引っかかる）
 
 ---
+
+## datadog エージェント
+
+ホストサーバにインストールする既存のエージェント
+Datadogの機能を使うために必要なもので、このエージェントを起動することで**Datadogのインフラ監視が可能となる**
+
+## Tracing Agent
+
+Datadog APMを使うために必要なエージェントで**アプリケーションへライブラリとして組み込む。**
+
 ## 導入事例
 
 CloudWatchで収集したメトリクスは、 DataDogのAWS Integration機能によってDataDogへ連携できるため、 CloudWatchでも積極的にメトリクスの収集を行う。

@@ -5,7 +5,7 @@
 ## 概要
 
 UbuntuはDebian GNU/Linuxを母体としたオペレーティングシステム。
-Linuxディストリビューションのひとつである。
+Linuxディストリビューションのひとつ。
 
 ## version確認方法
 
