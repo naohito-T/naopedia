@@ -1,5 +1,16 @@
 # figma
 
+## Figmaからコーディングする具体的な方法
+[参考URL](https://teru1213.com/coding-figma/)
+
+- 文字をコーディングする（以下プロパティが対応できる）
+font-family
+font-size
+font-weight
+line-height
+letter-spacing
+color
+
 ## ファイル構造が分かりにくい問題
 
 ```sh
