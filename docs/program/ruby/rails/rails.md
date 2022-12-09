@@ -507,10 +507,11 @@ Railsにはアプリのタイムゾーンとは別に、DBの読み書きに使�
 ※これはどのバックエンドでも言えることだろう
 
 ## 定数管理
+[参考URL](https://techblog.kyamanak.com/entry/2017/07/05/002655)
+[config](https://qiita.com/srockstyle/items/daed31a78c343e607822)
+[config/gem初期設定](http://vdeep.net/rubyonrails-config-gem)
 
 自分で作るパターンもあればgemを使うパターンもある。
-[参考URL](https://techblog.kyamanak.com/entry/2017/07/05/002655)
-
 gemを使わないパターンがあるとしたら以下がオーソドックス
 
 1. `application_controller.rb`で定数を管理する方法
@@ -520,12 +521,11 @@ gemを使わないパターンがあるとしたら以下がオーソドック�
 
 `config/initializers/constants.rb`のようにファイルを用意して、そこで定数を管理する方法のがいい。
 
-gemを使うパターン
+- gemを使うパターン
 [参考URL](https://qiita.com/sazumy/items/8d3b06d0d42af114a383)
 
-config
-Settingslogic
-あたりが有名であり`config`のがスターが多い。
+`config`が一番定番。
+Settingslogic→あまり使われていない。
 
 ---
 
@@ -1215,6 +1215,9 @@ class User < ApplicationRecord
   }
 end 
 ```
+
+## Ruby on Rails で lib ディレクトリの自作クラスを使用する
+[Ruby on Rails で lib ディレクトリの自作クラスを使用する](https://qiita.com/azusanakano/items/885fe3236977580b00c9)
 
 ## rails routing constraints
 

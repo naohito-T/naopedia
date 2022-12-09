@@ -964,10 +964,16 @@ Gemfileを作る
 `bundle install`
 bundle installはGemfile.lockがある場合、Gemfileではなく、Gemfile.lockを基に必要なGemをインストールします。
 
-option
+- option
+[参考URL](https://kojinjigyou.org/17707/)
 `bundle install`では`--without`オプションを使用することで不要なgroupをインストール対象から外すことが可能。
 
-[参考URL](https://kojinjigyou.org/17707/)
+## bundler version固定
+
+```sh
+bundler _バージョン_ コマンド
+bundler _2.2.15_ -v
+```
 
 ### bundle install
 
@@ -976,14 +982,21 @@ option
 例
 `~/.rbenv/versions/projectのrubyバージョン/lib/ruby/gems/projectのrubyバージョン（x.x.0）/gems`になります。
 
+rbenvのversion内にライブラリが入ってしまうためlocalのがいいと思う可能性がある。
+
 ---
 
 ## Gemfile
-
 [Gemfileの書き方](https://zenn.dev/lunarxlark/articles/gem-gemfile-format)
+[bundle instsall すると Gemfile.lock に差分が出てしまう時の対処法](https://web-y.dev/2021/11/13/ios-bundler-gemfile-lock/)
+
 常に最新のversionを指すよりも固定した方が安全。
+bundle installの際にbundleのversion差異が生まれる。
+
 
 ```Gemfile
+# [メジャー.マイナー.パッチ]
+
 source 'https://rubygems.org'
 
 # install時のlatest version
@@ -1086,14 +1099,11 @@ bundle exec rubocop --auto-gen-config
 ```
 
 ## rubocop version up作業
-
 [参考URL](https://qiita.com/tonluqclml/items/e41bceece33e000e0b53)
 
 ---
 
-
 ## アノテーションコメント
-
 [参考URL](https://qiita.com/tbpgr/items/1c046a877c6be4d89876)
 
 TODO
@@ -1112,9 +1122,15 @@ REVIEW
 レビューすべき箇所を記す
 
 ## ruby 記号の意味
-
 [参考URL](https://docs.ruby-lang.org/ja/latest/doc/symref.html)
 
 ## ヒアドキュメント
-
 [リフェレンス](https://docs.ruby-lang.org/ja/latest/doc/spec=2fliteral.html)
+
+## RubyにDI(Dependency Injection)がない理由
+[参考URL](https://qiita.com/iwsksky/items/9598f0b01a20846fe495)
+
+Rubyで実現するにはReflectionを使う。
+>Rubyが本来持つ言語機能で十分に疎結合・高凝集が達成できるので、DIコンテナを利用することは複雑さを増すだけになりかねない、ということらしい
+>RubyはJavaのような言語と比べて動的であり一度生成したインスタンスであっても変更が容易であり依存の変更も容易である。よって静的な言語において必要性があったDIコンテナのような仕組みを導入しても複雑性が増してしまうだけなのではないか、ということらしい。
+
