@@ -434,6 +434,8 @@ Rails5以降はデフォルトでpumaが導入されており、自ら導入す�
 
 [参考URL](https://qiita.com/eighty8/items/0288ab9c127ddb683315)
 
+---
+
 ## rails debug
 
 [参考URL](https://qiita.com/nishina555/items/e5886339d381db61b412)
@@ -460,6 +462,15 @@ puts new_external_id
 # price_1GwjUCI8OazorEAhtLlr784x
 # get fire again2
 ```
+
+## Rails logger
+[参考URL](https://qiita.com/NaokiIshimura/items/dbf072c313f36c2d9dcc)
+`puts` or `logger`がある。
+
+`puts`はどの環境（ENV）でも標準出力に吐かれる。
+`logger`はdevelopmentのみが標準出力される。
+
+
 
 ## -b 0.0.0.0
 
