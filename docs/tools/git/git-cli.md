@@ -3,7 +3,6 @@
 ghコマンドについて
 
 ## コマンド一覧
-
 [参考URL](https://qiita.com/ryo2132/items/2a29dd7b1627af064d7b)
 
 ## プルリク
@@ -47,8 +46,11 @@ $ gh pr reopen {<number> | <url> | <branch>} [flags]
 
 gistの作成も可能
 
-
 ## GitHub api
 
 GraphQLなどが使えるらしい
 [参考URL](https://zenn.dev/hankei6km/articles/manage-cache-in-github-actions)
+
+## GitHub actionsも叩ける
+
+`gh workflow run .github/workflows/concurrency-workflow.yaml`

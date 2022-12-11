@@ -30,6 +30,9 @@ RDB & NoSQLなどDB関連
 
 ER図を書いていくことになる（デファクトスタンダード）
 
+## table 命名規則
+[参考URL](https://qiita.com/tatsuya_1995/items/4b706fc40fe2f300bbc0)
+
 ## SQL設計
 [DB・テーブル設計のプラクティス](https://neos21.net/tech/design/db-table-practices.html#%E3%83%80%E3%83%9F%E3%83%BC%E3%83%87%E3%83%BC%E3%82%BF)
 [「SQLアンチパターン」を避けるためのチェックリスト①（DB論理設計編）](https://www.ketancho.net/entry/2018/03/07/080000)
@@ -116,3 +119,6 @@ Eager Loadingを使うと、クエリの発行回数を減らすことができ�
 ## N＋１問題とは？
 
 クエリの発行回数が過剰に増えて、サーバーサイドでタイムアウトエラーなどの不具合を起こしてしまう現象をいいます。
+
+## データベーススキーマ設計の完全ガイド
+[参考URL](https://www.integrate.io/jp/blog/complete-guide-to-database-schema-design-guide-ja/)
