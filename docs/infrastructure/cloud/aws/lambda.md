@@ -7,15 +7,16 @@
 
 - 対比概念はEC2を使った汎用的な構成とする。
   - 運用がシンプルになる
+
 - デプロイが、 Serverless Frameworkの仕組みをそのまま使えば良いため、車輪の再発明をせずに済む
 - インフラ観点のセキュリティアップデートが不要
   - LambdaのインフラはAWSが管理しているため
+
 - コストメリットがある
   - 繁忙期とそうでないときのアクセス数に大きな差があるALBでは、EC2などのコンピューティングリソースを確保しっぱなしの構成と比較して、コストを抑える事ができる。
 - Infrastructure as Codeを強制される
   - Gitを用いたインフラ構成のバージョニングが強制されるため、構成変更の履歴を追いやすい
   - EC2にSSHして手で直接設定を触り、その設定変更の記録を残し忘れ、EC2再作成時永遠にその設定が失われる…などというよくある事故を防げる
-
 
 ## Lambdaが台頭した理由
 [Lambdaが台頭した理由](https://service.plan-b.co.jp/blog/tech/30863/)
@@ -30,12 +31,43 @@
 
 [参考URL](https://qiita.com/zaburo/items/d78a0a4462007e57d5d8)
 
+## Lambda Layersにnode_modulesを含めないといけない理由
+
+Lambdaの実行環境には追加ライブラリが存在しないため、ライブラリを使用する際はデプロイパッケージにライブラリを含める必要がある（node_moduleなど）
+※だがwebpackなどでnode_modules内のライブラリを含めてバンドルすればnode_modulesなしでいける。
+
+---
+
+## Lambda Layers
+
+## Lambda Layersを作成(GUI版)
+[Lambda Layersでライブラリを共通化（GUI版）](https://qiita.com/t_okkan/items/394a15577bd1aad46ec3)
+
+Lambda Layersとは、複数のLambda関数で外部ライブラリやビジネスロジックを共有できる仕組み。
+使用するライブラリや共通のビジネスロジックをZIPアーカイブしLayerに追加することができる。
+
+### 制限
+
+1つのLambda関数では**5つのLayerのみ**使用することができる。
+また、Lambda関数とLayerの解凍後の合計サイズが250MB以下となる必要があり
+
+### Lambda Layersの配置先
+
+作成したLayerは、Lambdaの実行環境の`/opt`ディレクトリに展開されます。
+/optディレクトリ以下に、ランタイムの言語ごとのディレクトリが構成されているので、ランタイムに合わせてLayerを構築する必要があります。
+>Pythonを例にとると、Lambdaの実行環境は/opt/python/とディレクトリが構成されているため、作成するLayerは展開される構成が/opt/python/"作成したLayer"となる必要があります
+
+## Lambda Layersを作成(Serverless版)
+[](https://dev.classmethod.jp/articles/serverless-framework-node-modules-to-lambda-layers/)
+
+---
+
 ## Lambda コールドスタートとウォームスタート
 
 [これまでの常識は間違っていた？！Lambdaのコールドスタート対策にはメモリ割り当てを減らすという選択肢が有効に働く場面も](https://dev.classmethod.jp/articles/lambda-memory-alloc-and-coldstart/)
 
 グローバルな環境で変数を設定すると再利用される可能性がある。
-これはAWS Lambdaには関数実行時に実行環境として起動したコンテナーをある程度の期間再利用する動作仕様(ウォームスタート)があり、それに伴い/tmpディレクトリ上のデータも次回の処理で再利用される動作となる。
+これはAWS Lambdaには関数実行時に実行環境として起動したコンテナーをある程度の期間再利用する動作仕様（ウォームスタート）があり、それに伴い/tmpディレクトリ上のデータも次回の処理で再利用される動作となる。
 
 [参考URL](https://qiita.com/r-wakatsuki/items/1cdb9493749dbc36bed2)
 
@@ -75,13 +107,11 @@ Lambdaをパブリックに公開したり、シンプルな認証でも問題�
 
 ## 料金
 
-、毎月100万リクエストまで無料なんです。くり返します。毎月100万リクエストまで無料です！
-
-HTTPサーバとしてLambdaを実行させる場合はAPI Gatewayと連携する必要があります。 API Gatewayと連携するLambdaはAWSが用意しているサンプルを参考に、hello/main.goを以下のように実装します。
-
-
 [Lambdaでgoを実装](https://techblog.kiramex.com/entry/2020/01/23/173128)
 
+毎月100万リクエストまで無料なんです。くり返します。毎月100万リクエストまで無料です！
+**HTTPサーバとしてLambdaを実行させる場合はAPI Gatewayと連携する必要**があります。
+API Gatewayと連携するLambdaはAWSが用意しているサンプルを参考に、hello/main.goを以下のように実装します。
 
 ## 実行順序
 
@@ -89,7 +119,6 @@ Lambdaではexports.handler以下が実行されます。
 
 
 ## AWS Serverless Application Model (AWS SAM) とは
-
 [参考URL](https://docs.aws.amazon.com/ja_jp/serverless-application-model/latest/developerguide/what-is-sam.html)
 
 
@@ -98,7 +127,6 @@ Lambdaではexports.handler以下が実行されます。
 [参考URL](https://cloud5.jp/lambda_tmp_directory/)
 
 /tmpディレクトリ
-
 Lambdaの公式ドキュメントに、/tmpディレクトリに対して以下の記述がある。
 
 >各実行環境は、/tmp ディレクトリ内のディスク領域を 512 MB に提供します。ディレクトリのコンテンツは、実行環境が停止された際に維持され、複数の呼び出しに使用できる一時的なキャッシュを提供します。キャッシュに保存したデータが存在するかどうかを確認するための追加コードを追加できます。デプロイのサイズ制限の詳細については、「Lambda のクォータ」を参照してください。
@@ -111,9 +139,9 @@ Lambdaの実行環境にはAWS CLIはプリインストールされていない�
 
 ## LambdaでのAWS-SDK
 
->npm install で NPM パッケージをインストールするとき、実行時に必要なものは --save で、開発時のみ必要なものは --save-dev でインストールします。 この考え方からすると、AWS SDK (@aws-sdk) は --save オプションでインストールするのが自然なのですが、Lambda 関数用のプロジェクトではちょっと事情が違ってきます。 なぜなら、AWS の Lambda 実行環境にはデフォルトで AWS SDK がインストールされているからです。
-
-AWS SDK を --save と --save-dev のどちらでインストールすべきかは、そのプロジェクトでデプロイ用の ZIP パッケージをどう作成するかによっても変わってきます（パッケージングするときに @aws-sdk パッケージを含めないようにするのであれば、--save でインストールしても問題ない）。 よく分からないときは、ZIP パッケージの肥大化を防ぐため、AWS SDK はとりあえず --save-dev でインストールしておくのがよいと思います。
+LambdaにはAWS SDKがインストールされる。
+>npm install で NPM パッケージをインストールするとき、実行時に必要なものは --save で、開発時のみ必要なものは --save-dev でインストールします。 この考え方からすると、AWS SDK (@aws-sdk) は --save オプションでインストールするのが自然なのですが、Lambda 関数用のプロジェクトではちょっと事情が違ってきます。
+>なぜなら、AWS の Lambda 実行環境にはデフォルトで AWS SDK がインストールされているからです。
 
 ## Lambda テスト対象の考察
 
@@ -146,9 +174,7 @@ APIGateway+Lambda上でExpressを動かせるというライブラリ。
 だるさはこれ→複数のAPIを作るために1つのLambda関数内で、httpメソッド（GET,POST,PUT,DELETE）ごとに条件分岐を行い、さらにURLごとに条件分岐する必要があります。
 
 >この手法のデメリット
-
 >- 気になる点を挙げるとすれば、王道のAPIgw+Lambda Wayとはいえず、ややHackyな手法ではあると思います。ExpressのようなWeb Application Frameworkを使うならECSやAppRunnerを使う方が素直な感じはします。それでもECSなどを使う場合と比べてLambdaにはゼロスケール1できるという強みがあるので、存外悪くない手法だと思います。
-
 
 ---
 

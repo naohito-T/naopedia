@@ -48,13 +48,44 @@ Next.js 10.0.0から専用の画像コンポーネントが追加され、**配�
 3. ゼロコンフィグ
 webpack等の設定の必要がない。
 
-
 ---
 
 ## 仕組み
 
 Next.jsでは、**ブラウザへ送信する前にpre-Rendering**をおこなっている。
 [SSGとSSRの違い](https://blog.microcms.io/nextjs-sg-ssr/)
+
+### CSR
+
+### SSR
+
+### ISG（Incremental Static Generation）
+[Link と ISR が引き起こす Next.js の過負荷](https://zenn.dev/takepepe/articles/nextjs-isr-prefetch)
+
+ISG（Incremental Static Generation）は、Next.jsがオンデマンドでページを静的生成するアプローチです。「オンデマンドで静的生成する」ことで、ビルドタイムの静的生成をスキップできる。
+※膨大なDynamic routeを提供するページであっても静的生成を現実的なものにする。実際に**ページがリクエストされるまでそのページは静的生成されない**
+
+- 発動条件
+`getStaticPaths の fallback オプションを true か 'blocking' にすることで発動する`
+
+#### LinkとISGの関係
+
+実行されるタイミングは以下となる。
+
+1. ページが直叩きされたとき
+2. `Link`コンポーネントにマウスオーバーした時
+3. `Link`コンポーネントが画面内に入った時（prefetch={true}時）
+
+### ISR（Incremental Static Regeneration）
+
+ISGの「再生成が起こらない」課題を解決するアプローチ（データ陳腐化防止）
+`revalidate`オプションを付与することで、一度生成したページであっても、指定経過時間後に再生成を試む。
+`revalidate`オプションの付与で ISG は ISR になるが、あまりにも短い指定をするとタイトルのような過負荷を引き起こすことが懸念されます。
+
+#### LinkとISRの関係
+
+
+
 
 ### Next.js12での仕組み
 

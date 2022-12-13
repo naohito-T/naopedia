@@ -4,7 +4,7 @@
 
 ## linear-gradient()
 
-liner-gradient()はCSSの関数で、２つ以上の色の連続的な直線に沿った変化から構成される画像を生成する
+liner-gradient()はCSSの関数で、2つ以上の色の連続的な直線に沿った変化から構成される画像を生成する
 >結果は `<gradient>` データ型のオブジェクトであり、これは `<image>` の特殊型です。
 
 ```css
@@ -17,12 +17,6 @@ linear-gradient(45deg, blue, red);
    青から始まり赤で終わる */
 linear-gradient(to left top, blue, red);
 ```
-
-## @keyframes
-
-animationプロパティと@keyfreamsを使うとCSSだけでアニメーションの設定ができる。
-0%と100%の記述は必須ではない。
-
 
 ## scroll-snap
 
@@ -48,12 +42,23 @@ widthやheightで幅の指定をする
 
 - scroll-snap-align
 
-
 ## gap プロパティ
 
 [参考URL](https://ics.media/entry/210628/)
 
 CSSのgapプロパティは余白を指定できる新しい手法
-余白といえば、marginプロパティやpaddingプロパティを思い浮かべる方が多いが**CSS grid**やFlexboxでgapプロパティを使うと柔軟にレイアウトを組める
+余白といえば、marginプロパティやpaddingプロパティを思い浮かべる方が多いが**CSS grid**やFlexboxでgapプロパティを使うと柔軟にレイアウトを組める。
+
+## text-align:center;
+
+インライン要素を中央寄せする。
+※親をインライン要素にすると中央寄せできなくなる。
+
+## margin: auto;
+
+marginに指定するautoは**余白を自動で調整してくれるプロパティになる。**
+>基本的にブロック要素は指定がないと親要素の100%の大きさになります。
+>親要素と同じ大きさであれば、たとえmargin 0 autoを指定していたとしても左右中央寄せになりません。
+>そのため指定する際はwidthプロパティで横幅を指定するようにしましょう。
 
 ## trans

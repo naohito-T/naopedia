@@ -1,6 +1,6 @@
 # DB
 
-RDB & NoSQLなどDB関連
+RDB & NoSQLなどDB関連普遍知識をまとめる。
 
 [学習効率を上げるためのバックエンドのデータベース基礎知識](https://devsakaso.com/about-database-basics/)
 
