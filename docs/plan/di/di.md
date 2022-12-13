@@ -1,15 +1,4 @@
-# Object指向
-
-オブジェクト指向とは簡単に言うとクラス内に処理なども追加している
-**厳密にはJavaで言うDTOなどはオブジェクト指向とは言わない**
-
-[人類がオブジェクト指向を手に入れるまでの軌跡](https://qiita.com/hirokidaichi/items/591ad96ab12938878fe1)
-
-
-## DI/DIコンテナー
-
-- DI(Dependency Injection)とは  訳：依存性の注入
-
+## DI(Dependency Injection)とは  訳：依存性の注入
 [参考URL](https://qiita.com/hinom77/items/1d7a30ba5444454a21a8)
 
 Dependency（依存性と訳していた）部分は英語ではオブジェクトのこと。
@@ -22,8 +11,11 @@ Dependency（依存性と訳していた）部分は英語ではオブジェク�
 **クラスの単体テストをしやすくするため**
 
 DI：パターンのひとつ
-
 DIコンテナー：DI実現をお手伝いするためのフレームワーク
+
+## DIを使うメリット
+
+DIを使う理由は、結合度の低下、テスタビリティの向上が主な理由。
 
 ## DI 本当の使い所
 
@@ -53,4 +45,11 @@ DIを使った場合
 
 このDI機能はJUnitでも使えるためテスト駆動開発の場合でも導入ができる。
 
+## DIわかりやすい
+[参考URL(初歩的なもの)](https://zenn.dev/chida/articles/1f7df8f2beb6b6)
+[全体的に網羅している](https://zenn.dev/optimisuke/articles/82b4f9bb1dfcc6)
 
+
+## Decorator(デコレータ)
+
+デコレータを使うとクラスやメソッドの実行時に割り込んで処理を入れ込むことができる。
