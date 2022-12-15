@@ -176,6 +176,13 @@ APIGateway+Lambda上でExpressを動かせるというライブラリ。
 >この手法のデメリット
 >- 気になる点を挙げるとすれば、王道のAPIgw+Lambda Wayとはいえず、ややHackyな手法ではあると思います。ExpressのようなWeb Application Frameworkを使うならECSやAppRunnerを使う方が素直な感じはします。それでもECSなどを使う場合と比べてLambdaにはゼロスケール1できるという強みがあるので、存外悪くない手法だと思います。
 
+## Lambda容量制限
+[参考URL](https://zenn.dev/xxpiyomaruxx/articles/d7419ec1138d6a)
+
+以下である必要がある。
+- zip圧縮後50MB
+- zip圧縮前250MB
+
 ---
 
 ## Tips

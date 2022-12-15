@@ -1,14 +1,5 @@
 # serverless-framework
-
-
-## プラグインのインストール
-[リフェレンス](https://www.serverless.com/framework/docs/guides/plugins)
-
-プラグインはサービスごとにインストールされる。
-それらは**グローバルには適用されない。**
-
-サービスディレクトリで以下コマンド（serverless.ymlにもpluginが追記される）
-`$ serverless plugin install -n custom-serverless-plugin`
+[サーバーレスの使い方まとめ](https://serverless.co.jp/blog/25/)
 
 ## サービス
 
@@ -255,3 +246,44 @@ serverless deploy --domain=myapp.com
 # v3 以降
 serverless deploy --param="domain=myapp.com"
 ```
+
+## components-v1コマンド
+
+serverlessが提供するコマンド（3系のみ？）
+`npm install -g @serverless/cli`
+
+
+
+## serverless v2 v3違い
+[参考URL](https://blog.serverworks.co.jp/sls-v3-update-summary)
+
+- dotenv
+serverless-dotenv-pluginを使用して ${env:xxx} のような環境変数の参照ができなくなった。
+v3（2系後半のバージョンも含む）以降は、ネイティブでサポートされているため、useDotenv: true を設定することで参照できます。
+
+
+## プラグインのインストール
+[リフェレンス](https://www.serverless.com/framework/docs/guides/plugins)
+
+プラグインはサービスごとにインストールされる。
+それらは**グローバルには適用されない。**
+インストール方法は2つある。
+
+- サービスディレクトリで以下コマンド（serverless.ymlにもpluginが追記される）
+`$ serverless plugin install -n custom-serverless-plugin`
+
+- npm or yarnなどを使ってインストールする。
+`$ yarn add -D [plugin name]`
+そのあとは`serverless.yml`内のプラグインに自身で記載する。
+
+## serverlessでnode_modulesをレイヤー
+[参考URL](https://dev.classmethod.jp/articles/serverless-framework-node-modules-to-lambda-layers/)
+
+## serverlessとcomponent-v1コマンド
+
+serverless v2コマンドに関しては
+
+`serverless.yml`で`component: '@sls-next/serverless-component@3.7.0'`などを使用するとそっちのコンポーネントを使うことになるため`serverless package`など通常通りにはできず`component: '@sls-next/serverless-component@3.7.0'`に実装されていないと実行できない。
+ひとつのファイルにはひとつのコンポーネントのみが使用できる。
+
+理解としてはcomponentを使うと`serverless.yml`がそのコンポーネント仕様になる
