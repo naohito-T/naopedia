@@ -1,5 +1,4 @@
 # デザイン
-
 [世界中のサイトを評価しているやばいサイト](https://www.awwwards.com/)
 [コリスサイト(web design)](https://coliss.com/articles/build-websites/operation/css/css-tricks-dark-futuristic-web3-look.html)
 [モーション周期表を視覚化しておりそれを見れるもの](http://foxcodex.html.xdomain.jp/index.html)
@@ -7,21 +6,18 @@
 [clipを簡単に実装できる](https://bennettfeely.com/clippy/)
 
 ## デザインツール(ブラウザ)
-
 [CSSに関して](https://photoshopvip.net/123398)
 [htmlレイアウト](https://b-risk.jp/blog/2021/12/five-convenience-tool/)
 
 ## グリッドレイアウト ブラウザ作成ツール
-
 [参考URL](https://cssgrid-generator.netlify.app/)
 
 ## デザイン案を探すとき
-
 [Free Frontend（海外のサイトやばい）](https://freefrontend.com/css-timelines/)
 
 ## インタラクションデザインとは
-
 [参考URL](https://pantograph.co.jp/blog/uiux/interaction_design.html)
+
 Webサイトやアプリのデザインにおいて、インタラクションデザインという言葉が台頭するようになった。
 >インタラクション （interaction）とは、日本語で「相互作用」と訳されます
 >IT用語としてはuserが特定の操作を行ったとき、システムがその操作に応じた反応を返すことという意味で使用される
@@ -274,57 +270,26 @@ img {
 }
 ```
 
+## いまさら聞けないRetina対応のための「ピクセル」の話
+[いまさら聞けないRetina対応のための「ピクセル」の話](https://parashuto.com/rriver/development/pixel-related-info-for-coping-with-retina-displays)
 
-## アスペクト比とは
+最近発売される端末では
+高解像度で通常の3倍サイズの画像が必要になるCSSピクセル比が3倍という端末もあるん。
+レスポンシブWebデザインでさまざまな画面サイズに対応したウェブサイトを作っても、高解像度端末では画像がボヤけたものばかりになってしまい、ユーザー体験に悪影響を及ぼす可能性も出てきます。
 
-写真や映像の縦と横の比率を表したもの
-[参考URL](https://ocadweb.com/aspectratiotools?wh=w&file1=)
+### 2種類のピクセル
 
-### 16:9
 
-16:9は、デジタルテレビのハイビジョン映像で採用されている縦横比でワイドビジョンとも言われている。
-地デジでも用いられている。
-以前までYouTubeは4:3だが、現在は16:9のアスペクト比になっています。
-ニコニコ動画では4:3、16:9が標準になっています。
+### デバイス・ピクセル（ハードウェア・ピクセル）
 
-### 4:3 width:height
+device pixel / hardware pixel
+デバイス・端末がサポートする物理的な最小単位のピクセル。ハードウェア・ピクセルともいう。デバイス・ピクセルのほうが一般的に使われているようなので、この記事では統一してデバイス・ピクセルを使います。
 
-PCのディスプレイやアナログテレビの標準でテレビ放送の標準とされた縦横比。
+### CSSピクセル
 
-## imageのアスペクト比計算
+css pixel / reference pixel
+CSSで使う論理上のピクセル。デバイス・ピクセルが物理的なピクセルの数であるのに対し、CSSピクセルは論理上のピクセルの数です。デバイス・ピクセルとCSSピクセルの数が同じだったころは問題はありませんでした。しかし、Retinaディスプレイの登場で、それらが違う数になったため、デバイス・ピクセルとCSSピクセルを明確に分けて考える必要が出てきました。
 
-[参考URL](https://ocadweb.com/aspectratiotools)
 
-## パララックス
-
-[参考URL](https://www.casleyconsulting.co.jp/blog/engineer/283/)
-
-パララックスとは日本語で視差という意味。
-Webデザインの世界においては視差効果とも呼ばれ、画面をスクロールするといった動作の際に、要素を異なる速度で動かしたりすることであたかも立体による奥行きがあるように見せる。
-
-レベル1
-異なる速度ではなく、ただ背景を写す
-[レベル1](https://codepen.io/w_s-ta/pen/vWRBYg)
-
-レベル2
-背景も動かす。全面と速度は違う
-
-## ブレンドモード
-
-[参考URL](https://gokansoichiro.com/blog/css-mix-blend-mode/)
-
-ブレンドモードとは、背景色に合わせて上に重なるオブジェクトの色をさまざまな効果で表現させる方法。
-
-## そもそもブレンドモードとは
-
-[参考URL](https://ics.media/entry/7258/)
-
->ブレンドモードはクリエイティブな表現を作る上での基本機能のひとつです。Adobe PhotoshopやIllustrator、After Effects、Animateなどアドビ系のソフトで昔から搭載されていて、レイヤーを重ねたときにどのように重ねて表示するかの設定になります。ソフトによっては「ブレンドモード」や「描画モード」「モード」と異なる名称が使われていますが、機能としては同じものになります。本記事ではCSSの名称にあわせてブレンドモードと記載しています。
-
-## コピーライトについて
-
-[参考URL](https://www.evoworx.co.jp/blog/small-tags-in-copyright/)
-
-## テキスト省略について
-
-自分で操作して設定する部分など厳密にしすぎる必要はない箇所では省略もありかもしれない。
+例) iPhone 4のデバイス・ピクセルとCSSピクセルの違い
+たとえばiPhone 4のスクリーンの物理的なピクセル数であるデバイス・ピクセルは640 x 960pxですが、論理上のピクセル数であるCSSピクセルは320 x 480pxになります。そのため、iPhone 4の場合、1つのCSSピクセルを4つのデバイス・ピクセルを使って表現しています。

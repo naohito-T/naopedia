@@ -1,11 +1,8 @@
 # web application
-
-webアプリケーションでの機能や概念などをまとめていくディレクトリ
-
 [色々なサイトの作り方](https://commte.net/4266)
 [login 機能関連](./login.md)
 
-
+webアプリケーションでの機能や概念などをまとめていくディレクトリ
 ## web画面遷移の仕組み
 
 webブラウザでは`<a>`タグで示されたハイパーリンクをユーザがクリックすると画面がリンク先に繊維して、閲覧履歴にリンク先が追加される。ここでユーザが戻るボタンを押下すると、もとの画面に遷移して閲覧履歴から先のリンク先ページが削除される（pop）
@@ -27,8 +24,8 @@ webブラウザでは`<a>`タグで示されたハイパーリンクをユーザ
 インターネットに公開するというのはそういうこと
 
 [参考URL](https://qiita.com/shisama/items/be0e432711de359598ed)
-## hoverでのスマホ対応
 
+## hoverでのスマホ対応
 [参考URL](https://pengi-n.co.jp/blog/hover/)
 
 ## font-size問題
@@ -47,19 +44,17 @@ webブラウザでは`<a>`タグで示されたハイパーリンクをユーザ
 [参考2](https://coliss.com/articles/build-websites/operation/css/how-calc-works-by-ire.html)
 
 ## Grid Layout or Flexbox
-
 [参考URL](https://zero-plus.io/media/grid-layout/)
 
 Flexboxは縦・横いずれか一方向へのレイアウトに特化しているのに対し
 Grid Layoutは縦横自由なレイアウトが可能。
 ただしGrid Layoutはあらかじめレイアウトを決めて、そこに要素を割り当てていくので、**要素の増減に柔軟に対応しづらい側面**がある。
 ナビゲーションメニューのように要素が増減する可能性のあるセクションには向いていません。
-
 要素の増減が多いセクションや、単に横並びのレイアウトを実施したいといった場合にはFlexboxの使用を検討しましょう。
 
 ## Layout Shiftを起こさないようにする
 
-[参考URL](https://web.dev/i18n/ja/optimize-cls/)s
+[参考URL](https://web.dev/i18n/ja/optimize-cls/)
 
 ## スクロールできないようにする
 
@@ -76,9 +71,11 @@ flashは**直後のリクエスト**でのみ参照可能になるという特�
 ## 電話番号認証
 
 userが電話番号で送る。一意な認証コードを発行しSMSでユー ザに送信。送信した認証コードをユーザに入力してもらい認証を完了する。
-
 ユーザが電話番号を入力したらSMSを送信するのはtwilioなどを使用する。
 
 ## 公開・非公開
 
 公開・非公開のステータスを持つのではなく、ある時間を過ぎた時から公開するの方がいい。
+
+## コピーライトについて
+[参考URL](https://www.evoworx.co.jp/blog/small-tags-in-copyright/)
