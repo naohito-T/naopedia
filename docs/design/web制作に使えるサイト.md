@@ -21,3 +21,6 @@ Gridが視覚的に作成できる。
 ## css ジェネレーター
 
 [なんか色々ある](https://front-end-tools.com/)
+
+## モダンなサイトにする方法
+[参考URL](https://b-risk.jp/blog/2021/02/modern-web-tips/)

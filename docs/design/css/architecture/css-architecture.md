@@ -2,9 +2,9 @@
 [CSS設計における3大メソッド][https://www.risewill.co.jp/blog/archives/5652]
 
 CSSの設計についてまとめていく
-- OOCSS 
-- bem
-- SMACSS
+- OOCSS（Object Oriented CSS）:オーオーシーエスエス
+- BEM（Block-Element-Modifier）:ベム
+- SMACSS（Scalable and Modular Architecture for CSS）:スマックス
 
 # css 設計が大事な理由
 
@@ -18,7 +18,8 @@ CSSの設計についてまとめていく
 
 ## css 代表的設計
 
-・ BEM（Block-Element-Modifier）：ベム
+### BEM（Block-Element-Modifier）：ベム
+
 BEM では Block,Element, Modifier の 3 つに分離して考え、これらのみでクラスを命名することでクラス名を悩むことがなくなる。
 イメージとしてはコンポーネント指向と似ている感じがする。そのため React, Vue などには合うのではないだろうか
 
@@ -26,9 +27,6 @@ BEM では Block,Element, Modifier の 3 つに分離して考え、これらの
 クラス名が冗長になる。すべての要素にクラス名を付与するため HTML が読みにくくなる。
 Bootstrap は OOCSS を採用しており、BEM との相性がいいとは言えない。
 
-・ OOCSS（Object Oriented CSS）：オーオーシーエスエス
-
-・ SMACSS（Scalable and Modular Architecture for CSS）：スマックス
 
 - 命名規則が統一されていれば得るメリット
   ・クラスの命名が簡単になる
