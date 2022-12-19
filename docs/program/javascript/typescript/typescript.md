@@ -295,7 +295,7 @@ unknown型やany型、Union型の型の絞り込みを行える。
 
 ## keyof
 
-オブジェクト型のプロパティ名(key名)を取得する。
+オブジェクト型のプロパティ名（key名）を取得する。
 型に対して使用する。
 
 ## Null合体代入演算子(??=)
@@ -374,5 +374,12 @@ TypeScriptのアンビエント宣言 (Ambient Declarations) を行うと、既�
 ライブラリが知ることのできない（自身のプロジェクト固有の定義）型をライブラリのルートに注入し行き渡らせる手法
 interface宣言結合を利用したテクニックであり、さまざまなライブラリ型定義でも採用されている。
 
+## Conditional Types
+[Conditional Types](https://qiita.com/Quramy/items/b45711789605ef9f96de)
 
+TypeScript 2.8で導入された。
+型定義における条件分岐（三項演算子と同じ）
+```ts
+type MyCondition<T, U, X, Y> = T extends U ? X : Y;
+```
 
