@@ -17,7 +17,6 @@ const key1: Keys = 'name';
 const key2: Keys = 'email';
 ```
 
-## UndefinedToOptional
+## UndefinedなプロパティをOptionalに変換する
 
-undefinedなプロパティをOptionalに変更する型定義。
 仕組みとしてはObjectからundefinedを含まないプロパティを抽出したものと、undefinedを含むプロパティを抽出しPartialでラップしたものを合成することで実現。
