@@ -128,9 +128,12 @@ import myModule from './myModule';
 
 
 
-## TypeScript Index Signature を安全に使う
+## TypeScript インデックスシグネチャを安全に使う
+[インデックスシグネチャで特定の文字だけのIndexを扱う](https://blog.mitsuruog.info/2019/03/typescript-limited-set-of-index-signature)
 
-[TypeScriptのIndex Signature"{[key:string]:string}"で特定の文字だけのIndexを扱う](https://blog.mitsuruog.info/2019/03/typescript-limited-set-of-index-signature)
+
+動的に任意のプロパティを作成・使用したいときに使うかもしれないが、だいたいは`Map`などで代用ができる。
+
 
 ## TypeScript コンパイラ
 
