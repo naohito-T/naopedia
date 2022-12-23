@@ -140,3 +140,11 @@ clamp()を使うと記述が1行で済むうえに、可読性とデザインの
 
 水平・垂直方向に要素を動かしたい場合は、leftやtopで指定するよりも、xやyで移動させる方が滑らかに表示できます。CSSの**transformは小数点を考慮するから**です。
 用途にもよりますが、演出のために位置を変化させたい場合は、leftやtopよりもxとyで検討するといいでしょう。
+
+## transform 訳: 変化 変身
+[参考URL](https://web-camp.io/magazine/archives/87247)
+
+動きをつけるためのプロパティ。
+
+## transform 3D関連
+[参考URL](https://ics.media/entry/210519/)
