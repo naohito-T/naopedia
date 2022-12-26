@@ -432,3 +432,44 @@ JS,Ruby,Java,Pythonなどが該当
 ## DI(Dependency Injection)
 
 DIを使う理由は、結合度の低下・てスタビリティの向上が主な理由。
+
+---
+
+## キャスト
+[参考URL](https://qiita.com/querykuma/items/e7667adba1477eb7d3a5)
+
+### アップキャスト
+
+extends元の基底クラスの型にキャストすることをアップキャストと呼ぶ
+TypeScriptのアップキャストは明示しないでできる。
+
+```ts
+class A {
+  a = 1;
+}
+class A2 extends A {
+  a2 = 2;
+}
+var a2 = new A2;
+function testA(a: A) {
+  console.log(a.a); // 1を出力
+}
+testA(a2); // A2からAにアップキャスト
+```
+
+### ダウンキャスト
+
+ダウンキャストは明示する必要がある。明示しないとエラーになる。
+extends先の派生クラス型にキャストすることをダウンキャストと呼ぶ。
+※継承先がダウンとする。
+```ts
+class A {
+  a = 1;
+}
+
+class A2 extends A {
+  a2 = 2;
+}
+var a = new A;
+console.log((a as A2).a2); // as A2でダウンキャストを明示
+```

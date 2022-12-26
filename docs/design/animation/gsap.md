@@ -300,7 +300,6 @@ toggleActions: 'play pause resume reverse',
 スクロール位置が「開始」を超えて上に移動したときのコールバック（通常、トリガーが開始を超えて後方にスクロールされたとき）
 
 ## ScrollTrigger 独立型
-
 [参考URL](https://devsakaso.com/gsap-scrolltrigger-pin/)
 
 ```ts
@@ -317,3 +316,5 @@ pinはリンクさせる必要がないので大文字ScrollTriggerでcreateす�
 pinはposition: fixedが付与されることで、固定することができます。
 そして、triggerに指定した要素の高さを超えると動き出します。
 
+## ScrollTrigger プロパティ一覧
+[参考URL](https://qiita.com/heeroo_ymsw/items/ae22e4cee8c6a08ff852)
