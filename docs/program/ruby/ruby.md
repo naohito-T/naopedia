@@ -175,7 +175,7 @@ Rubyにおける定数は不変の値というよりグローバル変数に近�
 application.rbにもrequire "rails"などと言った記述がありますが、これだけでどうやってRailsのGemファイルを参照しているのか疑問だが、$LOAD_PATHにパスが設定されているため。
 
 ## ブロック構文
-
+[ブロック・Proc・lambdaを理解する](https://qiita.com/k-penguin-sato/items/7f98335ef631ea5ce7ad)
 Rubyに組み込まれたメソッドの中には、ブロック構文を使って処理や条件を指定可能なメソッドがある。
 
 Rubyで使えるメソッドの中には引数の他に、`do ~ end`または`{}`で囲まれたブロック構文を利用するメソッドが多い。
