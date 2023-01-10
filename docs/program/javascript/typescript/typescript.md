@@ -5,12 +5,11 @@
 ## TypeScriptのエラー
 [セオリーなerrorハンドリング](https://qiita.com/shibukawa/items/ffe7264ecff78f55b296)
 
->TypeScript には Java の throws のように関数が throw する例外を宣言する方法がないので、どのような例外が throw され得るかを知るにはコードを読むしかありません。
-
+>TypeScript には Java の throws のように**関数が throw する例外を宣言する方法がない**ので、どのような例外が throw され得るかを知るにはコードを読むしかありません。
 result型は確かにいいけど可読性がいいかと言われたら違う。
 そのためこれが一番セオリーかも。プロジェクトに導入した。
 
-## TypeScript型確認仕組み
+## TypeScriptは構造型
 [参考URL](https://qiita.com/suin/items/52cf80021361168f6b0e)
 
 ### Uncaught (in promise) 
@@ -29,36 +28,12 @@ new Promise(function() {
 }); // エラーを処理する catch がない
 ```
 
-## TypeScriptのクラスの変な問題
-
-クラス === オブジェクトだからか
-- クラスを生成した時に
-
-```ts
-class A {
-  private readonly a = 'a'
-  private all(hello: string) {
-    console.log(hello)
-  }
-}
-
-// privateも呼び出せる（これはおかしい）
-const result = new A()['a']
-// all methodに呼び出される。引数も渡せる。
-const result = new A()['all']('aa')
-console.log(result)
-```
-
 ## TSDoc
 [参考URL](https://blog.pokutuna.com/entry/tsdoc-tag-list)
 
 ## 参考 URL集
-
 [仕事ですぐに使える TypeScript](https://future-architect.github.io/typescript-guide/index.html)
-とある会社が作成したのかな？とてもよかった。
-高度な型定義の参考文献（基本）
 [高度な型定義](https://golang.hateblo.jp/entry/2021/03/15/202502?utm_source=feed)
-TS組み込み型定義（基本を読んでから）
 [URL](https://log.pocka.io/ja/posts/typescript-builtin-type-functions/)
 [TypeScript日本語ハンドブック](https://js.studio-kingdom.com/typescript/)
 [typescript 型付テスト](https://qiita.com/ryo2132/items/925b96838dd8cca7cebd)
@@ -70,26 +45,20 @@ TS組み込み型定義（基本を読んでから）
 [Three.js TypeScript webpack（これいつかやりたいな）](https://ics.media/entry/16329/)
 
 ## TypeScriptでグローバルな型定義ファイルを用意する
-
 [参考URL](https://zenn.dev/fagai/articles/7f76a3b3b5a415)
 
-## 自作の型定義ファイル .ts or d.ts？
+## .d.ts
+[型定義ファイル (.d.ts)](https://typescriptbook.jp/reference/declaration-file)
+`.d.ts`ファイルは`.ts`と`.js`ファイルの間をつなぐブリッジ。
 
-Typescriptで型定義用のファイルを作る際に、ライブラリが生成する型定義ファイルの名前にならって .d.ts と付けると、定義していない型が any として使えてしまい型チェック時にもエラーになりません。
+## 自作の型定義ファイル .ts or d.ts？
+[自作の型定義ファイルに ".d.ts" と付けない方がいい](https://techlab.q-co.jp/articles/41/)
+TypeScriptで型定義用のファイルを作る際に、ライブラリが生成する型定義ファイルの名前にならって`.d.ts`と付けると、定義していない型がanyとして使えてしまい型チェック時にもエラーになりません。
 よって`.ts`で宣言する。
 
-## import と default import 
+## named import と default import
 
-```ts
-// default import
-import myModule from './myModule';
-
-```
-
-
-## TypeScript error ハンドリング
-
-[参考URL](https://dev.classmethod.jp/articles/error-handling-practice-of-typescript/)
+named importだと呼び出し側で名前を変更することができなくなるため、基本named importの方がいい。
 
 ## import した時に、TypeScriptの型定義がない場合取れる対策
 
@@ -284,8 +253,10 @@ Type assertions（キャスト）Type assertionsを使うと、実際のデー�
 
 時間がある時まとめる
 [ユーザ定義のガード](https://terrblog.com/%e3%80%90typescript%e3%80%91%e5%9e%8b%e3%82%ac%e3%83%bc%e3%83%89%e3%81%a8%e5%9e%8b%e3%82%a2%e3%82%b5%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%81%a7unknown%e5%9e%8b%e3%82%92%e4%bd%bf%e3%81%84%e5%8b%9d/)
-
 [こっちのが参考になるのかも](https://qiita.com/suin/items/cda9af4f4f1c53c05c6f)
+
+## in演算子
+
 
 
 ## is演算子
@@ -318,16 +289,28 @@ console.log(pilot.name); //
 ---
 
 ## any vs unknown
-
-anyはmethodが使えるが、unknownはmethodが使えないため少しだけ保守性があがる。
 [参考URL](https://book.yyts.org/reference/statements/any-vs-unknown)
 
+anyはmethodが使えるが、unknownはmethodが使えないため少しだけ保守性があがる。
 
 ## !(エクスクラメーション/感嘆符: かんたんふ)
 
 プログラマがコンパイラに対して、この変数はundefinedやnullになることはありません、と教える記述。
 
-## トリプルスラッシュ・ディレクティブ
+## Mapped Types
+[参考URL](https://zenn.dev/qnighy/articles/dde3d980b5e386)
+
+
+
+
+## トリプルスラッシュ・ディレクティブMapped Typesの基本形は { [P in K]: T } です。 P は T の中で使える型変数です。このとき、
+
+Mapped Typesの基本形は`{ [P in K]: T }`。
+※PはTの中で使える型変数
+
+- PはこのMapped Typeの引数型 (parameter type)
+- KはこのMapped Typeの制約型 (constraint type)
+- TはこのMapped Typeのテンプレート型 (template type)
 
 ```ts
 /// <reference path="..." />
@@ -342,11 +325,9 @@ anyはmethodが使えるが、unknownはmethodが使えないため少しだけ�
 [参考URL](https://tech-1natsu.hatenablog.com/entry/2019/02/09/014218)
 
 ## TypeScript バリデーション種類
-
 [zod](https://zenn.dev/ynakamura/articles/65d58863563fbc)
 
 ## JSに型をつける
-
 [アンビエント宣言から既存ライブラリがJSしかない場合につける方法](https://maku.blog/p/s7wk5k3/)
 
 TypeScriptのアンビエント宣言 (Ambient Declarations) を行うと、既存のJavaScriptライブラリに型情報を付加することができる。
