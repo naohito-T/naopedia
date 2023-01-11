@@ -2,7 +2,7 @@
 
 * [Introduction](README.md)
 
-## 本文
+## Summary
 
 * [1. coding](coding/coding.md)
   * [1.1 algorithm](coding/algorithm/algorithm.md)
@@ -15,7 +15,7 @@
 * [2. program](program/program.md)
   * [2.1 C/C++](program/c/c_c++.md)
   * [2.2 Go](program/go/go.md)
-  * [2.3 JavaScript](program/javascript/js.md)
+  * [2.3 JavaScript](program/javascript/javascript.md)
     * [DOM](program/javascript/dom/dom.md)
     * [Canvas](program/javascript/canvas/canvas.md)
     * [TypeScript](program/javascript/ts/typescript.md)

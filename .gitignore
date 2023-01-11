@@ -2,16 +2,10 @@
 node_modules
 
 # dist
-dist
-
-# person
-docs/person
+_book
 
 # temp
 docs/temp
-
-# life
-docs/life
 
 # png
 images

@@ -1,5 +1,4 @@
 # Test
-
 [E2E Test導入で嬉しいこと](https://logmi.jp/tech/articles/323523)
 [メルペイのテスト方針](https://engineering.mercari.com/blog/entry/20211208-test-automation-policy-in-merpay-frontend/)
 [Test管理ツール(Excelとかで管理していたのをさらに管理する)](https://gift-tech.co.jp/articles/Qase/)
@@ -7,7 +6,6 @@
 [E2E テストを導入するのか](https://commerce-engineer.rakuten.careers/entry/tech/0031)
 
 ## Test ガントチャート
-
 ![ガンドチャート](image/test.png)
 
 ## Test フェーズ

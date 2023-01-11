@@ -1,0 +1,28 @@
+{
+  "name": "naopedia",
+  "version": "1.0.0",
+  "description": "## 知識の蓄え",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/naohito-T/naopedia.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/naohito-T/naopedia/issues"
+  },
+  "homepage": "https://github.com/naohito-T/naopedia#readme",
+  "scripts": {
+    "build": "honkit build",
+    "serve": "honkit serve"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "honkit": "^4.0.4"
+  }
+}
