@@ -12,22 +12,6 @@ result型は確かにいいけど可読性がいいかと言われたら違う�
 ## TypeScriptは構造型
 [参考URL](https://qiita.com/suin/items/52cf80021361168f6b0e)
 
-### Uncaught (in promise) 
-[リファレンス](https://developer.mozilla.org/ja/docs/Web/API/Window/unhandledrejection_event)
-
-以下の場合が起こる。そしてブラウザでハンドリングができる。
-```ts
-window.addEventListener('unhandledrejection', function(event) {
-  // イベントオブジェクトは2つの特別なプロパティを持っています:
-  alert(event.promise); // [object Promise] - エラーを生成した promise
-  alert(event.reason); // Error: Whoops! - 未処理のエラーオブジェクト
-});
-
-new Promise(function() {
-  throw new Error("Whoops!");
-}); // エラーを処理する catch がない
-```
-
 ## TSDoc
 [参考URL](https://blog.pokutuna.com/entry/tsdoc-tag-list)
 
@@ -67,8 +51,7 @@ named importだと呼び出し側で名前を変更することができなく�
 1. `npm install --save-dev @types/package-name` をためす
 2. 1がなければ、 declare module “package-name"; を含んだ .d.tsを自分で追加する
 
-## TypeScript <T>チートシート
-
+## TypeScript <T> を書くチートシート
 [参考URL](https://qiita.com/suin/items/03baa7cf7dd8e9a9f010)
 
 ## TypeScriptコンパイラについて
@@ -241,68 +224,6 @@ TypeScriptでゃnamespaceキーワードを使って名前空間を定義する�
 namespaceを使うと同じファイル内で階層化された名前空間を作ることができるが、あくまでその階層構造はグローバルに占有されている。
 一方モジュールの仕組みを使うと、ファイル単位で**名前空間のコンテキストを分けることができる**（大きなプロジェクトであっても、適切な単位でモジュールを分割している限り、名前の衝突は本格的に発生しない。）
 
----
-
-## タイプガード(Type Guard)
-
-[参考URL](https://qiita.com/propella/items/33433278497f290ceadb)
-
-Type assertions（キャスト）Type assertionsを使うと、実際のデータがどうであろうが強制的に型情報を書き換えてしまうため、有り難いTypeScriptの型チェックをすり抜けてしまう。**TypeScriptではType assertionを使う代わりに実行時型チェックを強制するType Guardという仕組みがある。**
-
-## undefinedなどを取り除く
-
-時間がある時まとめる
-[ユーザ定義のガード](https://terrblog.com/%e3%80%90typescript%e3%80%91%e5%9e%8b%e3%82%ac%e3%83%bc%e3%83%89%e3%81%a8%e5%9e%8b%e3%82%a2%e3%82%b5%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%81%a7unknown%e5%9e%8b%e3%82%92%e4%bd%bf%e3%81%84%e5%8b%9d/)
-[こっちのが参考になるのかも](https://qiita.com/suin/items/cda9af4f4f1c53c05c6f)
-
-## in演算子
-
-
-
-## is演算子
-
-[参考URL](https://www.wakuwakubank.com/posts/767-typescript-user-defined-type-guards/)
-
->「is演算子」について取り上げます。is演算子は、User-Defined Type Guards(ユーザ定義型ガード)と呼ばれる機能で使われて、型を絞り込みたいシーンで活用できます。
-
-unknown型やany型、Union型の型の絞り込みを行える。
-
-## keyof
-
-オブジェクト型のプロパティ名（key名）を取得する。
-型に対して使用する。
-
-## Null合体代入演算子(??=)
-
-[参考URL](https://zenn.dev/oreo2990/articles/3d780560c5e552)
-
-TypeScript4.0以降で使用可能。左辺がnullまたはundefinedの場合に代入する。
-※左辺がnullまたはundefined以外のfalsyな値の場合（''や0）代入されない
-
-```ts
-const pilot = { name: null };
-
-pilot.name ??= "shinji";
-console.log(pilot.name); //
-```
-
----
-
-## any vs unknown
-[参考URL](https://book.yyts.org/reference/statements/any-vs-unknown)
-
-anyはmethodが使えるが、unknownはmethodが使えないため少しだけ保守性があがる。
-
-## !(エクスクラメーション/感嘆符: かんたんふ)
-
-プログラマがコンパイラに対して、この変数はundefinedやnullになることはありません、と教える記述。
-
-## Mapped Types
-[参考URL](https://zenn.dev/qnighy/articles/dde3d980b5e386)
-
-
-
-
 ## トリプルスラッシュ・ディレクティブMapped Typesの基本形は { [P in K]: T } です。 P は T の中で使える型変数です。このとき、
 
 Mapped Typesの基本形は`{ [P in K]: T }`。
@@ -357,6 +278,109 @@ TypeScriptのアンビエント宣言 (Ambient Declarations) を行うと、既�
 
 ライブラリが知ることのできない（自身のプロジェクト固有の定義）型をライブラリのルートに注入し行き渡らせる手法
 interface宣言結合を利用したテクニックであり、さまざまなライブラリ型定義でも採用されている。
+
+
+### Uncaught (in promise) 
+[リファレンス](https://developer.mozilla.org/ja/docs/Web/API/Window/unhandledrejection_event)
+
+以下の場合が起こる。そしてブラウザでハンドリングができる。
+```ts
+window.addEventListener('unhandledrejection', function(event) {
+  // イベントオブジェクトは2つの特別なプロパティを持っています:
+  alert(event.promise); // [object Promise] - エラーを生成した promise
+  alert(event.reason); // Error: Whoops! - 未処理のエラーオブジェクト
+});
+
+new Promise(function() {
+  throw new Error("Whoops!");
+}); // エラーを処理する catch がない
+```
+
+---
+
+## タイプガード(Type Guard)
+
+[参考URL](https://qiita.com/propella/items/33433278497f290ceadb)
+
+Type assertions（キャスト）Type assertionsを使うと、実際のデータがどうであろうが強制的に型情報を書き換えてしまうため、有り難いTypeScriptの型チェックをすり抜けてしまう。**TypeScriptではType assertionを使う代わりに実行時型チェックを強制するType Guardという仕組みがある。**
+
+## undefinedなどを取り除く
+
+時間がある時まとめる
+[ユーザ定義のガード](https://terrblog.com/%e3%80%90typescript%e3%80%91%e5%9e%8b%e3%82%ac%e3%83%bc%e3%83%89%e3%81%a8%e5%9e%8b%e3%82%a2%e3%82%b5%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%81%a7unknown%e5%9e%8b%e3%82%92%e4%bd%bf%e3%81%84%e5%8b%9d/)
+[こっちのが参考になるのかも](https://qiita.com/suin/items/cda9af4f4f1c53c05c6f)
+
+## any vs unknown
+[参考URL](https://book.yyts.org/reference/statements/any-vs-unknown)
+
+anyはmethodが使えるが、unknownはmethodが使えないため少しだけ保守性があがる。
+
+## !(エクスクラメーション/感嘆符: かんたんふ)
+
+プログラマがコンパイラに対して、この変数はundefinedやnullになることはありません、と教える記述。
+
+---
+
+## 演算子
+
+### in演算子
+
+
+### is演算子
+
+[参考URL](https://www.wakuwakubank.com/posts/767-typescript-user-defined-type-guards/)
+
+>「is演算子」について取り上げます。is演算子は、User-Defined Type Guards(ユーザ定義型ガード)と呼ばれる機能で使われて、型を絞り込みたいシーンで活用できます。
+
+unknown型やany型、Union型の型の絞り込みを行える。
+
+## keyof演算子
+[参考URL](https://typescriptbook.jp/reference/type-reuse/keyof-type-operator)
+
+keyofはオブジェクト型からプロパティ名を型として返す型演算子です。
+たとえば、nameプロパティを持つ型に対して、keyofを使うと文字列リテラル型の"name"が得られます。
+
+```ts
+type Person = {
+  name: string;
+};
+type PersonKey = keyof Person; // type PersonKey = "name"
+```
+
+## Null合体代入演算子(??=)
+
+[参考URL](https://zenn.dev/oreo2990/articles/3d780560c5e552)
+
+TypeScript4.0以降で使用可能。左辺がnullまたはundefinedの場合に代入する。
+※左辺がnullまたはundefined以外のfalsyな値の場合（''や0）代入されない
+
+```ts
+const pilot = { name: null };
+
+pilot.name ??= "shinji";
+console.log(pilot.name); //
+```
+
+---
+
+## インデックス型 (index signature)
+[参考URL](https://typescriptbook.jp/reference/values-types-variables/object/index-signature)
+
+
+## Mapped Types
+[参考URL](https://zenn.dev/qnighy/articles/dde3d980b5e386)
+
+Mapped Typeとは、あるオブジェクトのプロパティ名を利用して新しい型を作り出す機能
+
+## Indexed Access Types 
+[参考URL](https://typescriptbook.jp/reference/type-reuse/indexed-access-types)
+
+TypeScriptのインデックスアクセス型(indexed access type)は、プロパティの型や配列要素の型を参照する方法を提供します。
+
+```ts
+type A = { foo: number };
+type Foo = A["foo"]; // type Foo = number
+```
 
 ## Conditional Types
 [Conditional Types](https://qiita.com/Quramy/items/b45711789605ef9f96de)
