@@ -48,7 +48,7 @@ jobs:
       # つまりHTMLからJSを読み込めない
       # これを回避するために.nojekyllファイルをoutディレクトリに作る
       - name: add nojekyll
-        run: touch ./out/.nojekyll
+        run: touch ./_book/.nojekyll
 
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
