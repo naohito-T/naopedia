@@ -9,8 +9,6 @@
 - UI状態の復元
 [参考URL](https://zenn.dev/akfm/articles/react-state-scope)
 
-
-
 ## 歴史
 
 NextJsバージョン > v12.0.1とSWCコンパイラを使用している。
@@ -237,12 +235,21 @@ Vercelが開発する、HTTP RFC 5861で提唱された、SWRというキャッ�
 簡単に言うと、最初は普通にデータを取得してキャッシュとしてセット、次に参照された時にいったんキャッシュを返し裏でまたフェッチして、フェッチが完了したらキャッシュを最新のものに置き換えるというキャッシュ戦略をよしなにやってくれる。
 
 
-## pages/apiとは
+## pages/apiとは(API Route)
 
 [参考URL](https://maku.blog/p/qcp2coz/)
 
 next.jsでは`pages/api`ディレクトリ以下にTypeScript (JavaScript) コードを配置するだけで、クライアントサイドJavaScriptから呼び出せるAPIを定義することができる。
 ※`pages/api`ディレクトリ以下の実装内容が**クライアントに見られてしまうことはない。**
+
+- サーバーレス関数として配置される
+
+### 注意
+[リファレンス](https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props)
+
+>サーバーからデータを取得したい場合にAPI ルートにアクセスしてから、その API ルートを呼び出したいと思うかもしれませんgetServerSideProps。getServerSidePropsこれは不要で非効率的な方法です。サーバー上で と API ルートの両方が実行されているために、余分なリクエストが行われることになるからです。
+
+とあるように`getServerSideProps`からAPI Routeへアクセスするのは冗長（同じNode.jsプロセス内のため）
 
 ## middleware
 
