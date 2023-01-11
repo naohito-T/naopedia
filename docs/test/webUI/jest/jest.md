@@ -1,10 +1,8 @@
 # Jest
-
 [参考URL](https://jestjs.io/ja/docs/configuration)
 [リファレンス](https://jestjs.io/ja/docs/25.x/tutorial-async)
 
 ## Jestテストの並行実行と逐次実行を理解する
-
 [Jest実行順](https://qiita.com/noriaki/items/5d800ea1813c465a0a11)
 
 - default
@@ -25,7 +23,6 @@ describeでブロック化されている場合は、describeに潜っていく�
 /licenses/ryushen-basic
 
 ## Jest 逆引き
-
 [Jest 逆引き](https://qiita.com/chimame/items/e97883fd46b67529d59f)
 
 ## マニュアルモック
@@ -33,6 +30,10 @@ describeでブロック化されている場合は、describeに潜っていく�
 マニュアルモックはモックデータを返す機能をスタブするために使用する。
 たとえば、ウェブサイトやデータベースのような外部リソースへアクセスする代わりに、偽のデータモックが欲しいと考える。
 これによりテストは高速（外部リソースへアクセスしないから）で信頼性の高いものになる。
+
+## JestでのTest Double
+
+Test Doubleの分類としてJestでは細かい分類はされておらず、基本的には`jest.mock` `jest.spyOn`を使う。
 
 ## Jestでの単体テストのネットワーク接続は？
 
@@ -209,12 +210,9 @@ Lines
 ## Tips
 
 [Node-fetchでのJest Test](https://jestjs.io/ja/docs/bypassing-module-mocks)
-
 - Jestのalias
 例として、tsconfig.jsonにaliasが、webpackにaliasがとなるとJestにもaliasを貼らないといけない
 [Jest alias](https://qiita.com/nju33/items/8ed1823690b0348daaa7)
-
-
 [Monorepo下におけるJest実行方法のちょっとした改善](https://zenn.dev/tkiryu/articles/a6a43bd9d043b0)
-
 [Jest カバレッジをプルリクに記載する](https://github.com/ArtiomTr/jest-coverage-report-action#usage)
+[Jest next/router](https://fwywd.com/tech/next-testing-mock)
