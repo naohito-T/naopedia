@@ -18,8 +18,7 @@ docker volume prune -f
 >まず、node_modulesはDockerイメージにホストからコピーしてはいけません。node_modulesはgitでも無視するはずなので、新しく環境構築する人のディレクトリにはそもそも入ってませんし、イメージをリビルドするときにホストのnode_modulesからイメージ内のnode_modulesが上書きされることも避ける必要があるからです。
 
 - Volume Trickでnode_modulesがバインドマウントされるのを回避する
-
-- VS codeでnode_modulesを参照できない問題を解決する。
+- VScodeでnode_modulesを参照できない問題を解決する。
 
 ## Docker imageの中身を見る(レイヤー)
 [参考URL](https://zenn.dev/kirisaki/scraps/89bf93bfd9a0d6)

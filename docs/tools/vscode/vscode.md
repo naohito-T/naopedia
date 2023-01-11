@@ -1,4 +1,4 @@
-# VS Code
+# VSCode
 
 ## どんなエディターでもEditorConfigを使ってコードの統一性を高める
 
@@ -30,7 +30,7 @@
 [参考URL](https://ichi.pro/maruchiru-towa-kusupe-su-to-kakucho-kino-o-shiyoshita-mono-repo-kaihatsu-no-tame-no-visualstudiocode-no-hinto-118099824004370)
 
 ```sh
-.VS Code
+.vscode
 └── settings.json # これがデフォルトできく
 └── root ディレクトリ
       .VS Code # 対象ディレクトリにこれがあればこれが上書きされてきく
