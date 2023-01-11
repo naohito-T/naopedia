@@ -1,13 +1,8 @@
 # API設計
 
+[Clean ArchitectureでAPI Serverを構築してみる](https://qiita.com/hirotakan/items/698c1f5773a3cca6193e)
+
 ## ユビキタス
-
-名詞・動詞の見分け方
-
-1. 名詞 「が・は」をつけて主語になれる
-2. 動詞 言い切りが   「ウ段」
-3. 形容詞 言い切りが 「い」
-4. 形容動詞 言い切りが 「だ」」
 
 ユーザが使用する側(クライアント)
 Webアプリケーションと呼ばれる
@@ -15,6 +10,34 @@ Webアプリケーションと呼ばれる
 ユーザが使用するアプリからアクセスされるサーバ
 Webサービスと呼ばれる
 外部Webサービスもある
+
+
+api 設計は url が一緒でも良い
+最終的に分けるのは http メソッド分割ができていれば良い。
+つまりこれは良いということ
+
+GET /console/admin/cast/1
+DELETE /console/admin/cast/1
+
+かなり散見されていると。ドキュメントが書きづらい。
+
+## api作成順序
+
+まずはenv, docker, lefthook,などの環境準備
+次にcorsの設定
+
+## timezoneについて
+
+Railsを例にすると
+アプリのタイムゾーンとは別に、データベースの読み書きに使用するタイムゾーンがある。
+※設計理想として、アプリのタイムゾーンはJST、DBはUTCにするのが理想
+
+- ユーザからの入力について
+一般的なユーザの方が普段お使いのwebサービスのフォームや書類の記入欄にAsia/TokyoなどというタイムゾーンやUTC+9などという時差情報を入力することはほぼない。
+したがって、タイムゾーンや時差情報のない日時(LocalDateTime)の入力を受けた際には、**その日時を空気を読んで解釈する必要がある**
+そのための手段として、**ユーザーが想定する地域のタイムゾーン(例: "Asia/Tokyo")にしたがって日時を解釈するという方法が一般的。**
+
+[設計参考例](https://www.m3tech.blog/entry/timezone-handling)
 
 ## Webサービスについて
 
@@ -73,3 +96,7 @@ SOAPのURLは操作と対応づけられるためURLの命名が動詞的にな�
 ## WebAPI 設計のベストプラクティス
 
 [以下の記事はこれを参考にして作成する](https://qiita.com/mserizawa/items/b833e407d89abd21ee72)
+
+## api設計のレイヤー層について詳しく記載がある。
+
+[参考URL](https://dev.classmethod.jp/articles/what-does-amazon-api-gateway-do/)
