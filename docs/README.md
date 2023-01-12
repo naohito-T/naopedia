@@ -1,18 +1,15 @@
-# Introduction
+# Naopedia
 
-## 各ディレクトリ詳細
+筆者である[naohito-T](https://github.com/naohito-T)が ITエンジニアとして役になったTips、よく忘れることを記したWikipedia
+※当ドキュメントの正誤性には保証はありません。
 
-* [1. coding](coding/coding.md) コーディング関連についてまとめているtips(手法・お約束など)
-  * [1.1 algorithm](coding/algorithm/algorithm.md)
-* [2. program](program/README.md) 言語についてまとめているtips
-  * [2.1 JavaScript](program/README.md) 言語についてまとめているtips
-* [3. design](design/README.md)
-* [4. web開発周り](web/README.md)
-* [5. db](db/README.md)
-* [6. cloud](cloud/cloud.md)
-* [4. middleware](middleware/README.md)
-* [7. インフラ](infra/README.md)
-* [8. 設計](plan/README.md)
-* [9. product要件定義](requirement/README.md)
-* [10. version管理ツール](version/README.md)
-* [11. shell](shell/README.md)
+<details>
+<summary>Contact to naohito-T</summary>
+
+- Gmail
+[Gmail](<mailto:naohito.tanaka0523@gmail.com>)
+
+- Twitter
+[Twitter](https://mobile.twitter.com/naohito___t)
+
+</details>
