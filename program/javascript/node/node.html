@@ -1,19 +1,31 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="ja" >
     <head>
         <meta charset="UTF-8">
-        <title>Node · HonKit</title>
+        <title>Node · naopedia</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.4">
-        
+        <meta name="author" content="naohito-T">
         
         
     
     <link rel="stylesheet" href="../../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../../../gitbook/@honkit/honkit-plugin-highlight/website.css">
@@ -31,18 +43,6 @@
 
     
 
-    
-        
-        <link rel="stylesheet" href="../../../styles/website.css">
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
         
     
@@ -72,7 +72,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="検索ワードを入力" />
 </div>
 
             
@@ -1631,7 +1631,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            HonKitで公開 
         </a>
     </li>
 </ul>
@@ -1669,20 +1669,20 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="node">node</h1>
+                                <h1 id="node"><a name="node" class="plugin-anchor" href="#node"><i class="fa fa-link" aria-hidden="true"></i></a>node</h1>
 <p>TypeScriptのコードを実行する
 TypeScript → JavaScriptに変換してからnodeでの実行
 <strong>ts-nodeだと1ステップでTypeScriptのコードを実行できる</strong></p>
 <p>通常、TypeScriptで書かれたNode.jsプロジェクトは、tscでtranspileをし、生成されたJavaScriptファイルを実行する必要がある。ts-nodeを使うことでこのステップを省略する。</p>
-<h2 id="nodejsとは">Node.jsとは</h2>
+<h2 id="nodejsとは"><a name="nodejsとは" class="plugin-anchor" href="#nodejsとは"><i class="fa fa-link" aria-hidden="true"></i></a>Node.jsとは</h2>
 <p>Node.jsは<code>ノンブロッキングI/O</code>という仕組みにより、「大量の小さな通信」の処理を得意としており、チャットアプリや小規模なゲームのサーバープログラム開発言語として用いられることが増えている。
 また、クライアントサイドと同じJavaScriptでサーバーサイドのプログラムを書けるため、新たにサーバーサイド言語を覚える必要がないという利点もある。</p>
-<h2 id="nodejsのrepl環境をカスタマイズする">Node.jsのREPL環境をカスタマイズする</h2>
+<h2 id="nodejsのrepl環境をカスタマイズする"><a name="nodejsのrepl環境をカスタマイズする" class="plugin-anchor" href="#nodejsのrepl環境をカスタマイズする"><i class="fa fa-link" aria-hidden="true"></i></a>Node.jsのREPL環境をカスタマイズする</h2>
 <p><a href="https://kazamori.jp/blogs/2021/07/20/customize-node-repl/" target="_blank">参考URL</a>
 <a href="https://github.com/kazamori/typeorm-performance-issues-sample" target="_blank">リポジトリ</a></p>
-<h2 id="nodeenv">NODE_ENV</h2>
+<h2 id="nodeenv"><a name="nodeenv" class="plugin-anchor" href="#nodeenv"><i class="fa fa-link" aria-hidden="true"></i></a>NODE_ENV</h2>
 <p><code>NODE_ENV=production yarn install</code>とすればdevDependenciesがインストールされない</p>
-<h2 id="node-path取得">node path取得</h2>
+<h2 id="node-path取得"><a name="node-path取得" class="plugin-anchor" href="#node-path取得"><i class="fa fa-link" aria-hidden="true"></i></a>node path取得</h2>
 <p><a href="https://zenn.dev/ignorant_kenji/articles/25280934f2c50b0c13ff" target="_blank">参考URL</a></p>
 <p>以下を実行すればわかる</p>
 <pre><code class="lang-js"><span class="hljs-built_in">console</span>.log(process.argv[<span class="hljs-number">1</span>], <span class="hljs-string">&quot;c.js&quot;</span>, <span class="hljs-string">&quot;cwd&quot;</span>, process.cwd());
@@ -1694,17 +1694,17 @@ TypeScript → JavaScriptに変換してからnodeでの実行
 <span class="hljs-comment">// ~/Hoge/foo.js/a.js   a.js   __dirname      ~/Hoge/foo.js</span>
 <span class="hljs-comment">// ~/Hoge/foo.js/a.js   a.js   path.resolve   ~/Hoge/foo.js</span>
 </code></pre>
-<h2 id="packagejsonのライブラリupdate">package.jsonのライブラリupdate</h2>
+<h2 id="packagejsonのライブラリupdate"><a name="packagejsonのライブラリupdate" class="plugin-anchor" href="#packagejsonのライブラリupdate"><i class="fa fa-link" aria-hidden="true"></i></a>package.jsonのライブラリupdate</h2>
 <p><a href="https://qiita.com/sugurutakahashi12345/items/df736ddaf65c244e1b4f" target="_blank">参考URL</a></p>
 <p><code>$npm update</code></p>
-<h2 id="npm自体のアップデート">npm自体のアップデート</h2>
+<h2 id="npm自体のアップデート"><a name="npm自体のアップデート" class="plugin-anchor" href="#npm自体のアップデート"><i class="fa fa-link" aria-hidden="true"></i></a>npm自体のアップデート</h2>
 <p><a href="https://qiita.com/n0bisuke/items/b2704b6ebb84f21c03c1" target="_blank">参考URL</a></p>
-<h2 id="npmとyarnとpnpm">npmとyarnとpnpm</h2>
+<h2 id="npmとyarnとpnpm"><a name="npmとyarnとpnpm" class="plugin-anchor" href="#npmとyarnとpnpm"><i class="fa fa-link" aria-hidden="true"></i></a>npmとyarnとpnpm</h2>
 <p><a href="https://zenn.dev/hibikine/articles/27621a7f95e761#discuss" target="_blank">参考URL</a></p>
-<h2 id="npm-便利スクリプト">npm 便利スクリプト</h2>
+<h2 id="npm-便利スクリプト"><a name="npm-便利スクリプト" class="plugin-anchor" href="#npm-便利スクリプト"><i class="fa fa-link" aria-hidden="true"></i></a>npm 便利スクリプト</h2>
 <p><a href="https://qiita.com/mysticatea/items/12bb6579b9155fd74586" target="_blank">参考URL</a></p>
-<h2 id="node-jsとは">Node jsとは</h2>
-<h2 id="packagejson">package.json</h2>
+<h2 id="node-jsとは"><a name="node-jsとは" class="plugin-anchor" href="#node-jsとは"><i class="fa fa-link" aria-hidden="true"></i></a>Node jsとは</h2>
+<h2 id="packagejson"><a name="packagejson" class="plugin-anchor" href="#packagejson"><i class="fa fa-link" aria-hidden="true"></i></a>package.json</h2>
 <ul>
 <li>npm script</li>
 </ul>
@@ -1726,14 +1726,14 @@ VScodeの設定 (settings.json) に Prettier の細かい設定があるのも�
 当然といえば当然ですが、チームで開発する場合はパッケージのバージョンや設定を揃えないといけないですし、そもそも VSCode 以外のエディタを使っている人もいるかもしれないので、設定の統一が難しくなってしまいます。
 Prettier 拡張機能にバンドルされている Prettier や VSCode の設定は、あくまでもフォールバック的な位置付けで、優先される設定もローカルの Prettier 設定ファイル (.prettierrc) が上位になっています。</p>
 </blockquote>
-<h2 id="npm-固定">npm 固定</h2>
+<h2 id="npm-固定"><a name="npm-固定" class="plugin-anchor" href="#npm-固定"><i class="fa fa-link" aria-hidden="true"></i></a>npm 固定</h2>
 <p>nodeとnpmは違うからね</p>
 <p><a href="https://qiita.com/hirorock/items/3a98a43f38aec39aab4f" target="_blank">npm固定</a></p>
 <p>プロジェクト内に.npmrcを作成する
 作成することで<code>npm install</code>の際にengineを確認してバージョンバージョンの問題があった場合はインストールさせない</p>
-<h2 id="browserslistの更新を要求された場合">Browserslistの更新を要求された場合</h2>
+<h2 id="browserslistの更新を要求された場合"><a name="browserslistの更新を要求された場合" class="plugin-anchor" href="#browserslistの更新を要求された場合"><i class="fa fa-link" aria-hidden="true"></i></a>Browserslistの更新を要求された場合</h2>
 <p><a href="https://dev.classmethod.jp/articles/asked-to-update-the-browserslist-when-building-react-app/" target="_blank">参考URL</a></p>
-<h2 id="npxコマンドについて">npxコマンドについて</h2>
+<h2 id="npxコマンドについて"><a name="npxコマンドについて" class="plugin-anchor" href="#npxコマンドについて"><i class="fa fa-link" aria-hidden="true"></i></a>npxコマンドについて</h2>
 <p><code>$ npx create-nx-workspace</code>
 Nxは、ファーストクラスのモノレポサポートと強力な統合を備えた次世代ビルドシステム</p>
 <p><a href="https://www.npmjs.com/package/create-nx-workspace" target="_blank">リファレンス</a></p>
@@ -1780,7 +1780,7 @@ Nxは、ファーストクラスのモノレポサポートと強力な統合を
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Node","level":"2.2.3.7","depth":3,"next":{"title":"JSON","level":"2.2.3.8","depth":3,"path":"program/javascript/json/package.md","ref":"program/javascript/json/package.md","articles":[]},"previous":{"title":"React","level":"2.2.3.6","depth":3,"path":"program/javascript/react/react.md","ref":"program/javascript/react/react.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"program/javascript/node/node.md","mtime":"2023-01-12T00:39:30.226Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T00:39:41.486Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Node","level":"2.2.3.7","depth":3,"next":{"title":"JSON","level":"2.2.3.8","depth":3,"path":"program/javascript/json/package.md","ref":"program/javascript/json/package.md","articles":[]},"previous":{"title":"React","level":"2.2.3.6","depth":3,"path":"program/javascript/react/react.md","ref":"program/javascript/react/react.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"program/javascript/node/node.md","mtime":"2023-01-12T09:05:53.794Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T09:06:04.627Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1832,6 +1832,30 @@ Nxは、ファーストクラスのモノレポサポートと強力な統合を
     </script>
     <script src="../../../gitbook/gitbook.js"></script>
     <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
     
         
         <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>

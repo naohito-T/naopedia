@@ -1,19 +1,31 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="ja" >
     <head>
         <meta charset="UTF-8">
-        <title>2.2 Go · HonKit</title>
+        <title>2.2 Go · naopedia</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.4">
-        
+        <meta name="author" content="naohito-T">
         
         
     
     <link rel="stylesheet" href="../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../../gitbook/@honkit/honkit-plugin-highlight/website.css">
@@ -31,18 +43,6 @@
 
     
 
-    
-        
-        <link rel="stylesheet" href="../../styles/website.css">
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
         
     
@@ -72,7 +72,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="検索ワードを入力" />
 </div>
 
             
@@ -1631,7 +1631,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            HonKitで公開 
         </a>
     </li>
 </ul>
@@ -1669,22 +1669,22 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="go">Go</h1>
+                                <h1 id="go"><a name="go" class="plugin-anchor" href="#go"><i class="fa fa-link" aria-hidden="true"></i></a>Go</h1>
 <p>Go言語 = golang
 <a href="https://docs.google.com/presentation/d/1RVx8oeIMAWxbB7ZP2IcgZXnbZokjCmTUca-AbIpORGk/edit#slide=id.g935656cef3_0_12" target="_blank">日本のGophers代表? 解説記事がある</a></p>
-<h2 id="コードの長さ">コードの長さ</h2>
+<h2 id="コードの長さ"><a name="コードの長さ" class="plugin-anchor" href="#コードの長さ"><i class="fa fa-link" aria-hidden="true"></i></a>コードの長さ</h2>
 <p>Goは冗長な書き方となる。しかしそれがデメリットとはならない。
 初心者でも導入がしやすいと裏付けられる。
 Goよりもコードの密度が高く、より短く書けるプログラミング言語はある。
 RubyやPythonであればコードの行数は半分から1/3になる。</p>
-<h2 id="go実行速度">Go実行速度</h2>
+<h2 id="go実行速度"><a name="go実行速度" class="plugin-anchor" href="#go実行速度"><i class="fa fa-link" aria-hidden="true"></i></a>Go実行速度</h2>
 <p>C++やRust、Javaなど
 Goは実行速度では遅いが、コンパイルが圧倒的に早くネットワークなどのI/O速度が支配的なネットワークアプリケーションやコンテナーーで動作するアプリケーションであれば十分な速度が出せる。</p>
-<h2 id="go-116からのモジュール管理">Go 1.16からのモジュール管理</h2>
+<h2 id="go-116からのモジュール管理"><a name="go-116からのモジュール管理" class="plugin-anchor" href="#go-116からのモジュール管理"><i class="fa fa-link" aria-hidden="true"></i></a>Go 1.16からのモジュール管理</h2>
 <p><a href="https://text.baldanders.info/golang/manage-modules/" target="_blank">参考URL</a></p>
 <p>GO111MODULE既定値の変更
 環境変数<code>GO111MODULE</code>の既定値がautoからonへ変更になった。 GO111MODULEの取りうる値は以下の通り。</p>
-<h2 id="go-コマンド">go コマンド</h2>
+<h2 id="go-コマンド"><a name="go-コマンド" class="plugin-anchor" href="#go-コマンド"><i class="fa fa-link" aria-hidden="true"></i></a>go コマンド</h2>
 <p>パッケージをインストールするとgo.modおよびgo.sumに情報が反映される。
 go getやgo mod tidyによってインストールされたパッケージは$GOPATH/pkg/modに保存される。</p>
 <pre><code class="lang-sh">$ go get [パッケージ名] <span class="hljs-comment"># 指定したパッケージのインストール</span>
@@ -1692,9 +1692,9 @@ $ go get <span class="hljs-comment">#importに記載されたパッケージの�
 $ go mod tidy    <span class="hljs-comment"># importに記載されたパッケージのインストール。不要なパッケージの削除</span>
 </code></pre>
 <p>パッケージのインストールが必要なGoファイルを実行する場合、Go 1.16では<code>go mod tidy</code> or <code>go get</code>⇨<code>go build</code>という手順。</p>
-<h2 id="go-get-オプション">go get オプション</h2>
+<h2 id="go-get-オプション"><a name="go-get-オプション" class="plugin-anchor" href="#go-get-オプション"><i class="fa fa-link" aria-hidden="true"></i></a>go get オプション</h2>
 <p><a href="https://qiita.com/tadaken/items/9f8fd9c8e7096b6bffde" target="_blank">参考URL</a></p>
-<h2 id="go-モジュール・パッケージ">Go モジュール・パッケージ</h2>
+<h2 id="go-モジュール・パッケージ"><a name="go-モジュール・パッケージ" class="plugin-anchor" href="#go-モジュール・パッケージ"><i class="fa fa-link" aria-hidden="true"></i></a>Go モジュール・パッケージ</h2>
 <p>Goのアプリケーションとライブラリは、それぞれモジュールと呼ばれる塊になっている。
 <strong>1つのフォルダーが1つのモジュール</strong>となる。</p>
 <p>実行ファイルorライブラリでもまず次のコマンドを叩いてプロジェクトの中心となるファイル<code>go.mod</code>を作る</p>
@@ -1705,7 +1705,7 @@ $ go mod tidy    <span class="hljs-comment"># importに記載されたパッケ�
 <p>モジュール
 <strong>go.modファイルのあるディレクトリ以下</strong>のすべてのパッケージ（go.modは含まれない）
 1レポジトリ＝1モジュール</p>
-<h3 id="go-モジュール・パッケージをgithubで外部に公開する場合">Go モジュール・パッケージをGitHubで外部に公開する場合</h3>
+<h3 id="go-モジュール・パッケージをgithubで外部に公開する場合"><a name="go-モジュール・パッケージをgithubで外部に公開する場合" class="plugin-anchor" href="#go-モジュール・パッケージをgithubで外部に公開する場合"><i class="fa fa-link" aria-hidden="true"></i></a>Go モジュール・パッケージをGitHubで外部に公開する場合</h3>
 <p><code>github.con/アカウント名/リポジトリ名/</code>を使う</p>
 <pre><code class="lang-sh"><span class="hljs-comment">### サンプルコードなどであれば以下のような感じでOK</span>
 $ go mod init go-example
@@ -1713,16 +1713,16 @@ $ go mod init go-example
 <span class="hljs-comment">### 公開前提の場合はモジュールのパスを指定する</span>
 $ go mod init github.com/naohito-T/go-example
 </code></pre>
-<h2 id="go-エントリーポイント">Go エントリーポイント</h2>
+<h2 id="go-エントリーポイント"><a name="go-エントリーポイント" class="plugin-anchor" href="#go-エントリーポイント"><i class="fa fa-link" aria-hidden="true"></i></a>Go エントリーポイント</h2>
 <p>mainパッケージは特別なパッケージ。
 mainパッケージのmain関数からプログラムが開始される。</p>
-<h2 id="go-cli">Go CLI</h2>
+<h2 id="go-cli"><a name="go-cli" class="plugin-anchor" href="#go-cli"><i class="fa fa-link" aria-hidden="true"></i></a>Go CLI</h2>
 <pre><code class="lang-sh">go fmt：コードをGo言語の標準フォーマットに変換するツール
 go vet：間違えやすいコードを指摘するツール
 golint：スタイルの問題を指摘するツール
 godoc：コードからAPIドキュメントを作るツール
 </code></pre>
-<h2 id="go-歴史">Go 歴史</h2>
+<h2 id="go-歴史"><a name="go-歴史" class="plugin-anchor" href="#go-歴史"><i class="fa fa-link" aria-hidden="true"></i></a>Go 歴史</h2>
 <p>昔（Go1.11以前）は<code>$GOPATH/src</code>配下でしか開発できなかった。
 その後<strong>Go modules</strong>の導入により<code>$GOPATH/src</code>にプロジェクトを置かなければならないという制約からは解放されたので、各プロジェクト毎に<code>GOPATH</code>を指定するみたいなことがいらなくなったという経緯
 そのため、こちらも現在はデフォルトから変える必要性はないです。</p>
@@ -1733,7 +1733,7 @@ godoc：コードからAPIドキュメントを作るツール
 2012年3月に正式バージョンであるGo1.0を公開
 2022年5月現在の最新バージョンはGo1.18
 半年毎のペースでバージョンアップ</p>
-<h2 id="モジュール対応モード">モジュール対応モード</h2>
+<h2 id="モジュール対応モード"><a name="モジュール対応モード" class="plugin-anchor" href="#モジュール対応モード"><i class="fa fa-link" aria-hidden="true"></i></a>モジュール対応モード</h2>
 <p>標準ライブラリを除くすべてのパッケージをモジュールとして管理する。
 コード管理とビルドは任意のディレクトリで可能。Go1.17からは常にコレ。</p>
 <p>モジュールとは？
@@ -1741,10 +1741,10 @@ godoc：コードからAPIドキュメントを作るツール
 モジュール: <strong>go.modファイルのあるディレクトリ以下</strong>のすべてのパッケージ（go.modは含まれない）
 →1レポジトリ＝1モジュール</p>
 <hr>
-<h2 id="go-利用例">Go 利用例</h2>
+<h2 id="go-利用例"><a name="go-利用例" class="plugin-anchor" href="#go-利用例"><i class="fa fa-link" aria-hidden="true"></i></a>Go 利用例</h2>
 <p>Go言語は比較的新しいプログラミング言語でありながら、世界的な動画配信サービスであるYouTubeのサーバー構築や有名Webアプリの開発などにも使用されており、人気の高い言語として世界中で愛されています。</p>
 <hr>
-<h2 id="go-特徴">Go 特徴</h2>
+<h2 id="go-特徴"><a name="go-特徴" class="plugin-anchor" href="#go-特徴"><i class="fa fa-link" aria-hidden="true"></i></a>Go 特徴</h2>
 <p>強力でシンプルな言語設計と文法
 並行プログラミング
 豊富な標準ライブラリ群
@@ -1758,18 +1758,18 @@ Go言語は<strong>マルチプラットフォーム</strong>に対応してお�
 <strong>Gobot</strong>にはネットワーク上のデバイスや複数のデバイス間で相互に通信できる機能があり、外出先からデバイスを操作したりセンサーが反応したときに他のデバイスと機能を連動させたりできる。</p>
 <p>Go言語は、近年注目の集まるクラウドやコンテナーー技術、マイクロサービスなどの最新IT技術と親和性が高く、将来性のある言語</p>
 <p>メモリ管理の手間が少ないというメリットがありますがGC（ガベレージコレクション）のアルゴリズムが<strong>STOP THE WORLD</strong>を採用しているため、<strong>ミッションクリティカルな場面やメモリが貧弱な環境</strong>には適さない。</p>
-<h2 id="クロスコンパイル対応をするには">クロスコンパイル対応をするには</h2>
+<h2 id="クロスコンパイル対応をするには"><a name="クロスコンパイル対応をするには" class="plugin-anchor" href="#クロスコンパイル対応をするには"><i class="fa fa-link" aria-hidden="true"></i></a>クロスコンパイル対応をするには</h2>
 <p>環境変数を設定する必要がある。</p>
 <pre><code class="lang-sh"><span class="hljs-comment"># Windows(32ビット)向けにコンパイル</span>
 $ GOOS=windows GOARCH=386 go build
 <span class="hljs-comment"># Linux(64ビット)向けにコンパイル</span>
 $ GOOS=linux GOARCH=amd64 go build
 </code></pre>
-<h2 id="go-ディレクトリ構成">Go ディレクトリ構成</h2>
+<h2 id="go-ディレクトリ構成"><a name="go-ディレクトリ構成" class="plugin-anchor" href="#go-ディレクトリ構成"><i class="fa fa-link" aria-hidden="true"></i></a>Go ディレクトリ構成</h2>
 <p><a href="https://qiita.com/sueken/items/87093e5941bfbc09bea8" target="_blank">参考URL</a>
 <a href="https://github.com/golang-standards/project-layout/tree/master/internal" target="_blank">リファレンス</a></p>
-<h2 id="go-test">Go test</h2>
-<p>golangにはgo testツールなる便利なものがある。</p>
+<h2 id="go-test"><a name="go-test" class="plugin-anchor" href="#go-test"><i class="fa fa-link" aria-hidden="true"></i></a>Go test</h2>
+<p>golangにはgo <a href="../../GLOSSARY.html#test" class="glossary-term" title="これは、テスト用の単語です。">test</a>ツールなる便利なものがある。</p>
 <p>制約</p>
 <ol>
 <li>ファイル名の最後を_test.goとしなければいけない。</li>
@@ -1783,13 +1783,13 @@ Goはテストのアサーションを提供していない。テストが失敗
 <p><code>T.Fatal</code>を用いると<code>T.Fatal</code>が<strong>実行された以降のテストは呼び出されずに終了する。</strong>
 テストが失敗したことを示すには<code>T.Error</code>を使い、テストの初期化など、処理が失敗するとその後のテストが無意味になる場合は<code>T.Fatal</code>を用いると良い。
 以下のように<code>t.Fatalf</code>を用いた場合は、それ以降は呼び出されないが、<code>defer</code>や<code>T.Cleanup</code>といった後処理は呼び出されます。</p>
-<h2 id="goにおける静的解析">Goにおける静的解析</h2>
+<h2 id="goにおける静的解析"><a name="goにおける静的解析" class="plugin-anchor" href="#goにおける静的解析"><i class="fa fa-link" aria-hidden="true"></i></a>Goにおける静的解析</h2>
 <p><a href="https://engineering.mercari.com/blog/entry/20220406-eea588f493/" target="_blank">参考URL</a></p>
 <p>Goはソースコードを実行せずに解析する静的解析の機能を提供するgoパッケージが標準ライブラリとして用意されている。
 そのため静的解析を用いたコードフォーマッタやLinterなどが作りやすい言語。</p>
-<h2 id="go-仕組み">Go 仕組み</h2>
+<h2 id="go-仕組み"><a name="go-仕組み" class="plugin-anchor" href="#go-仕組み"><i class="fa fa-link" aria-hidden="true"></i></a>Go 仕組み</h2>
 <p>コンパイル</p>
-<h2 id="go-変数">Go 変数</h2>
+<h2 id="go-変数"><a name="go-変数" class="plugin-anchor" href="#go-変数"><i class="fa fa-link" aria-hidden="true"></i></a>Go 変数</h2>
 <p>Goの関数や変数は、<strong>大文字からスタートするとほかのパッケージから参照できる</strong>ようになる。
 ※小文字だと参照できない
 Go言語では一度宣言した変数を使わなかったら怒られる。そのため関数の戻り値を使用しない場合は<code>_（アンスコ）</code>などを使用し使用しない宣言をする。</p>
@@ -1800,9 +1800,9 @@ Goの変数名は長い名前よりも短い名前が好まれる
 変数のスコープが限定</p>
 <p>変数名はどんな時にも短ければ良いわけではない。
 グローバル変数にはわかりやすい名前を、ローカル変数には短い名前をこの考え方は一般的。</p>
-<h2 id="go-定数">Go 定数</h2>
+<h2 id="go-定数"><a name="go-定数" class="plugin-anchor" href="#go-定数"><i class="fa fa-link" aria-hidden="true"></i></a>Go 定数</h2>
 <p>Goのconstは<strong>コンパイル時に決定できないものはconstにできない(たとえばnewとか)</strong></p>
-<h2 id="パッケージ名">パッケージ名</h2>
+<h2 id="パッケージ名"><a name="パッケージ名" class="plugin-anchor" href="#パッケージ名"><i class="fa fa-link" aria-hidden="true"></i></a>パッケージ名</h2>
 <p>パッケージ名は小文字が基本
 internalという名前だけはモジュール外から読めないパッケージとなる。</p>
 <p>テストへ用いるパッケージに<code>パッケージ名 + _test</code>という名前を用いることがある。
@@ -1810,7 +1810,7 @@ _testがついたパッケージからは公開されているパッケージの
 <p>これもやめた方がいい（変数名および関数名は<strong>パッケージ名も含み</strong>考える）</p>
 <pre><code class="lang-go"><span class="hljs-comment">// http.Serverであって、http.HTTPServerではない。</span>
 </code></pre>
-<h2 id="go-データ型">Go データ型</h2>
+<h2 id="go-データ型"><a name="go-データ型" class="plugin-anchor" href="#go-データ型"><i class="fa fa-link" aria-hidden="true"></i></a>Go データ型</h2>
 <p>Goの文法では<strong>リテラルの状態では型を持っていない。変数に代入されると型が決まる</strong>
 Goの場合は暗黙の型変換がなく、明示的に型変換をしなければ他の変数に代入したりできない</p>
 <p><strong>nil</strong>
@@ -1829,7 +1829,7 @@ Goの場合は暗黙の型変換がなく、明示的に型変換をしなけれ
 <p>配列やスライスは複合型と呼ばれる。</p>
 <p>そしてスライスは配列を参照する窓のようなデータ構造
 他の言語ではビューと呼ばれることがあるある。</p>
-<h2 id="go-制御構文">Go 制御構文</h2>
+<h2 id="go-制御構文"><a name="go-制御構文" class="plugin-anchor" href="#go-制御構文"><i class="fa fa-link" aria-hidden="true"></i></a>Go 制御構文</h2>
 <p>Goが持つ制御構文は<code>if / for / switch</code></p>
 <p>if
 他の言語にはたいてい<code>falsy</code>の概念があるが、Goにはif文の暗黙変換がない。boolean値のみしかif文で使用できない</p>
@@ -1838,18 +1838,18 @@ Goの場合は暗黙の型変換がなく、明示的に型変換をしなけれ
 マップの場合はキーと値</p>
 <p>switch
 if ... else ifを羅列して書くのを簡単にしてくれるのがswitch</p>
-<h2 id="go-関数">Go 関数</h2>
+<h2 id="go-関数"><a name="go-関数" class="plugin-anchor" href="#go-関数"><i class="fa fa-link" aria-hidden="true"></i></a>Go 関数</h2>
 <p>無名関数もある。
 名前付き関数はパッケージレベルでしか作れないが、無名関数は関数の中でも使える。</p>
-<h2 id="defer">defer</h2>
+<h2 id="defer"><a name="defer" class="plugin-anchor" href="#defer"><i class="fa fa-link" aria-hidden="true"></i></a>defer</h2>
 <p>deferは関数のブロックを抜けるタイミングで処理の予約ができる。
 言語が変わっても<strong>後片付けは準備と同じ場所で予約するのが一番確実の原則は一緒</strong></p>
-<h2 id="エラー処理">エラー処理</h2>
+<h2 id="エラー処理"><a name="エラー処理" class="plugin-anchor" href="#エラー処理"><i class="fa fa-link" aria-hidden="true"></i></a>エラー処理</h2>
 <p>関数の返り値にerrがある場合は<code>err</code>と呼ばれる変数に代入し、その次の行でerrがnilではない（何か値が入っている）
 これがエラー処理の基本。例外処理はない。</p>
 <p>昔から変わらないGoの慣習は以下
 失敗する可能性のある関数の末尾をerror型とする</p>
-<h2 id="go-構造体">Go 構造体</h2>
+<h2 id="go-構造体"><a name="go-構造体" class="plugin-anchor" href="#go-構造体"><i class="fa fa-link" aria-hidden="true"></i></a>Go 構造体</h2>
 <p><a href="https://golang.hateblo.jp/entry/golang-how-to-use-struct" target="_blank">参考URL</a></p>
 <p>構造体は中にメソッドを定義できない</p>
 <pre><code class="lang-go"><span class="hljs-keyword">type</span> Book <span class="hljs-keyword">struct</span> {
@@ -1874,7 +1874,7 @@ b3 := &amp;Book{
 </code></pre>
 <p>Goではアプリケーションの実装では構造体をよく利用する。
 jsonタグを定義しておくと、この定義にしたがって構造体のフィールドをJSONに書き出したり、JSONの情報フィールドにマッピングできる</p>
-<h2 id="go-optional">Go Optional</h2>
+<h2 id="go-optional"><a name="go-optional" class="plugin-anchor" href="#go-optional"><i class="fa fa-link" aria-hidden="true"></i></a>Go Optional</h2>
 <pre><code class="lang-go"><span class="hljs-comment">// 引数を示す構造体</span>
 <span class="hljs-comment">// フィールドが未指定だったのか，ゼロ値が指定されたのかを</span>
 <span class="hljs-comment">// 区別するため，型はポインタにする⇨*string</span>
@@ -1902,49 +1902,49 @@ jsonタグを定義しておくと、この定義にしたがって構造体の�
     Greet(<span class="hljs-string">&quot;gopher&quot;</span>, &amp;GreetOpts{GreetingWord: &amp;word}) <span class="hljs-comment">// Hey, gopher!</span>
 }
 </code></pre>
-<h2 id="go-型">Go 型</h2>
+<h2 id="go-型"><a name="go-型" class="plugin-anchor" href="#go-型"><i class="fa fa-link" aria-hidden="true"></i></a>Go 型</h2>
 <p><a href="https://raahii.github.io/posts/optional-parameters-in-go/" target="_blank">参考URL</a></p>
 <pre><code class="lang-go">Greet(<span class="hljs-string">&quot;gopher&quot;</span>, &amp;GreetOpts{}) <span class="hljs-comment">// &amp;nnn &amp;はポインタで渡す（参照）)</span>
 </code></pre>
-<h2 id="go-import">Go import</h2>
+<h2 id="go-import"><a name="go-import" class="plugin-anchor" href="#go-import"><i class="fa fa-link" aria-hidden="true"></i></a>Go import</h2>
 <p><a href="https://qiita.com/shiena/items/c1ac3192af3b00f413ac" target="_blank">参考URL</a></p>
 <p>period importとblank importという別のimportがある。</p>
 <p>period(.) import
 あまりオススメはされていない</p>
-<h3 id="interface型">interface型</h3>
+<h3 id="interface型"><a name="interface型" class="plugin-anchor" href="#interface型"><i class="fa fa-link" aria-hidden="true"></i></a>interface型</h3>
 <p><a href="https://qiita.com/sh-tatsuno/items/0c32c01eaeaf2d726fdf" target="_blank">参考URL</a>
 interface{}型 -&gt; どんな型も格納できる特殊な型・型チェックや型変換などに使える
 interface -&gt; type structの下に関数群を紐付ける書き方。オブジェクト指向でないGoにおいてclassに近しいことができる（ただし継承などはできない）
 2つは本質には同じもので実装するためのメソッド（中身）のない型の使い方に過ぎない、が個人的には分けて考えたほうが考えやすかった</p>
-<h3 id="class">class</h3>
+<h3 id="class"><a name="class" class="plugin-anchor" href="#class"><i class="fa fa-link" aria-hidden="true"></i></a>class</h3>
 <p>他の言語でのクラス・メンバー変数に当たる部分はGoでは<strong>構造体・フィールドとして存在する</strong></p>
 <hr>
-<h2 id="go-開発環境構築">Go 開発環境構築</h2>
+<h2 id="go-開発環境構築"><a name="go-開発環境構築" class="plugin-anchor" href="#go-開発環境構築"><i class="fa fa-link" aria-hidden="true"></i></a>Go 開発環境構築</h2>
 <p>Dockerで構築が現実てきなのかは要調査</p>
-<h3 id="118-環境構築最新">1.18 環境構築(最新)</h3>
+<h3 id="118-環境構築最新"><a name="118-環境構築最新" class="plugin-anchor" href="#118-環境構築最新"><i class="fa fa-link" aria-hidden="true"></i></a>1.18 環境構築(最新)</h3>
 <p><a href="https://zenn.dev/creamstew/articles/20e7a00c2eb161edbb1e" target="_blank">参考URL</a></p>
 <p>バージョン管理ツールはいらない
 Rubyならrbenv, Node.jsならnodenvなどがあるが
 Goでもバージョン管理ツール必要なのかなと思って調べたら結論いらない。
 理由として現状Goは後方互換性が保たれているのが理由。
 現状としてGoの各種PATHは設定されているため、後は適宜Shellに対してGoのPathを追加してあげればGoのバイナリは直で打てるようになる。</p>
-<h2 id="goroot">GOROOT</h2>
+<h2 id="goroot"><a name="goroot" class="plugin-anchor" href="#goroot"><i class="fa fa-link" aria-hidden="true"></i></a>GOROOT</h2>
 <p>GoのSDKの場所を定義している</p>
-<h2 id="gopath">GOPATH</h2>
+<h2 id="gopath"><a name="gopath" class="plugin-anchor" href="#gopath"><i class="fa fa-link" aria-hidden="true"></i></a>GOPATH</h2>
 <p>ワークスペースの場所を定義している。
 <strong>グローバルインストール</strong>したパッケージなどはすべてここに保管されている
 →<code>$HOME/go/bin</code>
 ※Macなら$HOME/goに自分で設定してなくても勝手に設定されてるはず（Go1.8以降）</p>
 <hr>
-<h2 id="editor">Editor</h2>
+<h2 id="editor"><a name="editor" class="plugin-anchor" href="#editor"><i class="fa fa-link" aria-hidden="true"></i></a>Editor</h2>
 <p>vscodeで全然いい</p>
-<h2 id="vscode拡張機能">vscode拡張機能</h2>
+<h2 id="vscode拡張機能"><a name="vscode拡張機能" class="plugin-anchor" href="#vscode拡張機能"><i class="fa fa-link" aria-hidden="true"></i></a>vscode拡張機能</h2>
 <p>Goをインストールすればいいだろう</p>
-<h2 id="go-language-server-protocol">Go Language Server Protocol</h2>
+<h2 id="go-language-server-protocol"><a name="go-language-server-protocol" class="plugin-anchor" href="#go-language-server-protocol"><i class="fa fa-link" aria-hidden="true"></i></a>Go Language Server Protocol</h2>
 <p><a href="https://qiita.com/ryysud/items/1cf66ee4363aec22394a" target="_blank">参考URL</a></p>
 <p>現状ではgoplsができており、ジャンプなどもすぐにできるようになる。
 ※ただし、<code>go.mod</code>があるディレクトリ内でファイルを開かないといけない</p>
-<h2 id="go-getと-installの違い">go getと installの違い</h2>
+<h2 id="go-getと-installの違い"><a name="go-getと-installの違い" class="plugin-anchor" href="#go-getと-installの違い"><i class="fa fa-link" aria-hidden="true"></i></a>go getと installの違い</h2>
 <p><a href="https://hodalog.com/use-go-install-instead-of-go-get/" target="_blank">参考URL</a>
 <a href="https://qiita.com/eihigh/items/9fe52804610a8c4b7e41" target="_blank">参考URL</a></p>
 <p>go1.17から<code>go get</code>を使わなくなったが<code>go get</code>が完全に使えなくなるわけではない（警告はでる）</p>
@@ -1957,11 +1957,11 @@ go.mod編集のための<code>go get</code></p>
 go.modの編集は<code>go get or go mod tidy</code>あるいは手作業で行います。</p>
 <p><strong>モジュール内</strong>で管理したいパッケージについてはこれまで通り<code>go get</code>
 <code>go install</code>は<strong>モジュール外</strong>で使いたいパッケージのインストールに使用する</p>
-<h2 id="go-とは">Go とは</h2>
+<h2 id="go-とは"><a name="go-とは" class="plugin-anchor" href="#go-とは"><i class="fa fa-link" aria-hidden="true"></i></a>Go とは</h2>
 <p>2009年11月にGoogleから発表されたプログラミング言語で、ソースコードをコンパイルして実行するコンパイル言語。
 <strong>Goは得に言語のコアをシンプルに、なにかを実現するときはそのシンプルな機能を組み合わせて実現するというコンセプト</strong></p>
 <p><a href="https://future-architect.github.io/articles/20190713/" target="_blank">参考URL(コードの考え方でもいい)</a></p>
-<h2 id="gopathとは">GOPATHとは</h2>
+<h2 id="gopathとは"><a name="gopathとは" class="plugin-anchor" href="#gopathとは"><i class="fa fa-link" aria-hidden="true"></i></a>GOPATHとは</h2>
 <blockquote>
 <p>このディレクトリは、GoのソースコードやGoの実行可能ファイル、並びにコンパイル済みのパッケージファイルを保存する為に使用します。そのためこのディレクトリには３つのサブディレクトリが存在します：src、bin、pkgです。</p>
 </blockquote>
@@ -2021,7 +2021,7 @@ Go moduleモードでは、**GOPATH配下にプロジェクトを置かなけれ
 <p>こうするとカレントフォルダーにgo.modファイルが作成され、このカレントフォルダー以下がまるっと「モジュール」の扱いになります。</p>
 <p>パッケージ名とはパッケージに置かれるGoコードの先頭に宣言される名称で、これは極力そのパッケージのフォルダー名と合致させることが推奨されます</p>
 <p>相対パスインポートを見たらそのコードは古い可能性が高いので参考にしない様に。</p>
-<h2 id="go-module始め方">Go module始め方</h2>
+<h2 id="go-module始め方"><a name="go-module始め方" class="plugin-anchor" href="#go-module始め方"><i class="fa fa-link" aria-hidden="true"></i></a>Go module始め方</h2>
 <p><code>$ go mod init [import name]</code></p>
 <ul>
 <li>go mod initの名前は？</li>
@@ -2029,7 +2029,7 @@ Go moduleモードでは、**GOPATH配下にプロジェクトを置かなけれ
 <p>書くべきなのは importpath
 一般的な用途ではリポジトリルートのURLを「importpath」としてgo mod initの引数に使うのが良いでしょう。
 go mod init sampleについてはリポジトリと紐づけない一時的なものとして利用することはできます。こうして作られたモジュールは公開する条件を満たせないので例えリポジトリに置いて公開しても第三者がgo-getすることはできないモジュールになります。もちろんこの形での公開は推奨はされません。（手元で書き捨てる用途とか学習用途とお考え下さい）</p>
-<h2 id="gomod-と-gosum">go.mod と go.sum</h2>
+<h2 id="gomod-と-gosum"><a name="gomod-と-gosum" class="plugin-anchor" href="#gomod-と-gosum"><i class="fa fa-link" aria-hidden="true"></i></a>go.mod と go.sum</h2>
 <p><a href="https://zenn.dev/ryo_yamaoka/articles/595cf9e69229f9" target="_blank">参考URL</a></p>
 <ul>
 <li>go.mod
@@ -2040,13 +2040,13 @@ go mod init sampleについてはリポジトリと紐づけない一時的な�
 <li>go.sum
 直接・間接問わずに依存先モジュールのハッシュを記録するためのファイル</li>
 </ul>
-<h2 id="ライブラリのインポート">ライブラリのインポート</h2>
+<h2 id="ライブラリのインポート"><a name="ライブラリのインポート" class="plugin-anchor" href="#ライブラリのインポート"><i class="fa fa-link" aria-hidden="true"></i></a>ライブラリのインポート</h2>
 <p>他のパッケージで公開されている機能を利用するには<code>import文</code>を使用
 Goでは中央集権的なライブラリのリポジトリはない（npmみたいな）
 github.comやgitlab.comなどのリポジトリや独自ドメインで運用しているサーバなどを使ってライブラリの配布が行われる</p>
 <p>そのためパッケージの識別子はそのライブラリの情報が取得可能なURL</p>
-<h2 id="go-プロジェクト-version固定">go プロジェクト version固定</h2>
-<h2 id="go-get">go get</h2>
+<h2 id="go-プロジェクト-version固定"><a name="go-プロジェクト-version固定" class="plugin-anchor" href="#go-プロジェクト-version固定"><i class="fa fa-link" aria-hidden="true"></i></a>go プロジェクト version固定</h2>
+<h2 id="go-get"><a name="go-get" class="plugin-anchor" href="#go-get"><i class="fa fa-link" aria-hidden="true"></i></a>go get</h2>
 <ul>
 <li><p>example
 <code>$ go get github.com/labstack/echo/v4</code></p>
@@ -2060,13 +2060,13 @@ github.comやgitlab.comなどのリポジトリや独自ドメインで運用し
 -vオプション :実行しているコマンドを表示する。
 -fixオプション : 依存関係を修正。ダウンロードしたパッケージを修正。修正してからgetをしてくれる。
 -insecureオプション : HTTP等の安全性が確保されていない方式を使いリポジトリから取得するためのコマンド。危険が伴うため、使用はオススメしません。</p>
-<h2 id="go-nodenvみたいな">Go nodenvみたいな</h2>
+<h2 id="go-nodenvみたいな"><a name="go-nodenvみたいな" class="plugin-anchor" href="#go-nodenvみたいな"><i class="fa fa-link" aria-hidden="true"></i></a>Go nodenvみたいな</h2>
 <p>Goは後方互換性を保っているため、Go 1.7のプロジェクトで1.8を使用していても動く。</p>
 <hr>
 <hr>
-<h2 id="tips-go">Tips Go</h2>
-<h2 id="go-admin">go admin</h2>
-<h2 id="goでのorm">GoでのORM</h2>
+<h2 id="tips-go"><a name="tips-go" class="plugin-anchor" href="#tips-go"><i class="fa fa-link" aria-hidden="true"></i></a>Tips Go</h2>
+<h2 id="go-admin"><a name="go-admin" class="plugin-anchor" href="#go-admin"><i class="fa fa-link" aria-hidden="true"></i></a>go admin</h2>
+<h2 id="goでのorm"><a name="goでのorm" class="plugin-anchor" href="#goでのorm"><i class="fa fa-link" aria-hidden="true"></i></a>GoでのORM</h2>
 <p>Goにもいくつかの代表的なORMライブラリがありますが、標準ライブラリのみを使って実装することも好まれがち</p>
 <p>ただ、
 データベースとやり取りする部分はWEBアプリケーションでは頻繁に登場するにもかかわらず、<strong>似たようなコードを都度実装することになりがち。</strong>
@@ -2075,10 +2075,10 @@ ORMライブラリを使うことで、そのようないわゆるボイラー�
 <a href="https://zenn.dev/hsaki/books/golang-concurrency/viewer" target="_blank">Go並列処理</a>
 <a href="https://www.tohoho-web.com/ex/golang.html" target="_blank">とほほのGo言語入門</a>
 <a href="https://zenn.dev/tamanobi/articles/go-docker-handson" target="_blank">GoとDockerハンズオン（最高に良い)</a></p>
-<h2 id="goを学ぶ時につまずきやすいポイント">Goを学ぶ時につまずきやすいポイント</h2>
+<h2 id="goを学ぶ時につまずきやすいポイント"><a name="goを学ぶ時につまずきやすいポイント" class="plugin-anchor" href="#goを学ぶ時につまずきやすいポイント"><i class="fa fa-link" aria-hidden="true"></i></a>Goを学ぶ時につまずきやすいポイント</h2>
 <p><a href="https://future-architect.github.io/articles/20190713/" target="_blank">参考URL</a></p>
 <hr>
-<h2 id="godoc">GoDoc</h2>
+<h2 id="godoc"><a name="godoc" class="plugin-anchor" href="#godoc"><i class="fa fa-link" aria-hidden="true"></i></a>GoDoc</h2>
 <p><a href="https://qiita.com/shibukawa/items/8c70fdd1972fad76a5ce" target="_blank">GoDoc</a></p>
 <p>godocとgo docは同じドキュメントツールだが別のツール</p>
 <p>Go製のライブラリは標準ライブラリもサードパーティのライブラリもすべて<a href="https://pkg.go.devで公開される。" target="_blank">https://pkg.go.devで公開される。</a>
@@ -2086,7 +2086,7 @@ ORMライブラリを使うことで、そのようないわゆるボイラー�
 パッケージのソースコードはGitHubやGitLabにあるが、<code>go mod</code>はproxy.golang.org経由でこのソースを取得するがこのタイミングでドキュメントも取り込まれる。
 ライブラリは一元管理されていないがドキュメントが一元化されるのはこのような仕組みによるもの。</p>
 <p><a href="https://qiita.com/shibukawa/items/8c70fdd1972fad76a5ce" target="_blank">チョットできるGoプログラマーになるための詳解GoDoc</a></p>
-<h2 id="godoc-コマンド">godoc コマンド</h2>
+<h2 id="godoc-コマンド"><a name="godoc-コマンド" class="plugin-anchor" href="#godoc-コマンド"><i class="fa fa-link" aria-hidden="true"></i></a>godoc コマンド</h2>
 <p>Goには<code>godoc</code>コマンドがある。
 このコマンドのおかけで<strong>golang.orgのパッケージドキュメント</strong>をオフラインで閲覧することができる。</p>
 <pre><code class="lang-sh"><span class="hljs-comment"># port指定</span>
@@ -2095,8 +2095,8 @@ $ godoc -http <span class="hljs-string">&quot;:3000&quot;</span>
 <span class="hljs-comment"># localhost:6060 デフォルト</span>
 $ godoc
 </code></pre>
-<h2 id="go-doc-コマンド">go doc コマンド</h2>
-<h2 id="go-db">Go DB</h2>
+<h2 id="go-doc-コマンド"><a name="go-doc-コマンド" class="plugin-anchor" href="#go-doc-コマンド"><i class="fa fa-link" aria-hidden="true"></i></a>go doc コマンド</h2>
+<h2 id="go-db"><a name="go-db" class="plugin-anchor" href="#go-db"><i class="fa fa-link" aria-hidden="true"></i></a>Go DB</h2>
 <p>Goでの組み込みDB関連パッケージ
 Goの構造体をデータベースのスキーマ、あるいはテーブルにマッピングできるいわゆるORMは標準ライブラリとして提供されていない。
 便利なDB関連サードパーティもdatabase/sqlパッケージのラッパーで最終的にはdatabase/sqlパッケージを使う。</p>
@@ -2150,7 +2150,7 @@ Goのアプリケーションから呼び出すためのAPI（DBドライバー�
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.2 Go","level":"2.2.2","depth":2,"next":{"title":"2.3 JavaScript","level":"2.2.3","depth":2,"path":"program/javascript/javascript.md","ref":"program/javascript/javascript.md","articles":[{"title":"DOM","level":"2.2.3.1","depth":3,"path":"program/javascript/dom/dom.md","ref":"program/javascript/dom/dom.md","articles":[]},{"title":"Canvas","level":"2.2.3.2","depth":3,"path":"program/javascript/canvas/canvas.md","ref":"program/javascript/canvas/canvas.md","articles":[]},{"title":"TypeScript","level":"2.2.3.3","depth":3,"path":"program/javascript/ts/typescript.md","ref":"program/javascript/ts/typescript.md","articles":[]},{"title":"Vue","level":"2.2.3.4","depth":3,"path":"program/javascript/vue/vue.md","ref":"program/javascript/vue/vue.md","articles":[]},{"title":"Nuxt","level":"2.2.3.5","depth":3,"path":"program/javascript/nuxt/nuxt.md","ref":"program/javascript/nuxt/nuxt.md","articles":[]},{"title":"React","level":"2.2.3.6","depth":3,"path":"program/javascript/react/react.md","ref":"program/javascript/react/react.md","articles":[]},{"title":"Node","level":"2.2.3.7","depth":3,"path":"program/javascript/node/node.md","ref":"program/javascript/node/node.md","articles":[]},{"title":"JSON","level":"2.2.3.8","depth":3,"path":"program/javascript/json/package.md","ref":"program/javascript/json/package.md","articles":[]}]},"previous":{"title":"2.1 C/C++","level":"2.2.1","depth":2,"path":"program/c/c_c++.md","ref":"program/c/c_c++.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"program/go/go.md","mtime":"2023-01-12T00:39:30.222Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T00:39:41.486Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.2 Go","level":"2.2.2","depth":2,"next":{"title":"2.3 JavaScript","level":"2.2.3","depth":2,"path":"program/javascript/javascript.md","ref":"program/javascript/javascript.md","articles":[{"title":"DOM","level":"2.2.3.1","depth":3,"path":"program/javascript/dom/dom.md","ref":"program/javascript/dom/dom.md","articles":[]},{"title":"Canvas","level":"2.2.3.2","depth":3,"path":"program/javascript/canvas/canvas.md","ref":"program/javascript/canvas/canvas.md","articles":[]},{"title":"TypeScript","level":"2.2.3.3","depth":3,"path":"program/javascript/ts/typescript.md","ref":"program/javascript/ts/typescript.md","articles":[]},{"title":"Vue","level":"2.2.3.4","depth":3,"path":"program/javascript/vue/vue.md","ref":"program/javascript/vue/vue.md","articles":[]},{"title":"Nuxt","level":"2.2.3.5","depth":3,"path":"program/javascript/nuxt/nuxt.md","ref":"program/javascript/nuxt/nuxt.md","articles":[]},{"title":"React","level":"2.2.3.6","depth":3,"path":"program/javascript/react/react.md","ref":"program/javascript/react/react.md","articles":[]},{"title":"Node","level":"2.2.3.7","depth":3,"path":"program/javascript/node/node.md","ref":"program/javascript/node/node.md","articles":[]},{"title":"JSON","level":"2.2.3.8","depth":3,"path":"program/javascript/json/package.md","ref":"program/javascript/json/package.md","articles":[]}]},"previous":{"title":"2.1 C/C++","level":"2.2.1","depth":2,"path":"program/c/c_c++.md","ref":"program/c/c_c++.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"program/go/go.md","mtime":"2023-01-12T09:05:53.794Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T09:06:04.627Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2202,6 +2202,30 @@ Goのアプリケーションから呼び出すためのAPI（DBドライバー�
     </script>
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
     
         
         <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>

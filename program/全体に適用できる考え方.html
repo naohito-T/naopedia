@@ -1,19 +1,31 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="ja" >
     <head>
         <meta charset="UTF-8">
-        <title>全体に適用できる考え方 · HonKit</title>
+        <title>全体に適用できる考え方 · naopedia</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.4">
-        
+        <meta name="author" content="naohito-T">
         
         
     
     <link rel="stylesheet" href="../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
@@ -31,18 +43,6 @@
 
     
 
-    
-        
-        <link rel="stylesheet" href="../styles/website.css">
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
         
     
@@ -72,7 +72,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="検索ワードを入力" />
 </div>
 
             
@@ -1631,7 +1631,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            HonKitで公開 
         </a>
     </li>
 </ul>
@@ -1669,11 +1669,11 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="program-をいじる際の普遍的な考え方">program をいじる際の普遍的な考え方</h1>
-<h2 id="配列">配列</h2>
+                                <h1 id="program-をいじる際の普遍的な考え方"><a name="program-をいじる際の普遍的な考え方" class="plugin-anchor" href="#program-をいじる際の普遍的な考え方"><i class="fa fa-link" aria-hidden="true"></i></a>program をいじる際の普遍的な考え方</h1>
+<h2 id="配列"><a name="配列" class="plugin-anchor" href="#配列"><i class="fa fa-link" aria-hidden="true"></i></a>配列</h2>
 <p>破壊的な配列操作と非破壊的な配列操作があることを忘れてはいけない。
 破壊的なメソッドがそのプログラムにないときは、一度コピーなどをして退避する対応などをする。</p>
-<h2 id="switch">switch</h2>
+<h2 id="switch"><a name="switch" class="plugin-anchor" href="#switch"><i class="fa fa-link" aria-hidden="true"></i></a>switch</h2>
 <p>switch は break だけではなく return でも良い
 false や true が返す値が一致していた場合はわざと break を抜かすのもあり</p>
 <pre><code class="lang-js"><span class="hljs-keyword">switch</span> (a) {
@@ -1745,7 +1745,7 @@ false や true が返す値が一致していた場合はわざと break を抜�
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"全体に適用できる考え方","level":"2.2.8","depth":2,"next":{"title":"3. design","level":"2.3","depth":1,"path":"design/design.md","ref":"design/design.md","articles":[{"title":"3.1 html","level":"2.3.1","depth":2,"path":"design/html/html.md","ref":"design/html/html.md","articles":[{"title":"tag","level":"2.3.1.1","depth":3,"path":"design/html/tag.md","ref":"design/html/tag.md","articles":[]},{"title":"architecture","level":"2.3.1.2","depth":3,"path":"design/html/archit1ecture.md","ref":"design/html/archit1ecture.md","articles":[]}]},{"title":"3.2 css","level":"2.3.2","depth":2,"path":"design/css/css.md","ref":"design/css/css.md","articles":[{"title":"property","level":"2.3.2.1","depth":3,"path":"design/css/property.md","ref":"design/css/property.md","articles":[]},{"title":"design","level":"2.3.2.2","depth":3,"path":"design/css/design.md","ref":"design/css/design.md","articles":[]},{"title":"architecture","level":"2.3.2.3","depth":3,"path":"design/css/architecture.md","ref":"design/css/architecture.md","articles":[]}]},{"title":"3.3 pwa","level":"2.3.3","depth":2,"path":"design/pwa/pwa.md","ref":"design/pwa/pwa.md","articles":[]},{"title":"3.4 sass","level":"2.3.4","depth":2,"path":"design/sass/sass.md","ref":"design/sass/sass.md","articles":[]},{"title":"3.5 animation","level":"2.3.5","depth":2,"path":"design/animation/animation.md","ref":"design/animation/animation.md","articles":[{"title":"flash","level":"2.3.5.1","depth":3,"path":"design/animation/flash.md","ref":"design/animation/flash.md","articles":[]},{"title":"gsap","level":"2.3.5.2","depth":3,"path":"design/animation/gsap.md","ref":"design/animation/gsap.md","articles":[]},{"title":"WebGL","level":"2.3.5.3","depth":3,"path":"design/animation/webgl.md","ref":"design/animation/webgl.md","articles":[]}]},{"title":"3.6 3D","level":"2.3.6","depth":2,"path":"design/3D/3d.md","ref":"design/3D/3d.md","articles":[]},{"title":"3.7 Web(Webでのdesign案)","level":"2.3.7","depth":2,"path":"design/web/web.md","ref":"design/web/web.md","articles":[]}]},"previous":{"title":"正規表現","level":"2.2.7.3","depth":3,"path":"program/dsl/正規表現.md","ref":"program/dsl/正規表現.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"program/全体に適用できる考え方.md","mtime":"2023-01-12T00:39:30.230Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T00:39:41.486Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"全体に適用できる考え方","level":"2.2.8","depth":2,"next":{"title":"3. design","level":"2.3","depth":1,"path":"design/design.md","ref":"design/design.md","articles":[{"title":"3.1 html","level":"2.3.1","depth":2,"path":"design/html/html.md","ref":"design/html/html.md","articles":[{"title":"tag","level":"2.3.1.1","depth":3,"path":"design/html/tag.md","ref":"design/html/tag.md","articles":[]},{"title":"architecture","level":"2.3.1.2","depth":3,"path":"design/html/archit1ecture.md","ref":"design/html/archit1ecture.md","articles":[]}]},{"title":"3.2 css","level":"2.3.2","depth":2,"path":"design/css/css.md","ref":"design/css/css.md","articles":[{"title":"property","level":"2.3.2.1","depth":3,"path":"design/css/property.md","ref":"design/css/property.md","articles":[]},{"title":"design","level":"2.3.2.2","depth":3,"path":"design/css/design.md","ref":"design/css/design.md","articles":[]},{"title":"architecture","level":"2.3.2.3","depth":3,"path":"design/css/architecture.md","ref":"design/css/architecture.md","articles":[]}]},{"title":"3.3 pwa","level":"2.3.3","depth":2,"path":"design/pwa/pwa.md","ref":"design/pwa/pwa.md","articles":[]},{"title":"3.4 sass","level":"2.3.4","depth":2,"path":"design/sass/sass.md","ref":"design/sass/sass.md","articles":[]},{"title":"3.5 animation","level":"2.3.5","depth":2,"path":"design/animation/animation.md","ref":"design/animation/animation.md","articles":[{"title":"flash","level":"2.3.5.1","depth":3,"path":"design/animation/flash.md","ref":"design/animation/flash.md","articles":[]},{"title":"gsap","level":"2.3.5.2","depth":3,"path":"design/animation/gsap.md","ref":"design/animation/gsap.md","articles":[]},{"title":"WebGL","level":"2.3.5.3","depth":3,"path":"design/animation/webgl.md","ref":"design/animation/webgl.md","articles":[]}]},{"title":"3.6 3D","level":"2.3.6","depth":2,"path":"design/3D/3d.md","ref":"design/3D/3d.md","articles":[]},{"title":"3.7 Web(Webでのdesign案)","level":"2.3.7","depth":2,"path":"design/web/web.md","ref":"design/web/web.md","articles":[]}]},"previous":{"title":"正規表現","level":"2.2.7.3","depth":3,"path":"program/dsl/正規表現.md","ref":"program/dsl/正規表現.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"program/全体に適用できる考え方.md","mtime":"2023-01-12T09:05:53.798Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T09:06:04.627Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1797,6 +1797,30 @@ false や true が返す値が一致していた場合はわざと break を抜�
     </script>
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

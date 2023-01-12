@@ -1,19 +1,31 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="ja" >
     <head>
         <meta charset="UTF-8">
-        <title>BFF(Backends For Frontends) · HonKit</title>
+        <title>BFF(Backends For Frontends) · naopedia</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.4">
-        
+        <meta name="author" content="naohito-T">
         
         
     
     <link rel="stylesheet" href="../../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../../../gitbook/@honkit/honkit-plugin-highlight/website.css">
@@ -31,18 +43,6 @@
 
     
 
-    
-        
-        <link rel="stylesheet" href="../../../styles/website.css">
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
         
     
@@ -72,7 +72,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="検索ワードを入力" />
 </div>
 
             
@@ -1631,7 +1631,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            HonKitで公開 
         </a>
     </li>
 </ul>
@@ -1669,16 +1669,16 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="bffbackends-for-frontend">BFF(Backends For Frontend)</h1>
+                                <h1 id="bffbackends-for-frontend"><a name="bffbackends-for-frontend" class="plugin-anchor" href="#bffbackends-for-frontend"><i class="fa fa-link" aria-hidden="true"></i></a>BFF(Backends For Frontend)</h1>
 <p><a href="https://atmarkit.itmedia.co.jp/ait/articles/1803/12/news012.html" target="_blank">参考URL</a>
 <a href="https://zenn.dev/peg/articles/1878a6d6661295" target="_blank">Next.js BFFとかExpress記事</a>
 <a href="https://scrapbox.io/ebiken/Next.js_BFF_for_Proxy_+_SSR" target="_blank">Next.js BFF for Proxy + SSR</a></p>
-<h2 id="bffbackends-for-frontendとは">BFF(Backends For Frontend)とは</h2>
+<h2 id="bffbackends-for-frontendとは"><a name="bffbackends-for-frontendとは" class="plugin-anchor" href="#bffbackends-for-frontendとは"><i class="fa fa-link" aria-hidden="true"></i></a>BFF(Backends For Frontend)とは</h2>
 <p>名前の通り、フロントエンドのためのバックエンド
 <strong>フロントエンドのためにAPIをコールしたり、HTMLを生成したりするサーバのこと</strong>を指す。
 上記だと、今までのWebアプリケーションサーバと何が違うのかと思うが、本質的にはそこまで変わらないがフロントエンド専用という役割が異なる。</p>
 <p>専門領域に特化させることで集中できるようにするアーキテクチャ設計のことを<strong>BFFとよぶ</strong></p>
-<h2 id="webアプリケーションサーバの役割">Webアプリケーションサーバの役割</h2>
+<h2 id="webアプリケーションサーバの役割"><a name="webアプリケーションサーバの役割" class="plugin-anchor" href="#webアプリケーションサーバの役割"><i class="fa fa-link" aria-hidden="true"></i></a>Webアプリケーションサーバの役割</h2>
 <ul>
 <li>データベースや全文検索エンジンといったミドルウェアからデータを取得、更新する</li>
 <li>ページを構築する</li>
@@ -1686,13 +1686,13 @@
 など
 ここで、データベースや全文検索エンジンからデータを取得、更新する部分はデータの整合性や信頼性を担保しつつ管理することを目的とします。ページを構築する箇所やユーザーからの入力情報を得る箇所はユーザーインタフェース（UI）に該当し、ユーザー体験（UX）を向上させることを目的としています。</li>
 </ul>
-<h2 id="bffの構成">BFFの構成</h2>
+<h2 id="bffの構成"><a name="bffの構成" class="plugin-anchor" href="#bffの構成"><i class="fa fa-link" aria-hidden="true"></i></a>BFFの構成</h2>
 <p><img src="image/bff.png" alt="bff"></p>
 <p>BFFはリバースプロキシとバックエンドのAPIサーバの間に設置する構成をとることが多い。
 リバースプロキシは静的アセットファイルの圧縮。キャッシュといったWebアプリケーションサーバの肩代わりをするためのサーバ。
 バックエンドのAPIサーバは主にデータベースや全文検索エンジンといったミドルウェアと連携してリソースを操作したりデータを管理したりする役割として振る舞う。</p>
 <p><strong>BFFはこの2つのサーバ間でページを構築したり、ユーザからの入力情報を受け付けてバックエンドに流したりといったUI/UXに関わる機能を担当する。</strong></p>
-<h2 id="bffが必要な技術的背景、歴史的経緯">BFFが必要な技術的背景、歴史的経緯</h2>
+<h2 id="bffが必要な技術的背景、歴史的経緯"><a name="bffが必要な技術的背景、歴史的経緯" class="plugin-anchor" href="#bffが必要な技術的背景、歴史的経緯"><i class="fa fa-link" aria-hidden="true"></i></a>BFFが必要な技術的背景、歴史的経緯</h2>
 <p>なぜBFFが必要なのかを知るためにはアプリケーションの内部構造が時代とともに変化し続けているという背景</p>
 <ul>
 <li>リバースプロキシとは
@@ -1742,7 +1742,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"BFF(Backends For Frontends)","level":"2.13.1.4","depth":3,"next":{"title":"システムがWeb Pageを表示する仕組み","level":"2.13.1.5","depth":3,"path":"plan/front/structure.md","ref":"plan/front/structure.md","articles":[]},"previous":{"title":"Flux","level":"2.13.1.3","depth":3,"path":"plan/front/flux/flux.md","ref":"plan/front/flux/flux.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"plan/front/bff/bff.md","mtime":"2023-01-12T00:39:30.222Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T00:39:41.486Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"BFF(Backends For Frontends)","level":"2.13.1.4","depth":3,"next":{"title":"システムがWeb Pageを表示する仕組み","level":"2.13.1.5","depth":3,"path":"plan/front/structure.md","ref":"plan/front/structure.md","articles":[]},"previous":{"title":"Flux","level":"2.13.1.3","depth":3,"path":"plan/front/flux/flux.md","ref":"plan/front/flux/flux.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"plan/front/bff/bff.md","mtime":"2023-01-12T09:05:53.794Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T09:06:04.627Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1794,6 +1794,30 @@
     </script>
     <script src="../../../gitbook/gitbook.js"></script>
     <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
     
         
         <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>

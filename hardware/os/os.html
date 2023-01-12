@@ -1,19 +1,31 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="ja" >
     <head>
         <meta charset="UTF-8">
-        <title>9.2 OS · HonKit</title>
+        <title>9.2 OS · naopedia</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.4">
-        
+        <meta name="author" content="naohito-T">
         
         
     
     <link rel="stylesheet" href="../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../../gitbook/@honkit/honkit-plugin-highlight/website.css">
@@ -31,18 +43,6 @@
 
     
 
-    
-        
-        <link rel="stylesheet" href="../../styles/website.css">
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
         
     
@@ -72,7 +72,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="検索ワードを入力" />
 </div>
 
             
@@ -1631,7 +1631,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            HonKitで公開 
         </a>
     </li>
 </ul>
@@ -1669,8 +1669,8 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="os">OS</h1>
-<h2 id="osとは">OSとは</h2>
+                                <h1 id="os"><a name="os" class="plugin-anchor" href="#os"><i class="fa fa-link" aria-hidden="true"></i></a>OS</h1>
+<h2 id="osとは"><a name="osとは" class="plugin-anchor" href="#osとは"><i class="fa fa-link" aria-hidden="true"></i></a>OSとは</h2>
 <p>コンピューターーシステムにおいてハードウェアとアプリケーションの橋渡しを行う。
 より学問的に言うと</p>
 <ul>
@@ -1685,7 +1685,7 @@
 </blockquote>
 </li>
 </ul>
-<h2 id="osの基本構造">OSの基本構造</h2>
+<h2 id="osの基本構造"><a name="osの基本構造" class="plugin-anchor" href="#osの基本構造"><i class="fa fa-link" aria-hidden="true"></i></a>OSの基本構造</h2>
 <ul>
 <li>コマンドやライブラリ</li>
 <li>カーネル</li>
@@ -1717,25 +1717,25 @@ PDA (Processor Data Area)と呼ばれる、プロセッサの情報やプロセ�
 <p>スレッド
 CPUを利用するための実行単位で、最小処理単位の概念。</p>
 <hr>
-<h2 id="ファイルディスクリプターfdともいう">ファイルディスクリプター(fdともいう)</h2>
+<h2 id="ファイルディスクリプターfdともいう"><a name="ファイルディスクリプターfdともいう" class="plugin-anchor" href="#ファイルディスクリプターfdともいう"><i class="fa fa-link" aria-hidden="true"></i></a>ファイルディスクリプター(fdともいう)</h2>
 <p><a href="https://christina04.hatenablog.com/entry/socket-base#:~:text=%E3%82%BD%E3%82%B1%E3%83%83%E3%83%88%E3%81%AF%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E9%80%9A%E4%BF%A1%E3%81%AB,%E3%81%A8%E3%81%97%E3%81%A6%E3%82%82%E4%BD%BF%E3%82%8F%E3%82%8C%E3%81%BE%E3%81%99%E3%80%82" target="_blank">参考URL</a></p>
 <p>ソケットを扱う上で切り離せないのがファイルディスクリプター。
 fdとは<strong>ファイルやソケットなどを抽象化</strong>した仕組み。
 ファイルディスクリプターという名称だが、ファイルに限らず<strong>標準入出力、ソケット、ブロックデバイス、ディスプレイなど何でも「ファイルを扱うように」扱える。</strong>
 オブジェクト指向のポリモーフィズムの考え方ですね。
 Go言語でいうとio.Readerやio.Writerに近いです。抽象化された入出力によって汎用的な使い方ができます。</p>
-<h2 id="fd番号">fd番号</h2>
+<h2 id="fd番号"><a name="fd番号" class="plugin-anchor" href="#fd番号"><i class="fa fa-link" aria-hidden="true"></i></a>fd番号</h2>
 <p>fdは単なる整数で、その数字で識別されます。fdはプロセス毎に管理されますが、そのうち0~2はあらかじめ決まっていて</p>
 <p>0: 標準入力
 1: 標準出力
 2: 標準エラー出力
 となってます。それ以降は新しくfdが必要となった時に小さい番号順で作られ、クローズされると同じ番号が再利用されます。</p>
-<h2 id="fd保存場所">fd保存場所</h2>
+<h2 id="fd保存場所"><a name="fd保存場所" class="plugin-anchor" href="#fd保存場所"><i class="fa fa-link" aria-hidden="true"></i></a>fd保存場所</h2>
 <p>fdはプロセス毎に管理されるため、/proc/プロセス番号/fd/に保持されています。
 また</p>
 <p><code>$ lsof -p プロセス番号</code>
 で番号を確認できます。</p>
-<h2 id="ソケット">ソケット</h2>
+<h2 id="ソケット"><a name="ソケット" class="plugin-anchor" href="#ソケット"><i class="fa fa-link" aria-hidden="true"></i></a>ソケット</h2>
 <p><a href="https://xtech.nikkei.com/it/pc/article/NPC/20070130/260044/" target="_blank">ソケットとポート番号のそれぞれの役割を知る</a>
 <a href="https://christina04.hatenablog.com/entry/socket-base#:~:text=%E3%82%BD%E3%82%B1%E3%83%83%E3%83%88%E3%81%AF%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E9%80%9A%E4%BF%A1%E3%81%AB,%E3%81%A8%E3%81%97%E3%81%A6%E3%82%82%E4%BD%BF%E3%82%8F%E3%82%8C%E3%81%BE%E3%81%99%E3%80%82" target="_blank">Webサーバにおけるソケット周りの知識</a></p>
 <p>ソケットを理解するとわかること</p>
@@ -1758,7 +1758,7 @@ Go言語でいうとio.Readerやio.Writerに近いです。抽象化された入
 </ul>
 <p><img src="image/socket.png" alt="socket"></p>
 <p>ソケットはプロセスの持つ出入り口。プロセス間で通信を行う場合やプロセスからインターネットに繋ぐ場合の口となる。</p>
-<h2 id="ソケット通信-http通信違い">ソケット通信 HTTP通信違い</h2>
+<h2 id="ソケット通信-http通信違い"><a name="ソケット通信-http通信違い" class="plugin-anchor" href="#ソケット通信-http通信違い"><i class="fa fa-link" aria-hidden="true"></i></a>ソケット通信 HTTP通信違い</h2>
 <p><a href="https://qiita.com/Kept1994/items/b28581f9cf2bd8383ef4" target="_blank">かなり深く追求している</a></p>
 <p>HTTPはクライアントがリクエストすることによってサーバがレスポンスする。
 クライアントが発信することから始まるため逆にサーバーがリクエストすることはない。
@@ -1771,25 +1771,25 @@ Go言語でいうとio.Readerやio.Writerに近いです。抽象化された入
 <li>ネットワーキングコンセプト</li>
 </ol>
 <hr>
-<h2 id="標準入力標準出力">標準入力/標準出力/</h2>
+<h2 id="標準入力標準出力"><a name="標準入力標準出力" class="plugin-anchor" href="#標準入力標準出力"><i class="fa fa-link" aria-hidden="true"></i></a>標準入力/標準出力/</h2>
 <p>あらゆるプロセスには、stdin、stdout、stderrという3つの標準ストリームがあることをしる</p>
 <p><a href="https://www.twilio.com/blog/a-guide-to-node-js-logging-jp" target="_blank">別の記事だけど参考になる(Node.jsでログを記録する方法)</a></p>
-<h3 id="標準入力-standard-input-stdin">標準入力 [standard input] stdin</h3>
+<h3 id="標準入力-standard-input-stdin"><a name="標準入力-standard-input-stdin" class="plugin-anchor" href="#標準入力-standard-input-stdin"><i class="fa fa-link" aria-hidden="true"></i></a>標準入力 [standard input] stdin</h3>
 <p>コンピューターの入力装置やOSが提供する<strong>データ入力機能・経路</strong>などを指し、多くのシステムではキーボード装置による利用者の文字入力が標準入力に設定されている。 システム上では “stdin” の略号で表されることが多い。</p>
-<h2 id="標準出力-standard-output-stdout">標準出力 [standard output] stdout</h2>
+<h2 id="標準出力-standard-output-stdout"><a name="標準出力-standard-output-stdout" class="plugin-anchor" href="#標準出力-standard-output-stdout"><i class="fa fa-link" aria-hidden="true"></i></a>標準出力 [standard output] stdout</h2>
 <p>コンピューターの出力装置やOSが提供するデータ出力機能・経路などを指し、多くのシステムではディスプレイ装置による利用者への文字表示が標準出力に設定されている。 システム上では “stdout” の略号で表されることが多い。</p>
 <p>topic
 JSのconsole.logはこれにあたる</p>
-<h2 id="標準エラー出力">標準エラー出力</h2>
+<h2 id="標準エラー出力"><a name="標準エラー出力" class="plugin-anchor" href="#標準エラー出力"><i class="fa fa-link" aria-hidden="true"></i></a>標準エラー出力</h2>
 <p>UNIXの命令やGMTの命令の多くはエラーメッセージを出力することがある。
 これは標準出力（stdout）とは違う書き出し先に書き込まれる。これを標準エラー出力（stderr）という。</p>
 <p>topic
 JSのconsole.errorはこれにあたる</p>
 <hr>
-<h2 id="改行コード">改行コード</h2>
+<h2 id="改行コード"><a name="改行コード" class="plugin-anchor" href="#改行コード"><i class="fa fa-link" aria-hidden="true"></i></a>改行コード</h2>
 <p>対応OSと改行コードが違うということは、<strong>プログラムを読み込めなくなることを意味する</strong></p>
 <p><a href="https://cprogram.net/line-feed-code/" target="_blank">参考URL</a></p>
-<h3 id="種類">種類</h3>
+<h3 id="種類"><a name="種類" class="plugin-anchor" href="#種類"><i class="fa fa-link" aria-hidden="true"></i></a>種類</h3>
 <p>改行コードには以下のものがある。</p>
 <p>– <strong>CR（Carriage Return キャリッジ・リターン）</strong>
 左端へ移動する・同じ行の先頭へ移動するという意味
@@ -1805,7 +1805,7 @@ JSのconsole.errorはこれにあたる</p>
 コードで書く場合は<code>\r\n</code>と記述する</p>
 <p>対応OS：Windows OS</p>
 <p><img src="image/改行コード図.png" alt="改行コード図"></p>
-<h2 id="uid">UID</h2>
+<h2 id="uid"><a name="uid" class="plugin-anchor" href="#uid"><i class="fa fa-link" aria-hidden="true"></i></a>UID</h2>
 <p>UIDとはUNIX系のOSで使用される、利用者識別用の番号のこと。</p>
 
                                 
@@ -1850,7 +1850,7 @@ JSのconsole.errorはこれにあたる</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"9.2 OS","level":"2.9.2","depth":2,"next":{"title":"10. セキュリティ","level":"2.10","depth":1,"path":"security/security.md","ref":"security/security.md","articles":[]},"previous":{"title":"9.1 低レイヤー","level":"2.9.1","depth":2,"path":"hardware/lowlayer/program.md","ref":"hardware/lowlayer/program.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"hardware/os/os.md","mtime":"2023-01-12T00:39:30.214Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T00:39:41.486Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"9.2 OS","level":"2.9.2","depth":2,"next":{"title":"10. セキュリティ","level":"2.10","depth":1,"path":"security/security.md","ref":"security/security.md","articles":[]},"previous":{"title":"9.1 低レイヤー","level":"2.9.1","depth":2,"path":"hardware/lowlayer/program.md","ref":"hardware/lowlayer/program.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"hardware/os/os.md","mtime":"2023-01-12T09:05:53.786Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T09:06:04.627Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1902,6 +1902,30 @@ JSのconsole.errorはこれにあたる</p>
     </script>
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
     
         
         <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>

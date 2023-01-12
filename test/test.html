@@ -1,19 +1,31 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="ja" >
     <head>
         <meta charset="UTF-8">
-        <title>11. テスト · HonKit</title>
+        <title>11. テスト · naopedia</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.4">
-        
+        <meta name="author" content="naohito-T">
         
         
     
     <link rel="stylesheet" href="../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
@@ -31,18 +43,6 @@
 
     
 
-    
-        
-        <link rel="stylesheet" href="../styles/website.css">
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
         
     
@@ -72,7 +72,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="検索ワードを入力" />
 </div>
 
             
@@ -1631,7 +1631,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            HonKitで公開 
         </a>
     </li>
 </ul>
@@ -1669,25 +1669,25 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="test">Test</h1>
+                                <h1 id="test"><a name="test" class="plugin-anchor" href="#test"><i class="fa fa-link" aria-hidden="true"></i></a>Test</h1>
 <p><a href="https://logmi.jp/tech/articles/323523" target="_blank">E2E Test導入で嬉しいこと</a>
 <a href="https://engineering.mercari.com/blog/entry/20211208-test-automation-policy-in-merpay-frontend/" target="_blank">メルペイのテスト方針</a>
 <a href="https://gift-tech.co.jp/articles/Qase/" target="_blank">Test管理ツール(Excelとかで管理していたのをさらに管理する)</a>
 <a href="https://nakka-k.hatenablog.com/entry/2019/06/25/000752" target="_blank">webアプリケーション開発で個人的に重視しているテストの話</a>
 <a href="https://commerce-engineer.rakuten.careers/entry/tech/0031" target="_blank">E2E テストを導入するのか</a></p>
-<h2 id="test-ガントチャート">Test ガントチャート</h2>
+<h2 id="test-ガントチャート"><a name="test-ガントチャート" class="plugin-anchor" href="#test-ガントチャート"><i class="fa fa-link" aria-hidden="true"></i></a>Test ガントチャート</h2>
 <p><img src="image/test.png" alt="ガンドチャート"></p>
-<h2 id="test-フェーズ">Test フェーズ</h2>
+<h2 id="test-フェーズ"><a name="test-フェーズ" class="plugin-anchor" href="#test-フェーズ"><i class="fa fa-link" aria-hidden="true"></i></a>Test フェーズ</h2>
 <p>単体テスト    一部分 ( モジュール内のクラスや関数 )のテスト
 結合テスト    機能を結合したもの（単体テスト済みのモジュールを組み合わたもの）のテスト
 システムテスト    システム全体（機能・非機能）のテスト</p>
-<h2 id="test-概要">Test 概要</h2>
+<h2 id="test-概要"><a name="test-概要" class="plugin-anchor" href="#test-概要"><i class="fa fa-link" aria-hidden="true"></i></a>Test 概要</h2>
 <p><strong>1. ユニットテスト</strong>
 ユニットテストはJestを用いて、主にTypeScriptで記述された関数ロジックをテストする。※Vuex、vueファイルは除く</p>
 <p><strong>2. インテグレーションテスト</strong>
 インテグレーションテストは主にWebページ単位のテストで、Nuxtでいうところのpages配下のページコンポーネント単位のテストに相当します。Vueコンポーネントやユーティリティ関数、Nuxt middlewareやplugin、Vuex Storeなどページに含まれるものすべてが統合されます。ユニットテストで対象外としていた、コンポーネントやVuex Storeロジックもここで担保されます。Cypressを用いており、該当のアプリケーションと同じリポジトリにテストコードも置きます。</p>
 <blockquote>
-<p>元々は Vue Test Utils などを用いてインテグレーションテストを行っていました。しかし、Nuxt 固有の処理や Vuex State、ブラウザ固有の処理のモックなど、テストのための設定が多くなってしまっていまいテスト運用に難がありました。代わりに Cypress を用いる方針に現在はシフトしています。Cypress の機能で API レスポンスだけモックし、それ以外はリアルなアプリケーションを実際のブラウザ上でテストすることができます。</p>
+<p>元々は Vue <a href="../GLOSSARY.html#test" class="glossary-term" title="これは、テスト用の単語です。">Test</a> Utils などを用いてインテグレーションテストを行っていました。しかし、Nuxt 固有の処理や Vuex State、ブラウザ固有の処理のモックなど、テストのための設定が多くなってしまっていまいテスト運用に難がありました。代わりに Cypress を用いる方針に現在はシフトしています。Cypress の機能で API レスポンスだけモックし、それ以外はリアルなアプリケーションを実際のブラウザ上でテストすることができます。</p>
 </blockquote>
 <p><strong>3. シナリオテスト</strong></p>
 <p>シナリオテストは予期している挙動すべてを確認するテスト
@@ -1702,25 +1702,25 @@ QAチームがマニュアルで実施する。ある機能が追加・変更さ
 <p><strong>4. リグレッションテスト</strong></p>
 <p>リグレッションテストは実装を変更した結果、アプリケーション全体の振る舞いに予期せぬ影響がないかどうかを確認するテスト</p>
 <p><img src="image/リグレッション.png" alt="リグレッションテストのワークフロー"></p>
-<h2 id="単体テストでのネットワーク接続は？">単体テストでのネットワーク接続は？</h2>
+<h2 id="単体テストでのネットワーク接続は？"><a name="単体テストでのネットワーク接続は？" class="plugin-anchor" href="#単体テストでのネットワーク接続は？"><i class="fa fa-link" aria-hidden="true"></i></a>単体テストでのネットワーク接続は？</h2>
 <p>そもそも単体テストではネットワーク接続はしない。
 そのためモックを作成したりなどの方針をとる。</p>
-<h2 id="テストの考え方">テストの考え方</h2>
+<h2 id="テストの考え方"><a name="テストの考え方" class="plugin-anchor" href="#テストの考え方"><i class="fa fa-link" aria-hidden="true"></i></a>テストの考え方</h2>
 <p>サーバー側では console.log()のような簡単なテストから始めると良い。
 テストをしたというコードが残るのが何よりも良い。エビデンスになる。
 APIテストのエンドポイントのメソッドでWeb APIをcallしているような場合は、それをmock化してWeb APIがcallされないようにすべき。</p>
-<h2 id="test自動化-3つのステップ">Test自動化 3つのステップ</h2>
+<h2 id="test自動化-3つのステップ"><a name="test自動化-3つのステップ" class="plugin-anchor" href="#test自動化-3つのステップ"><i class="fa fa-link" aria-hidden="true"></i></a>Test自動化 3つのステップ</h2>
 <p>テスト自動化には大きく3つのステップがある。</p>
 <ul>
 <li>テスト設計</li>
 <li>テストスクリプト作成</li>
-<li>CI環境構築<h2 id="e2eテストend-to-end">E2Eテスト(End to End)</h2>
+<li>CI環境構築<h2 id="e2eテストend-to-end"><a name="e2eテストend-to-end" class="plugin-anchor" href="#e2eテストend-to-end"><i class="fa fa-link" aria-hidden="true"></i></a>E2Eテスト(End to End)</h2>
 </li>
 </ul>
 <p><strong>E2EテストとはUI(User Interface)テスト</strong>とも呼ばれ、システム全体を通してテストを行う。
 <strong>Webサービスの場合はユーザと同じようにブラウザを操作し挙動が期待通りになっているかを確認すること。</strong></p>
 <p><a href="https://recruit.gmo.jp/engineer/jisedai/blog/e2e-test-saas-ai-mabl/" target="_blank">E2Eテスト設計思想</a></p>
-<h2 id="ユニットテストとは単体テスト">ユニットテストとは(単体テスト)</h2>
+<h2 id="ユニットテストとは単体テスト"><a name="ユニットテストとは単体テスト" class="plugin-anchor" href="#ユニットテストとは単体テスト"><i class="fa fa-link" aria-hidden="true"></i></a>ユニットテストとは(単体テスト)</h2>
 <p><a href="https://qiita.com/takutoy/items/c684f761c655d832e5d2" target="_blank">参考URL</a></p>
 <p>単体テストあるいはユニットテストとは、ソースコードの個々のユニット、すなわち1つ以上のモジュールが使用に適しているかどうかを決定するために関連する制御データ・使用手順・操作手順とともにテストする手法である。</p>
 <ul>
@@ -1731,20 +1731,20 @@ APIテストのエンドポイントのメソッドでWeb APIをcallしている
 <li>コードの欠陥を発見する</li>
 <li>コードが正しく変更されたことを確認する。</li>
 </ul>
-<h2 id="ユニットテスト--単体テスト">ユニットテスト : 単体テスト</h2>
+<h2 id="ユニットテスト--単体テスト"><a name="ユニットテスト--単体テスト" class="plugin-anchor" href="#ユニットテスト--単体テスト"><i class="fa fa-link" aria-hidden="true"></i></a>ユニットテスト : 単体テスト</h2>
 <p>クラスやメソッドを単体でテストすることをユニットテスト
 <strong>単体テストができますと言える前提</strong>
 YesテストとNoテストをコードでかけるといえるのが、ユニットテストできますといえる。</p>
-<h2 id="インテグレーションテスト">インテグレーションテスト</h2>
+<h2 id="インテグレーションテスト"><a name="インテグレーションテスト" class="plugin-anchor" href="#インテグレーションテスト"><i class="fa fa-link" aria-hidden="true"></i></a>インテグレーションテスト</h2>
 <p>他のクラスや外部モジュールと結合してテストすることをインテグレーションテストという</p>
-<h2 id="スモークテスト">スモークテスト</h2>
+<h2 id="スモークテスト"><a name="スモークテスト" class="plugin-anchor" href="#スモークテスト"><i class="fa fa-link" aria-hidden="true"></i></a>スモークテスト</h2>
 <p>スモークテストは、ソフトウェアの中核機能の機能テストと単体テストから構成され、より詳細なテストの前に実施されます。
 スモークテストは次のような疑問に答えてくれます。
 プログラムが正しく起動するか
 メインコントロールボタンは機能するか
 単純なブランクのテストユーザーアカウントを新規に保存できるか
 これらの基本的な機能のテストに失敗する場合、この段階で、より詳細な品質作業に時間を費やす意味がないことは明らかです。</p>
-<h2 id="テスト単語">テスト単語</h2>
+<h2 id="テスト単語"><a name="テスト単語" class="plugin-anchor" href="#テスト単語"><i class="fa fa-link" aria-hidden="true"></i></a>テスト単語</h2>
 <p>インテグレーションテスト
 スモークテスト
 動的テスト
@@ -1753,16 +1753,16 @@ YesテストとNoテストをコードでかけるといえるのが、ユニッ
 自動テスト
 手動テスト
 テストファースト
-Test Driven Development(TDD)
+<a href="../GLOSSARY.html#test" class="glossary-term" title="これは、テスト用の単語です。">Test</a> Driven Development(TDD)
 コードカバレッジ
 ホワイトボックステスト
 ブラックボックステスト
 境界値分析
 同値分析</p>
-<h2 id="カバレッジとは">カバレッジとは</h2>
+<h2 id="カバレッジとは"><a name="カバレッジとは" class="plugin-anchor" href="#カバレッジとは"><i class="fa fa-link" aria-hidden="true"></i></a>カバレッジとは</h2>
 <p>IT関係でカバレッジとは、開発したソフトウェアのプログラムコードが試験された割合。
 プロジェクトでのコード網羅率を表す。</p>
-<h2 id="cicd">CI/CD</h2>
+<h2 id="cicd"><a name="cicd" class="plugin-anchor" href="#cicd"><i class="fa fa-link" aria-hidden="true"></i></a>CI/CD</h2>
 <p>昨今ではソフトウェア開発における様々な工程を自動化するような技術の開発や普及が進んでいる
 そのひとつにCI(Continuous Integration、継続的インテグレーション)やCD（Continuous Delivery、継続的デリバリー）と呼ばれるものがある。</p>
 <p>CIはソフトウェアのビルドやテストを自動化して頻繁に実行することでソフトウェアの品質向上や開発効率化を目指す手法で、CDはCIに加えてリリースやデプロイまでも自動化する手法。</p>
@@ -1775,15 +1775,15 @@ Travis CIやCircle CIなどが有名</li>
 Jenkins</li>
 </ul>
 <hr>
-<h2 id="test-word">test word</h2>
+<h2 id="test-word"><a name="test-word" class="plugin-anchor" href="#test-word"><i class="fa fa-link" aria-hidden="true"></i></a>test word</h2>
 <ul>
 <li>モックアップ
 モックアップとは工業製品の設計・デザイン段階で<strong>試作される外見を実物そっくりに似せて作られた実物大の模型のこと</strong></li>
 </ul>
-<h2 id="テストダブルtest-double">テストダブル(Test Double)</h2>
+<h2 id="テストダブルtest-double"><a name="テストダブルtest-double" class="plugin-anchor" href="#テストダブルtest-double"><i class="fa fa-link" aria-hidden="true"></i></a>テストダブル(Test Double)</h2>
 <p><a href="https://qiita.com/kaleidot725/items/075934e8e6be902a7fe1" target="_blank">参考URL</a></p>
 <blockquote>
-<p>テストダブル (Test Double) とは、ソフトウェアテストにおいて、テスト対象が依存しているコンポーネントを置き換える代用品のこと。ダブルは代役、影武者を意味する。</p>
+<p>テストダブル (<a href="../GLOSSARY.html#test" class="glossary-term" title="これは、テスト用の単語です。">Test</a> Double) とは、ソフトウェアテストにおいて、テスト対象が依存しているコンポーネントを置き換える代用品のこと。ダブルは代役、影武者を意味する。</p>
 </blockquote>
 <p>テストダブルに種類はある。以下の種類</p>
 <ul>
@@ -1793,13 +1793,13 @@ Jenkins</li>
 <li>フェイク</li>
 <li>ダミー</li>
 </ul>
-<h2 id="スタブ">スタブ</h2>
+<h2 id="スタブ"><a name="スタブ" class="plugin-anchor" href="#スタブ"><i class="fa fa-link" aria-hidden="true"></i></a>スタブ</h2>
 <p>テスト対象が依存コンポーネントを呼び出したときに取得できる値を用意する。</p>
-<h2 id="モックmock">モック(Mock)</h2>
+<h2 id="モックmock"><a name="モックmock" class="plugin-anchor" href="#モックmock"><i class="fa fa-link" aria-hidden="true"></i></a>モック(Mock)</h2>
 <p>テスト対象が依存コンポーネントを呼び出したときに与えた値を記録する。
 Mockは<strong>送信メッセージのテスト。</strong>
 関数の実行回数、関数が正しい引数で呼び出されたか、メソッドの呼び出しの順序などの期待する結果が得られる過程を検証する</p>
-<h2 id="スタブとモックの違い">スタブとモックの違い</h2>
+<h2 id="スタブとモックの違い"><a name="スタブとモックの違い" class="plugin-anchor" href="#スタブとモックの違い"><i class="fa fa-link" aria-hidden="true"></i></a>スタブとモックの違い</h2>
 <p><a href="https://qiita.com/k5trismegistus/items/10ce381d29ab62ca0ea6#:~:text=%E3%82%B9%E3%82%BF%E3%83%96%E3%81%A8%E3%83%A2%E3%83%83%E3%82%AF%E3%81%AE%E6%9C%80%E5%A4%A7,%E3%81%84%E3%81%A3%E3%81%A6%E3%82%88%E3%81%84%E3%81%A7%E3%81%97%E3%82%87%E3%81%86%E3%80%82" target="_blank">参考URL</a></p>
 <p>スタブとモックの最大の違いは
 <strong>スタブは受信メッセージのテストのために使うもの</strong>
@@ -1815,38 +1815,38 @@ Mockは<strong>送信メッセージのテスト。</strong>
 </ul>
 </li>
 </ol>
-<h2 id="スパイ">スパイ</h2>
+<h2 id="スパイ"><a name="スパイ" class="plugin-anchor" href="#スパイ"><i class="fa fa-link" aria-hidden="true"></i></a>スパイ</h2>
 <p>テスト対象が依存コンポーネントを呼び出したときに取得できる値を用意し、
 さらに呼び出したときに与えた値を記録する。（スタブとモックの機能を持つ）</p>
-<h2 id="フェイク">フェイク</h2>
+<h2 id="フェイク"><a name="フェイク" class="plugin-anchor" href="#フェイク"><i class="fa fa-link" aria-hidden="true"></i></a>フェイク</h2>
 <p>実際のコンポーネント同様の動作をする。
 テストを実行するための軽量化されたコンポーネントのこと</p>
-<h2 id="ダミー">ダミー</h2>
+<h2 id="ダミー"><a name="ダミー" class="plugin-anchor" href="#ダミー"><i class="fa fa-link" aria-hidden="true"></i></a>ダミー</h2>
 <p>テストするメソッドには関係ないが、コンパイルを通すために必要なコンポーネント</p>
-<h2 id="tips">tips</h2>
+<h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>tips</h2>
 <p><a href="https://qiita.com/yuta-katayama-23/items/2ee51d41153359e56335" target="_blank">mockを使ったNode.js(Express)のAPIテスト</a>
 <a href="https://qiita.com/yuta-katayama-23/items/29b91fed629fe758a42d" target="_blank">Jest/Supertestを使用したnode.js(express)のAPIテスト</a></p>
-<h2 id="node">node</h2>
+<h2 id="node"><a name="node" class="plugin-anchor" href="#node"><i class="fa fa-link" aria-hidden="true"></i></a>node</h2>
 <p>Node.js(Express)でServer Sideを構築する場合、外部のWeb APIを実行しデータを取得することも多くある。
 その際にUnitTestやAPIテストで実際に通信を行なってしまうと、テストとして動作が不安定になるなどの問題が発生してし歌め</p>
-<h2 id="cicd">CI/CD</h2>
+<h2 id="cicd"><a name="cicd" class="plugin-anchor" href="#cicd"><i class="fa fa-link" aria-hidden="true"></i></a>CI/CD</h2>
 <p><a href="https://casualdevelopers.com/tech-tips/how-to-install-and-use-jenkins-on-docker-for-nodejs/" target="_blank">参考URL</a></p>
 <p>テストを自動実行することで開発中のプロダクトの品質を担保し、安全にソースコードをマージすることが出来るようになります。
 こうした一連の流れをContinuous Integration（継続的インテグレーション）と呼び、こうした環境を構築することを、そのイニシャルからCI環境構築と呼ぶ。</p>
-<h2 id="昨今のciツール">昨今のCIツール</h2>
+<h2 id="昨今のciツール"><a name="昨今のciツール" class="plugin-anchor" href="#昨今のciツール"><i class="fa fa-link" aria-hidden="true"></i></a>昨今のCIツール</h2>
 <p>環境構築は一からはやらない。既存のツールを利用することがほとんど
 基本yamlファイルで終了</p>
-<h2 id="jenkins">Jenkins</h2>
+<h2 id="jenkins"><a name="jenkins" class="plugin-anchor" href="#jenkins"><i class="fa fa-link" aria-hidden="true"></i></a>Jenkins</h2>
 <p>Jenkinsは使用に際して色々と作りこみが必要になるので、属人化しやすいというデメリットがありますが、最近のCIツールは設定ファイルひとつで済むので属人化しづらいというメリットがあります。
 Job DSLとは
 Job DSLとはJenkinsの新しいジョブの設定をDSL(Domain Specific Language)で書いておき、それを読み込むだけでGUIをつかずに新しいジョブを作成する仕組み。
 昨今はinfrastructure as code(laC)と言われているようにインフラであっても人が手動で設定するのではなく、設定をソースコードにして自動的に設定をされるべき。</p>
 <p><a href="https://casualdevelopers.com/tech-tips/how-to-install-and-use-jenkins-on-docker-for-nodejs/" target="_blank">これをやる</a></p>
-<h2 id="シナリオテスト">シナリオテスト</h2>
+<h2 id="シナリオテスト"><a name="シナリオテスト" class="plugin-anchor" href="#シナリオテスト"><i class="fa fa-link" aria-hidden="true"></i></a>シナリオテスト</h2>
 <p>シナリオテストとは<strong>ユーザーが一連の流れに沿ってシステムを問題なく利用できることを確認するためのテスト</strong>
 ユーザーがシステムを問題なく利用できることとあるように、ユーザー視点での確認がメインとなる。
 そのため、総合テスト、受け入れテストなどでこのテスト技法が用いられます</p>
-<h2 id="会社でのテストについて">会社でのテストについて</h2>
+<h2 id="会社でのテストについて"><a name="会社でのテストについて" class="plugin-anchor" href="#会社でのテストについて"><i class="fa fa-link" aria-hidden="true"></i></a>会社でのテストについて</h2>
 <ul>
 <li><p>単体試験項目に関して
 極論を言うと技術部側がわかればいい
@@ -1860,16 +1860,16 @@ Job DSLとはJenkinsの新しいジョブの設定をDSL(Domain Specific Languag
 </ul>
 <p>設計する人は最後まで見れるようになってほしい(できる・できないは別にして)
 本来のウォーターフォールはこのモックを一度作って設計する。</p>
-<h2 id="単体テスト">単体テスト</h2>
-<p>OK testとNG testを書くのが、単体テストかけますレベル</p>
-<h2 id="リグレッションテスト回帰テスト・退行テスト">リグレッションテスト(回帰テスト・退行テスト)</h2>
+<h2 id="単体テスト"><a name="単体テスト" class="plugin-anchor" href="#単体テスト"><i class="fa fa-link" aria-hidden="true"></i></a>単体テスト</h2>
+<p>OK <a href="../GLOSSARY.html#test" class="glossary-term" title="これは、テスト用の単語です。">test</a>とNG <a href="../GLOSSARY.html#test" class="glossary-term" title="これは、テスト用の単語です。">test</a>を書くのが、単体テストかけますレベル</p>
+<h2 id="リグレッションテスト回帰テスト・退行テスト"><a name="リグレッションテスト回帰テスト・退行テスト" class="plugin-anchor" href="#リグレッションテスト回帰テスト・退行テスト"><i class="fa fa-link" aria-hidden="true"></i></a>リグレッションテスト(回帰テスト・退行テスト)</h2>
 <p><a href="https://e-words.jp/w/%E3%83%AA%E3%82%B0%E3%83%AC%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%86%E3%82%B9%E3%83%88.html" target="_blank">参考URL</a>
 リグレッションテストとは、<strong>ソフトウェアテストのひとつでプログラムの一部を変更・修正した際にその変更によって予想外の影響が現れていないか確かめること。</strong>
 ソフトウェア開発の過程で不具合が発見されプログラムが修正されることはよくあるが、その修正によってそれまで正常に動作していた部分が異状をきたすようになることがある。このような現象を「デグレード」「リグレッション」などという。</p>
 <p>こうしたことが起きないよう、機能追加やバグ修正などでコードの一部が改修されたあと、それまでの動作に変更や問題が起きないことを確認するために実施されるテストをリグレッションテストという。
 一部を変更するたびにすべての機能やコードをテストすることは現実的ではないことも多いため、修正箇所が影響する可能性があるプログラムの範囲を見極め、重要な機能を優先してテストするといった運用が行われることもある。</p>
 <hr>
-<h2 id="テストを管理する">テストを管理する</h2>
+<h2 id="テストを管理する"><a name="テストを管理する" class="plugin-anchor" href="#テストを管理する"><i class="fa fa-link" aria-hidden="true"></i></a>テストを管理する</h2>
 <p><a href="https://qiita.com/tsuyo_pon/items/b85139f2c087b8cdfc72" target="_blank">TestRail</a></p>
 <p>Excelでテストケースを管理していてこんなことで悩んでいませんか？</p>
 <ul>
@@ -1878,11 +1878,11 @@ Job DSLとはJenkinsの新しいジョブの設定をDSL(Domain Specific Languag
 <li>テストにどれくらい時間がかかったか把握したい</li>
 <li>とにかくExcelでテストケースを作成するのが面倒</li>
 </ul>
-<h2 id="testrailとは">TestRailとは</h2>
+<h2 id="testrailとは"><a name="testrailとは" class="plugin-anchor" href="#testrailとは"><i class="fa fa-link" aria-hidden="true"></i></a>TestRailとは</h2>
 <p>ブラウザベースでテスト管理できる有償ツール</p>
-<h2 id="er">ER</h2>
+<h2 id="er"><a name="er" class="plugin-anchor" href="#er"><i class="fa fa-link" aria-hidden="true"></i></a>ER</h2>
 <p><a href="https://qiita.com/mt0m/items/7e18d8802843d9f60d28" target="_blank">E2E テスト</a></p>
-<h2 id="mockデータ作成ツール">mockデータ作成ツール</h2>
+<h2 id="mockデータ作成ツール"><a name="mockデータ作成ツール" class="plugin-anchor" href="#mockデータ作成ツール"><i class="fa fa-link" aria-hidden="true"></i></a>mockデータ作成ツール</h2>
 <p><a href="https://fakerjs.dev/api/" target="_blank">https://fakerjs.dev/api/</a></p>
 
                                 
@@ -1927,7 +1927,7 @@ Job DSLとはJenkinsの新しいジョブの設定をDSL(Domain Specific Languag
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"11. テスト","level":"2.11","depth":1,"next":{"title":"11.1 WebUI テスト","level":"2.11.1","depth":2,"path":"test/webUI/Cypress.md","ref":"test/webUI/Cypress.md","articles":[]},"previous":{"title":"10. セキュリティ","level":"2.10","depth":1,"path":"security/security.md","ref":"security/security.md","articles":[]},"articles":[{"title":"11.1 WebUI テスト","level":"2.11.1","depth":2,"path":"test/webUI/Cypress.md","ref":"test/webUI/Cypress.md","articles":[]}],"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"test/test.md","mtime":"2023-01-12T00:39:30.230Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T00:39:41.486Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"11. テスト","level":"2.11","depth":1,"next":{"title":"11.1 WebUI テスト","level":"2.11.1","depth":2,"path":"test/webUI/Cypress.md","ref":"test/webUI/Cypress.md","articles":[]},"previous":{"title":"10. セキュリティ","level":"2.10","depth":1,"path":"security/security.md","ref":"security/security.md","articles":[]},"articles":[{"title":"11.1 WebUI テスト","level":"2.11.1","depth":2,"path":"test/webUI/Cypress.md","ref":"test/webUI/Cypress.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"test/test.md","mtime":"2023-01-12T09:05:53.798Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T09:06:04.627Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1979,6 +1979,30 @@ Job DSLとはJenkinsの新しいジョブの設定をDSL(Domain Specific Languag
     </script>
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

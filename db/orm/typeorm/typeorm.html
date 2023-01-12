@@ -1,19 +1,31 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="ja" >
     <head>
         <meta charset="UTF-8">
-        <title>TypeORM · HonKit</title>
+        <title>TypeORM · naopedia</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.4">
-        
+        <meta name="author" content="naohito-T">
         
         
     
     <link rel="stylesheet" href="../../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../../../gitbook/@honkit/honkit-plugin-highlight/website.css">
@@ -31,18 +43,6 @@
 
     
 
-    
-        
-        <link rel="stylesheet" href="../../../styles/website.css">
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
         
     
@@ -72,7 +72,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="検索ワードを入力" />
 </div>
 
             
@@ -1631,7 +1631,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            HonKitで公開 
         </a>
     </li>
 </ul>
@@ -1669,14 +1669,14 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="typeorm">TypeORM</h1>
+                                <h1 id="typeorm"><a name="typeorm" class="plugin-anchor" href="#typeorm"><i class="fa fa-link" aria-hidden="true"></i></a>TypeORM</h1>
 <p>TypeORMは、TypeScriptおよびJavaScriptで使用できるORMとされている。
 Node.jsやブラウザ上など、さまざまなプラットフォームをサポートしているともされています。</p>
-<h2 id="スタイル">スタイル</h2>
+<h2 id="スタイル"><a name="スタイル" class="plugin-anchor" href="#スタイル"><i class="fa fa-link" aria-hidden="true"></i></a>スタイル</h2>
 <p>スタイルとしては、Active RecordとData Mapperの2つのパターンをサポートしている。</p>
-<h2 id="version">version</h2>
+<h2 id="version"><a name="version" class="plugin-anchor" href="#version"><i class="fa fa-link" aria-hidden="true"></i></a>version</h2>
 <p>0.2系が現在主流であるが0.3系が最新（2022/10/09現在）</p>
-<h2 id="03系-参考">0.3系 参考</h2>
+<h2 id="03系-参考"><a name="03系-参考" class="plugin-anchor" href="#03系-参考"><i class="fa fa-link" aria-hidden="true"></i></a>0.3系 参考</h2>
 <p><a href="https://blog.open.tokyo.jp/2022/05/04/upgrade-typeorm-0-3.html" target="_blank">参考URL</a>
 <a href="https://zenn.dev/hasegawasatoshi/articles/8110ce79119dd0" target="_blank">参考URL</a>
 <a href="https://kazuhira-r.hatenablog.com/entry/2022/03/13/235304" target="_blank">参考URL</a>
@@ -1685,11 +1685,11 @@ Node.jsやブラウザ上など、さまざまなプラットフォームをサ�
 <a href="https://blog.rhyztech.net/typeorm_0.2_to_0.3/" target="_blank">これが一番参考になるかも</a>
 <a href="https://developer.mamezou-tech.com/blogs/2022/07/27/typeorm-with-typescript/" target="_blank">参考URL</a>
 <a href="https://developer.mamezou-tech.com/blogs/2022/07/27/typeorm-with-typescript/#%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E3%81%AB%E6%8E%A5%E7%B6%9A%E3%81%99%E3%8%8B" target="_blank">参考URL</a></p>
-<h2 id="config-file">config file</h2>
+<h2 id="config-file"><a name="config-file" class="plugin-anchor" href="#config-file"><i class="fa fa-link" aria-hidden="true"></i></a>config file</h2>
 <p>0.2では<code>ormconfig.ts</code>に接続オプションを記述していたようですが、0.3では非推奨になった。</p>
-<h2 id="typeorm--express--dockerで環境構築">TypeORM &amp; Express &amp; Dockerで環境構築</h2>
+<h2 id="typeorm--express--dockerで環境構築"><a name="typeorm--express--dockerで環境構築" class="plugin-anchor" href="#typeorm--express--dockerで環境構築"><i class="fa fa-link" aria-hidden="true"></i></a>TypeORM &amp; Express &amp; Dockerで環境構築</h2>
 <p><a href="https://dev.classmethod.jp/articles/typeorm-sandbox-in-docker-by-typeorm-cli/" target="_blank">TypeORM をサクッと試せる Docker 環境を TypeORM CLI を使って構築する方法</a></p>
-<h2 id="typeorm-cli-option">TypeORM CLI option</h2>
+<h2 id="typeorm-cli-option"><a name="typeorm-cli-option" class="plugin-anchor" href="#typeorm-cli-option"><i class="fa fa-link" aria-hidden="true"></i></a>TypeORM CLI option</h2>
 <p><a href="https://typeorm.biunav.com/en/using-cli.html#drop-database-schema" target="_blank">リファレンス</a>
 <a href="https://qiita.com/Aurum64/items/f5962bd2a643447dbef9" target="_blank">参考URL</a></p>
 <ul>
@@ -1708,7 +1708,7 @@ Node.jsやブラウザ上など、さまざまなプラットフォームをサ�
 <code>npx typeorm-ts-node-commonjs migration:revert -d src/data-source.ts</code></p>
 </li>
 </ul>
-<h2 id="find-option-一覧">Find option 一覧</h2>
+<h2 id="find-option-一覧"><a name="find-option-一覧" class="plugin-anchor" href="#find-option-一覧"><i class="fa fa-link" aria-hidden="true"></i></a>Find option 一覧</h2>
 <p><a href="https://qiita.com/quzq/items/dca3424c7353ce37215c" target="_blank">参考URL</a></p>
 <hr>
 <ul>
@@ -1735,17 +1735,17 @@ Node.jsやブラウザ上など、さまざまなプラットフォームをサ�
   ]
 });
 </code></pre>
-<h2 id="entity">entity</h2>
+<h2 id="entity"><a name="entity" class="plugin-anchor" href="#entity"><i class="fa fa-link" aria-hidden="true"></i></a>entity</h2>
 <p><a href="https://qiita.com/haman0104/items/8cc69429b1d02aefed35" target="_blank">参考URL</a>
 <a href="https://www.infoq.com/jp/articles/typescript-mysql/" target="_blank">参考URL(詳しい)</a>
 entityはDBのテーブルと一対一で構成する。
 ※実際はClassで作成するため関連するmethodなども記載していいかは議論が生じる</p>
-<h2 id="サポートしている関係">サポートしている関係</h2>
+<h2 id="サポートしている関係"><a name="サポートしている関係" class="plugin-anchor" href="#サポートしている関係"><i class="fa fa-link" aria-hidden="true"></i></a>サポートしている関係</h2>
 <p>TypeORMはエンティティ間のいくつかの種類の関係をサポートします。</p>
 <p>1対1
 1対多、多対1
 多対多</p>
-<h2 id="サポートしている関数についての関係">サポートしている関数についての関係</h2>
+<h2 id="サポートしている関数についての関係"><a name="サポートしている関数についての関係" class="plugin-anchor" href="#サポートしている関数についての関係"><i class="fa fa-link" aria-hidden="true"></i></a>サポートしている関数についての関係</h2>
 <p>関数</p>
 <p>表5で説明されているように、これらのそれぞれに対してデコレータと関数がtypeormで提供されています。
 説明</p>
@@ -1761,11 +1761,11 @@ entityはDBのテーブルと一対一で構成する。
 エンティティ間の多対多の関係を指定する</p>
 <p>JoinTable
 多対多関係の所有側を指定する</p>
-<h2 id="1対1">1対1</h2>
-<h2 id="onetoone--">@OneToOne(() =&gt; )</h2>
+<h2 id="1対1"><a name="1対1" class="plugin-anchor" href="#1対1"><i class="fa fa-link" aria-hidden="true"></i></a>1対1</h2>
+<h2 id="onetoone--"><a name="onetoone--" class="plugin-anchor" href="#onetoone--"><i class="fa fa-link" aria-hidden="true"></i></a>@OneToOne(() =&gt; )</h2>
 <p>参照される側。サッカーチーム　から　コーチを参照(コーチに@OneToOne()を付与)
 @JOinColumnは必須</p>
-<h2 id="onetomany">@OneToMany()</h2>
+<h2 id="onetomany"><a name="onetomany" class="plugin-anchor" href="#onetomany"><i class="fa fa-link" aria-hidden="true"></i></a>@OneToMany()</h2>
 <pre><code class="lang-ts">  <span class="hljs-meta">@OneToMany</span>(
     <span class="hljs-function">() =&gt;</span> TicketOptionItem,
     <span class="hljs-function">(<span class="hljs-params">ticketOptionItem</span>) =&gt;</span> ticketOptionItem.ticket
@@ -1773,9 +1773,9 @@ entityはDBのテーブルと一対一で構成する。
   <span class="hljs-keyword">public</span> ticketOptionItems?: TicketOptionItem[];
 </code></pre>
 <p>上を見ればわかるだろう。ひとつのチケットに対して複数のオプションがある。S</p>
-<h2 id="tips">Tips</h2>
+<h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>Tips</h2>
 <p><a href="https://zenn.dev/uttk/scraps/343e888f62360b" target="_blank">TypeORM知見まとめ</a></p>
-<h2 id="entityファイル">Entityファイル</h2>
+<h2 id="entityファイル"><a name="entityファイル" class="plugin-anchor" href="#entityファイル"><i class="fa fa-link" aria-hidden="true"></i></a>Entityファイル</h2>
 <p><a href="https://github.com/typeorm/typeorm/blob/master/test/functional/database-schema/column-types/postgres/entity/Post.ts" target="_blank">postgres entity 種類</a>
 <a href="https://github.com/typeorm/typeorm/tree/master/test/functional/database-schema/column-types" target="_blank">全entity</a></p>
 <p><code>@Entity</code>をつけたものがテーブル対象になる。
@@ -1784,25 +1784,25 @@ entityはDBのテーブルと一対一で構成する。
 <a href="https://typeorm.io/entities#column-types" target="_blank">サポートされている列の型</a></p>
 <p>データベースの列の型は、使用したプロパティの型から推測されます。
 ただし、列の型をデコレータに明示的に指定することで、データベースがサポートする任意の列の型を使用できる。</p>
-<h2 id="デコレータオプション">デコレータオプション</h2>
+<h2 id="デコレータオプション"><a name="デコレータオプション" class="plugin-anchor" href="#デコレータオプション"><i class="fa fa-link" aria-hidden="true"></i></a>デコレータオプション</h2>
 <ul>
 <li>cascade
 <a href="https://uyamazak.hatenablog.com/entry/2021/10/06/140909" target="_blank">参考URL</a></li>
 </ul>
 <p>名前的にDB側のテーブル設定かと思いきや違うので、設定を変更してもmigrationは発生しない。
 親Entityを各種更新した際、いっしょに子も更新するかどうか。取得時には影響しない</p>
-<h2 id="typeormのeager-relationsとlazy-relationsについて">TypeORMのEager relationsとLazy relationsについて</h2>
+<h2 id="typeormのeager-relationsとlazy-relationsについて"><a name="typeormのeager-relationsとlazy-relationsについて" class="plugin-anchor" href="#typeormのeager-relationsとlazy-relationsについて"><i class="fa fa-link" aria-hidden="true"></i></a>TypeORMのEager relationsとLazy relationsについて</h2>
 <p><a href="https://kazamori.jp/blogs/2021/07/12/typeorm-lazy-relations-memory/" target="_blank">参考URL</a></p>
 <p>Eager relations
 Entityと関連Entityを同じタイミングで読み込む。</p>
 <p>Lazy relations
 Promiseを使って任意のタイミングで遅延して読み込む。
 オプションで<code>{lazy: true}</code>を設定しなくても型として<code>Promise</code>を指定するとTypeORMは自動的に<code>Lazy relations</code>として扱います。 </p>
-<h2 id="typeormをreplで実行する">TypeORMをREPLで実行する</h2>
+<h2 id="typeormをreplで実行する"><a name="typeormをreplで実行する" class="plugin-anchor" href="#typeormをreplで実行する"><i class="fa fa-link" aria-hidden="true"></i></a>TypeORMをREPLで実行する</h2>
 <p><a href="https://kazamori.jp/blogs/2021/07/12/typeorm-lazy-relations-memory/" target="_blank">参考URL</a></p>
-<h2 id="typeorm-の-bulk-insert-と-psql-の-copy-を比較する">TypeORM の Bulk Insert と psql の \copy を比較する</h2>
+<h2 id="typeorm-の-bulk-insert-と-psql-の-copy-を比較する"><a name="typeorm-の-bulk-insert-と-psql-の-copy-を比較する" class="plugin-anchor" href="#typeorm-の-bulk-insert-と-psql-の-copy-を比較する"><i class="fa fa-link" aria-hidden="true"></i></a>TypeORM の Bulk Insert と psql の \copy を比較する</h2>
 <p><a href="https://kazamori.jp/blogs/2021/07/21/typeorm-bulk-insert/" target="_blank">参考URL</a></p>
-<h2 id="typeormにおいて、date-は-date-でなく-string-にmapされるので気をつけましょう">TypeORMにおいて、<code>date</code> は <code>Date</code> でなく <code>string</code> にmapされるので気をつけましょう</h2>
+<h2 id="typeormにおいて、date-は-date-でなく-string-にmapされるので気をつけましょう"><a name="typeormにおいて、date-は-date-でなく-string-にmapされるので気をつけましょう" class="plugin-anchor" href="#typeormにおいて、date-は-date-でなく-string-にmapされるので気をつけましょう"><i class="fa fa-link" aria-hidden="true"></i></a>TypeORMにおいて、<code>date</code> は <code>Date</code> でなく <code>string</code> にmapされるので気をつけましょう</h2>
 <p><a href="https://dev.to/e_ntyo/typeorm-date-date-string-map-3el1" target="_blank">参考URL</a></p>
 
                                 
@@ -1847,7 +1847,7 @@ Promiseを使って任意のタイミングで遅延して読み込む。
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"TypeORM","level":"2.5.2.1","depth":3,"next":{"title":"5.3 Redis","level":"2.5.3","depth":2,"path":"db/redis/redis.md","ref":"db/redis/redis.md","articles":[]},"previous":{"title":"5.2 ORM","level":"2.5.2","depth":2,"path":"db/orm/orm.md","ref":"db/orm/orm.md","articles":[{"title":"TypeORM","level":"2.5.2.1","depth":3,"path":"db/orm/typeorm/typeorm.md","ref":"db/orm/typeorm/typeorm.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"db/orm/typeorm/typeorm.md","mtime":"2023-01-12T00:39:30.210Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T00:39:41.486Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"TypeORM","level":"2.5.2.1","depth":3,"next":{"title":"5.3 Redis","level":"2.5.3","depth":2,"path":"db/redis/redis.md","ref":"db/redis/redis.md","articles":[]},"previous":{"title":"5.2 ORM","level":"2.5.2","depth":2,"path":"db/orm/orm.md","ref":"db/orm/orm.md","articles":[{"title":"TypeORM","level":"2.5.2.1","depth":3,"path":"db/orm/typeorm/typeorm.md","ref":"db/orm/typeorm/typeorm.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"db/orm/typeorm/typeorm.md","mtime":"2023-01-12T09:05:53.782Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T09:06:04.627Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1899,6 +1899,30 @@ Promiseを使って任意のタイミングで遅延して読み込む。
     </script>
     <script src="../../../gitbook/gitbook.js"></script>
     <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
     
         
         <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>

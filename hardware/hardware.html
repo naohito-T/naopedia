@@ -1,19 +1,31 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="ja" >
     <head>
         <meta charset="UTF-8">
-        <title>9. hardware · HonKit</title>
+        <title>9. hardware · naopedia</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.4">
-        
+        <meta name="author" content="naohito-T">
         
         
     
     <link rel="stylesheet" href="../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
@@ -31,18 +43,6 @@
 
     
 
-    
-        
-        <link rel="stylesheet" href="../styles/website.css">
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
         
     
@@ -72,7 +72,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="検索ワードを入力" />
 </div>
 
             
@@ -1631,7 +1631,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            HonKitで公開 
         </a>
     </li>
 </ul>
@@ -1669,27 +1669,27 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="hardware-page">hardware Page</h1>
+                                <h1 id="hardware-page"><a name="hardware-page" class="plugin-anchor" href="#hardware-page"><i class="fa fa-link" aria-hidden="true"></i></a>hardware Page</h1>
 <p>またディレクトリなど変更するかも</p>
-<h2 id="cpuとgpuの違い">CPUとGPUの違い</h2>
+<h2 id="cpuとgpuの違い"><a name="cpuとgpuの違い" class="plugin-anchor" href="#cpuとgpuの違い"><i class="fa fa-link" aria-hidden="true"></i></a>CPUとGPUの違い</h2>
 <p><a href="https://www.intel.co.jp/content/www/jp/ja/products/docs/processors/cpu-vs-gpu.html" target="_blank">参考URL</a></p>
-<h2 id="gpu">GPU</h2>
+<h2 id="gpu"><a name="gpu" class="plugin-anchor" href="#gpu"><i class="fa fa-link" aria-hidden="true"></i></a>GPU</h2>
 <p>GPUは、特定の3Dレンダリング・タスクの加速化のための専門的ASICとして開発された</p>
-<h2 id="内蔵グラフィックスとは">内蔵グラフィックスとは</h2>
+<h2 id="内蔵グラフィックスとは"><a name="内蔵グラフィックスとは" class="plugin-anchor" href="#内蔵グラフィックスとは"><i class="fa fa-link" aria-hidden="true"></i></a>内蔵グラフィックスとは</h2>
 <p>内蔵または共有グラフィックスはCPUと同じチップに組み込まれている。
 CPUによっては、専用グラフィックスまたはディスクリート・グラフィックスに依存するのではなくGPUを内蔵しているものもあります。
 また、IGPまたは統合グラフィックス・プロセッサーとも呼ばれ、CPUとメモリーを共有します。</p>
 <hr>
-<h2 id="メモリ領域の分類">メモリ領域の分類</h2>
+<h2 id="メモリ領域の分類"><a name="メモリ領域の分類" class="plugin-anchor" href="#メモリ領域の分類"><i class="fa fa-link" aria-hidden="true"></i></a>メモリ領域の分類</h2>
 <p>プログラムから使用されるメモリは<strong>静的領域</strong>、<strong>スタック領域</strong>、<strong>ヒープ領域</strong>という大きく分けて3種類の領域に分けられます。</p>
-<h2 id="静的領域">静的領域</h2>
+<h2 id="静的領域"><a name="静的領域" class="plugin-anchor" href="#静的領域"><i class="fa fa-link" aria-hidden="true"></i></a>静的領域</h2>
 <p>グローバル変数はプログラムの開始から終了までずっと有効な変数のためずっとメモリ上に割り当てられている必要がある
 プログラム開始時に割り当てられて終了時に開放されればよいため、グローバル変数のメモリ割当・解放はコンパイラによって自動的に行われる。
 このときにグローバル変数が配置されるメモリ領域を静的領域という。</p>
-<h2 id="スタック領域">スタック領域</h2>
+<h2 id="スタック領域"><a name="スタック領域" class="plugin-anchor" href="#スタック領域"><i class="fa fa-link" aria-hidden="true"></i></a>スタック領域</h2>
 <p>ローカル変数はスコープ範囲内で有効なため、スコープの始まりでメモリを確保しスコープの終わりでメモリを解放すれば十分。
 ローカル変数の割当と解放もコンパイラによって自動的に行われる。このときに配置さえるメモリ領域をスタック領域という。</p>
-<h2 id="ヒープ領域">ヒープ領域</h2>
+<h2 id="ヒープ領域"><a name="ヒープ領域" class="plugin-anchor" href="#ヒープ領域"><i class="fa fa-link" aria-hidden="true"></i></a>ヒープ領域</h2>
 <p>プログラムを設計する上で、<strong>何らかの情報をスコープの範囲を超えて扱いたいことがある</strong>
 このような場合に利用するのがヒープ領域</p>
 <blockquote>
@@ -1698,7 +1698,7 @@ CPUによっては、専用グラフィックスまたはディスクリート�
 <p>ヒープ領域はメモリを有効活用したい場合のためのものです。 メモリ有効活用する必要のない場合は、予めグローバル変数として必要な分だけメモリを確保しておけば十分なことが多いです。</p>
 </blockquote>
 <hr>
-<h2 id="並行と並列の違い">並行と並列の違い</h2>
+<h2 id="並行と並列の違い"><a name="並行と並列の違い" class="plugin-anchor" href="#並行と並列の違い"><i class="fa fa-link" aria-hidden="true"></i></a>並行と並列の違い</h2>
 <p>定義</p>
 <blockquote>
 <p>システムが複数の動作（処理の流れ）を同時に実行状態(in progress)に保てる機能を備えている場合を 並行(concurrent)と言い、複数の動作を同時に実行できる場合を並列(parallel)と言います。 重要な概念、違いは「実行状態」という点です。</p>
@@ -1715,7 +1715,7 @@ CPUによっては、専用グラフィックスまたはディスクリート�
 </ul>
 <p>JSで例える</p>
 <hr>
-<h2 id="標準入力と標準出力">標準入力と標準出力</h2>
+<h2 id="標準入力と標準出力"><a name="標準入力と標準出力" class="plugin-anchor" href="#標準入力と標準出力"><i class="fa fa-link" aria-hidden="true"></i></a>標準入力と標準出力</h2>
 <p>コマンドは必要に応じて何らかのデータを受け取り、処理をして結果を出力する。
 特に何も指定していない場合、<strong>入力はキーボード</strong>, <strong>出力は画面</strong>となる。これをそれぞれ<strong>標準入力</strong>と<strong>標準出力</strong>という。</p>
 <ul>
@@ -1724,15 +1724,15 @@ CPUによっては、専用グラフィックスまたはディスクリート�
 <li>リダイレクト
 標準出力を画面ではなく別のモノに向けるのがリダイレクトで、「&gt;」という記号で表します。リダイレクト先は、通常はファイルですが、プリンターなどに送ることも可能です。</li>
 </ul>
-<h2 id="ファイルディスクリプターfd">ファイルディスクリプター(FD)</h2>
+<h2 id="ファイルディスクリプターfd"><a name="ファイルディスクリプターfd" class="plugin-anchor" href="#ファイルディスクリプターfd"><i class="fa fa-link" aria-hidden="true"></i></a>ファイルディスクリプター(FD)</h2>
 <p>ファイルへの通り道に割り振られる番号で、ファイルを識別するための目印
 <strong>なおUNIX系(Linuxとか)ではファイル以外もファイルとして扱われる。</strong></p>
 <hr>
-<h2 id="nicネットワークインターフェイスカード-network-interface-card">NIC(ネットワークインターフェイスカード): Network Interface Card</h2>
+<h2 id="nicネットワークインターフェイスカード-network-interface-card"><a name="nicネットワークインターフェイスカード-network-interface-card" class="plugin-anchor" href="#nicネットワークインターフェイスカード-network-interface-card"><i class="fa fa-link" aria-hidden="true"></i></a>NIC(ネットワークインターフェイスカード): Network Interface Card</h2>
 <p>パソコンの部品
 LANケーブルを挿す穴がくっついている。</p>
 <hr>
-<h2 id="0000">0.0.0.0</h2>
+<h2 id="0000"><a name="0000" class="plugin-anchor" href="#0000"><i class="fa fa-link" aria-hidden="true"></i></a>0.0.0.0</h2>
 <p><a href="https://qiita.com/Masato338/items/f162394fbc37fc490dfb" target="_blank">参考URL</a></p>
 <p>ローカルマシン上のすべてのIPv4アドレスのこと。
 仮想環境(Docker)で起動したRailsはlocalhostのipアドレス127.0.0.1でアクセスできない。
@@ -1760,12 +1760,12 @@ grepで狭めた場合</p>
     inet6 fe80::fc09:e8a2:beb6:2447%utun6 prefixlen 64 scopeid 0x18
 </code></pre>
 <p>0.0.0.0のipアドレスは表示されたipアドレスすべてを表している。</p>
-<h2 id="unixドメインソケットとソケット">UNIXドメインソケットとソケット</h2>
+<h2 id="unixドメインソケットとソケット"><a name="unixドメインソケットとソケット" class="plugin-anchor" href="#unixドメインソケットとソケット"><i class="fa fa-link" aria-hidden="true"></i></a>UNIXドメインソケットとソケット</h2>
 <p><a href="https://qiita.com/toshihirock/items/b643ed0edd30e6fd1f14" target="_blank">参考URLs</a></p>
-<h2 id="ルートパーティション">ルートパーティション</h2>
+<h2 id="ルートパーティション"><a name="ルートパーティション" class="plugin-anchor" href="#ルートパーティション"><i class="fa fa-link" aria-hidden="true"></i></a>ルートパーティション</h2>
 <p>ルートディレクトリを含むディスクパーティションを指すUNIX用語
 UNIXでは、ルートパーティション以外のパーティションは、ルートパーティション（またはそこにマウントされたパーティション）のどこかにマウントされることで、ファイルシステムからアクセス可能になる。</p>
-<h2 id="マイコン">マイコン</h2>
+<h2 id="マイコン"><a name="マイコン" class="plugin-anchor" href="#マイコン"><i class="fa fa-link" aria-hidden="true"></i></a>マイコン</h2>
 <p><a href="https://monoist.itmedia.co.jp/mn/series/2053/" target="_blank">参考URL</a></p>
 
                                 
@@ -1810,7 +1810,7 @@ UNIXでは、ルートパーティション以外のパーティションは、�
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"9. hardware","level":"2.9","depth":1,"next":{"title":"9.1 低レイヤー","level":"2.9.1","depth":2,"path":"hardware/lowlayer/program.md","ref":"hardware/lowlayer/program.md","articles":[]},"previous":{"title":"docker compose","level":"2.8.1.1","depth":3,"path":"infrastructure/docker/docker-compose.md","ref":"infrastructure/docker/docker-compose.md","articles":[]},"articles":[{"title":"9.1 低レイヤー","level":"2.9.1","depth":2,"path":"hardware/lowlayer/program.md","ref":"hardware/lowlayer/program.md","articles":[]},{"title":"9.2 OS","level":"2.9.2","depth":2,"path":"hardware/os/os.md","ref":"hardware/os/os.md","articles":[]}],"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"hardware/hardware.md","mtime":"2023-01-12T00:39:30.214Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T00:39:41.486Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"9. hardware","level":"2.9","depth":1,"next":{"title":"9.1 低レイヤー","level":"2.9.1","depth":2,"path":"hardware/lowlayer/program.md","ref":"hardware/lowlayer/program.md","articles":[]},"previous":{"title":"docker compose","level":"2.8.1.1","depth":3,"path":"infrastructure/docker/docker-compose.md","ref":"infrastructure/docker/docker-compose.md","articles":[]},"articles":[{"title":"9.1 低レイヤー","level":"2.9.1","depth":2,"path":"hardware/lowlayer/program.md","ref":"hardware/lowlayer/program.md","articles":[]},{"title":"9.2 OS","level":"2.9.2","depth":2,"path":"hardware/os/os.md","ref":"hardware/os/os.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"hardware/hardware.md","mtime":"2023-01-12T09:05:53.786Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T09:06:04.627Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1862,6 +1862,30 @@ UNIXでは、ルートパーティション以外のパーティションは、�
     </script>
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

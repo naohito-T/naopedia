@@ -1,19 +1,31 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="ja" >
     <head>
         <meta charset="UTF-8">
-        <title>docker compose · HonKit</title>
+        <title>docker compose · naopedia</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.4">
-        
+        <meta name="author" content="naohito-T">
         
         
     
     <link rel="stylesheet" href="../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../../gitbook/@honkit/honkit-plugin-highlight/website.css">
@@ -31,18 +43,6 @@
 
     
 
-    
-        
-        <link rel="stylesheet" href="../../styles/website.css">
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
         
     
@@ -72,7 +72,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="検索ワードを入力" />
 </div>
 
             
@@ -1631,7 +1631,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            HonKitで公開 
         </a>
     </li>
 </ul>
@@ -1669,7 +1669,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="docker-compose">docker-compose</h1>
+                                <h1 id="docker-compose"><a name="docker-compose" class="plugin-anchor" href="#docker-compose"><i class="fa fa-link" aria-hidden="true"></i></a>docker-compose</h1>
 <p>Docker操作の補佐をするPython製のツール（ver2ではGo製に変わっている）</p>
 <p>Docker Engineの一部ではない。
 <strong>docker-compose.yml内ではホスト側のシェルの環境変数が使える。</strong>
@@ -1679,12 +1679,12 @@
 <p>docker-compose はローカルで Docker のオーケストレーションを行うためのツールです。Docker のビルドから Network や Volume の管理をコードベースで定義して行ってくれます。
 docker-compose.ymlをdocker-compose.ymlというツールで読み込ませて実行すると<strong>ボリュームやネットワークが作られ</strong>、まとめてコンテナーが起動する。</p>
 </blockquote>
-<h2 id="docker-compose-で解決できるもの">docker-compose で解決できるもの</h2>
+<h2 id="docker-compose-で解決できるもの"><a name="docker-compose-で解決できるもの" class="plugin-anchor" href="#docker-compose-で解決できるもの"><i class="fa fa-link" aria-hidden="true"></i></a>docker-compose で解決できるもの</h2>
 <p>Docker Composeを使えば、今までdocker runの引数で1つひとつ指定したり、起動後にdocker execでコマンドを実行していたりしたものをdocker-compose.ymlという1つの設定ファイルに集約できる。</p>
-<h2 id="docker-composeですむ場合">docker-composeですむ場合</h2>
+<h2 id="docker-composeですむ場合"><a name="docker-composeですむ場合" class="plugin-anchor" href="#docker-composeですむ場合"><i class="fa fa-link" aria-hidden="true"></i></a>docker-composeですむ場合</h2>
 <p>なるべくDockerfileを書きたくない
 特殊なことをやっていないのであればdocker-composeから設定できるもので基本十分。</p>
-<h2 id="docker-compose-dependson">docker-compose depends_on</h2>
+<h2 id="docker-compose-dependson"><a name="docker-compose-dependson" class="plugin-anchor" href="#docker-compose-dependson"><i class="fa fa-link" aria-hidden="true"></i></a>docker-compose depends_on</h2>
 <p>depends_onはあくまで<strong>起動状態を制御</strong>しているだけであり、dbがtcp受け付ける状態（mysqld)が起動するまで待つ。みたいなのができない。
 以前までは、シェルで対応して欲しいと公式サイトが記載。
 そのため幾つもプロジェクトはwait.shを使用し<code>nc</code>コマンドなどでdbに意思疎通をしていた。
@@ -1696,7 +1696,7 @@ docker-compose.ymlをdocker-compose.ymlというツールで読み込ませて�
     <span class="hljs-attr">condition:</span> <span class="hljs-string">service_started</span>
 </code></pre>
 <p><code>depends_on.condition.service_started</code>は1回非推奨になったが、3.8ぐらいでまた元に戻った。しかしdocker-compose 2系じゃないと使えない。</p>
-<h2 id="docker-compose-オプション">docker-compose オプション</h2>
+<h2 id="docker-compose-オプション"><a name="docker-compose-オプション" class="plugin-anchor" href="#docker-compose-オプション"><i class="fa fa-link" aria-hidden="true"></i></a>docker-compose オプション</h2>
 <p>基本オプション</p>
 <pre><code class="lang-sh">-f, --f ファイル名
 <span class="hljs-comment"># プロジェクト名は現在いるディレクトリがデフォルトになるが明示的に指定することができる。</span>
@@ -1706,11 +1706,11 @@ docker-compose.ymlをdocker-compose.ymlというツールで読み込ませて�
 <pre><code class="lang-sh"><span class="hljs-comment"># バックグランドで実行する。</span>
 -d, --detach
 </code></pre>
-<h2 id="docker自動起動">Docker自動起動</h2>
+<h2 id="docker自動起動"><a name="docker自動起動" class="plugin-anchor" href="#docker自動起動"><i class="fa fa-link" aria-hidden="true"></i></a>Docker自動起動</h2>
 <p><a href="https://www.takunoko.com/blog/docker-compose%E3%81%A7docker%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%82%92os%E8%B5%B7%E5%8B%95%E6%99%82%E3%81%AB%E7%AB%8B%E3%81%A1%E4%B8%8A%E3%81%92%E3%82%8B/" target="_blank">参考URL</a></p>
 <p><a href="https://qol-kk.com/wp2/blog/2020/03/04/post-1532/" target="_blank">参考URL</a></p>
 <p>docker-composeを使ってサーバ環境を構築した際に、ホストOSを再起動時に自動でクライアント（子機？）も起動してほしい。k8sだのを使うべきとの意見もあるが、とりあえずDocker-composeのみで戦ってみる。 systemctlコマンドを利用して、自動起動の登録をしました。</p>
-<h2 id="docker-compose-コマンド">docker-compose コマンド</h2>
+<h2 id="docker-compose-コマンド"><a name="docker-compose-コマンド" class="plugin-anchor" href="#docker-compose-コマンド"><i class="fa fa-link" aria-hidden="true"></i></a>docker-compose コマンド</h2>
 <p><strong>docker-composeで作成したコンテナーはdockerコマンドではなく、docker-composeを使った管理(コマンド)に一元化すべき</strong></p>
 <p><code>$docker-compose down</code>はコンテナーやネットワークを停止するだけではなく、それらの破棄までしてくれる。
 <strong>※規定ではボリュームは削除しない。</strong>
@@ -1718,7 +1718,7 @@ docker-compose.ymlをdocker-compose.ymlというツールで読み込ませて�
 <p>dockerとの対比コマンド
 docker-composeで管理しているプロジェクトで、dockerコマンドを使用すると反故が生じる可能性もあるためdocker-composeコマンドを使用すること。</p>
 <p><img src="image/コマンド対比.png" alt="コマンド対比"></p>
-<h2 id="コンテナーは常に削除する方がいい">コンテナーは常に削除する方がいい</h2>
+<h2 id="コンテナーは常に削除する方がいい"><a name="コンテナーは常に削除する方がいい" class="plugin-anchor" href="#コンテナーは常に削除する方がいい"><i class="fa fa-link" aria-hidden="true"></i></a>コンテナーは常に削除する方がいい</h2>
 <p>Docker開発を進めていく上でコンテナーは常に削除することをオススメ。</p>
 <p>理由として</p>
 <ol>
@@ -1727,7 +1727,7 @@ docker-composeで管理しているプロジェクトで、dockerコマンドを
 本番環境ではDockerfileから作成されたコンテナーをデプロイしますので、コンテナーに直接インストールしたものは反映されません。
 常に本番環境と同じ状態で開発を進めるためにも、コンテナーは一度削除して再度立ち上げることを心がける。</li>
 </ol>
-<h2 id="docker-composeyaml-を読む">docker-compose.yaml を読む</h2>
+<h2 id="docker-composeyaml-を読む"><a name="docker-composeyaml-を読む" class="plugin-anchor" href="#docker-composeyaml-を読む"><i class="fa fa-link" aria-hidden="true"></i></a>docker-compose.yaml を読む</h2>
 <pre><code class="lang-yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">&quot;3.7&quot;</span> <span class="hljs-comment"># docker-composeのversionを指定。特にこだわりがなければ最新のものを記述する。</span>
 
 <span class="hljs-attr">services:</span> <span class="hljs-comment"># 起動するコンテナーの定義を行う。</span>
@@ -1797,7 +1797,7 @@ stdin_openとは標準入出力とエラー出力をコンテナーに結びつ�
 </li>
 </ul>
 <hr>
-<h2 id="volumes">volumes</h2>
+<h2 id="volumes"><a name="volumes" class="plugin-anchor" href="#volumes"><i class="fa fa-link" aria-hidden="true"></i></a>volumes</h2>
 <p><a href="https://pc.atsuhiro-me.net/entry/2020/03/19/105714" target="_blank">参考URL</a>
 <a href="https://qiita.com/koshigoe/items/52749db8836b4e3fbfc4" target="_blank">Docker for Mac のボリュームの遅さを cached オプションで解消</a></p>
 <p>バインドマウントはローカルのファイルをマウントする。
@@ -1852,11 +1852,11 @@ volumesでは<strong>パスを指定するとDockerエンジンはボリュー�
 <p>2に関して
 トップレベルのvolumes: は、Dockerシステム（ローカル）内に存在しているボリュームを指定しています。いわゆるボリュームです。
 external: の中にnameを指定することで、docker-compose外で作成したボリュームを指定できます。</p>
-<h2 id="volumes-の-pathの指定">volumes の pathの指定</h2>
+<h2 id="volumes-の-pathの指定"><a name="volumes-の-pathの指定" class="plugin-anchor" href="#volumes-の-pathの指定"><i class="fa fa-link" aria-hidden="true"></i></a>volumes の pathの指定</h2>
 <p>絶対パスではホストの環境が変わった時に動かなくなるため，相対パスを指定するのが慣例。
 相対パスはdocker-composeのymlファイルが基準となります。
 このため，ホストの環境が変わっても問題ないですが，プロジェクト内でのymlファイルの場所を変更する時は修正が必要になります。</p>
-<h2 id="volumes-省略記法">volumes 省略記法</h2>
+<h2 id="volumes-省略記法"><a name="volumes-省略記法" class="plugin-anchor" href="#volumes-省略記法"><i class="fa fa-link" aria-hidden="true"></i></a>volumes 省略記法</h2>
 <p>いつも上記の例のように記載するのは面倒なので短い表記法があります<code>[SOURCE:]TARGET[:MODE]と指定します</code>たとえば，以下で，sourceの./dataディレクトリとtargetの/tmp/dataディレクトリを指定します．</p>
 <pre><code class="lang-yml">  <span class="hljs-attr">volumes:</span>
     <span class="hljs-bullet">-</span> <span class="hljs-string">./data:/tmp/data</span>
@@ -1894,13 +1894,13 @@ external: の中にnameを指定することで、docker-compose外で作成し�
         <span class="hljs-attr">external:</span>
             <span class="hljs-attr">name:</span> <span class="hljs-string">project-mysql</span>
 </code></pre>
-<h2 id="プロジェクトごとにmysqlのデータ用ボリュームを定義して使用したい場合">プロジェクトごとにMySQLのデータ用ボリュームを定義して使用したい場合</h2>
+<h2 id="プロジェクトごとにmysqlのデータ用ボリュームを定義して使用したい場合"><a name="プロジェクトごとにmysqlのデータ用ボリュームを定義して使用したい場合" class="plugin-anchor" href="#プロジェクトごとにmysqlのデータ用ボリュームを定義して使用したい場合"><i class="fa fa-link" aria-hidden="true"></i></a>プロジェクトごとにMySQLのデータ用ボリュームを定義して使用したい場合</h2>
 <p>externalをtrueにするとComposeの外部で作成されているボリュームを指定できます。</p>
 <pre><code class="lang-yml"><span class="hljs-attr">volumes:</span>
     <span class="hljs-attr">mysql-data:</span>
         <span class="hljs-attr">external:</span> <span class="hljs-literal">false</span>
 </code></pre>
-<h2 id="volume-一覧">volume 一覧</h2>
+<h2 id="volume-一覧"><a name="volume-一覧" class="plugin-anchor" href="#volume-一覧"><i class="fa fa-link" aria-hidden="true"></i></a>volume 一覧</h2>
 <pre><code class="lang-yml"><span class="hljs-attr">services:</span>
   <span class="hljs-attr">service_name:</span>
 
@@ -1918,7 +1918,7 @@ external: の中にnameを指定することで、docker-compose外で作成し�
   <span class="hljs-attr">dattavolume:</span>
 </code></pre>
 <hr>
-<h2 id="ports">ports</h2>
+<h2 id="ports"><a name="ports" class="plugin-anchor" href="#ports"><i class="fa fa-link" aria-hidden="true"></i></a>ports</h2>
 <p>ポートの開放を行う。
 左にホストのポートを、右にコンテナーのポートを指定する。</p>
 <blockquote>
@@ -1950,7 +1950,7 @@ portsはホストからアクセスできるポート</p>
 <p>postgresはdjangoからアクセスできればよいのでexposeを使用する。
 djangoはホストのブラウザーからアクセスするのでportsを使用する。</p>
 <p>ホストのポートを指定するのは必要がなければdocker-composeに一任するのがよいです．たとえば，ports: &quot;5432:5432&quot; と指定してpostgresを起動すると，複数のpostgresを使いたい時に，ポートで競合してエラーとなります．</p>
-<h2 id="docker-compose-の-portsとexposeの違い">Docker Compose の portsとexposeの違い</h2>
+<h2 id="docker-compose-の-portsとexposeの違い"><a name="docker-compose-の-portsとexposeの違い" class="plugin-anchor" href="#docker-compose-の-portsとexposeの違い"><i class="fa fa-link" aria-hidden="true"></i></a>Docker Compose の portsとexposeの違い</h2>
 <p><a href="https://blog.tkt989.info/2017/12/19/Docker-Compose%E3%81%AEports%E3%81%A8expose%E3%81%AE%E9%81%95%E3%81%84" target="_blank">参考URL</a></p>
 <p><strong>ports</strong>
 指定したポートが外部に公開されるため、誰でもアクセスできる</p>
@@ -1983,10 +1983,10 @@ Docker compose管理外のネットワークやボリュームであることを
 linksオプションはDockerで非推奨になっているためnetworksオプションに切り替える。</p>
 </li>
 </ul>
-<h2 id="networks">networks</h2>
+<h2 id="networks"><a name="networks" class="plugin-anchor" href="#networks"><i class="fa fa-link" aria-hidden="true"></i></a>networks</h2>
 <p><a href="https://amateur-engineer.com/docker-compose-network-share/" target="_blank">参考URL</a>
 networksを設定してネットワークを共有することで、複数のdocker-compose間での接続が可能になる。</p>
-<h2 id="ttyteletypewriter（テレタイプライター">tty(teletypewriter（テレタイプライター)</h2>
+<h2 id="ttyteletypewriter（テレタイプライター"><a name="ttyteletypewriter（テレタイプライター" class="plugin-anchor" href="#ttyteletypewriter（テレタイプライター"><i class="fa fa-link" aria-hidden="true"></i></a>tty(teletypewriter（テレタイプライター)</h2>
 <p><a href="https://zenn.dev/hohner/articles/43a0da20181d34" target="_blank">参考URL</a></p>
 <p>ttyがないと、コンテナーを起動させ続けるためのプロセスが存在しないためコンテナーが正常終了してしまう。</p>
 <p>ttyとは</p>
@@ -1995,7 +1995,7 @@ networksを設定してネットワークを共有することで、複数のdoc
 </blockquote>
 <p>どうやらttyは標準入出力先のデバイスとのことです。
 そして、その標準入出力先のデバイスを確認する方法が、ttyコマンドで、このコマンドはUnix系のコマンドであるため、ターミナルでttyとそのまま叩けます。</p>
-<h2 id="docker-compose-のコマンド">docker-compose のコマンド</h2>
+<h2 id="docker-compose-のコマンド"><a name="docker-compose-のコマンド" class="plugin-anchor" href="#docker-compose-のコマンド"><i class="fa fa-link" aria-hidden="true"></i></a>docker-compose のコマンド</h2>
 <ul>
 <li><p>up
 カレントディレクトリに存在するdocker-compose.yamlを参照し、docker-composeの起動
@@ -2015,11 +2015,11 @@ Volumeを削除
 <code>docker-compose rm</code></li>
 </ul>
 <p><a href="https://y-ohgi.com/introduction-docker/3_production/docker-compose/" target="_blank">ここまで記載した</a></p>
-<h2 id="docker-compose-同士を繋げる">docker-compose 同士を繋げる</h2>
+<h2 id="docker-compose-同士を繋げる"><a name="docker-compose-同士を繋げる" class="plugin-anchor" href="#docker-compose-同士を繋げる"><i class="fa fa-link" aria-hidden="true"></i></a>docker-compose 同士を繋げる</h2>
 <p><a href="https://qiita.com/kai_kou/items/d568fe94ee92f837e274" target="_blank">参考URL</a></p>
-<h2 id="tips">Tips</h2>
+<h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>Tips</h2>
 <p><a href="https://kobe-systemdesign.work/2022/03/29/dockerpostgresql%E3%81%AE%E3%83%98%E3%83%AB%E3%82%B9%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%82%92%E5%AE%9F%E8%A1%8C%E3%81%99%E3%82%8B%E9%9A%9B%E3%81%AE%E6%B3%A8%E6%84%8F%E7%82%B9/" target="_blank">postgres health check</a></p>
-<h2 id="ローカル環境の異なるdocker-compose間の通信をhostdockerinternalで解決する">ローカル環境の異なるDocker Compose間の通信をhost.docker.internalで解決する</h2>
+<h2 id="ローカル環境の異なるdocker-compose間の通信をhostdockerinternalで解決する"><a name="ローカル環境の異なるdocker-compose間の通信をhostdockerinternalで解決する" class="plugin-anchor" href="#ローカル環境の異なるdocker-compose間の通信をhostdockerinternalで解決する"><i class="fa fa-link" aria-hidden="true"></i></a>ローカル環境の異なるDocker Compose間の通信をhost.docker.internalで解決する</h2>
 <p><a href="https://nishinatoshiharu.com/access-container-via-localhost/#_Railshostdockerinternal" target="_blank">参考URL</a></p>
 
                                 
@@ -2064,7 +2064,7 @@ Volumeを削除
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"docker compose","level":"2.8.1.1","depth":3,"next":{"title":"9. hardware","level":"2.9","depth":1,"path":"hardware/hardware.md","ref":"hardware/hardware.md","articles":[{"title":"9.1 低レイヤー","level":"2.9.1","depth":2,"path":"hardware/lowlayer/program.md","ref":"hardware/lowlayer/program.md","articles":[]},{"title":"9.2 OS","level":"2.9.2","depth":2,"path":"hardware/os/os.md","ref":"hardware/os/os.md","articles":[]}]},"previous":{"title":"8.1 docker","level":"2.8.1","depth":2,"path":"infrastructure/docker/docker.md","ref":"infrastructure/docker/docker.md","articles":[{"title":"docker compose","level":"2.8.1.1","depth":3,"path":"infrastructure/docker/docker-compose.md","ref":"infrastructure/docker/docker-compose.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"infrastructure/docker/docker-compose.md","mtime":"2023-01-12T00:39:30.214Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T00:39:41.486Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"docker compose","level":"2.8.1.1","depth":3,"next":{"title":"9. hardware","level":"2.9","depth":1,"path":"hardware/hardware.md","ref":"hardware/hardware.md","articles":[{"title":"9.1 低レイヤー","level":"2.9.1","depth":2,"path":"hardware/lowlayer/program.md","ref":"hardware/lowlayer/program.md","articles":[]},{"title":"9.2 OS","level":"2.9.2","depth":2,"path":"hardware/os/os.md","ref":"hardware/os/os.md","articles":[]}]},"previous":{"title":"8.1 docker","level":"2.8.1","depth":2,"path":"infrastructure/docker/docker.md","ref":"infrastructure/docker/docker.md","articles":[{"title":"docker compose","level":"2.8.1.1","depth":3,"path":"infrastructure/docker/docker-compose.md","ref":"infrastructure/docker/docker-compose.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"infrastructure/docker/docker-compose.md","mtime":"2023-01-12T09:05:53.790Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T09:06:04.627Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2116,6 +2116,30 @@ Volumeを削除
     </script>
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
     
         
         <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>

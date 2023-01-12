@@ -1,19 +1,31 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="ja" >
     <head>
         <meta charset="UTF-8">
-        <title>4.3 login · HonKit</title>
+        <title>4.3 login · naopedia</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.4">
-        
+        <meta name="author" content="naohito-T">
         
         
     
     <link rel="stylesheet" href="../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
@@ -31,18 +43,6 @@
 
     
 
-    
-        
-        <link rel="stylesheet" href="../styles/website.css">
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
         
     
@@ -72,7 +72,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="検索ワードを入力" />
 </div>
 
             
@@ -1631,7 +1631,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            HonKitで公開 
         </a>
     </li>
 </ul>
@@ -1669,25 +1669,25 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="login">login</h1>
+                                <h1 id="login"><a name="login" class="plugin-anchor" href="#login"><i class="fa fa-link" aria-hidden="true"></i></a>login</h1>
 <p>さまざまなログイン方法があるが、それについて記していく</p>
-<h2 id="ソーシャルログイン">ソーシャルログイン</h2>
+<h2 id="ソーシャルログイン"><a name="ソーシャルログイン" class="plugin-anchor" href="#ソーシャルログイン"><i class="fa fa-link" aria-hidden="true"></i></a>ソーシャルログイン</h2>
 <ul>
 <li>ソーシャルログインとは？<blockquote>
 <p>EC サイトなどで LINE でログインや Google でログインといったボタンがある。このように SNS のアカウントと連携してログインできるようになる仕組みのことをソーシャルログインと呼ぶ</p>
 </blockquote>
 </li>
 </ul>
-<h2 id="ソーシャルログインの仕組み">ソーシャルログインの仕組み</h2>
+<h2 id="ソーシャルログインの仕組み"><a name="ソーシャルログインの仕組み" class="plugin-anchor" href="#ソーシャルログインの仕組み"><i class="fa fa-link" aria-hidden="true"></i></a>ソーシャルログインの仕組み</h2>
 <p><a href="https://www.webprofessional.jp/spa-social-login-google-facebook/" target="_blank">手間のかかる SPA のソーシャルログインを Passport.js で手軽に実装する方法</a>
 次まとめる</p>
 <p>ソーシャルログインでは OAuth や OpenID Connect の仕組みを使って SNS 側のユーザ情報を使ってログインをしたり、SNS 側のユーザ情報を使ってログインをしたり、SNS 側でユーザやアプリケーションが連携することを許可し、アプリケーション側では SNS 側で保持している情報を取得したり利用できるようにしている。</p>
-<h2 id="ソーシャルログイン-使用プロトコル">ソーシャルログイン 使用プロトコル</h2>
+<h2 id="ソーシャルログイン-使用プロトコル"><a name="ソーシャルログイン-使用プロトコル" class="plugin-anchor" href="#ソーシャルログイン-使用プロトコル"><i class="fa fa-link" aria-hidden="true"></i></a>ソーシャルログイン 使用プロトコル</h2>
 <p>ソーシャルログインのほとんどは<strong>OAuth</strong>や<strong>OpenID Connect</strong>という<strong>プロトコル</strong>が利用されている。
 OAuthはアクセス権限の認可を行うプロトコルで、OAuth2.0としてRFCで標準化されている。
 OpenID ConnectはOAuth 2.0を拡張する形で策定されたものでアプリケーションやサービスから認証サーバを使ってユーザ認証をするためのプロトコル
 どちらもRFCで標準化されている。</p>
-<h2 id="サインイン-サインアップ違い">サインイン サインアップ違い</h2>
+<h2 id="サインイン-サインアップ違い"><a name="サインイン-サインアップ違い" class="plugin-anchor" href="#サインイン-サインアップ違い"><i class="fa fa-link" aria-hidden="true"></i></a>サインイン サインアップ違い</h2>
 <p>サインアップ: 会員登録
 サインイン: 会員登録後のツール利用時に本人確認を行う操作</p>
 
@@ -1733,7 +1733,7 @@ OpenID ConnectはOAuth 2.0を拡張する形で策定されたものでアプリ
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4.3 login","level":"2.4.3","depth":2,"next":{"title":"4.4 modal","level":"2.4.4","depth":2,"path":"web/modal.md","ref":"web/modal.md","articles":[]},"previous":{"title":"4.2 Loading","level":"2.4.2","depth":2,"path":"web/loading.md","ref":"web/loading.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"web/login.md","mtime":"2023-01-12T00:39:30.234Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T00:39:41.486Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.3 login","level":"2.4.3","depth":2,"next":{"title":"4.4 modal","level":"2.4.4","depth":2,"path":"web/modal.md","ref":"web/modal.md","articles":[]},"previous":{"title":"4.2 Loading","level":"2.4.2","depth":2,"path":"web/loading.md","ref":"web/loading.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"web/login.md","mtime":"2023-01-12T09:05:53.802Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T09:06:04.627Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1785,6 +1785,30 @@ OpenID ConnectはOAuth 2.0を拡張する形で策定されたものでアプリ
     </script>
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

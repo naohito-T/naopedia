@@ -1,19 +1,31 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="ja" >
     <head>
         <meta charset="UTF-8">
-        <title>9.1 低レイヤー · HonKit</title>
+        <title>9.1 低レイヤー · naopedia</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.4">
-        
+        <meta name="author" content="naohito-T">
         
         
     
     <link rel="stylesheet" href="../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../../gitbook/@honkit/honkit-plugin-highlight/website.css">
@@ -31,18 +43,6 @@
 
     
 
-    
-        
-        <link rel="stylesheet" href="../../styles/website.css">
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
         
     
@@ -72,7 +72,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="検索ワードを入力" />
 </div>
 
             
@@ -1631,7 +1631,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            HonKitで公開 
         </a>
     </li>
 </ul>
@@ -1669,7 +1669,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="プログラムはなぜ動くのか">プログラムはなぜ動くのか</h1>
+                                <h1 id="プログラムはなぜ動くのか"><a name="プログラムはなぜ動くのか" class="plugin-anchor" href="#プログラムはなぜ動くのか"><i class="fa fa-link" aria-hidden="true"></i></a>プログラムはなぜ動くのか</h1>
 <p>1ビット = 8バイト
 8ビット＝1バイトなので、32ビットは32÷8＝4バイトになります。
 2進数の各桁に重みを掛けた結果を足すことで、10進数に変換できます。2進数を1桁左シフトすると、元の値が2倍されます。2桁左シフトすると、2倍の2倍で4倍されます。
@@ -1700,7 +1700,7 @@ CPUの内部でレジスタをつかって処理</p>
 <p><strong>繰り返し</strong>
 同じアドレスの命令を何度か繰り替し実行すること。</p>
 <p>プログラムの中に条件分岐や繰り返しがある場合は、それらのマシン語命令が、プログラム・カウンタの値を任意のアドレスに（＋1でない値に）設定することになります。これによって、前のアドレスに戻って同じ命令を繰り返したり、任意のアドレスにジャンプして分岐することができるのです</p>
-<h2 id="関数呼び出しの仕組み">関数呼び出しの仕組み</h2>
+<h2 id="関数呼び出しの仕組み"><a name="関数呼び出しの仕組み" class="plugin-anchor" href="#関数呼び出しの仕組み"><i class="fa fa-link" aria-hidden="true"></i></a>関数呼び出しの仕組み</h2>
 <p>プログラムカウンタの値を関数が格納されたアドレスに設定することで実現される。
 条件分岐や繰り返しとは、仕組みが異なります。単純なジャンプ命令では、関数呼び出しを実現できないからです。関数呼び出しは、関数内部の処理が完了したら、関数の呼び出し元（関数を呼び出した命令の次のアドレス）に処理の流れが戻ってこなければなりません。関数の入り口のアドレスにジャンプしただけでは、どこに戻ればよいかがわかりません。</p>
 <p><img src="images/関数.png" alt="関数呼び出し仕組み"></p>
@@ -1712,7 +1712,7 @@ CPUの内部でレジスタをつかって処理</p>
 <p><strong>リターン命令</strong>
 スタックに保存されたアドレスをプログラム・カウンタに設定する機能を持っています。図17の場合は、MyFunc関数が呼び出される前に0154という値がスタックに保存されます。MyFunc関数が処理を終了すると、スタックから0154という値が読み出され、それがプログラム・カウンタに設定されるのです</p>
 <p><img src="images/コール命令とリターン命令.png" alt="図"></p>
-<h2 id="条件分岐や繰り返しで使われるジェンプ命令">条件分岐や繰り返しで使われるジェンプ命令</h2>
+<h2 id="条件分岐や繰り返しで使われるジェンプ命令"><a name="条件分岐や繰り返しで使われるジェンプ命令" class="plugin-anchor" href="#条件分岐や繰り返しで使われるジェンプ命令"><i class="fa fa-link" aria-hidden="true"></i></a>条件分岐や繰り返しで使われるジェンプ命令</h2>
 <p>直前に行われた演算の結果を参照して、ジャンプするかどうかを判断する。</p>
 <hr>
 <p><strong>プログラムは命令とデータの集合体</strong></p>
@@ -1729,12 +1729,12 @@ CPUの内部でレジスタをつかって処理</p>
 <p>簡潔にいうと
 弱い電気信号を強い信号に変える増幅機としての役割や、電気信号の流れを高速にon/ofするスイッチとしての役割を果たす小さな電子素子。</p>
 <hr>
-<h2 id="cpu">CPU</h2>
+<h2 id="cpu"><a name="cpu" class="plugin-anchor" href="#cpu"><i class="fa fa-link" aria-hidden="true"></i></a>CPU</h2>
 <p>CPUはレジスタの集合体。制御装置、演算装置、クロックは存在だけ知っていたらOK
 CPUやメモリーの実体は多くのトランジスタから構成されたIC(Integrated Circuit: 集積回路)と呼ばれる電子部品</p>
 <p>CPUが何らかの値を演算するたび、その結果に応じてフラグレジスタの値が自動的に設定される。</p>
 <p>フラグレジスタは直前に実行した演算の結果として、アキュムレータの値が負・ゼロ・正のいずれかになったかを記憶する役割を持つもの(オーバーフロー・パリティチェック)の結果なども記憶している。</p>
-<h2 id="レジスタ">レジスタ</h2>
+<h2 id="レジスタ"><a name="レジスタ" class="plugin-anchor" href="#レジスタ"><i class="fa fa-link" aria-hidden="true"></i></a>レジスタ</h2>
 <p><strong>処理対象となる命令やデータを格納する領域。</strong>
 一種のメモリーのようなもの。
 種類によって異なるが、1つのCPUの内部には20 ~ 100個ほどのレジスタがある。</p>
@@ -1743,15 +1743,15 @@ CPUやメモリーの実体は多くのトランジスタから構成されたIC
 レジスタに格納される値は、命令を表している場合と、データを表している場合</p>
 <p>データには演算につかわれる値と、メモリーのアドレスを表す値の2種類</p>
 <p><img src="images/レジスタ.png" alt="レジスタ種類"></p>
-<h2 id="制御装置">制御装置</h2>
+<h2 id="制御装置"><a name="制御装置" class="plugin-anchor" href="#制御装置"><i class="fa fa-link" aria-hidden="true"></i></a>制御装置</h2>
 <p>メモリー上の命令やデータをレジスタに読み出し、命令の実行結果に応じてコンピューターー全体を制御する。</p>
-<h2 id="演算装置">演算装置</h2>
+<h2 id="演算装置"><a name="演算装置" class="plugin-anchor" href="#演算装置"><i class="fa fa-link" aria-hidden="true"></i></a>演算装置</h2>
 <p>メモリーからレジスタに呼び出されたデータを演算する役目を持つ。</p>
-<h2 id="クロック">クロック</h2>
+<h2 id="クロック"><a name="クロック" class="plugin-anchor" href="#クロック"><i class="fa fa-link" aria-hidden="true"></i></a>クロック</h2>
 <p>CPUが動作するタイミングとなるクロック信号を発生。</p>
 <p><img src="images/cpu.png" alt="CPU"></p>
 <hr>
-<h2 id="メモリ">メモリ</h2>
+<h2 id="メモリ"><a name="メモリ" class="plugin-anchor" href="#メモリ"><i class="fa fa-link" aria-hidden="true"></i></a>メモリ</h2>
 <p>PCで通常メモリと呼ぶのはメイン・メモリ(主記憶)のこと
 CPUと制御用チップなどを介してつながっていて、ここに命令とデータを格納する。</p>
 <p>メインメモリは読み書き可能なメモリ素子で構成されており、1バイト(=8ビット)ずつにアドレス(番地)と呼ぶ番号がついてる
@@ -1760,18 +1760,18 @@ CPUと制御用チップなどを介してつながっていて、ここに命�
 <blockquote>
 <p>CPUの構造がわかると、プログラムが実行される仕組みが、何となく見えてきませんか。プログラムが動き出すと、クロック信号に合わせて、制御装置がメモリーから命令やデータを読み出します。その命令を解釈・実行することで、演算装置でデータが演算され、その結果に応じて制御装置がコンピューターを動かします。「制御」という言葉を使うと、むずかしいことのように感じてしまうかもしれませんが、データの演算以外の処理（主にデータの入出力のタイミング合わせ）のことを制御と呼んでいるだけです。メモリーやディスク媒体との入出力、キーボードやマウスからの入力、ディスプレイやプリンタへの出力なども、制御なのです。</p>
 </blockquote>
-<h2 id="プログラムカウンタ">プログラムカウンタ</h2>
+<h2 id="プログラムカウンタ"><a name="プログラムカウンタ" class="plugin-anchor" href="#プログラムカウンタ"><i class="fa fa-link" aria-hidden="true"></i></a>プログラムカウンタ</h2>
 <p>プログラムが記述通りに実行できる流れを作る
 WindowsなどのOSは、プログラムをハード・ディスクからメモリにコピーしたあとで、レジスタのひとつである
 複数のメモリアドレスを占める命令を実行した場合は、プログラム・カウンタの値が命令のサイズ分だけ増加する。</p>
 <hr>
 <p>2章</p>
-<h2 id="コンピューターーが2進数を扱う理由">コンピューターーが2進数を扱う理由</h2>
+<h2 id="コンピューターーが2進数を扱う理由"><a name="コンピューターーが2進数を扱う理由" class="plugin-anchor" href="#コンピューターーが2進数を扱う理由"><i class="fa fa-link" aria-hidden="true"></i></a>コンピューターーが2進数を扱う理由</h2>
 <p>PCの内部がICと呼ばれる電子部品が構成されていること、ICは黒いボディの両側に数本~数百本のピンがついたムカデのような形状や、ボディの背面に剣山のような形状をしている。
 ICのピンは直流電圧が0Vか5Vのいずれかの状態となっている。</p>
 <p><img src="images/2進数の理由.png" alt="2進数の理由"></p>
 <p><img src="images/2進数の変換方法.png" alt="2進数の変換方法"></p>
-<h2 id="4章">4章</h2>
+<h2 id="4章"><a name="4章" class="plugin-anchor" href="#4章"><i class="fa fa-link" aria-hidden="true"></i></a>4章</h2>
 <p>PCはデータを処理する機会であり、その処理手順や構造を示したのがプログラム。
 処理の対象となるデータは、メモリーやディスクを自由自在に使いこなせなければいけない。
 そのために必要なのは、メモリーやディスクの構造を物理的にも論理的にもイメージできること。</p>
@@ -1828,7 +1828,7 @@ ICのピンは直流電圧が0Vか5Vのいずれかの状態となっている�
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"9.1 低レイヤー","level":"2.9.1","depth":2,"next":{"title":"9.2 OS","level":"2.9.2","depth":2,"path":"hardware/os/os.md","ref":"hardware/os/os.md","articles":[]},"previous":{"title":"9. hardware","level":"2.9","depth":1,"path":"hardware/hardware.md","ref":"hardware/hardware.md","articles":[{"title":"9.1 低レイヤー","level":"2.9.1","depth":2,"path":"hardware/lowlayer/program.md","ref":"hardware/lowlayer/program.md","articles":[]},{"title":"9.2 OS","level":"2.9.2","depth":2,"path":"hardware/os/os.md","ref":"hardware/os/os.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"hardware/lowlayer/program.md","mtime":"2023-01-12T00:39:30.214Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T00:39:41.486Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"9.1 低レイヤー","level":"2.9.1","depth":2,"next":{"title":"9.2 OS","level":"2.9.2","depth":2,"path":"hardware/os/os.md","ref":"hardware/os/os.md","articles":[]},"previous":{"title":"9. hardware","level":"2.9","depth":1,"path":"hardware/hardware.md","ref":"hardware/hardware.md","articles":[{"title":"9.1 低レイヤー","level":"2.9.1","depth":2,"path":"hardware/lowlayer/program.md","ref":"hardware/lowlayer/program.md","articles":[]},{"title":"9.2 OS","level":"2.9.2","depth":2,"path":"hardware/os/os.md","ref":"hardware/os/os.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"hardware/lowlayer/program.md","mtime":"2023-01-12T09:05:53.786Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T09:06:04.627Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1880,6 +1880,30 @@ ICのピンは直流電圧が0Vか5Vのいずれかの状態となっている�
     </script>
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
     
         
         <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>

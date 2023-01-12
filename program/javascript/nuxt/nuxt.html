@@ -1,19 +1,31 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="ja" >
     <head>
         <meta charset="UTF-8">
-        <title>Nuxt · HonKit</title>
+        <title>Nuxt · naopedia</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.4">
-        
+        <meta name="author" content="naohito-T">
         
         
     
     <link rel="stylesheet" href="../../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../../../gitbook/@honkit/honkit-plugin-highlight/website.css">
@@ -31,18 +43,6 @@
 
     
 
-    
-        
-        <link rel="stylesheet" href="../../../styles/website.css">
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
         
     
@@ -72,7 +72,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="検索ワードを入力" />
 </div>
 
             
@@ -1631,7 +1631,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            HonKitで公開 
         </a>
     </li>
 </ul>
@@ -1669,7 +1669,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="nuxt">Nuxt</h1>
+                                <h1 id="nuxt"><a name="nuxt" class="plugin-anchor" href="#nuxt"><i class="fa fa-link" aria-hidden="true"></i></a>Nuxt</h1>
 <p>nodeのconsole.logはターミナル上、つまりSSR時
 csr（ブラウザ）のconsole.logは検証で出力される
 ※Nextjs</p>
@@ -1680,11 +1680,11 @@ csr（ブラウザ）のconsole.logは検証で出力される
 <p>前提（Vueとは）
 Vueとは、JavaScriptを用いたViewのライブラリのこと。
 <strong>HTMLの見た目に関すること</strong>を実装できる（SPAアプリケーションは作成できるよ）</p>
-<h2 id="nuxtを使うことでのメリット">Nuxtを使うことでのメリット</h2>
+<h2 id="nuxtを使うことでのメリット"><a name="nuxtを使うことでのメリット" class="plugin-anchor" href="#nuxtを使うことでのメリット"><i class="fa fa-link" aria-hidden="true"></i></a>Nuxtを使うことでのメリット</h2>
 <p><strong>SSR(Server Side Rendering)がすぐに実装できる。</strong>
 SEOが必要な動的ページをたくさんできるようなサービスではSSRが必要になる。
 また<strong>VueでもSSRをできるが設定に骨が折れる</strong></p>
-<h2 id="nuxtの仕組み">Nuxtの仕組み</h2>
+<h2 id="nuxtの仕組み"><a name="nuxtの仕組み" class="plugin-anchor" href="#nuxtの仕組み"><i class="fa fa-link" aria-hidden="true"></i></a>Nuxtの仕組み</h2>
 <p><a href="https://www.i-ryo.com/entry/2020/02/13/083521" target="_blank">参考URL</a>
 <a href="https://qiita.com/amakawa_/items/e7d0720e1ab8632769bf" target="_blank">SPA,SSR,プリレンダリングの違い</a></p>
 <p><strong>SSRとは</strong>
@@ -1698,14 +1698,14 @@ SSRはAjaxデータをフェッチし、<strong>Vue.jsのコンポーネント�
 <p><strong>SSR(Server Side レンダリング)</strong>
 Nuxt.jsでSSRを使う場合は、<strong>初回の描画時はSSRとCSR</strong>
 それ以降の再描画時はCSRのみとなっている。</p>
-<h2 id="nuxt-各ディレクトリについて">Nuxt 各ディレクトリについて</h2>
+<h2 id="nuxt-各ディレクトリについて"><a name="nuxt-各ディレクトリについて" class="plugin-anchor" href="#nuxt-各ディレクトリについて"><i class="fa fa-link" aria-hidden="true"></i></a>Nuxt 各ディレクトリについて</h2>
 <p><strong>assets</strong>
 基本的にはcss/scss/imageはこのフォルダー内で管理します。</p>
 <p><strong>components</strong>
 各ページで共通化して利用するコンポーネント置き場</p>
 <p><strong>layouts</strong>
 各ページで利用するレイアウト置き場</p>
-<h2 id="middleware">middleware</h2>
+<h2 id="middleware"><a name="middleware" class="plugin-anchor" href="#middleware"><i class="fa fa-link" aria-hidden="true"></i></a>middleware</h2>
 <p>指定したページで<strong>asyncDataやfetchよりも先に呼ばれる共通処理の置き場</strong>
 <code>nuxt.config.js</code>で全ページ指定するケースもあれば、必要なページからのみ呼び出して使うこともある。</p>
 <p>利用用途が多い例
@@ -1721,7 +1721,7 @@ Vueインスタンスの設定を行うファイル置き場。ここに置い�
 <p><strong>store</strong>
 コンポーネント間の値の管理。小規模なプロジェクトであれば、index.jsの1つのファイルで十分かと思います。
 途中からindex.jsのファイルを複数に分けることは可能ですが、地味に手間なので、storeをガンガン使う予定のサイトの場合は、初めからある程度分けて始めることをおすすめします。</p>
-<h2 id="はまりどころ">はまりどころ</h2>
+<h2 id="はまりどころ"><a name="はまりどころ" class="plugin-anchor" href="#はまりどころ"><i class="fa fa-link" aria-hidden="true"></i></a>はまりどころ</h2>
 <p>SSRについて</p>
 <blockquote>
 <p>SSRはNuxt.jsが提供している機能だと思っていましたが、大元は vue-server-render が提供しているのですね。だからVue.jsのドキュメントにもSSRについての記載があります。困ったらまずは公式ドキュメントに立ち戻
@@ -1731,12 +1731,12 @@ Vueインスタンスの設定を行うファイル置き場。ここに置い�
 それ前提で設計しないといけない</p>
 <p><a href="https://logmi.jp/tech/articles/322003" target="_blank">設計参考</a>
 <a href="https://zenn.dev/koudaiishigame/articles/810ce2d0ee8ade" target="_blank">設計参考2compositionapi</a></p>
-<h2 id="フレームワークはまりどころポイント欄">フレームワークはまりどころポイント欄</h2>
-<h2 id="nuxt-導入に必要なサーバ要件について">Nuxt 導入に必要なサーバ要件について</h2>
+<h2 id="フレームワークはまりどころポイント欄"><a name="フレームワークはまりどころポイント欄" class="plugin-anchor" href="#フレームワークはまりどころポイント欄"><i class="fa fa-link" aria-hidden="true"></i></a>フレームワークはまりどころポイント欄</h2>
+<h2 id="nuxt-導入に必要なサーバ要件について"><a name="nuxt-導入に必要なサーバ要件について" class="plugin-anchor" href="#nuxt-導入に必要なサーバ要件について"><i class="fa fa-link" aria-hidden="true"></i></a>Nuxt 導入に必要なサーバ要件について</h2>
 <p><a href="https://qiita.com/kaketechjapan/items/af5524f2bed5238aefcd" target="_blank">サーバ要件</a></p>
-<h2 id="nuxtにおけるssr・ssg・spaの設定方法">NuxtにおけるSSR・SSG・SPAの設定方法</h2>
+<h2 id="nuxtにおけるssr・ssg・spaの設定方法"><a name="nuxtにおけるssr・ssg・spaの設定方法" class="plugin-anchor" href="#nuxtにおけるssr・ssg・spaの設定方法"><i class="fa fa-link" aria-hidden="true"></i></a>NuxtにおけるSSR・SSG・SPAの設定方法</h2>
 <p>Nuxtはnuxt.config.jsのmodeプロパティとtargetプロパティによってアプリケーションのモードが管理されている(SPA or SSR or SSG)</p>
-<h2 id="nuxt-各コマンドについて">Nuxt 各コマンドについて</h2>
+<h2 id="nuxt-各コマンドについて"><a name="nuxt-各コマンドについて" class="plugin-anchor" href="#nuxt-各コマンドについて"><i class="fa fa-link" aria-hidden="true"></i></a>Nuxt 各コマンドについて</h2>
 <p><a href="https://nishinatoshiharu.com/nuxt-build-generate-befavior/" target="_blank">各コマンド参考</a></p>
 <ul>
 <li><p>dev
@@ -1758,7 +1758,7 @@ nuxt start : 静的なホスティング（Netlify, Vercel, Surgeなど）のよ
 静的ウェブサイトのホスティングサービスではNetlifyやAmazon S3などが有名</p>
 </li>
 </ul>
-<h2 id="運用">運用</h2>
+<h2 id="運用"><a name="運用" class="plugin-anchor" href="#運用"><i class="fa fa-link" aria-hidden="true"></i></a>運用</h2>
 <ul>
 <li><p>SSR
 SSRでアプリケーションを運用する場合、nuxt buildでファイルをビルド後、nuxt startでNuxtアプリケーションをサーバー上で起動という流れ。</p>
@@ -1767,7 +1767,7 @@ SSRでアプリケーションを運用する場合、nuxt buildでファイル�
 nuxt generateで静的ファイルを生成後、静的ウェブサイトにアップロードするという流れになります。</p>
 </li>
 </ul>
-<h2 id="props">Props</h2>
+<h2 id="props"><a name="props" class="plugin-anchor" href="#props"><i class="fa fa-link" aria-hidden="true"></i></a>Props</h2>
 <p>setupで渡されてくるpropsを分割代入してはいけない</p>
 <pre><code class="lang-js"><span class="hljs-comment">// NG</span>
 <span class="hljs-function"><span class="hljs-title">setup</span>(<span class="hljs-params">{foo}</span>)</span> {
@@ -1778,10 +1778,10 @@ nuxt generateで静的ファイルを生成後、静的ウェブサイトにア�
   <span class="hljs-comment">// props.foo を使う</span>
 }
 </code></pre>
-<h2 id="vuejsのcreated、mounted、data">Vue.jsのcreated、mounted、data</h2>
+<h2 id="vuejsのcreated、mounted、data"><a name="vuejsのcreated、mounted、data" class="plugin-anchor" href="#vuejsのcreated、mounted、data"><i class="fa fa-link" aria-hidden="true"></i></a>Vue.jsのcreated、mounted、data</h2>
 <p><a href="https://medium.com/veltra-engineering/in-ssr-vue-js-is-created-twice-7f9122de9b77" target="_blank">Vue.jsのcreated、mounted、data</a></p>
 <p>nuxtの前にそもそもVue.jsのライフサイクルフックとして用意されている created と mounted 、およびデータをリアクティブにする dataプロパティについて理解する。</p>
-<h2 id="nuxt2と3の違い非同期関数について">Nuxt2と3の違い(非同期関数について)</h2>
+<h2 id="nuxt2と3の違い非同期関数について"><a name="nuxt2と3の違い非同期関数について" class="plugin-anchor" href="#nuxt2と3の違い非同期関数について"><i class="fa fa-link" aria-hidden="true"></i></a>Nuxt2と3の違い(非同期関数について)</h2>
 <p><a href="https://zenn.dev/coedo/articles/cc000738a0f069" target="_blank">参考URL</a>
 <a href="https://zenn.dev/kawahara/scraps/38cc622c73f27a" target="_blank">参考URL2</a></p>
 <p>ちなみに自分のプロジェクトではNuxt2で使われている。</p>
@@ -1792,13 +1792,13 @@ Nuxt 3 ではそれらが新たに useFetch() と useAsyncData() のふたつに
 </blockquote>
 <p><strong>Nuxt2</strong>
 Options APIのasyncData()やComposition APIのuseAsync(), useFetch(), useStatic()</p>
-<h3 id="asyncdata">asyncData()</h3>
+<h3 id="asyncdata"><a name="asyncdata" class="plugin-anchor" href="#asyncdata"><i class="fa fa-link" aria-hidden="true"></i></a>asyncData()</h3>
 <p>ページがロードされる前に（Vueインスタンスが作成される前）に呼び出される関数で、通常API呼び出しなどの非同期処理を記述する</p>
-<h3 id="created">created()</h3>
+<h3 id="created"><a name="created" class="plugin-anchor" href="#created"><i class="fa fa-link" aria-hidden="true"></i></a>created()</h3>
 <p>API通信を行うもの。基本はcreated()を使用しDOMを操作しないといけない時にmounted()を使用する手法
 createdは、Vueインスタンスが作成された直後に呼ばれる関数で、Vueインスタンスの各種プロパティ、メソッドは利用できますが、レンダリングが完了していないため、エレメントは利用できません。
 mounted は、レンダリングが完了した直後に呼ばれる関数で、エレメントへのアクセスも可能となります。なお、子コンポーネントのレンダリング完了は保証されていません。</p>
-<h3 id="useasync-options-apiベースで言うとasyncdataでやっていたことに対応する場合">useAsync() Options APIベースで言うとasyncDataでやっていたことに対応する場合</h3>
+<h3 id="useasync-options-apiベースで言うとasyncdataでやっていたことに対応する場合"><a name="useasync-options-apiベースで言うとasyncdataでやっていたことに対応する場合" class="plugin-anchor" href="#useasync-options-apiベースで言うとasyncdataでやっていたことに対応する場合"><i class="fa fa-link" aria-hidden="true"></i></a>useAsync() Options APIベースで言うとasyncDataでやっていたことに対応する場合</h3>
 <p>@nuxtjs/composition-apiにあるuseAsync は、setup() 時に呼ぶ関数で、SSR時はサーバサイドで情報を取得し、SPA時にはページ遷移時に呼び出したいものを用意できるという代物。</p>
 <p><strong>useAsync の利用上の注意</strong>
 asyncDataのようにuseAsyncはサーバサイドでロードされ、結果をHTMLに書き出す挙動になっている。
@@ -1824,7 +1824,7 @@ asyncDataのようにuseAsyncはサーバサイドでロードされ、結果を
 <span class="hljs-keyword">const</span> foo = useAsync(<span class="hljs-function">() =&gt;</span> someFunction())
 <span class="hljs-keyword">return</span> {foo}
 </code></pre>
-<h3 id="usefetch">useFetch</h3>
+<h3 id="usefetch"><a name="usefetch" class="plugin-anchor" href="#usefetch"><i class="fa fa-link" aria-hidden="true"></i></a>useFetch</h3>
 <p>useAsyncとは別に単純に非同期な関数をSSR時と画面遷移時に実行したいという目的のためにuseFetchが存在するが、これはcomputedと同時に利用しようとするとエラーが発生する
 非常にやっかみのある問題である。。解決としては現状は、、useFetch を使いたい場合は computed を使わないか、 useAsync を使うということになりそうだ。</p>
 <hr>
@@ -1832,7 +1832,7 @@ asyncDataのようにuseAsyncはサーバサイドでロードされ、結果を
 useFetch() と useAsyncData()
 加えて、データ取得時に画面描画をブロックしないuseLazyFetch()と、useLazyAsyncData()も加わった。</p>
 <p><strong>今後 Page Component は、いわばページレイアウトを記述するだけのラッパー的な存在になっていくかもしれません。</strong></p>
-<h2 id="nuxt処理順序">Nuxt処理順序</h2>
+<h2 id="nuxt処理順序"><a name="nuxt処理順序" class="plugin-anchor" href="#nuxt処理順序"><i class="fa fa-link" aria-hidden="true"></i></a>Nuxt処理順序</h2>
 <p><a href="https://www.japon-line.co.jp/tech/post/nuxt-js%E3%81%AEssr-csr%E5%87%A6%E7%90%86%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" target="_blank">参考URL(これはやばい)</a></p>
 <p>まず大前提でNuxtやReactなどのJSで呼ばれる時、SSRとCSRの処理に分かれる
 CSR : ブラウザで動作する部分</p>
@@ -1871,7 +1871,7 @@ beforeCreate（CSR）
 created（CSR）
 beforeMount（CSR）
 mounted（CSR）</p>
-<h2 id="どちらを使うか明記させる">どちらを使うか明記させる</h2>
+<h2 id="どちらを使うか明記させる"><a name="どちらを使うか明記させる" class="plugin-anchor" href="#どちらを使うか明記させる"><i class="fa fa-link" aria-hidden="true"></i></a>どちらを使うか明記させる</h2>
 <p>created()はSSR, CSRどちらでも呼ばれる。
 そのためどちらか明記させないといけない。
 以下は例</p>
@@ -1882,7 +1882,7 @@ mounted（CSR）</p>
   }
 }
 </code></pre>
-<h2 id="middleware">middleware</h2>
+<h2 id="middleware"><a name="middleware" class="plugin-anchor" href="#middleware"><i class="fa fa-link" aria-hidden="true"></i></a>middleware</h2>
 <p><a href="https://designsupply-web.com/media/programming/6864/" target="_blank">TS参考URL</a></p>
 <p>ページをレンダリングする前に実行する関数。
 ライフサイクルはnuxtServerInitの後、asyncDataの前に実行される
@@ -1920,7 +1920,7 @@ storeの情報を扱ったりもできる</p>
   }
 &lt;/script&gt;
 </code></pre>
-<h2 id="nuxtjsのライフサイクル深堀り">Nuxt.jsのライフサイクル(深堀り)</h2>
+<h2 id="nuxtjsのライフサイクル深堀り"><a name="nuxtjsのライフサイクル深堀り" class="plugin-anchor" href="#nuxtjsのライフサイクル深堀り"><i class="fa fa-link" aria-hidden="true"></i></a>Nuxt.jsのライフサイクル(深堀り)</h2>
 <p><strong>初回アクセス時やリロード時には SSR処理とCSR処理がどちらも動作する。</strong>
 lugins と created（beforeCreate）が 2 回走る点に注意です。</p>
 <ul>
@@ -1937,26 +1937,26 @@ createdはVueインスタンスが作成された直後に呼ばれる関数で�
 <li><p>初回アクセス時</p>
 </li>
 </ul>
-<h2 id="nuxtで少しでもセキュアに情報を扱うためにできること">Nuxtで少しでもセキュアに情報を扱うためにできること</h2>
-<h2 id="pluginsディレクトリで忘れてはいけないこと">Pluginsディレクトリで忘れてはいけないこと</h2>
+<h2 id="nuxtで少しでもセキュアに情報を扱うためにできること"><a name="nuxtで少しでもセキュアに情報を扱うためにできること" class="plugin-anchor" href="#nuxtで少しでもセキュアに情報を扱うためにできること"><i class="fa fa-link" aria-hidden="true"></i></a>Nuxtで少しでもセキュアに情報を扱うためにできること</h2>
+<h2 id="pluginsディレクトリで忘れてはいけないこと"><a name="pluginsディレクトリで忘れてはいけないこと" class="plugin-anchor" href="#pluginsディレクトリで忘れてはいけないこと"><i class="fa fa-link" aria-hidden="true"></i></a>Pluginsディレクトリで忘れてはいけないこと</h2>
 <p>初回アクセス時やリロード時には、SSR処理とCSR処理がどちらも動作する。
 plugins と created（beforeCreate）が 2 回走る点に注意。</p>
 <blockquote>
 <p>認証系は middleware や plugins に記述することが多いかもしれませんが、middleware の場合は内部ナビゲーション遷移時は CSR 側でしか呼ばれないため、どちらの処理も書いておく必要があります。 plugins の場合は、内部ナビゲーション遷移時は呼ばれないので注意が必要。
 <strong>plugins の場合は、内部ナビゲーション遷移時は呼ばれないので注意が必要</strong></p>
 </blockquote>
-<h2 id="プラグインとモジュールの違い">プラグインとモジュールの違い</h2>
+<h2 id="プラグインとモジュールの違い"><a name="プラグインとモジュールの違い" class="plugin-anchor" href="#プラグインとモジュールの違い"><i class="fa fa-link" aria-hidden="true"></i></a>プラグインとモジュールの違い</h2>
 <p><strong>プラグイン</strong>
 $rootやcontextから呼び出すことができる何かを提供する
 Vue インスタンスと、サーバコンテキストから特定のオブジェクトを利用できるようにするために利用されるもの。</p>
 <p><strong>モジュール</strong>
 ビルドの動きを変えたい場合。設定により動的な挙動を持つプラグインとして提供したい場合</p>
-<h2 id="内部リンクとはnuxt-link">内部リンクとは(nuxt-link)</h2>
+<h2 id="内部リンクとはnuxt-link"><a name="内部リンクとはnuxt-link" class="plugin-anchor" href="#内部リンクとはnuxt-link"><i class="fa fa-link" aria-hidden="true"></i></a>内部リンクとは(nuxt-link)</h2>
 <p>nuxt-linkを使用することでページをリロードすることなくページ固有の要素のみを追加でロードするだけで画面遷移を行うことができる。</p>
 <p><a href="https://hafilog.com/nuxt-link-and-atag" target="_blank">内部リンクと外部リンク共有化</a></p>
-<h2 id="nuxt注意点">Nuxt注意点</h2>
+<h2 id="nuxt注意点"><a name="nuxt注意点" class="plugin-anchor" href="#nuxt注意点"><i class="fa fa-link" aria-hidden="true"></i></a>Nuxt注意点</h2>
 <p>まずはじめに、Nuxt.jsはSSRとCSRの境界が曖昧で、明確に分けて設計・実装することが慣れるまでは意外と難しかったりします。たとえばcreated()はSSRでもCSRでもどちらでも動きますので、<strong>createdで初期化処理をする際、初回アクセス時は2回同じ処理をしていることはご存知ない方もいらっしゃるかもしれません。</strong></p>
-<h2 id="nuxtjsとは">Nuxt.jsとは</h2>
+<h2 id="nuxtjsとは"><a name="nuxtjsとは" class="plugin-anchor" href="#nuxtjsとは"><i class="fa fa-link" aria-hidden="true"></i></a>Nuxt.jsとは</h2>
 <p>Nust.jsはvue.jsのフレームワーク</p>
 <blockquote>
 <p>たとえばNuxt.jsにはルーティングのVue Routerやデータ管理のVuex、HTMLのメタタグ管理のvue-metaなどのプラグインを使用するために必要となる設定が事前に行われているため細かな設定を行う必要がなくすぐに利用することができます。</p>
@@ -1964,7 +1964,7 @@ Vue インスタンスと、サーバコンテキストから特定のオブジ�
 <p>Vue.jsとは違い、Nuxt.jsには静的サイトジェネレートという強力な機能がある。
 Nuxtの静的化のための機能はOption APIで提供されていたがCompotion APIでの使い方はあまり解説記事がなかった。</p>
 <p><a href="https://ics.media/entry/210120/" target="_blank">Nuxtでの静的サイトジェネレート作り方</a></p>
-<h2 id="nuxt-ディレクトリ構成">nuxt ディレクトリ構成</h2>
+<h2 id="nuxt-ディレクトリ構成"><a name="nuxt-ディレクトリ構成" class="plugin-anchor" href="#nuxt-ディレクトリ構成"><i class="fa fa-link" aria-hidden="true"></i></a>nuxt ディレクトリ構成</h2>
 <p><a href="https://ja.nuxtjs.org/docs/2.x/get-started/directory-structure" target="_blank">リファレンス</a></p>
 <ul>
 <li><p>pagesディレクトリ
@@ -1986,19 +1986,19 @@ layoutディレクトリのdefault.vueファイルを追加することですべ
 共有ミドルウェアはmiddleware/ディレクトリに配置する必要がある。ファイル名はミドルウェアの名前になる<code>(middleware/auth.js)</code>はauthミドルウェアになる。</p>
 </li>
 </ul>
-<h2 id="nuxtでの-spa・ssr・ssg-とは">Nuxtでの SPA・SSR・SSG とは</h2>
+<h2 id="nuxtでの-spa・ssr・ssg-とは"><a name="nuxtでの-spa・ssr・ssg-とは" class="plugin-anchor" href="#nuxtでの-spa・ssr・ssg-とは"><i class="fa fa-link" aria-hidden="true"></i></a>Nuxtでの SPA・SSR・SSG とは</h2>
 <p><a href="https://qiita.com/nishinoshake/items/f42e2f03663b00b5886d" target="_blank">URL</a></p>
 <p>Nuxt.jsではSPA・SSR・SSGの中から好きなものを選んで開発ができる
 <strong>初期設定ではSSRで動作するようになっている</strong>。</p>
 <p>SPA・SSR・SSGでの仕組みは別pageを参照する。</p>
 <hr>
-<h2 id="vuexの導入方法">Vuexの導入方法</h2>
+<h2 id="vuexの導入方法"><a name="vuexの導入方法" class="plugin-anchor" href="#vuexの導入方法"><i class="fa fa-link" aria-hidden="true"></i></a>Vuexの導入方法</h2>
 <p><a href="https://qiita.com/Takabun/items/e0b0c139ccf53c7bb561" target="_blank">参考URL</a></p>
-<h2 id="vuexについて">Vuexについて</h2>
+<h2 id="vuexについて"><a name="vuexについて" class="plugin-anchor" href="#vuexについて"><i class="fa fa-link" aria-hidden="true"></i></a>Vuexについて</h2>
 <p>Vuexは<strong>Vue.jsでグローバルでのデータの状態管理を行うことができるライブラリ</strong>
 Vuexは<strong>これまでprops, emitを利用した親子間のコンポーネントでの状態管理の複雑さを解消するために用いられてきた。</strong>
 このライブラリによりどのコンポーネントからでも状態にアクセスしたり、アクションを実行することができる</p>
-<h2 id="vuexを使用するにあたっての弊害">Vuexを使用するにあたっての弊害</h2>
+<h2 id="vuexを使用するにあたっての弊害"><a name="vuexを使用するにあたっての弊害" class="plugin-anchor" href="#vuexを使用するにあたっての弊害"><i class="fa fa-link" aria-hidden="true"></i></a>Vuexを使用するにあたっての弊害</h2>
 <p>・TypeScriptとの相性が悪い
 ・アーキテクチャが複雑で手軽に扱うことが難しい
 ・コンポーネントをテストすることが難しい</p>
@@ -2007,12 +2007,12 @@ Vuexは<strong>これまでprops, emitを利用した親子間のコンポーネ
 <li>DI 依存性の注入
 依存性の注入とはコンポーネント間の依存関係をプログラムのソースコードから排除するために、外部の設定ファイルなどでオブジェクトを注入できるようにするソフトウェアパターンである。</li>
 </ul>
-<h2 id="今日のvuexとは">今日のVuexとは</h2>
+<h2 id="今日のvuexとは"><a name="今日のvuexとは" class="plugin-anchor" href="#今日のvuexとは"><i class="fa fa-link" aria-hidden="true"></i></a>今日のVuexとは</h2>
 <p>今までのVue2時にはVuex。しかしVue3ではprovide/injectを使ったステート管理が推進されている
 しかしVuexを導入する場合は、Nuxt.jsで公式で推奨されているvuex-module-decoratorsを使用する</p>
 <p><a href="https://qiita.com/azukiazusa/items/a50b1ffe05d9937a4db0" target="_blank">参考URL</a></p>
 <hr>
-<h2 id="composition-apiとは">composition APIとは</h2>
+<h2 id="composition-apiとは"><a name="composition-apiとは" class="plugin-anchor" href="#composition-apiとは"><i class="fa fa-link" aria-hidden="true"></i></a>composition APIとは</h2>
 <p><a href="https://qiita.com/karamage/items/7721c8cac149d60d4c4a" target="_blank">参考URL</a></p>
 <p>Vue3の目玉の機能としてComposition APIがある。
 Compositionは構成(すること),組み立て(ること)という意味</p>
@@ -2023,7 +2023,7 @@ Compositionは構成(すること),組み立て(ること)という意味</p>
 <p>ロジックの抽出と再利用が必要な理由は
 複雑に肥大化したコンポーネントを小分けにして関心事で分別し、クリーンな状態に整理するため
 近年Vueを使用して大規模なプロジェクトを構築することが増えた。肥大化してメンテしにくいコンポーネントを目の辺りにしエンジニアが苦しむことがあった。</p>
-<h2 id="composition-apiが生まれた経緯">composition apiが生まれた経緯</h2>
+<h2 id="composition-apiが生まれた経緯"><a name="composition-apiが生まれた経緯" class="plugin-anchor" href="#composition-apiが生まれた経緯"><i class="fa fa-link" aria-hidden="true"></i></a>composition apiが生まれた経緯</h2>
 <ul>
 <li>今までのVue
 Vue2.xではコンポーネントをSFC(シングルファイルコンポーネント)ファイルに記述する
@@ -2039,14 +2039,14 @@ SFCにコンポーネントのView/状態/ロジックをまとめて閉じ込�
 設計が重要になる。</p>
 <p>Composition APIを使用するデメリットは設計やアーキテクチャを考えなければならない。
 たとえばクリーンアーキテクチャを理解して実装していくことが求められる</p>
-<h2 id="composition-apiにおいてのproviderパターン">composition APIにおいてのProviderパターン</h2>
+<h2 id="composition-apiにおいてのproviderパターン"><a name="composition-apiにおいてのproviderパターン" class="plugin-anchor" href="#composition-apiにおいてのproviderパターン"><i class="fa fa-link" aria-hidden="true"></i></a>composition APIにおいてのProviderパターン</h2>
 <p><a href="https://qiita.com/karamage/items/4bc90f637487d3fcecf0" target="_blank">参考URL</a></p>
 <ul>
 <li>Providerパターンとは
 VueにおけるProviderパターンとはprovide/inject APIを使用して
 <strong>Composition APIで切り出した状態やロジックをコンポーネント間で共有することを指す。</strong></li>
 </ul>
-<h2 id="provideinjectの使い方">provide/injectの使い方</h2>
+<h2 id="provideinjectの使い方"><a name="provideinjectの使い方" class="plugin-anchor" href="#provideinjectの使い方"><i class="fa fa-link" aria-hidden="true"></i></a>provide/injectの使い方</h2>
 <p>提供する側(provide)と注入する側(inject)に分かれる</p>
 <ul>
 <li><p>送信側(provide)
@@ -2056,7 +2056,7 @@ VueにおけるProviderパターンとはprovide/inject APIを使用して
 親コンポーネントから呼び出されている子コンポーネントはinject(key)で使用する。</p>
 </li>
 </ul>
-<h2 id="今後providerのapiは変わるかも">今後ProviderのAPIは変わるかも</h2>
+<h2 id="今後providerのapiは変わるかも"><a name="今後providerのapiは変わるかも" class="plugin-anchor" href="#今後providerのapiは変わるかも"><i class="fa fa-link" aria-hidden="true"></i></a>今後ProviderのAPIは変わるかも</h2>
 <p>もともとPlugin開発やライブラリ開発向けのAPIとして「provide/inject」が用意されていました。
 つまり、「provide/inject」はVue3用に用意されたAPIではないのです。
 よって、Providerの仕組みは、今後、変わるかもしれません。
@@ -2073,63 +2073,52 @@ Providerで、親コンポーネントから子コンポーネントに共通の
 Prop渡しと違ってバケツリレーをする必要がない。
 今後、Vue3ではProviderの改善が進むと予想</li>
 </ul>
-<h2 id="nuxt-linkについて">nuxt-linkについて</h2>
+<h2 id="nuxt-linkについて"><a name="nuxt-linkについて" class="plugin-anchor" href="#nuxt-linkについて"><i class="fa fa-link" aria-hidden="true"></i></a>nuxt-linkについて</h2>
 <p>Vue.jsのrouter-linkを拡張しているもの
 そのためrouter-linkと同じ使い方ができる。</p>
-<h2 id="nuxt-linkとaタグの違い">nuxt-linkとaタグの違い</h2>
-<pre><code class="lang-html&lt;a&gt;```は外部ページ,```vue&lt;NuxtLink&gt;&lt;/NuxtLink&gt;は内部ページ```">
-- nuxt-linkを使うメリット
-
-&gt;このコンポーネントは、ページコンポーネント間のナビゲーションを提供し、賢い prefetching（先読み）でパフォーマンスを高めるのに使用します。
-
-- nuxt-link注意点
-
-外部サイトには移動できない。
-
-## nuxt 専用メソッドについて
-
-- asyncData
+<ul>
+<li>nuxt-linkを使うメリット</li>
+</ul>
+<blockquote>
+<p>このコンポーネントは、ページコンポーネント間のナビゲーションを提供し、賢い prefetching（先読み）でパフォーマンスを高めるのに使用します。</p>
+</blockquote>
+<ul>
+<li>nuxt-link注意点</li>
+</ul>
+<p>外部サイトには移動できない。</p>
+<h2 id="nuxt-専用メソッドについて"><a name="nuxt-専用メソッドについて" class="plugin-anchor" href="#nuxt-専用メソッドについて"><i class="fa fa-link" aria-hidden="true"></i></a>nuxt 専用メソッドについて</h2>
+<ul>
+<li>asyncData
 Vueインスタンスが生成される前に実行されるメソッド
-thisは使えない。contextは使える
-
-
-SSR実行時のnodeにはlocalstorageがありませんから、window.localstorageはさわれません。
-そのため、今回のプラグインも{... , ssr; false}として、SSR時は起動しないようにする必要があります。
-
-## nuxt.config
-
-tsにする方法を記載する。
-
-- buildModules
-
-&gt;一部のモジュールは開発時およびビルド時にのみ必要になります。buildModules を使うことで本番環境の起動を速くし、本番環境にデプロイされる node_modules のサイズを大幅に減らすことができます。それぞれのモジュールのドキュメントを参照して、modules と buildModules どちらを使うのが推奨されているかを確認してください。
-
-使用方法の違いは以下のとおりです:
+thisは使えない。contextは使える</li>
+</ul>
+<p>SSR実行時のnodeにはlocalstorageがありませんから、window.localstorageはさわれません。
+そのため、今回のプラグインも{... , ssr; false}として、SSR時は起動しないようにする必要があります。</p>
+<h2 id="nuxtconfig"><a name="nuxtconfig" class="plugin-anchor" href="#nuxtconfig"><i class="fa fa-link" aria-hidden="true"></i></a>nuxt.config</h2>
+<p>tsにする方法を記載する。</p>
+<ul>
+<li>buildModules</li>
+</ul>
+<blockquote>
+<p>一部のモジュールは開発時およびビルド時にのみ必要になります。buildModules を使うことで本番環境の起動を速くし、本番環境にデプロイされる node_modules のサイズを大幅に減らすことができます。それぞれのモジュールのドキュメントを参照して、modules と buildModules どちらを使うのが推奨されているかを確認してください。</p>
+</blockquote>
+<p>使用方法の違いは以下のとおりです:
 nuxt.config.js に modules を追加するかわりに buildModules を使います
-package.json に dependencies を追加するかわりに devDependencies を使います（yarn add --dev または npm install --save-dev）
-
-## tips
-
-[Vue2.xで、composition-api + TypeScript使っているときのメモ](https://zenn.dev/kawahara/scraps/38cc622c73f27a)
-
-
-
-
-## watch
-
-変更を検知し指定のmethodを実行する
-※複数の検知も可能
-
-```js
-
-watch(() =&gt; {},() =&gt; {}, [method1の結果, method2の結果])
+package.json に dependencies を追加するかわりに devDependencies を使います（yarn add --dev または npm install --save-dev）</p>
+<h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>tips</h2>
+<p><a href="https://zenn.dev/kawahara/scraps/38cc622c73f27a" target="_blank">Vue2.xで、composition-api + TypeScript使っているときのメモ</a></p>
+<h2 id="watch"><a name="watch" class="plugin-anchor" href="#watch"><i class="fa fa-link" aria-hidden="true"></i></a>watch</h2>
+<p>変更を検知し指定のmethodを実行する
+※複数の検知も可能</p>
+<pre><code class="lang-js">
+watch(<span class="hljs-function">() =&gt;</span> {},<span class="hljs-function">() =&gt;</span> {}, [method1の結果, method2の結果])
 </code></pre>
-<h2 id="setup内でのdocument使用について">setup内でのdocument使用について</h2>
+<h2 id="setup内でのdocument使用について"><a name="setup内でのdocument使用について" class="plugin-anchor" href="#setup内でのdocument使用について"><i class="fa fa-link" aria-hidden="true"></i></a>setup内でのdocument使用について</h2>
 <p><a href="https://qiita.com/syu_ikeda/items/ea1e6931643aa812e6a2" target="_blank">参考URL</a></p>
 <p>Next.jsはサーバーサイド、クライアントサイド両方で動くフレームワーク。そのため、定義したソースはサーバー、ブラウザ両方の環境で実行されます。</p>
 <p>そして、documentやwindowはクライアント(ブラウザ)だけで定義されているグローバル変数です。サーバー環境で動かそうとすると「そんなグローバル変数は定義されていない！」とエラーが発生します。</p>
 <p>なので、if (process.browser)でブラウザのみの判定を入れればサーバー環境での実行時には無視され、クライアント環境だけで動くのです。</p>
-<h2 id="nuxtでの完全静的サイトジェネレート">Nuxtでの完全静的サイトジェネレート</h2>
+<h2 id="nuxtでの完全静的サイトジェネレート"><a name="nuxtでの完全静的サイトジェネレート" class="plugin-anchor" href="#nuxtでの完全静的サイトジェネレート"><i class="fa fa-link" aria-hidden="true"></i></a>Nuxtでの完全静的サイトジェネレート</h2>
 <p><a href="https://ics.media/entry/210120/" target="_blank">参考URL</a></p>
 <p>Nuxt.js 2.13からasyncData()メソッド・fetch()メソッドで取得するデータが静的化された。
 nuxt.config.jsのtargetを &quot;static&quot;と設定しgenerateすると、asyncData()およびfetch()で取得する内容が<strong>payload.jsという静的データで保存される。</strong>
@@ -2140,8 +2129,8 @@ nuxt.config.jsのtargetを &quot;static&quot;と設定しgenerateすると、asy
 useAsync()はgenerate後もページ遷移時には非同期通信を行って内容を取得します。</p>
 <p>Nuxt Composition APIのv0.20.0未満ではuseFetch()を利用してgenerateを行っても静的化されない不具合がありました。最新のバージョンでは修正されているので、完全静的化を行う場合にはuseFetch()を使うのが便利でしょう。</p>
 <p><strong>useFetch()はasyncData()とは違い、ページコンポーネント以外でも利用できます。最新の記事を表示するサイドバーのようなコンポーネントからでも呼び出せます。</strong></p>
-<h2 id="usefetch-useasyncの違い">useFetch, useAsyncの違い</h2>
-<h2 id="nuxt-error">nuxt error</h2>
+<h2 id="usefetch-useasyncの違い"><a name="usefetch-useasyncの違い" class="plugin-anchor" href="#usefetch-useasyncの違い"><i class="fa fa-link" aria-hidden="true"></i></a>useFetch, useAsyncの違い</h2>
+<h2 id="nuxt-error"><a name="nuxt-error" class="plugin-anchor" href="#nuxt-error"><i class="fa fa-link" aria-hidden="true"></i></a>nuxt error</h2>
 <p>process.server, process.client による条件分岐により、必要なコードだけをそれぞれの環境（Nuxt サーバー上、ブラウザ上）で実行できるようにする
 ブラウザ上の JavaScript に慣れていると window オブジェクトはあることが当たり前だけれど、Nuxt サーバー上にはもちろん存在しない
 Nuxt サーバーによる SSR（Server Side Rendering）では、created 時までのライフサイクルのコードが実行されるため、created までに書いている API 通信結果は DOM に格納されるが、CSR（Client Side Rendering）時にも実行されるため、通信が無駄になることがある。その場合 beforeMount に書くのが良い
@@ -2151,9 +2140,9 @@ SSR 時と CSR 時の情報の差がある場合、エラーを吐く。その�
 <p><strong>一方で、windowオブジェクトにアクセスするもの、たとえばlocalStorageを使うようなものはクライアントサイドのみでしか実行することはできません。 mounted 以外で書く場合は process.server 変数などを使って分岐させる必要があります。</strong></p>
 <p><strong>特に注意したいのが created で（ beforeCreate も）、SSR時とCSR時の両方で呼ばれます。普通に書くと二重に処理してしまうことになるので、意識して書かないと意図しない挙動になる可能性があります。</strong></p>
 <p><a href="https://nazo.hatenablog.com/entry/nuxt-ssr-lifecycle" target="_blank">参考URL</a></p>
-<h2 id="nuxt-でのモックサーバの作り方">Nuxt でのモックサーバの作り方</h2>
+<h2 id="nuxt-でのモックサーバの作り方"><a name="nuxt-でのモックサーバの作り方" class="plugin-anchor" href="#nuxt-でのモックサーバの作り方"><i class="fa fa-link" aria-hidden="true"></i></a>Nuxt でのモックサーバの作り方</h2>
 <p><a href="https://qiita.com/m_mitsuhide/items/b8e073cba0dae5af2359" target="_blank">参考URL</a></p>
-<h2 id="nuxt-でのprocessclient-prosessserverについて">Nuxt でのprocess.client, prosess.serverについて</h2>
+<h2 id="nuxt-でのprocessclient-prosessserverについて"><a name="nuxt-でのprocessclient-prosessserverについて" class="plugin-anchor" href="#nuxt-でのprocessclient-prosessserverについて"><i class="fa fa-link" aria-hidden="true"></i></a>Nuxt でのprocess.client, prosess.serverについて</h2>
 <p>NuxtではNodeの環境変数processを拡張する形で、process.server, process.clientが設定されている
 <strong>つまり、created()の時、SSRとCSRでどちらも実行されるため、created()内でCSR処理を行いたい時などに分岐できる。</strong></p>
 <p><a href="https://qiita.com/geerpm/items/64caf4ebaf5122b71549" target="_blank">参考定義URL</a></p>
@@ -2167,7 +2156,7 @@ SSR 時と CSR 時の情報の差がある場合、エラーを吐く。その�
 </ul>
 <p><a href="https://qiita.com/yamotuki/items/ebd5fed5d75ff80c66ee" target="_blank">nuxt pluginでのaxiosエラー</a></p>
 <hr>
-<h2 id="nuxtライフサイクルフック">Nuxtライフサイクルフック</h2>
+<h2 id="nuxtライフサイクルフック"><a name="nuxtライフサイクルフック" class="plugin-anchor" href="#nuxtライフサイクルフック"><i class="fa fa-link" aria-hidden="true"></i></a>Nuxtライフサイクルフック</h2>
 <p><img src="image/lifecycle.png" alt="lifeCycle"></p>
 <p>mounted()
 CSR(クライアントサイドレンダリング)の略。</p>
@@ -2182,7 +2171,7 @@ createdで使う場合はSSRかCSRどちらで動作させるか明確にする�
 }
 </code></pre>
 <hr>
-<h2 id="ここから超重要">ここから超重要</h2>
+<h2 id="ここから超重要"><a name="ここから超重要" class="plugin-anchor" href="#ここから超重要"><i class="fa fa-link" aria-hidden="true"></i></a>ここから超重要</h2>
 <p><a href="https://www.japon-line.co.jp/tech/nuxt-js%E3%81%AEssr-csr%E5%87%A6%E7%90%86%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" target="_blank">参考URL</a></p>
 <ul>
 <li>初回アクセス
@@ -2198,7 +2187,7 @@ pluginsとcreated(beforeCreate)が2回走る点に注意。</li>
 内部ナビゲーション遷移時は呼ばれない</p>
 </li>
 </ul>
-<h2 id="処理順序（上から順に処理されます）">処理順序（上から順に処理されます）</h2>
+<h2 id="処理順序（上から順に処理されます）"><a name="処理順序（上から順に処理されます）" class="plugin-anchor" href="#処理順序（上から順に処理されます）"><i class="fa fa-link" aria-hidden="true"></i></a>処理順序（上から順に処理されます）</h2>
 <p><strong>ここからSSR</strong>
 nuxtServerInit（SSR）
 plugins（SSR）
@@ -2213,7 +2202,7 @@ beforeCreate（CSR）
 created（CSR）
 beforeMount（CSR）
 mounted（CSR）</p>
-<h2 id="内部ナビゲーション時">内部ナビゲーション時</h2>
+<h2 id="内部ナビゲーション時"><a name="内部ナビゲーション時" class="plugin-anchor" href="#内部ナビゲーション時"><i class="fa fa-link" aria-hidden="true"></i></a>内部ナビゲーション時</h2>
 <p><strong>上記以外の画面遷移時には、CSRの処理のみが走ります。</strong>
 pluginsは動かないため、どのページに遷移しても共通の処理を行いたい場合はmiddlewareなどを検討しましょう。</p>
 <p>処理順序（上から順に処理されます）
@@ -2224,10 +2213,10 @@ beforeCreate（CSR）
 created（CSR）
 beforeMount（CSR）
 mounted（CSR）</p>
-<h2 id="nuxtでbffを作成する">NuxtでBFFを作成する</h2>
+<h2 id="nuxtでbffを作成する"><a name="nuxtでbffを作成する" class="plugin-anchor" href="#nuxtでbffを作成する"><i class="fa fa-link" aria-hidden="true"></i></a>NuxtでBFFを作成する</h2>
 <p><a href="https://dev.appswingby.com/nuxt/nuxt-js%E3%81%AEserver-middleware%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E6%89%8B%E8%BB%BD%E3%81%ABbffbackends-for-frontends%E3%82%92%E5%B0%8E%E5%85%A5%E3%81%99%E3%82%8B/" target="_blank">参考URL</a></p>
 <p>Nuxt.jsには、serverMiddlewareという機能があります。この機能を利用するとNuxt.js内部でAPIサーバを構築することができる。</p>
-<h2 id="nuxtのtokenの作成">NuxtのTokenの作成</h2>
+<h2 id="nuxtのtokenの作成"><a name="nuxtのtokenの作成" class="plugin-anchor" href="#nuxtのtokenの作成"><i class="fa fa-link" aria-hidden="true"></i></a>NuxtのTokenの作成</h2>
 <p>nuxtはSSRで動作をさせるのであれば、SSRとCSRのどちらでもlogin処理を行わないといけない。
 つまり、ts側とvue側
 こんな感じでapiに問い合わせてjwtを取得している。
@@ -2246,7 +2235,7 @@ decordできないものはおかしいと判断。</p>
   <span class="hljs-keyword">return</span> tokens;
 }
 </code></pre>
-<h2 id="nuxtのtargetとmodeとssrについて">Nuxtのtargetとmodeとssrについて</h2>
+<h2 id="nuxtのtargetとmodeとssrについて"><a name="nuxtのtargetとmodeとssrについて" class="plugin-anchor" href="#nuxtのtargetとmodeとssrについて"><i class="fa fa-link" aria-hidden="true"></i></a>Nuxtのtargetとmodeとssrについて</h2>
 <p><a href="https://zenn.dev/kurosame/articles/52e96b724380d2" target="_blank">参考URL</a></p>
 <ul>
 <li>targetプロパティ</li>
@@ -2266,7 +2255,7 @@ EC2, ECS, レンタルサーバーなど</p>
 </ul>
 <p>設定可能な値はspaかuniversalのどちらかで、デフォルトは<code>mode: &apos;universal&apos;</code></p>
 <p><img src="image/nuxt_ssr.png" alt></p>
-<h2 id="nuxt-envについて">Nuxt envについて</h2>
+<h2 id="nuxt-envについて"><a name="nuxt-envについて" class="plugin-anchor" href="#nuxt-envについて"><i class="fa fa-link" aria-hidden="true"></i></a>Nuxt envについて</h2>
 <p><a href="https://zenn.dev/kouchanne/articles/83466e36e1c30f174ae8" target="_blank">参考URL(結構つかえる)</a>
 <a href="https://blog.cloud-acct.com/posts/u-nuxt-module-cryptojs" target="_blank">参考URL</a>
 <a href="https://blog.microcms.io/nuxt-secure-api-key/" target="_blank">参考URL</a></p>
@@ -2288,7 +2277,7 @@ EC2, ECS, レンタルサーバーなど</p>
   <span class="hljs-comment">// 略</span>
 }
 </code></pre>
-<h2 id="envの扱いenv-プロパティの環境変数は漏洩します">.envの扱い(env プロパティの環境変数は漏洩します)</h2>
+<h2 id="envの扱いenv-プロパティの環境変数は漏洩します"><a name="envの扱いenv-プロパティの環境変数は漏洩します" class="plugin-anchor" href="#envの扱いenv-プロパティの環境変数は漏洩します"><i class="fa fa-link" aria-hidden="true"></i></a>.envの扱い(env プロパティの環境変数は漏洩します)</h2>
 <p>プロジェクトルートに.envファイルを作成すればデフォルトの変数がセットされるようになった。
 <strong>※envプロパティに登録した値もそうですが、基本的にクライアントで使用する環境変数はソースコード上に展開されます。</strong></p>
 <p>envプロパティに登録した環境変数はコンパイル中に変換され値がセットされる
@@ -2298,7 +2287,7 @@ buildコマンド以前に環境変数の値を定義していないとenvプロ
 <p>envプロパティに定義する環境変数は、DockerfileのENVで定義する必要があります。</p>
 </blockquote>
 <hr>
-<h2 id="nuxtでsassを使うには">nuxtでsassを使うには</h2>
+<h2 id="nuxtでsassを使うには"><a name="nuxtでsassを使うには" class="plugin-anchor" href="#nuxtでsassを使うには"><i class="fa fa-link" aria-hidden="true"></i></a>nuxtでsassを使うには</h2>
 <p>NuxtでSassを使うにはnode-sass、sass-loader2種類のパッケージが必要
 @nuxtjs/style-resourcesは変数を使用したい場合に使う。</p>
 <p>どうやら作成直前にversionのアップデートがあったとのこと。</p>
@@ -2312,12 +2301,12 @@ buildコマンド以前に環境変数の値を定義していないとenvプロ
 <p>nuxt.config.tsに以下を記載する。</p>
 <pre><code class="lang-ts">modules: [<span class="hljs-string">&apos;@nuxtjs/style-resources&apos;</span>],
 </code></pre>
-<h2 id="nuxt-で-di-っぽいことをする">Nuxt で DI っぽいことをする</h2>
-<h2 id="nuxt-eslint-prettier-stylelint-設定">Nuxt eslint prettier stylelint 設定</h2>
+<h2 id="nuxt-で-di-っぽいことをする"><a name="nuxt-で-di-っぽいことをする" class="plugin-anchor" href="#nuxt-で-di-っぽいことをする"><i class="fa fa-link" aria-hidden="true"></i></a>Nuxt で DI っぽいことをする</h2>
+<h2 id="nuxt-eslint-prettier-stylelint-設定"><a name="nuxt-eslint-prettier-stylelint-設定" class="plugin-anchor" href="#nuxt-eslint-prettier-stylelint-設定"><i class="fa fa-link" aria-hidden="true"></i></a>Nuxt eslint prettier stylelint 設定</h2>
 <p><a href="https://inokawablog.org/vue-js/nuxt-typescript-stylelint-eslint-prettier/" target="_blank">nuxt typescript eslint prettier</a>
 <a href="https://qiita.com/y-w/items/bd7f11013fe34b69f0df" target="_blank">stylelint 設定</a>
 <a href="https://toragramming.com/web/nuxtjs/nuxt-stylelint-prettier-vscode-format-scss-on-save/" target="_blank">こちらの stylelint 設定がよい</a></p>
-<h2 id="nuxt-ホスティング-tips">Nuxt ホスティング tips</h2>
+<h2 id="nuxt-ホスティング-tips"><a name="nuxt-ホスティング-tips" class="plugin-anchor" href="#nuxt-ホスティング-tips"><i class="fa fa-link" aria-hidden="true"></i></a>Nuxt ホスティング tips</h2>
 <p><a href="https://kosukesaigusa.com/tech/2021-07-22-nuxtjs-ssr-firebase-hosting/" target="_blank">firebase</a></p>
 <ul>
 <li>Firebase hostingを利用する場合</li>
@@ -2328,7 +2317,7 @@ SSRの場合、buildで生成されるdistディレクトリの中身をその�
 Nuxt.jsのSSRサイトの成果物であるJavaScriptのファイル郡とその他の必要な静的なassetsをFirebase Hosting にデプロイし、
 そのURLに対するアクセスをFirebase Hosting の rewrites ルールによって、同じく Firebase で提供されている Cloud Functions に作った HTTP 関数に向けるようにし、その HTTP 関数で Nuxt.js のレンダリング関数を実行するという流れを実現すれば良いということです。
 ディレクトリ構成や使用しているパッケージ、Nuxt.js の各種設定などはこれを実現するための唯一の方法はなく、どのような方法でも上記の流れを実現することができれば問題がない</p>
-<h2 id="tips参考書類">Tips(参考書類)</h2>
+<h2 id="tips参考書類"><a name="tips参考書類" class="plugin-anchor" href="#tips参考書類"><i class="fa fa-link" aria-hidden="true"></i></a>Tips(参考書類)</h2>
 <p><a href="https://zenn.dev/00_/articles/c5130802d384b8238e4c" target="_blank">VueのSSR時におけるハイドレーションエラー対処法</a>
 <a href="https://qiita.com/too/items/e8ffcf7de7d48dcb9a9b" target="_blank">nuxt lifecycle</a>
 <a href="https://tjmschk.hatenablog.com/entry/2020/12/14/231800" target="_blank">Composition API + Typescript で Vuex をリアクティブに安全に使いたい</a></p>
@@ -2381,7 +2370,7 @@ Nuxt.jsのSSRサイトの成果物であるJavaScriptのファイル郡とその
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Nuxt","level":"2.2.3.5","depth":3,"next":{"title":"React","level":"2.2.3.6","depth":3,"path":"program/javascript/react/react.md","ref":"program/javascript/react/react.md","articles":[]},"previous":{"title":"Vue","level":"2.2.3.4","depth":3,"path":"program/javascript/vue/vue.md","ref":"program/javascript/vue/vue.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"program/javascript/nuxt/nuxt.md","mtime":"2023-01-12T00:39:30.226Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T00:39:41.486Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Nuxt","level":"2.2.3.5","depth":3,"next":{"title":"React","level":"2.2.3.6","depth":3,"path":"program/javascript/react/react.md","ref":"program/javascript/react/react.md","articles":[]},"previous":{"title":"Vue","level":"2.2.3.4","depth":3,"path":"program/javascript/vue/vue.md","ref":"program/javascript/vue/vue.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"program/javascript/nuxt/nuxt.md","mtime":"2023-01-12T09:05:53.794Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T09:06:04.627Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2433,6 +2422,30 @@ Nuxt.jsのSSRサイトの成果物であるJavaScriptのファイル郡とその
     </script>
     <script src="../../../gitbook/gitbook.js"></script>
     <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
     
         
         <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>

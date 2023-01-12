@@ -1,19 +1,31 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="ja" >
     <head>
         <meta charset="UTF-8">
-        <title>11.3 インフラ · HonKit</title>
+        <title>11.3 インフラ · naopedia</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.4">
-        
+        <meta name="author" content="naohito-T">
         
         
     
     <link rel="stylesheet" href="../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../../gitbook/@honkit/honkit-plugin-highlight/website.css">
@@ -31,18 +43,6 @@
 
     
 
-    
-        
-        <link rel="stylesheet" href="../../styles/website.css">
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
         
     
@@ -72,7 +72,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="検索ワードを入力" />
 </div>
 
             
@@ -1631,7 +1631,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            HonKitで公開 
         </a>
     </li>
 </ul>
@@ -1669,13 +1669,13 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="インフラ">インフラ</h1>
+                                <h1 id="インフラ"><a name="インフラ" class="plugin-anchor" href="#インフラ"><i class="fa fa-link" aria-hidden="true"></i></a>インフラ</h1>
 <p>インフラの設計思想を記述する。
 2重起動はしないようにする
 自動復旧する</p>
 <hr>
-<h2 id="インフラサーバの潮流">インフラサーバの潮流</h2>
-<h3 id="物理サーバーの時代">物理サーバーの時代</h3>
+<h2 id="インフラサーバの潮流"><a name="インフラサーバの潮流" class="plugin-anchor" href="#インフラサーバの潮流"><i class="fa fa-link" aria-hidden="true"></i></a>インフラサーバの潮流</h2>
+<h3 id="物理サーバーの時代"><a name="物理サーバーの時代" class="plugin-anchor" href="#物理サーバーの時代"><i class="fa fa-link" aria-hidden="true"></i></a>物理サーバーの時代</h3>
 <p>インフラといえば、アプリケーションがどれくらい利用されるか予測し<strong>物理サーバを業者に発注</strong>していた。（サーバー調達と言います）
 メーカーの都合でハードウェアや仕様が変わったり、求めるサーバーが手に入らないことがあることある。
 負荷対策では強いマシンを用意したり、ロードバランサーと複数台のマシンで分散処理します。</p>
@@ -1686,13 +1686,13 @@
 <strong>こうしたサーバ環境を管理することをプロビジョニング</strong>と言う。
 プロビジョニングを行うためPuppet、Ansible、Chefがそれらツールの代表。
 サーバーに一括で同じスクリプトを実行することが簡単になった。</p>
-<h3 id="仮想化技術時代">仮想化技術時代</h3>
+<h3 id="仮想化技術時代"><a name="仮想化技術時代" class="plugin-anchor" href="#仮想化技術時代"><i class="fa fa-link" aria-hidden="true"></i></a>仮想化技術時代</h3>
 <p>データセンターでは、サーバー仮想化が普及することになります。
 1台のハイスペックなマシンを、複数台の仮想サーバとして分割するための技術です。</p>
 <p>ホストマシンの中でOSとカーネルを仮想化し、ユーザにアプリケーション実行環境を公開します。
 レンタルサーバの裏側で使われている技術です。</p>
 <p>この仮想化技術を使って大量のサーバを保持する会社が、指定したサーバスペックを短時間で調達するIaaSが生まれました。仮想化によってサーバ環境の統一やプロビジョニングが容易になりました。</p>
-<h2 id="dockerの誕生">Dockerの誕生</h2>
+<h2 id="dockerの誕生"><a name="dockerの誕生" class="plugin-anchor" href="#dockerの誕生"><i class="fa fa-link" aria-hidden="true"></i></a>Dockerの誕生</h2>
 <p>さきほど述べた仮想化技術はスーパーバイザー型、ホスト型などと呼ばれ、ホストマシン上でゲストマシンを立ち上げ、OSやカーネル、アプリケーションを動かします。</p>
 <p>これらの技術を使うと、サーバ調達は短時間で簡単に済みます。とはいえ、もっと素早いリソースの調整が求められていました。アプリケーションが主体になっていく流れの中でOSやカーネルまで仮想化が必要なのかという疑問が生まれました。</p>
 <p>アプリケーション動作環境をうまく仮想化するだけの技術としてDockerが生まれました。
@@ -1702,7 +1702,7 @@ DockerはホストマシンのOSと<strong>カーネルを共有</strong>し、�
 Dockerはコンテナーと呼ばれる隔離環境でアプリケーションを実行します。1台のサーバ上でお互いのプロセスに影響を与えることなく、複数のコンテナーを動かすことが可能になります。</p>
 <p>となると、どのサーバーにどのコンテナーを動かすのかという問題が生じます。これを解決するのが、コンテナーオーケストレーションツールです。KubernetesやApacheMesosがそれらにあたります。ApacheMesosはDocker以前から存在していました。</p>
 <p>このようにして簡単に生成・破棄できるコンテナー型仮想化技術が重宝され、新しくオーケストレーションの問題が生まれ、また新しくKubernetesのようなツールで解決が図られているという流れです。</p>
-<h2 id="インフラ歴史２">インフラ歴史２</h2>
+<h2 id="インフラ歴史２"><a name="インフラ歴史２" class="plugin-anchor" href="#インフラ歴史２"><i class="fa fa-link" aria-hidden="true"></i></a>インフラ歴史２</h2>
 <p>昔は各環境毎に設定手順書やスクリプトを手書きして、サーバを構成することが主流
 しかし、設定手順書やスクリプトを実際の環境に合わせて適切に更新し運用し続けることにはかなりの負荷を伴う。</p>
 <ul>
@@ -1760,7 +1760,7 @@ Dockerによってアプリケーションやミドルウェアの動作環境�
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"11.3 インフラ","level":"2.13.3","depth":2,"next":{"title":"マイクロサービスアーキテクチャ","level":"2.13.3.1","depth":3,"path":"plan/infra/micro/micro.md","ref":"plan/infra/micro/micro.md","articles":[]},"previous":{"title":"Clean Architecture","level":"2.13.2.4","depth":3,"path":"plan/server/cleanarchitecture/cleanarchitecture.md","ref":"plan/server/cleanarchitecture/cleanarchitecture.md","articles":[]},"articles":[{"title":"マイクロサービスアーキテクチャ","level":"2.13.3.1","depth":3,"path":"plan/infra/micro/micro.md","ref":"plan/infra/micro/micro.md","articles":[]}],"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"plan/infra/infra.md","mtime":"2023-01-12T00:39:30.222Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T00:39:41.486Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"11.3 インフラ","level":"2.13.3","depth":2,"next":{"title":"マイクロサービスアーキテクチャ","level":"2.13.3.1","depth":3,"path":"plan/infra/micro/micro.md","ref":"plan/infra/micro/micro.md","articles":[]},"previous":{"title":"Clean Architecture","level":"2.13.2.4","depth":3,"path":"plan/server/cleanarchitecture/cleanarchitecture.md","ref":"plan/server/cleanarchitecture/cleanarchitecture.md","articles":[]},"articles":[{"title":"マイクロサービスアーキテクチャ","level":"2.13.3.1","depth":3,"path":"plan/infra/micro/micro.md","ref":"plan/infra/micro/micro.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"plan/infra/infra.md","mtime":"2023-01-12T09:05:53.794Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T09:06:04.627Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1812,6 +1812,30 @@ Dockerによってアプリケーションやミドルウェアの動作環境�
     </script>
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
     
         
         <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>

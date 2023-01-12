@@ -1,19 +1,31 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="ja" >
     <head>
         <meta charset="UTF-8">
-        <title>Rails · HonKit</title>
+        <title>Rails · naopedia</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.4">
-        
+        <meta name="author" content="naohito-T">
         
         
     
     <link rel="stylesheet" href="../../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../../../gitbook/@honkit/honkit-plugin-highlight/website.css">
@@ -31,18 +43,6 @@
 
     
 
-    
-        
-        <link rel="stylesheet" href="../../../styles/website.css">
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
         
     
@@ -72,7 +72,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="検索ワードを入力" />
 </div>
 
             
@@ -1631,7 +1631,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            HonKitで公開 
         </a>
     </li>
 </ul>
@@ -1669,19 +1669,19 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="ruby-on-rails">Ruby on Rails</h1>
+                                <h1 id="ruby-on-rails"><a name="ruby-on-rails" class="plugin-anchor" href="#ruby-on-rails"><i class="fa fa-link" aria-hidden="true"></i></a>Ruby on Rails</h1>
 <p><a href="https://railsguides.jp/" target="_blank">Railsガイド(これを見ろ)(本リファレンス)</a>
 <a href="https://atmarkit.itmedia.co.jp/ait/articles/1102/23/news109_3.html" target="_blank">Rails</a>
 <a href="https://qiita.com/shunjikonishi/items/e39ed8091e1dca817468" target="_blank">Railsのクリーンアーキテクチャ</a>
 <a href="https://techtechmedia.com/hashid-rails/" target="_blank">【Rails】hashid-railsを用いてIDを難読化・暗号化させる方法</a>
 <a href="https://ja.stackoverflow.com/questions/86424/rails%E3%81%AE%E5%90%8D%E5%89%8D%E7%A9%BA%E9%96%93%E3%81%AE%E7%9B%AE%E7%9A%84%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E7%96%91%E5%95%8F" target="_blank">Railsでの名前空間について(わかりやすい)</a></p>
-<h2 id="rails作者">Rails作者</h2>
+<h2 id="rails作者"><a name="rails作者" class="plugin-anchor" href="#rails作者"><i class="fa fa-link" aria-hidden="true"></i></a>Rails作者</h2>
 <p>DHHが語っているシリーズ
 <a href="https://pr.forkwell.com/articles/dhh-rails-large-scale-development/" target="_blank">大規模開発に強い理由</a></p>
 <hr>
-<h2 id="最新railsについて">最新Railsについて</h2>
+<h2 id="最新railsについて"><a name="最新railsについて" class="plugin-anchor" href="#最新railsについて"><i class="fa fa-link" aria-hidden="true"></i></a>最新Railsについて</h2>
 <p><a href="https://qiita.com/jnchito/items/5c41a7031404c313da1f" target="_blank">Rails7変更点</a></p>
-<h2 id="rails-apiモード">Rails apiモード</h2>
+<h2 id="rails-apiモード"><a name="rails-apiモード" class="plugin-anchor" href="#rails-apiモード"><i class="fa fa-link" aria-hidden="true"></i></a>Rails apiモード</h2>
 <p><a href="https://railsguides.jp/api_app.html" target="_blank">リファレンス（apiモードについて）</a></p>
 <p>以下の3つが行われる。</p>
 <ul>
@@ -1692,12 +1692,12 @@
 <li><p>ビュー、ヘルパー、アセットを生成しないようジェネレーターを設定します。</p>
 </li>
 </ul>
-<h2 id="rails-70-node">Rails 7.0 Node</h2>
+<h2 id="rails-70-node"><a name="rails-70-node" class="plugin-anchor" href="#rails-70-node"><i class="fa fa-link" aria-hidden="true"></i></a>Rails 7.0 Node</h2>
 <p>importmap
 Rails 7といえば、Node.jsを裏で使う必要がなくなった。
 <code>importmap-rails</code>が目玉のリリース。
 <code>importmap-rails</code>を使うことで、フロントエンドのJavaScriptのライブラリを管理してくれるようになる。</p>
-<h2 id="importmap-rails">importmap-rails</h2>
+<h2 id="importmap-rails"><a name="importmap-rails" class="plugin-anchor" href="#importmap-rails"><i class="fa fa-link" aria-hidden="true"></i></a>importmap-rails</h2>
 <p><a href="https://www.bokukoko.info/entry/2022/02/15/153751" target="_blank">参考URL</a></p>
 <blockquote>
 <p>これで初期化した Rails アプリには なんと、package.json, yarn.lock が存在しない！
@@ -1710,7 +1710,7 @@ gem <span class="hljs-string">&apos;importmap-rails&apos;</span>
 $ bundle install
 $ bundle <span class="hljs-built_in">exec</span> rails importmap:install
 </code></pre>
-<h2 id="rails-70-assetsまわり">Rails 7.0 assetsまわり</h2>
+<h2 id="rails-70-assetsまわり"><a name="rails-70-assetsまわり" class="plugin-anchor" href="#rails-70-assetsまわり"><i class="fa fa-link" aria-hidden="true"></i></a>Rails 7.0 assetsまわり</h2>
 <p>webpackerはなくなっている！</p>
 <p><a href="https://qiita.com/suketa/items/837eb97bdb48dd8c4688" target="_blank">参考URL</a>
 <a href="https://qiita.com/kazutosato/items/1ae1cf0ec380a75d4dc4" target="_blank">JavaScript BundlingとCSS Bundlingのしくみ</a></p>
@@ -1719,25 +1719,25 @@ $ bundle <span class="hljs-built_in">exec</span> rails importmap:install
 <p>Rails 5-6時代に使われたwebpackerは、公式に「has been retired」とされ、Rails 7では<code>importmap</code>が標準となりました。
 Rails7はimportmapとは別に、JavaScriptのバンドラやCSSのフレームワークを導入するしくみを用意している。</p>
 </blockquote>
-<h3 id="rails70でのアセット管理">Rails7.0でのアセット管理</h3>
+<h3 id="rails70でのアセット管理"><a name="rails70でのアセット管理" class="plugin-anchor" href="#rails70でのアセット管理"><i class="fa fa-link" aria-hidden="true"></i></a>Rails7.0でのアセット管理</h3>
 <p><a href="https://re-engines.com/2021/12/27/rails7-frontend/" target="_blank">Rails 7でフロントエンド開発が大きく変わる</a></p>
 <blockquote>
 <p>Rails 7.0 では、新たに4つのGemが登場します。これまでとは異なり、開発者はこれらのGemを自分のプロジェクトに合う組み合わせで採用することになります。</p>
 </blockquote>
 <hr>
-<h2 id="rails7にあとからフロントエンドに入れる">Rails7にあとからフロントエンドに入れる</h2>
+<h2 id="rails7にあとからフロントエンドに入れる"><a name="rails7にあとからフロントエンドに入れる" class="plugin-anchor" href="#rails7にあとからフロントエンドに入れる"><i class="fa fa-link" aria-hidden="true"></i></a>Rails7にあとからフロントエンドに入れる</h2>
 <p><a href="https://qiita.com/kazutosato/items/1ae1cf0ec380a75d4dc4" target="_blank">Rails7にあとからフロントエンドに入れる</a></p>
 <p>2つのgem</p>
 <ol>
 <li>JavaScript Bundling（jsbundling-rails）</li>
 <li>CSS Bundling（cssbundling-rails）</li>
 </ol>
-<h3 id="javascript-bundling（jsbundling-rails）">JavaScript Bundling（jsbundling-rails）</h3>
+<h3 id="javascript-bundling（jsbundling-rails）"><a name="javascript-bundling（jsbundling-rails）" class="plugin-anchor" href="#javascript-bundling（jsbundling-rails）"><i class="fa fa-link" aria-hidden="true"></i></a>JavaScript Bundling（jsbundling-rails）</h3>
 <p>JSファイルを<code>app/assets</code>の下に出力するもの。</p>
-<h3 id="css-bundling（cssbundling-rails）">CSS Bundling（cssbundling-rails）</h3>
+<h3 id="css-bundling（cssbundling-rails）"><a name="css-bundling（cssbundling-rails）" class="plugin-anchor" href="#css-bundling（cssbundling-rails）"><i class="fa fa-link" aria-hidden="true"></i></a>CSS Bundling（cssbundling-rails）</h3>
 <p>CSSフレームワーク（Bootstrapやbulma）をsassコマンドでapp/assetsの下に出力する。
 バンドラやCSSフレームワークはyarnコマンドでnode_modules下にインストールされる</p>
-<h3 id="後から入れる">後から入れる</h3>
+<h3 id="後から入れる"><a name="後から入れる" class="plugin-anchor" href="#後から入れる"><i class="fa fa-link" aria-hidden="true"></i></a>後から入れる</h3>
 <p>各コマンドは、package.jsonの中で指定されます。
 開発環境では、foreman（bin/dev）を使ってRailsサーバー、JSの変更監視、CSSの変更監視、の3つを動かす。</p>
 <pre><code class="lang-sh"><span class="hljs-comment"># 後からbootstrapを入れる</span>
@@ -1748,18 +1748,18 @@ bin/rails css:install:bootstrap
 <span class="hljs-comment"># bin/dev</span>
 <span class="hljs-comment"># 3つができる</span>
 </code></pre>
-<h3 id="procfiledev">Procfile.dev</h3>
+<h3 id="procfiledev"><a name="procfiledev" class="plugin-anchor" href="#procfiledev"><i class="fa fa-link" aria-hidden="true"></i></a>Procfile.dev</h3>
 <p>アプリケーションのルートにできる<code>Procfile.dev</code>では、一度に3つのプログラム（rails、JSバンドラ、sass）が常駐するように設定してある。
 <code>--watch</code>オプションによってファイルを監視し、変更があれば自動的に変換する。</p>
 <p>binディレクトリの下のdevコマンドでは、foremanを使って<code>Procfile.dev</code>のコマンドを動かしている。
 foremanがないときは自動的にインストールされる。</p>
 <hr>
-<h2 id="railsスタイルガイド">Railsスタイルガイド</h2>
+<h2 id="railsスタイルガイド"><a name="railsスタイルガイド" class="plugin-anchor" href="#railsスタイルガイド"><i class="fa fa-link" aria-hidden="true"></i></a>Railsスタイルガイド</h2>
 <p>シンボル名、メソッド名、変数名は<strong>スネークケース</strong>にする</p>
-<h2 id="rails欠点">Rails欠点</h2>
+<h2 id="rails欠点"><a name="rails欠点" class="plugin-anchor" href="#rails欠点"><i class="fa fa-link" aria-hidden="true"></i></a>Rails欠点</h2>
 <p><a href="https://techlife.cookpad.com/entry/2017/04/06/172601" target="_blank">参考URL</a></p>
 <p>RailsはDBのテーブルをそのまま読み書きするような単純なアプリケーションは簡単にできるが、より複雑なアプリケーションではそのぶん慎重な設計が必用になるため、Trailblazerのような複雑なWebアプリケーション構築を支援するライブラリが注目を集めている。</p>
-<h2 id="railsの設計哲学">Railsの設計哲学</h2>
+<h2 id="railsの設計哲学"><a name="railsの設計哲学" class="plugin-anchor" href="#railsの設計哲学"><i class="fa fa-link" aria-hidden="true"></i></a>Railsの設計哲学</h2>
 <ol>
 <li>DRY(Don&apos;t Repeat Yourself): 繰り返しを避けよ</li>
 </ol>
@@ -1773,22 +1773,22 @@ DRYを意識することで効率よく、品質のよいアプリケーショ�
 <p>「規約」とは、言い換えれば「デフォルトの設定」です。<strong>あらかじめ用意された規約にしたがってアプリケーションを開発することで、記述量を大幅に減らせる。</strong>
 たとえば、モデルには命名規約がありテーブル名をmembersのように複数形にすると、モデルのクラス名は単数形のMember、クラスを記述するファイル名はmember.rbとなります。決まりきった手順に従うことで余計な設定を記述する必要がなくなり、プログラマはコードへ集中できるようになります。</p>
 <p>Railsで採用されているルール（規約）にしたがっていれば、Active Recordモデルの作成時に書かなければならない設定用コードは最小限で済みますし、設定用コードが完全に不要になることすらあります。これは「設定がほとんどの場合で共通ならば、その設定をアプリケーションのデフォルトにすべきである」という考えに基づいてる。</p>
-<h2 id="rails-でのアーキテクチャー">Rails でのアーキテクチャー</h2>
+<h2 id="rails-でのアーキテクチャー"><a name="rails-でのアーキテクチャー" class="plugin-anchor" href="#rails-でのアーキテクチャー"><i class="fa fa-link" aria-hidden="true"></i></a>Rails でのアーキテクチャー</h2>
 <p><img src="image/rails.png" alt="アーキテクチャ"></p>
-<h2 id="mvcへの対応">MVCへの対応</h2>
+<h2 id="mvcへの対応"><a name="mvcへの対応" class="plugin-anchor" href="#mvcへの対応"><i class="fa fa-link" aria-hidden="true"></i></a>MVCへの対応</h2>
 <p>RailsではMVCでの役割をフォルダーごとに分けることで開発もスムーズに行えるような仕組みになっている。</p>
 <hr>
-<h2 id="rails-model">Rails model</h2>
+<h2 id="rails-model"><a name="rails-model" class="plugin-anchor" href="#rails-model"><i class="fa fa-link" aria-hidden="true"></i></a>Rails model</h2>
 <p>モデルとDBは1対1の相互関係で成り立っている。
 ※開発現場でもモデルが一番最初に作られる。
 ※モデルはただのクラスだがDBと連携するクラスをRailsではモデルと呼ぶ。</p>
-<h2 id="rails-ディレクトリ詳細">Rails ディレクトリ詳細</h2>
+<h2 id="rails-ディレクトリ詳細"><a name="rails-ディレクトリ詳細" class="plugin-anchor" href="#rails-ディレクトリ詳細"><i class="fa fa-link" aria-hidden="true"></i></a>Rails ディレクトリ詳細</h2>
 <p><a href="http://www.code-magagine.com/?p=4326" target="_blank">参考URL</a></p>
 <hr>
-<h2 id="rails-便利コマンド">Rails 便利コマンド</h2>
+<h2 id="rails-便利コマンド"><a name="rails-便利コマンド" class="plugin-anchor" href="#rails-便利コマンド"><i class="fa fa-link" aria-hidden="true"></i></a>Rails 便利コマンド</h2>
 <p>Railsでは<code>rails generate controller</code>などのコマンドでcontrollerやmodelをコマンドラインから生成することができる。
 ※設定で生成するファイルを絞ることができる。</p>
-<h3 id="binrailsとbundle-exec-railsの違い">bin/railsとbundle exec railsの違い</h3>
+<h3 id="binrailsとbundle-exec-railsの違い"><a name="binrailsとbundle-exec-railsの違い" class="plugin-anchor" href="#binrailsとbundle-exec-railsの違い"><i class="fa fa-link" aria-hidden="true"></i></a>bin/railsとbundle exec railsの違い</h3>
 <p><a href="https://k-koh.hatenablog.com/entry/2020/05/15/124256" target="_blank">参考URL</a></p>
 <blockquote>
 <p>bin/rails読むと
@@ -1798,17 +1798,17 @@ bundler/setupが実行されるとbundle execと同じ事が行われるので
 結論としては違いはありません。</p>
 </blockquote>
 <hr>
-<h2 id="rails-タイムゾーン">Rails タイムゾーン</h2>
+<h2 id="rails-タイムゾーン"><a name="rails-タイムゾーン" class="plugin-anchor" href="#rails-タイムゾーン"><i class="fa fa-link" aria-hidden="true"></i></a>Rails タイムゾーン</h2>
 <p>デフォルトではUTC
 そのため<code>created_at</code>や<code>update_at</code>は日本時刻の9時間前になる。</p>
-<h2 id="railsで新規タグ">Railsで新規タグ</h2>
+<h2 id="railsで新規タグ"><a name="railsで新規タグ" class="plugin-anchor" href="#railsで新規タグ"><i class="fa fa-link" aria-hidden="true"></i></a>Railsで新規タグ</h2>
 <p>Railsでクラスを作るには、直接ファイルを作成するのではなく専用のコマンドをつかうことが多い。</p>
-<h2 id="rails-3つのモードenvironment">Rails 3つのモード(environment)</h2>
+<h2 id="rails-3つのモードenvironment"><a name="rails-3つのモードenvironment" class="plugin-anchor" href="#rails-3つのモードenvironment"><i class="fa fa-link" aria-hidden="true"></i></a>Rails 3つのモード(environment)</h2>
 <p>Railsには3種類ある</p>
 <p>開発 : develop : コードを書きながらブラウザで確認するための環境
-テスト : test : 自動テストのための環境
+テスト : <a href="../../../GLOSSARY.html#test" class="glossary-term" title="これは、テスト用の単語です。">test</a> : 自動テストのための環境
 本番 : production : ウェブサイトを一般に公開する時の環境</p>
-<h2 id="dockerを使わない場合のrails">Dockerを使わない場合のRails</h2>
+<h2 id="dockerを使わない場合のrails"><a name="dockerを使わない場合のrails" class="plugin-anchor" href="#dockerを使わない場合のrails"><i class="fa fa-link" aria-hidden="true"></i></a>Dockerを使わない場合のRails</h2>
 <p>Dockerを使わないRailsデプロイでは、以下の環境変数が自動で設定される。
 <strong>Docker経由の場合は、自分で本番用の環境変数を設定する必要がある。</strong></p>
 <ul>
@@ -1828,7 +1828,7 @@ logを標準で出力するか否かのフラグ。enabled = 出力する。</p>
 publicディレクトリからの静的ファイルを提供してもらう（apiモードではあんま意味ないかも）</p>
 </li>
 </ul>
-<h2 id="railsで使われているmvcのデザインパターン">Railsで使われているMVCのデザインパターン</h2>
+<h2 id="railsで使われているmvcのデザインパターン"><a name="railsで使われているmvcのデザインパターン" class="plugin-anchor" href="#railsで使われているmvcのデザインパターン"><i class="fa fa-link" aria-hidden="true"></i></a>Railsで使われているMVCのデザインパターン</h2>
 <p><img src="image/mvc.png" alt="MVC"></p>
 <p><strong>APIモードではViewは存在しない。</strong></p>
 <ul>
@@ -1844,7 +1844,7 @@ ActiveRecordでは、リレーショナルデータベースのテーブルに�
 Webアプリケーションにおけるコントローラーには、このほかWebに関する一般的な仕事を受け持つという側面があります。たとえばセッション管理や、URLの解釈、HTTPリクエスト・レスポンスの処理、クッキーの管理などを担当します
 Railsでは、コントローラーはAbstractControllerとして抽象化された上で、Webアプリケーション用の機能がActionControllerとして実現されています。プログラマは、これを継承したApplicationController（アプリケーションごとに1つ用意されます）に共通機能を追加したり、さらにこのApplicationControllerを継承した各種のコントローラークラスを追加していくことで開発を進めます。なお、個々のリクエストに直接的に対応する機能を実装した部分はアクションと呼ばれ、コントローラークラスのpublicなインスタンスメソッドとして実装されます。</li>
 </ul>
-<h2 id="railsの構成と機能">Railsの構成と機能</h2>
+<h2 id="railsの構成と機能"><a name="railsの構成と機能" class="plugin-anchor" href="#railsの構成と機能"><i class="fa fa-link" aria-hidden="true"></i></a>Railsの構成と機能</h2>
 <p>Railsは<strong>復数のコンポーネントで構成されている。</strong>
 Railsの実体はコンポーネント（Rubyで書かれたライブラリ）の集合体
 <strong>基本とある3つのコンポーネントの名前を覚える</strong></p>
@@ -1853,7 +1853,7 @@ Railsの実体はコンポーネント（Rubyで書かれたライブラリ）�
 <li>Active View : ビュー</li>
 <li>Active Controller : コントローラー</li>
 </ul>
-<h2 id="rails-apiモードとは">Rails APIモードとは</h2>
+<h2 id="rails-apiモードとは"><a name="rails-apiモードとは" class="plugin-anchor" href="#rails-apiモードとは"><i class="fa fa-link" aria-hidden="true"></i></a>Rails APIモードとは</h2>
 <p>Rails APIモードとは、API作成に特化したモード
 APIモードではMVCのV(ビュー)が存在しないため、rails newを実行した際にビューに関するファイルやGemが生成されません。
 API作成に特化したモードのことで、Rails5で実装された機能らしいです。 簡単に今までのRailsとの違いを説明すると、MVCでいう、Viewの部分が存在しません。 変わりにそのURLにアクセスするとerbを返さず、jsonを返す仕様になっています。 また、標準で入っているGemもViewの分が必要なくなっているので、普通に立ち上げたRailsのプロジェクトよりも少なくなっています。 詳しくは各々で調べてみてください。</p>
@@ -1862,12 +1862,12 @@ API作成に特化したモードのことで、Rails5で実装された機能�
 <a href="https://note.com/icchoco/n/nd408d2a9b2c8" target="_blank">参考URL</a></li>
 </ul>
 <hr>
-<h2 id="gemとは">gemとは</h2>
+<h2 id="gemとは"><a name="gemとは" class="plugin-anchor" href="#gemとは"><i class="fa fa-link" aria-hidden="true"></i></a>gemとは</h2>
 <p>gemはRubyGemsと呼ばれるRuby用のパッケージ管理システムによって管理されたライブラリ
 RubyGemsが提供するgemコマンドを通じてインストール等ができます。</p>
 <p><strong>インストールしたgemを削除する</strong>
 Gemfileから記述を消し<code>bundle install</code>する。</p>
-<h2 id="gem-version-up-作成">gem version up 作成</h2>
+<h2 id="gem-version-up-作成"><a name="gem-version-up-作成" class="plugin-anchor" href="#gem-version-up-作成"><i class="fa fa-link" aria-hidden="true"></i></a>gem version up 作成</h2>
 <blockquote>
 <p>Railsアプリケーションの開発現場で、いつどのようにgemをバージョンアップしたらよいかは悩ましい問題です。こまめにバージョンアップしていくのが一番ですが、テストコードが書かれておらず確認のコストが高いなどの理由で、リリース後にまったくバージョンを上げられないようなプロジェクトも少なくありません。しかし、Railsアプリケーションの開発でgemのバージョンをまったく上げずにすませることはほぼ不可能です。もし利用しているgemに脆弱性が発見されたらどうしたらよいでしょうか？バージョンが上げられないと、そのまま脆弱性のあるコードを使い続けるか、自分たちでパッチを当てる必要があります。ただ、gemのバージョンを固定している環境であれば、脆弱性対策は何もしない、となる可能性が高そうです。これはビジネスにおける大きなリスクになるでしょう。</p>
 </blockquote>
@@ -1875,10 +1875,10 @@ Gemfileから記述を消し<code>bundle install</code>する。</p>
 gemのバージョンを上げていくには<strong>まずテストを書き、その上でバージョンアップを続けられる仕組みを作ることが重要。</strong>
 自動でgemバージョンアップ用のプルリクエストを作成してくれるサービスを使ったりする（GitHub Dependabotなど）</p>
 <hr>
-<h2 id="bundler、gemfile、gemfilelockの関係性について">bundler、Gemfile、Gemfile.lockの関係性について</h2>
+<h2 id="bundler、gemfile、gemfilelockの関係性について"><a name="bundler、gemfile、gemfilelockの関係性について" class="plugin-anchor" href="#bundler、gemfile、gemfilelockの関係性について"><i class="fa fa-link" aria-hidden="true"></i></a>bundler、Gemfile、Gemfile.lockの関係性について</h2>
 <p><a href="https://qiita.com/nishina555/items/1b343d368c5ecec6aecf" target="_blank">参考URL</a></p>
 <p>Ruby on RailsでWebアプリケーション（以降ではRailsアプリと略します）を開発をするにあたり、gemの活用は開発効率をあげるために重要</p>
-<h3 id="bundler（yarn-npmと同一）">bundler（yarn, npmと同一）</h3>
+<h3 id="bundler（yarn-npmと同一）"><a name="bundler（yarn-npmと同一）" class="plugin-anchor" href="#bundler（yarn-npmと同一）"><i class="fa fa-link" aria-hidden="true"></i></a>bundler（yarn, npmと同一）</h3>
 <p>bundlerは依存関係にあるgemの依存関係やバージョンを管理してくれるgem
 <strong>bundlerを利用することで依存関係にあるgemの一括インストール。gemのバージョン管理ができるようになる</strong>
 <code>$ bundle install</code>を使って、Gemfileに記載されたgemをインストールする。
@@ -1894,14 +1894,14 @@ Bundlerの設定システムと対話をできるもの。</p>
 </ol>
 <p><code>bundle list</code>
 プラグインが入っているか確認ができる。</p>
-<h2 id="bundle-install時に---path-vendorbundleをつける必要性">bundle install時に --path vendor/bundleをつける必要性</h2>
+<h2 id="bundle-install時に---path-vendorbundleをつける必要性"><a name="bundle-install時に---path-vendorbundleをつける必要性" class="plugin-anchor" href="#bundle-install時に---path-vendorbundleをつける必要性"><i class="fa fa-link" aria-hidden="true"></i></a>bundle install時に --path vendor/bundleをつける必要性</h2>
 <p><a href="https://qiita.com/jnchito/items/99b1dbea1767a5095d85" target="_blank">bundle install時に--path vendor/bundleを付ける必要性は本当にあるのか、もう一度よく考えてみよう</a></p>
 <p><code>bundle install</code>コマンドを実行するときRuby界には大きく分けて2つの流派がある。
 それは「--path vendor/bundleを付ける派」と「付けない派」</p>
-<h3 id="gemfile-packagejsonみたいな）">Gemfile (package.jsonみたいな）</h3>
+<h3 id="gemfile-packagejsonみたいな）"><a name="gemfile-packagejsonみたいな）" class="plugin-anchor" href="#gemfile-packagejsonみたいな）"><i class="fa fa-link" aria-hidden="true"></i></a>Gemfile (package.jsonみたいな）</h3>
 <p>GemfileとはRailesアプリで利用されるgemの一覧を管理するファイル
 bundlerによってインストールされるgemはどこで管理されているのか。</p>
-<h2 id="rails-開発モードと本番モード">Rails 開発モードと本番モード</h2>
+<h2 id="rails-開発モードと本番モード"><a name="rails-開発モードと本番モード" class="plugin-anchor" href="#rails-開発モードと本番モード"><i class="fa fa-link" aria-hidden="true"></i></a>Rails 開発モードと本番モード</h2>
 <p><a href="http://programing-kiso-note.blogspot.com/2014/01/ruby-on-rails.html" target="_blank">参考URL</a></p>
 <p>Railsには開発モードと本番モードという2つのモードがあり、それぞれ<strong>役割ごとにデータベースを切り替えて使う機能</strong>が備わっている。</p>
 <p>本番環境への切り替え方は以下の用にする</p>
@@ -1928,7 +1928,7 @@ rake db:create
 rake db:migrate</li>
 </ol>
 <hr>
-<h2 id="rails-フォルダー構成">Rails フォルダー構成</h2>
+<h2 id="rails-フォルダー構成"><a name="rails-フォルダー構成" class="plugin-anchor" href="#rails-フォルダー構成"><i class="fa fa-link" aria-hidden="true"></i></a>Rails フォルダー構成</h2>
 <p><a href="https://railstutorial.jp/chapters/beginning?version=6.0" target="_blank">pageの真ん中らへんにある</a></p>
 <pre><code class="lang-sh">store            … アプリケーションのルートディレクトリ
   app            … MVCに関わるアプリケーションの中心的なコード（モデル・ビュー・コントローラ・ヘルパー）
@@ -1956,10 +1956,10 @@ rake db:migrate</li>
 <p><code>app</code>にはモデル、コントローラー、ヘルパー等の決まった物以外は置かない方がいい。
 <code>app</code>内のパス構成は、Railsで決められた通りであることが前提となっているため、将来のバージョンアップで予期せぬ衝突が発生する可能性。
 それらではない自作のクラスやモジュールは&quot;lib&quot;内に置く方が良いでしょう。</p>
-<h3 id="initializers">initializers</h3>
+<h3 id="initializers"><a name="initializers" class="plugin-anchor" href="#initializers"><i class="fa fa-link" aria-hidden="true"></i></a>initializers</h3>
 <p>initializers以下においたファイルはサーバ起動時にのみ読み込まれるため、追加や編集をした場合は<strong>サーバを再起動する必要がある。</strong></p>
 <hr>
-<h2 id="rails-url">Rails url</h2>
+<h2 id="rails-url"><a name="rails-url" class="plugin-anchor" href="#rails-url"><i class="fa fa-link" aria-hidden="true"></i></a>Rails url</h2>
 <p><a href="https://qiita.com/190131start/items/49e2e9a42f49f17e45c6" target="_blank">参考URL</a></p>
 <p>resources :users
 6つのアクションが自動生成されますね。
@@ -1970,7 +1970,7 @@ GET /users/:id        users#show
 PATCH /users/:id      users#update
 PUT /users/:id        users#update
 DELETE /users/:id     users#destroy</p>
-<h3 id="リソースベースのルーティングrails-default">リソースベースのルーティング(Rails default)</h3>
+<h3 id="リソースベースのルーティングrails-default"><a name="リソースベースのルーティングrails-default" class="plugin-anchor" href="#リソースベースのルーティングrails-default"><i class="fa fa-link" aria-hidden="true"></i></a>リソースベースのルーティング(Rails default)</h3>
 <p><a href="https://railsguides.jp/routing.html" target="_blank">リファレンス</a></p>
 <p>リソースベースのルーティング（以下リソースルーティング）を使うことで以下が勝手に定義される。</p>
 <p><strong>ルーティング</strong>
@@ -1981,7 +1981,7 @@ DELETE /users/:id     users#destroy</p>
 new_photo_pathは/photos/newを返します
 edit_photo_path(:id)は/photos/:id/editを返します（edit_photo_path(10)であれば/photos/10/editを返します）
 photo_path(:id)は/photos/:idを返します（photo_path(10)であれば/photos/10を返します）</p>
-<h2 id="rails--ルーティングを確認する方法">Rails  ルーティングを確認する方法</h2>
+<h2 id="rails--ルーティングを確認する方法"><a name="rails--ルーティングを確認する方法" class="plugin-anchor" href="#rails--ルーティングを確認する方法"><i class="fa fa-link" aria-hidden="true"></i></a>Rails  ルーティングを確認する方法</h2>
 <p><a href="https://sakurawi.hateblo.jp/entry/rails-route" target="_blank">参考URL</a></p>
 <p>ファイルで確認する方法は<code>config/routes.rb</code>でみる</p>
 <p>Railsの流れとしては
@@ -1990,14 +1990,14 @@ URLにアクセス（+アクションメソッド）すれば、どのコント�
 <code>$ rails routes</code>
 <code>config/routes.rb</code>の中身がCLIで見られる。</p>
 <p>ブラウザで確認</p>
-<h2 id="puma">Puma</h2>
+<h2 id="puma"><a name="puma" class="plugin-anchor" href="#puma"><i class="fa fa-link" aria-hidden="true"></i></a>Puma</h2>
 <p><a href="https://nekorails.hatenablog.com/entry/2018/10/12/101011" target="_blank">参考URL</a></p>
 <p>Pumaとは、複数のリクエストを並行しうて処理することができる高速化を目的としたWebサーバ
 Rails5以降はデフォルトでpumaが導入されており、自ら導入する必要はありません。</p>
-<h2 id="docker--rails">docker  rails</h2>
+<h2 id="docker--rails"><a name="docker--rails" class="plugin-anchor" href="#docker--rails"><i class="fa fa-link" aria-hidden="true"></i></a>docker  rails</h2>
 <p><a href="https://qiita.com/eighty8/items/0288ab9c127ddb683315" target="_blank">参考URL</a></p>
 <hr>
-<h2 id="rails-debug">rails debug</h2>
+<h2 id="rails-debug"><a name="rails-debug" class="plugin-anchor" href="#rails-debug"><i class="fa fa-link" aria-hidden="true"></i></a>rails debug</h2>
 <p><a href="https://qiita.com/nishina555/items/e5886339d381db61b412" target="_blank">参考URL</a></p>
 <pre><code class="lang-ruby">puts ps
 puts current_external_id
@@ -2020,12 +2020,12 @@ puts new_external_id
 <span class="hljs-comment"># price_1GwjUCI8OazorEAhtLlr784x</span>
 <span class="hljs-comment"># get fire again2</span>
 </code></pre>
-<h2 id="rails-logger">Rails logger</h2>
+<h2 id="rails-logger"><a name="rails-logger" class="plugin-anchor" href="#rails-logger"><i class="fa fa-link" aria-hidden="true"></i></a>Rails logger</h2>
 <p><a href="https://qiita.com/NaokiIshimura/items/dbf072c313f36c2d9dcc" target="_blank">参考URL</a>
 <code>puts</code> or <code>logger</code>がある。</p>
 <p><code>puts</code>はどの環境（ENV）でも標準出力に吐かれる。
 <code>logger</code>はdevelopmentのみが標準出力される。</p>
-<h2 id="b-0000">-b 0.0.0.0</h2>
+<h2 id="b-0000"><a name="b-0000" class="plugin-anchor" href="#b-0000"><i class="fa fa-link" aria-hidden="true"></i></a>-b 0.0.0.0</h2>
 <p>Rails側がとくに説明しなく仕様変更したっぽい</p>
 <blockquote>
 <p>実は、rails のプロジェクトのポカです。
@@ -2050,17 +2050,17 @@ rails server -b 0.0.0.0
 <strong>仮想環境で起動したRailsは、localhostのipアドレス「127.0.0.1」でアクセスできない</strong>
 そこで仮想外部からアクセスできるように、ip「0.0.0.0」に紐付けをする必要がある。
 これにより自分のPC上ブラウザからRailsへアクセスできるようになる。</p>
-<h2 id="tips">Tips</h2>
+<h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>Tips</h2>
 <p><a href="https://hacktomo.hatenablog.com/entry/2017/12/14/012423" target="_blank">参考URL</a></p>
 <pre><code class="lang-sh"><span class="hljs-comment"># ルーティング確認(api起動をしている際)</span>
 $ rails routes
 <span class="hljs-comment"># rails内の環境変数を確認したい場合(コンソールを出す : console の略)</span>
 $ rails c
 </code></pre>
-<h2 id="dbの読み書きに使用するタイムゾーン">DBの読み書きに使用するタイムゾーン</h2>
+<h2 id="dbの読み書きに使用するタイムゾーン"><a name="dbの読み書きに使用するタイムゾーン" class="plugin-anchor" href="#dbの読み書きに使用するタイムゾーン"><i class="fa fa-link" aria-hidden="true"></i></a>DBの読み書きに使用するタイムゾーン</h2>
 <p>Railsにはアプリのタイムゾーンとは別に、DBの読み書きに使用するタイムゾーンがある。
 ※これはどのバックエンドでも言えることだろう</p>
-<h2 id="定数管理">定数管理</h2>
+<h2 id="定数管理"><a name="定数管理" class="plugin-anchor" href="#定数管理"><i class="fa fa-link" aria-hidden="true"></i></a>定数管理</h2>
 <p><a href="https://techblog.kyamanak.com/entry/2017/07/05/002655" target="_blank">参考URL</a>
 <a href="https://qiita.com/srockstyle/items/daed31a78c343e607822" target="_blank">config</a>
 <a href="http://vdeep.net/rubyonrails-config-gem" target="_blank">config/gem初期設定</a></p>
@@ -2079,7 +2079,7 @@ gemを使わないパターンがあるとしたら以下がオーソドック�
 <p><code>config</code>が一番定番。
 Settingslogic→あまり使われていない。</p>
 <hr>
-<h2 id="rails6でのzeitwerkツァイトベルク">Rails6でのZeitwerk(ツァイトベルク)</h2>
+<h2 id="rails6でのzeitwerkツァイトベルク"><a name="rails6でのzeitwerkツァイトベルク" class="plugin-anchor" href="#rails6でのzeitwerkツァイトベルク"><i class="fa fa-link" aria-hidden="true"></i></a>Rails6でのZeitwerk(ツァイトベルク)</h2>
 <p><a href="https://zenn.dev/murakamiiii/articles/893d83626c9f15" target="_blank">参考URL</a></p>
 <ul>
 <li>そもそもなぜRailsではrequireなしにファイルを読み込むのか</li>
@@ -2088,10 +2088,10 @@ Settingslogic→あまり使われていない。</p>
 Zeitwerkという仕組みがRailsには組み込まれているから</p>
 <p>Rails6から自動読み込みモードZeitwerkが追加された。</p>
 <hr>
-<h2 id="プロジェクト構造">プロジェクト構造</h2>
+<h2 id="プロジェクト構造"><a name="プロジェクト構造" class="plugin-anchor" href="#プロジェクト構造"><i class="fa fa-link" aria-hidden="true"></i></a>プロジェクト構造</h2>
 <p>Railsアプリケーションでは<strong>ファイル名はそれらが定義する定数と一致する必要</strong>があり、<strong>ディレクトリは名前空間</strong>として機能する
 Zeitwerkは例として、app/controllers/users_controller.rb定数を定義するUsersController（クラス）のことを期待しています。</p>
-<h2 id="rails6からのlibディレクトリ以下のファイル読み込み">Rails6からのlibディレクトリ以下のファイル読み込み</h2>
+<h2 id="rails6からのlibディレクトリ以下のファイル読み込み"><a name="rails6からのlibディレクトリ以下のファイル読み込み" class="plugin-anchor" href="#rails6からのlibディレクトリ以下のファイル読み込み"><i class="fa fa-link" aria-hidden="true"></i></a>Rails6からのlibディレクトリ以下のファイル読み込み</h2>
 <p>Rails6のデフォルトではlibディレクトリ以下のファイルは読み込まれない</p>
 <p>読み込む方法は2つある</p>
 <ol>
@@ -2105,19 +2105,19 @@ Railsがデフォルトで読み込むパスにはapp/libまで設定されて�
 <li>application.rbで呼び出し</li>
 </ol>
 <p>Rails6のオートロードシステム（Zeitwerk）に読み込むパスを追加する方法</p>
-<h2 id="rails-での-test">rails での test</h2>
+<h2 id="rails-での-test"><a name="rails-での-test" class="plugin-anchor" href="#rails-での-test"><i class="fa fa-link" aria-hidden="true"></i></a>rails での test</h2>
 <p>Railsのデフォルトではfixture(フィクスチャー)を使ってテストデータを生成する。</p>
 <ul>
 <li>fixtureとは
 fixtureとは、Railsが用意しているテストデータを生成するための方法です。
 この方法を使う場合、テストデータはymlファイルで生成する。</li>
 </ul>
-<h2 id="pundit">Pundit</h2>
+<h2 id="pundit"><a name="pundit" class="plugin-anchor" href="#pundit"><i class="fa fa-link" aria-hidden="true"></i></a>Pundit</h2>
 <p><a href="https://qiita.com/yutaro50/items/52484b7ae4ca87aa99a2" target="_blank">参考URL</a></p>
 <p>Rubyのgemライブラリ
 <strong>認可の仕組みを提供してくれる</strong>
 ユーザによってページ表示の許可・拒否をしたり表示情報の範囲を変えたりすることができるgem</p>
-<h2 id="module">module</h2>
+<h2 id="module"><a name="module" class="plugin-anchor" href="#module"><i class="fa fa-link" aria-hidden="true"></i></a>module</h2>
 <p><a href="https://techplay.jp/column/536" target="_blank">参考URL</a></p>
 <p>moduleには部品の集まりや区分という意味になる。
 Rubyの<strong>moduleはclassと同じようにmodule内に関数の定義ができること、</strong>プログラム上での役割や振る舞いをまとめることができる。</p>
@@ -2147,7 +2147,7 @@ Car::SuperCar.introduce <span class="hljs-comment"># module呼び出し</span>
 SuperCar.introduce <span class="hljs-comment"># class呼び出し</span>
 </code></pre>
 <p>module名とclass名は同名であるが、<strong>moduleには名前空間としての役割を持っているためコンパイル上では別のものとなっている。</strong></p>
-<h2 id="ruby独自の機能にmix-in">ruby独自の機能にMix-in</h2>
+<h2 id="ruby独自の機能にmix-in"><a name="ruby独自の機能にmix-in" class="plugin-anchor" href="#ruby独自の機能にmix-in"><i class="fa fa-link" aria-hidden="true"></i></a>ruby独自の機能にMix-in</h2>
 <p>Mix-inすることでmodule内のメソッドをインスタンスメソッドとして利用することがができる。
 ※includeでの拡張は静的となる。</p>
 <pre><code class="lang-ruby"><span class="hljs-class"><span class="hljs-keyword">module</span> <span class="hljs-title">Lion</span></span>
@@ -2173,7 +2173,7 @@ obj.cryCat  <span class="hljs-comment"># Catクラスのmethodを利用</span>
 </code></pre>
 <hr>
 <p>ここから本</p>
-<h2 id="rails処理順序基本">Rails処理順序(基本)</h2>
+<h2 id="rails処理順序基本"><a name="rails処理順序基本" class="plugin-anchor" href="#rails処理順序基本"><i class="fa fa-link" aria-hidden="true"></i></a>Rails処理順序(基本)</h2>
 <p><img src="image/rails.png" alt="route">
 <img src="image/modal.png" alt="コントローラからモデルとDB"></p>
 <ol>
@@ -2181,28 +2181,28 @@ obj.cryCat  <span class="hljs-comment"># Catクラスのmethodを利用</span>
 <li>Railsは選ばれたアクション(メソッド)を実行する(アクションにはモデルとの間で情報のやり取りをするプログラム)を書く</li>
 <li>モデルはDBのテーブルと対応している、アクションはモデルから取得した情報のうち、表示に必要なものをインスタンス変数に保存し返す</li>
 </ol>
-<h2 id="route">route</h2>
+<h2 id="route"><a name="route" class="plugin-anchor" href="#route"><i class="fa fa-link" aria-hidden="true"></i></a>route</h2>
 <p>RailsアプリケーションではRESTの原則にしたがってデータをリソースとして扱う</p>
 <blockquote>
 <p>RailsにはRESTに基づいた作法でウェブアプリケーションを作成する機能がある。</p>
 </blockquote>
-<h2 id="railsにおけるリソースとは">Railsにおけるリソースとは</h2>
+<h2 id="railsにおけるリソースとは"><a name="railsにおけるリソースとは" class="plugin-anchor" href="#railsにおけるリソースとは"><i class="fa fa-link" aria-hidden="true"></i></a>Railsにおけるリソースとは</h2>
 <p><strong>コントローラーが扱う対象に名前をつけたもの。</strong>
 リソース名を設定するには<code>config/routes.rb</code>にresourcesメソッドを追加するだけ</p>
 <p><code>resources: リソース名の複数形で記述する</code></p>
 <p><strong>上記で7つのアクションのルーティングが設定できる。</strong></p>
 <p>これをRESTフルなルーティング、またはリソースベースのルーティングと呼ぶ</p>
-<h2 id="controllers-コントローラー">controllers コントローラー</h2>
+<h2 id="controllers-コントローラー"><a name="controllers-コントローラー" class="plugin-anchor" href="#controllers-コントローラー"><i class="fa fa-link" aria-hidden="true"></i></a>controllers コントローラー</h2>
 <p>コントローラーは<strong>複数系で定義</strong>する。
 ※リソースを扱うコントローラーはMembersControllerの様に、リソース名+Controllerという名前が一般的</p>
 <p>DHH（railsを作った人）が述べているコントローラーの作りかた
 <a href="https://postd.cc/how-dhh-organizes-his-rails-controllers/" target="_blank">参考URL</a></p>
-<h2 id="configroutesrb">config/routes.rb</h2>
+<h2 id="configroutesrb"><a name="configroutesrb" class="plugin-anchor" href="#configroutesrb"><i class="fa fa-link" aria-hidden="true"></i></a>config/routes.rb</h2>
 <pre><code class="lang-ruby">resources <span class="hljs-symbol">:orders</span>, <span class="hljs-symbol">only:</span> [<span class="hljs-symbol">:index</span>]
 </code></pre>
 <p>必ずorderのモデルが必要ではない。
 リソース名に対応したコントローラーに対して、<strong>7つのアクションのルーティングを自動的に設定するだけ</strong></p>
-<h2 id="strong-parameter">strong parameter</h2>
+<h2 id="strong-parameter"><a name="strong-parameter" class="plugin-anchor" href="#strong-parameter"><i class="fa fa-link" aria-hidden="true"></i></a>strong parameter</h2>
 <p><a href="https://qiita.com/ozackiee/items/f100fd51f4839b3fdca8" target="_blank">参考URL</a>
 ストロングパラメーターは<strong>Web上から受けつけたパラメーターが本当に安全なデータかどうか</strong>を検証した上で、取得するための仕組み。Rails4から実装されている。
 フォームから送信されてきたparameterで<strong>どのparameterを許可するかホワイトリストを実装する。</strong></p>
@@ -2212,7 +2212,7 @@ obj.cryCat  <span class="hljs-comment"># Catクラスのmethodを利用</span>
 <p>permit
 permitメソッドを使用する事で<strong>許可された値のみ</strong>を取得することができる。
 そのため、permitメソッドの引数には登録を許可するすべてのカラム名を指定しておく必要があります。もし、許可されいないカラムがparams内に存在した場合、そのデータは取得されず無視されます。</p>
-<h2 id="リソースを扱うコントローラー">リソースを扱うコントローラー</h2>
+<h2 id="リソースを扱うコントローラー"><a name="リソースを扱うコントローラー" class="plugin-anchor" href="#リソースを扱うコントローラー"><i class="fa fa-link" aria-hidden="true"></i></a>リソースを扱うコントローラー</h2>
 <p>コントローラーでは7つのアクションを用意する
 この7つは原則としてデータベースの基本操作であるCRUDを実装したもの</p>
 <p>api/app/controllers</p>
@@ -2237,7 +2237,7 @@ permitメソッドを使用する事で<strong>許可された値のみ</strong>
   <span class="hljs-keyword">end</span>
 <span class="hljs-keyword">end</span>
 </code></pre>
-<h2 id="7つのアクション">7つのアクション</h2>
+<h2 id="7つのアクション"><a name="7つのアクション" class="plugin-anchor" href="#7つのアクション"><i class="fa fa-link" aria-hidden="true"></i></a>7つのアクション</h2>
 <p>7つのアクションを呼び出すには以下画像をみる。
 HTTPメソッドの組み合わせを使う。
 <img src="image/resource.png" alt></p>
@@ -2257,17 +2257,17 @@ HTTPメソッドの組み合わせを使う。
 <li>destroy
 リソースを削除する(テーブルからレコードを削除する)</li>
 </ul>
-<h2 id="7つのアクション以外の追加">7つのアクション以外の追加</h2>
+<h2 id="7つのアクション以外の追加"><a name="7つのアクション以外の追加" class="plugin-anchor" href="#7つのアクション以外の追加"><i class="fa fa-link" aria-hidden="true"></i></a>7つのアクション以外の追加</h2>
 <p>任意のアクションを追加するには resourcesメソッドにブロックを渡しブロックの中でもHTTPメソっドを表すメソッド アクション名を記述</p>
-<h2 id="パスを返すメソッドが使えるresource">パスを返すメソッドが使える(resource)</h2>
+<h2 id="パスを返すメソッドが使えるresource"><a name="パスを返すメソッドが使えるresource" class="plugin-anchor" href="#パスを返すメソッドが使えるresource"><i class="fa fa-link" aria-hidden="true"></i></a>パスを返すメソッドが使える(resource)</h2>
 <p>リソースを指定すると、コントローラーのアクションを表すパスを取得できる</p>
 <p><img src="image/パスを返す.png" alt="パスを返す"></p>
-<h2 id="特定のアクションを使わない場合">特定のアクションを使わない場合</h2>
+<h2 id="特定のアクションを使わない場合"><a name="特定のアクションを使わない場合" class="plugin-anchor" href="#特定のアクションを使わない場合"><i class="fa fa-link" aria-hidden="true"></i></a>特定のアクションを使わない場合</h2>
 <pre><code class="lang-ruby">resources <span class="hljs-symbol">:contents</span>, <span class="hljs-symbol">only:</span> [<span class="hljs-symbol">:index</span>, <span class="hljs-symbol">:show</span>, <span class="hljs-symbol">:create</span>, <span class="hljs-symbol">:update</span>]
 </code></pre>
 <p>onlyオプションに渡す
 上記だと:index, :show, :create, :updateアクションのルーティングだけ設定する。</p>
-<h2 id="rails起動ガイド">Rails起動ガイド</h2>
+<h2 id="rails起動ガイド"><a name="rails起動ガイド" class="plugin-anchor" href="#rails起動ガイド"><i class="fa fa-link" aria-hidden="true"></i></a>Rails起動ガイド</h2>
 <p><a href="https://railsguides.jp/initialization.html" target="_blank">参考URL</a></p>
 <ol>
 <li>bin/railsが読み込まれる</li>
@@ -2308,29 +2308,29 @@ command = aliases[command] <span class="hljs-params">||</span> command
 
 Rails::Command.invoke command, ARGV
 </code></pre>
-<h2 id="initializers以下のrbファイル">/initializers以下のrbファイル</h2>
+<h2 id="initializers以下のrbファイル"><a name="initializers以下のrbファイル" class="plugin-anchor" href="#initializers以下のrbファイル"><i class="fa fa-link" aria-hidden="true"></i></a>/initializers以下のrbファイル</h2>
 <p>アプリケーション起動時にロードされるもので、初期化処理で使われる
 自分でrbファイルを追加して使うことも可能</p>
-<h2 id="国際化-internationalization-略してi18nと呼ばれる">国際化 internationalization 略してi18nと呼ばれる</h2>
+<h2 id="国際化-internationalization-略してi18nと呼ばれる"><a name="国際化-internationalization-略してi18nと呼ばれる" class="plugin-anchor" href="#国際化-internationalization-略してi18nと呼ばれる"><i class="fa fa-link" aria-hidden="true"></i></a>国際化 internationalization 略してi18nと呼ばれる</h2>
 <hr>
-<h2 id="単数リソース">単数リソース</h2>
+<h2 id="単数リソース"><a name="単数リソース" class="plugin-anchor" href="#単数リソース"><i class="fa fa-link" aria-hidden="true"></i></a>単数リソース</h2>
 <p>membersリソースの重要な特徴は、それが集合的な概念であるということ。
 0人以上のメンバーからなる集まりを表現している。
 <strong>しかしウェブアプリケーションを構成する要素の中には、多くとも1個しか存在しないものがある。</strong>
 この種のリソースを単数リソースと呼ぶ</p>
 <p>単数リソースの例として
 セッション・自分のアカウント情報・自分のパスワード</p>
-<h2 id="単数リソースのルーティング">単数リソースのルーティング</h2>
+<h2 id="単数リソースのルーティング"><a name="単数リソースのルーティング" class="plugin-anchor" href="#単数リソースのルーティング"><i class="fa fa-link" aria-hidden="true"></i></a>単数リソースのルーティング</h2>
 <p>単数リソースのルーティングを設定するには、config/routes.rbの中でresourcesメソッドではなく、単数系のresourceメソッドを使う。</p>
 <pre><code class="lang-ruby">resource <span class="hljs-symbol">:account</span>
 </code></pre>
 <p>上記のように書いてもこのリソースを扱うコントローラーの名前は<code>AccountsController(複数形のs)に注意</code></p>
 <p><img src="image/単数リソース.png" alt="単数リソース"></p>
 <p><strong>単数リソースのため集合を扱うindexアクションはない</strong></p>
-<h2 id="railsでのセッション">Railsでのセッション</h2>
+<h2 id="railsでのセッション"><a name="railsでのセッション" class="plugin-anchor" href="#railsでのセッション"><i class="fa fa-link" aria-hidden="true"></i></a>Railsでのセッション</h2>
 <p>Railsはセッションデータを符号化してクッキーに保存するが、暗号化はしないためユーザがデータを解読できることに注意
 ただし、セッションデータが改ざんされた場合はエラーになる仕組みになる。</p>
-<h2 id="railsでの暗号化カラムを使う準備">Railsでの暗号化カラムを使う準備</h2>
+<h2 id="railsでの暗号化カラムを使う準備"><a name="railsでの暗号化カラムを使う準備" class="plugin-anchor" href="#railsでの暗号化カラムを使う準備"><i class="fa fa-link" aria-hidden="true"></i></a>Railsでの暗号化カラムを使う準備</h2>
 <p>パスワードのハッシュ値(ダイジェスト)をホゾのするためのカラムは password_digestのカラム名を指定する必要がある。</p>
 <ol>
 <li>カラムにpassword_digestを追加する</li>
@@ -2346,15 +2346,15 @@ Rails::Command.invoke command, ARGV
 <p>この変更の結果、Memberクラスにpasswordおよびpassword_confirmationという2つの属性が定義される。</p>
 <p>passwordカラム : パスワードそのもの
 password_confirmationカラム : 確認用のパスワード</p>
-<h2 id="rails-auth">Rails Auth</h2>
+<h2 id="rails-auth"><a name="rails-auth" class="plugin-anchor" href="#rails-auth"><i class="fa fa-link" aria-hidden="true"></i></a>Rails Auth</h2>
 <p>deviseが有名
 通常Railsのモデル作成は<code>rails g model User</code>などだが、deviseで新規登録やログインをしたいためdeviseのgenerateコマンドを使用する。</p>
-<h2 id="devise">devise</h2>
+<h2 id="devise"><a name="devise" class="plugin-anchor" href="#devise"><i class="fa fa-link" aria-hidden="true"></i></a>devise</h2>
 <p><a href="https://qiita.com/tobita0000/items/866de191635e6d74e392" target="_blank">Rails deviseで使えるようになるヘルパーメソッド一覧</a></p>
-<h2 id="アクション・コールバック">アクション・コールバック</h2>
+<h2 id="アクション・コールバック"><a name="アクション・コールバック" class="plugin-anchor" href="#アクション・コールバック"><i class="fa fa-link" aria-hidden="true"></i></a>アクション・コールバック</h2>
 <p>上は8章まで</p>
 <hr>
-<h2 id="モデル間の関連付け">モデル間の関連付け</h2>
+<h2 id="モデル間の関連付け"><a name="モデル間の関連付け" class="plugin-anchor" href="#モデル間の関連付け"><i class="fa fa-link" aria-hidden="true"></i></a>モデル間の関連付け</h2>
 <p>CarクラスとWheelsクラスがあるとする。
 関連付けを行うにはCarクラスに以下を記載する。</p>
 <pre><code class="lang-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Car</span></span>
@@ -2362,7 +2362,7 @@ password_confirmationカラム : 確認用のパスワード</p>
 <span class="hljs-keyword">end</span>
 </code></pre>
 <p>has_manyはモデル間の関連付けを指定するメソッド。これによりCarモデルとWheelモデルの間に<strong>1対多の関連付け</strong>が設定され、<strong>Carモデルにインスタンスメソッドwheelsが追加される。</strong></p>
-<h2 id="関連付けを作るメソッド">関連付けを作るメソッド</h2>
+<h2 id="関連付けを作るメソッド"><a name="関連付けを作るメソッド" class="plugin-anchor" href="#関連付けを作るメソッド"><i class="fa fa-link" aria-hidden="true"></i></a>関連付けを作るメソッド</h2>
 <p>Railsでは、モデル間の関連付けをモデルクラスのメソッドhas_manyおよびbelongs_toで作る
 <strong>has_manyによって使えるようになった参照元のメソッドが返すにはリレーションオブジェクト</strong></p>
 <ul>
@@ -2387,7 +2387,7 @@ has_manyを使用
 <p>自動車から車輪を関連付けるには &lt;&lt; で追加をする。&lt;&lt;を使うと、関連付けと車輪のレコードの保存が同時に行われます。</p>
 <pre><code class="lang-ruby"><span class="hljs-variable">@car</span>.wheel &lt;&lt; <span class="hljs-variable">@wheel</span>
 </code></pre>
-<h2 id="関連付けルール">関連付けルール</h2>
+<h2 id="関連付けルール"><a name="関連付けルール" class="plugin-anchor" href="#関連付けルール"><i class="fa fa-link" aria-hidden="true"></i></a>関連付けルール</h2>
 <p>has_manyとbelongs_toでモデル間の関連付けを表すときには、名前について次のルールがある。
 外部キーのカラム名は、car_idのように「参照先のテーブル名（モデル名）を単数形にしたもの」＋「_id」とする。
 belongs_toに指定する名前は、テーブル名（モデル名）の単数形を使う。
@@ -2415,10 +2415,10 @@ dependent</p>
   has_many <span class="hljs-symbol">:engins</span>, <span class="hljs-symbol">dependent:</span> <span class="hljs-symbol">:nullify</span> <span class="hljs-comment"># 参照先のレコードを削除した時に参照元の外部キーがNULLになる</span>
 <span class="hljs-keyword">end</span>
 </code></pre>
-<h2 id="外部キー成約">外部キー成約</h2>
+<h2 id="外部キー成約"><a name="外部キー成約" class="plugin-anchor" href="#外部キー成約"><i class="fa fa-link" aria-hidden="true"></i></a>外部キー成約</h2>
 <p><img src="image/外部キー成約.png" alt="外部キー制約"></p>
 <hr>
-<h2 id="名前空間">名前空間</h2>
+<h2 id="名前空間"><a name="名前空間" class="plugin-anchor" href="#名前空間"><i class="fa fa-link" aria-hidden="true"></i></a>名前空間</h2>
 <p>名前空間を導入する理由
 例
 会員情報やニュース記事を誰でも編集できるものだった。編集権限を管理者だけにしたい</p>
@@ -2428,7 +2428,7 @@ dependent</p>
 <li>一般会員(サイトにログインしているadmin属性がfalseのユーザ)</li>
 <li>管理者(サイトにログインしているadmin属性がtrueのユーザ)</li>
 </ul>
-<h2 id="名前空間を導入する戦術の種類">名前空間を導入する戦術の種類</h2>
+<h2 id="名前空間を導入する戦術の種類"><a name="名前空間を導入する戦術の種類" class="plugin-anchor" href="#名前空間を導入する戦術の種類"><i class="fa fa-link" aria-hidden="true"></i></a>名前空間を導入する戦術の種類</h2>
 <p>2通りある</p>
 <p>1つめ
 個々の操作ごとにユーザがその権限を持つかどうかを判定して、リンクの表示・非表示を切り替えたりリレーションオブジェクトに検索条件を加えたり、例外Forbiddenを発生させたりする</p>
@@ -2439,7 +2439,7 @@ dependent</p>
 <blockquote>
 <p>会員の表示、追加、編集、削除を行う機能はMembersControllerクラスで実装されています。私たちは次節で別のコントローラクラスAdmin::MembersControllerを作成します。このクラスの名前は記号::で2つの部分に分かれます。Adminの部分はモジュール名です。このモジュールが付いているため、MembersControllerクラスとAdmin::MembersControllerクラスは別物として区別されます。この状況を「両者は別の名前空間にある」と表現します。</p>
 </blockquote>
-<h2 id="コントローラーに名前空間を導入する">コントローラーに名前空間を導入する</h2>
+<h2 id="コントローラーに名前空間を導入する"><a name="コントローラーに名前空間を導入する" class="plugin-anchor" href="#コントローラーに名前空間を導入する"><i class="fa fa-link" aria-hidden="true"></i></a>コントローラーに名前空間を導入する</h2>
 <p><strong>app/controllersディレクトリの下に名前空間ごとのサブディレクトリを作るのが定石</strong></p>
 <ol>
 <li>config/routes.rbに名前空間を定義</li>
@@ -2451,7 +2451,7 @@ dependent</p>
 </code></pre>
 <p>引数に名前空間の名前をシンボルで指定し、ブロックの内部で名前空間に属するルーティングを記述する
 上記の変更の結果として、URLパス/adminからAdmin::TopControllerのindexアクションにルーティングが設定されます。URLパスを生成するメソッドはadmin_root_path</p>
-<h2 id="定数">定数</h2>
+<h2 id="定数"><a name="定数" class="plugin-anchor" href="#定数"><i class="fa fa-link" aria-hidden="true"></i></a>定数</h2>
 <p><a href="https://railsguides.jp/autoloading_and_reloading_constants.html" target="_blank">参考URL</a></p>
 <blockquote>
 <p>通常のRubyプログラムのクラスであれば、依存関係のあるプログラムを明示的に読み込む必要があります。たとえば、以下のコントローラではApplicationControllerクラスやPostクラスを用いており、通常、それらを呼び出すにはrequireする必要があります。</p>
@@ -2478,15 +2478,15 @@ dependent</p>
 </code></pre>
 <p>通常のRailsアプリケーションでrequire呼び出しを行うのは、libディレクトリにあるものや、Ruby標準ライブラリ、Ruby gemなどを読み込むときだけです。そのため、これらのような自動読み込みパスに属さないものについてはすべて後述します。</p>
 <p>Railsではこの機能を提供するため、いくつものZeitwerkローダーを開発者の代わりに管理しています。</p>
-<h2 id="railsでのmemo化">Railsでのmemo化</h2>
+<h2 id="railsでのmemo化"><a name="railsでのmemo化" class="plugin-anchor" href="#railsでのmemo化"><i class="fa fa-link" aria-hidden="true"></i></a>Railsでのmemo化</h2>
 <blockquote>
 <p>Railsでマスター系のDBで何度も同じ内容を叩いたり、N+1問題対策でincludesをつけていても、結局
 デカイSQLを発行してしまい効率的ではない場合もある。そこでメモリに保存して再利用する方法memoistを使う方法がある</p>
 </blockquote>
 <p><a href="https://qiita.com/kon_yu/items/c5a1a5e5a4ef878425dd" target="_blank">参考URL</a></p>
-<h2 id="マイグレーションファイルとスキーマファイルの関係">マイグレーションファイルとスキーマファイルの関係</h2>
+<h2 id="マイグレーションファイルとスキーマファイルの関係"><a name="マイグレーションファイルとスキーマファイルの関係" class="plugin-anchor" href="#マイグレーションファイルとスキーマファイルの関係"><i class="fa fa-link" aria-hidden="true"></i></a>マイグレーションファイルとスキーマファイルの関係</h2>
 <p><a href="https://pick-up-tech.com/blog/%E3%83%9E%E3%82%A4%E3%82%B0%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%A8%E3%82%B9%E3%82%AD%E3%83%BC%E3%83%9E%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%EF%BC%88migration-schema-rake%EF%BC%89" target="_blank">参考URL</a></p>
-<h2 id="railsでのミドルウェア">Railsでのミドルウェア</h2>
+<h2 id="railsでのミドルウェア"><a name="railsでのミドルウェア" class="plugin-anchor" href="#railsでのミドルウェア"><i class="fa fa-link" aria-hidden="true"></i></a>Railsでのミドルウェア</h2>
 <p><a href="https://fuqda.hatenablog.com/entry/2019/03/25/210850" target="_blank">参考URL</a></p>
 <ul>
 <li><p>Railsでのミドルウェアとは？
@@ -2502,16 +2502,16 @@ OSとアプリケーションの間に入って動作するソフトウェアの
 </blockquote>
 </li>
 </ul>
-<h2 id="rake">Rake</h2>
+<h2 id="rake"><a name="rake" class="plugin-anchor" href="#rake"><i class="fa fa-link" aria-hidden="true"></i></a>Rake</h2>
 <p>rakeはcronみたいに使えるやつ
 引数を渡すのに癖があるため<code>thor</code>を使う場合が多い。</p>
-<h2 id="thro">thro</h2>
+<h2 id="thro"><a name="thro" class="plugin-anchor" href="#thro"><i class="fa fa-link" aria-hidden="true"></i></a>thro</h2>
 <p><a href="https://qiita.com/yatmsu/items/5ba7016db33c13d7a882" target="_blank">参考URL</a></p>
 <hr>
-<h2 id="railsでのlintツール">RailsでのLintツール</h2>
+<h2 id="railsでのlintツール"><a name="railsでのlintツール" class="plugin-anchor" href="#railsでのlintツール"><i class="fa fa-link" aria-hidden="true"></i></a>RailsでのLintツール</h2>
 <p>RuboCopを使用する</p>
 <hr>
-<h2 id="ruby使用者に今すぐ伝えたいwebpackとwebpacker">ruby使用者に今すぐ伝えたいwebpackとwebpacker</h2>
+<h2 id="ruby使用者に今すぐ伝えたいwebpackとwebpacker"><a name="ruby使用者に今すぐ伝えたいwebpackとwebpacker" class="plugin-anchor" href="#ruby使用者に今すぐ伝えたいwebpackとwebpacker"><i class="fa fa-link" aria-hidden="true"></i></a>ruby使用者に今すぐ伝えたいwebpackとwebpacker</h2>
 <p>webpackerは、自前でwebpackをRailsに導入せずとも簡単にwebpackをRailsに取り込んで、Railsの仕様と融合させる（押し付ける？）事が出来るようにする為のGemです。
 要は、webpackの事をあまり知らなくてもRailsライクにwebpackを利用できるようにしてくれるという事ですね。
 また、JavaScriptファイルを呼び出すためのヘルパーメソッドが変わります。</p>
@@ -2534,41 +2534,41 @@ OSとアプリケーションの間に入って動作するソフトウェアの
 <p>webpackはJSのnpmのパッケージです。JSのコミュニティの中で育ちました。npmというのは、Node.jsで使えるパッケージ管理ツールのことで、つまりはRubyでいうbundlerです。JSの開発者たちは、このnpmか、その代替のyarnをみんな使っています。
 そしてwebpackerはRubyのgemです。Railsでもwebpackが楽に使えるように作られました。</p>
 </blockquote>
-<h2 id="rails-for-stripe">Rails for Stripe</h2>
+<h2 id="rails-for-stripe"><a name="rails-for-stripe" class="plugin-anchor" href="#rails-for-stripe"><i class="fa fa-link" aria-hidden="true"></i></a>Rails for Stripe</h2>
 <p><a href="https://qiita.com/tomokazu0112/items/89f69c47761ac782ce13" target="_blank">参考URL</a></p>
-<h2 id="rails-formオブジェクト">Rails Formオブジェクト</h2>
+<h2 id="rails-formオブジェクト"><a name="rails-formオブジェクト" class="plugin-anchor" href="#rails-formオブジェクト"><i class="fa fa-link" aria-hidden="true"></i></a>Rails Formオブジェクト</h2>
 <p><a href="https://qiita.com/ren0826jam/items/0effb716067a861e71f2" target="_blank">参考URL</a></p>
 <p>モデルとフォームの責務を切り分けられることで、単体のモデルに依存しない場合やフォーム専用の特別な処理をモデルに書きたくない場合に用いたりする。</p>
 <p>Railsのフォームは基本的にモデルに依存しており、たとえば<strong>1つのフォーム送信で複数のモデルの更新をしたい場合バリデーションの責務が曖昧なもの</strong>となり可読性も低下するため、責務を明確にするということで使う。</p>
 <p>1つのフォームで複数モデルの操作をしたいときにForm Objectを使うと処理がすっきりかける。
 またログインに関する処理など、特定のフォームでしか行わない処理もForm Objectに書くと良い。</p>
-<h2 id="activerecord">ActiveRecord</h2>
+<h2 id="activerecord"><a name="activerecord" class="plugin-anchor" href="#activerecord"><i class="fa fa-link" aria-hidden="true"></i></a>ActiveRecord</h2>
 <p>RDBテーブルに対応するモデルクラスへアプリケーションのデータとロジックを実装していく。</p>
 <p>defaultでは以下のURL
 <code>localhost:3000/admin</code>
 しかしこれを認可で変更は可能
 <code>localhost:3000/private/admin</code></p>
-<h2 id="active-support">Active Support</h2>
+<h2 id="active-support"><a name="active-support" class="plugin-anchor" href="#active-support"><i class="fa fa-link" aria-hidden="true"></i></a>Active Support</h2>
 <p>Active SupportはRailsに搭載されているコンポーネントの一種。
 Object/Class/String/Numeric/Enumerableなど<strong>標準ライブラリを拡張</strong>することで、よりRubyの表現力を向上してくれるライブラリ。</p>
-<h2 id="国際化対応i18n">国際化対応(i18n)</h2>
+<h2 id="国際化対応i18n"><a name="国際化対応i18n" class="plugin-anchor" href="#国際化対応i18n"><i class="fa fa-link" aria-hidden="true"></i></a>国際化対応(i18n)</h2>
 <p>i18nの理由 =&gt; internationalizationが「i」から「n」まで18文字あるから</p>
 <p>Railsにはユーザーの国ごとに表示を簡易に切り替えられる国際化機能（i18n）が搭載されている。
 日本のみで使用する場合でもこの機能を利用することでエラーメッセージの表示やラベルの表示を簡潔に記述することができるようになる（つまりはmessage定数管理）</p>
-<h3 id="導入">導入</h3>
+<h3 id="導入"><a name="導入" class="plugin-anchor" href="#導入"><i class="fa fa-link" aria-hidden="true"></i></a>導入</h3>
 <pre><code class="lang-sh"><span class="hljs-comment"># add file</span>
 touch config/initializers/locale.rb
 </code></pre>
-<h3 id="翻訳ファイルの管理は">翻訳ファイルの管理は</h3>
+<h3 id="翻訳ファイルの管理は"><a name="翻訳ファイルの管理は" class="plugin-anchor" href="#翻訳ファイルの管理は"><i class="fa fa-link" aria-hidden="true"></i></a>翻訳ファイルの管理は</h3>
 <p>翻訳ファイルはライブラリごと、モデルごとにディレクトリやファイルを分割して管理。
 たとえばdeviseの翻訳ファイルであればconfig/locales/gemsディレクトリで日本語翻訳ファイルは<code>devise.ja.yml</code>として管  理できるようにする。``</p>
 <p>ユーザーモデルの翻訳ファイルは<code>config/locales/models</code>ディレクトリで、日本語翻訳ファイルは<code>user.ja.yml</code>として管理できるようにします。
 config/locales以下に作成したディレクトリ、ファイルが翻訳ファイルとして読み込まれるように設定をする。</p>
-<h3 id="localeファイルが提供されている。">localeファイルが提供されている。</h3>
+<h3 id="localeファイルが提供されている。"><a name="localeファイルが提供されている。" class="plugin-anchor" href="#localeファイルが提供されている。"><i class="fa fa-link" aria-hidden="true"></i></a>localeファイルが提供されている。</h3>
 <p><a href="https://github.com/svenfuchs/rails-i18n/blob/master/rails/locale/ja.yml" target="_blank">提供URL</a></p>
-<h2 id="日本語対応">日本語対応</h2>
+<h2 id="日本語対応"><a name="日本語対応" class="plugin-anchor" href="#日本語対応"><i class="fa fa-link" aria-hidden="true"></i></a>日本語対応</h2>
 <p><a href="https://qiita.com/kusu_tweet/items/b534c808ac1ee0382f05" target="_blank">参考URL</a></p>
-<h2 id="enum">enum</h2>
+<h2 id="enum"><a name="enum" class="plugin-anchor" href="#enum"><i class="fa fa-link" aria-hidden="true"></i></a>enum</h2>
 <p>enumを追加すると自動でメソッドが追加される。
 <code>User.male</code>とすると男性一覧 (users.gender が 1 のレコード) のレコードを取得することが可能になる。
 またUserモデルのインスタンスに<code>#male?</code>とすると男性の場合は<code>true</code>, 男性ではない場合は<code>false</code>が 返る。
@@ -2585,18 +2585,18 @@ unanswered,female に対しても 同様のメソッドが自動で追加され�
   }
 <span class="hljs-keyword">end</span>
 </code></pre>
-<h2 id="ruby-on-rails-で-lib-ディレクトリの自作クラスを使用する">Ruby on Rails で lib ディレクトリの自作クラスを使用する</h2>
+<h2 id="ruby-on-rails-で-lib-ディレクトリの自作クラスを使用する"><a name="ruby-on-rails-で-lib-ディレクトリの自作クラスを使用する" class="plugin-anchor" href="#ruby-on-rails-で-lib-ディレクトリの自作クラスを使用する"><i class="fa fa-link" aria-hidden="true"></i></a>Ruby on Rails で lib ディレクトリの自作クラスを使用する</h2>
 <p><a href="https://qiita.com/azusanakano/items/885fe3236977580b00c9" target="_blank">Ruby on Rails で lib ディレクトリの自作クラスを使用する</a></p>
-<h2 id="rails-routing-constraints">rails routing constraints</h2>
+<h2 id="rails-routing-constraints"><a name="rails-routing-constraints" class="plugin-anchor" href="#rails-routing-constraints"><i class="fa fa-link" aria-hidden="true"></i></a>rails routing constraints</h2>
 <p>routingにさまざまな制限を設定することができる。</p>
-<h2 id="beforeバリデーションをやめてセッターメソッドにする。">beforeバリデーションをやめてセッターメソッドにする。</h2>
+<h2 id="beforeバリデーションをやめてセッターメソッドにする。"><a name="beforeバリデーションをやめてセッターメソッドにする。" class="plugin-anchor" href="#beforeバリデーションをやめてセッターメソッドにする。"><i class="fa fa-link" aria-hidden="true"></i></a>beforeバリデーションをやめてセッターメソッドにする。</h2>
 <p><a href="https://techracho.bpsinc.jp/hachi8833/2022_03_09/59016" target="_blank">参考URL</a></p>
-<h2 id="ridgepole">ridgepole</h2>
+<h2 id="ridgepole"><a name="ridgepole" class="plugin-anchor" href="#ridgepole"><i class="fa fa-link" aria-hidden="true"></i></a>ridgepole</h2>
 <p><a href="https://github.com/ridgepole/ridgepole" target="_blank">GitHub</a>
 <a href="https://qiita.com/tetz-akaneya/items/d10570aeb028fc603b86" target="_blank">参考URL</a></p>
 <p>Cookpadの菅原さんという方が作成したライブラリ
 ridgepoleはRailsのデフォルトのMigrationシステムの代わりになり得るライブラリ。</p>
-<h3 id="従来のmigrationシステム">従来のMigrationシステム</h3>
+<h3 id="従来のmigrationシステム"><a name="従来のmigrationシステム" class="plugin-anchor" href="#従来のmigrationシステム"><i class="fa fa-link" aria-hidden="true"></i></a>従来のMigrationシステム</h3>
 <blockquote>
 <p>Railsのデフォルトのマイグレーションシステムを利用する場合、DBスキーマの変更を行う際にはその都度新たなMigrationファイルを作って、そこに現在の状態からの差分を記述するという使い方をすると思います。
 この手法は広く使われていますが、差分を記述する度に新たにひとつファイルを作るのは大げさで面倒だと感じる人もいるでしょう。
@@ -2645,7 +2645,7 @@ ridgepoleはRailsのデフォルトのMigrationシステムの代わりになり
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Rails","level":"2.2.6.1","depth":3,"next":{"title":"2.7 DSL","level":"2.2.7","depth":2,"path":"program/dsl/dsl.md","ref":"program/dsl/dsl.md","articles":[{"title":"XML","level":"2.2.7.1","depth":3,"path":"program/dsl/xml.md","ref":"program/dsl/xml.md","articles":[]},{"title":"TOML","level":"2.2.7.2","depth":3,"path":"program/dsl/toml.md","ref":"program/dsl/toml.md","articles":[]},{"title":"正規表現","level":"2.2.7.3","depth":3,"path":"program/dsl/正規表現.md","ref":"program/dsl/正規表現.md","articles":[]}]},"previous":{"title":"2.6 Ruby","level":"2.2.6","depth":2,"path":"program/ruby/ruby.md","ref":"program/ruby/ruby.md","articles":[{"title":"Rails","level":"2.2.6.1","depth":3,"path":"program/ruby/rails/rails.md","ref":"program/ruby/rails/rails.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"program/ruby/rails/rails.md","mtime":"2023-01-12T00:39:30.230Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T00:39:41.486Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Rails","level":"2.2.6.1","depth":3,"next":{"title":"2.7 DSL","level":"2.2.7","depth":2,"path":"program/dsl/dsl.md","ref":"program/dsl/dsl.md","articles":[{"title":"XML","level":"2.2.7.1","depth":3,"path":"program/dsl/xml.md","ref":"program/dsl/xml.md","articles":[]},{"title":"TOML","level":"2.2.7.2","depth":3,"path":"program/dsl/toml.md","ref":"program/dsl/toml.md","articles":[]},{"title":"正規表現","level":"2.2.7.3","depth":3,"path":"program/dsl/正規表現.md","ref":"program/dsl/正規表現.md","articles":[]}]},"previous":{"title":"2.6 Ruby","level":"2.2.6","depth":2,"path":"program/ruby/ruby.md","ref":"program/ruby/ruby.md","articles":[{"title":"Rails","level":"2.2.6.1","depth":3,"path":"program/ruby/rails/rails.md","ref":"program/ruby/rails/rails.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"program/ruby/rails/rails.md","mtime":"2023-01-12T09:05:53.798Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T09:06:04.627Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2697,6 +2697,30 @@ ridgepoleはRailsのデフォルトのMigrationシステムの代わりになり
     </script>
     <script src="../../../gitbook/gitbook.js"></script>
     <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
     
         
         <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>

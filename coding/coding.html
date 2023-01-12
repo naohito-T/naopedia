@@ -1,19 +1,31 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="ja" >
     <head>
         <meta charset="UTF-8">
-        <title>1. coding · HonKit</title>
+        <title>1. coding · naopedia</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.4">
-        
+        <meta name="author" content="naohito-T">
         
         
     
     <link rel="stylesheet" href="../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
@@ -31,18 +43,6 @@
 
     
 
-    
-        
-        <link rel="stylesheet" href="../styles/website.css">
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
         
     
@@ -72,7 +72,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="検索ワードを入力" />
 </div>
 
             
@@ -1631,7 +1631,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            HonKitで公開 
         </a>
     </li>
 </ul>
@@ -1669,12 +1669,12 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="コーディングprogram">コーディング(program)</h1>
+                                <h1 id="コーディングprogram"><a name="コーディングprogram" class="plugin-anchor" href="#コーディングprogram"><i class="fa fa-link" aria-hidden="true"></i></a>コーディング(program)</h1>
 <p><a href="https://qiita.com/hirokidaichi/items/c9a76191216f3cc6c4b2" target="_blank">新人プログラマに知ってもらいたいメソッドを読みやすくするいくつかの原則</a>
 <a href="https://progeigo.org/learning/essential-words-600-plus/" target="_blank">プログラミング英語検定(これみれば変数名とか付けられる)</a></p>
-<h2 id="コーディング速度をあげるコツ">コーディング速度をあげるコツ</h2>
+<h2 id="コーディング速度をあげるコツ"><a name="コーディング速度をあげるコツ" class="plugin-anchor" href="#コーディング速度をあげるコツ"><i class="fa fa-link" aria-hidden="true"></i></a>コーディング速度をあげるコツ</h2>
 <p>コーディング速度を上げる一番の考え方は<strong>迷いをなくすこと。</strong></p>
-<h2 id="俯瞰してみる力をつける構造化">俯瞰してみる力をつける(構造化)</h2>
+<h2 id="俯瞰してみる力をつける構造化"><a name="俯瞰してみる力をつける構造化" class="plugin-anchor" href="#俯瞰してみる力をつける構造化"><i class="fa fa-link" aria-hidden="true"></i></a>俯瞰してみる力をつける(構造化)</h2>
 <p>たとえば
 TSとして関数側が</p>
 <pre><code class="lang-ts"><span class="hljs-keyword">interface</span> CarvingComponentType {
@@ -1713,45 +1713,45 @@ TSとして関数側が</p>
 <span class="hljs-comment">// 受け取る側はこちらで定義ができると</span>
 <span class="hljs-keyword">const</span> { carvingComponent } = useCarvingComponent();
 </code></pre>
-<h2 id="共通化したい時の考え方">共通化したい時の考え方</h2>
+<h2 id="共通化したい時の考え方"><a name="共通化したい時の考え方" class="plugin-anchor" href="#共通化したい時の考え方"><i class="fa fa-link" aria-hidden="true"></i></a>共通化したい時の考え方</h2>
 <ul>
 <li>一階層上を作りwrapする</li>
 <li>共通化処理に対しapiを外から渡すようにすればいい。</li>
 </ul>
-<h2 id="マジックナンバーをやめる">マジックナンバーをやめる</h2>
+<h2 id="マジックナンバーをやめる"><a name="マジックナンバーをやめる" class="plugin-anchor" href="#マジックナンバーをやめる"><i class="fa fa-link" aria-hidden="true"></i></a>マジックナンバーをやめる</h2>
 <p>別の人がコードを見たときに何の数字かわからなくなる。
 また、変数として持っておくことで変更が用意。メンテナンス性が上がる
 そしてコード内の変更ではなくなるためテストが不要となる（これは言い回しでどうにかなりそう。ロジックは変更していませんなど変数を変更しただけだよと）</p>
 <p>文字列でもマジックナンバーと同じように変数で持っておく
 <strong>値が変わったらぶっ壊れる</strong>とかは変数で管理するべき。
 また、ここで念頭にconfigとして別ファイルに責務を与えられないか考える。</p>
-<h2 id="正規表現でvscodeを検索する">正規表現でvscodeを検索する</h2>
+<h2 id="正規表現でvscodeを検索する"><a name="正規表現でvscodeを検索する" class="plugin-anchor" href="#正規表現でvscodeを検索する"><i class="fa fa-link" aria-hidden="true"></i></a>正規表現でvscodeを検索する</h2>
 <p>正規表現を普段から使えるようにするための特訓として、vscodeの検索で使う。
 ゲームのランタイムで正規表現を使わないとのこと（負荷が高いパターンなどあるため）</p>
-<h2 id="db-検索は-1-回で終わらせる。">DB 検索は 1 回で終わらせる。</h2>
+<h2 id="db-検索は-1-回で終わらせる。"><a name="db-検索は-1-回で終わらせる。" class="plugin-anchor" href="#db-検索は-1-回で終わらせる。"><i class="fa fa-link" aria-hidden="true"></i></a>DB 検索は 1 回で終わらせる。</h2>
 <p>DBにアクセスする部分で、一度の検索で終わらせるべき。処理が重いため
 ただ副問い合わせなどをするとパフォーマンスはどちらが上なのかは知りたい</p>
-<h2 id="関数を作るのも、クラスを作るのも関心の分離を考えるべき">関数を作るのも、クラスを作るのも関心の分離を考えるべき</h2>
+<h2 id="関数を作るのも、クラスを作るのも関心の分離を考えるべき"><a name="関数を作るのも、クラスを作るのも関心の分離を考えるべき" class="plugin-anchor" href="#関数を作るのも、クラスを作るのも関心の分離を考えるべき"><i class="fa fa-link" aria-hidden="true"></i></a>関数を作るのも、クラスを作るのも関心の分離を考えるべき</h2>
 <p>アプリケーションを3層に分けたとき（プレゼンテーション・ビジネスロジック・データアクセス）をベースに考えるとわかりやすい
 ビジネスロジックをデータアクセスと切り離すというのは保存先がファイルだろうと、RDBだろうとドキュメントDBだろうと、保存ができるようにする。</p>
 <p>ようは、ビジネスロジックは限定してはいけない（要は保存をかける時にはバリデーションや整形などすべてを気にしなくて良くする）</p>
-<h2 id="applicationのレイヤーでパラメーターについて考えるのは良くないので、">applicationのレイヤーでパラメーターについて考えるのは良くないので、</h2>
+<h2 id="applicationのレイヤーでパラメーターについて考えるのは良くないので、"><a name="applicationのレイヤーでパラメーターについて考えるのは良くないので、" class="plugin-anchor" href="#applicationのレイヤーでパラメーターについて考えるのは良くないので、"><i class="fa fa-link" aria-hidden="true"></i></a>applicationのレイヤーでパラメーターについて考えるのは良くないので、</h2>
 <p>status: TicketStatus[]
 にして、
 handler側でパースしてしまうのがいいかと思います！
 バリデーションはなるべく上の層でしてしまうのがいい。
 →なるべく早めにバリデーションへかけてしまうことでサーバの負荷も下がるため</p>
-<h2 id="コードは今必要なものだけをかく">コードは今必要なものだけをかく</h2>
+<h2 id="コードは今必要なものだけをかく"><a name="コードは今必要なものだけをかく" class="plugin-anchor" href="#コードは今必要なものだけをかく"><i class="fa fa-link" aria-hidden="true"></i></a>コードは今必要なものだけをかく</h2>
 <p>汎用性よりも単純性を考える。汎用性のもたらす再利用性や拡張性よりも<strong>まずは使えることに価値を置く</strong>
 このパラメーター将来必要だろうとするよりも、今必要な機能の作成に時間をさく</p>
-<h2 id="新規の関数を作成するとき、共通処理がないか探す">新規の関数を作成するとき、共通処理がないか探す</h2>
+<h2 id="新規の関数を作成するとき、共通処理がないか探す"><a name="新規の関数を作成するとき、共通処理がないか探す" class="plugin-anchor" href="#新規の関数を作成するとき、共通処理がないか探す"><i class="fa fa-link" aria-hidden="true"></i></a>新規の関数を作成するとき、共通処理がないか探す</h2>
 <p>関数の中で呼び出している処理が、他の関数でも同様の処理がある場合は二重管理となる。
 そのため共通の処理として切り出せないか模索する</p>
-<h2 id="新規のクラスを作成するとき、共通のプロパティ・メソッドがあるのであればそれを-base-として切り出して抽象クラスやインターフェイスなどで切り出すことができないか考える">新規のクラスを作成するとき、共通のプロパティ・メソッドがあるのであればそれを base として切り出して抽象クラスやインターフェイスなどで切り出すことができないか考える</h2>
+<h2 id="新規のクラスを作成するとき、共通のプロパティ・メソッドがあるのであればそれを-base-として切り出して抽象クラスやインターフェイスなどで切り出すことができないか考える"><a name="新規のクラスを作成するとき、共通のプロパティ・メソッドがあるのであればそれを-base-として切り出して抽象クラスやインターフェイスなどで切り出すことができないか考える" class="plugin-anchor" href="#新規のクラスを作成するとき、共通のプロパティ・メソッドがあるのであればそれを-base-として切り出して抽象クラスやインターフェイスなどで切り出すことができないか考える"><i class="fa fa-link" aria-hidden="true"></i></a>新規のクラスを作成するとき、共通のプロパティ・メソッドがあるのであればそれを base として切り出して抽象クラスやインターフェイスなどで切り出すことができないか考える</h2>
 <p>新規のクラスを作成するとき、共通のプロパティ・メソッドがあるのであればそれをbaseとして切り出して抽象クラスとして作成し、違うクラスを2つ作る。</p>
-<h2 id="参考演算子を使用してもより単純な選択肢が存在しているかもと考える">参考演算子を使用してもより単純な選択肢が存在しているかもと考える</h2>
+<h2 id="参考演算子を使用してもより単純な選択肢が存在しているかもと考える"><a name="参考演算子を使用してもより単純な選択肢が存在しているかもと考える" class="plugin-anchor" href="#参考演算子を使用してもより単純な選択肢が存在しているかもと考える"><i class="fa fa-link" aria-hidden="true"></i></a>参考演算子を使用してもより単純な選択肢が存在しているかもと考える</h2>
 <p><a href="https://eslint.org/docs/rules/no-unneeded-ternary" target="_blank">参考URL</a></p>
-<h2 id="メモ化を考える">メモ化を考える</h2>
+<h2 id="メモ化を考える"><a name="メモ化を考える" class="plugin-anchor" href="#メモ化を考える"><i class="fa fa-link" aria-hidden="true"></i></a>メモ化を考える</h2>
 <p>メモ化はNextの<script>タグがわかりやすい
 <a href="https://zenn.dev/aiji42/articles/9a6ab12ab5f6e6">参考URL</a></p>
 <h3>メモ化とは</h3>
@@ -1974,7 +1974,7 @@ Propertiesは大概オブジェクトやアイテムを参照して使うコト�
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1. coding","level":"2.1","depth":1,"next":{"title":"1.1 algorithm","level":"2.1.1","depth":2,"path":"coding/algorithm/algorithm.md","ref":"coding/algorithm/algorithm.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"articles":[{"title":"1.1 algorithm","level":"2.1.1","depth":2,"path":"coding/algorithm/algorithm.md","ref":"coding/algorithm/algorithm.md","articles":[]},{"title":"1.2 AtCoder","level":"2.1.2","depth":2,"path":"coding/atcoder/atcoder.md","ref":"coding/atcoder/atcoder.md","articles":[]},{"title":"1.3 命名規則","level":"2.1.3","depth":2,"path":"coding/namerules/namerules.md","ref":"coding/namerules/namerules.md","articles":[]},{"title":"1.4 Design Pattern","level":"2.1.4","depth":2,"path":"coding/designpattern/designpattern.md","ref":"coding/designpattern/designpattern.md","articles":[]},{"title":"1.5 プリンシプル オブ プログラミング","level":"2.1.5","depth":2,"path":"coding/principle/principle.md","ref":"coding/principle/principle.md","articles":[]},{"title":"1.6 Tips(コーディングアイデア集)","level":"2.1.6","depth":2,"path":"coding/tips/tips.md","ref":"coding/tips/tips.md","articles":[]}],"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"coding/coding.md","mtime":"2023-01-12T00:39:30.210Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T00:39:41.486Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1. coding","level":"2.1","depth":1,"next":{"title":"1.1 algorithm","level":"2.1.1","depth":2,"path":"coding/algorithm/algorithm.md","ref":"coding/algorithm/algorithm.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"articles":[{"title":"1.1 algorithm","level":"2.1.1","depth":2,"path":"coding/algorithm/algorithm.md","ref":"coding/algorithm/algorithm.md","articles":[]},{"title":"1.2 AtCoder","level":"2.1.2","depth":2,"path":"coding/atcoder/atcoder.md","ref":"coding/atcoder/atcoder.md","articles":[]},{"title":"1.3 命名規則","level":"2.1.3","depth":2,"path":"coding/namerules/namerules.md","ref":"coding/namerules/namerules.md","articles":[]},{"title":"1.4 Design Pattern","level":"2.1.4","depth":2,"path":"coding/designpattern/designpattern.md","ref":"coding/designpattern/designpattern.md","articles":[]},{"title":"1.5 プリンシプル オブ プログラミング","level":"2.1.5","depth":2,"path":"coding/principle/principle.md","ref":"coding/principle/principle.md","articles":[]},{"title":"1.6 Tips(コーディングアイデア集)","level":"2.1.6","depth":2,"path":"coding/tips/tips.md","ref":"coding/tips/tips.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"coding/coding.md","mtime":"2023-01-12T09:05:53.782Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T09:06:04.627Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2026,6 +2026,30 @@ Propertiesは大概オブジェクトやアイテムを参照して使うコト�
     </script>
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

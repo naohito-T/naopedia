@@ -1,19 +1,31 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="ja" >
     <head>
         <meta charset="UTF-8">
-        <title>5.1 SQL · HonKit</title>
+        <title>5.1 SQL · naopedia</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.4">
-        
+        <meta name="author" content="naohito-T">
         
         
     
     <link rel="stylesheet" href="../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../../gitbook/@honkit/honkit-plugin-highlight/website.css">
@@ -31,18 +43,6 @@
 
     
 
-    
-        
-        <link rel="stylesheet" href="../../styles/website.css">
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
         
     
@@ -72,7 +72,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="検索ワードを入力" />
 </div>
 
             
@@ -1631,7 +1631,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            HonKitで公開 
         </a>
     </li>
 </ul>
@@ -1669,9 +1669,9 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="sql">SQL</h1>
+                                <h1 id="sql"><a name="sql" class="plugin-anchor" href="#sql"><i class="fa fa-link" aria-hidden="true"></i></a>SQL</h1>
 <p>SQLの普遍的なものについて記載していく。</p>
-<h2 id="チューニング">チューニング</h2>
+<h2 id="チューニング"><a name="チューニング" class="plugin-anchor" href="#チューニング"><i class="fa fa-link" aria-hidden="true"></i></a>チューニング</h2>
 <p><a href="https://docs.oracle.com/cd/F25597_01/document/products/wls/docs92/perform/topten.html#wp1132669" target="_blank">WebLogic Server参照から学ぶ</a></p>
 <p>項目</p>
 <ul>
@@ -1686,13 +1686,13 @@
 <li>HTTP セッションのチューニング</li>
 <li>メッセージング アプリケーションのチューニング</li>
 </ul>
-<h2 id="生クエリ">生クエリ</h2>
+<h2 id="生クエリ"><a name="生クエリ" class="plugin-anchor" href="#生クエリ"><i class="fa fa-link" aria-hidden="true"></i></a>生クエリ</h2>
 <p>生クエリとは、SQLそのままのこと、、？
 ORMなどを使用していないとかかな？</p>
-<h2 id="クエリービルダー">クエリービルダー</h2>
+<h2 id="クエリービルダー"><a name="クエリービルダー" class="plugin-anchor" href="#クエリービルダー"><i class="fa fa-link" aria-hidden="true"></i></a>クエリービルダー</h2>
 <p>ORMとか使っていると、どうしても生のSQLを書きたくなる時がある。
 その時はクエリービルダーで検索する</p>
-<h2 id="idについて">idについて</h2>
+<h2 id="idについて"><a name="idについて" class="plugin-anchor" href="#idについて"><i class="fa fa-link" aria-hidden="true"></i></a>idについて</h2>
 <p><a href="https://qiita.com/daisy1754/items/98a6e6b17d8161eab081" target="_blank">Facebook, Twitter, Instagramなどがどうやって生成しているか</a></p>
 <p>primary_key : ソートができる。けど何か悪い？
 UUID : sortができない。けど秘匿性は上がる。パフォーマンスが少し落ちる
@@ -1703,31 +1703,31 @@ ULID : UUIDの欠点をカバー。ULIDにはタイムスタンプが先頭に�
 <p>一般のお客さんが使う(ログインやお気に入り)機能を持っているので、ユーザやデータ規模の予測しやすい整数系の id を避けたいという意図です
 2台のサーバ運用だと衝突する可能性がある（auto_increment）ため、</p>
 </blockquote>
-<h2 id="upsert">UPSERT</h2>
+<h2 id="upsert"><a name="upsert" class="plugin-anchor" href="#upsert"><i class="fa fa-link" aria-hidden="true"></i></a>UPSERT</h2>
 <p><a href="https://blog.officekoma.co.jp/2018/06/postgresqlupdateinsertupsert.html" target="_blank">参考URL</a></p>
 <p>データがあればUPDATE、なければINSERTができるやつ。
 postgresだと高速。mysqlだと遅いとのこと。</p>
 <blockquote>
 <p>mysql だとそもそも upsert 周りが弱い (Postgres みたいな conflict target がない) のと primary key として使う ULID の生成を model のレイヤーでやってるせいで import が動かん</p>
 </blockquote>
-<h2 id="ddldata-definition-language-データ定義言語">DDL(Data Definition Language) データ定義言語</h2>
+<h2 id="ddldata-definition-language-データ定義言語"><a name="ddldata-definition-language-データ定義言語" class="plugin-anchor" href="#ddldata-definition-language-データ定義言語"><i class="fa fa-link" aria-hidden="true"></i></a>DDL(Data Definition Language) データ定義言語</h2>
 <p>DDLとは、コンピューターーで用いられる人工言語の分類のひとつで、データを格納するための構造を定義するための言語。</p>
 <p>データベースの構造や構成を定義するために用いられるものが多く、単にDDLといった場合には、リレーショナルデータベース（RDB）の制御に用いられるSQL言語の一部の命令群を指すことが多い。</p>
 <p>SQLにおけるDDLには、データベースやテーブル、ビューなどの作成を行う<strong>CREATE文</strong>や、削除する<strong>DROP文</strong>、変更を加える<strong>ALTER文</strong>、データを全削除する<strong>TRUNCATE文</strong>などが含まれる。</p>
 <p>ここで言いたいのは、
 プロジェクトのマイグレーションファイルで管理をするのはDDLまでじゃないの？</p>
-<h2 id="マイグレーション">マイグレーション</h2>
+<h2 id="マイグレーション"><a name="マイグレーション" class="plugin-anchor" href="#マイグレーション"><i class="fa fa-link" aria-hidden="true"></i></a>マイグレーション</h2>
 <p><a href="https://railsguides.jp/active_record_migrations.html" target="_blank">リファレンス</a></p>
 <p>マイグレーションファイルはDBへの変更を記述しておくファイル
 例として、テーブルを作成したいときや、カラムを追加したい時はマイグレーションファイルを作成する。</p>
 <p>マイグレーションファイルはテーブルの中身のカラムを作成するファイル。
 <strong>※マイグレーションではRubyのDSLを持っているので生のSQLを作成する必要はない。</strong>
 そしてスキーマとスキーマへの変更をDBの種類へ依存せずに済む。</p>
-<h2 id="バルクインサート">バルクインサート</h2>
+<h2 id="バルクインサート"><a name="バルクインサート" class="plugin-anchor" href="#バルクインサート"><i class="fa fa-link" aria-hidden="true"></i></a>バルクインサート</h2>
 <p>バルクインサートとは、RDBのテーブルに行を追加する際、複数の行を1回のSQL文の実行で追加すること。
 データベースに対する命令のひとつでありたくさんのデータを、まとめて一気にデータベースに突っ込むときに使う命令
 大量のデータを1回の命令でデータベースに入れられる、insert文っぽいやつ</p>
-<h2 id="sqlクエリのn1問題">SQLクエリのN+1問題</h2>
+<h2 id="sqlクエリのn1問題"><a name="sqlクエリのn1問題" class="plugin-anchor" href="#sqlクエリのn1問題"><i class="fa fa-link" aria-hidden="true"></i></a>SQLクエリのN+1問題</h2>
 <p><a href="https://qiita.com/muroya2355/items/d4eecbe722a8ddb2568b" target="_blank">参考URL</a>
 <a href="https://www.techscore.com/blog/2012/12/25/rails%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E7%B4%B9%E4%BB%8B-n1%E5%95%8F%E9%A1%8C%E3%82%92%E6%A4%9C%E5%87%BA%E3%81%99%E3%82%8B%E3%80%8Cbullet%E3%80%8D/" target="_blank">RailsでのN+1問題発見ツール</a></p>
 <p>SQLでの対応策としては2種類ある。</p>
@@ -1752,7 +1752,7 @@ userIDs <span class="hljs-operator">=</span> [<span class="hljs-number">3</span>
 <span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> 利用者 <span class="hljs-keyword">WHERE</span> ID <span class="hljs-keyword">IN</span> (<span class="hljs-number">3</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>);
 </code></pre>
 <p>これで必要な書籍情報と、利用者情報がすべて取得できました。今後クエリは発行しません。</p>
-<h2 id="sqlアンチパターン">SQLアンチパターン</h2>
+<h2 id="sqlアンチパターン"><a name="sqlアンチパターン" class="plugin-anchor" href="#sqlアンチパターン"><i class="fa fa-link" aria-hidden="true"></i></a>SQLアンチパターン</h2>
 <p><a href="https://qiita.com/ayayo/items/ba38853bca0c2cc2acb7" target="_blank">SQLアンチパターン勉強会　第三回：IDリクワイアド</a></p>
 
                                 
@@ -1797,7 +1797,7 @@ userIDs <span class="hljs-operator">=</span> [<span class="hljs-number">3</span>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"5.1 SQL","level":"2.5.1","depth":2,"next":{"title":"MySQL","level":"2.5.1.1","depth":3,"path":"db/sql/mysql/mysql.md","ref":"db/sql/mysql/mysql.md","articles":[]},"previous":{"title":"5. DB","level":"2.5","depth":1,"path":"db/db.md","ref":"db/db.md","articles":[{"title":"5.1 SQL","level":"2.5.1","depth":2,"path":"db/sql/sql.md","ref":"db/sql/sql.md","articles":[{"title":"MySQL","level":"2.5.1.1","depth":3,"path":"db/sql/mysql/mysql.md","ref":"db/sql/mysql/mysql.md","articles":[]}]},{"title":"5.2 ORM","level":"2.5.2","depth":2,"path":"db/orm/orm.md","ref":"db/orm/orm.md","articles":[{"title":"TypeORM","level":"2.5.2.1","depth":3,"path":"db/orm/typeorm/typeorm.md","ref":"db/orm/typeorm/typeorm.md","articles":[]}]},{"title":"5.3 Redis","level":"2.5.3","depth":2,"path":"db/redis/redis.md","ref":"db/redis/redis.md","articles":[]}]},"articles":[{"title":"MySQL","level":"2.5.1.1","depth":3,"path":"db/sql/mysql/mysql.md","ref":"db/sql/mysql/mysql.md","articles":[]}],"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"db/sql/sql.md","mtime":"2023-01-12T00:39:30.210Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T00:39:41.486Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"5.1 SQL","level":"2.5.1","depth":2,"next":{"title":"MySQL","level":"2.5.1.1","depth":3,"path":"db/sql/mysql/mysql.md","ref":"db/sql/mysql/mysql.md","articles":[]},"previous":{"title":"5. DB","level":"2.5","depth":1,"path":"db/db.md","ref":"db/db.md","articles":[{"title":"5.1 SQL","level":"2.5.1","depth":2,"path":"db/sql/sql.md","ref":"db/sql/sql.md","articles":[{"title":"MySQL","level":"2.5.1.1","depth":3,"path":"db/sql/mysql/mysql.md","ref":"db/sql/mysql/mysql.md","articles":[]}]},{"title":"5.2 ORM","level":"2.5.2","depth":2,"path":"db/orm/orm.md","ref":"db/orm/orm.md","articles":[{"title":"TypeORM","level":"2.5.2.1","depth":3,"path":"db/orm/typeorm/typeorm.md","ref":"db/orm/typeorm/typeorm.md","articles":[]}]},{"title":"5.3 Redis","level":"2.5.3","depth":2,"path":"db/redis/redis.md","ref":"db/redis/redis.md","articles":[]}]},"articles":[{"title":"MySQL","level":"2.5.1.1","depth":3,"path":"db/sql/mysql/mysql.md","ref":"db/sql/mysql/mysql.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"db/sql/sql.md","mtime":"2023-01-12T09:05:53.782Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T09:06:04.627Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1849,6 +1849,30 @@ userIDs <span class="hljs-operator">=</span> [<span class="hljs-number">3</span>
     </script>
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
     
         
         <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>

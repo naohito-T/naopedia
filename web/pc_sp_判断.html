@@ -1,19 +1,31 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="ja" >
     <head>
         <meta charset="UTF-8">
-        <title>4.6 pcsp判断 · HonKit</title>
+        <title>4.6 pcsp判断 · naopedia</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.4">
-        
+        <meta name="author" content="naohito-T">
         
         
     
     <link rel="stylesheet" href="../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
@@ -31,18 +43,6 @@
 
     
 
-    
-        
-        <link rel="stylesheet" href="../styles/website.css">
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
         
     
@@ -72,7 +72,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="検索ワードを入力" />
 </div>
 
             
@@ -1631,7 +1631,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            HonKitで公開 
         </a>
     </li>
 </ul>
@@ -1669,22 +1669,22 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="pc・sp-判断">PC・SP 判断</h1>
+                                <h1 id="pc・sp-判断"><a name="pc・sp-判断" class="plugin-anchor" href="#pc・sp-判断"><i class="fa fa-link" aria-hidden="true"></i></a>PC・SP 判断</h1>
 <p><a href="https://www.site-convert.com/archives/2188" target="_blank">参考 URL</a></p>
-<h2 id="useragent">UserAgent</h2>
+<h2 id="useragent"><a name="useragent" class="plugin-anchor" href="#useragent"><i class="fa fa-link" aria-hidden="true"></i></a>UserAgent</h2>
 <p>UA(User Agent: UA)とは
 ネット利用者が使用している OS・ブラウザのことを指す
 一般的なインターネットブラウザを使い、HTTP に基づきサイトなどにアクセスした際にはユーザエージェントに関する各種情報が相手側に通知される仕組みとなっている。
 サイト側はユーザーエージェントを見ることでアクセスしてきたユーザがどういった OS やブラウザを使っているかを把握できる。
 そのためアクセス解析に利用されることが多い。</p>
-<h1 id>#</h1>
+<h1 id><a name class="plugin-anchor" href="#"><i class="fa fa-link" aria-hidden="true"></i></a>#</h1>
 <blockquote>
 <p>Web ページを閲覧しているデバイスがスマホかどうかを JavaScript で判定するには、様々な方法があります。
 UserAgent 文字列から判定するのが代表的な方法ですが、ブラウザサイズから判定する方法や、デバイス判定ライブラリを使う方法もあります。
 しかしながら、UserAgent は OS やブラウザのバージョンアップによって変更されたり、デバイス判定ライブラリによっては日本で発売されている端末に対応していなかったりと、注意すべき点もあります。
 そこで今回は、日本で利用されているスマホを対象として、Javascript で正しくスマホ判定するための方法を 2 つ解説します。</p>
 </blockquote>
-<h2 id="前提条件を考える">前提条件を考える</h2>
+<h2 id="前提条件を考える"><a name="前提条件を考える" class="plugin-anchor" href="#前提条件を考える"><i class="fa fa-link" aria-hidden="true"></i></a>前提条件を考える</h2>
 <p>スマホの定義を考える。</p>
 <ul>
 <li>Android 搭載端末（Android 5.0 以上）</li>
@@ -1750,7 +1750,7 @@ JavaScript コードは以下のようになります。</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4.6 pcsp判断","level":"2.4.6","depth":2,"next":{"title":"4.7 progressbar","level":"2.4.7","depth":2,"path":"web/progressbar.md","ref":"web/progressbar.md","articles":[]},"previous":{"title":"4.5 pagenation","level":"2.4.5","depth":2,"path":"web/pagenation.md","ref":"web/pagenation.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"web/pc_sp_判断.md","mtime":"2023-01-12T00:39:30.234Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T00:39:41.486Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.6 pcsp判断","level":"2.4.6","depth":2,"next":{"title":"4.7 progressbar","level":"2.4.7","depth":2,"path":"web/progressbar.md","ref":"web/progressbar.md","articles":[]},"previous":{"title":"4.5 pagenation","level":"2.4.5","depth":2,"path":"web/pagenation.md","ref":"web/pagenation.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"web/pc_sp_判断.md","mtime":"2023-01-12T09:05:53.802Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T09:06:04.627Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1802,6 +1802,30 @@ JavaScript コードは以下のようになります。</p>
     </script>
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

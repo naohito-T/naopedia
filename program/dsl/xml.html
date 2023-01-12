@@ -1,19 +1,31 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="ja" >
     <head>
         <meta charset="UTF-8">
-        <title>XML · HonKit</title>
+        <title>XML · naopedia</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.4">
-        
+        <meta name="author" content="naohito-T">
         
         
     
     <link rel="stylesheet" href="../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../../gitbook/@honkit/honkit-plugin-highlight/website.css">
@@ -31,18 +43,6 @@
 
     
 
-    
-        
-        <link rel="stylesheet" href="../../styles/website.css">
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
         
     
@@ -72,7 +72,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="検索ワードを入力" />
 </div>
 
             
@@ -1631,7 +1631,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            HonKitで公開 
         </a>
     </li>
 </ul>
@@ -1669,15 +1669,15 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="xmlextensible-markup-langurage">XML(Extensible Markup Langurage)</h1>
-<h2 id="cdataセクション">CDATAセクション</h2>
+                                <h1 id="xmlextensible-markup-langurage"><a name="xmlextensible-markup-langurage" class="plugin-anchor" href="#xmlextensible-markup-langurage"><i class="fa fa-link" aria-hidden="true"></i></a>XML(Extensible Markup Langurage)</h1>
+<h2 id="cdataセクション"><a name="cdataセクション" class="plugin-anchor" href="#cdataセクション"><i class="fa fa-link" aria-hidden="true"></i></a>CDATAセクション</h2>
 <p>XMLはマークアップ言語であるため、XML文書を記述する際には、マークアップ用として指定された記号を直接文字として記述することができない。
 これを記述してもマークアップの指定と解釈され、文字として解釈されない。
 しかし場合によっては、この方法はXML文書の記述や管理を煩雑にする場合がある。
 このような場合に、マークアップ専用の記号であって、通常の文字として扱う特例的な部分をつくることができる。これを、CDATAセクションという。</p>
 <p>CDATAセクションは、&lt;![CDATA[という文字列で始まり、]]&gt;という文字列で終わる。CDATAセクションの内部には、XMLで利用可能な文字をすべて記述することができる。唯一の例外は]]&gt;という文字列だけで、これを記述することはできない。記述しても、CDATAセクションの終了を示すと解釈されてしまう。</p>
 <p>以下は、CDATAセクションを使用した例である。&lt;記号はタグを開始する記号であるため、通常は書けない。しかし、CDATAセクション内であれば、そのまま書くことができ、マークアップとは解釈されない。</p>
-<h2 id="xmlとは">XMLとは</h2>
+<h2 id="xmlとは"><a name="xmlとは" class="plugin-anchor" href="#xmlとは"><i class="fa fa-link" aria-hidden="true"></i></a>XMLとは</h2>
 <p><a href="https://uhyohyo.net/javascript/6_1.html" target="_blank">参考URL</a>
 HTMLと同じようにタグをつかってさまざまなデータを表すことができる仕組み
 さまざまなデータとは、本当になんでも良い。
@@ -1698,7 +1698,7 @@ XMLによってつくられたデータは、さまざまなことに利用さ�
 <p>まず一見して違和感を覚えるのは、タグ名が日本語であるものがあるということですね。前述のようにXMLではタグ名も自由に決めることができるので、このように日本語も可能です。とはいっても、やはり普通に半角英数字で書くということのほうが多いと思います。そのほうが国際的ですしね。</p>
 <p>最初の行の&lt;?xml version=&quot;1.0&quot; ?&gt;は、XMLでは書くことになっているもので、この文書がXMLであることを表すものです。XML文書には、これが必要です。</p>
 <p>次に、この文書全体は<users> 〜 </users>で囲われています。このように、文書全体を囲う要素をルート要素などといいます。HTMLでもルート要素はありましたね。全体が<html> 〜 </html>で囲まれているから、html要素がルート要素だといえますね。</p>
-<h2 id="xmlルール">XMLルール</h2>
+<h2 id="xmlルール"><a name="xmlルール" class="plugin-anchor" href="#xmlルール"><i class="fa fa-link" aria-hidden="true"></i></a>XMLルール</h2>
 <p>必ず終了タグが必要
 <strong>また特別仕様のタグは名前空間を定義しないといけない(どこかで調べられる)</strong></p>
 <pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">feed</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.w3.org/2005/Atom&quot;</span> <span class="hljs-attr">xmlns:dc</span>=<span class="hljs-string">&quot;http://purl.org/dc/elements/1.1/&quot;</span> <span class="hljs-attr">xmlns:media</span>=<span class="hljs-string">&quot;http://search.yahoo.com/mrss/&quot;</span> <span class="hljs-attr">xmlns:snf</span>=<span class="hljs-string">&quot;http://www.smartnews.be/snf&quot;</span>&gt;</span>
@@ -1706,7 +1706,7 @@ XMLによってつくられたデータは、さまざまなことに利用さ�
 <span class="hljs-tag">&lt;<span class="hljs-name">snf:analytics</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">snf:analytics</span>&gt;</span>
 </code></pre>
-<h2 id="xml特別仕様">XML特別仕様</h2>
+<h2 id="xml特別仕様"><a name="xml特別仕様" class="plugin-anchor" href="#xml特別仕様"><i class="fa fa-link" aria-hidden="true"></i></a>XML特別仕様</h2>
 <p><a href="https://uhyohyo.net/javascript/6_2.html" target="_blank">参考URL</a></p>
 <p>XMLの、HTMLにはない特徴として、名前空間というものがあります。今回、それについて解説します。</p>
 <pre><code class="lang-xml"><span class="hljs-meta">&lt;?xml version=&quot;1.0&quot; ?&gt;</span>
@@ -1717,7 +1717,7 @@ XMLによってつくられたデータは、さまざまなことに利用さ�
 <span class="hljs-tag">&lt;/<span class="hljs-name">aaa:abc</span>&gt;</span>
 </code></pre>
 <p><aaa:>これが名前空間の部分。</aaa:></p>
-<h2 id="xhtml">XHTML</h2>
+<h2 id="xhtml"><a name="xhtml" class="plugin-anchor" href="#xhtml"><i class="fa fa-link" aria-hidden="true"></i></a>XHTML</h2>
 <p> HTMLはXMLとは似ていても少し違うものだったが、そこでHTMLをXML文書の一種として書けるようにしたものを作成した。
  それがXHTML。そのためXHTMLはXMLとしても通用するということになる。
  ただし、XHTMLは一時期鳴り物入りで登場したものの、あまり普及しませんでした。代わりにHTML5が台頭したため、XHTMLは廃れてしまいました。なのでXHTMLの説明をしても仕方ないかもしれませんが、書いてしまったのでここで紹介しておきます。</p>
@@ -1764,7 +1764,7 @@ XMLによってつくられたデータは、さまざまなことに利用さ�
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"XML","level":"2.2.7.1","depth":3,"next":{"title":"TOML","level":"2.2.7.2","depth":3,"path":"program/dsl/toml.md","ref":"program/dsl/toml.md","articles":[]},"previous":{"title":"2.7 DSL","level":"2.2.7","depth":2,"path":"program/dsl/dsl.md","ref":"program/dsl/dsl.md","articles":[{"title":"XML","level":"2.2.7.1","depth":3,"path":"program/dsl/xml.md","ref":"program/dsl/xml.md","articles":[]},{"title":"TOML","level":"2.2.7.2","depth":3,"path":"program/dsl/toml.md","ref":"program/dsl/toml.md","articles":[]},{"title":"正規表現","level":"2.2.7.3","depth":3,"path":"program/dsl/正規表現.md","ref":"program/dsl/正規表現.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"program/dsl/xml.md","mtime":"2023-01-12T00:39:30.222Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T00:39:41.486Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"XML","level":"2.2.7.1","depth":3,"next":{"title":"TOML","level":"2.2.7.2","depth":3,"path":"program/dsl/toml.md","ref":"program/dsl/toml.md","articles":[]},"previous":{"title":"2.7 DSL","level":"2.2.7","depth":2,"path":"program/dsl/dsl.md","ref":"program/dsl/dsl.md","articles":[{"title":"XML","level":"2.2.7.1","depth":3,"path":"program/dsl/xml.md","ref":"program/dsl/xml.md","articles":[]},{"title":"TOML","level":"2.2.7.2","depth":3,"path":"program/dsl/toml.md","ref":"program/dsl/toml.md","articles":[]},{"title":"正規表現","level":"2.2.7.3","depth":3,"path":"program/dsl/正規表現.md","ref":"program/dsl/正規表現.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"program/dsl/xml.md","mtime":"2023-01-12T09:05:53.794Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T09:06:04.627Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1816,6 +1816,30 @@ XMLによってつくられたデータは、さまざまなことに利用さ�
     </script>
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
     
         
         <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>

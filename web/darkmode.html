@@ -1,19 +1,31 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="ja" >
     <head>
         <meta charset="UTF-8">
-        <title>4.1 darkmode · HonKit</title>
+        <title>4.1 darkmode · naopedia</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.4">
-        
+        <meta name="author" content="naohito-T">
         
         
     
     <link rel="stylesheet" href="../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
@@ -31,18 +43,6 @@
 
     
 
-    
-        
-        <link rel="stylesheet" href="../styles/website.css">
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
         
     
@@ -72,7 +72,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="検索ワードを入力" />
 </div>
 
             
@@ -1631,7 +1631,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            HonKitで公開 
         </a>
     </li>
 </ul>
@@ -1669,7 +1669,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="web-dark-mode">Web dark mode</h1>
+                                <h1 id="web-dark-mode"><a name="web-dark-mode" class="plugin-anchor" href="#web-dark-mode"><i class="fa fa-link" aria-hidden="true"></i></a>Web dark mode</h1>
 <p><a href="https://note.com/psephopaiktes/n/n878424784a1b" target="_blank">CSSだけでもWebページをダークモード対応</a></p>
 <blockquote>
 <p>prefers-color-scheme という Media Query を主要ブラウザがサポートしたため、Webでもダークモードに対応がしやすくなりましたね。CSSファイルに「ユーザがダークモードにしていたらこのCSS、ライトモードにしていたらこのCSSを適応」というように簡単に指定できるようになります。</p>
@@ -1681,9 +1681,9 @@
   <span class="hljs-comment">// ダークモードのときのCSS</span>
 }
 </code></pre>
-<h2 id="ユビキタス">ユビキタス</h2>
+<h2 id="ユビキタス"><a name="ユビキタス" class="plugin-anchor" href="#ユビキタス"><i class="fa fa-link" aria-hidden="true"></i></a>ユビキタス</h2>
 <p>mode dark ? light modeのこと</p>
-<h2 id="ダークモード対応要件定義">ダークモード対応要件定義</h2>
+<h2 id="ダークモード対応要件定義"><a name="ダークモード対応要件定義" class="plugin-anchor" href="#ダークモード対応要件定義"><i class="fa fa-link" aria-hidden="true"></i></a>ダークモード対応要件定義</h2>
 <p>クライアントの自身のPC設定(mode)を取得する @media (prefers-color-scheme: dark or light) {}
 取得したクライアントの状態でcssを切り替える。
 ここまでは普通
@@ -1693,15 +1693,15 @@
 取得したクライアントの状態でcssを切り替える。
 リロード時はlocalStorageのkeyを取得し、cssを切り替える
 きりかえる用のcssを記載する。</p>
-<h2 id="prefers-color-scheme-とは">prefers-color-scheme とは</h2>
+<h2 id="prefers-color-scheme-とは"><a name="prefers-color-scheme-とは" class="plugin-anchor" href="#prefers-color-scheme-とは"><i class="fa fa-link" aria-hidden="true"></i></a>prefers-color-scheme とは</h2>
 <blockquote>
 <p>media queryの1種で、CSS上からユーザーがOSでダークモードをONにしているかどうかを判別できます。たとえば、普段は白い背景のWebページを、ダークモードをONにしているPCから見た場合は黒い背景にする、といった対応が行えます。</p>
 </blockquote>
-<h2 id="対応ブラウザ">対応ブラウザ</h2>
+<h2 id="対応ブラウザ"><a name="対応ブラウザ" class="plugin-anchor" href="#対応ブラウザ"><i class="fa fa-link" aria-hidden="true"></i></a>対応ブラウザ</h2>
 <blockquote>
 <p>Chrome, Firefox, Safari等の主要なPCブラウザは対応が完了しました。ただし、スマートフォンのブラウザはまだまだ非対応です。</p>
 </blockquote>
-<h2 id="対応方法">対応方法</h2>
+<h2 id="対応方法"><a name="対応方法" class="plugin-anchor" href="#対応方法"><i class="fa fa-link" aria-hidden="true"></i></a>対応方法</h2>
 <blockquote>
 <p>対応はかなりかんたんです。@media (prefers-color-scheme: dark) {}というブロックを追記し、その中にダークモード時に適応したいCSSを書くだけ</p>
 </blockquote>
@@ -1712,7 +1712,7 @@
   }
 }
 </code></pre>
-<h2 id="ダークモードにも柔軟に対応できるcsssass変数のカラー設定方法">ダークモードにも柔軟に対応できるCSS&amp;Sass変数のカラー設定方法</h2>
+<h2 id="ダークモードにも柔軟に対応できるcsssass変数のカラー設定方法"><a name="ダークモードにも柔軟に対応できるcsssass変数のカラー設定方法" class="plugin-anchor" href="#ダークモードにも柔軟に対応できるcsssass変数のカラー設定方法"><i class="fa fa-link" aria-hidden="true"></i></a>ダークモードにも柔軟に対応できるCSS&amp;Sass変数のカラー設定方法</h2>
 <p><a href="https://higemura.com/blog/programming/dark-mode-css-variables-01" target="_blank">参考URL</a></p>
 
                                 
@@ -1757,7 +1757,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4.1 darkmode","level":"2.4.1","depth":2,"next":{"title":"4.2 Loading","level":"2.4.2","depth":2,"path":"web/loading.md","ref":"web/loading.md","articles":[]},"previous":{"title":"4. Web(web作成の時に使うもの)","level":"2.4","depth":1,"path":"web/web.md","ref":"web/web.md","articles":[{"title":"4.1 darkmode","level":"2.4.1","depth":2,"path":"web/darkmode.md","ref":"web/darkmode.md","articles":[]},{"title":"4.2 Loading","level":"2.4.2","depth":2,"path":"web/loading.md","ref":"web/loading.md","articles":[]},{"title":"4.3 login","level":"2.4.3","depth":2,"path":"web/login.md","ref":"web/login.md","articles":[]},{"title":"4.4 modal","level":"2.4.4","depth":2,"path":"web/modal.md","ref":"web/modal.md","articles":[]},{"title":"4.5 pagenation","level":"2.4.5","depth":2,"path":"web/pagenation.md","ref":"web/pagenation.md","articles":[]},{"title":"4.6 pcsp判断","level":"2.4.6","depth":2,"path":"web/pc_sp_判断.md","ref":"web/pc_sp_判断.md","articles":[]},{"title":"4.7 progressbar","level":"2.4.7","depth":2,"path":"web/progressbar.md","ref":"web/progressbar.md","articles":[]},{"title":"4.4 modal","level":"2.4.8","depth":2,"path":"web/modal.md","ref":"web/modal.md","articles":[]},{"title":"4.4 modal","level":"2.4.9","depth":2,"path":"web/modal.md","ref":"web/modal.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"web/darkmode.md","mtime":"2023-01-12T00:39:30.234Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T00:39:41.486Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.1 darkmode","level":"2.4.1","depth":2,"next":{"title":"4.2 Loading","level":"2.4.2","depth":2,"path":"web/loading.md","ref":"web/loading.md","articles":[]},"previous":{"title":"4. Web(web作成の時に使うもの)","level":"2.4","depth":1,"path":"web/web.md","ref":"web/web.md","articles":[{"title":"4.1 darkmode","level":"2.4.1","depth":2,"path":"web/darkmode.md","ref":"web/darkmode.md","articles":[]},{"title":"4.2 Loading","level":"2.4.2","depth":2,"path":"web/loading.md","ref":"web/loading.md","articles":[]},{"title":"4.3 login","level":"2.4.3","depth":2,"path":"web/login.md","ref":"web/login.md","articles":[]},{"title":"4.4 modal","level":"2.4.4","depth":2,"path":"web/modal.md","ref":"web/modal.md","articles":[]},{"title":"4.5 pagenation","level":"2.4.5","depth":2,"path":"web/pagenation.md","ref":"web/pagenation.md","articles":[]},{"title":"4.6 pcsp判断","level":"2.4.6","depth":2,"path":"web/pc_sp_判断.md","ref":"web/pc_sp_判断.md","articles":[]},{"title":"4.7 progressbar","level":"2.4.7","depth":2,"path":"web/progressbar.md","ref":"web/progressbar.md","articles":[]},{"title":"4.4 modal","level":"2.4.8","depth":2,"path":"web/modal.md","ref":"web/modal.md","articles":[]},{"title":"4.4 modal","level":"2.4.9","depth":2,"path":"web/modal.md","ref":"web/modal.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"web/darkmode.md","mtime":"2023-01-12T09:05:53.802Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T09:06:04.627Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1809,6 +1809,30 @@
     </script>
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

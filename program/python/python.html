@@ -1,19 +1,31 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="ja" >
     <head>
         <meta charset="UTF-8">
-        <title>2.5 Python · HonKit</title>
+        <title>2.5 Python · naopedia</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.4">
-        
+        <meta name="author" content="naohito-T">
         
         
     
     <link rel="stylesheet" href="../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../../gitbook/@honkit/honkit-plugin-highlight/website.css">
@@ -31,18 +43,6 @@
 
     
 
-    
-        
-        <link rel="stylesheet" href="../../styles/website.css">
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
         
     
@@ -72,7 +72,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="検索ワードを入力" />
 </div>
 
             
@@ -1631,7 +1631,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            HonKitで公開 
         </a>
     </li>
 </ul>
@@ -1669,19 +1669,19 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="python">Python</h1>
+                                <h1 id="python"><a name="python" class="plugin-anchor" href="#python"><i class="fa fa-link" aria-hidden="true"></i></a>Python</h1>
 <p><a href="../新たな言語を学ぶ前に.md">学ぶ前に考えること</a>
 以下からは上記で記載したmd順に探っていく</p>
 <hr>
-<h2 id="pythonの仕組み">Pythonの仕組み</h2>
+<h2 id="pythonの仕組み"><a name="pythonの仕組み" class="plugin-anchor" href="#pythonの仕組み"><i class="fa fa-link" aria-hidden="true"></i></a>Pythonの仕組み</h2>
 <p><a href="https://kaityo256.github.io/python_zero/howtowork/index.html" target="_blank">Pythonはどうやって動くのか</a></p>
 <hr>
-<h2 id="pythonの歴史">Pythonの歴史</h2>
+<h2 id="pythonの歴史"><a name="pythonの歴史" class="plugin-anchor" href="#pythonの歴史"><i class="fa fa-link" aria-hidden="true"></i></a>Pythonの歴史</h2>
 <p><a href="https://codezine.jp/article/detail/12457" target="_blank">参考URL</a></p>
 <p>Pythonが最初にお目見えしたのは1991年、作者であるグイド＝ヴァンロッサムがソースコードを公開した0.9です。その後、3年の期間を経て、1994年1月にPython 1.0がリリースされました。基本的な型の概念やオブジェクト指向など、Pythonの基礎となる構文は、このバージョンですでに実装されています。</p>
 <p>よく名前が聞かれるようになったのは2000年10月にPython 2がリリースされてからです。Unicode（1.5.1項）、ガベージコレクション（オブジェクトを解放するための仕組み）などが導入され、Google、Yahoo!、InstagramなどのサービスがPythonを採用したのも、この時期</p>
 <hr>
-<h2 id="python利用用途">Python利用用途</h2>
+<h2 id="python利用用途"><a name="python利用用途" class="plugin-anchor" href="#python利用用途"><i class="fa fa-link" aria-hidden="true"></i></a>Python利用用途</h2>
 <ol>
 <li>機械学習を使った人工知能の開発 → Pythonがライブラリが充実しているため</li>
 <li>自動データ処理や分析などの業務効率化 → 自動データ処理に関しては別でもできる。分析はPythonが強いか</li>
@@ -1694,7 +1694,7 @@
 <p><strong>メルカリでの利用用途</strong>
 機械学習を用いたマイクロサービスでは研究・実験段階で用いたPythonのライブラリをそのままプロダクションでも使用したいなどといった理由でPythonをメインの言語に採用することが増えています。使用したいライブラリにはデータの前処理パイプラインを記述するもの、自然言語処理や画像処理を行うもの、C++などで記述されたライブラリのPythonラッパー、場合によってはモデルのサービングを行うものなどが挙げられるかと思います</p>
 <hr>
-<h2 id="python-コードスタイル">Python コードスタイル</h2>
+<h2 id="python-コードスタイル"><a name="python-コードスタイル" class="plugin-anchor" href="#python-コードスタイル"><i class="fa fa-link" aria-hidden="true"></i></a>Python コードスタイル</h2>
 <p><a href="https://legacy.python.org/dev/peps/pep-0008/" target="_blank">参考URL</a></p>
 <ul>
 <li>Python インデント
@@ -1702,30 +1702,30 @@
 <strong>コーディング規約では4つが推奨されている。</strong></li>
 </ul>
 <hr>
-<h2 id="pythonのサードパーティ事情">Pythonのサードパーティ事情</h2>
+<h2 id="pythonのサードパーティ事情"><a name="pythonのサードパーティ事情" class="plugin-anchor" href="#pythonのサードパーティ事情"><i class="fa fa-link" aria-hidden="true"></i></a>Pythonのサードパーティ事情</h2>
 <p>一般的なプログラミング言語は、アプリを開発するための便利な道具と共に提供されている。
 このような道具のことをライブラリと指す</p>
 <blockquote>
 <p>Pythonをインストールするだけで、それこそファイルの読み書きからデータベース操作、ネットワーク通信、GUIアプリ開発など、さまざまな機能を即座に実現できるのです。</p>
 </blockquote>
-<h3 id="pyplpython-package-indexとは">PyPl(Python Package Index)とは</h3>
+<h3 id="pyplpython-package-indexとは"><a name="pyplpython-package-indexとは" class="plugin-anchor" href="#pyplpython-package-indexとは"><i class="fa fa-link" aria-hidden="true"></i></a>PyPl(Python Package Index)とは</h3>
 <blockquote>
 <p>サードパーティ製の拡張ライブラリに至っては、標準ライブラリの比ではありません。たとえばPythonには、サードパーティによる拡張ライブラリの集積場とも言うべきサービスとして、PyPI（Python Package Index）があります
 Pythonを導入すれば、これらを無償で利用できるわけです。</p>
 </blockquote>
 <p>中でも、<strong>機械学習、ディープラーニング（深層学習）などの分野のライブラリが潤沢である点はPythonの強み</strong></p>
 <hr>
-<h2 id="pythonのversion管理">Pythonのversion管理</h2>
+<h2 id="pythonのversion管理"><a name="pythonのversion管理" class="plugin-anchor" href="#pythonのversion管理"><i class="fa fa-link" aria-hidden="true"></i></a>Pythonのversion管理</h2>
 <p>asdfやpyenvがある</p>
 <p>参考URL
 <a href="https://dev.classmethod.jp/articles/try-asdf-settings/" target="_blank">asdfが有名っぽい</a></p>
 <p><strong>pyenvがanyenvから使える</strong>ため、それを使用する
 またnodeのようにlocalでversion分けができる。</p>
 <hr>
-<h2 id="pythonの環境構築">Pythonの環境構築</h2>
+<h2 id="pythonの環境構築"><a name="pythonの環境構築" class="plugin-anchor" href="#pythonの環境構築"><i class="fa fa-link" aria-hidden="true"></i></a>Pythonの環境構築</h2>
 <p>Python自体がanacondaなど、構築自体がめんどくさい。そのためDocker構築がいいと言われている。
 あとは仮想環境でやるとか言っていた気がする....</p>
-<h2 id="pythonのパッケージ管理ツールとは">Pythonのパッケージ管理ツールとは</h2>
+<h2 id="pythonのパッケージ管理ツールとは"><a name="pythonのパッケージ管理ツールとは" class="plugin-anchor" href="#pythonのパッケージ管理ツールとは"><i class="fa fa-link" aria-hidden="true"></i></a>Pythonのパッケージ管理ツールとは</h2>
 <p><strong>pipが代表格</strong>
 pipはPythonで書かれたパッケージソフトウェアをインストール・管理するためのパッケージ管理システム
 多くのPythonパッケージは、Python Package Index上にある。</p>
@@ -1736,7 +1736,7 @@ pipはPythonで書かれたパッケージソフトウェアをインストー�
 </ul>
 <p>サードパーティのパッケージはPyPIというサイトで配布されている。
 <a href="https://pypi.org/" target="_blank">PyPl</a></p>
-<h3 id="pythonのライブラリpipについて">Pythonのライブラリ(pipについて)</h3>
+<h3 id="pythonのライブラリpipについて"><a name="pythonのライブラリpipについて" class="plugin-anchor" href="#pythonのライブラリpipについて"><i class="fa fa-link" aria-hidden="true"></i></a>Pythonのライブラリ(pipについて)</h3>
 <p>Pythonのライブラリは主に以下の3種類となる。
 <strong>site-packagesはJSでいうnode_moduleと一緒</strong></p>
 <ul>
@@ -1754,7 +1754,7 @@ Type <span class="hljs-string">&quot;help&quot;</span>, <span class="hljs-string
 [<span class="hljs-string">&apos;&apos;</span>, <span class="hljs-string">&apos;/Users/tanakanaohitoshi/.anyenv/envs/pyenv/versions/3.9.10/lib/python39.zip&apos;</span>, <span class="hljs-string">&apos;/Users/tanakanaohitoshi/.anyenv/envs/pyenv/versions/3.9.10/lib/python3.9&apos;</span>, <span class="hljs-string">&apos;/Users/tanakanaohitoshi/.anyenv/envs/pyenv/versions/3.9.10/lib/python3.9/lib-dynload&apos;</span>, <span class="hljs-string">&apos;/Users/tanakanaohitoshi/.anyenv/envs/pyenv/versions/3.9.10/lib/python3.9/site-packages&apos;</span>]
 &gt;&gt;&gt;
 </code></pre>
-<h3 id="site-packages-ローカルインストール">site-packages ローカルインストール</h3>
+<h3 id="site-packages-ローカルインストール"><a name="site-packages-ローカルインストール" class="plugin-anchor" href="#site-packages-ローカルインストール"><i class="fa fa-link" aria-hidden="true"></i></a>site-packages ローカルインストール</h3>
 <p><a href="https://www.bunkei-programmer.net/entry/2018/12/17/232646" target="_blank">ローカルライブラリ実行方法</a></p>
 <blockquote>
 <p>site-package インストール確認
@@ -1770,15 +1770,15 @@ Type <span class="hljs-string">&quot;help&quot;</span>, <span class="hljs-string
 </blockquote>
 <p>AWS Lambdaでpythonランタイムを選択した際に、lamdaに標準インストールされていないモジュールを追加インストールする場合もローカルインストールする事になるので、この辺は覚えておくと色々と便利そうです。lambdaの件は以前以下の記事を書いたので、合わせてご覧下さい。</p>
 <hr>
-<h2 id="pythonの型付け">pythonの型付け</h2>
+<h2 id="pythonの型付け"><a name="pythonの型付け" class="plugin-anchor" href="#pythonの型付け"><i class="fa fa-link" aria-hidden="true"></i></a>pythonの型付け</h2>
 <p>Pythonに型ヒントが入った。
 <strong>VSCodeではPylanceという拡張機能で対応する</strong>(MicroSoft製)</p>
 <p><a href="https://blog.ntacoffee.com/mypy-and-vscode/" target="_blank">導入</a></p>
-<h2 id="pythonの型付け歴史">pythonの型付け歴史</h2>
+<h2 id="pythonの型付け歴史"><a name="pythonの型付け歴史" class="plugin-anchor" href="#pythonの型付け歴史"><i class="fa fa-link" aria-hidden="true"></i></a>pythonの型付け歴史</h2>
 <p><a href="https://docs.google.com/presentation/d/1kxX5_bL1Rv-sW7zJDBSve9g69A_AJbAEvMXkhlMrBR4/htmlpresent" target="_blank">参考URL</a></p>
 <p>Python 3.7 で採択された PEP 561 Distributing and Packaging Type Information
 EP 561 以前は主に typeshed を通じて，標準ライブラリ・サードパーティーの型情報が配布されていました</p>
-<h2 id="各型について">各型について</h2>
+<h2 id="各型について"><a name="各型について" class="plugin-anchor" href="#各型について"><i class="fa fa-link" aria-hidden="true"></i></a>各型について</h2>
 <p><a href="https://qiita.com/papi_tokei/items/bf652696d6b98f23565a" target="_blank">型入門</a></p>
 <p>3.8と3.9での書き方
 listなどについてはPython3.8までと3.9で変わっている
@@ -1827,27 +1827,27 @@ NAME_TUPLE: Final[<span class="hljs-built_in">tuple</span>[<span class="hljs-bui
 NAME_LIST: Final[<span class="hljs-built_in">list</span>[<span class="hljs-built_in">str</span>]] = [<span class="hljs-string">&apos;taro&apos;</span>, <span class="hljs-string">&apos;jiro&apos;</span>]
 NAME_LIST[<span class="hljs-number">0</span>] = <span class="hljs-string">&apos;saburo&apos;</span>
 </code></pre>
-<h3 id="dataclasses">dataclasses</h3>
+<h3 id="dataclasses"><a name="dataclasses" class="plugin-anchor" href="#dataclasses"><i class="fa fa-link" aria-hidden="true"></i></a>dataclasses</h3>
 <p><a href="https://qiita.com/tag1216/items/13b032348c893667862a" target="_blank">dataclass</a>
 データを格納するためのクラスを簡単に定義できる機能
 クラス定義にデコレータを１つ付けるだけで<strong>init</strong>や<strong>str</strong>などの特殊メソッドを自動生成してくれます。</p>
 <hr>
-<h2 id="pythonの環境変数">Pythonの環境変数</h2>
+<h2 id="pythonの環境変数"><a name="pythonの環境変数" class="plugin-anchor" href="#pythonの環境変数"><i class="fa fa-link" aria-hidden="true"></i></a>Pythonの環境変数</h2>
 <p>direnvでOS環境変数にぶち込めばいける</p>
 <p>環境変数にアクセスするためには</p>
 <pre><code class="lang-py"><span class="hljs-keyword">import</span> os
 username: <span class="hljs-built_in">str</span>=os.environ[<span class="hljs-string">&quot;USER_NAME&quot;</span>]
 </code></pre>
 <hr>
-<h2 id="python-editor">Python Editor</h2>
+<h2 id="python-editor"><a name="python-editor" class="plugin-anchor" href="#python-editor"><i class="fa fa-link" aria-hidden="true"></i></a>Python Editor</h2>
 <p>VSCodeが使いやすいがどうだろうか
 PyCharmの統合IDEがある</p>
 <hr>
-<h2 id="python-lint静的解析ツール">Python Lint(静的解析ツール)</h2>
+<h2 id="python-lint静的解析ツール"><a name="python-lint静的解析ツール" class="plugin-anchor" href="#python-lint静的解析ツール"><i class="fa fa-link" aria-hidden="true"></i></a>Python Lint(静的解析ツール)</h2>
 <p>flake8
 flake8 は、次の Lint1 を含んだラッパーツールです。</p>
 <hr>
-<h2 id="python-formatterpritterみたいなもの">Python Formatter(Pritterみたいなもの)</h2>
+<h2 id="python-formatterpritterみたいなもの"><a name="python-formatterpritterみたいなもの" class="plugin-anchor" href="#python-formatterpritterみたいなもの"><i class="fa fa-link" aria-hidden="true"></i></a>Python Formatter(Pritterみたいなもの)</h2>
 <p>VSCodeでは、Python拡張を入れることで、Pythonのコードの編集(自動保管ができる)
 コードの自動フォーマットを行うには、フォーマッターを別途インストールしておく必用がある。</p>
 <p>Formatterの種類としては</p>
@@ -1856,11 +1856,11 @@ flake8 は、次の Lint1 を含んだラッパーツールです。</p>
 <li>yapf</li>
 <li>Black(最近人気): FacebookやDropbox、Mozillaなどでも導入されている。</li>
 </ul>
-<h3 id="blacｋとは">Blacｋとは</h3>
+<h3 id="blacｋとは"><a name="blacｋとは" class="plugin-anchor" href="#blacｋとは"><i class="fa fa-link" aria-hidden="true"></i></a>Blacｋとは</h3>
 <blockquote>
 <p>Black は自分自身を <strong>The uncompromising code formatter</strong> と説明しています。 ようするに、「私が定義する設定に従いなさい」という意味で、ユーザーにほとんど設定の余地を残していません（行の長さ程度は設定できます）。 このようにすることで、チーム内でのフォーマット論争を防ぐ効果があります。 TypeScript (JavaScript) でよく使われている Prettier フォーマッターも同様の思想で作られており、ほとんど設定ができないようになっています（こちらは opinionated という単語を使っています）。</p>
 </blockquote>
-<h3 id="black-スタイル">Black スタイル</h3>
+<h3 id="black-スタイル"><a name="black-スタイル" class="plugin-anchor" href="#black-スタイル"><i class="fa fa-link" aria-hidden="true"></i></a>Black スタイル</h3>
 <ul>
 <li>インデントは4 (PEP8 通り)</li>
 <li>トップレベルのクラス定義や関数定義の間には<strong>2行の空白行</strong>を入れる（クラス内のメソッド間は 1 行）PEP 8 通り。</li>
@@ -1879,10 +1879,10 @@ flake8 は、次の Lint1 を含んだラッパーツールです。</p>
 </li>
 </ul>
 <hr>
-<h2 id="python-自動補完オートコンプリート">Python 自動補完(オートコンプリート)</h2>
+<h2 id="python-自動補完オートコンプリート"><a name="python-自動補完オートコンプリート" class="plugin-anchor" href="#python-自動補完オートコンプリート"><i class="fa fa-link" aria-hidden="true"></i></a>Python 自動補完(オートコンプリート)</h2>
 <p>VSCodeでは、Python拡張を入れることで、Pythonのコードの編集(自動保管ができる)</p>
 <hr>
-<h2 id="python-ユニットテスト">Python ユニットテスト</h2>
+<h2 id="python-ユニットテスト"><a name="python-ユニットテスト" class="plugin-anchor" href="#python-ユニットテスト"><i class="fa fa-link" aria-hidden="true"></i></a>Python ユニットテスト</h2>
 <p><a href="https://qiita.com/flcn-x/items/fcbbc2fb291b970290f2" target="_blank">参考URL</a></p>
 <table>
 <thead>
@@ -1911,7 +1911,7 @@ flake8 は、次の Lint1 を含んだラッパーツールです。</p>
 </tbody>
 </table>
 <hr>
-<h2 id="python-コマンドラインオプション">Python コマンドラインオプション</h2>
+<h2 id="python-コマンドラインオプション"><a name="python-コマンドラインオプション" class="plugin-anchor" href="#python-コマンドラインオプション"><i class="fa fa-link" aria-hidden="true"></i></a>Python コマンドラインオプション</h2>
 <p><a href="https://shuzo-kino.hateblo.jp/entry/2016/11/08/224859" target="_blank">Pythonの-mオプションが探しに行っている場所</a>
 -mオプション
 Pythonは-mオプションを付けてpythonを実行するとモジュールを実行してくれます。
@@ -1923,10 +1923,10 @@ Pythonは-mオプションを付けてpythonを実行するとモジュールを
 モジュールの他に、パッケージも-mを付与して実行します。
 パッケージとは複数のモジュールが集めてひとつにまとめたファイルのこと</p>
 <hr>
-<h2 id="python-各コーディング">Python 各コーディング</h2>
-<h3 id="命名規則">命名規則</h3>
+<h2 id="python-各コーディング"><a name="python-各コーディング" class="plugin-anchor" href="#python-各コーディング"><i class="fa fa-link" aria-hidden="true"></i></a>Python 各コーディング</h2>
+<h3 id="命名規則"><a name="命名規則" class="plugin-anchor" href="#命名規則"><i class="fa fa-link" aria-hidden="true"></i></a>命名規則</h3>
 <p><img src="image/命名規則.png" alt="命名規則"></p>
-<h2 id="python-インポート周り徹底理解">Python インポート周り徹底理解</h2>
+<h2 id="python-インポート周り徹底理解"><a name="python-インポート周り徹底理解" class="plugin-anchor" href="#python-インポート周り徹底理解"><i class="fa fa-link" aria-hidden="true"></i></a>Python インポート周り徹底理解</h2>
 <p><a href="https://qiita.com/papi_tokei/items/bc34d798dc7a6d49df30" target="_blank">参考URL</a></p>
 <p>Pythonのライブラリは主に以下の3種類となる。</p>
 <ul>
@@ -1934,7 +1934,7 @@ Pythonは-mオプションを付けてpythonを実行するとモジュールを
 <li>site-packagesディレクトリ(pip installでインストール)</li>
 <li>ユーザ別site-packageディレクトリ(pip install --userでインストール)</li>
 </ul>
-<h3 id="pyファイルのインポート同階層">.pyファイルのインポート(同階層)</h3>
+<h3 id="pyファイルのインポート同階層"><a name="pyファイルのインポート同階層" class="plugin-anchor" href="#pyファイルのインポート同階層"><i class="fa fa-link" aria-hidden="true"></i></a>.pyファイルのインポート(同階層)</h3>
 <p>クラスも関数も同時にimport 可能</p>
 <p>.
 ├── lib_a.py
@@ -1942,8 +1942,8 @@ Pythonは-mオプションを付けてpythonを実行するとモジュールを
 <pre><code class="lang-python"><span class="hljs-keyword">from</span> lib_a <span class="hljs-keyword">import</span> Student, add
 </code></pre>
 <hr>
-<h2 id="python-ファイル操作">Python ファイル操作</h2>
-<h3 id="基礎知識">基礎知識</h3>
+<h2 id="python-ファイル操作"><a name="python-ファイル操作" class="plugin-anchor" href="#python-ファイル操作"><i class="fa fa-link" aria-hidden="true"></i></a>Python ファイル操作</h2>
+<h3 id="基礎知識"><a name="基礎知識" class="plugin-anchor" href="#基礎知識"><i class="fa fa-link" aria-hidden="true"></i></a>基礎知識</h3>
 <p>基礎の流れ</p>
 <ol>
 <li>ファイルを開いて</li>
@@ -1957,7 +1957,7 @@ file.write(<span class="hljs-string">&quot;Hello Python!&quot;</span>)
 <span class="hljs-comment"># ファイルを閉じる</span>
 file.close()
 </code></pre>
-<h3 id="with構文">with構文</h3>
+<h3 id="with構文"><a name="with構文" class="plugin-anchor" href="#with構文"><i class="fa fa-link" aria-hidden="true"></i></a>with構文</h3>
 <p>with構文とは、ファイル操作処理のコードを<strong>短縮して記述するため</strong>の構文</p>
 <p>with文はファイル操作を行うopen関数を簡易的にかけるようにするだけではなく<strong>例外処理やファイルのcloseを自動的にしてくれたりと結構便利な機能を持ち合わせている</strong></p>
 <p>withを使った場合(↑の基礎との対比)</p>
@@ -1975,18 +1975,18 @@ file.close()
 <li>ブロックが生成されるため可読性が向上する</li>
 </ol>
 <hr>
-<h2 id="　変数">　変数</h2>
+<h2 id="　変数"><a name="　変数" class="plugin-anchor" href="#　変数"><i class="fa fa-link" aria-hidden="true"></i></a>　変数</h2>
 <p><a href="https://uxmilk.jp/41600" target="_blank">参考URL</a></p>
-<h3 id="変数クラス変数-public-staticみたいなもの">変数(クラス変数) public staticみたいなもの</h3>
+<h3 id="変数クラス変数-public-staticみたいなもの"><a name="変数クラス変数-public-staticみたいなもの" class="plugin-anchor" href="#変数クラス変数-public-staticみたいなもの"><i class="fa fa-link" aria-hidden="true"></i></a>変数(クラス変数) public staticみたいなもの</h3>
 <p>クラス変数は、クラスに依存している変数です。インスタンスからでも、クラスからでもどちらからでも呼び出し可能で、<strong>インスタンスが異なっても同じ値を取得することができます。</strong></p>
-<h3 id="変数インスタンス変数">変数(インスタンス変数)</h3>
+<h3 id="変数インスタンス変数"><a name="変数インスタンス変数" class="plugin-anchor" href="#変数インスタンス変数"><i class="fa fa-link" aria-hidden="true"></i></a>変数(インスタンス変数)</h3>
 <p>インスタンス変数は、インスタンスに依存している変数です。<strong>インスタンスを複数作成すればそれぞれ異なる値をもつ</strong></p>
 <p><strong>このようにクラス変数とインスタンス変数が同じ変数名だった場合、インスタンス変数が優先されます。</strong></p>
 <p>ちなみにpythonではprivateな変数、変更不可な変数は存在しないようです。
 ただ、privateに関しては、「_」で始まる変数、メソッドはプライベートだという慣習はあるみたいです。
 普通に呼び出すことは可能なので個人の努力が必要ですが。。。</p>
 <hr>
-<h2 id="コンストラクタ">コンストラクタ</h2>
+<h2 id="コンストラクタ"><a name="コンストラクタ" class="plugin-anchor" href="#コンストラクタ"><i class="fa fa-link" aria-hidden="true"></i></a>コンストラクタ</h2>
 <pre><code class="lang-py"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestClass2</span>:</span>
     val = []
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span>(<span class="hljs-params">self</span>):</span>
@@ -1996,7 +1996,7 @@ file.close()
         self.val.append(<span class="hljs-number">2</span>)
         self.val.append(<span class="hljs-number">3</span>)
 </code></pre>
-<h2 id="デストラクタ">デストラクタ</h2>
+<h2 id="デストラクタ"><a name="デストラクタ" class="plugin-anchor" href="#デストラクタ"><i class="fa fa-link" aria-hidden="true"></i></a>デストラクタ</h2>
 <p>コンストラクタとは反対にインスタンスをPythonが削除するときに動作するメソッド
 インスタンス削除時に実行される</p>
 <pre><code class="lang-py"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestClass4</span>:</span>
@@ -2009,21 +2009,21 @@ testClass4 = TestClass4()
 <span class="hljs-keyword">del</span> testClass4
 <span class="hljs-comment"># &gt; del:デストラクタ</span>
 </code></pre>
-<h2 id="オーバーロード">オーバーロード</h2>
+<h2 id="オーバーロード"><a name="オーバーロード" class="plugin-anchor" href="#オーバーロード"><i class="fa fa-link" aria-hidden="true"></i></a>オーバーロード</h2>
 <p>ythonではオーバーロード（引数違いのメソッドを定義する）はできない様子</p>
-<h2 id="インターフェース">インターフェース</h2>
+<h2 id="インターフェース"><a name="インターフェース" class="plugin-anchor" href="#インターフェース"><i class="fa fa-link" aria-hidden="true"></i></a>インターフェース</h2>
 <p><a href="https://www.lifewithpython.com/2017/11/python-interface.html" target="_blank">参考URL</a></p>
 <p>Python 3.6 の時点で Python には言語機能としてのインタフェースは存在しない。
 具体的にいうと、「継承先に特定のインタフェースの実装を強制できるような仕組み」が Python にはない.</p>
 <hr>
-<h2 id="python-path検索">Python path検索</h2>
+<h2 id="python-path検索"><a name="python-path検索" class="plugin-anchor" href="#python-path検索"><i class="fa fa-link" aria-hidden="true"></i></a>Python path検索</h2>
 <p>検索順は以下</p>
 <ol>
 <li>ビルトインモジュールにあるか探す</li>
 <li>sys.pathに格納されているディレクトリにあるか探す</li>
 </ol>
 <hr>
-<h2 id="requirementtxt慣例でファイル名はこれ">requirement.txt(慣例でファイル名はこれ)</h2>
+<h2 id="requirementtxt慣例でファイル名はこれ"><a name="requirementtxt慣例でファイル名はこれ" class="plugin-anchor" href="#requirementtxt慣例でファイル名はこれ"><i class="fa fa-link" aria-hidden="true"></i></a>requirement.txt(慣例でファイル名はこれ)</h2>
 <p><a href="https://note.nkmk.me/python-pip-install-requirements/" target="_blank">参考URL</a></p>
 <p>Pythonのパッケージ（ライブラリ）をpipで管理している場合、設定ファイルrequirements.txtを使って指定のパッケージを指定のバージョンで一括インストールすることができる。</p>
 <p>pipの一括インストールオプション: -r requirements.txt
@@ -2040,7 +2040,7 @@ testClass4 = TestClass4()
 <p><code>$ pip freeze &gt; requirements.txt</code>
 このrequirements.txtを別の環境にコピーして一括インストールする。
 <code>$ pip install -r requirements.txt</code></p>
-<h3 id="3点ドット-pythonの組み込み定数ellipsis">3点ドット(...) Pythonの組み込み定数Ellipsis</h3>
+<h3 id="3点ドット-pythonの組み込み定数ellipsis"><a name="3点ドット-pythonの組み込み定数ellipsis" class="plugin-anchor" href="#3点ドット-pythonの組み込み定数ellipsis"><i class="fa fa-link" aria-hidden="true"></i></a>3点ドット(...) Pythonの組み込み定数Ellipsis</h3>
 <p>Ellipsisと...は同じellipsisオブジェクト。</p>
 <p><a href="https://note.nkmk.me/python-numpy-ellipsis/#:~:text=NumPy%E9%85%8D%E5%88%97%20ndarray%20%E3%81%AE%E3%82%A4%E3%83%B3%E3%83%87%E3%83%83%E3%82%AF%E3%82%B9,%E7%9C%81%E7%95%A5%E3%81%97%E3%81%A6%E6%8C%87%E5%AE%9A%E3%81%A7%E3%81%8D%E3%82%8B%E3%80%82" target="_blank">参考URL</a>
 <a href="https://qiita.com/yubessy/items/cc1ca4dbc3161f84285e" target="_blank">Ellipsisオブジェクトについて</a></p>
@@ -2087,7 +2087,7 @@ testClass4 = TestClass4()
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.5 Python","level":"2.2.5","depth":2,"next":{"title":"2.6 Ruby","level":"2.2.6","depth":2,"path":"program/ruby/ruby.md","ref":"program/ruby/ruby.md","articles":[{"title":"Rails","level":"2.2.6.1","depth":3,"path":"program/ruby/rails/rails.md","ref":"program/ruby/rails/rails.md","articles":[]}]},"previous":{"title":"Laravel","level":"2.2.4.1","depth":3,"path":"program/php/Laravel/Laravel.md","ref":"program/php/Laravel/Laravel.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"program/python/python.md","mtime":"2023-01-12T00:39:30.226Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T00:39:41.486Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.5 Python","level":"2.2.5","depth":2,"next":{"title":"2.6 Ruby","level":"2.2.6","depth":2,"path":"program/ruby/ruby.md","ref":"program/ruby/ruby.md","articles":[{"title":"Rails","level":"2.2.6.1","depth":3,"path":"program/ruby/rails/rails.md","ref":"program/ruby/rails/rails.md","articles":[]}]},"previous":{"title":"Laravel","level":"2.2.4.1","depth":3,"path":"program/php/Laravel/Laravel.md","ref":"program/php/Laravel/Laravel.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"program/python/python.md","mtime":"2023-01-12T09:05:53.798Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T09:06:04.627Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2139,6 +2139,30 @@ testClass4 = TestClass4()
     </script>
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
     
         
         <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>

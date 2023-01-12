@@ -1,19 +1,31 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="ja" >
     <head>
         <meta charset="UTF-8">
-        <title>11. 設計思想 · HonKit</title>
+        <title>11. 設計思想 · naopedia</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.4">
-        
+        <meta name="author" content="naohito-T">
         
         
     
     <link rel="stylesheet" href="../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
@@ -31,18 +43,6 @@
 
     
 
-    
-        
-        <link rel="stylesheet" href="../styles/website.css">
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
         
     
@@ -72,7 +72,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="検索ワードを入力" />
 </div>
 
             
@@ -1631,7 +1631,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            HonKitで公開 
         </a>
     </li>
 </ul>
@@ -1669,14 +1669,14 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="plan">plan</h1>
+                                <h1 id="plan"><a name="plan" class="plugin-anchor" href="#plan"><i class="fa fa-link" aria-hidden="true"></i></a>plan</h1>
 <p><a href="https://12factor.net/ja/" target="_blank">TheTwelve-factor-app</a>
 <a href="https://qiita.com/os1ma/items/7a229585ebdd8b7d86c2" target="_blank">MVC, 3層アーキテクチャから設計を学び始めるための基礎知識</a>
 <a href="https://qiita.com/os1ma" target="_blank">設計理論がすごい</a>
 <a href="https://logmi.jp/tech/articles/322575" target="_blank">メルペイの事例に学ぶ、SSRとJAMstackのメリット・デメリット</a>
 <a href="https://qiita.com/APPLE4869/items/d210ddc2cb1bfeea9338" target="_blank">DDDでアプリを作成する(これはすごい)</a></p>
 <p>webやアプリケーションなどの設計をまとめるpage</p>
-<h2 id="考え方">考え方</h2>
+<h2 id="考え方"><a name="考え方" class="plugin-anchor" href="#考え方"><i class="fa fa-link" aria-hidden="true"></i></a>考え方</h2>
 <p>アーキテクチャとアーキテクチャスタイルは別物
 デザイン（設計）とデザインパターンは別物</p>
 <p>アプリケーション・アーキテクチャとして、以下のような選択があることが分かります。
@@ -1685,18 +1685,18 @@
 ビジネスロジック層 ... トランザクションスクリプト、ドメインモデルから選ぶ</p>
 <p>ので、「3層 + MVC + トランザクションスクリプト」といった構成や、「クリーンアーキテクチャ + MVVM + ドメインモデル」といった構成になるわけです。</p>
 <p>どの組み合わせを採用すべきかは、開発規模や扱えるフレームワークとの相性などにより異なります。</p>
-<h2 id="ビジネスロジックとは">ビジネスロジックとは</h2>
+<h2 id="ビジネスロジックとは"><a name="ビジネスロジックとは" class="plugin-anchor" href="#ビジネスロジックとは"><i class="fa fa-link" aria-hidden="true"></i></a>ビジネスロジックとは</h2>
 <p><a href="https://qiita.com/os1ma/items/25725edfe3c2af93d735" target="_blank">ビジネスロジックとは</a></p>
 <p>端的に理解するとなると
 アプリケーションをプレゼンテーション・ビジネスロジック・データアクセスの3つに分けたときプレゼンテーションでもデータアクセスでもない部分がビジネスロジック</p>
-<h2 id="ソフトウェア開発における4つのプロジェクト管理手法">ソフトウェア開発における4つのプロジェクト管理手法</h2>
+<h2 id="ソフトウェア開発における4つのプロジェクト管理手法"><a name="ソフトウェア開発における4つのプロジェクト管理手法" class="plugin-anchor" href="#ソフトウェア開発における4つのプロジェクト管理手法"><i class="fa fa-link" aria-hidden="true"></i></a>ソフトウェア開発における4つのプロジェクト管理手法</h2>
 <p>ウォーターフォールモデル
 アジャイル
 スパイラルモデル
 プロトタイプ開発</p>
-<h2 id="spa--rest-api構成のサービス開発リファレンス">SPA + REST API構成のサービス開発リファレンス</h2>
+<h2 id="spa--rest-api構成のサービス開発リファレンス"><a name="spa--rest-api構成のサービス開発リファレンス" class="plugin-anchor" href="#spa--rest-api構成のサービス開発リファレンス"><i class="fa fa-link" aria-hidden="true"></i></a>SPA + REST API構成のサービス開発リファレンス</h2>
 <p><a href="https://fintan.jp/?p=5952" target="_blank"></a></p>
-<h2 id="rest-api">REST API</h2>
+<h2 id="rest-api"><a name="rest-api" class="plugin-anchor" href="#rest-api"><i class="fa fa-link" aria-hidden="true"></i></a>REST API</h2>
 <p>RESTはWebのアーキテクチャスタイル
 APIはシンプルな機能ごとに作られてこそ威力を発揮する。
 そしてAPIは機能ごとに分けるのが定石
@@ -1706,9 +1706,9 @@ APIはシンプルな機能ごとに作られてこそ威力を発揮する。
 <p><strong>設計順序</strong></p>
 <p><a href="https://www.hypertextcandy.com/web-api-url-design-primer" target="_blank">参考URL(これが全体的にわかりやすい)</a></p>
 <p>UI（画面）がある程度固まって、データベース定義の初期段階。ER図ができたあたりからAPI設計をし始めるのをオススメする。</p>
-<h2 id="言語選定">言語選定</h2>
+<h2 id="言語選定"><a name="言語選定" class="plugin-anchor" href="#言語選定"><i class="fa fa-link" aria-hidden="true"></i></a>言語選定</h2>
 <p><a href="https://teratail.com/questions/92276" target="_blank">参考URL</a></p>
-<h2 id="webサイト設計順序">Webサイト設計順序</h2>
+<h2 id="webサイト設計順序"><a name="webサイト設計順序" class="plugin-anchor" href="#webサイト設計順序"><i class="fa fa-link" aria-hidden="true"></i></a>Webサイト設計順序</h2>
 <ol>
 <li>こんなサイトを作りたいと想像する</li>
 <li>要件定義</li>
@@ -1718,20 +1718,20 @@ APIはシンプルな機能ごとに作られてこそ威力を発揮する。
 <li>API設計</li>
 </ol>
 <p>以上</p>
-<h2 id="project-start手順">project start手順</h2>
+<h2 id="project-start手順"><a name="project-start手順" class="plugin-anchor" href="#project-start手順"><i class="fa fa-link" aria-hidden="true"></i></a>project start手順</h2>
 <p><strong>技術選定</strong></p>
 <p>いまいちフロントエンドを理解する上司がいない場合もある
 技術選定は最終的なgoalが必要で、そのGOALがどんなサイトかで選定は決まると思われる。
 どんなサイトにしたいのかをまずは上席、またはビジネス側に伺う。</p>
 <p>jQueryは重い。パフォーマンスは下がる</p>
-<h2 id="今までのレンダリング">今までのレンダリング</h2>
+<h2 id="今までのレンダリング"><a name="今までのレンダリング" class="plugin-anchor" href="#今までのレンダリング"><i class="fa fa-link" aria-hidden="true"></i></a>今までのレンダリング</h2>
 <p><a href="https://www.publickey1.jp/blog/17/server_side_renderingserver_side_rendering_ng-japan_2017.html" target="_blank">参考URL(これを時間あるときまとめる)</a></p>
 <p>最近はブラウザの中にも、これまでサーバ側で動いていたHTMLを構築するための仕組みが入ってきた。</p>
-<h2 id="なぜserver-side-rendiringが必要なのか">なぜServer Side Rendiringが必要なのか</h2>
+<h2 id="なぜserver-side-rendiringが必要なのか"><a name="なぜserver-side-rendiringが必要なのか" class="plugin-anchor" href="#なぜserver-side-rendiringが必要なのか"><i class="fa fa-link" aria-hidden="true"></i></a>なぜServer Side Rendiringが必要なのか</h2>
 <p>まずSEOが最初にあがる。</p>
-<h2 id="スケジュール">スケジュール</h2>
+<h2 id="スケジュール"><a name="スケジュール" class="plugin-anchor" href="#スケジュール"><i class="fa fa-link" aria-hidden="true"></i></a>スケジュール</h2>
 <p>スケジュールの引き方は相手の依頼が間に合わないと遅くなると言う前提で作ると楽</p>
-<h2 id="実際にある業務をシステムに落とし込むとき">実際にある業務をシステムに落とし込むとき</h2>
+<h2 id="実際にある業務をシステムに落とし込むとき"><a name="実際にある業務をシステムに落とし込むとき" class="plugin-anchor" href="#実際にある業務をシステムに落とし込むとき"><i class="fa fa-link" aria-hidden="true"></i></a>実際にある業務をシステムに落とし込むとき</h2>
 <p>通常はある業務をシステムに落とし込むとき</p>
 <ol>
 <li>現在の業務を適切に抽象化した分析モデルの作成、</li>
@@ -1740,7 +1740,7 @@ APIはシンプルな機能ごとに作られてこそ威力を発揮する。
 具体的には、前者はユーザヒアリングによる要件抽出、後者は要件を基にした仕様書作成/実装となる。</li>
 </ol>
 <p>スケジュールの引き方は相手の依頼が間に合わないと遅くなると言う前提で作ると楽</p>
-<h2 id="要件定義からサービス作成まで小さいパターンの場合">要件定義からサービス作成まで(小さいパターンの場合)</h2>
+<h2 id="要件定義からサービス作成まで小さいパターンの場合"><a name="要件定義からサービス作成まで小さいパターンの場合" class="plugin-anchor" href="#要件定義からサービス作成まで小さいパターンの場合"><i class="fa fa-link" aria-hidden="true"></i></a>要件定義からサービス作成まで(小さいパターンの場合)</h2>
 <ol>
 <li><p>簡単なサービス設計書を作成</p>
 </li>
@@ -1750,14 +1750,14 @@ APIはシンプルな機能ごとに作られてこそ威力を発揮する。
 </li>
 </ol>
 <p>そのほうが早いでしょってこと</p>
-<h2 id="サービス設計書">サービス設計書</h2>
+<h2 id="サービス設計書"><a name="サービス設計書" class="plugin-anchor" href="#サービス設計書"><i class="fa fa-link" aria-hidden="true"></i></a>サービス設計書</h2>
 <p>サービス設計は要件定義と同一。
 そのため他部署との折衝となるため、<strong>これができます。これはできませんという場となる。</strong></p>
 <blockquote>
 <p>これはサービス設計なので、仕組みではなく、どうするかを書いてください。
 ex. 自動削除はしない。リクエスト毎の対応、または、要望があれば、別途打ち合わせの上、削除の自動化を行う。</p>
 </blockquote>
-<h2 id="仕事の進め方">仕事の進め方</h2>
+<h2 id="仕事の進め方"><a name="仕事の進め方" class="plugin-anchor" href="#仕事の進め方"><i class="fa fa-link" aria-hidden="true"></i></a>仕事の進め方</h2>
 <p>大きく分けて以下のフェーズがある</p>
 <ol>
 <li>サービス設計</li>
@@ -1766,7 +1766,7 @@ ex. 自動削除はしない。リクエスト毎の対応、または、要望�
 <li>テスト</li>
 <li>運用</li>
 </ol>
-<h2 id="サービス設計">サービス設計</h2>
+<h2 id="サービス設計"><a name="サービス設計" class="plugin-anchor" href="#サービス設計"><i class="fa fa-link" aria-hidden="true"></i></a>サービス設計</h2>
 <p>完結に言うと、事業部側との約束事をまとめたもの(相手側にシステムなどを伝えても意味がない)</p>
 <p>ここで大事な考え方として</p>
 <p>1.
@@ -1782,7 +1782,7 @@ SmartNewsで思い出して欲しい。1分に1回取りに行くとか、疑問
 上記はビジネス</p>
 <p>=========================以下から下は自分達で役に立てばいいやという感覚(その感覚は自社サービスのメリット)。受託だとまたより詳細に書く必要があるし、官公庁相手だともっと詳細に書く必要がある。====</p>
 <p><a href="https://wa3.i-3-i.info/diff236design.html" target="_blank">基本設計と詳細設計の違い</a></p>
-<h2 id="基本設計--外部設計と呼ばれることもある。">基本設計 = 外部設計と呼ばれることもある。</h2>
+<h2 id="基本設計--外部設計と呼ばれることもある。"><a name="基本設計--外部設計と呼ばれることもある。" class="plugin-anchor" href="#基本設計--外部設計と呼ばれることもある。"><i class="fa fa-link" aria-hidden="true"></i></a>基本設計 = 外部設計と呼ばれることもある。</h2>
 <p>技術部向けに書いていく。詳細。
 そもそも条件を見るためにパラメータを3つも持つのがおかしい。</p>
 <p>なんのシステムで構成図を書くとか
@@ -1796,7 +1796,7 @@ SmartNewsで思い出して欲しい。1分に1回取りに行くとか、疑問
 </blockquote>
 <p>基本設計は大雑把に言えば、お客様に見えるところを考える作業。
 システム全体の概要や、大雑把な機能の一覧。どんな機器で動かすかやどんなスケジュールで作業を進めるかなどを考える。</p>
-<h2 id="詳細設計--内部設計と呼ばれることもある。">詳細設計 = 内部設計と呼ばれることもある。</h2>
+<h2 id="詳細設計--内部設計と呼ばれることもある。"><a name="詳細設計--内部設計と呼ばれることもある。" class="plugin-anchor" href="#詳細設計--内部設計と呼ばれることもある。"><i class="fa fa-link" aria-hidden="true"></i></a>詳細設計 = 内部設計と呼ばれることもある。</h2>
 <ol>
 <li>イベント主体で考えるべき</li>
 <li>そしてこれがそのままプログラムとなる。そのためそのままプログラムを書けるというのを意識する</li>
@@ -1826,7 +1826,7 @@ SmartNewsで思い出して欲しい。1分に1回取りに行くとか、疑問
 <p>最近は文字列連結の中で変数確認する人はいなくなった。</p>
 <p>===時間がないとき======
 時間がない時にコード修正するよりはテストをもう一回やった方がまし。</p>
-<h2 id="login-urlの設計">login URLの設計</h2>
+<h2 id="login-urlの設計"><a name="login-urlの設計" class="plugin-anchor" href="#login-urlの設計"><i class="fa fa-link" aria-hidden="true"></i></a>login URLの設計</h2>
 <p><a href="https://aiaru.hatenablog.com/entry/2021/01/07/182355" target="_blank">参考URL</a></p>
 <p><strong>前提</strong>
 URLはページの共有などユーザが意図しないところで漏れる可能性も高く、ログインと同等を求めるにはリスクが高い。
@@ -1859,11 +1859,11 @@ URLはページの共有などユーザが意図しないところで漏れる�
 <hr>
 <p>要件定義書は以下から</p>
 <p><a href="https://blog.yux3.net/entry/2017/05/04/035811" target="_blank">CHANGELOG の書き方</a></p>
-<h2 id="アプリケーションにおけるユースケース">アプリケーションにおけるユースケース</h2>
+<h2 id="アプリケーションにおけるユースケース"><a name="アプリケーションにおけるユースケース" class="plugin-anchor" href="#アプリケーションにおけるユースケース"><i class="fa fa-link" aria-hidden="true"></i></a>アプリケーションにおけるユースケース</h2>
 <p>アプリケーション開発におけるユースケースとは<strong>何らかの目的を達成するために行われるユーザとアプリケーションの間の一連のやり取り</strong>を表したもの。
 たとえば、「6章Railsアプリケーション開発」において実装したawesome_eventsであれば、「GitHubアカウントでログインする」「イベントを登録する」などがユースケースにあたります。そして、「GitHubでログインをクリックするとGitHubのアプリケーション認証画面に遷移する」「イベント登録フォームで間違った入力をするとエラーメッセージが表示される」などがユーザとアプリケーションの間のやり取りにあたります。</p>
-<h2 id="ディレクトリ構成で悩む時">ディレクトリ構成で悩む時</h2>
-<h3 id="ミドルウェアとライブラリの違い">ミドルウェアとライブラリの違い</h3>
+<h2 id="ディレクトリ構成で悩む時"><a name="ディレクトリ構成で悩む時" class="plugin-anchor" href="#ディレクトリ構成で悩む時"><i class="fa fa-link" aria-hidden="true"></i></a>ディレクトリ構成で悩む時</h2>
+<h3 id="ミドルウェアとライブラリの違い"><a name="ミドルウェアとライブラリの違い" class="plugin-anchor" href="#ミドルウェアとライブラリの違い"><i class="fa fa-link" aria-hidden="true"></i></a>ミドルウェアとライブラリの違い</h3>
 <p><a href="https://jp.quora.com/%E3%83%9F%E3%83%89%E3%83%AB%E3%82%A6%E3%82%A7%E3%82%A2%E3%81%A8%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E9%81%95%E3%81%84%E3%81%AF%E3%81%AA%E3%82%93%E3%81%A7%E3%81%99%E3%81%8B" target="_blank">参考URL</a>
 ミドルウェアとライブラリの大きな違いは、</p>
 <ul>
@@ -1885,10 +1885,10 @@ URLはページの共有などユーザが意図しないところで漏れる�
 ミドルウェアは主にセキュリティやトランザクション管理やメッセージングや運用管理などの機能を提供し、それらが必要なプログラム・サービスを開発する際に使われます。
 ミドルウェアを使うプログラム・サービスは、ミドルウェアからそれらを呼び出すものと、プログラム・サービスからミドルウェアを呼び出すものとがあります。前者はライブラリ使う場合にはないパターンですね。後者は多くの場合ミドルウェアの提供するクライアントのライブラリを経由して呼び出しますのでライブラリ使うものと区別し辛いですが、処理の大半はプロセス間通信やノード間の通信の先にいるデーモンプロセス内で行われるので、単純なルーチン呼び出しタイプのライブラリとは異なります。</p>
 </blockquote>
-<h2 id="ライブラリ選定">ライブラリ選定</h2>
+<h2 id="ライブラリ選定"><a name="ライブラリ選定" class="plugin-anchor" href="#ライブラリ選定"><i class="fa fa-link" aria-hidden="true"></i></a>ライブラリ選定</h2>
 <p><a href="https://openbase.com/js/logger" target="_blank">これ使える</a>
 <a href="https://qiita.com/uttk/items/794737031b508191e641" target="_blank">Openbase.ioって言うサイトが面白い</a></p>
-<h2 id="セマンティック-バージョニング--semver">セマンティック バージョニング : semver</h2>
+<h2 id="セマンティック-バージョニング--semver"><a name="セマンティック-バージョニング--semver" class="plugin-anchor" href="#セマンティック-バージョニング--semver"><i class="fa fa-link" aria-hidden="true"></i></a>セマンティック バージョニング : semver</h2>
 <p><a href="https://semver.org/lang/ja/" target="_blank">リファレンス</a></p>
 <p>セマンティック・バージョニングとは、ソフトウェアのバージョニング方法のひとつ。</p>
 <p>バージョンナンバーは<code>メジャー.マイナー.パッチ</code>となっている。</p>
@@ -1899,7 +1899,7 @@ URLはページの共有などユーザが意図しないところで漏れる�
 <li>後方互換性を伴うバグ修正をした場合はパッチバージョンを上げる。
 プレリリースやビルドナンバーなどのラベルに関しては<code>メジャー.マイナー.パッチ</code>の形式を拡張する形で利用することが可能。</li>
 </ul>
-<h2 id="クロスサイトプロジェクト">クロスサイトプロジェクト</h2>
+<h2 id="クロスサイトプロジェクト"><a name="クロスサイトプロジェクト" class="plugin-anchor" href="#クロスサイトプロジェクト"><i class="fa fa-link" aria-hidden="true"></i></a>クロスサイトプロジェクト</h2>
 <p><a href="https://medium.com/swlh/how-the-new-chrome-80-cookie-rule-samesite-none-secure-affects-web-development-c06380220ced" target="_blank">参考URL</a></p>
 <p>身近だとAnycolor id</p>
 
@@ -1945,7 +1945,7 @@ URLはページの共有などユーザが意図しないところで漏れる�
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"11. 設計思想","level":"2.13","depth":1,"next":{"title":"11.1 フロントエンド","level":"2.13.1","depth":2,"path":"plan/front/front.md","ref":"plan/front/front.md","articles":[{"title":"SPA","level":"2.13.1.1","depth":3,"path":"plan/spa/ssr.md","ref":"plan/spa/ssr.md","articles":[]},{"title":"SSR","level":"2.13.1.2","depth":3,"path":"plan/ssr/ssr.md","ref":"plan/ssr/ssr.md","articles":[]},{"title":"Flux","level":"2.13.1.3","depth":3,"path":"plan/front/flux/flux.md","ref":"plan/front/flux/flux.md","articles":[]},{"title":"BFF(Backends For Frontends)","level":"2.13.1.4","depth":3,"path":"plan/front/bff/bff.md","ref":"plan/front/bff/bff.md","articles":[]},{"title":"システムがWeb Pageを表示する仕組み","level":"2.13.1.5","depth":3,"path":"plan/front/structure.md","ref":"plan/front/structure.md","articles":[]}]},"previous":{"title":"12. パフォーマンス","level":"2.12","depth":1,"path":"performance/performance.md","ref":"performance/performance.md","articles":[]},"articles":[{"title":"11.1 フロントエンド","level":"2.13.1","depth":2,"path":"plan/front/front.md","ref":"plan/front/front.md","articles":[{"title":"SPA","level":"2.13.1.1","depth":3,"path":"plan/spa/ssr.md","ref":"plan/spa/ssr.md","articles":[]},{"title":"SSR","level":"2.13.1.2","depth":3,"path":"plan/ssr/ssr.md","ref":"plan/ssr/ssr.md","articles":[]},{"title":"Flux","level":"2.13.1.3","depth":3,"path":"plan/front/flux/flux.md","ref":"plan/front/flux/flux.md","articles":[]},{"title":"BFF(Backends For Frontends)","level":"2.13.1.4","depth":3,"path":"plan/front/bff/bff.md","ref":"plan/front/bff/bff.md","articles":[]},{"title":"システムがWeb Pageを表示する仕組み","level":"2.13.1.5","depth":3,"path":"plan/front/structure.md","ref":"plan/front/structure.md","articles":[]}]},{"title":"11.2 Server","level":"2.13.2","depth":2,"path":"plan/server/server.md","ref":"plan/server/server.md","articles":[{"title":"MVC","level":"2.13.2.1","depth":3,"path":"plan/server/mvc/mv*.md","ref":"plan/server/mvc/mv*.md","articles":[]},{"title":"Object指向","level":"2.13.2.2","depth":3,"path":"plan/server/object/object.md","ref":"plan/server/object/object.md","articles":[]},{"title":"DDD(Domain Driven Design)","level":"2.13.2.3","depth":3,"path":"plan/server/ddd/ddd.md","ref":"plan/server/ddd/ddd.md","articles":[]},{"title":"Clean Architecture","level":"2.13.2.4","depth":3,"path":"plan/server/cleanarchitecture/cleanarchitecture.md","ref":"plan/server/cleanarchitecture/cleanarchitecture.md","articles":[]}]},{"title":"11.3 インフラ","level":"2.13.3","depth":2,"path":"plan/infra/infra.md","ref":"plan/infra/infra.md","articles":[{"title":"マイクロサービスアーキテクチャ","level":"2.13.3.1","depth":3,"path":"plan/infra/micro/micro.md","ref":"plan/infra/micro/micro.md","articles":[]}]}],"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"plan/plan.md","mtime":"2023-01-12T00:39:30.222Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T00:39:41.486Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"11. 設計思想","level":"2.13","depth":1,"next":{"title":"11.1 フロントエンド","level":"2.13.1","depth":2,"path":"plan/front/front.md","ref":"plan/front/front.md","articles":[{"title":"SPA","level":"2.13.1.1","depth":3,"path":"plan/spa/ssr.md","ref":"plan/spa/ssr.md","articles":[]},{"title":"SSR","level":"2.13.1.2","depth":3,"path":"plan/ssr/ssr.md","ref":"plan/ssr/ssr.md","articles":[]},{"title":"Flux","level":"2.13.1.3","depth":3,"path":"plan/front/flux/flux.md","ref":"plan/front/flux/flux.md","articles":[]},{"title":"BFF(Backends For Frontends)","level":"2.13.1.4","depth":3,"path":"plan/front/bff/bff.md","ref":"plan/front/bff/bff.md","articles":[]},{"title":"システムがWeb Pageを表示する仕組み","level":"2.13.1.5","depth":3,"path":"plan/front/structure.md","ref":"plan/front/structure.md","articles":[]}]},"previous":{"title":"12. パフォーマンス","level":"2.12","depth":1,"path":"performance/performance.md","ref":"performance/performance.md","articles":[]},"articles":[{"title":"11.1 フロントエンド","level":"2.13.1","depth":2,"path":"plan/front/front.md","ref":"plan/front/front.md","articles":[{"title":"SPA","level":"2.13.1.1","depth":3,"path":"plan/spa/ssr.md","ref":"plan/spa/ssr.md","articles":[]},{"title":"SSR","level":"2.13.1.2","depth":3,"path":"plan/ssr/ssr.md","ref":"plan/ssr/ssr.md","articles":[]},{"title":"Flux","level":"2.13.1.3","depth":3,"path":"plan/front/flux/flux.md","ref":"plan/front/flux/flux.md","articles":[]},{"title":"BFF(Backends For Frontends)","level":"2.13.1.4","depth":3,"path":"plan/front/bff/bff.md","ref":"plan/front/bff/bff.md","articles":[]},{"title":"システムがWeb Pageを表示する仕組み","level":"2.13.1.5","depth":3,"path":"plan/front/structure.md","ref":"plan/front/structure.md","articles":[]}]},{"title":"11.2 Server","level":"2.13.2","depth":2,"path":"plan/server/server.md","ref":"plan/server/server.md","articles":[{"title":"MVC","level":"2.13.2.1","depth":3,"path":"plan/server/mvc/mv*.md","ref":"plan/server/mvc/mv*.md","articles":[]},{"title":"Object指向","level":"2.13.2.2","depth":3,"path":"plan/server/object/object.md","ref":"plan/server/object/object.md","articles":[]},{"title":"DDD(Domain Driven Design)","level":"2.13.2.3","depth":3,"path":"plan/server/ddd/ddd.md","ref":"plan/server/ddd/ddd.md","articles":[]},{"title":"Clean Architecture","level":"2.13.2.4","depth":3,"path":"plan/server/cleanarchitecture/cleanarchitecture.md","ref":"plan/server/cleanarchitecture/cleanarchitecture.md","articles":[]}]},{"title":"11.3 インフラ","level":"2.13.3","depth":2,"path":"plan/infra/infra.md","ref":"plan/infra/infra.md","articles":[{"title":"マイクロサービスアーキテクチャ","level":"2.13.3.1","depth":3,"path":"plan/infra/micro/micro.md","ref":"plan/infra/micro/micro.md","articles":[]}]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"plan/plan.md","mtime":"2023-01-12T09:05:53.794Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T09:06:04.627Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1997,6 +1997,30 @@ URLはページの共有などユーザが意図しないところで漏れる�
     </script>
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

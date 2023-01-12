@@ -1,19 +1,31 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="ja" >
     <head>
         <meta charset="UTF-8">
-        <title>10. セキュリティ · HonKit</title>
+        <title>10. セキュリティ · naopedia</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.4">
-        
+        <meta name="author" content="naohito-T">
         
         
     
     <link rel="stylesheet" href="../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
@@ -31,18 +43,6 @@
 
     
 
-    
-        
-        <link rel="stylesheet" href="../styles/website.css">
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
         
     
@@ -72,7 +72,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="検索ワードを入力" />
 </div>
 
             
@@ -1631,7 +1631,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            HonKitで公開 
         </a>
     </li>
 </ul>
@@ -1669,18 +1669,18 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="security">security</h1>
-<h2 id="wafweb-application-firewall">WAF(Web Application Firewall)</h2>
+                                <h1 id="security"><a name="security" class="plugin-anchor" href="#security"><i class="fa fa-link" aria-hidden="true"></i></a>security</h1>
+<h2 id="wafweb-application-firewall"><a name="wafweb-application-firewall" class="plugin-anchor" href="#wafweb-application-firewall"><i class="fa fa-link" aria-hidden="true"></i></a>WAF(Web Application Firewall)</h2>
 <p><a href="https://www.infraexpert.com/study/security17.html" target="_blank">参考URL</a>
 <a href="https://dev.classmethod.jp/articles/fully-understood-aws-waf-v2/" target="_blank">参考URL</a></p>
 <p>従来の<strong>ファイアウォールやIDS/IPSでは防ぐことができない不正な攻撃からWebアプリケーションを防御するファイアウォール</strong>のこと。
 Webアプリケーションという観点から一般的にはWAFといえばWebサーバが利用するポート80番・443番のトラフィックを双方向で監視して悪意あるユーザからWebアプリケーションとその背後にあるデータを守る製品のこと。</p>
 <p>※一般的なWebアプリケーションに対する攻撃手段としてSQLインジェクションやXSS（クロスサイトスクリプティング）などの脅威から保護する。</p>
 <p><img src="images/waf.png" alt="WAF"></p>
-<h2 id="redos">ReDoS</h2>
+<h2 id="redos"><a name="redos" class="plugin-anchor" href="#redos"><i class="fa fa-link" aria-hidden="true"></i></a>ReDoS</h2>
 <p><a href="https://yamory.io/blog/about-redos-attack/" target="_blank">ReDos</a></p>
 <hr>
-<h2 id="corscross-origin-resource-sharing--クロスオリジンソースシェアリング">CORS(Cross-Origin Resource Sharing) : クロスオリジンソースシェアリング</h2>
+<h2 id="corscross-origin-resource-sharing--クロスオリジンソースシェアリング"><a name="corscross-origin-resource-sharing--クロスオリジンソースシェアリング" class="plugin-anchor" href="#corscross-origin-resource-sharing--クロスオリジンソースシェアリング"><i class="fa fa-link" aria-hidden="true"></i></a>CORS(Cross-Origin Resource Sharing) : クロスオリジンソースシェアリング</h2>
 <p><a href="https://develwoper.mozilla.org/ja/docs/Glossary/CORS" target="_blank">リファレンス</a>
 <a href="https://qiita.com/ryosuketter/items/a60a2bc0220a5cbff17e" target="_blank">参考URL</a>
 <a href="https://www.twilio.com/blog/add-cors-support-express-typescript-api-jp" target="_blank">仕組みが書いてある</a></p>
@@ -1698,24 +1698,24 @@ http://localhost:5000
   ^       ^       ^
   |       |       |
 scheme hostname  port
-</code></pre><h2 id="preflight-request-プリフライトリクエスト">Preflight request (プリフライトリクエスト)</h2>
+</code></pre><h2 id="preflight-request-プリフライトリクエスト"><a name="preflight-request-プリフライトリクエスト" class="plugin-anchor" href="#preflight-request-プリフライトリクエスト"><i class="fa fa-link" aria-hidden="true"></i></a>Preflight request (プリフライトリクエスト)</h2>
 <p><a href="https://developer.mozilla.org/ja/docs/Glossary/Preflight_request#:~:text=CORS%20%E3%81%AE%E3%83%97%E3%83%AA%E3%83%95%E3%83%A9%E3%82%A4%E3%83%88%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88,%E3%81%97%E3%81%A6%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%81%97%E3%81%BE%E3%81%99%E3%80%82" target="_blank">リファレンス</a></p>
-<h2 id="ブラウザの仕組み">ブラウザの仕組み</h2>
+<h2 id="ブラウザの仕組み"><a name="ブラウザの仕組み" class="plugin-anchor" href="#ブラウザの仕組み"><i class="fa fa-link" aria-hidden="true"></i></a>ブラウザの仕組み</h2>
 <p>ブラウザは<strong>すべてのリクエストにOriginヘッダーを追加する。</strong>
 リクエストがサーバーに届くと、リクエストのオリジンがリソース取得許可リストに含まれている場合に、サーバーがAccess-Control-Allow-Originヘッダーをレスポンスに追加する。
 この情報からブラウザはコンテンツがこのオリジンにアクセスできると判断します。</p>
 <p>下の例では、すべてのオリジンからのリソースリクエストを許可しています。</p>
-<h3 id="同一オリジンポリシー">同一オリジンポリシー</h3>
+<h3 id="同一オリジンポリシー"><a name="同一オリジンポリシー" class="plugin-anchor" href="#同一オリジンポリシー"><i class="fa fa-link" aria-hidden="true"></i></a>同一オリジンポリシー</h3>
 <p><a href="https://developer.mozilla.org/ja/docs/Web/Security/Same-origin_policy" target="_blank">リファレンス</a></p>
 <p>同一オリジンポリシーは重要なセキュリティの仕組みであり、あるオリジンによって読み込まれた文書やスクリプトが、他のオリジンにあるリソースにアクセスできる方法を制限するもの。</p>
-<h3 id="オリジンの定義">オリジンの定義</h3>
+<h3 id="オリジンの定義"><a name="オリジンの定義" class="plugin-anchor" href="#オリジンの定義"><i class="fa fa-link" aria-hidden="true"></i></a>オリジンの定義</h3>
 <p>2つのページのプロトコル、ポート番号（もしあれば）ホストが等しい場合、両者のページは同じオリジンとみなす。</p>
 <hr>
-<h2 id="符号・暗号化・ハッシュの違い">符号・暗号化・ハッシュの違い</h2>
+<h2 id="符号・暗号化・ハッシュの違い"><a name="符号・暗号化・ハッシュの違い" class="plugin-anchor" href="#符号・暗号化・ハッシュの違い"><i class="fa fa-link" aria-hidden="true"></i></a>符号・暗号化・ハッシュの違い</h2>
 <p><a href="https://ja.spot-the-difference.info/difference-between-encryption" target="_blank">参考URL</a></p>
 <p><strong>暗号化、エンコード、およびハッシュは、データのフォーマットを変換するために使用される技法</strong></p>
 <hr>
-<h2 id="ハッシュ">ハッシュ</h2>
+<h2 id="ハッシュ"><a name="ハッシュ" class="plugin-anchor" href="#ハッシュ"><i class="fa fa-link" aria-hidden="true"></i></a>ハッシュ</h2>
 <p><a href="https://medium-company.com/bcrypt/" target="_blank">参考URL</a></p>
 <p>データを加工する技術のひとつ
 <strong>ハッシュ値とは、あるデータを暗号学的ハッシュ関数と呼ばれる方式で変換したもの。</strong></p>
@@ -1726,16 +1726,16 @@ scheme hostname  port
 </ul>
 <p>dbにパスワードが保存される時によく使われる（平文で保存はだめ）
 <a href="https://medium-company.com/bcrypt/" target="_blank">dbに平文を保存してはいけない理由</a></p>
-<h3 id="ソルト">ソルト</h3>
+<h3 id="ソルト"><a name="ソルト" class="plugin-anchor" href="#ソルト"><i class="fa fa-link" aria-hidden="true"></i></a>ソルト</h3>
 <p>ソルトとは、パスワードをハッシュ値へと変更する際にパスワードへ付与するランダムな文字列のこと。</p>
-<h3 id="ストレッチング">ストレッチング</h3>
+<h3 id="ストレッチング"><a name="ストレッチング" class="plugin-anchor" href="#ストレッチング"><i class="fa fa-link" aria-hidden="true"></i></a>ストレッチング</h3>
 <p>ストレッチングとは、ハッシュ関数を用いてハッシュ値への計算を数千回～数万回繰り返し行うことです。</p>
 <hr>
-<h2 id="ipa">IPA</h2>
+<h2 id="ipa"><a name="ipa" class="plugin-anchor" href="#ipa"><i class="fa fa-link" aria-hidden="true"></i></a>IPA</h2>
 <p><a href="https://www.ipa.go.jp/security/awareness/vendor/programmingv1/a01_04.html" target="_blank">旧版</a>
 <a href>新版</a></p>
 <hr>
-<h2 id="プログラマの暗号化入門">プログラマの暗号化入門</h2>
+<h2 id="プログラマの暗号化入門"><a name="プログラマの暗号化入門" class="plugin-anchor" href="#プログラマの暗号化入門"><i class="fa fa-link" aria-hidden="true"></i></a>プログラマの暗号化入門</h2>
 <p><a href="https://qiita.com/asksaito/items/1793b8d8b3069b0b8d68" target="_blank">参考URL</a></p>
 <p>暗号化の対語は復号</p>
 <p>登場人物を理解することが大切。</p>
@@ -1745,7 +1745,7 @@ scheme hostname  port
 <p><strong>復号化の登場人物</strong>
 入力として、暗号文、鍵、初期ベクトル、暗号モードを渡すと、
 出力として、平文ができあがる。</p>
-<h2 id="用語">用語</h2>
+<h2 id="用語"><a name="用語" class="plugin-anchor" href="#用語"><i class="fa fa-link" aria-hidden="true"></i></a>用語</h2>
 <p>平文（ひらぶん）
 暗号化されていない元のデータのこと（英語ではplain text）</p>
 <p>暗号文
@@ -1764,7 +1764,7 @@ scheme hostname  port
 暗号アルゴリズムにもよりますが、暗号化をするにあたって、平文のデータ長は何らかの倍数長でなければなりません。（たとえば16byteの倍数長）
 平文が倍数長になっていない場合に、平文にムダなデータ（詰め物）を付加することをパディングすると言います。
 パディングデータは復号時には除去されます。</p>
-<h2 id="暗号化は2種類ある">暗号化は2種類ある</h2>
+<h2 id="暗号化は2種類ある"><a name="暗号化は2種類ある" class="plugin-anchor" href="#暗号化は2種類ある"><i class="fa fa-link" aria-hidden="true"></i></a>暗号化は2種類ある</h2>
 <p><strong>逆にいうと2つしかない。</strong></p>
 <ol>
 <li>共通鍵暗号
@@ -1775,43 +1775,43 @@ scheme hostname  port
 <ol>
 <li>公開鍵暗号</li>
 </ol>
-<h2 id="digest認証ダイジェスト認証">Digest認証(ダイジェスト認証)</h2>
+<h2 id="digest認証ダイジェスト認証"><a name="digest認証ダイジェスト認証" class="plugin-anchor" href="#digest認証ダイジェスト認証"><i class="fa fa-link" aria-hidden="true"></i></a>Digest認証(ダイジェスト認証)</h2>
 <p>HTTPの認証方法のひとつ。
 ユーザ名とパスワードを暗号学的ハッシュ関数でハッシュ化して送る。
 <strong>Basic認証では防げなかった盗聴や改ざんを防ぐために考案された</strong>
 使用する暗号学的ハッシュ関数としては、当初MD5が規定され、後にRFC7616でSHA-2が加わっている。</p>
-<h2 id="uuid-ulid">UUID ULID</h2>
+<h2 id="uuid-ulid"><a name="uuid-ulid" class="plugin-anchor" href="#uuid-ulid"><i class="fa fa-link" aria-hidden="true"></i></a>UUID ULID</h2>
 <p><a href>違いの参考URL</a></p>
 <p>Tips
 <a href="https://qiita.com/daisy1754/items/98a6e6b17d8161eab081" target="_blank">Facebook, Twitter, Instagramなどがどうやって生成しているか</a></p>
 <p>ULID（Universally Unique Lexicographically Sortable Identifier）はUUIDを改良したもので、UUIDと同じ128ビットでありながら、UUIDは<strong>36文字</strong>ですが、ULIDは<strong>26文字</strong>で表される。
 <a href="https://ulidgenerator.com/" target="_blank">ULIDジェネレーター</a></p>
-<h2 id="チェックサムchecksum">チェックサム(checksum)</h2>
+<h2 id="チェックサムchecksum"><a name="チェックサムchecksum" class="plugin-anchor" href="#チェックサムchecksum"><i class="fa fa-link" aria-hidden="true"></i></a>チェックサム(checksum)</h2>
 <p><a href="https://wa3.i-3-i.info/word1240.html" target="_blank">参考URL</a></p>
 <p>その<strong>送られてきたデータは途中でおかしくなっていないか</strong>をチェックする方法のひとつ。
 ruby gemsとかはチェックサムが表記されているためダウンロードした際に、データがおかしくないか確認できる。</p>
-<h2 id="サニタイズsanitize--サニタイジングsanitizing">サニタイズ(sanitize) / サニタイジング(sanitizing)</h2>
+<h2 id="サニタイズsanitize--サニタイジングsanitizing"><a name="サニタイズsanitize--サニタイジングsanitizing" class="plugin-anchor" href="#サニタイズsanitize--サニタイジングsanitizing"><i class="fa fa-link" aria-hidden="true"></i></a>サニタイズ(sanitize) / サニタイジング(sanitizing)</h2>
 <p><a href="https://ssaits.jp/promapedia/technology/sanitize.htmlc" target="_blank">参考URL</a>
 <a href="https://qiita.com/tnemotox/items/b4b8f0f627e23dd62447" target="_blank">処理参考</a>
 サニタイジングとは<strong>利用者が入力した文字データを受け取る際</strong>に、プログラムにとって特別な意味を持つ可能性のある文字や文字列を検知して、一定の規則にしたがって別の表記に置き換えること。
 これはクロスサイトスクリプティングを防ぐことになる。</p>
 <hr>
-<h2 id="csrfクロスサイトリクエストフォージェリ">CSRF(クロスサイトリクエストフォージェリ)</h2>
+<h2 id="csrfクロスサイトリクエストフォージェリ"><a name="csrfクロスサイトリクエストフォージェリ" class="plugin-anchor" href="#csrfクロスサイトリクエストフォージェリ"><i class="fa fa-link" aria-hidden="true"></i></a>CSRF(クロスサイトリクエストフォージェリ)</h2>
 <p><a href="https://www.trendmicro.com/ja_jp/security-intelligence/research-reports/threat-solution/csrf.html" target="_blank">参考URL</a></p>
 <p>Cookieを悪用したセキュリティ攻撃のひとつ
 この攻撃では、ドメインが異なるサイト間でCookieを悪用して本来意図しないサイトに対して書き込みをしてしまったり、意図せず退会処理をしてしまったりします。
 今までは各サイト側でCSRFに対しての対策を各自が施す形でしたが、これをブラウザレベルでしっかりと防御しようという意図があるのが今回のSameSiteの仕様変更となります。</p>
-<h3 id="対策">対策</h3>
+<h3 id="対策"><a name="対策" class="plugin-anchor" href="#対策"><i class="fa fa-link" aria-hidden="true"></i></a>対策</h3>
 <p>ALBでは
 リクエストする際にランダムな数字をURLに付与する。
 サーバからのレスポンスでsession storageに保存したランダムな数字で検証する。
 →ネットワーク越しに改ざんなどされていないことを確認する。</p>
 <hr>
-<h2 id="セッションハイジャック">セッションハイジャック</h2>
-<h2 id="sql-インジェクション">SQL インジェクション</h2>
-<h2 id="xss">XSS</h2>
-<h2 id="クリックジャッキング">クリックジャッキング</h2>
-<h2 id="webhookとセキュリティー">Webhookとセキュリティー</h2>
+<h2 id="セッションハイジャック"><a name="セッションハイジャック" class="plugin-anchor" href="#セッションハイジャック"><i class="fa fa-link" aria-hidden="true"></i></a>セッションハイジャック</h2>
+<h2 id="sql-インジェクション"><a name="sql-インジェクション" class="plugin-anchor" href="#sql-インジェクション"><i class="fa fa-link" aria-hidden="true"></i></a>SQL インジェクション</h2>
+<h2 id="xss"><a name="xss" class="plugin-anchor" href="#xss"><i class="fa fa-link" aria-hidden="true"></i></a>XSS</h2>
+<h2 id="クリックジャッキング"><a name="クリックジャッキング" class="plugin-anchor" href="#クリックジャッキング"><i class="fa fa-link" aria-hidden="true"></i></a>クリックジャッキング</h2>
+<h2 id="webhookとセキュリティー"><a name="webhookとセキュリティー" class="plugin-anchor" href="#webhookとセキュリティー"><i class="fa fa-link" aria-hidden="true"></i></a>Webhookとセキュリティー</h2>
 <p><a href="https://qiita.com/en30/items/6a5dfae217c1f9ebc2dd" target="_blank">参考URL</a></p>
 
                                 
@@ -1856,7 +1856,7 @@ ruby gemsとかはチェックサムが表記されているためダウンロ�
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"10. セキュリティ","level":"2.10","depth":1,"next":{"title":"11. テスト","level":"2.11","depth":1,"path":"test/test.md","ref":"test/test.md","articles":[{"title":"11.1 WebUI テスト","level":"2.11.1","depth":2,"path":"test/webUI/Cypress.md","ref":"test/webUI/Cypress.md","articles":[]}]},"previous":{"title":"9.2 OS","level":"2.9.2","depth":2,"path":"hardware/os/os.md","ref":"hardware/os/os.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"security/security.md","mtime":"2023-01-12T00:39:30.230Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T00:39:41.486Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"10. セキュリティ","level":"2.10","depth":1,"next":{"title":"11. テスト","level":"2.11","depth":1,"path":"test/test.md","ref":"test/test.md","articles":[{"title":"11.1 WebUI テスト","level":"2.11.1","depth":2,"path":"test/webUI/Cypress.md","ref":"test/webUI/Cypress.md","articles":[]}]},"previous":{"title":"9.2 OS","level":"2.9.2","depth":2,"path":"hardware/os/os.md","ref":"hardware/os/os.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"security/security.md","mtime":"2023-01-12T09:05:53.798Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T09:06:04.627Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1908,6 +1908,30 @@ ruby gemsとかはチェックサムが表記されているためダウンロ�
     </script>
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

@@ -1,19 +1,31 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="ja" >
     <head>
         <meta charset="UTF-8">
-        <title>8. infrastructure · HonKit</title>
+        <title>8. infrastructure · naopedia</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.4">
-        
+        <meta name="author" content="naohito-T">
         
         
     
     <link rel="stylesheet" href="../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
@@ -31,18 +43,6 @@
 
     
 
-    
-        
-        <link rel="stylesheet" href="../styles/website.css">
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
         
     
@@ -72,7 +72,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="検索ワードを入力" />
 </div>
 
             
@@ -1631,7 +1631,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            HonKitで公開 
         </a>
     </li>
 </ul>
@@ -1669,42 +1669,42 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="infrastructure">infrastructure</h1>
+                                <h1 id="infrastructure"><a name="infrastructure" class="plugin-anchor" href="#infrastructure"><i class="fa fa-link" aria-hidden="true"></i></a>infrastructure</h1>
 <p>インフラ関連のためのディレクトリ</p>
 <hr>
 <p>仮想化とコンテナーーーの違い</p>
 <p>大前提
 <strong>ipアドレス127.0.0.1(localhost)はは仮想環境外部からはアクセスできない。</strong></p>
-<h2 id="仮想化">仮想化</h2>
+<h2 id="仮想化"><a name="仮想化" class="plugin-anchor" href="#仮想化"><i class="fa fa-link" aria-hidden="true"></i></a>仮想化</h2>
 <p><img src="image/仮想化.png" alt="仮想化"></p>
-<h2 id="コンテナーーー">コンテナーーー</h2>
+<h2 id="コンテナーーー"><a name="コンテナーーー" class="plugin-anchor" href="#コンテナーーー"><i class="fa fa-link" aria-hidden="true"></i></a>コンテナーーー</h2>
 <p>ホストOS →（コンテナーーで区切られた）プロセス</p>
 <p><img src="image/コンテナーーと仮想化の違い.png" alt="コンテナーーと仮想化の違い"></p>
 <p>コンテナーーはコンテナーー内のプロセスやライブラリを通してホストのOSのカーネルを使っている</p>
-<h2 id="エンタープライズアプリ">エンタープライズアプリ</h2>
+<h2 id="エンタープライズアプリ"><a name="エンタープライズアプリ" class="plugin-anchor" href="#エンタープライズアプリ"><i class="fa fa-link" aria-hidden="true"></i></a>エンタープライズアプリ</h2>
 <p>エンタープライズアプリとは、サーバ・DB・ネットワーク機器などを組み合わせて作られた、1つの大きなシステム
 <strong>会社内で使われる業務システムや、LAMP(Linux/Apache/MySQL/PHP)などの比較的古い技術で作られたwebアプリなどが当てはまる</strong>
 <img src="image/エンタープライズ.png" alt="エンタープライズ"></p>
-<h2 id="サーバーレスアプリ">サーバーレスアプリ</h2>
+<h2 id="サーバーレスアプリ"><a name="サーバーレスアプリ" class="plugin-anchor" href="#サーバーレスアプリ"><i class="fa fa-link" aria-hidden="true"></i></a>サーバーレスアプリ</h2>
 <p><img src="image/サーバーレス.png" alt="サーバーレス">
 <strong>アプリを動作させるインフラをAWSの機能ですべて管理する仕組みのこと。</strong>
 サーバを安定させて稼働させたり、急な負荷に対する性能を向上させたりすることが自動で行われる。
 <strong>このようなシステムは、大人気アーティストのライブチケット販売や、選挙期間中の期間限定サイトなど、短期間で大量のユーザに利用してもらうようなサービスを構築するときに使われる。</strong></p>
-<h2 id="アプリケーションサーバーの前にwebサーバapache-or-nginxを置く理由">アプリケーションサーバーの前にWebサーバ(Apache or Nginx)を置く理由</h2>
+<h2 id="アプリケーションサーバーの前にwebサーバapache-or-nginxを置く理由"><a name="アプリケーションサーバーの前にwebサーバapache-or-nginxを置く理由" class="plugin-anchor" href="#アプリケーションサーバーの前にwebサーバapache-or-nginxを置く理由"><i class="fa fa-link" aria-hidden="true"></i></a>アプリケーションサーバーの前にWebサーバ(Apache or Nginx)を置く理由</h2>
 <p><a href="https://ja.stackoverflow.com/questions/19405/django-%E3%81%AE%E4%B8%8B%E3%81%AB-apache-%E3%82%84-nginx-%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%AA%E3%81%AE%E3%81%AF%E3%81%AA%E3%81%9C%E3%81%A7%E3%81%99%E3%81%8B" target="_blank">stack overflow</a></p>
 <p>Djangoなどのフレームワークなどはhttps接続が可能だが、一般的にはアプリケーションサーバを直接公開せずApacheやnginxなどのWebサーバを介して公開する。
 これは<strong>アプリケーションサーバではCPU・メモリ効率が悪い</strong>ため、画像・スタイルシート・スクリプトファイルなどの静的なファイル高速はWebサーバ（nginx or Apache）に任せるため、というのが大きな理由。
 その他、アクセス制御などのインフラ周りの処理はアプリケーション側ではなくWebサーバに持たせたい、複数のアプリケーションサーバを利用する場合にも柔軟に対応できる、Webサーバが持つ高機能な仕組みを利用したい（アプリケーションサーバはWebサーバとして低機能なことが多い）などの理由もある。</p>
-<h2 id="webサーバとアプリケーションサーバ">Webサーバとアプリケーションサーバ</h2>
+<h2 id="webサーバとアプリケーションサーバ"><a name="webサーバとアプリケーションサーバ" class="plugin-anchor" href="#webサーバとアプリケーションサーバ"><i class="fa fa-link" aria-hidden="true"></i></a>Webサーバとアプリケーションサーバ</h2>
 <p><a href="https://qiita.com/takahiro1127/items/fcb81753eaf381b4b33c" target="_blank">参考URL</a></p>
-<h3 id="webサーバーとは">webサーバーとは</h3>
+<h3 id="webサーバーとは"><a name="webサーバーとは" class="plugin-anchor" href="#webサーバーとは"><i class="fa fa-link" aria-hidden="true"></i></a>webサーバーとは</h3>
 <p>HTTPに則り、HTMLや画像の情報を返してくれるもの、イメージ的には静的なwebサイトで提供されるもの（HTML,CSS,JavaScriptなど）が、このwebサーバーで返されるイメージ。</p>
-<h3 id="アプリケーションサーバーとは">アプリケーションサーバーとは</h3>
+<h3 id="アプリケーションサーバーとは"><a name="アプリケーションサーバーとは" class="plugin-anchor" href="#アプリケーションサーバーとは"><i class="fa fa-link" aria-hidden="true"></i></a>アプリケーションサーバーとは</h3>
 <p>アプリケーションサーバーは送られてきたリクエストに対して、rubyやphpなどを実行して、動的な処理をした結果を静的な要素に変換してwebサーバーに返すためのもの。つまり、動的なサイトを動かす上で必要なもののうち、静的ではない部分を作ってくれるもののイメージ。</p>
 <p>よって、静的な要素のみで作っているサイトだったら、内部的にdbをいじったりそれに合わせた処理をしてhtmlを作ったりする必要がないので、webサーバーのみで大丈夫。</p>
-<h2 id="localhostを公開するngrok">localhostを公開する(ngrok)</h2>
+<h2 id="localhostを公開するngrok"><a name="localhostを公開するngrok" class="plugin-anchor" href="#localhostを公開するngrok"><i class="fa fa-link" aria-hidden="true"></i></a>localhostを公開する(ngrok)</h2>
 <p><a href="https://hirooooo-lab.com/development/https-for-localhost/" target="_blank">ngrok</a></p>
-<h2 id="ドメイン切り替え手順">ドメイン切り替え手順</h2>
+<h2 id="ドメイン切り替え手順"><a name="ドメイン切り替え手順" class="plugin-anchor" href="#ドメイン切り替え手順"><i class="fa fa-link" aria-hidden="true"></i></a>ドメイン切り替え手順</h2>
 <p>1    Parrot本番用アカウントにホストゾーン（www.nijisanji.jp）を作成する。        済
 2    &quot;Peacock用アカウントのホストゾーン（www.nijisanji.jp）から、Parrot本番用アカウントに作成したホストゾーンに、
 NSレコードとSOAレコード以外のレコードをコピーする。&quot;        済
@@ -1763,7 +1763,7 @@ ns-188.awsdns-23.com.&quot;    済
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"8. infrastructure","level":"2.8","depth":1,"next":{"title":"8.1 docker","level":"2.8.1","depth":2,"path":"infrastructure/docker/docker.md","ref":"infrastructure/docker/docker.md","articles":[{"title":"docker compose","level":"2.8.1.1","depth":3,"path":"infrastructure/docker/docker-compose.md","ref":"infrastructure/docker/docker-compose.md","articles":[]}]},"previous":{"title":"7. middleware","level":"2.7","depth":1,"path":"middleware/README.md","ref":"middleware/README.md","articles":[]},"articles":[{"title":"8.1 docker","level":"2.8.1","depth":2,"path":"infrastructure/docker/docker.md","ref":"infrastructure/docker/docker.md","articles":[{"title":"docker compose","level":"2.8.1.1","depth":3,"path":"infrastructure/docker/docker-compose.md","ref":"infrastructure/docker/docker-compose.md","articles":[]}]}],"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"infrastructure/infrastructure.md","mtime":"2023-01-12T00:39:30.214Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T00:39:41.486Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"8. infrastructure","level":"2.8","depth":1,"next":{"title":"8.1 docker","level":"2.8.1","depth":2,"path":"infrastructure/docker/docker.md","ref":"infrastructure/docker/docker.md","articles":[{"title":"docker compose","level":"2.8.1.1","depth":3,"path":"infrastructure/docker/docker-compose.md","ref":"infrastructure/docker/docker-compose.md","articles":[]}]},"previous":{"title":"7. middleware","level":"2.7","depth":1,"path":"middleware/README.md","ref":"middleware/README.md","articles":[]},"articles":[{"title":"8.1 docker","level":"2.8.1","depth":2,"path":"infrastructure/docker/docker.md","ref":"infrastructure/docker/docker.md","articles":[{"title":"docker compose","level":"2.8.1.1","depth":3,"path":"infrastructure/docker/docker-compose.md","ref":"infrastructure/docker/docker-compose.md","articles":[]}]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"infrastructure/infrastructure.md","mtime":"2023-01-12T09:05:53.790Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T09:06:04.627Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1815,6 +1815,30 @@ ns-188.awsdns-23.com.&quot;    済
     </script>
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

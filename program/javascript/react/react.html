@@ -1,19 +1,31 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="ja" >
     <head>
         <meta charset="UTF-8">
-        <title>React · HonKit</title>
+        <title>React · naopedia</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.4">
-        
+        <meta name="author" content="naohito-T">
         
         
     
     <link rel="stylesheet" href="../../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../../../gitbook/@honkit/honkit-plugin-highlight/website.css">
@@ -31,18 +43,6 @@
 
     
 
-    
-        
-        <link rel="stylesheet" href="../../../styles/website.css">
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
         
     
@@ -72,7 +72,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="検索ワードを入力" />
 </div>
 
             
@@ -1631,7 +1631,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            HonKitで公開 
         </a>
     </li>
 </ul>
@@ -1669,10 +1669,10 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="react">React</h1>
+                                <h1 id="react"><a name="react" class="plugin-anchor" href="#react"><i class="fa fa-link" aria-hidden="true"></i></a>React</h1>
 <hr>
 <p><a href="https://numb86-tech.hatenablog.com/entry/2019/10/19/175907" target="_blank">onClickが2度呼ばれる</a></p>
-<h2 id="react再レンダリング">React再レンダリング</h2>
+<h2 id="react再レンダリング"><a name="react再レンダリング" class="plugin-anchor" href="#react再レンダリング"><i class="fa fa-link" aria-hidden="true"></i></a>React再レンダリング</h2>
 <p><a href="https://zenn.dev/azukiazusa/articles/react-rerender-patterns" target="_blank">React の再レンダリングを防ぐ3つのパターン</a></p>
 <p>基本中の基本
 Reactは以下条件の時再レンダリングされる。</p>
@@ -1681,20 +1681,20 @@ Reactは以下条件の時再レンダリングされる。</p>
 <li>親のコンポーネントが再レンダリングされた
 パフォーマンス上で問題になるのは不必要な再レンダリングが実行されている場合。</li>
 </ul>
-<h3 id="reactの基本中の基本再レンダリングテクニック">Reactの基本中の基本再レンダリングテクニック</h3>
-<h2 id="関数コンポーネントのレンダリング">関数コンポーネントのレンダリング</h2>
+<h3 id="reactの基本中の基本再レンダリングテクニック"><a name="reactの基本中の基本再レンダリングテクニック" class="plugin-anchor" href="#reactの基本中の基本再レンダリングテクニック"><i class="fa fa-link" aria-hidden="true"></i></a>Reactの基本中の基本再レンダリングテクニック</h3>
+<h2 id="関数コンポーネントのレンダリング"><a name="関数コンポーネントのレンダリング" class="plugin-anchor" href="#関数コンポーネントのレンダリング"><i class="fa fa-link" aria-hidden="true"></i></a>関数コンポーネントのレンダリング</h2>
 <p><a href="https://www.hypertextcandy.com/when-hook-is-called" target="_blank">参考URL</a></p>
 <ul>
 <li>内部状態またはプロパティが変更されると、コンポーネントの関数が再実行される。</li>
 <li>関数の結果が前回の呼び出し時と同じであれば、レンダリングは発生しない。</li>
 <li>レンダリングが完了すると、useEffectが実行される。</li>
 </ul>
-<h2 id="react-hooks">React hooks</h2>
+<h2 id="react-hooks"><a name="react-hooks" class="plugin-anchor" href="#react-hooks"><i class="fa fa-link" aria-hidden="true"></i></a>React hooks</h2>
 <p><a href="https://yutaro-blog.net/2021/09/15/react-hooks/" target="_blank">基本的なReact Hooksについてまとめた</a></p>
 <blockquote>
 <p>フック (hook) は React 16.8 で追加された新機能です。state などの React の機能を、クラスを書かずに使えるようになります。</p>
 </blockquote>
-<h3 id="usestate">useState</h3>
+<h3 id="usestate"><a name="usestate" class="plugin-anchor" href="#usestate"><i class="fa fa-link" aria-hidden="true"></i></a>useState</h3>
 <p><a href="https://zenn.dev/syu/articles/3c4aa813b57b8c" target="_blank">「useStateの値を更新しても反映されない！」の解決方法</a></p>
 <p>setStateで値が更新されるのは関数が呼び出された後。つまり関数内では新規の値にアクセスができず、再レンダリングの際に確認ができる。</p>
 <p>useStateは状態と状態を更新する関数を返す
@@ -1707,21 +1707,21 @@ setterに関数を渡すと引数に最新の値が取得できる。</p>
 <li>stateが更新されるとコンポーネントは再レンダリングされる</li>
 <li>再レンダリング後もstateの値は保持され、最新のstateの値を関数に渡す</li>
 </ul>
-<h3 id="tips">tips</h3>
+<h3 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>tips</h3>
 <p><a href="https://qiita.com/itachi/items/4184b2afc35b55b45568" target="_blank">useStateで配列要素を追加・削除・変更する方法</a></p>
-<h3 id="userouter-nextjsのみ">useRouter (Next.jsのみ)</h3>
+<h3 id="userouter-nextjsのみ"><a name="userouter-nextjsのみ" class="plugin-anchor" href="#userouter-nextjsのみ"><i class="fa fa-link" aria-hidden="true"></i></a>useRouter (Next.jsのみ)</h3>
 <p>以下をひとつにまとめたもの
 useParams
 useLocation
 useHistory
 useRouteMatch</p>
-<h2 id="usecallback">useCallback</h2>
+<h2 id="usecallback"><a name="usecallback" class="plugin-anchor" href="#usecallback"><i class="fa fa-link" aria-hidden="true"></i></a>useCallback</h2>
 <p>useCallbackは<strong>メモ化されたコールバック関数を返す</strong>フックです。
 使用用途はコンポーネントのレンダリング最適化によるパフォーマンス向上。</p>
-<h2 id="usecallback-と-usememoのパフォーマンス以外のメリット">useCallback と useMemoのパフォーマンス以外のメリット</h2>
+<h2 id="usecallback-と-usememoのパフォーマンス以外のメリット"><a name="usecallback-と-usememoのパフォーマンス以外のメリット" class="plugin-anchor" href="#usecallback-と-usememoのパフォーマンス以外のメリット"><i class="fa fa-link" aria-hidden="true"></i></a>useCallback と useMemoのパフォーマンス以外のメリット</h2>
 <p><a href="https://zukucode.com/2021/06/react-useeffect-loop.html" target="_blank">参考URL</a></p>
 <p>useMemoやuseCallbackはパフォーマンス対策として使用する記事が多いですが、useMemoやuseCallbackを使用することにより、依存関係をはっきりさせて、useEffectの予期せぬ処理を防ぐことができます。</p>
-<h2 id="useeffect">useEffect</h2>
+<h2 id="useeffect"><a name="useeffect" class="plugin-anchor" href="#useeffect"><i class="fa fa-link" aria-hidden="true"></i></a>useEffect</h2>
 <p>useEffectは関数の実行タイミングを<strong>コンポーネントのレンダリング後</strong>に遅らせることができるフック（CSR動作、nuxtでのmountに近い）</p>
 <pre><code class="lang-ts">useEffect(
   <span class="hljs-comment">// 初回レンダリング後、再レンダリング後の処理</span>
@@ -1739,7 +1739,7 @@ useEffect(
     [],
   )
 </code></pre>
-<h2 id="usecontext">useContext</h2>
+<h2 id="usecontext"><a name="usecontext" class="plugin-anchor" href="#usecontext"><i class="fa fa-link" aria-hidden="true"></i></a>useContext</h2>
 <p>Contextの機能を簡単に使えるようにしたフック</p>
 <p>Contextとは</p>
 <ul>
@@ -1749,7 +1749,7 @@ useEffect(
 <li>コンポーネントの再利用を難しくするため、慎重に使う必要がある</li>
 </ul>
 <p><a href="https://github.com/rpearce/react-medium-image-zoom/issues" target="_blank">https://github.com/rpearce/react-medium-image-zoom/issues</a></p>
-<h2 id="useref">useRef</h2>
+<h2 id="useref"><a name="useref" class="plugin-anchor" href="#useref"><i class="fa fa-link" aria-hidden="true"></i></a>useRef</h2>
 <p><a href="https://qiita.com/cheez921/items/9a5659f4b94662b4fd1e" target="_blank">useRefの基本的な使い方・活用術・注意点</a></p>
 <p>参照を保持するためのhook。
 <code>ref.current</code>の値を変更させているだけのため再レンダリングが走らない。
@@ -1769,17 +1769,17 @@ useEffect(
 <li>これは単なる便利関数ではなく、Reactの内部で特殊に処理されている</li>
 <li>forwardRefを使いたくなければ_refみたいに名前よけする</li>
 </ul>
-<h3 id="forwardrefs">forwardRefs</h3>
+<h3 id="forwardrefs"><a name="forwardrefs" class="plugin-anchor" href="#forwardrefs"><i class="fa fa-link" aria-hidden="true"></i></a>forwardRefs</h3>
 <p><a href="https://zenn.dev/terrierscript/scraps/15ca11388f7424" target="_blank">参考URL</a></p>
 <hr>
-<h2 id="状態管理">状態管理</h2>
+<h2 id="状態管理"><a name="状態管理" class="plugin-anchor" href="#状態管理"><i class="fa fa-link" aria-hidden="true"></i></a>状態管理</h2>
 <p><a href="https://blog.uhy.ooo/entry/2021-07-24/react-state-management/" target="_blank">Reactステート管理比較考察(かなり詳しい)</a></p>
 <blockquote>
 <p>Reactにおける状態管理の方法論は、さまざまな道を辿ってきました。ある人はReduxを使い、またある人はMobXを、またある人はuseContextで物事を解決してきたでしょう。</p>
 </blockquote>
 <p>今まではRedux + middleware
 最新はRecoil。Redux + middleware周りのすべてをまるっと置き換えてくれる</p>
-<h3 id="usestate--バケツリレー">useState + バケツリレー</h3>
+<h3 id="usestate--バケツリレー"><a name="usestate--バケツリレー" class="plugin-anchor" href="#usestate--バケツリレー"><i class="fa fa-link" aria-hidden="true"></i></a>useState + バケツリレー</h3>
 <p>Reactにおける基本的なステート管理は<code>useState</code></p>
 <p>メリット
 ひとつのコンポーネント内で完結するようなステートならばuseStateは非常に適しており、他の選択肢はほぼないと言っていい。</p>
@@ -1787,14 +1787,14 @@ useEffect(
 バケツリレーはただ子コンポーネントに渡すだけという責務を発生させてしまう
 useState + バケツリレーはパフォーマンス上不利になる可能性があります。使用者までの途中のコンポーネントも含めて多くのコンポーネントが実際にpropsとしてステートを受け取るということは、（たとえReact.memoなどで再レンダリングを抑制していたとしても）ステートが変化した際にはそれらのコンポーネントが再レンダリングされることになります。
 これにより、実際に必要なよりも多くのコンポーネントがレンダリングされることになります。</p>
-<h3 id="usecontext">useContext</h3>
+<h3 id="usecontext"><a name="usecontext" class="plugin-anchor" href="#usecontext"><i class="fa fa-link" aria-hidden="true"></i></a>useContext</h3>
 <p>useState + バケツリレーの問題点を避けたい場合、プレーンなReactで可能な選択肢としてuseContextの使用が挙げられます。useContextは、props以外でコンポーネント間の伝達を可能にする。
 ただし<strong>親から子という原則は維持</strong>されます。</p>
 <p>メリット
 パフォーマンスの観点からは、useContextのほうがuseState + バケツリレーよりは有利です。なぜなら、useContextを使うことで、ステートが変わった際には本当にそのステートを使用しているコンポーネントのみが再レンダリングされるようになるからです。
 コンポーネントツリーの頂点と使用者の間にある中間コンポーネントは、useContextを使っていなければ再レンダリングされません。
 ※ただし、デフォルトでは親コンポーネントが再レンダリングされた場合は子コンポーネントも自動的に再レンダリングされます。これを防ぐにはReact.memoを適切に使用する必要があります。この記事ではReact.memoを必要に応じて使用することを前提としています。</p>
-<h3 id="recoil">Recoil</h3>
+<h3 id="recoil"><a name="recoil" class="plugin-anchor" href="#recoil"><i class="fa fa-link" aria-hidden="true"></i></a>Recoil</h3>
 <p>※状態の格納先は<strong>atom</strong>と呼ぶ。</p>
 <ul>
 <li>アプリケーション内に複数のデータストアを持てる</li>
@@ -1806,10 +1806,10 @@ useState + バケツリレーはパフォーマンス上不利になる可能性
 Selectorを使うことで、複数のAtomのデータを合成して必要なデータを計算することも可能です。AtomとSelectorを総称して<strong>RecoilState</strong>と呼びます。</p>
 <p>メリット
 またReduxとは異なり<strong>Dispatch-Reducerのような中間操作がなく+</strong>コンポーネントから直接atomにアクセスできる他、UseRecoilStateだけで状態を設定・更新することも読むこともできます。Reduxに置き換えると、Actionだけで直接stateを更新できるイメージ。</p>
-<h2 id="suspense">Suspense</h2>
+<h2 id="suspense"><a name="suspense" class="plugin-anchor" href="#suspense"><i class="fa fa-link" aria-hidden="true"></i></a>Suspense</h2>
 <p>React 18で導入された。
 コンポーネントをローディング中のためまだレンダリングできない状態にする。</p>
-<h2 id="error-boundaries">Error Boundaries</h2>
+<h2 id="error-boundaries"><a name="error-boundaries" class="plugin-anchor" href="#error-boundaries"><i class="fa fa-link" aria-hidden="true"></i></a>Error Boundaries</h2>
 <p><a href="https://reactjs.org/docs/error-boundaries.html" target="_blank">リファレンス</a></p>
 <p>以前は、コンポーネント内のJavaScriptエラーがReactの内部状態を破損し、次のレンダリングで不可解なエラーを発生させていました。
 これらのエラーは常に、アプリケーション コードの以前のエラーが原因で発生していましたが、Reactはコンポーネントでエラーを適切に処理する方法を提供しておらず、回復できませんでした。</p>
@@ -1820,19 +1820,19 @@ Reactユーザーのこの問題を解決するために、React 16では<strong
 </blockquote>
 <p>エラー境界は、子コンポーネント ツリーの任意の場所でJavaScriptエラーをキャッチし、それらのエラーをログに記録し、クラッシュしたコンポーネント ツリーの代わりにフォールバックUIを表示するReactコンポーネントです。エラー境界は、レンダリング中、ライフサイクル メソッド、およびその下のツリー全体のコンストラクターでエラーをキャッチします。</p>
 <hr>
-<h2 id="styled-components">styled-components</h2>
+<h2 id="styled-components"><a name="styled-components" class="plugin-anchor" href="#styled-components"><i class="fa fa-link" aria-hidden="true"></i></a>styled-components</h2>
 <p><a href="https://qiita.com/taneba/items/4547830b461d11a69a20" target="_blank">styled-components基本</a></p>
 <p>使うメリットがなんだろうって考えた</p>
 <p>ローカルスコープができる
 cssの長い命名規則から解き放たれる</p>
-<h2 id="react-testing-library">React testing-library</h2>
+<h2 id="react-testing-library"><a name="react-testing-library" class="plugin-anchor" href="#react-testing-library"><i class="fa fa-link" aria-hidden="true"></i></a>React testing-library</h2>
 <p><a href="https://dev.to/kaede_io/react-testing-library-de-getbytext-getbyrole-getallbyrole-wobi-jiao-suru-2o26" target="_blank">React testing-library で getByText, getByRole, getAllByRole を比較する</a></p>
-<h2 id="tips">Tips</h2>
-<h3 id="material-ui">material-ui</h3>
+<h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>Tips</h2>
+<h3 id="material-ui"><a name="material-ui" class="plugin-anchor" href="#material-ui"><i class="fa fa-link" aria-hidden="true"></i></a>material-ui</h3>
 <p><a href="https://mui.com/getting-started/templates/" target="_blank">9個のfree_templateがある</a></p>
-<h3 id="onclick">onClick</h3>
+<h3 id="onclick"><a name="onclick" class="plugin-anchor" href="#onclick"><i class="fa fa-link" aria-hidden="true"></i></a>onClick</h3>
 <p><a href="https://www.yoheim.net/blog.php?q=20180411" target="_blank">React.jsで、onClick時に任意の値を渡す</a></p>
-<h2 id="これ面白そう">これ面白そう</h2>
+<h2 id="これ面白そう"><a name="これ面白そう" class="plugin-anchor" href="#これ面白そう"><i class="fa fa-link" aria-hidden="true"></i></a>これ面白そう</h2>
 <p><a href="https://qiita.com/FumioNonaka/items/be00620c14e8955ea869" target="_blank">参考URL</a>
 <a href="https://liginc.co.jp/587025" target="_blank">これも面白い</a></p>
 
@@ -1878,7 +1878,7 @@ cssの長い命名規則から解き放たれる</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"React","level":"2.2.3.6","depth":3,"next":{"title":"Node","level":"2.2.3.7","depth":3,"path":"program/javascript/node/node.md","ref":"program/javascript/node/node.md","articles":[]},"previous":{"title":"Nuxt","level":"2.2.3.5","depth":3,"path":"program/javascript/nuxt/nuxt.md","ref":"program/javascript/nuxt/nuxt.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"program/javascript/react/react.md","mtime":"2023-01-12T00:39:30.226Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T00:39:41.486Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"React","level":"2.2.3.6","depth":3,"next":{"title":"Node","level":"2.2.3.7","depth":3,"path":"program/javascript/node/node.md","ref":"program/javascript/node/node.md","articles":[]},"previous":{"title":"Nuxt","level":"2.2.3.5","depth":3,"path":"program/javascript/nuxt/nuxt.md","ref":"program/javascript/nuxt/nuxt.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"program/javascript/react/react.md","mtime":"2023-01-12T09:05:53.798Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T09:06:04.627Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1930,6 +1930,30 @@ cssの長い命名規則から解き放たれる</p>
     </script>
     <script src="../../../gitbook/gitbook.js"></script>
     <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
     
         
         <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>

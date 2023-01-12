@@ -1,19 +1,31 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="ja" >
     <head>
         <meta charset="UTF-8">
-        <title>5. DB · HonKit</title>
+        <title>5. DB · naopedia</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.4">
-        
+        <meta name="author" content="naohito-T">
         
         
     
     <link rel="stylesheet" href="../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
@@ -31,18 +43,6 @@
 
     
 
-    
-        
-        <link rel="stylesheet" href="../styles/website.css">
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
         
     
@@ -72,7 +72,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="検索ワードを入力" />
 </div>
 
             
@@ -1631,7 +1631,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            HonKitで公開 
         </a>
     </li>
 </ul>
@@ -1669,17 +1669,17 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="db">DB</h1>
+                                <h1 id="db"><a name="db" class="plugin-anchor" href="#db"><i class="fa fa-link" aria-hidden="true"></i></a>DB</h1>
 <p>RDB &amp; NoSQLなどDB関連普遍知識をまとめる。</p>
 <p><a href="https://devsakaso.com/about-database-basics/" target="_blank">学習効率を上げるためのバックエンドのデータベース基礎知識</a></p>
 <p><a href="https://zenn.dev/takuho/articles/efc40344f3122e" target="_blank">瞬殺でDBを使って何かしたいとき</a>
 <a href="https://qiita.com/kamukiriri/items/ab1669c19831c18db9ee" target="_blank">DockerでサクッとDBからER図を作成する</a></p>
-<h2 id="db設計の時の考え方">DB設計の時の考え方</h2>
+<h2 id="db設計の時の考え方"><a name="db設計の時の考え方" class="plugin-anchor" href="#db設計の時の考え方"><i class="fa fa-link" aria-hidden="true"></i></a>DB設計の時の考え方</h2>
 <p>どうせ最初からパーフェクトなテーブル設計はできない。
 経験則がいきる。
 最初は完璧になんて不可能なので、ある程度考え、実装し、間違っていればまたやり直す。を繰り返すことが一番の近道です。
 あ、どうせ変化していくものなので完璧を求めすぎないこともポイントですよ。</p>
-<h2 id="データベース設計の際に気を付けること">データベース設計の際に気を付けること</h2>
+<h2 id="データベース設計の際に気を付けること"><a name="データベース設計の際に気を付けること" class="plugin-anchor" href="#データベース設計の際に気を付けること"><i class="fa fa-link" aria-hidden="true"></i></a>データベース設計の際に気を付けること</h2>
 <p><a href="https://tech.tabechoku.com/entry/2020/06/15/132518" target="_blank">参考URL</a></p>
 <ol>
 <li>制約をつける
@@ -1692,14 +1692,14 @@
 <li>外部キー制約をつける</li>
 <li>ユニークキー制約をつける</li>
 </ol>
-<h2 id="table-entity関係を書く">Table Entity関係を書く</h2>
+<h2 id="table-entity関係を書く"><a name="table-entity関係を書く" class="plugin-anchor" href="#table-entity関係を書く"><i class="fa fa-link" aria-hidden="true"></i></a>Table Entity関係を書く</h2>
 <p>ER図を書いていくことになる（デファクトスタンダード）</p>
-<h2 id="table-命名規則">table 命名規則</h2>
+<h2 id="table-命名規則"><a name="table-命名規則" class="plugin-anchor" href="#table-命名規則"><i class="fa fa-link" aria-hidden="true"></i></a>table 命名規則</h2>
 <p><a href="https://qiita.com/tatsuya_1995/items/4b706fc40fe2f300bbc0" target="_blank">参考URL</a></p>
-<h2 id="sql設計">SQL設計</h2>
+<h2 id="sql設計"><a name="sql設計" class="plugin-anchor" href="#sql設計"><i class="fa fa-link" aria-hidden="true"></i></a>SQL設計</h2>
 <p><a href="https://neos21.net/tech/design/db-table-practices.html#%E3%83%80%E3%83%9F%E3%83%BC%E3%83%87%E3%83%BC%E3%82%BF" target="_blank">DB・テーブル設計のプラクティス</a>
 <a href="https://www.ketancho.net/entry/2018/03/07/080000" target="_blank">「SQLアンチパターン」を避けるためのチェックリスト①（DB論理設計編）</a></p>
-<h2 id="触る時に考えること">触る時に考えること</h2>
+<h2 id="触る時に考えること"><a name="触る時に考えること" class="plugin-anchor" href="#触る時に考えること"><i class="fa fa-link" aria-hidden="true"></i></a>触る時に考えること</h2>
 <ul>
 <li>seedで一気にできないか</li>
 <li>自動化できないか</li>
@@ -1709,28 +1709,28 @@
 <li>indexは大体どこのSQLでも単一の値にはインデックスが貼られている。
 → しかし複数の値での検索時はインデックスが貼られていないため検索回数が多いのは検討をしインデックスを貼る。</li>
 </ul>
-<h2 id="dbマイグレーション">DBマイグレーション</h2>
+<h2 id="dbマイグレーション"><a name="dbマイグレーション" class="plugin-anchor" href="#dbマイグレーション"><i class="fa fa-link" aria-hidden="true"></i></a>DBマイグレーション</h2>
 <p>データベースを削除し手から作り直すと、DBに保存されている情報がすべて削除される。
 こういった事態を回避する方法としてデータベースマイグレーションを行う方法がある。
 マイグレーションとは、<strong>DBに保存されているデータを保持したままテーブルの作成やカラムの変更などを行うための機能。</strong>
 運用中のデータベースにデータを入れたまま、テーブルを追加したりカラムを変更するなどして、スキーマを管理する機能</p>
 <p>※対象の言語ORMに対して、マイグレーションがない場合は汎用なマイグレーションツールを使うなど対策が必要</p>
-<h2 id="パスワード保存について">パスワード保存について</h2>
+<h2 id="パスワード保存について"><a name="パスワード保存について" class="plugin-anchor" href="#パスワード保存について"><i class="fa fa-link" aria-hidden="true"></i></a>パスワード保存について</h2>
 <p>データベースに生の（平文の）パスワードを保存するのは情報セキュリティの観点から望ましくない。
 <strong>その代わりにパスワードのハッシュ値を(あるいはダイジェスト)と呼ばれる値をデータベースに保存するのが定石</strong></p>
-<h2 id="アプリケーションからのdb基本利用法">アプリケーションからのDB基本利用法</h2>
+<h2 id="アプリケーションからのdb基本利用法"><a name="アプリケーションからのdb基本利用法" class="plugin-anchor" href="#アプリケーションからのdb基本利用法"><i class="fa fa-link" aria-hidden="true"></i></a>アプリケーションからのDB基本利用法</h2>
 <p>アプリケーションからDBにアクセスするためにはデータベース固有のプロトコルを用いてアクセスする必要があり、各DB向けに実装されているドライバーを使う。
 一方アプリケーション側から呼び出す接続コードは、データベースドライバーの実装に依存しない汎用的なAPI</p>
-<h2 id="dbバックアップについて">DBバックアップについて</h2>
+<h2 id="dbバックアップについて"><a name="dbバックアップについて" class="plugin-anchor" href="#dbバックアップについて"><i class="fa fa-link" aria-hidden="true"></i></a>DBバックアップについて</h2>
 <p>ダンプのファイル量が多いと時間がかかる。
 そのため、その際にデータの書き換えがあるとデータの相互性が失われる。
 そのためデータのバックアップを取得するときは<strong>DBを停止して行うべき</strong></p>
-<h2 id="db種類">DB種類</h2>
+<h2 id="db種類"><a name="db種類" class="plugin-anchor" href="#db種類"><i class="fa fa-link" aria-hidden="true"></i></a>DB種類</h2>
 <ul>
 <li>キーバリューストア
 memcachedやRedis</li>
 </ul>
-<h2 id="db分割構成">DB分割構成</h2>
+<h2 id="db分割構成"><a name="db分割構成" class="plugin-anchor" href="#db分割構成"><i class="fa fa-link" aria-hidden="true"></i></a>DB分割構成</h2>
 <p>Webアプリケーションの規模が大きくなると応答速度の低下が問題になることがあり、ボトルネックとなるのはDBアクセスに関する部分。
 そういった問題を解決し、複数のDBを利用するgemパッケージとしてOctopusなどがあったがRails6.0からはRails標準機能として複数DBへ対応した。</p>
 <p>しかし、実際に複数DBとして望まれるケースで多いのは<strong>書き込みと読み込みの負荷を軽減させるために書き込む用のデータベースと、そのデータを同期した読み取り用データベースに分割する構成。</strong></p>
@@ -1738,26 +1738,26 @@ memcachedやRedis</li>
 レプリケートした読み取り専用データベースを<strong>レプリカDB</strong></p>
 <p>上記の構成の場合、レプリカDBへ直接マイグレーションの適用やデータの書き込みは行わない（RailsではレプリカDBであると明示するため<code>database.yml</code>にreplicaを指定する）
 実運用ではレプリカDBへの接続は参照権限のみのユーザで接続するのが望ましい。</p>
-<h2 id="リードレプリカread-replica">リードレプリカ(read replica)</h2>
+<h2 id="リードレプリカread-replica"><a name="リードレプリカread-replica" class="plugin-anchor" href="#リードレプリカread-replica"><i class="fa fa-link" aria-hidden="true"></i></a>リードレプリカ(read replica)</h2>
 <p>リーどレプリカとは、DBの負荷分散のために作成される<strong>参照専用の複製。</strong>
 データの更新＆追加は行わず検索や読みこみのみを行う。</p>
-<h2 id="データベースのスキーマ">データベースのスキーマ</h2>
+<h2 id="データベースのスキーマ"><a name="データベースのスキーマ" class="plugin-anchor" href="#データベースのスキーマ"><i class="fa fa-link" aria-hidden="true"></i></a>データベースのスキーマ</h2>
 <p><a href="https://www.miracleave.co.jp/contents/217/db-table-schema/" target="_blank">参考URL</a></p>
 <ol>
 <li>MySQLではDBとスキーマは同じと思って良い</li>
 <li>PostgreSQLではデータベースがあってその下にスキーマが存在する（デフォルトでpublicスキーマが作成される）</li>
 </ol>
-<h2 id="リレーションの読み込み方">リレーションの読み込み方</h2>
+<h2 id="リレーションの読み込み方"><a name="リレーションの読み込み方" class="plugin-anchor" href="#リレーションの読み込み方"><i class="fa fa-link" aria-hidden="true"></i></a>リレーションの読み込み方</h2>
 <p><a href="https://cloudsmith.co.jp/blog/backend/laravel/2020/07/1506704.html" target="_blank">わかりやすい</a></p>
-<h3 id="eager-loading-訳：熱望的なローディング-or-積極的なリレーションシップ">Eager Loading 訳：熱望的なローディング or 積極的なリレーションシップ</h3>
+<h3 id="eager-loading-訳：熱望的なローディング-or-積極的なリレーションシップ"><a name="eager-loading-訳：熱望的なローディング-or-積極的なリレーションシップ" class="plugin-anchor" href="#eager-loading-訳：熱望的なローディング-or-積極的なリレーションシップ"><i class="fa fa-link" aria-hidden="true"></i></a>Eager Loading 訳：熱望的なローディング or 積極的なリレーションシップ</h3>
 <p>Eager Loadingでは、2つのテーブルのデータを1度に取得する（関連のも）
 Eager Loadingを使うと、クエリの発行回数を減らすことができるので、いわゆる「N＋1問題」の回避策として用いられます。</p>
-<h3 id="lazy-loading-訳：怠惰なローディング">Lazy Loading 訳：怠惰なローディング</h3>
+<h3 id="lazy-loading-訳：怠惰なローディング"><a name="lazy-loading-訳：怠惰なローディング" class="plugin-anchor" href="#lazy-loading-訳：怠惰なローディング"><i class="fa fa-link" aria-hidden="true"></i></a>Lazy Loading 訳：怠惰なローディング</h3>
 <p>リレーションの際、親テーブルからデータA取得する。次に子テーブルから（便宜上、親テーブルのidを持っているもの）データAのidに関連するデータを取得する。
 というように2回に分けてデータを取得します。</p>
-<h2 id="n＋１問題とは？">N＋１問題とは？</h2>
+<h2 id="n＋１問題とは？"><a name="n＋１問題とは？" class="plugin-anchor" href="#n＋１問題とは？"><i class="fa fa-link" aria-hidden="true"></i></a>N＋１問題とは？</h2>
 <p>クエリの発行回数が過剰に増えて、サーバーサイドでタイムアウトエラーなどの不具合を起こしてしまう現象をいいます。</p>
-<h2 id="データベーススキーマ設計の完全ガイド">データベーススキーマ設計の完全ガイド</h2>
+<h2 id="データベーススキーマ設計の完全ガイド"><a name="データベーススキーマ設計の完全ガイド" class="plugin-anchor" href="#データベーススキーマ設計の完全ガイド"><i class="fa fa-link" aria-hidden="true"></i></a>データベーススキーマ設計の完全ガイド</h2>
 <p><a href="https://www.integrate.io/jp/blog/complete-guide-to-database-schema-design-guide-ja/" target="_blank">参考URL</a></p>
 
                                 
@@ -1802,7 +1802,7 @@ Eager Loadingを使うと、クエリの発行回数を減らすことができ�
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"5. DB","level":"2.5","depth":1,"next":{"title":"5.1 SQL","level":"2.5.1","depth":2,"path":"db/sql/sql.md","ref":"db/sql/sql.md","articles":[{"title":"MySQL","level":"2.5.1.1","depth":3,"path":"db/sql/mysql/mysql.md","ref":"db/sql/mysql/mysql.md","articles":[]}]},"previous":{"title":"4.4 modal","level":"2.4.9","depth":2,"path":"web/modal.md","ref":"web/modal.md","articles":[]},"articles":[{"title":"5.1 SQL","level":"2.5.1","depth":2,"path":"db/sql/sql.md","ref":"db/sql/sql.md","articles":[{"title":"MySQL","level":"2.5.1.1","depth":3,"path":"db/sql/mysql/mysql.md","ref":"db/sql/mysql/mysql.md","articles":[]}]},{"title":"5.2 ORM","level":"2.5.2","depth":2,"path":"db/orm/orm.md","ref":"db/orm/orm.md","articles":[{"title":"TypeORM","level":"2.5.2.1","depth":3,"path":"db/orm/typeorm/typeorm.md","ref":"db/orm/typeorm/typeorm.md","articles":[]}]},{"title":"5.3 Redis","level":"2.5.3","depth":2,"path":"db/redis/redis.md","ref":"db/redis/redis.md","articles":[]}],"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"db/db.md","mtime":"2023-01-12T00:39:30.210Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T00:39:41.486Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"5. DB","level":"2.5","depth":1,"next":{"title":"5.1 SQL","level":"2.5.1","depth":2,"path":"db/sql/sql.md","ref":"db/sql/sql.md","articles":[{"title":"MySQL","level":"2.5.1.1","depth":3,"path":"db/sql/mysql/mysql.md","ref":"db/sql/mysql/mysql.md","articles":[]}]},"previous":{"title":"4.4 modal","level":"2.4.9","depth":2,"path":"web/modal.md","ref":"web/modal.md","articles":[]},"articles":[{"title":"5.1 SQL","level":"2.5.1","depth":2,"path":"db/sql/sql.md","ref":"db/sql/sql.md","articles":[{"title":"MySQL","level":"2.5.1.1","depth":3,"path":"db/sql/mysql/mysql.md","ref":"db/sql/mysql/mysql.md","articles":[]}]},{"title":"5.2 ORM","level":"2.5.2","depth":2,"path":"db/orm/orm.md","ref":"db/orm/orm.md","articles":[{"title":"TypeORM","level":"2.5.2.1","depth":3,"path":"db/orm/typeorm/typeorm.md","ref":"db/orm/typeorm/typeorm.md","articles":[]}]},{"title":"5.3 Redis","level":"2.5.3","depth":2,"path":"db/redis/redis.md","ref":"db/redis/redis.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"db/db.md","mtime":"2023-01-12T09:05:53.782Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T09:06:04.627Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1854,6 +1854,30 @@ Eager Loadingを使うと、クエリの発行回数を減らすことができ�
     </script>
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

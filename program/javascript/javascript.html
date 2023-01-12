@@ -1,19 +1,31 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="ja" >
     <head>
         <meta charset="UTF-8">
-        <title>2.3 JavaScript · HonKit</title>
+        <title>2.3 JavaScript · naopedia</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.4">
-        
+        <meta name="author" content="naohito-T">
         
         
     
     <link rel="stylesheet" href="../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../../gitbook/@honkit/honkit-plugin-highlight/website.css">
@@ -31,18 +43,6 @@
 
     
 
-    
-        
-        <link rel="stylesheet" href="../../styles/website.css">
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
         
     
@@ -72,7 +72,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="検索ワードを入力" />
 </div>
 
             
@@ -1631,7 +1631,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            HonKitで公開 
         </a>
     </li>
 </ul>
@@ -1669,14 +1669,14 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="javascript">JavaScript</h1>
+                                <h1 id="javascript"><a name="javascript" class="plugin-anchor" href="#javascript"><i class="fa fa-link" aria-hidden="true"></i></a>JavaScript</h1>
 <p><a href="https://ja.javascript.info/" target="_blank">JavaScriptのすべての仕組み</a>
 <a href="https://jsprimer.net/" target="_blank">JavaScript Primer（めちゃくちゃわかりやすい）</a>
 <a href="https://zenn.dev/aiji42/articles/9a6ab12ab5f6e6" target="_blank">next/script には JavaScript の基本がつまっていた</a>
 <a href="https://ja.javascript.info/js-animation" target="_blank">JavaScript アニメーション仕組み</a></p>
-<h2 id="npm人気なパッケージを見つける">npm人気なパッケージを見つける</h2>
+<h2 id="npm人気なパッケージを見つける"><a name="npm人気なパッケージを見つける" class="plugin-anchor" href="#npm人気なパッケージを見つける"><i class="fa fa-link" aria-hidden="true"></i></a>npm人気なパッケージを見つける</h2>
 <p><a href="https://www.gaji.jp/blog/2022/06/29/10259/" target="_blank">本当に必要なnpmパッケージを見つけるために知っておきたい5つのサイト</a></p>
-<h2 id="javascriptの時間">JavaScriptの時間</h2>
+<h2 id="javascriptの時間"><a name="javascriptの時間" class="plugin-anchor" href="#javascriptの時間"><i class="fa fa-link" aria-hidden="true"></i></a>JavaScriptの時間</h2>
 <p><a href="https://qiita.com/shirokurotaitsu/items/5efd855900ec6135bbab" target="_blank">参考URL</a></p>
 <p><code>Date</code>がミリ秒のため<code>* 1000</code>が必要
 ※UNIXタイムスタンプは10桁</p>
@@ -1684,19 +1684,19 @@
 <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getTime()
 <span class="hljs-comment">// 1668826244442</span>
 </code></pre>
-<h2 id="javascriptの実行環境">JavaScriptの実行環境</h2>
+<h2 id="javascriptの実行環境"><a name="javascriptの実行環境" class="plugin-anchor" href="#javascriptの実行環境"><i class="fa fa-link" aria-hidden="true"></i></a>JavaScriptの実行環境</h2>
 <p>安心安全に利用できる理由は、サンドボックスで動作するため。
 サンドボックス上で動作していると、アクセスできるファイルや実行できるプログラムが制限されてしまう。
 その代わりに、その制限下では自由な利用が許可されています。
 JavaScriptのサンドボックスによる代表的な制約のひとつに同一オリジンポリシー (same-origin policy) がある。</p>
-<h2 id="jsのスレッド">JSのスレッド</h2>
+<h2 id="jsのスレッド"><a name="jsのスレッド" class="plugin-anchor" href="#jsのスレッド"><i class="fa fa-link" aria-hidden="true"></i></a>JSのスレッド</h2>
 <p><a href="https://jsprimer.net/basic/async/" target="_blank">参考URL</a></p>
 <p>JSの同期処理&amp;非同期処理はメインスレッドで実行される（UIスレッドとも呼ばれる）</p>
-<h2 id="同期処理はブラウザはしてほしくない">同期処理はブラウザはしてほしくない</h2>
+<h2 id="同期処理はブラウザはしてほしくない"><a name="同期処理はブラウザはしてほしくない" class="plugin-anchor" href="#同期処理はブラウザはしてほしくない"><i class="fa fa-link" aria-hidden="true"></i></a>同期処理はブラウザはしてほしくない</h2>
 <p>同期的にブロックする処理があると、ブラウザでは大きな問題となる。
 JSは基本的に<strong>ブラウザのメインスレッド（UIスレッドとも呼ばれる）で実行されるため。</strong>
 メインスレッドは表示の更新といったUIに関する処理も行なっているためメインスレッドが他の処理で占有されると表示が更新されなくなりフリーズしたようになる。</p>
-<h2 id="非同期処理はメインスレッドで実行されるつまり並行">非同期処理はメインスレッドで実行される(つまり並行)</h2>
+<h2 id="非同期処理はメインスレッドで実行されるつまり並行"><a name="非同期処理はメインスレッドで実行されるつまり並行" class="plugin-anchor" href="#非同期処理はメインスレッドで実行されるつまり並行"><i class="fa fa-link" aria-hidden="true"></i></a>非同期処理はメインスレッドで実行される(つまり並行)</h2>
 <p>JSにおいて多くの非同期処理はメインスレッドで実行される（すべてではないが基本は）
 非同期処理も同期処理の影響を受ける（どちらかが遅ければ引っ張られる）</p>
 <p>またJSでは一部の例外を除き非同期処理が並行処理（concurrent）として実行される。
@@ -1710,7 +1710,7 @@ JSは基本的に<strong>ブラウザのメインスレッド（UIスレッド�
 <p>ただし、非同期処理の中にもメインスレッドとは別のスレッドで実行できるAPIが実行環境によっては存在します。 たとえばブラウザではWeb Worker APIを使い、メインスレッド以外でJavaScriptを実行できます。 このWeb Workerにおける非同期処理は並列処理（Parallel）です。 並列処理とは、排他的に複数の処理を同時に実行することです。
 Web Workerではメインスレッドとは異なるWorkerスレッドで実行されるため、メインスレッドはWorkerスレッドの同期的にブロックする処理の影響を受けにくくなります。 ただし、Web Workerとメインスレッドでのデータのやり取りにはpostMessageというメソッドを利用する必要があります。 そのため、setTimeout関数のコールバック関数とは異なりデータへのアクセス方法にも制限がつきます。</p>
 </blockquote>
-<h2 id="非同期処理と例外処理">非同期処理と例外処理</h2>
+<h2 id="非同期処理と例外処理"><a name="非同期処理と例外処理" class="plugin-anchor" href="#非同期処理と例外処理"><i class="fa fa-link" aria-hidden="true"></i></a>非同期処理と例外処理</h2>
 <p>同期処理では<code>try...catch</code>構文を使うことで<strong>同期的に発生した例外</strong>がキャッチできる。
 ※非同期処理では<code>try...catch</code>構文を使っても非同期に発生した例外をキャッチできない（同期処理が終わった後に例外が発生するため）</p>
 <p>そのため、setTimeout関数のコールバック関数における例外は、次のようにコールバック関数内で同期的なエラーとしてキャッチする必要があります。</p>
@@ -1729,7 +1729,7 @@ Web Workerではメインスレッドとは異なるWorkerスレッドで実行�
 <blockquote>
 <p>非同期処理の外から例外が起きたことを知るためには、非同期処理の中で例外が発生したことを非同期処理の外へ伝える方法が必要です。</p>
 </blockquote>
-<h2 id="asyncでのエラーとは">asyncでのエラーとは</h2>
+<h2 id="asyncでのエラーとは"><a name="asyncでのエラーとは" class="plugin-anchor" href="#asyncでのエラーとは"><i class="fa fa-link" aria-hidden="true"></i></a>asyncでのエラーとは</h2>
 <blockquote>
 <p>await式の右辺のPromiseがRejectedとなった場合は、その場でエラーをthrowします。 またAsync Function内で発生した例外は自動的にキャッチされます。 そのためawait式でPromiseがRejectedとなった場合は、そのAsync FunctionがRejectedなPromiseを返すことになります。</p>
 </blockquote>
@@ -1753,13 +1753,13 @@ asyncMain().catch(<span class="hljs-function"><span class="hljs-params">error</s
     <span class="hljs-comment">// すでにtry...catchされているため、この行は実行されません</span>
 });
 </code></pre>
-<h2 id="sourcemapについて">SourceMapについて</h2>
+<h2 id="sourcemapについて"><a name="sourcemapについて" class="plugin-anchor" href="#sourcemapについて"><i class="fa fa-link" aria-hidden="true"></i></a>SourceMapについて</h2>
 <p><a href="https://fintan.jp/page/1596/" target="_blank">SourceMap</a></p>
-<h2 id="javascriptのタイムゾーン">JavaScriptのタイムゾーン</h2>
+<h2 id="javascriptのタイムゾーン"><a name="javascriptのタイムゾーン" class="plugin-anchor" href="#javascriptのタイムゾーン"><i class="fa fa-link" aria-hidden="true"></i></a>JavaScriptのタイムゾーン</h2>
 <p><a href="https://qiita.com/konkonko/questions/62c71142f51e63a759c3" target="_blank">参考URL</a></p>
 <hr>
-<h2 id="commonjsとesmodule">CommonJSとESModule</h2>
-<h3 id="commonjs--nodeのやつ-require">CommonJS : nodeのやつ require</h3>
+<h2 id="commonjsとesmodule"><a name="commonjsとesmodule" class="plugin-anchor" href="#commonjsとesmodule"><i class="fa fa-link" aria-hidden="true"></i></a>CommonJSとESModule</h2>
+<h3 id="commonjs--nodeのやつ-require"><a name="commonjs--nodeのやつ-require" class="plugin-anchor" href="#commonjs--nodeのやつ-require"><i class="fa fa-link" aria-hidden="true"></i></a>CommonJS : nodeのやつ require</h3>
 <p>まだECS(ESModule)でモジュールシステムが導入されていないときにnodeで実装したモジュールシステム
 CommonJSではブラウザ上だけでなく、サーバーサイドやクライアントでのCUI、GUIでJavaScriptを使う際の仕様を作成している。
 単に仕様を作っているだけなので、ECMAScriptに組み込まれるとかがない限り、それがJavaScriptの標準になるというわけではない模様</p>
@@ -1767,16 +1767,16 @@ CommonJSではブラウザ上だけでなく、サーバーサイドやクライ
 <p>ちなみに CommonJS で作成された仕様は複数のソフトウェアによって実装が行われることで勧告段階に移るみたいです。
 CommonJS の仕様を実装しているソフトウェアの中にはあの有名な node.js があります。</p>
 </blockquote>
-<h3 id="esmecmascript--importのやつ">ESM(ECMAScript) : importのやつ</h3>
+<h3 id="esmecmascript--importのやつ"><a name="esmecmascript--importのやつ" class="plugin-anchor" href="#esmecmascript--importのやつ"><i class="fa fa-link" aria-hidden="true"></i></a>ESM(ECMAScript) : importのやつ</h3>
 <p>実質のJSの仕様を策定するもの。
 <strong>ECMAScript はブラウザ上での JavaScript の仕様と標準を作っている。</strong></p>
 <p><a href="https://qiita.com/rooooomania/items/4c999d93ae745e9d8657" target="_blank">CommonJS と ES6の import/export で迷うなら</a></p>
 <hr>
 <p>jsの演算子ドキュメント
 <a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Expressions_and_Operators" target="_blank">リファレンス</a></p>
-<h2 id="js-配列メソッド一">JS 配列メソッド一</h2>
+<h2 id="js-配列メソッド一"><a name="js-配列メソッド一" class="plugin-anchor" href="#js-配列メソッド一"><i class="fa fa-link" aria-hidden="true"></i></a>JS 配列メソッド一</h2>
 <p><a href="https://www.wakuwakubank.com/posts/280-javascript-array-helper/" target="_blank">JS 配列メソッド一覧がすぐ見えるサイト</a></p>
-<h2 id="async-await">async await</h2>
+<h2 id="async-await"><a name="async-await" class="plugin-anchor" href="#async-await"><i class="fa fa-link" aria-hidden="true"></i></a>async await</h2>
 <pre><code class="lang-js"><span class="hljs-comment">// axiosでjson取得</span>
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> ApiGet_Simple = (<span class="hljs-keyword">async</span> (url:string) =&gt; {
   <span class="hljs-keyword">try</span> {
@@ -1791,7 +1791,7 @@ CommonJS の仕様を実装しているソフトウェアの中にはあの有�
   }
 });
 </code></pre>
-<h2 id="optional-chaining">Optional Chaining</h2>
+<h2 id="optional-chaining"><a name="optional-chaining" class="plugin-anchor" href="#optional-chaining"><i class="fa fa-link" aria-hidden="true"></i></a>Optional Chaining</h2>
 <p>Optional Chainingはundefinedもしくはnullな値のプロパティを<strong>ランタイムで安全に参照できるようにする</strong>シンタックスです。</p>
 <p><a href="https://zenn.dev/lollipop_onl/articles/eoz-ts-ncoc-transpile" target="_blank">参考URL</a></p>
 <pre><code class="lang-js">
@@ -1806,7 +1806,7 @@ foo.bar.baz;
 foo.bar?.baz;
 <span class="hljs-comment">// js: undefined</span>
 </code></pre>
-<h2 id="nullish-coalescing-">Nullish Coalescing ??</h2>
+<h2 id="nullish-coalescing-"><a name="nullish-coalescing-" class="plugin-anchor" href="#nullish-coalescing-"><i class="fa fa-link" aria-hidden="true"></i></a>Nullish Coalescing ??</h2>
 <p>Nullish Coalescingは値が<code>undefined</code>もしくは<code>null</code>のとき、フォールバックとして別の値を返せるようにするオペレーター</p>
 <pre><code class="lang-js"><span class="hljs-literal">undefined</span> ?? <span class="hljs-string">&apos;fallback&apos;</span>;
 <span class="hljs-comment">// js: &apos;fallback&apos;</span>
@@ -1828,7 +1828,7 @@ foo.bar?.baz;
 <span class="hljs-literal">false</span> ?? <span class="hljs-string">&apos;fallback&apos;</span>;
 <span class="hljs-comment">// js: false</span>
 </code></pre>
-<h2 id="in-演算子">in 演算子</h2>
+<h2 id="in-演算子"><a name="in-演算子" class="plugin-anchor" href="#in-演算子"><i class="fa fa-link" aria-hidden="true"></i></a>in 演算子</h2>
 <p><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/in" target="_blank">リファレンス</a></p>
 <p>in演算子は、指定されたプロパティが指定されたオブジェクトにある場合trueを返す</p>
 <pre><code class="lang-js"><span class="hljs-keyword">const</span> car = { <span class="hljs-attr">make</span>: <span class="hljs-string">&apos;Honda&apos;</span>, <span class="hljs-attr">model</span>: <span class="hljs-string">&apos;Accord&apos;</span>, <span class="hljs-attr">year</span>: <span class="hljs-number">1998</span> };
@@ -1836,28 +1836,28 @@ foo.bar?.baz;
 <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;make&apos;</span> <span class="hljs-keyword">in</span> car);
 <span class="hljs-comment">// expected output: true</span>
 </code></pre>
-<h2 id="javascriptの配列のmapでasyncawaitを使う方法">JavaScriptの配列のmapでasync/awaitを使う方法</h2>
+<h2 id="javascriptの配列のmapでasyncawaitを使う方法"><a name="javascriptの配列のmapでasyncawaitを使う方法" class="plugin-anchor" href="#javascriptの配列のmapでasyncawaitを使う方法"><i class="fa fa-link" aria-hidden="true"></i></a>JavaScriptの配列のmapでasync/awaitを使う方法</h2>
 <p><a href="https://qiita.com/kwbt/items/6c0fe424c89a9f7553c1" target="_blank">参考URL</a></p>
-<h2 id="promise">Promise</h2>
+<h2 id="promise"><a name="promise" class="plugin-anchor" href="#promise"><i class="fa fa-link" aria-hidden="true"></i></a>Promise</h2>
 <p><a href="https://qiita.com/ysk_1031/items/888a84cb259cec4e0625" target="_blank">参考URL</a></p>
 <p>Promiseの状態
 上述したとおり、Promiseには処理に応じた「状態」があり、次の3つのうちの1つになる</p>
 <p><strong>pending:</strong> 初期状態、まだ処理が成功も失敗もしていない
 <strong>fullfilled:</strong> 処理が成功し、完了した状態
 <strong>rejected:</strong> 処理が失敗した状態</p>
-<h2 id="promiseall">Promise.all()</h2>
+<h2 id="promiseall"><a name="promiseall" class="plugin-anchor" href="#promiseall"><i class="fa fa-link" aria-hidden="true"></i></a>Promise.all()</h2>
 <p>Promise.all()は</p>
 <p>all()の引数の配列内のPromiseの状態がすべて<code>fullfilled</code>になったら、all()自体も<code>fullfilled</code>になる。
 1つでも<code>rejected</code>になると、all()も<code>rejected</code>を返す。</p>
-<h2 id="非同期処理">非同期処理</h2>
+<h2 id="非同期処理"><a name="非同期処理" class="plugin-anchor" href="#非同期処理"><i class="fa fa-link" aria-hidden="true"></i></a>非同期処理</h2>
 <p>非同期処理とは、ある関数が呼ばれた時に返り血として渡したい値を返すのではなく一度関数として終了し渡したい値を返せる状態になったら呼び出し元にその値を返すというもの。</p>
-<h2 id="非同期処理イメージ">非同期処理イメージ</h2>
+<h2 id="非同期処理イメージ"><a name="非同期処理イメージ" class="plugin-anchor" href="#非同期処理イメージ"><i class="fa fa-link" aria-hidden="true"></i></a>非同期処理イメージ</h2>
 <blockquote>
 <p>イメージとして電子レンジを思い浮かべると良いでしょう.
 電子レンジでおにぎりを温める時, 私たちはタイマーをセットしていったん待ちます. これが「関数として一度終了している状態」です.
 そして, 時間が経つとおにぎりが食べられる状態になります. これが「渡したい値を返せるよう状態になったらその値を返す」ということです.</p>
 </blockquote>
-<h2 id="jsの時間の求め方">jsの時間の求め方</h2>
+<h2 id="jsの時間の求め方"><a name="jsの時間の求め方" class="plugin-anchor" href="#jsの時間の求め方"><i class="fa fa-link" aria-hidden="true"></i></a>jsの時間の求め方</h2>
 <p>jsではUNIXタイムスタンプに変更するのが一番良い</p>
 <pre><code class="lang-ts"><span class="hljs-comment">/**
  * <span class="hljs-doctag">@desc </span>来月の初日のticket終了時間をsetする
@@ -1889,7 +1889,7 @@ foo.bar?.baz;
   <span class="hljs-keyword">return</span> to.getTime();
 };
 </code></pre>
-<h2 id="分割代入">分割代入</h2>
+<h2 id="分割代入"><a name="分割代入" class="plugin-anchor" href="#分割代入"><i class="fa fa-link" aria-hidden="true"></i></a>分割代入</h2>
 <ul>
 <li>分割代入の時のデフォルト値が使われる基準</li>
 </ul>
@@ -1898,7 +1898,7 @@ foo.bar?.baz;
 <a href="https://qiita.com/FumioNonaka/items/58358a29850afd7a0f37" target="_blank">参考になる</a></p>
 <pre><code class="lang-js"><span class="hljs-keyword">const</span> {<span class="hljs-attr">a</span>: {a1, a2}, <span class="hljs-attr">b</span>: {b1}} = {<span class="hljs-attr">a</span>: {<span class="hljs-attr">a1</span>: <span class="hljs-number">1</span>}, <span class="hljs-attr">b</span>: {}}
 </code></pre>
-<h2 id="動的なプロパティ名">動的なプロパティ名</h2>
+<h2 id="動的なプロパティ名"><a name="動的なプロパティ名" class="plugin-anchor" href="#動的なプロパティ名"><i class="fa fa-link" aria-hidden="true"></i></a>動的なプロパティ名</h2>
 <p>オブジェクトのプロパティ名は動的にすることができる。</p>
 <pre><code class="lang-js"><span class="hljs-keyword">const</span> type = <span class="hljs-string">&apos;id&apos;</span>;
 <span class="hljs-keyword">const</span> item = {
@@ -1910,31 +1910,31 @@ foo.bar?.baz;
 <span class="hljs-built_in">console</span>.log(item[<span class="hljs-string">&apos;id&apos;</span>]); <span class="hljs-comment">// &apos;abcd01234&apos;</span>
 <span class="hljs-built_in">console</span>.log(item.id);    <span class="hljs-comment">// &apos;abcd01234&apos;</span>
 </code></pre>
-<h2 id="配列をオブジェクトに変換する">配列をオブジェクトに変換する</h2>
+<h2 id="配列をオブジェクトに変換する"><a name="配列をオブジェクトに変換する" class="plugin-anchor" href="#配列をオブジェクトに変換する"><i class="fa fa-link" aria-hidden="true"></i></a>配列をオブジェクトに変換する</h2>
 <p><a href="https://yukiyuriweb.com/2021/04/13/javascript-techniques-you-should-know/#i-2" target="_blank">参考URL</a></p>
 <pre><code class="lang-js"><span class="hljs-keyword">const</span> array = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
 <span class="hljs-keyword">const</span> object = { ...array };
 <span class="hljs-built_in">console</span>.log(object); <span class="hljs-comment">// { 0: 1, 1: 2, 2: 3 }</span>
 </code></pre>
-<h2 id="最新のjs-tips">最新のJS Tips</h2>
+<h2 id="最新のjs-tips"><a name="最新のjs-tips" class="plugin-anchor" href="#最新のjs-tips"><i class="fa fa-link" aria-hidden="true"></i></a>最新のJS Tips</h2>
 <p><a href="https://yukiyuriweb.com/2021/04/13/javascript-techniques-you-should-know/#i-2" target="_blank">参考URL</a></p>
-<h2 id="eslintとprettierを合わせる意味">ESLintとPrettierを合わせる意味</h2>
+<h2 id="eslintとprettierを合わせる意味"><a name="eslintとprettierを合わせる意味" class="plugin-anchor" href="#eslintとprettierを合わせる意味"><i class="fa fa-link" aria-hidden="true"></i></a>ESLintとPrettierを合わせる意味</h2>
 <p>ESLint単体コードフォーマットが可能だが、Prettierでは整形できないコードも整形するため
 <strong>よくある動機としてはESLintに静的検証を行わせ、Prettierはフォーマットを担う</strong></p>
 <ul>
 <li>TypeScript対応</li>
 </ul>
 <hr>
-<h2 id="eslintについて">ESLintについて</h2>
+<h2 id="eslintについて"><a name="eslintについて" class="plugin-anchor" href="#eslintについて"><i class="fa fa-link" aria-hidden="true"></i></a>ESLintについて</h2>
 <p><a href="https://dev.classmethod.jp/articles/eslint-configurations-2020/" target="_blank">今時のeslint設定</a></p>
-<h2 id="pluginsとextendsの違い">pluginsとextendsの違い</h2>
+<h2 id="pluginsとextendsの違い"><a name="pluginsとextendsの違い" class="plugin-anchor" href="#pluginsとextendsの違い"><i class="fa fa-link" aria-hidden="true"></i></a>pluginsとextendsの違い</h2>
 <p><strong>plugins</strong>
 ルールセットを持つプラグインを指定する項目。 本来であれば plugins にプラグインを指定して、且つ extends にそのプラグインが持つルールを指定しないと検証時にルールが適用されないらしいが、prettier はなぜか plugins に指定しただけでルールが適用されてる。謎。</p>
 <p>基本的には eslint-plugin-xxx というパッケージの xxx の部分を plugins に記述してあげればいいらしい。</p>
 <p><strong>extends</strong>
 プラグインが提供するルールを指定する項目。 eslint-plugin-xxx というパッケージを plugins で指定した場合は、extends に xxx/yyy というふうにルールを指定してあげるらしい。</p>
 <p>また、plugins は使わずに eslint-config-zzz というパッケージをインストールし、extends に zzz と指定してあげてもなんとかなるっぽい。</p>
-<h2 id="eslint-設定ファイル読み込み">ESLint 設定ファイル読み込み</h2>
+<h2 id="eslint-設定ファイル読み込み"><a name="eslint-設定ファイル読み込み" class="plugin-anchor" href="#eslint-設定ファイル読み込み"><i class="fa fa-link" aria-hidden="true"></i></a>ESLint 設定ファイル読み込み</h2>
 <p>ESLint の設定はいくつかの形式で記述できるが、それぞれ読み込みに優先度がある。優先度は以下の通り。</p>
 <p>.eslintrc.js
 .eslintrc.yaml
@@ -1942,12 +1942,12 @@ foo.bar?.baz;
 .eslintrc.json
 .eslintrc
 package.json</p>
-<h2 id="file">file</h2>
+<h2 id="file"><a name="file" class="plugin-anchor" href="#file"><i class="fa fa-link" aria-hidden="true"></i></a>file</h2>
 <ul>
 <li>存在確認</li>
 </ul>
 <p><a href="https://thr3a.hatenablog.com/entry/20201220/1608390044" target="_blank">fs/promiseでのファイル・ディレクトリ存在確認</a></p>
-<h2 id="js感嘆符-2つ">JS(感嘆符) 2つ</h2>
+<h2 id="js感嘆符-2つ"><a name="js感嘆符-2つ" class="plugin-anchor" href="#js感嘆符-2つ"><i class="fa fa-link" aria-hidden="true"></i></a>JS(感嘆符) 2つ</h2>
 <p><a href="https://senews.jp/bikkuri-2/" target="_blank">!!感嘆符を使う意味</a></p>
 <pre><code class="lang-js"><span class="hljs-keyword">if</span>(!<span class="hljs-literal">true</span>){
 
@@ -1957,13 +1957,13 @@ package.json</p>
 
     alert(<span class="hljs-string">&quot;falseです。&quot;</span>);
 </code></pre>
-<h2 id="コールバック関数">コールバック関数</h2>
+<h2 id="コールバック関数"><a name="コールバック関数" class="plugin-anchor" href="#コールバック関数"><i class="fa fa-link" aria-hidden="true"></i></a>コールバック関数</h2>
 <p><a href="https://sbfl.net/blog/2019/02/08/javascript-callback-func/" target="_blank">参考URL</a></p>
 <p>よく使われる解説</p>
 <blockquote>
 <p>別の関数に呼び出してもらうための関数</p>
 </blockquote>
-<h2 id="タグ付きテンプレートリテラル">タグ付きテンプレートリテラル</h2>
+<h2 id="タグ付きテンプレートリテラル"><a name="タグ付きテンプレートリテラル" class="plugin-anchor" href="#タグ付きテンプレートリテラル"><i class="fa fa-link" aria-hidden="true"></i></a>タグ付きテンプレートリテラル</h2>
 <p>styled-componentsで使用されているやつ
 <a href="https://zenn.dev/nekoniki/articles/bdf79a512e057ae72613" target="_blank">参考URL</a></p>
 
@@ -2009,7 +2009,7 @@ package.json</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.3 JavaScript","level":"2.2.3","depth":2,"next":{"title":"DOM","level":"2.2.3.1","depth":3,"path":"program/javascript/dom/dom.md","ref":"program/javascript/dom/dom.md","articles":[]},"previous":{"title":"2.2 Go","level":"2.2.2","depth":2,"path":"program/go/go.md","ref":"program/go/go.md","articles":[]},"articles":[{"title":"DOM","level":"2.2.3.1","depth":3,"path":"program/javascript/dom/dom.md","ref":"program/javascript/dom/dom.md","articles":[]},{"title":"Canvas","level":"2.2.3.2","depth":3,"path":"program/javascript/canvas/canvas.md","ref":"program/javascript/canvas/canvas.md","articles":[]},{"title":"TypeScript","level":"2.2.3.3","depth":3,"path":"program/javascript/ts/typescript.md","ref":"program/javascript/ts/typescript.md","articles":[]},{"title":"Vue","level":"2.2.3.4","depth":3,"path":"program/javascript/vue/vue.md","ref":"program/javascript/vue/vue.md","articles":[]},{"title":"Nuxt","level":"2.2.3.5","depth":3,"path":"program/javascript/nuxt/nuxt.md","ref":"program/javascript/nuxt/nuxt.md","articles":[]},{"title":"React","level":"2.2.3.6","depth":3,"path":"program/javascript/react/react.md","ref":"program/javascript/react/react.md","articles":[]},{"title":"Node","level":"2.2.3.7","depth":3,"path":"program/javascript/node/node.md","ref":"program/javascript/node/node.md","articles":[]},{"title":"JSON","level":"2.2.3.8","depth":3,"path":"program/javascript/json/package.md","ref":"program/javascript/json/package.md","articles":[]}],"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"program/javascript/javascript.md","mtime":"2023-01-12T00:39:30.222Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T00:39:41.486Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.3 JavaScript","level":"2.2.3","depth":2,"next":{"title":"DOM","level":"2.2.3.1","depth":3,"path":"program/javascript/dom/dom.md","ref":"program/javascript/dom/dom.md","articles":[]},"previous":{"title":"2.2 Go","level":"2.2.2","depth":2,"path":"program/go/go.md","ref":"program/go/go.md","articles":[]},"articles":[{"title":"DOM","level":"2.2.3.1","depth":3,"path":"program/javascript/dom/dom.md","ref":"program/javascript/dom/dom.md","articles":[]},{"title":"Canvas","level":"2.2.3.2","depth":3,"path":"program/javascript/canvas/canvas.md","ref":"program/javascript/canvas/canvas.md","articles":[]},{"title":"TypeScript","level":"2.2.3.3","depth":3,"path":"program/javascript/ts/typescript.md","ref":"program/javascript/ts/typescript.md","articles":[]},{"title":"Vue","level":"2.2.3.4","depth":3,"path":"program/javascript/vue/vue.md","ref":"program/javascript/vue/vue.md","articles":[]},{"title":"Nuxt","level":"2.2.3.5","depth":3,"path":"program/javascript/nuxt/nuxt.md","ref":"program/javascript/nuxt/nuxt.md","articles":[]},{"title":"React","level":"2.2.3.6","depth":3,"path":"program/javascript/react/react.md","ref":"program/javascript/react/react.md","articles":[]},{"title":"Node","level":"2.2.3.7","depth":3,"path":"program/javascript/node/node.md","ref":"program/javascript/node/node.md","articles":[]},{"title":"JSON","level":"2.2.3.8","depth":3,"path":"program/javascript/json/package.md","ref":"program/javascript/json/package.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"program/javascript/javascript.md","mtime":"2023-01-12T09:05:53.794Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T09:06:04.627Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2061,6 +2061,30 @@ package.json</p>
     </script>
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
     
         
         <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>

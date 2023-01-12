@@ -1,19 +1,31 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="ja" >
     <head>
         <meta charset="UTF-8">
-        <title>tag · HonKit</title>
+        <title>tag · naopedia</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.4">
-        
+        <meta name="author" content="naohito-T">
         
         
     
     <link rel="stylesheet" href="../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../../gitbook/@honkit/honkit-plugin-highlight/website.css">
@@ -31,18 +43,6 @@
 
     
 
-    
-        
-        <link rel="stylesheet" href="../../styles/website.css">
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
         
     
@@ -72,7 +72,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="検索ワードを入力" />
 </div>
 
             
@@ -1631,7 +1631,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            HonKitで公開 
         </a>
     </li>
 </ul>
@@ -1669,8 +1669,8 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="html-tag-備忘録">html tag 備忘録</h1>
-<h2 id="seo-を強くする">seo を強くする</h2>
+                                <h1 id="html-tag-備忘録"><a name="html-tag-備忘録" class="plugin-anchor" href="#html-tag-備忘録"><i class="fa fa-link" aria-hidden="true"></i></a>html tag 備忘録</h1>
+<h2 id="seo-を強くする"><a name="seo-を強くする" class="plugin-anchor" href="#seo-を強くする"><i class="fa fa-link" aria-hidden="true"></i></a>seo を強くする</h2>
 <p>HTML5の要素タグを使うとSEOが劇的に強くなる</p>
 <ul>
 <li>要素タグとは</li>
@@ -1706,9 +1706,9 @@ article, aside, footer, header, nav要素の中には入れてはいけない</p
 レイアウト目的なら<code>html&lt;div&gt;</code>を使用。</p>
 </li>
 </ul>
-<h2 id="form-関連">form 関連</h2>
+<h2 id="form-関連"><a name="form-関連" class="plugin-anchor" href="#form-関連"><i class="fa fa-link" aria-hidden="true"></i></a>form 関連</h2>
 <p><code>&lt;input&gt;</code>タグに関してはださいため<code>css display: none;にしてbefore afterで追記するのが定石</code></p>
-<h2 id="aria属性">aria属性</h2>
+<h2 id="aria属性"><a name="aria属性" class="plugin-anchor" href="#aria属性"><i class="fa fa-link" aria-hidden="true"></i></a>aria属性</h2>
 <p><a href="https://zenn.dev/yusukehirao/articles/e3512a58df58fd" target="_blank">ariaについて詳しい</a></p>
 <ul>
 <li><p>ariaの知るための知識</p>
@@ -1740,10 +1740,10 @@ role属性
 </blockquote>
 </li>
 </ul>
-<h2 id="tabindex">tabindex</h2>
+<h2 id="tabindex"><a name="tabindex" class="plugin-anchor" href="#tabindex"><i class="fa fa-link" aria-hidden="true"></i></a>tabindex</h2>
 <p>TABキーを押したときにtabindexで指定した数値の小さなもの順にフォーカスが移動する
 ※tabindexに -1を指定するとそのオブジェクトにフォーカスが移動しなくなる。</p>
-<h2 id="video-iframe-タグ">video iframe タグ</h2>
+<h2 id="video-iframe-タグ"><a name="video-iframe-タグ" class="plugin-anchor" href="#video-iframe-タグ"><i class="fa fa-link" aria-hidden="true"></i></a>video iframe タグ</h2>
 <p>iframeはmuteにしていないと自動再生はされない</p>
 <p>動画を埋め込む時に<video>タグと<iframe>タグがありますがYouTube動画の場合は<iframe>タグじゃないと上手くいかない。</iframe></iframe></video></p>
 <p>また、スマホでは自動再生しない。</p>
@@ -1754,7 +1754,7 @@ role属性
 </blockquote>
 <p>この制限があるため<code>autoplay、playVideo()、loadVideoById()</code>などの関数、およびパラメーターはすべてのモバイル環境では動作しない。</p>
 <p><a href="https://www.evoworx.co.jp/blog/video-autoplay/" target="_blank">スマホで自動再生させる</a></p>
-<h2 id="figure">figure</h2>
+<h2 id="figure"><a name="figure" class="plugin-anchor" href="#figure"><i class="fa fa-link" aria-hidden="true"></i></a>figure</h2>
 <p><a href="https://dekiru.net/article/12886/" target="_blank">参考URL</a></p>
 <p>figure要素は<strong>写真、挿絵、図表、コードなどのまとまり</strong>を表す。
 figure要素によるまとまりは、単体で独立したものでなければなりません。
@@ -1803,7 +1803,7 @@ figure要素によるまとまりは、単体で独立したものでなけれ�
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"tag","level":"2.3.1.1","depth":3,"next":{"title":"architecture","level":"2.3.1.2","depth":3,"path":"design/html/archit1ecture.md","ref":"design/html/archit1ecture.md","articles":[]},"previous":{"title":"3.1 html","level":"2.3.1","depth":2,"path":"design/html/html.md","ref":"design/html/html.md","articles":[{"title":"tag","level":"2.3.1.1","depth":3,"path":"design/html/tag.md","ref":"design/html/tag.md","articles":[]},{"title":"architecture","level":"2.3.1.2","depth":3,"path":"design/html/archit1ecture.md","ref":"design/html/archit1ecture.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"design/html/tag.md","mtime":"2023-01-12T00:39:30.210Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T00:39:41.486Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"tag","level":"2.3.1.1","depth":3,"next":{"title":"architecture","level":"2.3.1.2","depth":3,"path":"design/html/archit1ecture.md","ref":"design/html/archit1ecture.md","articles":[]},"previous":{"title":"3.1 html","level":"2.3.1","depth":2,"path":"design/html/html.md","ref":"design/html/html.md","articles":[{"title":"tag","level":"2.3.1.1","depth":3,"path":"design/html/tag.md","ref":"design/html/tag.md","articles":[]},{"title":"architecture","level":"2.3.1.2","depth":3,"path":"design/html/archit1ecture.md","ref":"design/html/archit1ecture.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"design/html/tag.md","mtime":"2023-01-12T09:05:53.786Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T09:06:04.627Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1855,6 +1855,30 @@ figure要素によるまとまりは、単体で独立したものでなけれ�
     </script>
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
     
         
         <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>

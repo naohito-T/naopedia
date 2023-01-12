@@ -1,19 +1,31 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="ja" >
     <head>
         <meta charset="UTF-8">
-        <title>システムがWeb Pageを表示する仕組み · HonKit</title>
+        <title>システムがWeb Pageを表示する仕組み · naopedia</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.4">
-        
+        <meta name="author" content="naohito-T">
         
         
     
     <link rel="stylesheet" href="../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../../gitbook/@honkit/honkit-plugin-highlight/website.css">
@@ -31,18 +43,6 @@
 
     
 
-    
-        
-        <link rel="stylesheet" href="../../styles/website.css">
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
         
     
@@ -72,7 +72,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="検索ワードを入力" />
 </div>
 
             
@@ -1631,7 +1631,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            HonKitで公開 
         </a>
     </li>
 </ul>
@@ -1669,15 +1669,15 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="structure">Structure</h1>
+                                <h1 id="structure"><a name="structure" class="plugin-anchor" href="#structure"><i class="fa fa-link" aria-hidden="true"></i></a>Structure</h1>
 <p><a href="https://qiita.com/amakawa_/items/e7d0720e1ab8632769bf" target="_blank">参考URL</a></p>
-<h2 id="ブラウザがwebページを表示する仕組みについて-htmlcssjavascriptのみ">ブラウザがWebページを表示する仕組みについて HTML/CSS/JavaScriptのみ</h2>
+<h2 id="ブラウザがwebページを表示する仕組みについて-htmlcssjavascriptのみ"><a name="ブラウザがwebページを表示する仕組みについて-htmlcssjavascriptのみ" class="plugin-anchor" href="#ブラウザがwebページを表示する仕組みについて-htmlcssjavascriptのみ"><i class="fa fa-link" aria-hidden="true"></i></a>ブラウザがWebページを表示する仕組みについて HTML/CSS/JavaScriptのみ</h2>
 <p>シンプルにHTML/CSS/JavaScriptのみで動くアプリケーションの場合</p>
 <ul>
 <li>デメリット
 <strong>変更がない部分(ヘッダーなど)のHTMLも毎回サーバから送信されるため処理に時間がかかる。</strong></li>
 </ul>
-<h2 id="spasingle-page-application">SPA(Single Page Application)</h2>
+<h2 id="spasingle-page-application"><a name="spasingle-page-application" class="plugin-anchor" href="#spasingle-page-application"><i class="fa fa-link" aria-hidden="true"></i></a>SPA(Single Page Application)</h2>
 <ul>
 <li><p>メリット
 実装しやすい
@@ -1719,7 +1719,7 @@ SSRよりも速い
 </ul>
 <p>各ルートのHTMLをあらかじめ生成するため、SSRよりもレスポンスが速いのが魅力です。また、静的ファイルを生成するおかげで、SPAと同じようにホスティング先の選択肢が広がります。</p>
 <p>生成時にはサーバーサイドでレンダリングすることになるので、SSRを考慮した実装が必要になるのと、SSGには向き不向きがあるので、Webサイトの要件を考えて慎重に選択する必要があります。</p>
-<h2 id="ogpopen-graph-protocol">OGP(Open Graph Protocol)</h2>
+<h2 id="ogpopen-graph-protocol"><a name="ogpopen-graph-protocol" class="plugin-anchor" href="#ogpopen-graph-protocol"><i class="fa fa-link" aria-hidden="true"></i></a>OGP(Open Graph Protocol)</h2>
 <p>FacebookやTwitterなどのSNSでシェアした際に、設定したWEBページのタイトルやイメージ画像、詳細などを正しく伝えるためのhtml要素。
 これを設定しておくと、SNS上でURLが共有された際にタイトルや画像、説明文などが表示されるようになり、ユーザーに対してページの内容を詳しく伝えることができる</p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">property</span>=<span class="hljs-string">&quot;og:url&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot; ページの URL&quot;</span> /&gt;</span>
@@ -1772,7 +1772,7 @@ SSRよりも速い
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"システムがWeb Pageを表示する仕組み","level":"2.13.1.5","depth":3,"next":{"title":"11.2 Server","level":"2.13.2","depth":2,"path":"plan/server/server.md","ref":"plan/server/server.md","articles":[{"title":"MVC","level":"2.13.2.1","depth":3,"path":"plan/server/mvc/mv*.md","ref":"plan/server/mvc/mv*.md","articles":[]},{"title":"Object指向","level":"2.13.2.2","depth":3,"path":"plan/server/object/object.md","ref":"plan/server/object/object.md","articles":[]},{"title":"DDD(Domain Driven Design)","level":"2.13.2.3","depth":3,"path":"plan/server/ddd/ddd.md","ref":"plan/server/ddd/ddd.md","articles":[]},{"title":"Clean Architecture","level":"2.13.2.4","depth":3,"path":"plan/server/cleanarchitecture/cleanarchitecture.md","ref":"plan/server/cleanarchitecture/cleanarchitecture.md","articles":[]}]},"previous":{"title":"BFF(Backends For Frontends)","level":"2.13.1.4","depth":3,"path":"plan/front/bff/bff.md","ref":"plan/front/bff/bff.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"plan/front/structure.md","mtime":"2023-01-12T00:39:30.222Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T00:39:41.486Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"システムがWeb Pageを表示する仕組み","level":"2.13.1.5","depth":3,"next":{"title":"11.2 Server","level":"2.13.2","depth":2,"path":"plan/server/server.md","ref":"plan/server/server.md","articles":[{"title":"MVC","level":"2.13.2.1","depth":3,"path":"plan/server/mvc/mv*.md","ref":"plan/server/mvc/mv*.md","articles":[]},{"title":"Object指向","level":"2.13.2.2","depth":3,"path":"plan/server/object/object.md","ref":"plan/server/object/object.md","articles":[]},{"title":"DDD(Domain Driven Design)","level":"2.13.2.3","depth":3,"path":"plan/server/ddd/ddd.md","ref":"plan/server/ddd/ddd.md","articles":[]},{"title":"Clean Architecture","level":"2.13.2.4","depth":3,"path":"plan/server/cleanarchitecture/cleanarchitecture.md","ref":"plan/server/cleanarchitecture/cleanarchitecture.md","articles":[]}]},"previous":{"title":"BFF(Backends For Frontends)","level":"2.13.1.4","depth":3,"path":"plan/front/bff/bff.md","ref":"plan/front/bff/bff.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"plan/front/structure.md","mtime":"2023-01-12T09:05:53.794Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T09:06:04.627Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1824,6 +1824,30 @@ SSRよりも速い
     </script>
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
     
         
         <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>

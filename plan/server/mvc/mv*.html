@@ -1,19 +1,31 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="ja" >
     <head>
         <meta charset="UTF-8">
-        <title>MVC · HonKit</title>
+        <title>MVC · naopedia</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 4.0.4">
-        
+        <meta name="author" content="naohito-T">
         
         
     
     <link rel="stylesheet" href="../../../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../../../gitbook/@honkit/honkit-plugin-highlight/website.css">
@@ -31,18 +43,6 @@
 
     
 
-    
-        
-        <link rel="stylesheet" href="../../../styles/website.css">
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
         
     
@@ -72,7 +72,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="検索ワードを入力" />
 </div>
 
             
@@ -1631,7 +1631,7 @@
 
     <li>
         <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
-            Published with HonKit
+            HonKitで公開 
         </a>
     </li>
 </ul>
@@ -1669,23 +1669,23 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="mv">MV*</h1>
+                                <h1 id="mv"><a name="mv" class="plugin-anchor" href="#mv"><i class="fa fa-link" aria-hidden="true"></i></a>MV*</h1>
 <p>MVCやMVVMなど色々な概念がある。</p>
-<h2 id="mvc">MVC</h2>
+<h2 id="mvc"><a name="mvc" class="plugin-anchor" href="#mvc"><i class="fa fa-link" aria-hidden="true"></i></a>MVC</h2>
 <p><a href="https://qiita.com/s_emoto/items/975cc38a3e0de462966a" target="_blank">参考URL</a></p>
 <ul>
 <li>MVCモデルとは
 役割ごとに<strong>Model, View, Controller</strong>に分割してコーディングを行うモデル</li>
 </ul>
 <hr>
-<h2 id="webアプリケーションサーバの役割">Webアプリケーションサーバの役割</h2>
+<h2 id="webアプリケーションサーバの役割"><a name="webアプリケーションサーバの役割" class="plugin-anchor" href="#webアプリケーションサーバの役割"><i class="fa fa-link" aria-hidden="true"></i></a>Webアプリケーションサーバの役割</h2>
 <ul>
 <li>データベースや全文検索エンジンといったミドルウェアからデータを取得、更新する</li>
 <li>ページを構築する</li>
 <li>HTTPのインターフェースとしてユーザからの入力情報を得る
 など</li>
 </ul>
-<h2 id="従来のwebアプリケーション">従来のWebアプリケーション</h2>
+<h2 id="従来のwebアプリケーション"><a name="従来のwebアプリケーション" class="plugin-anchor" href="#従来のwebアプリケーション"><i class="fa fa-link" aria-hidden="true"></i></a>従来のWebアプリケーション</h2>
 <p><a href="https://atmarkit.itmedia.co.jp/ait/articles/1803/12/news012.html" target="_blank">参考URL</a></p>
 <p>従来のWebアプリケーションは、HTMLを基本とし、動きもシンプルでした。特にCGIをメインとしていたときは主にHTMLだけで構成され、JavaScriptは多少インタラクティブなことをする程度のアプリケーションが多かったのです。この時代のWebアプリケーションサーバはモノリシックな1枚のサーバで作られていることが多く、データベースとのやりとりからHTMLの構築までを1つのアプリケーションとして構築していました。</p>
 <p><img src="image/従来のweb.png" alt></p>
@@ -1699,12 +1699,12 @@
 <p><img src="image/現在のweb.png" alt></p>
 <p>このようにして「BFF」と呼ばれるアーキテクチャが作られるようになりました。</p>
 <p><strong>BFFの続きは参考URLの続きにある。</strong></p>
-<h2 id="bffはフロントエンジニア、バックエンドエンジニアのどちらが担当するのか">BFFはフロントエンジニア、バックエンドエンジニアのどちらが担当するのか</h2>
+<h2 id="bffはフロントエンジニア、バックエンドエンジニアのどちらが担当するのか"><a name="bffはフロントエンジニア、バックエンドエンジニアのどちらが担当するのか" class="plugin-anchor" href="#bffはフロントエンジニア、バックエンドエンジニアのどちらが担当するのか"><i class="fa fa-link" aria-hidden="true"></i></a>BFFはフロントエンジニア、バックエンドエンジニアのどちらが担当するのか</h2>
 <p>BFFは、クライアント側を担当するフロントエンドエンジニアが開発を担当することが多いです。BFFはサーバであるため、バックエンドエンジニアが開発すると思われることもありますが、UIを構築、操作する手助けをするサーバであるため、フロントエンドエンジニアの担当領域になります。</p>
 <p>BFFアーキテクチャでは、バックエンドエンジニアはAPIを基本として、リソースを管理するのが担当領域になります。</p>
 <p><img src="image/担当.png" alt></p>
 <hr>
-<h2 id="アプリケーション・アーキテクチャ">アプリケーション・アーキテクチャ</h2>
+<h2 id="アプリケーション・アーキテクチャ"><a name="アプリケーション・アーキテクチャ" class="plugin-anchor" href="#アプリケーション・アーキテクチャ"><i class="fa fa-link" aria-hidden="true"></i></a>アプリケーション・アーキテクチャ</h2>
 <p>アプリケーション・アーキテクチャについて学ぶとMVCや3層アーキテクチャといった言葉にたどりつく</p>
 <ul>
 <li>2種類の3層</li>
@@ -1715,7 +1715,7 @@
 <p><strong>一方、アプリケーションサーバで動いているプログラムの内部構造も以下のように3層に分離することがある。</strong>
 <strong>※これも3層アーキテクチャということがある。</strong>
 <img src="../images/3層2.png" alt></p>
-<h2 id="アプリケーション・アーキテクチャの基本は3層">アプリケーション・アーキテクチャの基本は3層</h2>
+<h2 id="アプリケーション・アーキテクチャの基本は3層"><a name="アプリケーション・アーキテクチャの基本は3層" class="plugin-anchor" href="#アプリケーション・アーキテクチャの基本は3層"><i class="fa fa-link" aria-hidden="true"></i></a>アプリケーション・アーキテクチャの基本は3層</h2>
 <p>Webアプリケーションなどのプログラムの構成を考えるとき、一番基本になるのは以下の3層に分割すること</p>
 <ul>
 <li>プレゼンテーション層(またはユーザーインターフェース層)</li>
@@ -1733,11 +1733,11 @@
 また、データの保存先がファイルだろうが DB だろうが、それはデータアクセス層が異なるだけです。</p>
 </blockquote>
 <p><strong>「表示上の関心と、コアなルールと、データの永続化を分離する」という 3 層が何より基本です。</strong></p>
-<h2 id="mvcと3層の関係">MVCと3層の関係</h2>
+<h2 id="mvcと3層の関係"><a name="mvcと3層の関係" class="plugin-anchor" href="#mvcと3層の関係"><i class="fa fa-link" aria-hidden="true"></i></a>MVCと3層の関係</h2>
 <p>MVCと3層アーキテクチャの関係を図にすると以下となる。
 <img src="image/mvcと3層.png" alt></p>
 <p><strong>MVCは3層アーキテクチャと比較するとプレゼンテーション層周辺に着目している</strong></p>
-<h2 id="mvcとは">MVCとは</h2>
+<h2 id="mvcとは"><a name="mvcとは" class="plugin-anchor" href="#mvcとは"><i class="fa fa-link" aria-hidden="true"></i></a>MVCとは</h2>
 <blockquote>
 <p>MVC（Model View Controller モデル・ビュー・コントローラ）は、ユーザーインタフェースをもつアプリケーションソフトウェアを実装するためのデザインパターンである。</p>
 </blockquote>
@@ -1747,7 +1747,7 @@
 ちなみに、上図から明らかだと思いますが、MVC で言う Model 1は、ただのデータの入れ物ではありません。Model はビジネスロジックを書くところです。
 「グーがチョキに勝ち、チョキがパーに勝ち、パーがグーに勝つ」と言ったコアなルール (ビジネスロジック) を View や Controller には書いてはいけません</p>
 </blockquote>
-<h2 id="ビジネスロジック層">ビジネスロジック層</h2>
+<h2 id="ビジネスロジック層"><a name="ビジネスロジック層" class="plugin-anchor" href="#ビジネスロジック層"><i class="fa fa-link" aria-hidden="true"></i></a>ビジネスロジック層</h2>
 <p>ビジネスロジック層には大きく次の2種類の実装方法がある。</p>
 <ol>
 <li>トランザクションスクリプト</li>
@@ -1763,7 +1763,7 @@ Javaだな</p>
 草なぎさんと話していたやつか</p>
 </li>
 </ol>
-<h2 id="ここで言うオブジェクト指向とは？">ここで言うオブジェクト指向とは？</h2>
+<h2 id="ここで言うオブジェクト指向とは？"><a name="ここで言うオブジェクト指向とは？" class="plugin-anchor" href="#ここで言うオブジェクト指向とは？"><i class="fa fa-link" aria-hidden="true"></i></a>ここで言うオブジェクト指向とは？</h2>
 <p><strong>オブジェクト指向プログラミングと手続き型プログラミングでは、データと処理が一緒にいるかどうかが大きく異なる</strong></p>
 <blockquote>
 <p>ドメインモデル方式では、オブジェクト指向で実装するため、「データ」を内部に隠蔽したオブジェクトに対し「処理」を命令するようなコードになります。</p>
@@ -1771,7 +1771,7 @@ Javaだな</p>
 DTO にデータだけを持たせて処理はサービスに記述するのではなく、データと処理を同じクラスに書くのがオブジェクト指向プログラミングであり、ドメインモデルという実装方式です。</p>
 <p>ドメインモデル方式はトランザクションスクリプトと比較して、学習コストや初期実装コストが高い代わりに、長期的に変更に強いアプリケーションになるとされています。</p>
 </blockquote>
-<h2 id="ドメインモデルの場合は4層になることも">ドメインモデルの場合は4層になることも</h2>
+<h2 id="ドメインモデルの場合は4層になることも"><a name="ドメインモデルの場合は4層になることも" class="plugin-anchor" href="#ドメインモデルの場合は4層になることも"><i class="fa fa-link" aria-hidden="true"></i></a>ドメインモデルの場合は4層になることも</h2>
 <p><img src="image/4層.png" alt></p>
 <blockquote>
 <p>ドメインモデルの実装例は、DDD という手法の中でもまとめられています。
@@ -1784,7 +1784,7 @@ DTO にデータだけを持たせて処理はサービスに記述するので�
 <li>ドメイン層のオブジェクトたち (ドメインモデル) に対する操作でユースケース(活用事例)を実現する</li>
 <li>ピュアなオブジェクト指向モデルの世界に入れたくない、トランザクション管理のような、アプリケーション都合のロジックを実現する</li>
 </ul>
-<h2 id="データアクセス層">データアクセス層</h2>
+<h2 id="データアクセス層"><a name="データアクセス層" class="plugin-anchor" href="#データアクセス層"><i class="fa fa-link" aria-hidden="true"></i></a>データアクセス層</h2>
 <p>データアクセス層は DB などにデータを保存する責務を持つ層ですが、O/R マッパーに任せて、一切コードを書かない場合があります。</p>
 <ul>
 <li>コントローラー : ハンドラーともいうことがある。
@@ -1834,7 +1834,7 @@ Webアプリケーションにおけるコントローラーには、このほ�
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"MVC","level":"2.13.2.1","depth":3,"next":{"title":"Object指向","level":"2.13.2.2","depth":3,"path":"plan/server/object/object.md","ref":"plan/server/object/object.md","articles":[]},"previous":{"title":"11.2 Server","level":"2.13.2","depth":2,"path":"plan/server/server.md","ref":"plan/server/server.md","articles":[{"title":"MVC","level":"2.13.2.1","depth":3,"path":"plan/server/mvc/mv*.md","ref":"plan/server/mvc/mv*.md","articles":[]},{"title":"Object指向","level":"2.13.2.2","depth":3,"path":"plan/server/object/object.md","ref":"plan/server/object/object.md","articles":[]},{"title":"DDD(Domain Driven Design)","level":"2.13.2.3","depth":3,"path":"plan/server/ddd/ddd.md","ref":"plan/server/ddd/ddd.md","articles":[]},{"title":"Clean Architecture","level":"2.13.2.4","depth":3,"path":"plan/server/cleanarchitecture/cleanarchitecture.md","ref":"plan/server/cleanarchitecture/cleanarchitecture.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"plan/server/mvc/mv*.md","mtime":"2023-01-12T00:39:30.222Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T00:39:41.486Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"MVC","level":"2.13.2.1","depth":3,"next":{"title":"Object指向","level":"2.13.2.2","depth":3,"path":"plan/server/object/object.md","ref":"plan/server/object/object.md","articles":[]},"previous":{"title":"11.2 Server","level":"2.13.2","depth":2,"path":"plan/server/server.md","ref":"plan/server/server.md","articles":[{"title":"MVC","level":"2.13.2.1","depth":3,"path":"plan/server/mvc/mv*.md","ref":"plan/server/mvc/mv*.md","articles":[]},{"title":"Object指向","level":"2.13.2.2","depth":3,"path":"plan/server/object/object.md","ref":"plan/server/object/object.md","articles":[]},{"title":"DDD(Domain Driven Design)","level":"2.13.2.3","depth":3,"path":"plan/server/ddd/ddd.md","ref":"plan/server/ddd/ddd.md","articles":[]},{"title":"Clean Architecture","level":"2.13.2.4","depth":3,"path":"plan/server/cleanarchitecture/cleanarchitecture.md","ref":"plan/server/cleanarchitecture/cleanarchitecture.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"root":"./docs","styles":{"website":"./styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"plan/server/mvc/mv*.md","mtime":"2023-01-12T09:05:53.794Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T09:06:04.627Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1886,6 +1886,30 @@ Webアプリケーションにおけるコントローラーには、このほ�
     </script>
     <script src="../../../gitbook/gitbook.js"></script>
     <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
     
         
         <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
