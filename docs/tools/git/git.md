@@ -599,3 +599,40 @@ $ git commit --allow-empty
 
 $ git push
 ```
+
+
+
+# GitHub Tips
+
+## Git diffで特定の日付からの変更を確認したい場合
+
+```sh
+$ git diff HEAD 'HEAD@{2015-06-01}'  
+// 同じ意味
+$ git diff HEAD 'HEAD@{2015-06-01 0:00}'  
+```
+
+
+## コミットメッセージ
+
+[参考URL](https://qiita.com/konatsu_p/items/dfe199ebe3a7d2010b3e)
+プレフィックスにつけるとわかりやすいかも
+
+```sh
+# 新しい機能
+[feat] 
+# バグの修正
+[fix]
+# ドキュメントのみの変更
+[docs]
+# 空白、フォーマット、セミコロン追加など
+[style]
+# 仕様に影響がないコード改善（リファクター）
+[refactor]
+# パフォーマンス向上関連
+[perf]
+# テスト関連
+[test]
+# ビルド、補助ツール、ライブラリ関連
+[chore]
+```

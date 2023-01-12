@@ -79,3 +79,7 @@ html::-webkit-scrollbar {
 img {
   -webkit-user-drag: none;
 }
+
+.page-inner {
+  width: 100% !important
+}

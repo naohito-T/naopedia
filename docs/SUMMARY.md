@@ -35,6 +35,27 @@
     * [sqlite](db/sql/sqlite/sqlite.md)
   * [4. Tuning](db/tuning/tuning.md)
 
+* [Design](design/design.md)
+  * [1 html](design/html/html.md)
+    * [tag](design/html/tag.md)
+    * [architecture](design/html/archit1ecture.md)
+  * [2 css](design/css/css.md)
+    * [property](design/css/property.md)
+    * [design](design/css/design.md)
+    * [architecture](design/css/architecture.md)
+  * [3 pwa](design/pwa/pwa.md)
+  * [4 sass](design/sass/sass.md)
+  * [5 animation](design/animation/animation.md)
+    * [flash](design/animation/flash.md)
+    * [gsap](design/animation/gsap.md)
+    * [WebGL](design/animation/webgl.md)
+  * [6 3D](design/3D/3d.md)
+  * [7 Web(Webでのdesign案)](design/web/web.md)
+
+* [Hardware](hardware/hardware.md)
+  * [1 低レイヤー](hardware/lowlayer/program.md)
+  * [2 OS](hardware/os/os.md)
+
 * [Programing](program/program.md)
   * [1. C/C++](program/c/c_c++.md)
   * [2. Go](program/go/go.md)
@@ -58,32 +79,11 @@
     * [正規表現](program/dsl/正規表現.md)
   * [全体に適用できる考え方](program/全体に適用できる考え方.md)
 
-* [Design](design/design.md)
-  * [1 html](design/html/html.md)
-    * [tag](design/html/tag.md)
-    * [architecture](design/html/archit1ecture.md)
-  * [2 css](design/css/css.md)
-    * [property](design/css/property.md)
-    * [design](design/css/design.md)
-    * [architecture](design/css/architecture.md)
-  * [3 pwa](design/pwa/pwa.md)
-  * [4 sass](design/sass/sass.md)
-  * [5 animation](design/animation/animation.md)
-    * [flash](design/animation/flash.md)
-    * [gsap](design/animation/gsap.md)
-    * [WebGL](design/animation/webgl.md)
-  * [6 3D](design/3D/3d.md)
-  * [7 Web(Webでのdesign案)](design/web/web.md)
-
 * [middleware](middleware/README.md)
 
 * [infrastructure](infrastructure/infrastructure.md)
   * [1 docker](infrastructure/docker/docker.md)
     * [docker compose](infrastructure/docker/docker-compose.md)
-  
-* [Hardware](hardware/hardware.md)
-  * [1 低レイヤー](hardware/lowlayer/program.md)
-  * [2 OS](hardware/os/os.md)
 
 * [セキュリティ](security/security.md)
 
@@ -107,13 +107,12 @@
   * [3. インフラ](plan/infra/infra.md)
     * [マイクロサービスアーキテクチャ](plan/infra/micro/micro.md)
 
-* [Tool](tool/tool.md)
-  * [1. Git](tool/git/git.md)
-    * [作法](tool/git/作法.md)
-    * [GitHub Action](tool/git/github_actions.md)
-    * [PULL_REQUEST_TEMPLATE](tool/git/PULL_REQUEST_TEMPLATE.md.md)
-  * [2.](tool/codepen/codepen.md)
-  * [3.](tool/vscode/vscode.md)
-
-
-
+* [Tools](tools/tools.md)
+  * [1. editor](tools/editor/editor.md)
+    * [Vim](tools/editor/vim/vim.md)
+    * [VSCode](tools/editor/vscode/vscode.md)
+  * [2. Git](tools/git/git.md)
+    * [GitHub Actions](tools/git/actions/actions.md)
+    * [PULL_REQUEST_TEMPLATE](tools/git/template/PULL_REQUEST_TEMPLATE.md)
+    * [Git CLI](tools/git/cli/cli.md)
+  * [3. homebrew](tools/homebrew/homebrew.md)
