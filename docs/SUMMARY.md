@@ -4,14 +4,38 @@
 
 ## Summary
 
-* [1. coding](coding/coding.md)
-  * [1.1 algorithm](coding/algorithm/algorithm.md)
-  * [1.2 AtCoder](coding/atcoder/atcoder.md)
-  * [1.3 命名規則](coding/namerules/namerules.md)
-  * [1.4 Design Pattern](coding/designpattern/designpattern.md)
-  * [1.5 プリンシプル オブ プログラミング](coding/principle/principle.md)
-  * [1.6 Tips(コーディングアイデア集)](coding/tips/tips.md)
-  
+#### book
+* [1. book](book/book.md)
+  * [1.1 principle](book/principle/principle.md)
+
+#### cli
+* [1. cli](cli/cli.md)
+  * [1.1 file-manager](cli/file-manager/file-manager.md)
+  * [1.2 make](cli/make/make.md)
+  * [1.3 shell](cli/shell/shell.md)
+    * [bash](cli/shell/bash/bash.md)
+    * [command](cli/shell/command/command.md)
+    * [env](cli/shell/env/env.md)
+    * [script](cli/shell/script/script.md)
+    * [zsh](cli/shell/zsh/zsh.md)
+    * [zsh](cli/shell/zsh/zsh.md)
+
+#### Coding
+* [2. coding](coding/coding.md)
+  * [2.1 algorithm](coding/algorithm/algorithm.md)
+  * [2.2 AtCoder](coding/atcoder/atcoder.md)
+  * [2.3 命名規則](coding/namerules/namerules.md)
+  * [2.4 Design Pattern](coding/designpattern/designpattern.md)
+
+#### DB
+* [3. DB](db/db.md)
+  * [3.1 SQL](db/sql/sql.md)
+    * [MySQL](db/sql/mysql/mysql.md)
+  * [3.2 ORM](db/orm/orm.md)
+    * [TypeORM](db/orm/typeorm/typeorm.md)
+  * [3.3 Redis](db/redis/redis.md)
+
+#### Programing
 * [2. program](program/program.md)
   * [2.1 C/C++](program/c/c_c++.md)
   * [2.2 Go](program/go/go.md)
@@ -35,6 +59,7 @@
     * [正規表現](program/dsl/正規表現.md)
   * [全体に適用できる考え方](program/全体に適用できる考え方.md)
 
+#### Design
 * [3. design](design/design.md)
   * [3.1 html](design/html/html.md)
     * [tag](design/html/tag.md)
@@ -52,26 +77,9 @@
   * [3.6 3D](design/3D/3d.md)
   * [3.7 Web(Webでのdesign案)](design/web/web.md)
 
-* [4. Web(web作成の時に使うもの)](web/web.md)
-  * [4.1 darkmode](web/darkmode.md)
-  * [4.2 Loading](web/loading.md)
-  * [4.3 login](web/login.md)
-  * [4.4 modal](web/modal.md)
-  * [4.5 pagenation](web/pagenation.md)
-  * [4.6 pc_sp_判断](web/pc_sp_判断.md)
-  * [4.7 progressbar](web/progressbar.md)
-  * [4.4 modal](web/modal.md)
-  * [4.4 modal](web/modal.md)
 
-* [5. DB](db/db.md)
-  * [5.1 SQL](db/sql/sql.md)
-    * [MySQL](db/sql/mysql/mysql.md)
-  * [5.2 ORM](db/orm/orm.md)
-    * [TypeORM](db/orm/typeorm/typeorm.md)
-  * [5.3 Redis](db/redis/redis.md)
 
-* [6. cloud](cloud/cloud.md)
-  * [6.1 gcp](cloud/gcp/firebase.md)
+
   
 * [7. middleware](middleware/README.md)
 

@@ -1,1 +1,3 @@
-# alogorithm
+# algorithm
+
+アルゴリズムについてまとめるディレクトリ

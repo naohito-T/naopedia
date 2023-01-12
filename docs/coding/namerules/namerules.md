@@ -1,4 +1,4 @@
-# Coding 命名規則
+# 命名規則
 
 ## 変数名
 [参考URL](https://zenn.dev/naoki_oshiumi/articles/aad7e1b3719fad)

@@ -3,13 +3,8 @@
 筆者である[naohito-T](https://github.com/naohito-T)が ITエンジニアとして役になったTips、よく忘れることを記したWikipedia
 ※当ドキュメントの正誤性には保証はありません。
 
-<details>
-<summary>Contact to naohito-T</summary>
+### Contact to naohito-T
 
-- Gmail
-[Gmail](<mailto:naohito.tanaka0523@gmail.com>)
-
-- Twitter
-[Twitter](https://mobile.twitter.com/naohito___t)
-
-</details>
+<a href="mailto:naohito.tanaka0523@gmail.com">Contact to MAIL</a>
+<br/>
+<a href="https://mobile.twitter.com/naohito___t" target="_blank" rel="noopener noreferrer">Contact to Twitter</a>
