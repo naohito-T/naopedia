@@ -1,7 +1,7 @@
 {
   "name": "naopedia",
   "version": "1.0.0",
-  "description": "## 知識の蓄え",
+  "description": "知識の蓄え",
   "main": "index.js",
   "directories": {
     "doc": "docs"
@@ -21,7 +21,14 @@
     "build": "honkit build",
     "serve": "honkit serve"
   },
-  "dependencies": {},
+  "dependencies": {
+    "gitbook-plugin-advanced-emoji": "^0.2.2",
+    "gitbook-plugin-anchors": "^0.7.1",
+    "gitbook-plugin-back-to-top-button": "^0.1.4",
+    "gitbook-plugin-copy-code-button": "^0.0.2",
+    "gitbook-plugin-hide-published-with": "^0.0.1",
+    "gitbook-plugin-intopic-toc": "^1.1.1"
+  },
   "devDependencies": {
     "honkit": "^4.0.4"
   }

@@ -1,3 +1,16 @@
 {
-    "root": "./docs"
+    "root": "./docs",
+    "title": "naopedia",
+    "author": "naohito-T",
+    "language": "ja",
+    "styles": {
+        "website": "./styles/website.css"
+    },
+    "plugins": [
+        "anchors",
+        "hide-published-with",
+        "copy-code-button",
+        "intopic-toc",
+        "back-to-top-button"
+    ]
 }

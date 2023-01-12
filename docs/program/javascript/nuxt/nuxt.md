@@ -539,10 +539,6 @@ Prop渡しと違ってバケツリレーをする必要がない。
 Vue.jsのrouter-linkを拡張しているもの
 そのためrouter-linkと同じ使い方ができる。
 
-## nuxt-linkとaタグの違い
-
-```html<a>```は外部ページ,```vue<NuxtLink></NuxtLink>は内部ページ```
-
 - nuxt-linkを使うメリット
 
 >このコンポーネントは、ページコンポーネント間のナビゲーションを提供し、賢い prefetching（先読み）でパフォーマンスを高めるのに使用します。

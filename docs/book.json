@@ -1,7 +1,0 @@
-{
-  "language": "ja",
-  "plugins": ["-sharing", "hide-published-with"],
-  "styles": {
-    "website": "styles/website.css"
-  }
-}
