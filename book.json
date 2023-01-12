@@ -4,7 +4,8 @@
     "author": "naohito-T",
     "language": "ja",
     "styles": {
-        "website": "styles/website.css"
+        "website": "styles/website.css",
+        "mobi": "styles/mobi.css"
     },
     "plugins": [
         "anchors",
