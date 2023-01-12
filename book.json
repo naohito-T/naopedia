@@ -4,7 +4,7 @@
     "author": "naohito-T",
     "language": "ja",
     "styles": {
-        "website": "./styles/website.css"
+        "website": "styles/website.css"
     },
     "plugins": [
         "anchors",
