@@ -1,0 +1,1954 @@
+
+<!DOCTYPE HTML>
+<html lang="ja" >
+    <head>
+        <meta charset="UTF-8">
+        <title>1.3 shell · naopedia</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        <meta name="author" content="naohito-T">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="bash/bash.html" />
+    
+    
+    <link rel="prev" href="../make/make.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="検索ワードを入力" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Summary</li>
+        
+        
+    
+
+    
+        
+        <li class="header">book</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../book/book.html">
+            
+                <a href="../../book/book.html">
+            
+                    
+                    1. book
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../../book/principle/principle.html">
+            
+                <a href="../../book/principle/principle.html">
+            
+                    
+                    1.1 principle
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">cli</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../cli.html">
+            
+                <a href="../cli.html">
+            
+                    
+                    1. cli
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../file-manager/file-manager.html">
+            
+                <a href="../file-manager/file-manager.html">
+            
+                    
+                    1.1 file-manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../make/make.html">
+            
+                <a href="../make/make.html">
+            
+                    
+                    1.2 make
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.1.3" data-path="shell.html">
+            
+                <a href="shell.html">
+            
+                    
+                    1.3 shell
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.3.1" data-path="bash/bash.html">
+            
+                <a href="bash/bash.html">
+            
+                    
+                    bash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3.2" data-path="command/command.html">
+            
+                <a href="command/command.html">
+            
+                    
+                    command
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3.3" data-path="env/env.html">
+            
+                <a href="env/env.html">
+            
+                    
+                    env
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3.4" data-path="script/script.html">
+            
+                <a href="script/script.html">
+            
+                    
+                    script
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3.5" data-path="zsh/zsh.html">
+            
+                <a href="zsh/zsh.html">
+            
+                    
+                    zsh
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3.6" data-path="zsh/zsh.html">
+            
+                <a href="zsh/zsh.html">
+            
+                    
+                    zsh
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Coding</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../../coding/coding.html">
+            
+                <a href="../../coding/coding.html">
+            
+                    
+                    2. coding
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../../coding/algorithm/algorithm.html">
+            
+                <a href="../../coding/algorithm/algorithm.html">
+            
+                    
+                    2.1 algorithm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../../coding/atcoder/atcoder.html">
+            
+                <a href="../../coding/atcoder/atcoder.html">
+            
+                    
+                    2.2 AtCoder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="../../coding/namerules/namerules.html">
+            
+                <a href="../../coding/namerules/namerules.html">
+            
+                    
+                    2.3 命名規則
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="../../coding/designpattern/designpattern.md">
+            
+                <span>
+            
+                    
+                    2.4 Design Pattern
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">DB</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../../db/db.html">
+            
+                <a href="../../db/db.html">
+            
+                    
+                    3. DB
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.1" data-path="../../db/sql/sql.html">
+            
+                <a href="../../db/sql/sql.html">
+            
+                    
+                    3.1 SQL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.1.1" data-path="../../db/sql/mysql/mysql.html">
+            
+                <a href="../../db/sql/mysql/mysql.html">
+            
+                    
+                    MySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.2" data-path="../../db/orm/orm.html">
+            
+                <a href="../../db/orm/orm.html">
+            
+                    
+                    3.2 ORM
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.2.1" data-path="../../db/orm/typeorm/typeorm.html">
+            
+                <a href="../../db/orm/typeorm/typeorm.html">
+            
+                    
+                    TypeORM
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.3" data-path="../../db/redis/redis.html">
+            
+                <a href="../../db/redis/redis.html">
+            
+                    
+                    3.3 Redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Programing</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../../program/program.html">
+            
+                <a href="../../program/program.html">
+            
+                    
+                    2. program
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1.1" data-path="../../program/c/c_c++.html">
+            
+                <a href="../../program/c/c_c++.html">
+            
+                    
+                    2.1 C/C++
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.2" data-path="../../program/go/go.html">
+            
+                <a href="../../program/go/go.html">
+            
+                    
+                    2.2 Go
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.3" data-path="../../program/javascript/javascript.html">
+            
+                <a href="../../program/javascript/javascript.html">
+            
+                    
+                    2.3 JavaScript
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1.3.1" data-path="../../program/javascript/dom/dom.html">
+            
+                <a href="../../program/javascript/dom/dom.html">
+            
+                    
+                    DOM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.3.2" data-path="../../program/javascript/canvas/canvas.html">
+            
+                <a href="../../program/javascript/canvas/canvas.html">
+            
+                    
+                    Canvas
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.3.3" data-path="../../program/javascript/ts/typescript.md">
+            
+                <span>
+            
+                    
+                    TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.3.4" data-path="../../program/javascript/vue/vue.html">
+            
+                <a href="../../program/javascript/vue/vue.html">
+            
+                    
+                    Vue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.3.5" data-path="../../program/javascript/nuxt/nuxt.html">
+            
+                <a href="../../program/javascript/nuxt/nuxt.html">
+            
+                    
+                    Nuxt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.3.6" data-path="../../program/javascript/react/react.html">
+            
+                <a href="../../program/javascript/react/react.html">
+            
+                    
+                    React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.3.7" data-path="../../program/javascript/node/node.html">
+            
+                <a href="../../program/javascript/node/node.html">
+            
+                    
+                    Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.3.8" data-path="../../program/javascript/json/package.md">
+            
+                <span>
+            
+                    
+                    JSON
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.4" data-path="../../program/php/php.html">
+            
+                <a href="../../program/php/php.html">
+            
+                    
+                    2.4 PHP
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1.4.1" data-path="../../program/php/Laravel/Laravel.html">
+            
+                <a href="../../program/php/Laravel/Laravel.html">
+            
+                    
+                    Laravel
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.5" data-path="../../program/python/python.html">
+            
+                <a href="../../program/python/python.html">
+            
+                    
+                    2.5 Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.6" data-path="../../program/ruby/ruby.html">
+            
+                <a href="../../program/ruby/ruby.html">
+            
+                    
+                    2.6 Ruby
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1.6.1" data-path="../../program/ruby/rails/rails.html">
+            
+                <a href="../../program/ruby/rails/rails.html">
+            
+                    
+                    Rails
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.7" data-path="../../program/dsl/dsl.html">
+            
+                <a href="../../program/dsl/dsl.html">
+            
+                    
+                    2.7 DSL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1.7.1" data-path="../../program/dsl/xml.html">
+            
+                <a href="../../program/dsl/xml.html">
+            
+                    
+                    XML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.7.2" data-path="../../program/dsl/toml.html">
+            
+                <a href="../../program/dsl/toml.html">
+            
+                    
+                    TOML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.7.3" data-path="../../program/dsl/正規表現.html">
+            
+                <a href="../../program/dsl/正規表現.html">
+            
+                    
+                    正規表現
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.8" data-path="../../program/全体に適用できる考え方.html">
+            
+                <a href="../../program/全体に適用できる考え方.html">
+            
+                    
+                    全体に適用できる考え方
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Design</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../../design/design.html">
+            
+                <a href="../../design/design.html">
+            
+                    
+                    3. design
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1.1" data-path="../../design/html/html.html">
+            
+                <a href="../../design/html/html.html">
+            
+                    
+                    3.1 html
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1.1.1" data-path="../../design/html/tag.html">
+            
+                <a href="../../design/html/tag.html">
+            
+                    
+                    tag
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.1.2" data-path="../../design/html/archit1ecture.md">
+            
+                <span>
+            
+                    
+                    architecture
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.2" data-path="../../design/css/css.html">
+            
+                <a href="../../design/css/css.html">
+            
+                    
+                    3.2 css
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1.2.1" data-path="../../design/css/property.md">
+            
+                <span>
+            
+                    
+                    property
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.2.2" data-path="../../design/css/design.md">
+            
+                <span>
+            
+                    
+                    design
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.2.3" data-path="../../design/css/architecture.md">
+            
+                <span>
+            
+                    
+                    architecture
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.3" data-path="../../design/pwa/pwa.html">
+            
+                <a href="../../design/pwa/pwa.html">
+            
+                    
+                    3.3 pwa
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.4" data-path="../../design/sass/sass.md">
+            
+                <span>
+            
+                    
+                    3.4 sass
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.5" data-path="../../design/animation/animation.html">
+            
+                <a href="../../design/animation/animation.html">
+            
+                    
+                    3.5 animation
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1.5.1" data-path="../../design/animation/flash.html">
+            
+                <a href="../../design/animation/flash.html">
+            
+                    
+                    flash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.5.2" data-path="../../design/animation/gsap.html">
+            
+                <a href="../../design/animation/gsap.html">
+            
+                    
+                    gsap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.5.3" data-path="../../design/animation/webgl.md">
+            
+                <span>
+            
+                    
+                    WebGL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.6" data-path="../../design/3D/3d.html">
+            
+                <a href="../../design/3D/3d.html">
+            
+                    
+                    3.6 3D
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.7" data-path="../../design/web/web.html">
+            
+                <a href="../../design/web/web.html">
+            
+                    
+                    3.7 Web(Webでのdesign案)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../../middleware/README.md">
+            
+                <span>
+            
+                    
+                    7. middleware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../../infrastructure/infrastructure.html">
+            
+                <a href="../../infrastructure/infrastructure.html">
+            
+                    
+                    8. infrastructure
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.2.1" data-path="../../infrastructure/docker/docker.html">
+            
+                <a href="../../infrastructure/docker/docker.html">
+            
+                    
+                    8.1 docker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.2.1.1" data-path="../../infrastructure/docker/docker-compose.html">
+            
+                <a href="../../infrastructure/docker/docker-compose.html">
+            
+                    
+                    docker compose
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="../../hardware/hardware.html">
+            
+                <a href="../../hardware/hardware.html">
+            
+                    
+                    9. hardware
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.3.1" data-path="../../hardware/lowlayer/program.html">
+            
+                <a href="../../hardware/lowlayer/program.html">
+            
+                    
+                    9.1 低レイヤー
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3.2" data-path="../../hardware/os/os.html">
+            
+                <a href="../../hardware/os/os.html">
+            
+                    
+                    9.2 OS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="../../security/security.html">
+            
+                <a href="../../security/security.html">
+            
+                    
+                    10. セキュリティ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.5" data-path="../../test/test.html">
+            
+                <a href="../../test/test.html">
+            
+                    
+                    11. テスト
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.5.1" data-path="../../test/webUI/Cypress.md">
+            
+                <span>
+            
+                    
+                    11.1 WebUI テスト
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.6" data-path="../../performance/performance.html">
+            
+                <a href="../../performance/performance.html">
+            
+                    
+                    12. パフォーマンス
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.7" data-path="../../plan/plan.html">
+            
+                <a href="../../plan/plan.html">
+            
+                    
+                    11. 設計思想
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.7.1" data-path="../../plan/front/front.html">
+            
+                <a href="../../plan/front/front.html">
+            
+                    
+                    11.1 フロントエンド
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.7.1.1" data-path="../../plan/spa/ssr.md">
+            
+                <span>
+            
+                    
+                    SPA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.7.1.2" data-path="../../plan/ssr/ssr.md">
+            
+                <span>
+            
+                    
+                    SSR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.7.1.3" data-path="../../plan/front/flux/flux.html">
+            
+                <a href="../../plan/front/flux/flux.html">
+            
+                    
+                    Flux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.7.1.4" data-path="../../plan/front/bff/bff.html">
+            
+                <a href="../../plan/front/bff/bff.html">
+            
+                    
+                    BFF(Backends For Frontends)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.7.1.5" data-path="../../plan/front/structure.html">
+            
+                <a href="../../plan/front/structure.html">
+            
+                    
+                    システムがWeb Pageを表示する仕組み
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.7.2" data-path="../../plan/server/server.html">
+            
+                <a href="../../plan/server/server.html">
+            
+                    
+                    11.2 Server
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.7.2.1" data-path="../../plan/server/mvc/mv*.html">
+            
+                <a href="../../plan/server/mvc/mv*.html">
+            
+                    
+                    MVC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.7.2.2" data-path="../../plan/server/object/object.md">
+            
+                <span>
+            
+                    
+                    Object指向
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.7.2.3" data-path="../../plan/server/ddd/ddd.html">
+            
+                <a href="../../plan/server/ddd/ddd.html">
+            
+                    
+                    DDD(Domain Driven Design)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.7.2.4" data-path="../../plan/server/cleanarchitecture/cleanarchitecture.html">
+            
+                <a href="../../plan/server/cleanarchitecture/cleanarchitecture.html">
+            
+                    
+                    Clean Architecture
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.7.3" data-path="../../plan/infra/infra.html">
+            
+                <a href="../../plan/infra/infra.html">
+            
+                    
+                    11.3 インフラ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.7.3.1" data-path="../../plan/infra/micro/micro.html">
+            
+                <a href="../../plan/infra/micro/micro.html">
+            
+                    
+                    マイクロサービスアーキテクチャ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.8" data-path="../../requirement/requirement.md">
+            
+                <span>
+            
+                    
+                    12. My Product要件定義
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.9" data-path="../../tool/tool.md">
+            
+                <span>
+            
+                    
+                    13. Tool
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.9.1" data-path="../../tool/git/git.md">
+            
+                <span>
+            
+                    
+                    13. 1 Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.9.1.1" data-path="../../tool/git/作法.md">
+            
+                <span>
+            
+                    
+                    作法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.9.1.2" data-path="../../tool/git/github_actions.md">
+            
+                <span>
+            
+                    
+                    GitHub Action
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.9.1.3" data-path="../../tool/git/PULL_REQUEST_TEMPLATE.md.md">
+            
+                <span>
+            
+                    
+                    PULL_REQUEST_TEMPLATE
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.9.2" data-path="../../tool/codepen/codepen.md">
+            
+                <span>
+            
+                    
+                    13. 2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.9.3" data-path="../../tool/vscode/vscode.md">
+            
+                <span>
+            
+                    
+                    13. 3
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.10" data-path="../../shell/shell.md">
+            
+                <span>
+            
+                    
+                    14. shell
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.10.1" data-path="../../shell/env/env.md">
+            
+                <span>
+            
+                    
+                    14.1 env
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.10.2" data-path="../../shell/makefile/makefile.md">
+            
+                <span>
+            
+                    
+                    14.2 Makefile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.10.3" data-path="../../shell/zsh/zsh.md">
+            
+                <span>
+            
+                    
+                    14.1 zsh
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.11" data-path="../../word/word.md">
+            
+                <span>
+            
+                    
+                    15. IT単語
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.11.1" data-path="../../word/jword.md">
+            
+                <span>
+            
+                    
+                    日本語 単語
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.11.2" data-path="../../word/bword.md">
+            
+                <span>
+            
+                    
+                    ビジネス 用語
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.12" data-path="../../mathematics/mathematics.md">
+            
+                <span>
+            
+                    
+                    15. 数学
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            HonKitで公開 
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >1.3 shell</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="shell"><a name="shell" class="plugin-anchor" href="#shell"><i class="fa fa-link" aria-hidden="true"></i></a>Shell</h1>
+<h2 id="歴史"><a name="歴史" class="plugin-anchor" href="#歴史"><i class="fa fa-link" aria-hidden="true"></i></a>歴史</h2>
+<blockquote>
+<p>Unix は 1969 年 AT&amp;Tの ベル研究所で誕生しました。継続していく開発の中で BSD 系 と呼ばれる分岐が生まれました。本流は最終的に System V 系と呼ばれるようになりました。その Unix の開発の過程で多数のコマンドが生まれ Unix はより便利になっていきました。しかし互換性をそれほど重視していなかったためかコマンドを含む Unix は移植性が低下していきました。そこで生まれたのが POSIX です。1988 年にシステムインターフェースが、1992 年にシェルとコマンドが標準化されました。</p>
+</blockquote>
+<h2 id="ログイン時に表示されるメッセージをカスタマイズする"><a name="ログイン時に表示されるメッセージをカスタマイズする" class="plugin-anchor" href="#ログイン時に表示されるメッセージをカスタマイズする"><i class="fa fa-link" aria-hidden="true"></i></a>ログイン時に表示されるメッセージをカスタマイズする</h2>
+<p><a href="https://qiita.com/Possum55/items/99704f4a9c6205fac3fa" target="_blank">参考URL</a></p>
+<ul>
+<li>ログイン直後のメッセージ
+/etc/motdの内容が表示される（「Message Of The Day」の略）</li>
+</ul>
+<h2 id="ログインシェルとインタラクティブシェルの違い"><a name="ログインシェルとインタラクティブシェルの違い" class="plugin-anchor" href="#ログインシェルとインタラクティブシェルの違い"><i class="fa fa-link" aria-hidden="true"></i></a>ログインシェルとインタラクティブシェルの違い</h2>
+<p><a href="http://tooljp.com/windows/chigai/html/Linux/loginShell-interactiveShell-chigai.html" target="_blank">参考URL</a></p>
+<p>これらの言葉は曖昧に使用されている面もあると思います。あくまでも参考程度。
+Shellではシェルを何個も起動することが可能。
+その中でユーザがログインした後、最初に起動されるシェルが<strong>ログインシェル</strong>、ログインシェルから起動されるシェルでユーザと対話が可能なシェルを<strong>インタラクティブシェル</strong>と呼ぶ。</p>
+<p>ただしbashでは？（他のShellでもいけるかも）オプションにより2個目以後のログインシェルを起動させることが可能
+これらは環境変数や呼ばれる初期化シェルが大きく違うため、違いを把握しておくことは重要</p>
+<p>interactiveとは &quot;相互作用、対話的&quot;という意味</p>
+<h2 id="bash-起動時に読み込まれるファイル群"><a name="bash-起動時に読み込まれるファイル群" class="plugin-anchor" href="#bash-起動時に読み込まれるファイル群"><i class="fa fa-link" aria-hidden="true"></i></a>bash 起動時に読み込まれるファイル群</h2>
+<p>bashだと</p>
+<ul>
+<li><p>ログインシェルで起動されるファイル
+/etc/profile
+~/.bash_profile
+~/.bash_login
+~/.profile
+（多くのディストリビューションでは ~/.bash_profileから ~/.bashrcを呼び出す）</p>
+</li>
+<li><p>インタラクティブシェル
+~/.bashrc</p>
+</li>
+</ul>
+<p>（多くのディストリビューションでは ~/.bashrcからbashrcが呼び出される）</p>
+<h2 id="zsh-起動時に読み込まれるファイル群"><a name="zsh-起動時に読み込まれるファイル群" class="plugin-anchor" href="#zsh-起動時に読み込まれるファイル群"><i class="fa fa-link" aria-hidden="true"></i></a>zsh 起動時に読み込まれるファイル群</h2>
+<hr>
+<h2 id="shellを変える際の正しい対応"><a name="shellを変える際の正しい対応" class="plugin-anchor" href="#shellを変える際の正しい対応"><i class="fa fa-link" aria-hidden="true"></i></a>Shellを変える際の正しい対応</h2>
+<p>シェルを変える際は<strong>バックアップ用のセッションを残しておく</strong>などして、ログインできなくならないよう慎重に作業をする。</p>
+<hr>
+<h2 id="他環境へのdotfiles移行について"><a name="他環境へのdotfiles移行について" class="plugin-anchor" href="#他環境へのdotfiles移行について"><i class="fa fa-link" aria-hidden="true"></i></a>他環境へのdotfiles移行について</h2>
+<ol>
+<li>まずはdotfilesを作成しているShellに合わせる必要がある（管理主はzsh）</li>
+</ol>
+<h2 id="dotfiles"><a name="dotfiles" class="plugin-anchor" href="#dotfiles"><i class="fa fa-link" aria-hidden="true"></i></a>dotfiles</h2>
+<p><a href="https://github.com/takuzoo3868/dotfiles" target="_blank">参考URL</a>
+dotfilesとはとはLinuxやmacOSにおける設定ファイルのこと。</p>
+<h2 id="ターミナルからyoutubeの音楽を聞く"><a name="ターミナルからyoutubeの音楽を聞く" class="plugin-anchor" href="#ターミナルからyoutubeの音楽を聞く"><i class="fa fa-link" aria-hidden="true"></i></a>ターミナルからyoutubeの音楽を聞く</h2>
+<p><a href="https://www.blky.me/2018/02/02/mps-youtube/" target="_blank">参考URL</a></p>
+<h2 id="ターミナルで使えるファイラ"><a name="ターミナルで使えるファイラ" class="plugin-anchor" href="#ターミナルで使えるファイラ"><i class="fa fa-link" aria-hidden="true"></i></a>ターミナルで使えるファイラ</h2>
+<p>ファイラではなくvimなどで移動した方がいいかも</p>
+<p><a href="https://qiita.com/rattcv/items/caed7dd8115b294402c8" target="_blank">参考URL</a>
+<a href="https://zenn.dev/lambdalisue/articles/3deb92360546d526381f" target="_blank">ファイラ種類</a></p>
+<h2 id="コマンドラインで画像処理が行える便利ツール"><a name="コマンドラインで画像処理が行える便利ツール" class="plugin-anchor" href="#コマンドラインで画像処理が行える便利ツール"><i class="fa fa-link" aria-hidden="true"></i></a>コマンドラインで画像処理が行える便利ツール</h2>
+<p>ImageMagickには脆弱性が大量に存在します。
+2017年に報告されたImageMagickの脆弱性は236件でした。
+大量にある上リモートコード実行級の脆弱性もあり、安全性という観点ではかなり厳しい評価をしなければなりません。</p>
+<p><a href="https://atmarkit.itmedia.co.jp/ait/articles/1809/25/news020.html" target="_blank">参考URL</a></p>
+<p><a href="https://qiita.com/yoya/items/2076c1f5137d4041e3aa" target="_blank">意味がわからんが読む価値あり</a></p>
+<h2 id="プロンプトを変更する"><a name="プロンプトを変更する" class="plugin-anchor" href="#プロンプトを変更する"><i class="fa fa-link" aria-hidden="true"></i></a>プロンプトを変更する</h2>
+<p>表示するプロンプトは<code>PS1</code>という環境変数によって定義されている。</p>
+<h2 id="軽量なプロンプト"><a name="軽量なプロンプト" class="plugin-anchor" href="#軽量なプロンプト"><i class="fa fa-link" aria-hidden="true"></i></a>軽量なプロンプト</h2>
+<p><a href="https://tech.hajimari.inc/entry/2020/08/28/170220" target="_blank">参考URL</a></p>
+<p>Starshipを使用するとのこと。</p>
+<ul>
+<li>Rust言語で開発されており、動作が高速</li>
+<li>設定ファイルで細かくカスタマイズ可能</li>
+<li><code>bash / Zsh / Fish</code>で使用可能</li>
+<li>Git管理のプロジェクトであれば、ブランチ名や言語バージョン等が表示可能</li>
+<li>ポップなカラースキーム・絵文字がカワイイ（超重要）</li>
+</ul>
+<h2 id="update-alternatives-コマンド"><a name="update-alternatives-コマンド" class="plugin-anchor" href="#update-alternatives-コマンド"><i class="fa fa-link" aria-hidden="true"></i></a>update-alternatives コマンド</h2>
+<p><a href="https://vinelinux.org/docs/vine6/cui-guide/update-alternatives.html" target="_blank">参考URL</a></p>
+<p>システムで使われる<strong>プログラムのバージョン管理</strong>を行うためのコマンド
+このコマンドが必要になる背景としては以下の理由がある。</p>
+<h3 id="機能の重複するプログラム"><a name="機能の重複するプログラム" class="plugin-anchor" href="#機能の重複するプログラム"><i class="fa fa-link" aria-hidden="true"></i></a>機能の重複するプログラム</h3>
+<p>alternatives : 選択肢</p>
+<p>いくつかのプログラムには<strong>同様の機能をもったプログラムが複数用意されている場合</strong>がある
+これらの中には、複数のものを同時にインストールしておけるものがある。</p>
+<p>バージョンの異なるものを同時に複数インストールしておけるものでは、gccのようなプログラムがあり、gcc,gcc4,gcc295といったrpmパッケージがある。</p>
+<p>複数のプログラムをインストールしてある時に、どれをシステムの標準とするか、決定、選択、切り替えを行うために<code>alternatives</code>という仕組みがある。</p>
+<h2 id="シェル色々な書き方"><a name="シェル色々な書き方" class="plugin-anchor" href="#シェル色々な書き方"><i class="fa fa-link" aria-hidden="true"></i></a>シェル(色々な書き方)</h2>
+<p><code>$（ドルマーク）</code>の後にカッコを2つつけるのは<strong>算術計算の実行</strong>を意味している。</p>
+<pre><code class="lang-sh">i=$((<span class="hljs-number">1</span> + <span class="hljs-variable">$RANDOM</span> % <span class="hljs-number">10</span>))
+</code></pre>
+<h2 id="位置パラメーター"><a name="位置パラメーター" class="plugin-anchor" href="#位置パラメーター"><i class="fa fa-link" aria-hidden="true"></i></a>位置パラメーター</h2>
+<p>位置パラメーターを集合的に扱う場合は、$<em>, $@, &quot;$@&quot;を利用する。
+クォーテートしない$@ は $</em> と同じだ。なので実質$*と&quot;$@&quot;を使い分ければ良い。</p>
+<pre><code class="lang-sh"><span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;--- $* ---&apos;</span>; <span class="hljs-keyword">for</span> P <span class="hljs-keyword">in</span> $*; <span class="hljs-keyword">do</span> <span class="hljs-built_in">echo</span> <span class="hljs-variable">$P</span>; <span class="hljs-keyword">done</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;--- $@ ---&apos;</span>; <span class="hljs-keyword">for</span> P <span class="hljs-keyword">in</span> <span class="hljs-variable">$@</span>; <span class="hljs-keyword">do</span> <span class="hljs-built_in">echo</span> <span class="hljs-variable">$P</span>; <span class="hljs-keyword">done</span>        <span class="hljs-comment"># $* と同じ</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;--- &quot;$@&quot; ---&apos;</span>; <span class="hljs-keyword">for</span> P <span class="hljs-keyword">in</span> <span class="hljs-string">&quot;<span class="hljs-variable">$@</span>&quot;</span>; <span class="hljs-keyword">do</span> <span class="hljs-built_in">echo</span> <span class="hljs-variable">$P</span>; <span class="hljs-keyword">done</span>
+$ ./sample.sh <span class="hljs-string">&quot;1 2&quot;</span> <span class="hljs-string">&quot;hoge fuga&quot;</span>
+--- $* ---
+1
+2
+hoge
+fuga
+--- <span class="hljs-variable">$@</span> ---
+1
+2
+hoge
+fuga
+--- <span class="hljs-string">&quot;<span class="hljs-variable">$@</span>&quot;</span> ---
+1 2
+hoge fuga
+</code></pre>
+<h2 id="anyenv"><a name="anyenv" class="plugin-anchor" href="#anyenv"><i class="fa fa-link" aria-hidden="true"></i></a>anyenv</h2>
+<h2 id="rbenv"><a name="rbenv" class="plugin-anchor" href="#rbenv"><i class="fa fa-link" aria-hidden="true"></i></a>rbenv</h2>
+<p><code>rbenv rehash</code>を使用することでshimsディレクトリが更新される。</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../make/make.html" class="navigation navigation-prev " aria-label="Previous page: 1.2 make">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="bash/bash.html" class="navigation navigation-next " aria-label="Next page: bash">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.3 shell","level":"4.1.3","depth":2,"next":{"title":"bash","level":"4.1.3.1","depth":3,"path":"cli/shell/bash/bash.md","ref":"cli/shell/bash/bash.md","articles":[]},"previous":{"title":"1.2 make","level":"4.1.2","depth":2,"path":"cli/make/make.md","ref":"cli/make/make.md","articles":[]},"articles":[{"title":"bash","level":"4.1.3.1","depth":3,"path":"cli/shell/bash/bash.md","ref":"cli/shell/bash/bash.md","articles":[]},{"title":"command","level":"4.1.3.2","depth":3,"path":"cli/shell/command/command.md","ref":"cli/shell/command/command.md","articles":[]},{"title":"env","level":"4.1.3.3","depth":3,"path":"cli/shell/env/env.md","ref":"cli/shell/env/env.md","articles":[]},{"title":"script","level":"4.1.3.4","depth":3,"path":"cli/shell/script/script.md","ref":"cli/shell/script/script.md","articles":[]},{"title":"zsh","level":"4.1.3.5","depth":3,"path":"cli/shell/zsh/zsh.md","ref":"cli/shell/zsh/zsh.md","articles":[]},{"title":"zsh","level":"4.1.3.6","depth":3,"path":"cli/shell/zsh/zsh.md","ref":"cli/shell/zsh/zsh.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"root":"./docs","styles":{"website":"styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"cli/shell/shell.md","mtime":"2023-01-12T13:46:40.182Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T13:46:48.618Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
