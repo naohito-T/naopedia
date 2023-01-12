@@ -366,6 +366,14 @@ console.log(pilot.name); //
 ## インデックス型 (index signature)
 [参考URL](https://typescriptbook.jp/reference/values-types-variables/object/index-signature)
 
+TypeScriptで、オブジェクトのフィールド名をあえて指定せず、プロパティのみを指定したい場合があります。そのときに使えるのがこのインデックス型（index signature）
+
+```ts
+let obj: {
+  [K: string]: number;
+};
+```
+
 
 ## Mapped Types
 [参考URL](https://zenn.dev/qnighy/articles/dde3d980b5e386)

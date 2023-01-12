@@ -1669,23 +1669,22 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="clean-architecture">Clean Architecture</h1>
+                                <h1 id="クリーンアーキテクチャー-clean-architecture">クリーンアーキテクチャー: Clean Architecture</h1>
 <p><a href="https://gist.github.com/mpppk/609d592f25cab9312654b39f1b357c60" target="_blank">参考URL(これはやばい)</a></p>
 <p>クリーンアーキテクチャはRobert C. Martin(Uncle Bob)が2012年に提唱した、<strong>DBやフレークワークからの独立性を確保するためのアーキテクチャである</strong></p>
-<p><img src="image/cleanarchitecture.png" alt="クリーンアーキテクチャ"></p>
 <p>前節のレイヤードアーキテクチャが提案されて以降も、ヘキサゴナルアーキテクチャ、オニオンアーキテクチャなどが提案されてきました。これらのアーキテクチャで用いられる用語は異なりますが、目指すところは同じであるとクリーンアーキテクチャ（The Clean Architecture）では述べられている。</p>
 <blockquote>
 <p>これらのアーキテクチャはどれも細部は異なるけれども、とてもよく似ている。これらはいずれも同じ目的を持っている。関心の分離だ。これらはいずれも、ソフトウェアをレイヤーに分けることによって、関心の分離を達成する。どれも、最低ひとつは、ビジネスルールのためのレイヤーと、インターフェイスのためのレイヤーがある。</p>
 </blockquote>
-<p>クリーンアーキテクチャは、これらのアーキテクチャを単一の概念に無理なく統合する試みです。</p>
-<p>関心の分離により、以下が実現できる</p>
-<ol>
-<li>フレームワーク独立。アーキテクチャは、機能満載のソフトウェアのライブラリが手に入ることには依存しない。これは、そういったフレームワークを道具として使うことを可能にし、システムをフレームワークの限定された制約に押し込めなければならないようなことにはさせない。</li>
-<li>テスト可能。ビジネスルールは、UI、データベース、ウェブサーバー、その他外部の要素なしにテストできる。</li>
-<li>UI独立。UIは、容易に変更できる。システムの残りの部分を変更する必要はない。たとえば、ウェブUIは、ビジネスルールの変更なしに、コンソールUIと置き換えられる。</li>
-<li>データベース独立。OracleあるいはSQL Serverを、Mongo, BigTable, CoucheDBあるいは他のものと交換することができる。ビジネスルールは、データベースに拘束されない。</li>
-<li>外部機能独立。実際のところ、ビジネスルールは、単に外側についてなにも知らない。 -- クリーンアーキテクチャ(The Clean Architecture翻訳)</li>
-</ol>
+<h2 id="実現できること">実現できること</h2>
+<p>クリーンアーキテクチャはソフトウェアを<strong>レイヤー</strong>に分離することで、関心事の分離を実現し以下の特性を持ったシステムを生み出す。</p>
+<ul>
+<li>フレームワーク非依存：システムをフレームワークの制約で縛るのではなく、フレームワークをツールとして使用する</li>
+<li>テスト可能：ビジネスルールはUIやDB、サーバー、その他の外部要素がなくてもテストできる</li>
+<li>UI非依存：UIはシステムの他の部分を変更することなく、簡単に変更できる</li>
+<li>データベース非依存：ビジネスルールはDBに束縛されていない</li>
+<li>外部エージェント非依存：ビジネスルールは外界のインターフェイスについて何も知らない</li>
+</ul>
 
                                 
                                 </section>
@@ -1729,7 +1728,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Clean Architecture","level":"2.13.2.4","depth":3,"next":{"title":"11.3 インフラ","level":"2.13.3","depth":2,"path":"plan/infra/infra.md","ref":"plan/infra/infra.md","articles":[{"title":"マイクロサービスアーキテクチャ","level":"2.13.3.1","depth":3,"path":"plan/infra/micro/micro.md","ref":"plan/infra/micro/micro.md","articles":[]}]},"previous":{"title":"DDD(Domain Driven Design)","level":"2.13.2.3","depth":3,"path":"plan/server/ddd/ddd.md","ref":"plan/server/ddd/ddd.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"plan/server/cleanarchitecture/cleanarchitecture.md","mtime":"2023-01-11T11:11:17.778Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-11T11:11:24.724Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Clean Architecture","level":"2.13.2.4","depth":3,"next":{"title":"11.3 インフラ","level":"2.13.3","depth":2,"path":"plan/infra/infra.md","ref":"plan/infra/infra.md","articles":[{"title":"マイクロサービスアーキテクチャ","level":"2.13.3.1","depth":3,"path":"plan/infra/micro/micro.md","ref":"plan/infra/micro/micro.md","articles":[]}]},"previous":{"title":"DDD(Domain Driven Design)","level":"2.13.2.3","depth":3,"path":"plan/server/ddd/ddd.md","ref":"plan/server/ddd/ddd.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"plan/server/cleanarchitecture/cleanarchitecture.md","mtime":"2023-01-12T00:39:30.222Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T00:39:41.486Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
