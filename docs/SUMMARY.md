@@ -29,11 +29,15 @@
 
 #### DB
 * [3. DB](db/db.md)
-  * [3.1 SQL](db/sql/sql.md)
-    * [MySQL](db/sql/mysql/mysql.md)
+  * [3.1 NoSQL](db/nosql/nosql.md)
+    * [Redis](db/nosql/redis/redis.md)
   * [3.2 ORM](db/orm/orm.md)
     * [TypeORM](db/orm/typeorm/typeorm.md)
-  * [3.3 Redis](db/redis/redis.md)
+  * [3.3 SQL](db/sql/sql.md)
+    * [MySQL](db/sql/mysql/mysql.md)
+    * [Postgres](db/sql/postgres/postgres.md)
+    * [sqlite](db/sql/sqlite/sqlite.md)
+  * [3.4 Tuning](db/tuning/tuning.md)
 
 #### Programing
 * [2. program](program/program.md)
