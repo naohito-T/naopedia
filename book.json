@@ -11,6 +11,7 @@
         "hide-published-with",
         "copy-code-button",
         "intopic-toc",
-        "back-to-top-button"
+        "back-to-top-button",
+        "expand-active-chapter"
     ]
 }

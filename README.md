@@ -8,7 +8,8 @@ book形式でまとめる方が良いと思い、プログラマーとしての�
 ## 本作成について
 
 thank you!  
-[honkit](https://github.com/honkit/honkit)
+[honkit](https://github.com/honkit/honkit)  
+[GitBook によるドキュメント作成](http://mebiusbox.github.io/contents/gitbook/)
 
 ## 文章の校正について
 

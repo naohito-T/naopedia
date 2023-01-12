@@ -835,6 +835,11 @@ gitbook-plugin-copy-code-button@^0.0.2:
   resolved "https://registry.yarnpkg.com/gitbook-plugin-copy-code-button/-/gitbook-plugin-copy-code-button-0.0.2.tgz#434533200b5cf596c284c14e1d8bb57772084475"
   integrity sha512-47i/0/HQBb9Z7jSkfSkDuwP8vJw6gEpgvI4HTmuKGK4Vqd7mDIE3h/1HgJocLkqtz1/WwDPoU/vNiG/06J4x/Q==
 
+gitbook-plugin-expand-active-chapter@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gitbook-plugin-expand-active-chapter/-/gitbook-plugin-expand-active-chapter-1.0.0.tgz#6ae09f4cb37a46b57728d48832b43e287b6eb261"
+  integrity sha512-Cb/miTV7CA4c8qLgC4EscTGqXxV5SArGY5vpLw0WG43A6OyXTctUu/WE+bxOYsANpwKUeJdS27f7uFy4HFwQOA==
+
 gitbook-plugin-fontsettings@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/gitbook-plugin-fontsettings/-/gitbook-plugin-fontsettings-2.0.0.tgz#835f900ae3dd111086fe7ed4425ee3de024861ab"
