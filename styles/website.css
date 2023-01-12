@@ -1,0 +1,47 @@
+/* main title */
+.book-header h1 a,
+.book-header h1 a:hover {
+  color: #7e888b;
+}
+/* main contents */
+.book-body {
+  background-color: #1e1e1e;
+  color: #f7f7f7;
+}
+/* code記載部分 `` */
+.markdown-section {
+  color: #f7f7f7;
+}
+
+.markdown-section pre {
+  background-color: #102;
+}
+/* ここまで */
+
+/* summary contents */
+.book-summary ul.summary li a,
+.book-summary ul.summary li span {
+  color: #f7f7f7;
+}
+
+.book-summary {
+  background-color: #1e1e1e;
+}
+
+/* コピペの色を変える */
+::-moz-selection {
+  background-color: #00b0b0;
+  color: #fff;
+}
+
+::selection {
+  background-color: #00b0b0;
+  color: #fff;
+}
+/* ここまで */
+
+/* scroll bar */
+
+:root ::-webkit-scrollbar-track {
+  background: linear-gradient(pink, orchid);
+}
