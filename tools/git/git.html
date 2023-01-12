@@ -1,0 +1,2236 @@
+
+<!DOCTYPE HTML>
+<html lang="ja" >
+    <head>
+        <meta charset="UTF-8">
+        <title>2. Git · naopedia</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        <meta name="author" content="naohito-T">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expand-active-chapter/expand-active-chapter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="actions/actions.html" />
+    
+    
+    <link rel="prev" href="../editor/vscode/vscode.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="検索ワードを入力" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Naopedia
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Toc</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../book/book.html">
+            
+                <a href="../../book/book.html">
+            
+                    
+                    Book
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../book/principle/principle.html">
+            
+                <a href="../../book/principle/principle.html">
+            
+                    
+                    1. principle
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../cli/cli.html">
+            
+                <a href="../../cli/cli.html">
+            
+                    
+                    CLI
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../../cli/file-manager/file-manager.html">
+            
+                <a href="../../cli/file-manager/file-manager.html">
+            
+                    
+                    1. file-manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../../cli/make/make.html">
+            
+                <a href="../../cli/make/make.html">
+            
+                    
+                    2. make
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../../cli/shell/shell.html">
+            
+                <a href="../../cli/shell/shell.html">
+            
+                    
+                    3. shell
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.3.1" data-path="../../cli/shell/bash/bash.html">
+            
+                <a href="../../cli/shell/bash/bash.html">
+            
+                    
+                    bash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.2" data-path="../../cli/shell/command/command.html">
+            
+                <a href="../../cli/shell/command/command.html">
+            
+                    
+                    command
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.3" data-path="../../cli/shell/env/env.html">
+            
+                <a href="../../cli/shell/env/env.html">
+            
+                    
+                    env
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.4" data-path="../../cli/shell/script/script.html">
+            
+                <a href="../../cli/shell/script/script.html">
+            
+                    
+                    script
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.5" data-path="../../cli/shell/zsh/zsh.html">
+            
+                <a href="../../cli/shell/zsh/zsh.html">
+            
+                    
+                    zsh
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.6" data-path="../../cli/shell/zsh/zsh.html">
+            
+                <a href="../../cli/shell/zsh/zsh.html">
+            
+                    
+                    zsh
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../coding/coding.html">
+            
+                <a href="../../coding/coding.html">
+            
+                    
+                    Coding
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../../coding/algorithm/algorithm.html">
+            
+                <a href="../../coding/algorithm/algorithm.html">
+            
+                    
+                    1. algorithm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../../coding/atcoder/atcoder.html">
+            
+                <a href="../../coding/atcoder/atcoder.html">
+            
+                    
+                    2. AtCoder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../../coding/namerules/namerules.html">
+            
+                <a href="../../coding/namerules/namerules.html">
+            
+                    
+                    3. 命名規則
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="../../coding/designpattern/designpattern.md">
+            
+                <span>
+            
+                    
+                    4. Design Pattern
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../../db/db.html">
+            
+                <a href="../../db/db.html">
+            
+                    
+                    DB
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../../db/nosql/nosql.html">
+            
+                <a href="../../db/nosql/nosql.html">
+            
+                    
+                    1. NoSQL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1.1" data-path="../../db/nosql/redis/redis.html">
+            
+                <a href="../../db/nosql/redis/redis.html">
+            
+                    
+                    Redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../../db/orm/orm.html">
+            
+                <a href="../../db/orm/orm.html">
+            
+                    
+                    2. ORM
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.2.1" data-path="../../db/orm/typeorm/typeorm.html">
+            
+                <a href="../../db/orm/typeorm/typeorm.html">
+            
+                    
+                    TypeORM
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="../../db/sql/sql.html">
+            
+                <a href="../../db/sql/sql.html">
+            
+                    
+                    3. SQL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.3.1" data-path="../../db/sql/mysql/mysql.html">
+            
+                <a href="../../db/sql/mysql/mysql.html">
+            
+                    
+                    MySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3.2" data-path="../../db/sql/postgres/postgres.html">
+            
+                <a href="../../db/sql/postgres/postgres.html">
+            
+                    
+                    Postgres
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3.3" data-path="../../db/sql/sqlite/sqlite.html">
+            
+                <a href="../../db/sql/sqlite/sqlite.html">
+            
+                    
+                    sqlite
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="../../db/tuning/tuning.html">
+            
+                <a href="../../db/tuning/tuning.html">
+            
+                    
+                    4. Tuning
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../../design/design.html">
+            
+                <a href="../../design/design.html">
+            
+                    
+                    Design
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../../design/html/html.html">
+            
+                <a href="../../design/html/html.html">
+            
+                    
+                    1 html
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1.1" data-path="../../design/html/tag.html">
+            
+                <a href="../../design/html/tag.html">
+            
+                    
+                    tag
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.1.2" data-path="../../design/html/archit1ecture.md">
+            
+                <span>
+            
+                    
+                    architecture
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../../design/css/css.html">
+            
+                <a href="../../design/css/css.html">
+            
+                    
+                    2 css
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.2.1" data-path="../../design/css/property.md">
+            
+                <span>
+            
+                    
+                    property
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2.2" data-path="../../design/css/design.md">
+            
+                <span>
+            
+                    
+                    design
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2.3" data-path="../../design/css/architecture.md">
+            
+                <span>
+            
+                    
+                    architecture
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../../design/pwa/pwa.html">
+            
+                <a href="../../design/pwa/pwa.html">
+            
+                    
+                    3 pwa
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4" data-path="../../design/sass/sass.md">
+            
+                <span>
+            
+                    
+                    4 sass
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.5" data-path="../../design/animation/animation.html">
+            
+                <a href="../../design/animation/animation.html">
+            
+                    
+                    5 animation
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.5.1" data-path="../../design/animation/flash.html">
+            
+                <a href="../../design/animation/flash.html">
+            
+                    
+                    flash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.5.2" data-path="../../design/animation/gsap.html">
+            
+                <a href="../../design/animation/gsap.html">
+            
+                    
+                    gsap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.5.3" data-path="../../design/animation/webgl.md">
+            
+                <span>
+            
+                    
+                    WebGL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.6" data-path="../../design/3D/3d.html">
+            
+                <a href="../../design/3D/3d.html">
+            
+                    
+                    6 3D
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.7" data-path="../../design/web/web.html">
+            
+                <a href="../../design/web/web.html">
+            
+                    
+                    7 Web(Webでのdesign案)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../../hardware/hardware.html">
+            
+                <a href="../../hardware/hardware.html">
+            
+                    
+                    Hardware
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="../../hardware/lowlayer/program.html">
+            
+                <a href="../../hardware/lowlayer/program.html">
+            
+                    
+                    1 低レイヤー
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="../../hardware/os/os.html">
+            
+                <a href="../../hardware/os/os.html">
+            
+                    
+                    2 OS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../../program/program.html">
+            
+                <a href="../../program/program.html">
+            
+                    
+                    Programing
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../../program/c/c_c++.html">
+            
+                <a href="../../program/c/c_c++.html">
+            
+                    
+                    1. C/C++
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="../../program/go/go.html">
+            
+                <a href="../../program/go/go.html">
+            
+                    
+                    2. Go
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="../../program/javascript/javascript.html">
+            
+                <a href="../../program/javascript/javascript.html">
+            
+                    
+                    3. JavaScript
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.3.1" data-path="../../program/javascript/dom/dom.html">
+            
+                <a href="../../program/javascript/dom/dom.html">
+            
+                    
+                    DOM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.2" data-path="../../program/javascript/canvas/canvas.html">
+            
+                <a href="../../program/javascript/canvas/canvas.html">
+            
+                    
+                    Canvas
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.3" data-path="../../program/javascript/ts/typescript.md">
+            
+                <span>
+            
+                    
+                    TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.4" data-path="../../program/javascript/vue/vue.html">
+            
+                <a href="../../program/javascript/vue/vue.html">
+            
+                    
+                    Vue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.5" data-path="../../program/javascript/nuxt/nuxt.html">
+            
+                <a href="../../program/javascript/nuxt/nuxt.html">
+            
+                    
+                    Nuxt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.6" data-path="../../program/javascript/react/react.html">
+            
+                <a href="../../program/javascript/react/react.html">
+            
+                    
+                    React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.7" data-path="../../program/javascript/node/node.html">
+            
+                <a href="../../program/javascript/node/node.html">
+            
+                    
+                    Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.8" data-path="../../program/javascript/json/package.md">
+            
+                <span>
+            
+                    
+                    JSON
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="../../program/php/php.html">
+            
+                <a href="../../program/php/php.html">
+            
+                    
+                    4. PHP
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.4.1" data-path="../../program/php/Laravel/Laravel.html">
+            
+                <a href="../../program/php/Laravel/Laravel.html">
+            
+                    
+                    Laravel
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.5" data-path="../../program/python/python.html">
+            
+                <a href="../../program/python/python.html">
+            
+                    
+                    5. Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.6" data-path="../../program/ruby/ruby.html">
+            
+                <a href="../../program/ruby/ruby.html">
+            
+                    
+                    6. Ruby
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.6.1" data-path="../../program/ruby/rails/rails.html">
+            
+                <a href="../../program/ruby/rails/rails.html">
+            
+                    
+                    Rails
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.7" data-path="../../program/dsl/dsl.html">
+            
+                <a href="../../program/dsl/dsl.html">
+            
+                    
+                    7 DSL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.7.1" data-path="../../program/dsl/xml.html">
+            
+                <a href="../../program/dsl/xml.html">
+            
+                    
+                    XML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.7.2" data-path="../../program/dsl/toml.html">
+            
+                <a href="../../program/dsl/toml.html">
+            
+                    
+                    TOML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.7.3" data-path="../../program/dsl/正規表現.html">
+            
+                <a href="../../program/dsl/正規表現.html">
+            
+                    
+                    正規表現
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.8" data-path="../../program/全体に適用できる考え方.html">
+            
+                <a href="../../program/全体に適用できる考え方.html">
+            
+                    
+                    全体に適用できる考え方
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../../middleware/README.md">
+            
+                <span>
+            
+                    
+                    middleware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../../infrastructure/infrastructure.html">
+            
+                <a href="../../infrastructure/infrastructure.html">
+            
+                    
+                    infrastructure
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.9.1" data-path="../../infrastructure/docker/docker.html">
+            
+                <a href="../../infrastructure/docker/docker.html">
+            
+                    
+                    1 docker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.9.1.1" data-path="../../infrastructure/docker/docker-compose.html">
+            
+                <a href="../../infrastructure/docker/docker-compose.html">
+            
+                    
+                    docker compose
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="../../security/security.html">
+            
+                <a href="../../security/security.html">
+            
+                    
+                    セキュリティ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="../../test/test.html">
+            
+                <a href="../../test/test.html">
+            
+                    
+                    テスト
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.11.1" data-path="../../test/webUI/Cypress.md">
+            
+                <span>
+            
+                    
+                    1. WebUI テスト
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="../../performance/performance.html">
+            
+                <a href="../../performance/performance.html">
+            
+                    
+                    パフォーマンス
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="../../plan/plan.html">
+            
+                <a href="../../plan/plan.html">
+            
+                    
+                    設計思想
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.13.1" data-path="../../plan/front/front.html">
+            
+                <a href="../../plan/front/front.html">
+            
+                    
+                    1. フロントエンド
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.13.1.1" data-path="../../plan/spa/ssr.md">
+            
+                <span>
+            
+                    
+                    SPA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13.1.2" data-path="../../plan/ssr/ssr.md">
+            
+                <span>
+            
+                    
+                    SSR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13.1.3" data-path="../../plan/front/flux/flux.html">
+            
+                <a href="../../plan/front/flux/flux.html">
+            
+                    
+                    Flux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13.1.4" data-path="../../plan/front/bff/bff.html">
+            
+                <a href="../../plan/front/bff/bff.html">
+            
+                    
+                    BFF(Backends For Frontends)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13.1.5" data-path="../../plan/front/structure.html">
+            
+                <a href="../../plan/front/structure.html">
+            
+                    
+                    システムがWeb Pageを表示する仕組み
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13.2" data-path="../../plan/server/server.html">
+            
+                <a href="../../plan/server/server.html">
+            
+                    
+                    2. Server
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.13.2.1" data-path="../../plan/server/mvc/mv*.html">
+            
+                <a href="../../plan/server/mvc/mv*.html">
+            
+                    
+                    MVC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13.2.2" data-path="../../plan/server/object/object.md">
+            
+                <span>
+            
+                    
+                    Object指向
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13.2.3" data-path="../../plan/server/ddd/ddd.html">
+            
+                <a href="../../plan/server/ddd/ddd.html">
+            
+                    
+                    DDD(Domain Driven Design)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13.2.4" data-path="../../plan/server/cleanarchitecture/cleanarchitecture.html">
+            
+                <a href="../../plan/server/cleanarchitecture/cleanarchitecture.html">
+            
+                    
+                    Clean Architecture
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13.3" data-path="../../plan/infra/infra.html">
+            
+                <a href="../../plan/infra/infra.html">
+            
+                    
+                    3. インフラ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.13.3.1" data-path="../../plan/infra/micro/micro.html">
+            
+                <a href="../../plan/infra/micro/micro.html">
+            
+                    
+                    マイクロサービスアーキテクチャ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="../tools.html">
+            
+                <a href="../tools.html">
+            
+                    
+                    Tools
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.14.1" data-path="../editor/editor.html">
+            
+                <a href="../editor/editor.html">
+            
+                    
+                    1. editor
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.14.1.1" data-path="../editor/vim/vim.html">
+            
+                <a href="../editor/vim/vim.html">
+            
+                    
+                    Vim
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.1.2" data-path="../editor/vscode/vscode.html">
+            
+                <a href="../editor/vscode/vscode.html">
+            
+                    
+                    VSCode
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.14.2" data-path="git.html">
+            
+                <a href="git.html">
+            
+                    
+                    2. Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.14.2.1" data-path="actions/actions.html">
+            
+                <a href="actions/actions.html">
+            
+                    
+                    GitHub Actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.2.2" data-path="template/PULL_REQUEST_TEMPLATE.html">
+            
+                <a href="template/PULL_REQUEST_TEMPLATE.html">
+            
+                    
+                    PULL_REQUEST_TEMPLATE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.2.3" data-path="cli/cli.html">
+            
+                <a href="cli/cli.html">
+            
+                    
+                    Git CLI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.3" data-path="../homebrew/homebrew.html">
+            
+                <a href="../homebrew/homebrew.html">
+            
+                    
+                    3. homebrew
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            HonKitで公開 
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >2. Git</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="git"><a name="git" class="plugin-anchor" href="#git"><i class="fa fa-link" aria-hidden="true"></i></a>Git</h1>
+<h2 id="wiki"><a name="wiki" class="plugin-anchor" href="#wiki"><i class="fa fa-link" aria-hidden="true"></i></a>wiki</h2>
+<p><a href="https://dev.classmethod.jp/articles/editing-wiki-content-locally-on-github/" target="_blank">これをやる</a></p>
+<h2 id="多分一番これがいい"><a name="多分一番これがいい" class="plugin-anchor" href="#多分一番これがいい"><i class="fa fa-link" aria-hidden="true"></i></a>多分一番これがいい</h2>
+<p><a href="https://zenn.dev/mstssk/articles/4051e3df72a84c" target="_blank">参考URL(御作法)</a></p>
+<p>これ取り入れる</p>
+<p>PRをレビュー依頼出す前にrebaseする</p>
+<pre><code class="lang-sh">$ git fetch
+$ git rebase origin/master topic
+$ git push origin topic --force-with-lease
+</code></pre>
+<p>--force-with-leaseとは
+PUSHの際、ローカルrefとリモートrefを比較しローカルが最新か判定し、最新でなければPUSHが失敗するというもの。
+※ただし、直前にfetchしているとPUSHが成功してしまうので注意</p>
+<h2 id="git-reset-git-commitを取り消す"><a name="git-reset-git-commitを取り消す" class="plugin-anchor" href="#git-reset-git-commitを取り消す"><i class="fa fa-link" aria-hidden="true"></i></a>git reset (git commitを取り消す)</h2>
+<p><a href="https://tech-blog.rakus.co.jp/entry/20210528/git" target="_blank">参考URL</a></p>
+<ul>
+<li>リモートにpushしていないコミットを取り消す際に使用する。</li>
+<li>取り消した。というログが残れないため便利。しかしそれでpushしてしまっていたら生合成が取れなくなる。</li>
+</ul>
+<h2 id="やること"><a name="やること" class="plugin-anchor" href="#やること"><i class="fa fa-link" aria-hidden="true"></i></a>やること</h2>
+<p>mergeしてしまい。そこから抜き出したブランチを作る方法</p>
+<h2 id="githubにpushしてしまった場合に取り消す方法"><a name="githubにpushしてしまった場合に取り消す方法" class="plugin-anchor" href="#githubにpushしてしまった場合に取り消す方法"><i class="fa fa-link" aria-hidden="true"></i></a>GitHubにpushしてしまった場合に取り消す方法</h2>
+<p><a href="https://loop-never-ends.com/git-delete-pushed-file/" target="_blank">参考URL</a></p>
+<h2 id="git-flowに関して"><a name="git-flowに関して" class="plugin-anchor" href="#git-flowに関して"><i class="fa fa-link" aria-hidden="true"></i></a>Git Flowに関して</h2>
+<p>2種類あるけど片方忘れた</p>
+<p><a href="https://cloudsmith.co.jp/blog/efficient/2020/08/1534208.html" target="_blank">GitHub Flowわかりやすい</a></p>
+<h2 id="git-default動作"><a name="git-default動作" class="plugin-anchor" href="#git-default動作"><i class="fa fa-link" aria-hidden="true"></i></a>Git default動作</h2>
+<p>Gitではファイル名の<strong>大文字/小文字</strong>の変更を検知しない。</p>
+<hr>
+<h2 id="プルリク"><a name="プルリク" class="plugin-anchor" href="#プルリク"><i class="fa fa-link" aria-hidden="true"></i></a>プルリク</h2>
+<p><a href="https://qiita.com/ikuwow/items/fb52a54c086398eb5b92" target="_blank">チーム開発におけるプルリクの作法</a></p>
+<p>経験談
+大きすぎるのもレビュワーに疲れが出るため粒度低くてもいいかも。</p>
+<h3 id="プルリク開発フロー"><a name="プルリク開発フロー" class="plugin-anchor" href="#プルリク開発フロー"><i class="fa fa-link" aria-hidden="true"></i></a>プルリク開発フロー</h3>
+<p>種類あるのかよって感じ
+<a href="https://qiita.com/numa08/items/b676e38e3dbabfd39d18" target="_blank">Work in Progressパターン</a></p>
+<h2 id="プルリク-レビュー側"><a name="プルリク-レビュー側" class="plugin-anchor" href="#プルリク-レビュー側"><i class="fa fa-link" aria-hidden="true"></i></a>プルリク レビュー側</h2>
+<p><a href="https://bake0937.hatenablog.com/entry/2019/10/24/145241" target="_blank">レビュワーの機能について詳しい</a></p>
+<hr>
+<h2 id="issue"><a name="issue" class="plugin-anchor" href="#issue"><i class="fa fa-link" aria-hidden="true"></i></a>issue</h2>
+<p>issue直訳すると、〔議論すべき〕重要な話題［問題］、問題点、論点、争点、〔問題の〕核心、急所などの意味になる。</p>
+<p><a href="https://note.com/koushikagawa/n/n500e2f4d4019" target="_blank">issue</a>
+<a href="https://qiita.com/tkmd35/items/9612c03dc60b1c516969" target="_blank">issue開発の進め方</a></p>
+<hr>
+<h2 id="トピックブランチ"><a name="トピックブランチ" class="plugin-anchor" href="#トピックブランチ"><i class="fa fa-link" aria-hidden="true"></i></a>トピックブランチ</h2>
+<p>トピックブランチとは機能追加やバグ修正といったある<strong>課題に関する作業を行うために作成するブランチ</strong>
+複数の課題に関する作業を同時に行う時は、その数だけトピックブランチが作成される。
+トピックブランチは安定した統合ブランチから分岐する形で作成し、作業が完了したら統合ブランチに取り込む</p>
+<h2 id="headとは"><a name="headとは" class="plugin-anchor" href="#headとは"><i class="fa fa-link" aria-hidden="true"></i></a>HEADとは</h2>
+<p>今自分が作業している場所を示すポインター
+HEADはGitで<strong>現在のスナップショットを参照するため</strong>に使用される。</p>
+<h2 id="detached-headとは"><a name="detached-headとは" class="plugin-anchor" href="#detached-headとは"><i class="fa fa-link" aria-hidden="true"></i></a>detached HEADとは</h2>
+<p>HEADがBranchを指していない状態のこと</p>
+<h2 id="checkout"><a name="checkout" class="plugin-anchor" href="#checkout"><i class="fa fa-link" aria-hidden="true"></i></a>checkout</h2>
+<p>git checkoutは、ファイル・コミット・ブランチの3つの異なるエンティティに対して実行される。</p>
+<h2 id="gitattributes-ファイルとは"><a name="gitattributes-ファイルとは" class="plugin-anchor" href="#gitattributes-ファイルとは"><i class="fa fa-link" aria-hidden="true"></i></a>.gitattributes ファイルとは</h2>
+<p><a href="https://qiita.com/nacam403/items/23511637335fc221bba2" target="_blank">参考 URL</a></p>
+<p>Gitで管理するファイルの改行コードの扱いをルール化する必要がある。</p>
+<ul>
+<li><p>example</p>
+<blockquote>
+<p>そもそもなぜルールが必要なのでしょうか。以下の例で考えます。A さんは Linux マシンでコーディングしており、LF で改行されたソースコードのファイル X を Git にコミットしました。一方、B さんは Windows マシンでコーディングしています。今、A さんが書いたコードを編集したいとします。Git からファイル X をチェックアウトして編集するわけですが、このとき、B さんが使っているエディタはファイル X の改行コードを CRLF に変換してしまいました。B さんはそれに気づかずコードを編集し、保存し、コミットしました。B さんはファイル X の中の数行だけを編集したつもりなのに、改行コードが変わったために、全行に差分が生じてしまいました。これではコードレビューもしにくいし、後日、git blame コマンドを使っても望む結果は得られないでしょう。このようなケースを考えると、「改行コードは各自適当でオッケー」とはいかないでしょう。</p>
+</blockquote>
+</li>
+<li><p>.gitattributesを使ってGitリポジトリ毎にルールを定める</p>
+<blockquote>
+<p>gitattributes という名前のテキストファイルを作り、そこに text 属性に関する設定を書いてコミットすればその Git リポジトリを使う人全員で改行コードの扱いを統一できる。</p>
+</blockquote>
+</li>
+<li><p>.gitattributesを導入する際の指針
+ファイルの拡張子に応じて変換するかどうかを定め、一部の拡張子についてはCRLF
+かLFかも固定するといった使い方が基本のよう。</p>
+</li>
+</ul>
+<blockquote>
+<p>Git にコミットするときにはいずれにせよ LF に統一します
+このことから、原則として Git では LF で管理することを良しとしているのかなとも考えられます。ネット上でよく「基本、LF が良いらしい」といった記事を目にしますが、その根拠のひとつがこれかもしれません。</p>
+</blockquote>
+<h2 id="gist"><a name="gist" class="plugin-anchor" href="#gist"><i class="fa fa-link" aria-hidden="true"></i></a>Gist</h2>
+<p>GitHubが提供するファイル管理サービス
+GitHubはプロジェクト（ディレクトリ）を管理するものだが、Gistは<strong>ファイル単体を管理</strong>する。</p>
+<h2 id="cacherキャッシャー"><a name="cacherキャッシャー" class="plugin-anchor" href="#cacherキャッシャー"><i class="fa fa-link" aria-hidden="true"></i></a>Cacher(キャッシャー)</h2>
+<p>旧サービス名GistBox。コードスニペット管理ツールです。
+100以上の言語をサポートし、Gistとの連携、チーム共有などの機能があります。
+メーラーのようなUIやラベル、言語別での管理、検索ができます。
+Webアプリケーションの他にデスクトップアプリがあります。</p>
+<hr>
+<h2 id="github-pagesとは"><a name="github-pagesとは" class="plugin-anchor" href="#github-pagesとは"><i class="fa fa-link" aria-hidden="true"></i></a>GitHub pagesとは</h2>
+<p><a href="https://techacademy.jp/magazine/6445" target="_blank">github page作り方</a></p>
+<p>GitHub PagesはGitHubが提供する静的なウェブページをホスティングするサービスで、ウェブページをインターネット上に公開することができる。
+※DBを用いるような動的なウェブページは公開できない。
+※プライベートリポジトリであっても、GitHub Pagesはインターネット上で公開されるため注意が必要。</p>
+<ul>
+<li>公開手順
+下記の流れでWebページを公開していく。</li>
+</ul>
+<p>GitHub Pages用のリポジトリの作成、ウェブページの作成GitHubへプッシュ、GitHub Pagesへアクセスして確認</p>
+<ul>
+<li>GitHub Pages種類
+GitHub Pagesには大きく分けて2つの種類がある。
+ユーザのウェブページを公開するユーザサイト（User site）とプロジェクトのウェブページを公開するプロジェクトサイト。</li>
+</ul>
+<h3 id="ユーザサイト用リポジトリの作成"><a name="ユーザサイト用リポジトリの作成" class="plugin-anchor" href="#ユーザサイト用リポジトリの作成"><i class="fa fa-link" aria-hidden="true"></i></a>ユーザサイト用リポジトリの作成</h3>
+<ul>
+<li>上記URL参照する。</li>
+</ul>
+<h3 id="プロジェクトサイト用リポジトリの作成"><a name="プロジェクトサイト用リポジトリの作成" class="plugin-anchor" href="#プロジェクトサイト用リポジトリの作成"><i class="fa fa-link" aria-hidden="true"></i></a>プロジェクトサイト用リポジトリの作成</h3>
+<ul>
+<li><p>上記URL参照する。</p>
+</li>
+<li><p>特定のプロジェクトで専用のブランチを切る
+<code>$ git ch -b gh-pages</code></p>
+</li>
+<li><p>gitbook buildで静的ファイルを出力する。</p>
+</li>
+<li><p>_book内のファイルをすべて<strong>ルートディレクトリ</strong>にコピーする。
+ディレクトリ構成は以下の通り
+```sh
+$ tree
+.
+├── architecture
+│   ├── directory.html
+│   └── index.html
+├── docs
+│   ├── README.md
+│   ├── SUMMARY.md
+│   ├── _book
+│   │   ├── architecture
+│   │   │   ├── directory.html
+│   │   │   └── index.html
+│   │   ├── gitbook
+│   │   │   ├── fonts
+│   │   │   │   └── fontawesome
+│   │   │   │       ├── FontAwesome.otf
+│   │   │   │       ├── fontawesome-webfont.eot
+│   │   │   │       ├── fontawesome-webfont.svg
+│   │   │   │       ├── fontawesome-webfont.ttf
+│   │   │   │       ├── fontawesome-webfont.woff
+│   │   │   │       └── fontawesome-webfont.woff2
+│   │   │   ├── gitbook-plugin-fontsettings
+│   │   │   │   ├── fontsettings.js
+│   │   │   │   └── website.css
+│   │   │   ├── gitbook-plugin-highlight
+│   │   │   │   ├── ebook.css
+│   │   │   │   └── website.css
+│   │   │   ├── gitbook-plugin-lunr
+│   │   │   │   ├── lunr.min.js
+│   │   │   │   └── search-lunr.js
+│   │   │   ├── gitbook-plugin-search
+│   │   │   │   ├── lunr.min.js
+│   │   │   │   ├── search-engine.js
+│   │   │   │   ├── search.css
+│   │   │   │   └── search.js
+│   │   │   ├── gitbook-plugin-sharing
+│   │   │   │   └── buttons.js
+│   │   │   ├── gitbook.js
+│   │   │   ├── images
+│   │   │   │   ├── apple-touch-icon-precomposed-152.png
+│   │   │   │   └── favicon.ico
+│   │   │   ├── style.css
+│   │   │   └── theme.js
+│   │   ├── index.html
+│   │   └── search_index.json
+│   └── architecture
+│       ├── README.md
+│       └── directory.md
+├── gitbook
+│   ├── fonts
+│   │   └── fontawesome
+│   │       ├── FontAwesome.otf
+│   │       ├── fontawesome-webfont.eot
+│   │       ├── fontawesome-webfont.svg
+│   │       ├── fontawesome-webfont.ttf
+│   │       ├── fontawesome-webfont.woff
+│   │       └── fontawesome-webfont.woff2
+│   ├── gitbook-plugin-fontsettings
+│   │   ├── fontsettings.js
+│   │   └── website.css
+│   ├── gitbook-plugin-highlight
+│   │   ├── ebook.css
+│   │   └── website.css
+│   ├── gitbook-plugin-lunr
+│   │   ├── lunr.min.js
+│   │   └── search-lunr.js
+│   ├── gitbook-plugin-search
+│   │   ├── lunr.min.js
+│   │   ├── search-engine.js
+│   │   ├── search.css
+│   │   └── search.js
+│   ├── gitbook-plugin-sharing
+│   │   └── buttons.js
+│   ├── gitbook.js
+│   ├── images
+│   │   ├── apple-touch-icon-precomposed-152.png
+│   │   └── favicon.ico
+│   ├── style.css
+│   └── theme.js
+├── index.html
+└── search_index.json</p>
+</li>
+</ul>
+<pre><code>
+4. git addとcommitを実行しpushする
+
+※プルリクは自動で作成されなかった。認識してくれてた。
+
+5. リポジトリのAboutでURLを編集
+
+example
+https://naohito-T.github.io/e2e-test-cypressで見れる。
+
+---
+
+## git tag
+
+Gitのタグには**軽量版と通釈付き版の二通り**がある
+軽量版のタグは変更のないブランチのようなもの。特定のコミットに対する単なるポインターでしかありません。
+注釈付きのタグはGitデータベース内に完全なオブジェクトとして格納される。チェックサムが付き、タグを作成した人の名前・メールアドレス・作成日時・タグ付け時のメッセージなども含まれる。
+&gt;また、署名をつけて GNU Privacy Guard (GPG) で検証することもできます。 一般的には、これらの情報を含められる注釈付きのタグを使うことをおすすめします。
+
+
+
+軽量版のtag
+`$ git tag [tag name]`
+
+注釈版のtag
+`$ git tag -a v1.4 -m &quot;my version 1.4&quot;`
+
+
+## gitignore
+
+.gitignoreはgit add実行時に新規ステージングしないためのファイル
+→これが仕様のためすでに追跡が開始しているファイルは`.gitignore`に追記しただけでは反映されない。
+実際のファイルを削除しないように注意!!!!
+
+```sh
+# 追跡を除外、ファイルを削除
+$ git rm &lt;FILE_NAME&gt;
+
+
+# 実際のファイルは残して、追跡だけ除外
+$ git rm --cached &lt;FILE_NAME&gt;
+</code></pre><h2 id="git-意味がわからない集"><a name="git-意味がわからない集" class="plugin-anchor" href="#git-意味がわからない集"><i class="fa fa-link" aria-hidden="true"></i></a>git 意味がわからない集</h2>
+<p>現象</p>
+<p>topic branchで作業をしており、masterが先に進んでいたのをpullでtopicへmerge。
+もちろんコンフリクトが起こることは想定内だが、そこで以下が起きた。</p>
+<pre><code class="lang-sh">$ git br
+* (no branch, rebasing feature/react-navigation_setup)
+<span class="hljs-comment"># なぜか以下で解消ができた。</span>
+$ git rebase --abort
+</code></pre>
+<h2 id="github-startを増やす"><a name="github-startを増やす" class="plugin-anchor" href="#github-startを増やす"><i class="fa fa-link" aria-hidden="true"></i></a>GitHub startを増やす</h2>
+<p><a href="https://zenn.dev/hand_dot/articles/542449fe4fc771" target="_blank">参考URL</a></p>
+<h2 id="semantic-pull-request"><a name="semantic-pull-request" class="plugin-anchor" href="#semantic-pull-request"><i class="fa fa-link" aria-hidden="true"></i></a>Semantic Pull Request</h2>
+<p><a href="https://qiita.com/kaitaku/items/97699d579e93873a7380" target="_blank">参考URL</a></p>
+<h2 id="git-構造"><a name="git-構造" class="plugin-anchor" href="#git-構造"><i class="fa fa-link" aria-hidden="true"></i></a>Git 構造</h2>
+<p>gitのローカルリポジトリは2種類ある。
+masterとorigin/master
+fetchはローカルのorigin/masterを更新する。
+masterリポジトリはcommitした際に更新される。
+そのためgit fetch後はgit merge origin/[fetchしたリポジトリname]となる。</p>
+<h2 id="git-hooks"><a name="git-hooks" class="plugin-anchor" href="#git-hooks"><i class="fa fa-link" aria-hidden="true"></i></a>Git Hooks</h2>
+<p>gitには<strong>コミット時やプッシュ時に特定のコマンドを自動実行</strong>するGit Hooksという仕組みがある。
+<code>./git/hooks/</code>配下に各フック用のスクリプトをおくことで実行される。
+<strong>しかし、基本的には/.git/配下はGit管理対象にいれられないため、リポジトリ単位で管理したり他の開発者と共用するのがやや難しい。</strong></p>
+<h2 id="lefthook"><a name="lefthook" class="plugin-anchor" href="#lefthook"><i class="fa fa-link" aria-hidden="true"></i></a>Lefthook</h2>
+<p><a href="https://zenn.dev/questbeat/scraps/35595a0aeb397a" target="_blank">参考URL</a></p>
+<p>LefthookはGit Hooksマネージャーのひとつ
+※同様のアプローチでもっとも有名なもののひとつとして<strong>NPMのHusky</strong>がある</p>
+<p><strong>メリット</strong>
+HuskyはNode.js実装のみだが、LefthookはNode.js, Ruby実装のほかGoやBrew経由でもインストールができる。
+そのため<strong>フロントエンド系の開発以外でも導入しやすい</strong></p>
+<p><strong>Huskyとの比較</strong>
+Husky(+lint-staged)と比較するとそれが依存しているライブラリもあるため、単一ライブラリのLefthookのほうが良いだろ？との主張がある。</p>
+<p><strong>設定一覧</strong>
+以下は<code>.git</code>ディレクトリがあるところに<code>lefthook.yml</code>が作成される
+<code>$ lefthook install</code></p>
+<p>Git Hooks追加（.git/hooksの中に作成される）
+<code>$ lefthook add pre-push</code></p>
+<p>あとはlefthooks.ymlを編集すればOK</p>
+<h2 id="git-submoduleとは"><a name="git-submoduleとは" class="plugin-anchor" href="#git-submoduleとは"><i class="fa fa-link" aria-hidden="true"></i></a>git submoduleとは</h2>
+<p>メリット
+ソース管理しているプロジェクトから別のプロジェクトのソースを利用したいなという時に利用する。
+例
+アプリケーションの開発の時、ログ出力など複数のアプリケーションに共通して実装する部分を切り出しして別のプロジェクトとして管理し、アプリケーションのプロジェクトではsubmoduleとして呼び出すようにしたりとか。</p>
+<h2 id="サブモジュール化"><a name="サブモジュール化" class="plugin-anchor" href="#サブモジュール化"><i class="fa fa-link" aria-hidden="true"></i></a>サブモジュール化</h2>
+<p>サブモジュール前提で作るとデフォルトブランチはmainがいいのかも</p>
+<p>rootディレクトリは<code>git init</code>を初期に行っている状態。サブディレクトリは作成されている状態。</p>
+<p>git initされている状態であれば
+apiディレクトリ（もともとはmasterとなっていた）
+<code>$ git br -m develop</code></p>
+<p>「api」リポジトリがコミットされると、当然コミットIDも変化します。</p>
+<p>その場合、「root」リポジトリもコミットする必要があります。</p>
+<p>今後のコミット手順
+Railsアプリを編集した
+apiディレクトリに移動してコミットする
+rootディレクトリに戻る
+rootリポジトリもコミットする</p>
+<p><code>$ git init</code>
+<code>$ git br -m develop</code>
+<code>$ git add .</code>
+<code>$ gc</code></p>
+<p>ここからGitHub上でサブモジュール用のプロジェクトのリポジトリを作成する。</p>
+<p><code>$ git remote -vv</code> 設定されていない
+<code>$ git remote add origin [new repository ssh url]</code>
+<code>$ git push -u</code></p>
+<p>ルートディレクトリに戻りサブモジュール追加をする
+<code>$ git submodule add git@github.com:naohito-T/Neams-ui.git neams-ui</code></p>
+<p>.gitmodulesファイルが作成されている
+[submodule &quot;neams-ui&quot;]
+    path = neams-ui
+    url = git@github.com:naohito-T/Neams-ui.git</p>
+<p>サブモジュールに追加されているか確認する（ディレクトリ名のみの情報であればOK）
+<code>$ git ls-files</code></p>
+<p>エラー時</p>
+<ul>
+<li>gitmodules</li>
+<li>git/config内と</li>
+<li>git/modules/内のディレクトリ名を変更すればいける</li>
+</ul>
+<h2 id="サブモジュール更新"><a name="サブモジュール更新" class="plugin-anchor" href="#サブモジュール更新"><i class="fa fa-link" aria-hidden="true"></i></a>サブモジュール更新</h2>
+<p><a href="https://prograshi.com/general/git/how-to-use-git-submodule/" target="_blank">参考URL</a></p>
+<p>リモートレポジトリに含まれているすべてのサブモジュールのコミット履歴などの情報を更新するには「–remote」オプションを付けて、「submodule update」コマンドを実行する。</p>
+<pre><code class="lang-sh">$ git submodule update --remote
+</code></pre>
+<p>指定したサブモジュールのみを更新する</p>
+<p>すべてのサブモジュールではなく、指定したサブモジュールの情報のみを更新したい場合は、引数で「サブモジュール名」を指定します。</p>
+<pre><code class="lang-sh">git submodule update --remote &lt;サブモジュール名&gt;
+</code></pre>
+<hr>
+<h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>Tips</h2>
+<p><a href="https://qiita.com/rana_kualu/items/4d5e27244256e9689304" target="_blank">GitHubで一番有名なGit TIPS集</a></p>
+<p>ローカルの変更をすて、リモートリポジトリと同期する
+<code>$ git fetch origin &amp;&amp; git reset --hard origin/master &amp;&amp; git clean -f -d</code></p>
+<p>コンフリクトしたファイルだけを表示する
+<code>$ git diff --name-only --diff-filter=U</code></p>
+<p>すでにmasterにマージされているブランチを一括削除する</p>
+<h2 id="githubのレポジトリをアーカイブする"><a name="githubのレポジトリをアーカイブする" class="plugin-anchor" href="#githubのレポジトリをアーカイブする"><i class="fa fa-link" aria-hidden="true"></i></a>GitHubのレポジトリをアーカイブする</h2>
+<p>レポジトリをアーカイブすることで、新しいPRs/issues/commentsを作成できなくなる。
+削除するのも手ですが、レポジトリへのリンクが記事などで使われている場合があり、404ではなく次のレポジトリへと導線として残すのは良い手段だと思います。</p>
+<h2 id="git-commit-のハッシュ値"><a name="git-commit-のハッシュ値" class="plugin-anchor" href="#git-commit-のハッシュ値"><i class="fa fa-link" aria-hidden="true"></i></a>git commit のハッシュ値</h2>
+<p>切ったところからのハッシェ値が計算されるため</p>
+<p>develop → feautre1
+main → feature2</p>
+<h2 id="githubのcli"><a name="githubのcli" class="plugin-anchor" href="#githubのcli"><i class="fa fa-link" aria-hidden="true"></i></a>GitHubのCLI</h2>
+<p><a href="https://dev.classmethod.jp/articles/shuntaka9576-gh/" target="_blank">CLI(2020リリース)</a></p>
+<hr>
+<h2 id="git-各コマンド"><a name="git-各コマンド" class="plugin-anchor" href="#git-各コマンド"><i class="fa fa-link" aria-hidden="true"></i></a>git 各コマンド</h2>
+<h2 id="git-clean"><a name="git-clean" class="plugin-anchor" href="#git-clean"><i class="fa fa-link" aria-hidden="true"></i></a>git clean</h2>
+<p>git cleanは追跡していないファイルを一気に削除する。追跡していないファイルとは新規作成ファイルも含めたまだ一度もaddしていないファイル
+この追跡されていないファイルは<strong>git reset --hard</strong>を仕様しても消えないため注意が必要</p>
+<pre><code class="lang-sh"><span class="hljs-comment"># どのファイルが消えるか確認する</span>
+$ git clean -n
+
+<span class="hljs-comment"># ファイルを消す</span>
+$ git clean -f
+</code></pre>
+<h2 id="git-stash"><a name="git-stash" class="plugin-anchor" href="#git-stash"><i class="fa fa-link" aria-hidden="true"></i></a>git stash</h2>
+<p><code>git stash save</code>がdeprecatedだった。
+これかはこちらに移行する<code>git stash push</code></p>
+<p>git stashよりもgit branchで一時的ブランチを作った方がいいといっている記事
+<a href="https://qiita.com/jkr_2255/items/ea3e50a99baca37a42de" target="_blank">参考URL</a></p>
+<h2 id="revert"><a name="revert" class="plugin-anchor" href="#revert"><i class="fa fa-link" aria-hidden="true"></i></a>revert</h2>
+<h2 id="git-add--a"><a name="git-add--a" class="plugin-anchor" href="#git-add--a"><i class="fa fa-link" aria-hidden="true"></i></a>git add -A</h2>
+<p><strong>すべての変更</strong>をaddする
+<code>git add .</code> + <code>git add -u</code> の合体技</p>
+<pre><code class="lang-sh"><span class="hljs-comment"># 新規作成ファイルと変更ファイルをaddする</span>
+$ git add .
+
+<span class="hljs-comment"># 変更部分のみadd 新規ファイルはaddされない</span>
+$ git add -u
+</code></pre>
+<h2 id="git-revert"><a name="git-revert" class="plugin-anchor" href="#git-revert"><i class="fa fa-link" aria-hidden="true"></i></a>git revert</h2>
+<p>git resetは履歴を削除したが、<strong>git revertは履歴を戻すようなコミットを新たに作成する</strong>
+git cherry-pickとgit revertに関しては<strong>コミットまで自動的にやってしまうため注意が必要</strong>
+また、GitHub上では履歴を戻すようなコミットをやっているため、新しいプルリクを立てても差分は表示されない</p>
+<pre><code class="lang-sh"><span class="hljs-comment"># -n オプションでコミットされない状態をつけることができる(addされた状態)</span>
+$ git revert HEAD -n
+</code></pre>
+<h2 id="git-resetとrevertの違い"><a name="git-resetとrevertの違い" class="plugin-anchor" href="#git-resetとrevertの違い"><i class="fa fa-link" aria-hidden="true"></i></a>git resetとrevertの違い</h2>
+<p><a href="https://gist.github.com/satoshin2071/4b9a66e0a7ec18a6fa21" target="_blank">参考URL</a></p>
+<h2 id="rev-parse"><a name="rev-parse" class="plugin-anchor" href="#rev-parse"><i class="fa fa-link" aria-hidden="true"></i></a>rev-parse</h2>
+<p>Gitを使っているとプログラムからGitのメタ情報を取りたい！ってこと、よくありますよね？
+でも、 git statusをgrepしたりしていませんか？？
+git rev-parseから取れる情報もたくさんあるんですよ！</p>
+<p><a href="https://qiita.com/karupanerura/items/721962bb7da3e34187e1" target="_blank">revParse</a></p>
+<h2 id="blame"><a name="blame" class="plugin-anchor" href="#blame"><i class="fa fa-link" aria-hidden="true"></i></a>blame</h2>
+<p>誰の修正なのか見つけたい。そんな時に使える</p>
+<p><a href="https://qiita.com/annin_jp/items/44960964ecbac77fe19a" target="_blank">参考URL</a></p>
+<h2 id="デフォルトブランチ変更について"><a name="デフォルトブランチ変更について" class="plugin-anchor" href="#デフォルトブランチ変更について"><i class="fa fa-link" aria-hidden="true"></i></a>デフォルトブランチ変更について</h2>
+<p><a href="https://qiita.com/ymm1x/items/b22bddc9fbc192ae1a70" target="_blank">参考URL</a></p>
+<p><code>$ git clone</code>をするとその時点でのデフォルトブランチの情報が<code>git/refs/remotes/origin/HEAD</code>に書き込まれる。
+clone後にデフォルトブランチの設定を変更したりしても更新されず古い情報が残る。</p>
+<p>手順
+GitHub上で変更する。変更したあとのローカル変更手順</p>
+<pre><code class="lang-sh"><span class="hljs-comment"># リモートから最新のデフォルトブランチの情報を取得し、</span>
+<span class="hljs-comment"># ローカルの .git/refs/remotes/origin/HEAD に同期する</span>
+$ git remote set-head origin --auto
+
+<span class="hljs-comment"># 同期したデフォルトブランチを表示する</span>
+$ git symbolic-ref refs/remotes/origin/HEAD | awk -F<span class="hljs-string">&apos;[/]&apos;</span> <span class="hljs-string">&apos;{print $NF}&apos;</span>
+</code></pre>
+<hr>
+<p>ここからはGitHubについて</p>
+<h2 id="githubショートカット"><a name="githubショートカット" class="plugin-anchor" href="#githubショートカット"><i class="fa fa-link" aria-hidden="true"></i></a>GitHubショートカット</h2>
+<p><a href="https://docs.github.com/ja/get-started/using-github/keyboard-shortcuts" target="_blank">リファレンス</a></p>
+<p><strong>基本 G + なにかという感じ</strong></p>
+<p>便利そう</p>
+<p>notificationsにいく（通知）
+G + N : Gが最初GitHub通知にいく</p>
+<h2 id="github-top-page-readmeをおしゃれにする"><a name="github-top-page-readmeをおしゃれにする" class="plugin-anchor" href="#github-top-page-readmeをおしゃれにする"><i class="fa fa-link" aria-hidden="true"></i></a>GitHub Top Page READMEをおしゃれにする</h2>
+<p><a href="https://kakakakakku.hatenablog.com/entry/2018/08/08/200903" target="_blank">README</a>
+<a href="https://zenn.dev/yutakatay/articles/kirakira-github-profile" target="_blank">きらきらgit</a></p>
+<h2 id="githubでのライセンスについて"><a name="githubでのライセンスについて" class="plugin-anchor" href="#githubでのライセンスについて"><i class="fa fa-link" aria-hidden="true"></i></a>GitHubでのライセンスについて</h2>
+<p><a href="https://qiita.com/legitwhiz/items/bb34ef20ba23336e0c87" target="_blank">GitHubで公開したソースにオープンソースライセンスを適用</a>
+<a href="https://qiita.com/Tatamo/items/ae7bf4878abcf0584291" target="_blank">GitHub ライセンスをつけないとどうなるの</a></p>
+<h2 id="mergeしたやつをリバートしたい"><a name="mergeしたやつをリバートしたい" class="plugin-anchor" href="#mergeしたやつをリバートしたい"><i class="fa fa-link" aria-hidden="true"></i></a>mergeしたやつをリバートしたい</h2>
+<p>ファイルを消したやつで新たらなコミットを作るのもいい。</p>
+<h2 id="完了したmergeを取り消す"><a name="完了したmergeを取り消す" class="plugin-anchor" href="#完了したmergeを取り消す"><i class="fa fa-link" aria-hidden="true"></i></a>完了したmergeを取り消す</h2>
+<p><a href="https://rurukblog.com/post/git-merge-delete/" target="_blank">参考URL</a></p>
+<h2 id="changelog-の書き方"><a name="changelog-の書き方" class="plugin-anchor" href="#changelog-の書き方"><i class="fa fa-link" aria-hidden="true"></i></a>CHANGELOG の書き方</h2>
+<p><a href="https://blog.yux3.net/entry/2017/05/04/035811" target="_blank">参考URL</a></p>
+<h2 id="github-apps"><a name="github-apps" class="plugin-anchor" href="#github-apps"><i class="fa fa-link" aria-hidden="true"></i></a>GitHub Apps</h2>
+<p><a href="https://qiita.com/icoxfog417/items/fe411b94b8e7ae229e3e" target="_blank">参考URL</a></p>
+<p>GitHub Appsとは、GitHubと連携するアプリケーションの新しい形式</p>
+<blockquote>
+<p>この形式はアプリケーションのマーケットプレイスである、GitHub Marketplaceの公開と共にアナウンスされました。つまり、GitHub Appsを作成する、マーケットプレイスで公開する、それで収益を上げる、というエコシステムがしっかりと整備されたということです。</p>
+</blockquote>
+<p>わかりやすい説明
+<a href="https://note.com/teitei_tk/n/n5ad51f00a006" target="_blank">参考URL</a></p>
+<blockquote>
+<p>GitHubではGitHubと連携するツールを作るための仕組みとして、Personal access tokensを使う方法と、OAuthを利用する方法がありました。しかしいずれの仕組みもユーザーに紐付いたアクセスキーが発行されてしまうため、設定したユーザーが退職したり、異動したりしてアカウントが停止されたりするとアクセスキーも無効になり、API連携がエラーになってしまうことがあります。
+そこで新しくGitHub Appsという仕組みが導入され、リポジトリに紐づけて各種アプリケーションにアクセスを許可できるようになりました。今後はGitHub Appsを用いて連携するのが推奨されています。GitHub Enterpriseでは2.13から利用が可能です。</p>
+</blockquote>
+<h2 id="github-ciで別リポジトリを使う"><a name="github-ciで別リポジトリを使う" class="plugin-anchor" href="#github-ciで別リポジトリを使う"><i class="fa fa-link" aria-hidden="true"></i></a>GitHub CIで別リポジトリを使う</h2>
+<p><a href="https://zenn.dev/tatsuo48/articles/72c8939bbc6329" target="_blank">参考URL</a></p>
+<h2 id="何も変更せずpushし"><a name="何も変更せずpushし" class="plugin-anchor" href="#何も変更せずpushし"><i class="fa fa-link" aria-hidden="true"></i></a>何も変更せずpushし</h2>
+<pre><code class="lang-sh">$ git commit --allow-empty
+
+$ git push
+</code></pre>
+<h1 id="github-tips"><a name="github-tips" class="plugin-anchor" href="#github-tips"><i class="fa fa-link" aria-hidden="true"></i></a>GitHub Tips</h1>
+<h2 id="git-diffで特定の日付からの変更を確認したい場合"><a name="git-diffで特定の日付からの変更を確認したい場合" class="plugin-anchor" href="#git-diffで特定の日付からの変更を確認したい場合"><i class="fa fa-link" aria-hidden="true"></i></a>Git diffで特定の日付からの変更を確認したい場合</h2>
+<pre><code class="lang-sh">$ git diff HEAD <span class="hljs-string">&apos;HEAD@{2015-06-01}&apos;</span>  
+// 同じ意味
+$ git diff HEAD <span class="hljs-string">&apos;HEAD@{2015-06-01 0:00}&apos;</span>
+</code></pre>
+<h2 id="コミットメッセージ"><a name="コミットメッセージ" class="plugin-anchor" href="#コミットメッセージ"><i class="fa fa-link" aria-hidden="true"></i></a>コミットメッセージ</h2>
+<p><a href="https://qiita.com/konatsu_p/items/dfe199ebe3a7d2010b3e" target="_blank">参考URL</a>
+プレフィックスにつけるとわかりやすいかも</p>
+<pre><code class="lang-sh"><span class="hljs-comment"># 新しい機能</span>
+[feat] 
+<span class="hljs-comment"># バグの修正</span>
+[fix]
+<span class="hljs-comment"># ドキュメントのみの変更</span>
+[docs]
+<span class="hljs-comment"># 空白、フォーマット、セミコロン追加など</span>
+[style]
+<span class="hljs-comment"># 仕様に影響がないコード改善（リファクター）</span>
+[refactor]
+<span class="hljs-comment"># パフォーマンス向上関連</span>
+[perf]
+<span class="hljs-comment"># テスト関連</span>
+[<span class="hljs-built_in">test</span>]
+<span class="hljs-comment"># ビルド、補助ツール、ライブラリ関連</span>
+[chore]
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../editor/vscode/vscode.html" class="navigation navigation-prev " aria-label="Previous page: VSCode">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="actions/actions.html" class="navigation navigation-next " aria-label="Next page: GitHub Actions">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2. Git","level":"2.14.2","depth":2,"next":{"title":"GitHub Actions","level":"2.14.2.1","depth":3,"path":"tools/git/actions/actions.md","ref":"tools/git/actions/actions.md","articles":[]},"previous":{"title":"VSCode","level":"2.14.1.2","depth":3,"path":"tools/editor/vscode/vscode.md","ref":"tools/editor/vscode/vscode.md","articles":[]},"articles":[{"title":"GitHub Actions","level":"2.14.2.1","depth":3,"path":"tools/git/actions/actions.md","ref":"tools/git/actions/actions.md","articles":[]},{"title":"PULL_REQUEST_TEMPLATE","level":"2.14.2.2","depth":3,"path":"tools/git/template/PULL_REQUEST_TEMPLATE.md","ref":"tools/git/template/PULL_REQUEST_TEMPLATE.md","articles":[]},{"title":"Git CLI","level":"2.14.2.3","depth":3,"path":"tools/git/cli/cli.md","ref":"tools/git/cli/cli.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"tools/git/git.md","mtime":"2023-01-12T15:12:56.849Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T15:13:06.168Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expand-active-chapter/expand-active-chapter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
