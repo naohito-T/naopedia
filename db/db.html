@@ -60,7 +60,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="sql/sql.html" />
+    <link rel="next" href="nosql/nosql.html" />
     
     
     <link rel="prev" href="../coding/designpattern/designpattern.md" />
@@ -399,12 +399,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="6.1.1" data-path="sql/sql.html">
+        <li class="chapter " data-level="6.1.1" data-path="nosql/nosql.html">
             
-                <a href="sql/sql.html">
+                <a href="nosql/nosql.html">
             
                     
-                    3.1 SQL
+                    3.1 NoSQL
             
                 </a>
             
@@ -413,12 +413,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="6.1.1.1" data-path="sql/mysql/mysql.html">
+        <li class="chapter " data-level="6.1.1.1" data-path="nosql/redis/redis.html">
             
-                <a href="sql/mysql/mysql.html">
+                <a href="nosql/redis/redis.html">
             
                     
-                    MySQL
+                    Redis
             
                 </a>
             
@@ -463,12 +463,70 @@
             
         </li>
     
-        <li class="chapter " data-level="6.1.3" data-path="redis/redis.html">
+        <li class="chapter " data-level="6.1.3" data-path="sql/sql.html">
             
-                <a href="redis/redis.html">
+                <a href="sql/sql.html">
             
                     
-                    3.3 Redis
+                    3.3 SQL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.3.1" data-path="sql/mysql/mysql.html">
+            
+                <a href="sql/mysql/mysql.html">
+            
+                    
+                    MySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.3.2" data-path="sql/postgres/postgres.html">
+            
+                <a href="sql/postgres/postgres.html">
+            
+                    
+                    Postgres
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.3.3" data-path="sql/sqlite/sqlite.html">
+            
+                <a href="sql/sqlite/sqlite.html">
+            
+                    
+                    sqlite
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.4" data-path="tuning/tuning.html">
+            
+                <a href="tuning/tuning.html">
+            
+                    
+                    3.4 Tuning
             
                 </a>
             
@@ -1790,6 +1848,142 @@ Eager Loadingを使うと、クエリの発行回数を減らすことができ�
 <p>クエリの発行回数が過剰に増えて、サーバーサイドでタイムアウトエラーなどの不具合を起こしてしまう現象をいいます。</p>
 <h2 id="データベーススキーマ設計の完全ガイド"><a name="データベーススキーマ設計の完全ガイド" class="plugin-anchor" href="#データベーススキーマ設計の完全ガイド"><i class="fa fa-link" aria-hidden="true"></i></a>データベーススキーマ設計の完全ガイド</h2>
 <p><a href="https://www.integrate.io/jp/blog/complete-guide-to-database-schema-design-guide-ja/" target="_blank">参考URL</a></p>
+<p>ーブルのROW_FORMATがDynamic(Barracuda)であることを確認する</p>
+<ul>
+<li>MySQL5.6まではデフォルトのフォーマットはCompact(Antelope)でしたが、これは1レコードあたり8KBまでしかデータを入れることができません。
+テキスト型を使うと8KB制限を突破してしまうこともあるため、テーブルのフォーマットがDynamic(Barracuda)であることを確認します。</li>
+<li>整数値を入れる場合はint型かbigint型を使う</li>
+<li>float型は使わない</li>
+<li>精度のトラブルに巻き込まれたくないためfloatは使いません。多くの場合、doubleかdecimalで問題ありません。
+金額情報など、精度を求められる小数値にはdecimalを使う
+doubleも小数点以下の精度に悩まされることがあります。金額を扱う、精度が必要な計算は必ずDecimalを利用します。</li>
+<li>日付を入れる場合はDATE型を使う</li>
+<li>商品のお届け日など、日付を入れる場合は DatetimeやTimestamp型ではなくDATE型を使うようにします。DatetimeやTimestampはタイムゾーンの影響を受けるためです。</li>
+<li>JSON型を使ったら負け</li>
+</ul>
+<p>郵便番号や電話番号のnumberかstringかの悩み</p>
+<ul>
+<li>算術計算の対象ではないのでstringにする。</li>
+</ul>
+<h2 id="命名規則"><a name="命名規則" class="plugin-anchor" href="#命名規則"><i class="fa fa-link" aria-hidden="true"></i></a>命名規則</h2>
+<p><a href="https://qiita.com/genzouw/items/35022fa96c120e67c637" target="_blank">参考URL</a></p>
+<ol>
+<li><p>大文字を利用しない。
+テーブル名、カラム名ともに大文字を利用しない。
+（DBにより大文字小文字を区別するもの、しないものなどがあるため小文字で統一を図る）</p>
+</li>
+<li><p>複数単語の連携はスネークケース
+テーブル名、カラム名ともにスネークケースを利用する。
+キャメルケース、キャメルバックはNG。</p>
+</li>
+</ol>
+<h2 id="db・テーブル設計のベストプラクティス"><a name="db・テーブル設計のベストプラクティス" class="plugin-anchor" href="#db・テーブル設計のベストプラクティス"><i class="fa fa-link" aria-hidden="true"></i></a>DB・テーブル設計のベストプラクティス</h2>
+<p><a href="https://neos21.net/tech/design/db-table-practices.html" target="_blank">参考URL</a></p>
+<h2 id="テーブル-複数形-vs-単数形"><a name="テーブル-複数形-vs-単数形" class="plugin-anchor" href="#テーブル-複数形-vs-単数形"><i class="fa fa-link" aria-hidden="true"></i></a>テーブル 複数形 vs 単数形</h2>
+<p><a href="https://medium.com/@fbnlsr/the-table-naming-dilemma-singular-vs-plural-dc260d90aaff" target="_blank">参考URL</a>
+<a href="https://qiita.com/siinai/items/d4274c95fcdde3fd7295" target="_blank">参考URL</a></p>
+<p>実際のところWEB系のフレームワークなどは複数形を好むため、複数形のテーブル名に慣れ親しんでいる人は多い。</p>
+<h2 id="空文字-or-null"><a name="空文字-or-null" class="plugin-anchor" href="#空文字-or-null"><i class="fa fa-link" aria-hidden="true"></i></a>空文字 or NULL</h2>
+<p><a href="https://ja.stackoverflow.com/questions/66361/mysql%e3%81%aevarchar-%e3%83%87%e3%83%bc%e3%82%bf%e5%9e%8b%e3%81%ae%e5%88%9d%e6%9c%9f%e5%80%a4%e3%81%a7-null-%e3%81%a8%e7%a9%ba%e6%96%87%e5%ad%97%e3%82%92%e3%81%a9%e3%81%ae%e3%82%88%e3%81%86%e3%81%ab%e4%bd%bf%e3%81%84%e5%88%86%e3%81%91%e3%82%8b%e3%81%b9%e3%81%8d%e3%81%8b" target="_blank">参考URL</a></p>
+<p>空文字だと、電話番号を持っているが電話番号がない。というようなよくわからない事情がでる。
+そのため持っていないのであれば<code>NULL</code>にした方がいいかも。</p>
+<blockquote>
+<p>データが存在しないのならば、素直にNULLを入れるべきです。</p>
+</blockquote>
+<h2 id="oauth20のユーザーテーブル設計"><a name="oauth20のユーザーテーブル設計" class="plugin-anchor" href="#oauth20のユーザーテーブル設計"><i class="fa fa-link" aria-hidden="true"></i></a>OAuth2.0のユーザーテーブル設計</h2>
+<p><a href="https://zenn.dev/pyhrinezumi/articles/8455f0d61e856f" target="_blank">これが分かりやすい</a></p>
+<h2 id="エンティティ保存方法を考える"><a name="エンティティ保存方法を考える" class="plugin-anchor" href="#エンティティ保存方法を考える"><i class="fa fa-link" aria-hidden="true"></i></a>エンティティ保存方法を考える</h2>
+<blockquote>
+<p>このエンティティの識別子の生成方法には様々な種類がありますが，大きく分けて永続化前に生成する早期生成と永続化後に生成する遅延生成の2種類に分けられます</p>
+</blockquote>
+<hr>
+<h2 id="id-設計"><a name="id-設計" class="plugin-anchor" href="#id-設計"><i class="fa fa-link" aria-hidden="true"></i></a>id 設計</h2>
+<p>主キーは<strong>検索のキー</strong>として利用されたり、他の関係に参照のために格納されたりする確率が高いため、できる限り<strong>データ量の小さい方がよい。</strong>
+よって複合キーはあまり適さない。</p>
+<h2 id="ナチュラルキーとサロゲートキーはどちらがいいのか"><a name="ナチュラルキーとサロゲートキーはどちらがいいのか" class="plugin-anchor" href="#ナチュラルキーとサロゲートキーはどちらがいいのか"><i class="fa fa-link" aria-hidden="true"></i></a>ナチュラルキーとサロゲートキーはどちらがいいのか</h2>
+<p><a href="https://amg-solution.jp/blog/8980" target="_blank">参考URL</a></p>
+<h3 id="ナチュラルキー（自然キー）"><a name="ナチュラルキー（自然キー）" class="plugin-anchor" href="#ナチュラルキー（自然キー）"><i class="fa fa-link" aria-hidden="true"></i></a>ナチュラルキー（自然キー）</h3>
+<p>キーそのものに意味が含まれているキーで、業務的にそのテーブルをユニークにするキーをナチュラルキーという。
+要は入力データ自体をPKとして場合、PKはナチュラルキーとなる。
+たとえば、以下のようなテーブル構成の場合のユーザーテーブルのユーザーコードのように、それだけで意味のわかるキーがPKとなっている場合、ナチュラルキーと言います。</p>
+<h3 id="サロゲートキー代理キー"><a name="サロゲートキー代理キー" class="plugin-anchor" href="#サロゲートキー代理キー"><i class="fa fa-link" aria-hidden="true"></i></a>サロゲートキー(代理キー)</h3>
+<p>ナチュラルキーに対して、業務上は意味を持つ値ではないが、システム的に一意な値をとるようオートインクリメントなどで連番を振り、PKとしているテーブルのPKのことをサロゲートキー（代理キー）と呼びます。</p>
+<blockquote>
+<p>サロゲートキーの特徴</p>
+<ul>
+<li>テーブル間の依存関係が薄くなる</li>
+<li>アプリケーションの画面間引き継ぎ情報や実装などを統一できる</li>
+<li>複合主キーのテーブルに比べSQLが簡潔になる</li>
+<li>業務上は意味のないキーを持つので、容量を余分に使う</li>
+</ul>
+</blockquote>
+<h3 id="uuidで使う"><a name="uuidで使う" class="plugin-anchor" href="#uuidで使う"><i class="fa fa-link" aria-hidden="true"></i></a>uuidで使う</h3>
+<p><a href="https://zenn.dev/dowanna6/articles/3c84e3818891c3" target="_blank">参考URL</a></p>
+<p>メリット</p>
+<ul>
+<li>users/1とかでプライマリキーを連番にすると推測されやすい。スクレイピングされやすいのを回避できる（書いてて思ったけど、idをencryptすればいいじゃね？CFCみたいな）</li>
+</ul>
+<p>デメリット</p>
+<ul>
+<li>insertが完了するまでidがわからない。</li>
+<li>DBクライアントによっては処理が落ちる（MySQL (InnoDB) ではプライマリキーにランダムな値を用いるとINSERTの効率が落ちてしまいます）</li>
+</ul>
+<p>処理に時間がかかる場合、先にidだけ返して永続化処理は非同期に実施することがときどきありますよね（画像アップロードとか）
+こういう時もDB側での採番だと実際DBにinsertするまではidが確定しないので、本当は今この瞬間にinsertする必要がなくても採番するためだけにDBとのI/Oが発生することになります。同時にたくさんのファイルをたくさんのユーザーがアップロードするよ！みたいな機能を作りたい時にちょっとパフォーマンスが心配ですよね</p>
+<h3 id="プライマリキーにulidを使う"><a name="プライマリキーにulidを使う" class="plugin-anchor" href="#プライマリキーにulidを使う"><i class="fa fa-link" aria-hidden="true"></i></a>プライマリキーにULIDを使う</h3>
+<p><a href="https://zenn.dev/emiksk/articles/e2716c0af75eea" target="_blank">参考URL</a></p>
+<hr>
+<h2 id="外部キー制約"><a name="外部キー制約" class="plugin-anchor" href="#外部キー制約"><i class="fa fa-link" aria-hidden="true"></i></a>外部キー制約</h2>
+<p>参照されるのが
+親テーブル</p>
+<p>参照するのが
+子テーブル</p>
+<h2 id="リレーションシップの種類"><a name="リレーションシップの種類" class="plugin-anchor" href="#リレーションシップの種類"><i class="fa fa-link" aria-hidden="true"></i></a>リレーションシップの種類</h2>
+<ul>
+<li><p>依存リレーションシップ
+子テーブルの存在が親に依存している場合</p>
+</li>
+<li><p>非依存リレーションシップ
+子テーブルの存在が親に依存していない場合</p>
+</li>
+</ul>
+<h2 id="多対多"><a name="多対多" class="plugin-anchor" href="#多対多"><i class="fa fa-link" aria-hidden="true"></i></a>多対多</h2>
+<p>多対多の関係の場合にどうテーブル設計をすれば良いかわからなくなってしまいがち。</p>
+<blockquote>
+<p>そうなんです。多対多の関係の場合、どう頑張っても良い設計にならないのです。
+ですのでそもそも<strong>多対多の関係にならないような設計が必要</strong>で、その解消方法は<strong>中間テーブルを用意し1対多の関係になるように設計することが必要</strong></p>
+</blockquote>
+<h2 id="論理削除の可否"><a name="論理削除の可否" class="plugin-anchor" href="#論理削除の可否"><i class="fa fa-link" aria-hidden="true"></i></a>論理削除の可否</h2>
+<p><a href="https://fukabori.fm/episode/27" target="_blank">twadaさんに語ってもらった</a>
+論理削除はアンチパターンのひとつだが割とよくある設計。</p>
+<blockquote>
+<p>レコードを消したい。でも消したくないみたいな時に削除フラグ項目を設け、レコードをDELETEするのではなく削除フラグをUPDATEして、SELECTの条件で削除フラグがTRUEなら取得しないようにするやつです。</p>
+</blockquote>
+<p>頻繁に復活させたり、レコード数が少ないテーブルに設けるのであれば検討の余地はありますが、基本的には論理削除を用いないほうが良いでしょう。</p>
+<h2 id="内部結合と外部結合の違い"><a name="内部結合と外部結合の違い" class="plugin-anchor" href="#内部結合と外部結合の違い"><i class="fa fa-link" aria-hidden="true"></i></a>内部結合と外部結合の違い</h2>
+<p><a href="https://style.potepan.com/articles/14926.html#SQL" target="_blank">参考URL</a></p>
+<h2 id="チューニング"><a name="チューニング" class="plugin-anchor" href="#チューニング"><i class="fa fa-link" aria-hidden="true"></i></a>チューニング</h2>
+<p><a href="https://gist.github.com/kano-e/8d75be08037809fd280d/4d9800a5237e17df49027f9a96f092d2e45a7635" target="_blank">LEFT JOINとORDER BY</a></p>
+<p>速度低下の原因はSQLが内部的にどのような処理を行っているかを表示させるexplainで見ることができる。</p>
+<ul>
+<li>SQLが遅い場合は、explainである程度遅い原因を確認できる</li>
+<li>件数が多いテーブルで重い処理が実行されているときは要注意</li>
+<li>なるべくインデックスを使って処理されるよう、order byなどの指定を変えてみる</li>
+</ul>
+<h2 id="order-byで起こること"><a name="order-byで起こること" class="plugin-anchor" href="#order-byで起こること"><i class="fa fa-link" aria-hidden="true"></i></a>ORDER BYで起こること</h2>
+<ul>
+<li>ORDER BY使うと全部並べ替えようとする</li>
+<li>ORDER BY使わずにSELECTするのは速いけど、実際の業務では現実的ではない</li>
+<li>インデックス使うのが一般的</li>
+<li>インデックスはソートされているようなものなので、インデックスがあればORDER BYはインデックスを元に行われる</li>
+</ul>
+<h2 id="left-join-で起こること"><a name="left-join-で起こること" class="plugin-anchor" href="#left-join-で起こること"><i class="fa fa-link" aria-hidden="true"></i></a>LEFT JOIN で起こること</h2>
+<p>LEFT JOINする時、大抵はONでJOINの結合条件を設定する。
+FROMに指定した<code>テーブルA</code>のレコードが10_000件、JOINに指定したテーブルBのレコードが1_000件あった場合
+<code>テーブルA</code>のレコードの件数分、<code>テーブルB</code>の対象レコードを探す処理が必要になる</p>
+<p>これは、最悪の場合10_000_000レコード分の処理になる (10_000 <em> 1_000)
+JOINは掛け合わせなので<em>*元になる情報が大きければ大きいほど、その結果が膨れ上がることになる</em></em>
+一般的にJOIN遅いって言われているのは、これのせい</p>
 
                                 
                                 </section>
@@ -1822,7 +2016,7 @@ Eager Loadingを使うと、クエリの発行回数を減らすことができ�
                 </a>
                 
                 
-                <a href="sql/sql.html" class="navigation navigation-next " aria-label="Next page: 3.1 SQL">
+                <a href="nosql/nosql.html" class="navigation navigation-next " aria-label="Next page: 3.1 NoSQL">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1833,7 +2027,7 @@ Eager Loadingを使うと、クエリの発行回数を減らすことができ�
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3. DB","level":"6.1","depth":1,"next":{"title":"3.1 SQL","level":"6.1.1","depth":2,"path":"db/sql/sql.md","ref":"db/sql/sql.md","articles":[{"title":"MySQL","level":"6.1.1.1","depth":3,"path":"db/sql/mysql/mysql.md","ref":"db/sql/mysql/mysql.md","articles":[]}]},"previous":{"title":"2.4 Design Pattern","level":"5.1.4","depth":2,"path":"coding/designpattern/designpattern.md","ref":"coding/designpattern/designpattern.md","articles":[]},"articles":[{"title":"3.1 SQL","level":"6.1.1","depth":2,"path":"db/sql/sql.md","ref":"db/sql/sql.md","articles":[{"title":"MySQL","level":"6.1.1.1","depth":3,"path":"db/sql/mysql/mysql.md","ref":"db/sql/mysql/mysql.md","articles":[]}]},{"title":"3.2 ORM","level":"6.1.2","depth":2,"path":"db/orm/orm.md","ref":"db/orm/orm.md","articles":[{"title":"TypeORM","level":"6.1.2.1","depth":3,"path":"db/orm/typeorm/typeorm.md","ref":"db/orm/typeorm/typeorm.md","articles":[]}]},{"title":"3.3 Redis","level":"6.1.3","depth":2,"path":"db/redis/redis.md","ref":"db/redis/redis.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"root":"./docs","styles":{"website":"styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"db/db.md","mtime":"2023-01-12T13:46:40.182Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T13:46:48.618Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3. DB","level":"6.1","depth":1,"next":{"title":"3.1 NoSQL","level":"6.1.1","depth":2,"path":"db/nosql/nosql.md","ref":"db/nosql/nosql.md","articles":[{"title":"Redis","level":"6.1.1.1","depth":3,"path":"db/nosql/redis/redis.md","ref":"db/nosql/redis/redis.md","articles":[]}]},"previous":{"title":"2.4 Design Pattern","level":"5.1.4","depth":2,"path":"coding/designpattern/designpattern.md","ref":"coding/designpattern/designpattern.md","articles":[]},"articles":[{"title":"3.1 NoSQL","level":"6.1.1","depth":2,"path":"db/nosql/nosql.md","ref":"db/nosql/nosql.md","articles":[{"title":"Redis","level":"6.1.1.1","depth":3,"path":"db/nosql/redis/redis.md","ref":"db/nosql/redis/redis.md","articles":[]}]},{"title":"3.2 ORM","level":"6.1.2","depth":2,"path":"db/orm/orm.md","ref":"db/orm/orm.md","articles":[{"title":"TypeORM","level":"6.1.2.1","depth":3,"path":"db/orm/typeorm/typeorm.md","ref":"db/orm/typeorm/typeorm.md","articles":[]}]},{"title":"3.3 SQL","level":"6.1.3","depth":2,"path":"db/sql/sql.md","ref":"db/sql/sql.md","articles":[{"title":"MySQL","level":"6.1.3.1","depth":3,"path":"db/sql/mysql/mysql.md","ref":"db/sql/mysql/mysql.md","articles":[]},{"title":"Postgres","level":"6.1.3.2","depth":3,"path":"db/sql/postgres/postgres.md","ref":"db/sql/postgres/postgres.md","articles":[]},{"title":"sqlite","level":"6.1.3.3","depth":3,"path":"db/sql/sqlite/sqlite.md","ref":"db/sql/sqlite/sqlite.md","articles":[]}]},{"title":"3.4 Tuning","level":"6.1.4","depth":2,"path":"db/tuning/tuning.md","ref":"db/tuning/tuning.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"root":"./docs","styles":{"website":"styles/website.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"db/db.md","mtime":"2023-01-12T13:58:46.974Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-12T13:58:59.079Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
