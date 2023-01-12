@@ -7,12 +7,12 @@ book形式でまとめる方が良いと思い、プログラマーとしての�
 
 ## 本作成について
 
-thank you!
+thank you!  
 [honkit](https://github.com/honkit/honkit)
 
 ## 文章の校正について
 
-thank you!
+thank you!  
 [テキスト校正くん](https://ics.media/entry/18859/)
 
 ## 脚注書き方(Footnotes)
@@ -22,6 +22,10 @@ thank you!
 ここに脚注がはいる[^1]
 
 [^1]: これは脚注
+
+## 改行
+
+1行空ける or 文末に半角スペース2ついれる。
 
 ## 導入プラグインについて
 

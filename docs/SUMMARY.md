@@ -1,6 +1,6 @@
 # Summary
 
-* [Introduction](README.md)
+* [Naopedia](README.md)
 
 ## Summary
 
