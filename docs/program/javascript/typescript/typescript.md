@@ -78,15 +78,6 @@ named importだと呼び出し側で名前を変更することができなく�
 
 >このうち、TypeScriptコンパイラがするのは上の2つです。3つ目の最適化はしません。TypeScriptコンパイラは、基本的に型に関する部分を消すだけで、それ以外の部分はほぼそのままJavaScriptに変換します。
 
-
-
-## TypeScript インデックスシグネチャを安全に使う
-[インデックスシグネチャで特定の文字だけのIndexを扱う](https://blog.mitsuruog.info/2019/03/typescript-limited-set-of-index-signature)
-
-
-動的に任意のプロパティを作成・使用したいときに使うかもしれないが、だいたいは`Map`などで代用ができる。
-
-
 ## TypeScript コンパイラ
 
 [参考URL](https://ics.media/entry/16329/)
@@ -103,6 +94,12 @@ ts → tsx → d.ts
 - デフォルトで追う@typesフォルダーとは
 デフォルトで対象範囲すべての@typesパッケージがコンパイルに含まれる。(node_modules/@types)
 typesRootsがtsconfig.jsonに指定されている場合は**そのパッケージのみが対象となる。**
+
+## TypeScript インデックスシグネチャを安全に使う
+[インデックスシグネチャで特定の文字だけのIndexを扱う](https://blog.mitsuruog.info/2019/03/typescript-limited-set-of-index-signature)
+
+
+動的に任意のプロパティを作成・使用したいときに使うかもしれないが、だいたいは`Map`などで代用ができる。
 
 ## TypeScript 型定義集
 
@@ -212,6 +209,9 @@ types設定が「[]」（空配列）である場合は、typeRoots設定にか�
 "typeRoots": ["~"],
 
 ```
+
+## アロー関数が連続しているのは共通処理をしたいためのカリー化
+[参考URL](https://zenn.dev/tsucchiiinoko/articles/54076f7b135246)
 
 ## 名前空間
 

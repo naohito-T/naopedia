@@ -24,3 +24,9 @@ Gridが視覚的に作成できる。
 
 ## モダンなサイトにする方法
 [参考URL](https://b-risk.jp/blog/2021/02/modern-web-tips/)
+
+## さまざまなフォントの画像を作成できる
+[参考URL](https://fontmeme.com/ja/)
+
+## GitHubなどでフォントが切り替えられないときに使用する
+[参考URL](https://charactercalculator.com/ja/font-changer/)

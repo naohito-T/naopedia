@@ -1,6 +1,6 @@
 # Naopedia
 
-筆者である[naohito-T](https://github.com/naohito-T)が ITエンジニアとして役になったTips、よく忘れることを記したWikipedia  
+筆者である[naohito-T](https://github.com/naohito-T)がITエンジニアとして役になったTips、よく忘れることを記したナレッジ  
 ※当ドキュメントの正誤性には保証はありません。
 
 ### Contact to naohito-T
