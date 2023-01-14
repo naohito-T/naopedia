@@ -1,0 +1,5614 @@
+
+<!DOCTYPE HTML>
+<html lang="ja" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Aws · naopedia</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        <meta name="author" content="naohito-T">
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expand-active-chapter/expand-active-chapter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../../styles/website.css">
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="apigateway.html" />
+    
+    
+    <link rel="prev" href="../cloud.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="検索ワードを入力" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Naopedia
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Category</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../../book/book.html">
+            
+                <a href="../../../book/book.html">
+            
+                    
+                    Book
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../../book/principle/principle.html">
+            
+                <a href="../../../book/principle/principle.html">
+            
+                    
+                    Principle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../../book/book.html">
+            
+                <a href="../../../book/book.html">
+            
+                    
+                    Book
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../../cli/cli.html">
+            
+                <a href="../../../cli/cli.html">
+            
+                    
+                    Cli
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../../../cli/file*manager/file*manager.md">
+            
+                <span>
+            
+                    
+                    File Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../../../cli/make/make.html">
+            
+                <a href="../../../cli/make/make.html">
+            
+                    
+                    Make
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../../../cli/shell/shell.html">
+            
+                <a href="../../../cli/shell/shell.html">
+            
+                    
+                    Shell
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.3.1" data-path="../../../cli/shell/bash/bash.html">
+            
+                <a href="../../../cli/shell/bash/bash.html">
+            
+                    
+                    Bash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.2" data-path="../../../cli/shell/command/command.html">
+            
+                <a href="../../../cli/shell/command/command.html">
+            
+                    
+                    Command
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.3" data-path="../../../cli/shell/env/env.html">
+            
+                <a href="../../../cli/shell/env/env.html">
+            
+                    
+                    Env
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.4" data-path="../../../cli/shell/script/script.html">
+            
+                <a href="../../../cli/shell/script/script.html">
+            
+                    
+                    Script
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.5" data-path="../../../cli/shell/zsh/zsh.html">
+            
+                <a href="../../../cli/shell/zsh/zsh.html">
+            
+                    
+                    Zsh
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.6" data-path="../../../cli/shell/shell.html">
+            
+                <a href="../../../cli/shell/shell.html">
+            
+                    
+                    Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../../../cli/terminal/terminal.html">
+            
+                <a href="../../../cli/terminal/terminal.html">
+            
+                    
+                    Terminal
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../../coding/coding.html">
+            
+                <a href="../../../coding/coding.html">
+            
+                    
+                    Coding
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../../../coding/algorithm/algorithm.html">
+            
+                <a href="../../../coding/algorithm/algorithm.html">
+            
+                    
+                    Algorithm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../../../coding/atcoder/atcoder.html">
+            
+                <a href="../../../coding/atcoder/atcoder.html">
+            
+                    
+                    Atcoder
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.2.1" data-path="../../../coding/atcoder/onlinejuji.html">
+            
+                <a href="../../../coding/atcoder/onlinejuji.html">
+            
+                    
+                    Onlinejuji
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../../../coding/design*pattern/design*pattern.md">
+            
+                <span>
+            
+                    
+                    Design Pattern
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="../../../coding/namerules/namerules.html">
+            
+                <a href="../../../coding/namerules/namerules.html">
+            
+                    
+                    Namerules
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../../../db/db.html">
+            
+                <a href="../../../db/db.html">
+            
+                    
+                    DB
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../../../db/nosql/nosql.html">
+            
+                <a href="../../../db/nosql/nosql.html">
+            
+                    
+                    Nosql
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1.1" data-path="../../../db/nosql/redis/redis.html">
+            
+                <a href="../../../db/nosql/redis/redis.html">
+            
+                    
+                    Redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.1.2" data-path="../../../db/nosql/nosql.html">
+            
+                <a href="../../../db/nosql/nosql.html">
+            
+                    
+                    Nosql
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../../../db/orm/orm.html">
+            
+                <a href="../../../db/orm/orm.html">
+            
+                    
+                    Orm
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.2.1" data-path="../../../db/orm/typeorm/typeorm.html">
+            
+                <a href="../../../db/orm/typeorm/typeorm.html">
+            
+                    
+                    Typeorm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2.2" data-path="../../../db/orm/orm.html">
+            
+                <a href="../../../db/orm/orm.html">
+            
+                    
+                    Orm
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="../../../db/sql/sql.html">
+            
+                <a href="../../../db/sql/sql.html">
+            
+                    
+                    Sql
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.3.1" data-path="../../../db/sql/mysql/mysql.html">
+            
+                <a href="../../../db/sql/mysql/mysql.html">
+            
+                    
+                    Mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3.2" data-path="../../../db/sql/postgres/postgres.html">
+            
+                <a href="../../../db/sql/postgres/postgres.html">
+            
+                    
+                    Postgres
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3.3" data-path="../../../db/sql/sqlite/sqlite.html">
+            
+                <a href="../../../db/sql/sqlite/sqlite.html">
+            
+                    
+                    Sqlite
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3.4" data-path="../../../db/sql/sql.html">
+            
+                <a href="../../../db/sql/sql.html">
+            
+                    
+                    Sql
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="../../../db/tuning/tuning.html">
+            
+                <a href="../../../db/tuning/tuning.html">
+            
+                    
+                    Tuning
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../../../design/design.html">
+            
+                <a href="../../../design/design.html">
+            
+                    
+                    Design
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../../../design/3d/3d.html">
+            
+                <a href="../../../design/3d/3d.html">
+            
+                    
+                    3D
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1.1" data-path="../../../design/3d/3d_キャラクター.html">
+            
+                <a href="../../../design/3d/3d_キャラクター.html">
+            
+                    
+                    3d_キャラクター
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../../../design/animation/animation.html">
+            
+                <a href="../../../design/animation/animation.html">
+            
+                    
+                    Animation
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.2.1" data-path="../../../design/animation/animatio.word.html">
+            
+                <a href="../../../design/animation/animatio.word.html">
+            
+                    
+                    animatio.word
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2.2" data-path="../../../design/animation/flash.html">
+            
+                <a href="../../../design/animation/flash.html">
+            
+                    
+                    Flash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2.3" data-path="../../../design/animation/gsap.html">
+            
+                <a href="../../../design/animation/gsap.html">
+            
+                    
+                    Gsap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2.4" data-path="../../../design/animation/webGL.html">
+            
+                <a href="../../../design/animation/webGL.html">
+            
+                    
+                    Web GL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../../../design/css/css.html">
+            
+                <a href="../../../design/css/css.html">
+            
+                    
+                    Css
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.3.1" data-path="../../../design/css/architecture/css*architecture.md">
+            
+                <span>
+            
+                    
+                    Css Architecture
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3.2" data-path="../../../design/css/architecture/cssom.html">
+            
+                <a href="../../../design/css/architecture/cssom.html">
+            
+                    
+                    Cssom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3.3" data-path="../../../design/css/framework/css*framework.md">
+            
+                <span>
+            
+                    
+                    Css Framework
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.3.3.1" data-path="../../../design/css/@rule.html">
+            
+                <a href="../../../design/css/@rule.html">
+            
+                    
+                    Rule
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3.3.2" data-path="../../../design/css/css*animation.md">
+            
+                <span>
+            
+                    
+                    Css Animation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3.3.3" data-path="../../../design/css/css*design.md">
+            
+                <span>
+            
+                    
+                    Css Design
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3.3.4" data-path="../../../design/css/css*property.md">
+            
+                <span>
+            
+                    
+                    Css Property
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4" data-path="../../../design/figma/figma.html">
+            
+                <a href="../../../design/figma/figma.html">
+            
+                    
+                    Figma
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.5" data-path="../../../design/gif/gif.html">
+            
+                <a href="../../../design/gif/gif.html">
+            
+                    
+                    Gif
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.6" data-path="../../../design/html/html.html">
+            
+                <a href="../../../design/html/html.html">
+            
+                    
+                    Html
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.6.1" data-path="../../../design/html/architecture.html">
+            
+                <a href="../../../design/html/architecture.html">
+            
+                    
+                    Architecture
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.6.2" data-path="../../../design/html/tag.html">
+            
+                <a href="../../../design/html/tag.html">
+            
+                    
+                    Tag
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.7" data-path="../../../design/img/img.html">
+            
+                <a href="../../../design/img/img.html">
+            
+                    
+                    Img
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.8" data-path="../../../design/pwa/pwa.html">
+            
+                <a href="../../../design/pwa/pwa.html">
+            
+                    
+                    Pwa
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.9" data-path="../../../design/sass/SASS.html">
+            
+                <a href="../../../design/sass/SASS.html">
+            
+                    
+                    SASS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.10" data-path="../../../design/svg/svg.html">
+            
+                <a href="../../../design/svg/svg.html">
+            
+                    
+                    Svg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.11" data-path="../../../design/web/web.html">
+            
+                <a href="../../../design/web/web.html">
+            
+                    
+                    Web
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.12" data-path="../../../design/design.html">
+            
+                <a href="../../../design/design.html">
+            
+                    
+                    Design
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.13" data-path="../../../design/design.word.html">
+            
+                <a href="../../../design/design.word.html">
+            
+                    
+                    design.word
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.14" data-path="../../../design/web制作に使えるサイト.html">
+            
+                <a href="../../../design/web制作に使えるサイト.html">
+            
+                    
+                    web制作に使えるサイト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.15" data-path="../../../design/おしゃれなサイト.html">
+            
+                <a href="../../../design/おしゃれなサイト.html">
+            
+                    
+                    おしゃれなサイト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.16" data-path="../../../design/使えそうなデザイン.html">
+            
+                <a href="../../../design/使えそうなデザイン.html">
+            
+                    
+                    使えそうなデザイン
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../../../hardware/hardware.html">
+            
+                <a href="../../../hardware/hardware.html">
+            
+                    
+                    Hardware
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" >
+            
+                <span>
+            
+                    
+                    Chip
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1.1" data-path="../../../hardware/chip/m1.html">
+            
+                <a href="../../../hardware/chip/m1.html">
+            
+                    
+                    M 1
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="../../../hardware/compiler/compiler.html">
+            
+                <a href="../../../hardware/compiler/compiler.html">
+            
+                    
+                    Compiler
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="../../../hardware/cpu/cpu.html">
+            
+                <a href="../../../hardware/cpu/cpu.html">
+            
+                    
+                    Cpu
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" data-path="../../../hardware/domain/domain.html">
+            
+                <a href="../../../hardware/domain/domain.html">
+            
+                    
+                    Domain
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5" data-path="../../../hardware/gpu/gpu.html">
+            
+                <a href="../../../hardware/gpu/gpu.html">
+            
+                    
+                    Gpu
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.6" >
+            
+                <span>
+            
+                    
+                    Lowlayer
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.6.1" data-path="../../../hardware/lowlayer/program.html">
+            
+                <a href="../../../hardware/lowlayer/program.html">
+            
+                    
+                    Program
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.7" data-path="../../../hardware/memory/memory.html">
+            
+                <a href="../../../hardware/memory/memory.html">
+            
+                    
+                    Memory
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.8" data-path="../../../hardware/os/os.html">
+            
+                <a href="../../../hardware/os/os.html">
+            
+                    
+                    Os
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.8.1" data-path="../../../hardware/os/bsd/bsd.html">
+            
+                <a href="../../../hardware/os/bsd/bsd.html">
+            
+                    
+                    Bsd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.8.2" data-path="../../../hardware/os/linux/linux.html">
+            
+                <a href="../../../hardware/os/linux/linux.html">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.8.2.1" data-path="../../../hardware/os/linux/ubunt/ubunt.html">
+            
+                <a href="../../../hardware/os/linux/ubunt/ubunt.html">
+            
+                    
+                    Ubunt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.8.2.2" data-path="../../../hardware/os/linux/linux.html">
+            
+                <a href="../../../hardware/os/linux/linux.html">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.8.3" data-path="../../../hardware/os/mac/mac.html">
+            
+                <a href="../../../hardware/os/mac/mac.html">
+            
+                    
+                    Mac
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.8.4" data-path="../../../hardware/os/os.html">
+            
+                <a href="../../../hardware/os/os.html">
+            
+                    
+                    Os
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.9" data-path="../../../hardware/physics/physics.html">
+            
+                <a href="../../../hardware/physics/physics.html">
+            
+                    
+                    Physics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.10" data-path="../../../hardware/vps/vps.html">
+            
+                <a href="../../../hardware/vps/vps.html">
+            
+                    
+                    Vps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.11" data-path="../../../hardware/hardware.html">
+            
+                <a href="../../../hardware/hardware.html">
+            
+                    
+                    Hardware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.12" data-path="../../../hardware/リモートLinuxサーバ.html">
+            
+                <a href="../../../hardware/リモートLinuxサーバ.html">
+            
+                    
+                    リモートLinuxサーバ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../../infrastructure.html">
+            
+                <a href="../../infrastructure.html">
+            
+                    
+                    Infrastructure
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../../cache/cache.html">
+            
+                <a href="../../cache/cache.html">
+            
+                    
+                    Cache
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="../../cdn/cdn.html">
+            
+                <a href="../../cdn/cdn.html">
+            
+                    
+                    Cdn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="../cloud.html">
+            
+                <a href="../cloud.html">
+            
+                    
+                    Cloud
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.7.3.1" data-path="aws.html">
+            
+                <a href="aws.html">
+            
+                    
+                    Aws
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.3.1.1" data-path="apigateway.html">
+            
+                <a href="apigateway.html">
+            
+                    
+                    Apigateway
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.1.2" data-path="app*runner.md">
+            
+                <span>
+            
+                    
+                    App Runner
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.1.3" data-path="aurora.html">
+            
+                <a href="aurora.html">
+            
+                    
+                    Aurora
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.1.4" data-path="aws*cli.md">
+            
+                <span>
+            
+                    
+                    Aws Cli
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.1.5" data-path="aws*sam.md">
+            
+                <span>
+            
+                    
+                    Aws Sam
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.1.6" data-path="aws*vault.md">
+            
+                <span>
+            
+                    
+                    Aws Vault
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.1.7" data-path="cloudfront.html">
+            
+                <a href="cloudfront.html">
+            
+                    
+                    Cloudfront
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.1.8" data-path="cloudtrail.html">
+            
+                <a href="cloudtrail.html">
+            
+                    
+                    Cloudtrail
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.1.9" data-path="dynamodb.html">
+            
+                <a href="dynamodb.html">
+            
+                    
+                    Dynamodb
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.1.10" data-path="ec2.html">
+            
+                <a href="ec2.html">
+            
+                    
+                    Ec 2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.1.11" data-path="enterprise.html">
+            
+                <a href="enterprise.html">
+            
+                    
+                    Enterprise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.1.12" data-path="eventbridge.html">
+            
+                <a href="eventbridge.html">
+            
+                    
+                    Eventbridge
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.1.13" data-path="iam.html">
+            
+                <a href="iam.html">
+            
+                    
+                    Iam
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.1.14" data-path="lambda.html">
+            
+                <a href="lambda.html">
+            
+                    
+                    Lambda
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.1.15" data-path="redshift.html">
+            
+                <a href="redshift.html">
+            
+                    
+                    Redshift
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.1.16" data-path="route53.html">
+            
+                <a href="route53.html">
+            
+                    
+                    Route 53
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.1.17" data-path="s3.html">
+            
+                <a href="s3.html">
+            
+                    
+                    S 3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.1.18" data-path="secrets*manager.md">
+            
+                <span>
+            
+                    
+                    Secrets Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.1.19" data-path="ses.html">
+            
+                <a href="ses.html">
+            
+                    
+                    Ses
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.1.20" data-path="systems*manager*parameter*store.md">
+            
+                <span>
+            
+                    
+                    Systems Manager Parameter Store
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.1.21" data-path="x*ray.md">
+            
+                <span>
+            
+                    
+                    X Ray
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.2" data-path="../gcp/gcp.html">
+            
+                <a href="../gcp/gcp.html">
+            
+                    
+                    Gcp
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.3.2.1" data-path="../gcp/emulator.html">
+            
+                <a href="../gcp/emulator.html">
+            
+                    
+                    Emulator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.2.2" data-path="../gcp/firebase_storage.html">
+            
+                <a href="../gcp/firebase_storage.html">
+            
+                    
+                    Firebase Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.2.3" data-path="../gcp/firebase.html">
+            
+                <a href="../gcp/firebase.html">
+            
+                    
+                    Firebase
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.2.4" data-path="../gcp/firestore.html">
+            
+                <a href="../gcp/firestore.html">
+            
+                    
+                    Firestore
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.2.5" data-path="../gcp/function.html">
+            
+                <a href="../gcp/function.html">
+            
+                    
+                    Function
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.3" data-path="../heroku/heroku.html">
+            
+                <a href="../heroku/heroku.html">
+            
+                    
+                    Heroku
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.4" data-path="../ngrok/ngrok.html">
+            
+                <a href="../ngrok/ngrok.html">
+            
+                    
+                    Ngrok
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3.5" data-path="../cloud.html">
+            
+                <a href="../cloud.html">
+            
+                    
+                    Cloud
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="../../cms/cms.html">
+            
+                <a href="../../cms/cms.html">
+            
+                    
+                    Cms
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.4.1" data-path="../../cms/microcms/microcms.html">
+            
+                <a href="../../cms/microcms/microcms.html">
+            
+                    
+                    Microcms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4.2" data-path="../../cms/cms.html">
+            
+                <a href="../../cms/cms.html">
+            
+                    
+                    Cms
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.5" data-path="../../docker/docker.html">
+            
+                <a href="../../docker/docker.html">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.5.1" data-path="../../docker/docker*compose.md">
+            
+                <span>
+            
+                    
+                    Docker Compose
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.5.2" data-path="../../docker/docker*file.md">
+            
+                <span>
+            
+                    
+                    Docker File
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.5.3" data-path="../../docker/オーケストレーションツール.html">
+            
+                <a href="../../docker/オーケストレーションツール.html">
+            
+                    
+                    オーケストレーションツール
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.6" data-path="../../kubernetes/kubernetes.html">
+            
+                <a href="../../kubernetes/kubernetes.html">
+            
+                    
+                    Kubernetes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.7" data-path="../../localstack/localstack.html">
+            
+                <a href="../../localstack/localstack.html">
+            
+                    
+                    Localstack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.8" data-path="../../mail/mail.html">
+            
+                <a href="../../mail/mail.html">
+            
+                    
+                    Mail
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.9" data-path="../../openssl/openssl.html">
+            
+                <a href="../../openssl/openssl.html">
+            
+                    
+                    Openssl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.10" data-path="../../serverless/serverless.html">
+            
+                <a href="../../serverless/serverless.html">
+            
+                    
+                    Serverless
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.11" data-path="../../setup/setup.html">
+            
+                <a href="../../setup/setup.html">
+            
+                    
+                    Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.12" data-path="../../stripe/stripe.html">
+            
+                <a href="../../stripe/stripe.html">
+            
+                    
+                    Stripe
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.13" data-path="../../infrastructure.html">
+            
+                <a href="../../infrastructure.html">
+            
+                    
+                    Infrastructure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.14" data-path="../../インフラを構築する前に.html">
+            
+                <a href="../../インフラを構築する前に.html">
+            
+                    
+                    インフラを構築する前に
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../../../marketing/marketing.html">
+            
+                <a href="../../../marketing/marketing.html">
+            
+                    
+                    Marketing
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="../../../marketing/seo/seo.html">
+            
+                <a href="../../../marketing/seo/seo.html">
+            
+                    
+                    Seo
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1.1" data-path="../../../marketing/seo/web*vitals/web*vitals.md">
+            
+                <span>
+            
+                    
+                    Web Vitals
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.1.2" data-path="../../../marketing/seo/seo.html">
+            
+                <a href="../../../marketing/seo/seo.html">
+            
+                    
+                    Seo
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.2" data-path="../../../marketing/marketing.html">
+            
+                <a href="../../../marketing/marketing.html">
+            
+                    
+                    Marketing
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../../../middleware/middleware.html">
+            
+                <a href="../../../middleware/middleware.html">
+            
+                    
+                    Middleware
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.9.1" data-path="../../../middleware/cookie/cookie.html">
+            
+                <a href="../../../middleware/cookie/cookie.html">
+            
+                    
+                    Cookie
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.2" data-path="../../../middleware/direnv/direnv.html">
+            
+                <a href="../../../middleware/direnv/direnv.html">
+            
+                    
+                    Direnv
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.3" data-path="../../../middleware/logs/logs.html">
+            
+                <a href="../../../middleware/logs/logs.html">
+            
+                    
+                    Logs
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.9.3.1" data-path="../../../middleware/logs/datadog/datadog.html">
+            
+                <a href="../../../middleware/logs/datadog/datadog.html">
+            
+                    
+                    Datadog
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.3.2" data-path="../../../middleware/logs/grafana/grafana.html">
+            
+                <a href="../../../middleware/logs/grafana/grafana.html">
+            
+                    
+                    Grafana
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.3.3" data-path="../../../middleware/logs/logs*api/logs*api.md">
+            
+                <span>
+            
+                    
+                    Logs Api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.3.4" data-path="../../../middleware/logs/sentry/sentry.html">
+            
+                <a href="../../../middleware/logs/sentry/sentry.html">
+            
+                    
+                    Sentry
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.3.5" data-path="../../../middleware/logs/logs.html">
+            
+                <a href="../../../middleware/logs/logs.html">
+            
+                    
+                    Logs
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.4" data-path="../../../middleware/nginx/nginx.html">
+            
+                <a href="../../../middleware/nginx/nginx.html">
+            
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.5" data-path="../../../middleware/serverless*framework/serverless*framework.md">
+            
+                <span>
+            
+                    
+                    Serverless Framework
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.9.5.1" data-path="../../../middleware/serverless*framework/serverless*components.md">
+            
+                <span>
+            
+                    
+                    Serverless Components
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.6" data-path="../../../middleware/twilio/twilio.html">
+            
+                <a href="../../../middleware/twilio/twilio.html">
+            
+                    
+                    Twilio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.7" data-path="../../../middleware/webserver/webserver.html">
+            
+                <a href="../../../middleware/webserver/webserver.html">
+            
+                    
+                    Webserver
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.8" data-path="../../../middleware/Babel.html">
+            
+                <a href="../../../middleware/Babel.html">
+            
+                    
+                    Babel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.9" data-path="../../../middleware/middleware.html">
+            
+                <a href="../../../middleware/middleware.html">
+            
+                    
+                    Middleware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.10" data-path="../../../middleware/webpack.html">
+            
+                <a href="../../../middleware/webpack.html">
+            
+                    
+                    Webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="../../../nativeapp/nativeapp.html">
+            
+                <a href="../../../nativeapp/nativeapp.html">
+            
+                    
+                    Nativeapp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="../../../network/network.html">
+            
+                <a href="../../../network/network.html">
+            
+                    
+                    Network
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.11.1" data-path="../../../network/protocol/protocol.html">
+            
+                <a href="../../../network/protocol/protocol.html">
+            
+                    
+                    Protocol
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.11.1.1" data-path="../../../network/protocol/grpc/grpc.html">
+            
+                <a href="../../../network/protocol/grpc/grpc.html">
+            
+                    
+                    Grpc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11.1.2" data-path="../../../network/protocol/http/http.html">
+            
+                <a href="../../../network/protocol/http/http.html">
+            
+                    
+                    Http
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11.1.3" data-path="../../../network/protocol/oauth/oauth.html">
+            
+                <a href="../../../network/protocol/oauth/oauth.html">
+            
+                    
+                    Oauth
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11.1.4" data-path="../../../network/protocol/protocol.html">
+            
+                <a href="../../../network/protocol/protocol.html">
+            
+                    
+                    Protocol
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11.2" data-path="../../../network/network.html">
+            
+                <a href="../../../network/network.html">
+            
+                    
+                    Network
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11.3" data-path="../../../network/rss.html">
+            
+                <a href="../../../network/rss.html">
+            
+                    
+                    Rss
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="../../../oss/oss.html">
+            
+                <a href="../../../oss/oss.html">
+            
+                    
+                    Oss
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="../../../performance/performance.html">
+            
+                <a href="../../../performance/performance.html">
+            
+                    
+                    Performance
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.13.1" data-path="../../../performance/stress*test/stress*test.md">
+            
+                <span>
+            
+                    
+                    Stress Test
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.13.1.1" data-path="../../../performance/stress*test/apache*bench/apache*bench.md">
+            
+                <span>
+            
+                    
+                    Apache Bench
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13.1.2" data-path="../../../performance/stress*test/k6/k6.md">
+            
+                <span>
+            
+                    
+                    K 6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13.1.3" data-path="../../../performance/stress*test/stress*test.md">
+            
+                <span>
+            
+                    
+                    Stress Test
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13.2" data-path="../../../performance/performance.html">
+            
+                <a href="../../../performance/performance.html">
+            
+                    
+                    Performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="../../../program/program.html">
+            
+                <a href="../../../program/program.html">
+            
+                    
+                    Program
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.14.1" >
+            
+                <span>
+            
+                    
+                    C
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.14.1.1" data-path="../../../program/c/c_c++.html">
+            
+                <a href="../../../program/c/c_c++.html">
+            
+                    
+                    C C
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.2" data-path="../../../program/dsl/dsl.html">
+            
+                <a href="../../../program/dsl/dsl.html">
+            
+                    
+                    Dsl
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.14.2.1" data-path="../../../program/dsl/json.html">
+            
+                <a href="../../../program/dsl/json.html">
+            
+                    
+                    Json
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.2.2" data-path="../../../program/dsl/markdown.html">
+            
+                <a href="../../../program/dsl/markdown.html">
+            
+                    
+                    Markdown
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.2.3" data-path="../../../program/dsl/toml.html">
+            
+                <a href="../../../program/dsl/toml.html">
+            
+                    
+                    Toml
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.2.4" data-path="../../../program/dsl/workflow.html">
+            
+                <a href="../../../program/dsl/workflow.html">
+            
+                    
+                    Workflow
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.2.5" data-path="../../../program/dsl/xml.html">
+            
+                <a href="../../../program/dsl/xml.html">
+            
+                    
+                    Xml
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.2.6" data-path="../../../program/dsl/yml.html">
+            
+                <a href="../../../program/dsl/yml.html">
+            
+                    
+                    Yml
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.2.7" data-path="../../../program/dsl/正規表現.html">
+            
+                <a href="../../../program/dsl/正規表現.html">
+            
+                    
+                    正規表現
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.3" data-path="../../../program/go/go.html">
+            
+                <a href="../../../program/go/go.html">
+            
+                    
+                    Go
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.4" data-path="../../../program/java/java.html">
+            
+                <a href="../../../program/java/java.html">
+            
+                    
+                    Java
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.5" data-path="../../../program/javascript/javascript.html">
+            
+                <a href="../../../program/javascript/javascript.html">
+            
+                    
+                    Javascript
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.14.5.1" data-path="../../../program/javascript/canvas/canvas.html">
+            
+                <a href="../../../program/javascript/canvas/canvas.html">
+            
+                    
+                    Canvas
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.5.2" data-path="../../../program/javascript/dependency*manager/dependency*manager.md">
+            
+                <span>
+            
+                    
+                    Dependency Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.5.3" data-path="../../../program/javascript/dom/dom.html">
+            
+                <a href="../../../program/javascript/dom/dom.html">
+            
+                    
+                    Dom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.5.4" data-path="../../../program/javascript/eslint/eslint.html">
+            
+                <a href="../../../program/javascript/eslint/eslint.html">
+            
+                    
+                    Eslint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.5.5" data-path="../../../program/javascript/middleware/">
+            
+                <a href="../../../program/javascript/middleware/">
+            
+                    
+                    Middleware
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.14.5.5.1" data-path="../../../program/javascript/middleware/axios.html">
+            
+                <a href="../../../program/javascript/middleware/axios.html">
+            
+                    
+                    Axios
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.5.5.2" data-path="../../../program/javascript/middleware/createJs.html">
+            
+                <a href="../../../program/javascript/middleware/createJs.html">
+            
+                    
+                    Create Js
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.5.5.3" data-path="../../../program/javascript/middleware/esbuild.html">
+            
+                <a href="../../../program/javascript/middleware/esbuild.html">
+            
+                    
+                    Esbuild
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.5.5.4" data-path="../../../program/javascript/middleware/express.html">
+            
+                <a href="../../../program/javascript/middleware/express.html">
+            
+                    
+                    Express
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.5.5.5" data-path="../../../program/javascript/middleware/passport.html">
+            
+                <a href="../../../program/javascript/middleware/passport.html">
+            
+                    
+                    Passport
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.5.5.6" data-path="../../../program/javascript/middleware/recoil.html">
+            
+                <a href="../../../program/javascript/middleware/recoil.html">
+            
+                    
+                    Recoil
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.5.5.7" data-path="../../../program/javascript/middleware/swr.html">
+            
+                <a href="../../../program/javascript/middleware/swr.html">
+            
+                    
+                    Swr
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.5.5.8" data-path="../../../program/javascript/middleware/threeJs.html">
+            
+                <a href="../../../program/javascript/middleware/threeJs.html">
+            
+                    
+                    Three Js
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.5.6" data-path="../../../program/javascript/nest/nest.html">
+            
+                <a href="../../../program/javascript/nest/nest.html">
+            
+                    
+                    Nest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.5.7" data-path="../../../program/javascript/next/next.html">
+            
+                <a href="../../../program/javascript/next/next.html">
+            
+                    
+                    Next
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.5.8" data-path="../../../program/javascript/node/node.html">
+            
+                <a href="../../../program/javascript/node/node.html">
+            
+                    
+                    Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.5.9" data-path="../../../program/javascript/nuxt/nuxt.html">
+            
+                <a href="../../../program/javascript/nuxt/nuxt.html">
+            
+                    
+                    Nuxt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.5.10" data-path="../../../program/javascript/p5/p5.html">
+            
+                <a href="../../../program/javascript/p5/p5.html">
+            
+                    
+                    P 5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.5.11" data-path="../../../program/javascript/package/package.html">
+            
+                <a href="../../../program/javascript/package/package.html">
+            
+                    
+                    Package
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.5.12" data-path="../../../program/javascript/react/react.html">
+            
+                <a href="../../../program/javascript/react/react.html">
+            
+                    
+                    React
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.14.5.12.1" data-path="../../../program/javascript/react/hooks.html">
+            
+                <a href="../../../program/javascript/react/hooks.html">
+            
+                    
+                    Hooks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.5.13" data-path="../../../program/javascript/storybook/storybook.html">
+            
+                <a href="../../../program/javascript/storybook/storybook.html">
+            
+                    
+                    Storybook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.5.14" data-path="../../../program/javascript/typescript/typescript.html">
+            
+                <a href="../../../program/javascript/typescript/typescript.html">
+            
+                    
+                    Typescript
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.14.5.14.1" data-path="../../../program/javascript/typescript/type*techniques.md">
+            
+                <span>
+            
+                    
+                    Type Techniques
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.5.14.2" data-path="../../../program/javascript/typescript/typings.html">
+            
+                <a href="../../../program/javascript/typescript/typings.html">
+            
+                    
+                    Typings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.5.14.3" data-path="../../../program/javascript/typescript/zod.html">
+            
+                <a href="../../../program/javascript/typescript/zod.html">
+            
+                    
+                    Zod
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.5.15" data-path="../../../program/javascript/vue/vue.html">
+            
+                <a href="../../../program/javascript/vue/vue.html">
+            
+                    
+                    Vue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.5.16" data-path="../../../program/javascript/javascript.html">
+            
+                <a href="../../../program/javascript/javascript.html">
+            
+                    
+                    Javascript
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.6" data-path="../../../program/lowlayer/lowlayer.html">
+            
+                <a href="../../../program/lowlayer/lowlayer.html">
+            
+                    
+                    Lowlayer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.7" data-path="../../../program/php/php.html">
+            
+                <a href="../../../program/php/php.html">
+            
+                    
+                    Php
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.14.7.1" data-path="../../../program/php/Laravel/Laravel.html">
+            
+                <a href="../../../program/php/Laravel/Laravel.html">
+            
+                    
+                    Laravel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.7.2" data-path="../../../program/php/php.html">
+            
+                <a href="../../../program/php/php.html">
+            
+                    
+                    Php
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.8" data-path="../../../program/processing/processing.html">
+            
+                <a href="../../../program/processing/processing.html">
+            
+                    
+                    Processing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.9" data-path="../../../program/python/python.html">
+            
+                <a href="../../../program/python/python.html">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.10" data-path="../../../program/ruby/ruby.html">
+            
+                <a href="../../../program/ruby/ruby.html">
+            
+                    
+                    Ruby
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.14.10.1" >
+            
+                <span>
+            
+                    
+                    Gem
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.14.10.1.1" data-path="../../../program/ruby/gem/seed*fu.md">
+            
+                <span>
+            
+                    
+                    Seed Fu
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.10.2" data-path="../../../program/ruby/rails/rails.html">
+            
+                <a href="../../../program/ruby/rails/rails.html">
+            
+                    
+                    Rails
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.14.10.2.1" data-path="../../../program/ruby/rails/activerecord2.html">
+            
+                <a href="../../../program/ruby/rails/activerecord2.html">
+            
+                    
+                    Activerecord 2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.10.2.2" data-path="../../../program/ruby/rails/rails*activerecord.md">
+            
+                <span>
+            
+                    
+                    Rails Activerecord
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.10.2.3" data-path="../../../program/ruby/rails/rails*perfect.md">
+            
+                <span>
+            
+                    
+                    Rails Perfect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.10.2.4" data-path="../../../program/ruby/rails/rails*third*party.md">
+            
+                <span>
+            
+                    
+                    Rails Third Party
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.10.2.5" data-path="../../../program/ruby/rails/rails*view.md">
+            
+                <span>
+            
+                    
+                    Rails View
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.10.2.6" data-path="../../../program/ruby/rails/railsbook.html">
+            
+                <a href="../../../program/ruby/rails/railsbook.html">
+            
+                    
+                    Railsbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.10.3" data-path="../../../program/ruby/method.html">
+            
+                <a href="../../../program/ruby/method.html">
+            
+                    
+                    Method
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.10.4" data-path="../../../program/ruby/ruby*review.md">
+            
+                <span>
+            
+                    
+                    Ruby Review
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.10.5" data-path="../../../program/ruby/ruby.html">
+            
+                <a href="../../../program/ruby/ruby.html">
+            
+                    
+                    Ruby
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.10.6" data-path="../../../program/ruby/独習ruby.html">
+            
+                <a href="../../../program/ruby/独習ruby.html">
+            
+                    
+                    独習ruby
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.11" data-path="../../../program/program.html">
+            
+                <a href="../../../program/program.html">
+            
+                    
+                    Program
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.12" data-path="../../../program/全体に適用できる考え方.html">
+            
+                <a href="../../../program/全体に適用できる考え方.html">
+            
+                    
+                    全体に適用できる考え方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14.13" data-path="../../../program/新たな言語を学ぶ前に.html">
+            
+                <a href="../../../program/新たな言語を学ぶ前に.html">
+            
+                    
+                    新たな言語を学ぶ前に
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="../../../security/security.html">
+            
+                <a href="../../../security/security.html">
+            
+                    
+                    Security
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.15.1" data-path="../../../security/encrypt/encrypt.html">
+            
+                <a href="../../../security/encrypt/encrypt.html">
+            
+                    
+                    Encrypt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15.2" data-path="../../../security/proxy/proxy.html">
+            
+                <a href="../../../security/proxy/proxy.html">
+            
+                    
+                    Proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15.3" data-path="../../../security/recaptcha/recaptcha.html">
+            
+                <a href="../../../security/recaptcha/recaptcha.html">
+            
+                    
+                    Recaptcha
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15.4" data-path="../../../security/ssh/ssh.html">
+            
+                <a href="../../../security/ssh/ssh.html">
+            
+                    
+                    Ssh
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15.5" data-path="../../../security/security.html">
+            
+                <a href="../../../security/security.html">
+            
+                    
+                    Security
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="../../../software/software.html">
+            
+                <a href="../../../software/software.html">
+            
+                    
+                    Software
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.16.1" data-path="../../../software/favicon/favicon.html">
+            
+                <a href="../../../software/favicon/favicon.html">
+            
+                    
+                    Favicon
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16.2" data-path="../../../software/ogp/ogp.html">
+            
+                <a href="../../../software/ogp/ogp.html">
+            
+                    
+                    Ogp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16.3" >
+            
+                <span>
+            
+                    
+                    Package
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.16.3.1" data-path="../../../software/package/package*management.md">
+            
+                <span>
+            
+                    
+                    Package Management
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16.4" data-path="../../../software/time/time.html">
+            
+                <a href="../../../software/time/time.html">
+            
+                    
+                    Time
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16.5" data-path="../../../software/software.html">
+            
+                <a href="../../../software/software.html">
+            
+                    
+                    Software
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="../../../structure/structure.html">
+            
+                <a href="../../../structure/structure.html">
+            
+                    
+                    Structure
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.17.1" data-path="../../../structure/api/api.html">
+            
+                <a href="../../../structure/api/api.html">
+            
+                    
+                    Api
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.17.1.1" data-path="../../../structure/api/web*api/web*api.md">
+            
+                <span>
+            
+                    
+                    Web Api
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.17.1.1.1" data-path="../../../structure/api/web*api/graphql/graphql.md">
+            
+                <span>
+            
+                    
+                    Graphql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.1.1.2" data-path="../../../structure/api/web*api/rest*api/rest*api.md">
+            
+                <span>
+            
+                    
+                    Rest Api
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.1.1.3" data-path="../../../structure/api/web*api/web*api.md">
+            
+                <span>
+            
+                    
+                    Web Api
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.1.2" data-path="../../../structure/api/api.html">
+            
+                <a href="../../../structure/api/api.html">
+            
+                    
+                    Api
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.2" data-path="../../../structure/authentication/authentication.html">
+            
+                <a href="../../../structure/authentication/authentication.html">
+            
+                    
+                    Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.3" data-path="../../../structure/authorization/authorization.html">
+            
+                <a href="../../../structure/authorization/authorization.html">
+            
+                    
+                    Authorization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.4" data-path="../../../structure/browser/browser.html">
+            
+                <a href="../../../structure/browser/browser.html">
+            
+                    
+                    Browser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.5" data-path="../../../structure/db/db.html">
+            
+                <a href="../../../structure/db/db.html">
+            
+                    
+                    Db
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.17.5.1" data-path="../../../structure/db/db設計で使えるtips.html">
+            
+                <a href="../../../structure/db/db設計で使えるtips.html">
+            
+                    
+                    db設計で使えるtips
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.6" data-path="../../../structure/devops/devops.html">
+            
+                <a href="../../../structure/devops/devops.html">
+            
+                    
+                    Devops
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.7" data-path="../../../structure/di/di.html">
+            
+                <a href="../../../structure/di/di.html">
+            
+                    
+                    Di
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.8" data-path="../../../structure/error/error.html">
+            
+                <a href="../../../structure/error/error.html">
+            
+                    
+                    Error
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.9" data-path="../../../structure/front/front.html">
+            
+                <a href="../../../structure/front/front.html">
+            
+                    
+                    Front
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.17.9.1" data-path="../../../structure/front/bff/bff.html">
+            
+                <a href="../../../structure/front/bff/bff.html">
+            
+                    
+                    Bff
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.9.2" data-path="../../../structure/front/cdd/cdd.html">
+            
+                <a href="../../../structure/front/cdd/cdd.html">
+            
+                    
+                    Cdd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.9.3" data-path="../../../structure/front/flux/flux.html">
+            
+                <a href="../../../structure/front/flux/flux.html">
+            
+                    
+                    Flux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.9.4" data-path="../../../structure/front/Isomorphic/Isomorphic.html">
+            
+                <a href="../../../structure/front/Isomorphic/Isomorphic.html">
+            
+                    
+                    Isomorphic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.9.5" data-path="../../../structure/front/mpa/mpa.html">
+            
+                <a href="../../../structure/front/mpa/mpa.html">
+            
+                    
+                    Mpa
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.9.6" data-path="../../../structure/front/pwa/pwa.html">
+            
+                <a href="../../../structure/front/pwa/pwa.html">
+            
+                    
+                    Pwa
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.9.7" data-path="../../../structure/front/spa/spa.html">
+            
+                <a href="../../../structure/front/spa/spa.html">
+            
+                    
+                    Spa
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.9.8" data-path="../../../structure/front/ssg/ssg.html">
+            
+                <a href="../../../structure/front/ssg/ssg.html">
+            
+                    
+                    Ssg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.9.9" data-path="../../../structure/front/ssr/ssr.html">
+            
+                <a href="../../../structure/front/ssr/ssr.html">
+            
+                    
+                    Ssr
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.9.10" data-path="../../../structure/front/front.html">
+            
+                <a href="../../../structure/front/front.html">
+            
+                    
+                    Front
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.9.11" data-path="../../../structure/front/structure.html">
+            
+                <a href="../../../structure/front/structure.html">
+            
+                    
+                    Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.10" data-path="../../../structure/infra/infra.html">
+            
+                <a href="../../../structure/infra/infra.html">
+            
+                    
+                    Infra
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.17.10.1" data-path="../../../structure/infra/micro/micro.html">
+            
+                <a href="../../../structure/infra/micro/micro.html">
+            
+                    
+                    Micro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.10.2" data-path="../../../structure/infra/infra.html">
+            
+                <a href="../../../structure/infra/infra.html">
+            
+                    
+                    Infra
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.11" >
+            
+                <span>
+            
+                    
+                    Innersource
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.17.11.1" data-path="../../../structure/innersource/inner*source.md">
+            
+                <span>
+            
+                    
+                    Inner Source
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.12" data-path="../../../structure/jwt/jwt.html">
+            
+                <a href="../../../structure/jwt/jwt.html">
+            
+                    
+                    Jwt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.13" data-path="../../../structure/mermaid/mermaid.html">
+            
+                <a href="../../../structure/mermaid/mermaid.html">
+            
+                    
+                    Mermaid
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.17.13.1" data-path="../../../structure/mermaid/sample.html">
+            
+                <a href="../../../structure/mermaid/sample.html">
+            
+                    
+                    Sample
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.13.2" data-path="../../../structure/mermaid/test.html">
+            
+                <a href="../../../structure/mermaid/test.html">
+            
+                    
+                    Test
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.14" data-path="../../../structure/openapi/openapi.html">
+            
+                <a href="../../../structure/openapi/openapi.html">
+            
+                    
+                    Openapi
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.15" data-path="../../../structure/plantuml/plantuml.html">
+            
+                <a href="../../../structure/plantuml/plantuml.html">
+            
+                    
+                    Plantuml
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.16" data-path="../../../structure/program/program.html">
+            
+                <a href="../../../structure/program/program.html">
+            
+                    
+                    Program
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.17" >
+            
+                <span>
+            
+                    
+                    Prpject
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.17.17.1" data-path="../../../structure/prpject/project.html">
+            
+                <a href="../../../structure/prpject/project.html">
+            
+                    
+                    Project
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.18" data-path="../../../structure/requirement/requirement.html">
+            
+                <a href="../../../structure/requirement/requirement.html">
+            
+                    
+                    Requirement
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.17.18.1" data-path="../../../structure/requirement/auto_commit.html">
+            
+                <a href="../../../structure/requirement/auto_commit.html">
+            
+                    
+                    Auto Commit
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.18.2" data-path="../../../structure/requirement/github*readme.md">
+            
+                <span>
+            
+                    
+                    Github Readme
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.18.3" data-path="../../../structure/requirement/template.html">
+            
+                <a href="../../../structure/requirement/template.html">
+            
+                    
+                    Template
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.19" data-path="../../../structure/server/server.html">
+            
+                <a href="../../../structure/server/server.html">
+            
+                    
+                    Server
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.17.19.1" data-path="../../../structure/server/cleanarchitecture/cleanarchitecture.html">
+            
+                <a href="../../../structure/server/cleanarchitecture/cleanarchitecture.html">
+            
+                    
+                    Cleanarchitecture
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.19.2" data-path="../../../structure/server/ddd/ddd.html">
+            
+                <a href="../../../structure/server/ddd/ddd.html">
+            
+                    
+                    Ddd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.19.3" >
+            
+                <span>
+            
+                    
+                    Mvc
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.17.19.3.1" data-path="../../../structure/server/mvc/mv*.html">
+            
+                <a href="../../../structure/server/mvc/mv*.html">
+            
+                    
+                    Mv
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.19.4" >
+            
+                <span>
+            
+                    
+                    Object
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.17.19.4.1" data-path="../../../structure/server/object/object*orientation.md">
+            
+                <span>
+            
+                    
+                    Object Orientation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.19.5" data-path="../../../structure/server/server.html">
+            
+                <a href="../../../structure/server/server.html">
+            
+                    
+                    Server
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.20" data-path="../../../structure/solid/solid.html">
+            
+                <a href="../../../structure/solid/solid.html">
+            
+                    
+                    Solid
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.21" data-path="../../../structure/url/url.html">
+            
+                <a href="../../../structure/url/url.html">
+            
+                    
+                    Url
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17.22" data-path="../../../structure/web/web.html">
+            
+                <a href="../../../structure/web/web.html">
+            
+                    
+                    Web
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="../../../technology/technology.html">
+            
+                <a href="../../../technology/technology.html">
+            
+                    
+                    Technology
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.18.1" data-path="../../../technology/deep_learning.html">
+            
+                <a href="../../../technology/deep_learning.html">
+            
+                    
+                    Deep Learning
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18.2" data-path="../../../technology/rtc_peer_connection.html">
+            
+                <a href="../../../technology/rtc_peer_connection.html">
+            
+                    
+                    Rtc Peer Connection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18.3" data-path="../../../technology/web_rtc.html">
+            
+                <a href="../../../technology/web_rtc.html">
+            
+                    
+                    Web Rtc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18.4" data-path="../../../technology/web3.html">
+            
+                <a href="../../../technology/web3.html">
+            
+                    
+                    Web 3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18.5" data-path="../../../technology/画像処理.html">
+            
+                <a href="../../../technology/画像処理.html">
+            
+                    
+                    画像処理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="../../../test/test.html">
+            
+                <a href="../../../test/test.html">
+            
+                    
+                    Test
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.19.1" data-path="../../../test/e2e/e2e.html">
+            
+                <a href="../../../test/e2e/e2e.html">
+            
+                    
+                    E 2 E
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19.2" data-path="../../../test/webUI/webui.html">
+            
+                <a href="../../../test/webUI/webui.html">
+            
+                    
+                    Web UI
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.19.2.1" data-path="../../../test/webUI/cypress/cypress.html">
+            
+                <a href="../../../test/webUI/cypress/cypress.html">
+            
+                    
+                    Cypress
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19.2.2" data-path="../../../test/webUI/jest/jest.html">
+            
+                <a href="../../../test/webUI/jest/jest.html">
+            
+                    
+                    Jest
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.19.2.2.1" data-path="../../../test/webUI/jest/testing*library.md">
+            
+                <span>
+            
+                    
+                    Testing Library
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19.2.3" data-path="../../../test/webUI/playwright/playwright.html">
+            
+                <a href="../../../test/webUI/playwright/playwright.html">
+            
+                    
+                    Playwright
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19.2.4" data-path="../../../test/webUI/selenium/selenium.html">
+            
+                <a href="../../../test/webUI/selenium/selenium.html">
+            
+                    
+                    Selenium
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19.2.5" data-path="../../../test/webUI/webui.html">
+            
+                <a href="../../../test/webUI/webui.html">
+            
+                    
+                    Webui
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" >
+            
+                <span>
+            
+                    
+                    Tips
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.20.1" data-path="../../../tips/web/web.html">
+            
+                <a href="../../../tips/web/web.html">
+            
+                    
+                    Web
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.20.1.1" data-path="../../../tips/web/darkmode.html">
+            
+                <a href="../../../tips/web/darkmode.html">
+            
+                    
+                    Darkmode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20.1.2" data-path="../../../tips/web/loading.html">
+            
+                <a href="../../../tips/web/loading.html">
+            
+                    
+                    Loading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20.1.3" data-path="../../../tips/web/login.html">
+            
+                <a href="../../../tips/web/login.html">
+            
+                    
+                    Login
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20.1.4" data-path="../../../tips/web/modal.html">
+            
+                <a href="../../../tips/web/modal.html">
+            
+                    
+                    Modal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20.1.5" data-path="../../../tips/web/pagenation.html">
+            
+                <a href="../../../tips/web/pagenation.html">
+            
+                    
+                    Pagenation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20.1.6" data-path="../../../tips/web/pc_sp_判断.html">
+            
+                <a href="../../../tips/web/pc_sp_判断.html">
+            
+                    
+                    pcsp判断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20.1.7" data-path="../../../tips/web/progressBar.html">
+            
+                <a href="../../../tips/web/progressBar.html">
+            
+                    
+                    Progress Bar
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20.1.8" data-path="../../../tips/web/realTime.html">
+            
+                <a href="../../../tips/web/realTime.html">
+            
+                    
+                    Real Time
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20.1.9" data-path="../../../tips/web/scraping.html">
+            
+                <a href="../../../tips/web/scraping.html">
+            
+                    
+                    Scraping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20.1.10" data-path="../../../tips/web/scroll関連.html">
+            
+                <a href="../../../tips/web/scroll関連.html">
+            
+                    
+                    scroll関連
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20.1.11" data-path="../../../tips/web/slider.html">
+            
+                <a href="../../../tips/web/slider.html">
+            
+                    
+                    Slider
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20.1.12" data-path="../../../tips/web/tips.html">
+            
+                <a href="../../../tips/web/tips.html">
+            
+                    
+                    Tips
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20.1.13" data-path="../../../tips/web/WebAPI設計.html">
+            
+                <a href="../../../tips/web/WebAPI設計.html">
+            
+                    
+                    WebAPI設計
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20.1.14" data-path="../../../tips/web/チェックリスト.html">
+            
+                <a href="../../../tips/web/チェックリスト.html">
+            
+                    
+                    チェックリスト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20.1.15" data-path="../../../tips/web/機能の実装方法.html">
+            
+                <a href="../../../tips/web/機能の実装方法.html">
+            
+                    
+                    機能の実装方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20.1.16" data-path="../../../tips/web/非同期通信.html">
+            
+                <a href="../../../tips/web/非同期通信.html">
+            
+                    
+                    非同期通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21" data-path="../../../tools/tools.html">
+            
+                <a href="../../../tools/tools.html">
+            
+                    
+                    Tools
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.21.1" data-path="../../../tools/editor/editor.html">
+            
+                <a href="../../../tools/editor/editor.html">
+            
+                    
+                    Editor
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.21.1.1" data-path="../../../tools/editor/vim/vim.html">
+            
+                <a href="../../../tools/editor/vim/vim.html">
+            
+                    
+                    Vim
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21.1.2" data-path="../../../tools/editor/vscode/vscode.html">
+            
+                <a href="../../../tools/editor/vscode/vscode.html">
+            
+                    
+                    Vscode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21.1.3" data-path="../../../tools/editor/editor.html">
+            
+                <a href="../../../tools/editor/editor.html">
+            
+                    
+                    Editor
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21.2" data-path="../../../tools/git/git.html">
+            
+                <a href="../../../tools/git/git.html">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.21.2.1" data-path="../../../tools/git/actions/actions.html">
+            
+                <a href="../../../tools/git/actions/actions.html">
+            
+                    
+                    Actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21.2.2" data-path="../../../tools/git/cli/cli.html">
+            
+                <a href="../../../tools/git/cli/cli.html">
+            
+                    
+                    Cli
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21.2.3" data-path="../../../tools/git/template/PULL_REQUEST_TEMPLATE.html">
+            
+                <a href="../../../tools/git/template/PULL_REQUEST_TEMPLATE.html">
+            
+                    
+                    PULL REQUEST TEMPLATE
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21.3" data-path="../../../tools/gtm/gtm.html">
+            
+                <a href="../../../tools/gtm/gtm.html">
+            
+                    
+                    Gtm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21.4" data-path="../../../tools/homebrew/homebrew.html">
+            
+                <a href="../../../tools/homebrew/homebrew.html">
+            
+                    
+                    Homebrew
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21.5" data-path="../../../tools/intellij/intellij.html">
+            
+                <a href="../../../tools/intellij/intellij.html">
+            
+                    
+                    Intellij
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21.6" data-path="../../../tools/tools.html">
+            
+                <a href="../../../tools/tools.html">
+            
+                    
+                    Tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.22" data-path="../../../GLOSSARY.html">
+            
+                <a href="../../../GLOSSARY.html">
+            
+                    
+                    GLOSSARY
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            HonKitで公開 
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >Aws</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="aws"><a name="aws" class="plugin-anchor" href="#aws"><i class="fa fa-link" aria-hidden="true"></i></a>aws</h1>
+<p>aws関連</p>
+<p><a href="https://www.itmedia.co.jp/news/articles/2203/17/news092.html" target="_blank">AWS Cloud Quest</a></p>
+<hr>
+<h2 id="aws-cli"><a name="aws-cli" class="plugin-anchor" href="#aws-cli"><i class="fa fa-link" aria-hidden="true"></i></a>AWS CLI</h2>
+<p>AWSコマンドラインインターフェイス (AWS CLI) は、AWSのサービスを管理するための統合ツール。
+ダウンロードおよび設定用の単一のツールのみを使用して、コマンドラインからAWSの複数のサービスを制御し、スクリプトを使用してこれらを自動化することができる。</p>
+<h3 id="aws-cliを使うとき"><a name="aws-cliを使うとき" class="plugin-anchor" href="#aws-cliを使うとき"><i class="fa fa-link" aria-hidden="true"></i></a>AWS CLIを使うとき</h3>
+<hr>
+<h2 id="config-credentialsを作成する"><a name="config-credentialsを作成する" class="plugin-anchor" href="#config-credentialsを作成する"><i class="fa fa-link" aria-hidden="true"></i></a>config credentialsを作成する</h2>
+<p>AWS CLIはaws configureで指定された機密性の高い認証情報を<strong>ホームディレクトリの<code>.aws</code>という名前のフォルダーにあるcredentialsへ保存する</strong></p>
+<p><strong>config</strong>
+aws configureで指定された<strong>機密性の低い</strong>オプションを保存する
+cliを使う上での設定を記載したファイル。</p>
+<p><strong>credentials</strong>
+aws configureで指定された<strong>機密性の高い</strong>認証情報を保存する
+AWSに接続するための認証情報</p>
+<h2 id="config-credentials"><a name="config-credentials" class="plugin-anchor" href="#config-credentials"><i class="fa fa-link" aria-hidden="true"></i></a>config credentials</h2>
+<p><a href="https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/cli-configure-files.html" target="_blank">リファレンス</a></p>
+<p>頻繁に利用される構成設定および認証情報をAWS CLIが維持するファイルに保存できる。
+CLIは<code>default</code>という名前のプロファイルにある設定を使用する。</p>
+<h2 id="名前付きプロファイル"><a name="名前付きプロファイル" class="plugin-anchor" href="#名前付きプロファイル"><i class="fa fa-link" aria-hidden="true"></i></a>名前付きプロファイル</h2>
+<p><a href="https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/cli-configure-profiles.html" target="_blank">リファレンス</a></p>
+<hr>
+<h2 id="aws-cdk"><a name="aws-cdk" class="plugin-anchor" href="#aws-cdk"><i class="fa fa-link" aria-hidden="true"></i></a>AWS CDK</h2>
+<p><a href="https://qiita.com/Brutus/items/6c8d9bfaab7af53d154a" target="_blank">5分で理解するAWS CDK</a>
+<a href="https://aws.amazon.com/jp/cdk/faqs/" target="_blank">リファレンス</a>
+AWSクラウド開発キット (AWS CDK) は、最新のプログラミング言語を使用してクラウドインフラストラクチャをコードとして定義し、それを<strong>AWS CloudFormation</strong>を通じてデプロイするためのオープンソースのソフトウェア開発フレームワーク。</p>
+<p>TypeScriptおよびPythonなどのプログラミング言語を使用して、AWSリソースを定義し、Terraformの様にInfrastructure as Code（以降、IaC）を実現する手段として、クラウドインフラのリソースをプロビジョニングすることができる。</p>
+<p><code>CDK（TypeScripts or Python ...etc → CloudFormation Template（JSON or YAML）</code></p>
+<h2 id="cdk-メリット"><a name="cdk-メリット" class="plugin-anchor" href="#cdk-メリット"><i class="fa fa-link" aria-hidden="true"></i></a>CDK メリット</h2>
+<p><code>$ cdk deploy</code>コマンドが優秀
+CloudFormationで同じことをしようとしたら</p>
+<ul>
+<li>初回実行時は普通にデプロイ</li>
+<li>二度目以降は変更セットを作成して差分デプロイ（みたいなヘルパースクリプトが必要）</li>
+<li>クロスリージョン参照ができる（cdk-remote-stackパッケージを使用）（us-east-1 で作らないといけないリソースがあっても安心）</li>
+<li>S3 バケットの同期や CloudFront のキャッシュ削除までできる</li>
+</ul>
+<h2 id="aws-cdk-と-cloudformationの関係"><a name="aws-cdk-と-cloudformationの関係" class="plugin-anchor" href="#aws-cdk-と-cloudformationの関係"><i class="fa fa-link" aria-hidden="true"></i></a>AWS CDK と CloudFormationの関係</h2>
+<p><code>AWS CDK</code>は、最新のプログラミング言語のすべての機能を活用して<code>AWS Infrastructure as Code</code>を定義する、デベロッパー中心のツールキットと考えることができる。
+AWS CDKアプリケーションが実行されると、それらは<strong>完全に形成されたCloudFormation JSON/YAMLテンプレートにコンパイル</strong>され、プロビジョニング用にCloudFormationサービスへ送信される。
+AWS CDKはCloudFormationを利用しているため、CloudFormationの安全なデプロイ、自動ロールバック、ドリフト検出などのすべての利点がそのまま提供されます。</p>
+<h2 id="aws-cdk-と-aws-samの関係"><a name="aws-cdk-と-aws-samの関係" class="plugin-anchor" href="#aws-cdk-と-aws-samの関係"><i class="fa fa-link" aria-hidden="true"></i></a>AWS CDK と AWS SAMの関係</h2>
+<blockquote>
+<p>AWS サーバーレスアプリケーションモデル（SAM）と AWS CDK はどちらも<code>AWSインフラストラクチャをコード</code>として抽象化しているため、クラウドインフラストラクチャを簡単に定義できる。
+AWS SAM は特にサーバーレスのユースケースとアーキテクチャに焦点を当てており、コンパクトで宣言型の JSON/YAMLテンプレートでインフラストラクチャを定義できる。
+AWS CDK は、AWS のすべてのサービスを幅広くカバーしており、TypeScript、Python、C#、Java などの最新のプログラミング言語でクラウドインフラストラクチャを定義できます。AWS SAM と AWS CDK は、どちらも CloudFormation をインフラストラクチャスタックのプロビジョニングエンジンとして利用します。</p>
+</blockquote>
+<p>つまりAWS SAMはサーバーレスに特化している。</p>
+<h2 id="アベイラビリティゾーンazavailability-zone"><a name="アベイラビリティゾーンazavailability-zone" class="plugin-anchor" href="#アベイラビリティゾーンazavailability-zone"><i class="fa fa-link" aria-hidden="true"></i></a>アベイラビリティゾーン(AZ):Availability Zone</h2>
+<p><a href="https://e-words.jp/w/%E3%82%A2%E3%83%99%E3%82%A4%E3%83%A9%E3%83%93%E3%83%AA%E3%83%86%E3%82%A3%E3%82%BE%E3%83%BC%E3%83%B3.html" target="_blank">参考URL</a></p>
+<p>アベイラビリティゾーンとは、AWSである地域に立地する<strong>データセンター群をひとつの論理的な管理単位</strong>にまとめたもの。
+各リージョン内は2つ以上のAZで構成されている。</p>
+<h2 id="マルチaz"><a name="マルチaz" class="plugin-anchor" href="#マルチaz"><i class="fa fa-link" aria-hidden="true"></i></a>マルチAZ</h2>
+<p><a href="https://e-words.jp/w/%E3%83%9E%E3%83%AB%E3%83%81AZ.html#:~:text=%E3%83%9E%E3%83%AB%E3%83%81AZ%E3%81%A8%E3%81%AF%E3%80%81%E7%B1%B3,%E3%81%AE%E9%85%8D%E7%BD%AE%E3%82%92%E8%A1%8C%E3%81%86%E6%96%B9%E5%BC%8F%E3%80%82" target="_blank">参考URL</a></p>
+<p>マルチAZ配置は同じリージョンのAZを同時に2つ以上使用し、サーバや機能、データを分散して配置する。
+バックアップやフェイルオーバーをAZをまたいで行うことで可用性や耐障害性を高めることができる。
+サービスの種類にもよるが、単一のAZのみで運用するシングルAZ（Single-AZ）に比べ利用料金が高額となる（他の構成が同じなら2倍程度</p>
+<h2 id="iamidentity-and-access-management"><a name="iamidentity-and-access-management" class="plugin-anchor" href="#iamidentity-and-access-management"><i class="fa fa-link" aria-hidden="true"></i></a>IAM(Identity and Access Management)</h2>
+<p>ユーザに対してAWSのアクセスを制御する仕組みのこと
+※CloudFrontやRoute 53と同様、グローバルサービスのためリージョンを気にする必要がない</p>
+<h2 id="oaiorigin-access-identity"><a name="oaiorigin-access-identity" class="plugin-anchor" href="#oaiorigin-access-identity"><i class="fa fa-link" aria-hidden="true"></i></a>OAI(Origin Access Identity)</h2>
+<p>S3からCloudfrontを一意に特定する識別子</p>
+<h2 id="sidstatement-id"><a name="sidstatement-id" class="plugin-anchor" href="#sidstatement-id"><i class="fa fa-link" aria-hidden="true"></i></a>Sid(Statement Id)</h2>
+<p>お客様がポリシードキュメントに与える任意の識別子。
+Sid値は、ステートメント配列内の各ステートメントに割り当てることができる。</p>
+<h2 id="lambdaなどのerrorに関して"><a name="lambdaなどのerrorに関して" class="plugin-anchor" href="#lambdaなどのerrorに関して"><i class="fa fa-link" aria-hidden="true"></i></a>Lambdaなどのerrorに関して</h2>
+<p>LambdaなどのerrorはcloudWatchに紐づいているため、デフォルトで通知される。とのこと</p>
+<h2 id="aws-アクセスキー"><a name="aws-アクセスキー" class="plugin-anchor" href="#aws-アクセスキー"><i class="fa fa-link" aria-hidden="true"></i></a>AWS アクセスキー</h2>
+<p>Amazon Web Services(AWS)にアクセスするには、まずアクセスキーが必要。
+アクセスキーは<strong>AWSで個人を識別する認証情報</strong>であり、アクセスキーID (ユーザー名のようなもの）とシークレットアクセスキー（パスワードのようなもの）の2つの部分から構成されています。
+アクセスキーを作成するには、S3への認証許可が必要です。</p>
+<h2 id="aws-cliの認証設定をする際の注意"><a name="aws-cliの認証設定をする際の注意" class="plugin-anchor" href="#aws-cliの認証設定をする際の注意"><i class="fa fa-link" aria-hidden="true"></i></a>AWS CLIの認証設定をする際の注意</h2>
+<p>AWS CLIを使うためにはAWSにアクセスするためのアクセスキー(アクセスキーIDとシークレットアクセスキー)が必要になる。</p>
+<h2 id="オンプレミス所有"><a name="オンプレミス所有" class="plugin-anchor" href="#オンプレミス所有"><i class="fa fa-link" aria-hidden="true"></i></a>オンプレミス(所有)</h2>
+<p>所有はすべてを自社で管理する方式。必要なコンピューターー資源はすべて購入して構築から運用まですべて自社で行う。</p>
+<p>↓
+所有形態の場合、初期に多額のコストがかかる。また運用を自ら行わなければいけないため運用に携わる技術者が必要となってしまう。</p>
+<h2 id="レンタル"><a name="レンタル" class="plugin-anchor" href="#レンタル"><i class="fa fa-link" aria-hidden="true"></i></a>レンタル</h2>
+<p>コンピューターー資源を所有することは非常に大変
+しかしレンタル期間は1か月単位、あるいはそれ以上になることが普通。コンピューターー資源の増減は電話やメール・書面などのやりとりとなるため今すく使いたいというニーズに答えることが難しい。インフラ障害が発生したときにもレンタル会社に依頼することしかできず、復旧が遅れる場合がある。</p>
+<h2 id="クラウド"><a name="クラウド" class="plugin-anchor" href="#クラウド"><i class="fa fa-link" aria-hidden="true"></i></a>クラウド</h2>
+<p>コンピューターー資源を1時間単位、あるいは1分単位で借りることができる。</p>
+<h2 id="s3"><a name="s3" class="plugin-anchor" href="#s3"><i class="fa fa-link" aria-hidden="true"></i></a>s3</h2>
+<p>メンテナンス用画像を配置できる。まさかの方法もあった</p>
+<h2 id="aws-cdkcloud-development-kit"><a name="aws-cdkcloud-development-kit" class="plugin-anchor" href="#aws-cdkcloud-development-kit"><i class="fa fa-link" aria-hidden="true"></i></a>AWS CDK(Cloud Development Kit)</h2>
+<p><a href="https://www.skyarch.net/column/aws-cloud-development-kit-cdk/" target="_blank">参考URL</a></p>
+<p>AWS CDK(Cloud Development Kit)は<strong>AWS上のリソースをコンポーネント化</strong>して提供し、AWS上でのアプリケーション開発を支援するサービス
+AWS Cloud DEvelopment Kitが必要とされる理由は、AWSを操作するその他の方法の課題を解決するためのもの</p>
+<p><strong>AWSを操作する方法</strong>
+一番有名なのはマネジメントコンソール
+マネジメントコンソールを始めるのは簡単だが以下の課題もある。</p>
+<ul>
+<li>操作のために操作手順書が必要になる</li>
+<li>画面を使った操作なので、繰り返し人間の操作が必要になる。</li>
+<li>人間の操作はヒューマンエラーのリスクがある</li>
+<li>作業に労力と時間がかかる</li>
+</ul>
+<p>SDKやCLIといったスクリプトを使って操作手順を定義する方法は繰り返し使用することが可能だが、<strong>アップデートを行う際にはその都度手順を変えなければならない。</strong></p>
+<p>これらの、AWSを操作するその他の方法の持つ課題を解決するために活用されるのがAWS Cloud Development Kit (CDK)</p>
+<p>AWS Cloud Development Kit (CDK)は、AWSの環境を一般のプログラム言語で記述できるツールで、オープンソースで開発されているので、ユーザーが拡張することも可能です。</p>
+<h2 id="aws-cdkcloud-development-kit-メリット"><a name="aws-cdkcloud-development-kit-メリット" class="plugin-anchor" href="#aws-cdkcloud-development-kit-メリット"><i class="fa fa-link" aria-hidden="true"></i></a>AWS CDK(Cloud Development Kit) メリット</h2>
+<ul>
+<li><p>簡単にawsサービスを活用できる
+AWS Cloud Development Kit (CDK)では、専門的な知識が必要ではなく新たに学習することなく今まで活用してきた知識とスキルで使用が可能なため、AWSサービスを使ったアプリケーション開発を簡単に取り入れることができます。</p>
+</li>
+<li><p>現在使っているプログラミング言語やツールを使用できる
+アプリケーション開発のために新しいプログラミング言語やツールが必要になると、時間と労力がかかります。AWS Cloud Development Kit (CDK)は、下記のような多くのプログラミング言語が使用でき、既に使用しているIDEやテストツール、ワークフローパターンを使用することができます。</p>
+</li>
+</ul>
+<p>TypeScript
+Phthon
+Java
+.NET</p>
+<ul>
+<li><p>AWS CloudFormationとの連携
+AWS Cloud Development Kit (CDK)を使ってインフラストラクチャを定義すれば、AWS CloudFormationに連携することで、Amazon EC2 インスタンスやAmazon RDSDB インスタンスといったAWSリソースを使ったプロビジョニングができます。</p>
+</li>
+<li><p>コンポーネントをカスタマイズしてスピードを加速する
+AWS Cloud Development Kit (CDK)では、開発チームや組織でAWSサービスをいくつか組み合わせて使う必要がある場合の組み合わせや、定型文、ロジックなどのコンポーネントを組織のセキュリティやコンプライアンス、ガバナンスなどを考慮したかたちでカスタマイズできます。</p>
+</li>
+</ul>
+<p>カスタマイズされたコンポーネントは繰り返し使用でき、開発チームや組織で簡単に共有できます。そのことで、新規のプロジェクトなどが発生してもスピーディーに開発を進めることが可能となります。</p>
+<p>開発言語にTypeScriptを使用する場合はデプロイする前にCDKテンプレートがビルド(コンパイル)されている必要がある。</p>
+<h2 id="cloudformationは、aws-cdkから使うのが正解な気がしてきた"><a name="cloudformationは、aws-cdkから使うのが正解な気がしてきた" class="plugin-anchor" href="#cloudformationは、aws-cdkから使うのが正解な気がしてきた"><i class="fa fa-link" aria-hidden="true"></i></a>CloudFormationは、AWS CDKから使うのが正解な気がしてきた</h2>
+<p><a href="https://www.kwbtblog.com/entry/2020/11/21/100556" target="_blank">参考URL</a></p>
+<h2 id="aws-cdkとは？"><a name="aws-cdkとは？" class="plugin-anchor" href="#aws-cdkとは？"><i class="fa fa-link" aria-hidden="true"></i></a>AWS CDKとは？</h2>
+<p>一言で言うとCloud Formation テンプレートジェネレーター
+TypeScript等のプロブラム言語で、CloudFormationテンプレートを出力するプログラムが書けます。</p>
+<p>また、出力したテンプレートを使ってCloudFormationへのデプロイもAWS CDK上で行うこともできます</p>
+<h2 id="テンプレートをプログラムで書くとは"><a name="テンプレートをプログラムで書くとは" class="plugin-anchor" href="#テンプレートをプログラムで書くとは"><i class="fa fa-link" aria-hidden="true"></i></a>テンプレートをプログラムで書くとは</h2>
+<p>プログラムは下記のような流れになる</p>
+<ol>
+<li>AWSの各種リソースがクラスとして定義されていて、デプロイしたいAWSリソースのクラスをnewでオブジェクトとして生成していきます。</li>
+<li>オブジェクトは親子関係を持っていて、CloudFormationのスタックを頂点とした、リソースのオブジェクトツリーを構築していきます。</li>
+</ol>
+<p>ユーザーが書くプロブラムはここまでで、このプロブラムを実行すると、構築されたオブジェクトツリー全体が、CloudFormationテンプレートとして出力されます。</p>
+<h2 id="cloudfront"><a name="cloudfront" class="plugin-anchor" href="#cloudfront"><i class="fa fa-link" aria-hidden="true"></i></a>CloudFront</h2>
+<p>webでよく使われる
+一番レイテンシーの低いサーバにアクセスがいく</p>
+<ul>
+<li><p>そもそもCDNとは？
+CDNとはコンテンツデリバリーネットワークの略。
+負荷分散をするためのコンテンツを配信するためだけのネットワークのことを指す
+単にファイル(画像やZIPファイル)をダウンロードするための技術</p>
+</li>
+<li><p>アクセス方法
+CDNはwebサーバを並べるだけとは違い
+アクセス元から見て一番近くにあるサーバを自動で選択してダウンロードさせることで表示が高速化される。
+CDNのキャッシュサーバはアクセスされたキャッシュサーバにキャッシュがなかったらオリジンサーバ（稼働している元のWebサーバ）にアクセスを行い、データを取ってくることでwebサーバのようにすべてのサーバに同じデータを置かなくても良い。</p>
+</li>
+</ul>
+<h2 id="cloudfront-のメリット"><a name="cloudfront-のメリット" class="plugin-anchor" href="#cloudfront-のメリット"><i class="fa fa-link" aria-hidden="true"></i></a>Cloudfront のメリット</h2>
+<ul>
+<li><p>高パフォーマンス
+世界中の主要都市のほとんどに設置されているエッジロケーションを介してコンテンツ配信を行うことで高速な通信が可能になる。</p>
+</li>
+<li><p>可用性の向上
+エッジロケーションを通してコンテンツ配信を行うことにより、オリジンサーバのワークロードを減らし、アプリケーションの可用性を高めることができる。</p>
+</li>
+<li><p>無料のHTTPS証明書を提供している</p>
+</li>
+</ul>
+<h2 id="s3とamazon-cloudfrontの違い"><a name="s3とamazon-cloudfrontの違い" class="plugin-anchor" href="#s3とamazon-cloudfrontの違い"><i class="fa fa-link" aria-hidden="true"></i></a>S3とAmazon CloudFrontの違い</h2>
+<p><a href="https://www.acrovision.jp/service/aws/?p=1441" target="_blank">参考URL</a></p>
+<p>ファイルのダウンロードを目的として場合、AmazonS3だけでも事足りるように思えるが、CloudFrontを利用した際のメリットとは
+Amazon CloudFront を利用しないで直接 Amazon S3 などのオリジンサーバーからオブジェクトを取得した場合を比較したとき、一番大きな特徴がエッジデリバリーによるメリットの有無となります。</p>
+<p><a href="https://develop365.gitlab.io/nuxtjs-2.8.X-doc/ja/faq/deployment-aws-s3-cloudfront/" target="_blank">nuxt.js S3と CloudFrontを使用してAWSへデプロイ</a>
+<a href="https://www.blog.danishi.net/2021/04/30/post-4897/" target="_blank">S3とCloudFrontでホストしたNuxtjsをGithub Actionsでデプロイする</a></p>
+<p>AWS CDKを使ってS3とCloudFrontを作成する
+作成した後、SPAをdeployする
+まあ料金は高くなるだろう。</p>
+<h2 id="マルチaz配置"><a name="マルチaz配置" class="plugin-anchor" href="#マルチaz配置"><i class="fa fa-link" aria-hidden="true"></i></a>マルチAZ配置</h2>
+<p>マルチAZとは、米アマゾンドットコム（Amazon.com）社のAmazon Web Services（AWS）におけるシステム構成のひとつで、複数のアベイラビリティゾーン（AZ）にまたがってシステムの配置を行う方式。</p>
+<p>AZ = アベイラビリティーゾーン</p>
+<h2 id="serverless-framework"><a name="serverless-framework" class="plugin-anchor" href="#serverless-framework"><i class="fa fa-link" aria-hidden="true"></i></a>Serverless Framework</h2>
+<p>LambdaはAWSコンソールから作成できるが、コードのGit管理、ローカルでのデバッグ、デプロイの自動化などを行おうとする場合、何らかしらのツールを使用することが一般的。</p>
+<p>その際に使用する代表的なツールとして、 Serverless Frameworkがある。
+Serverless Frameworkは、AWS以外のプラットフォームでも使用できるマルチクラウド対応のサーバレスアプリケーション開発支援ツールです。</p>
+<h2 id="cloudformation"><a name="cloudformation" class="plugin-anchor" href="#cloudformation"><i class="fa fa-link" aria-hidden="true"></i></a>CloudFormation</h2>
+<p>CloudFormationはプログラミング言語やテキストファイルを使用してAWSリソースを自動で構築するサービスです。 所望のAWS環境をテンプレート化しておくことで、同じ環境を作成する時間を削減することができます。</p>
+<h2 id="aws-アクセスキー"><a name="aws-アクセスキー" class="plugin-anchor" href="#aws-アクセスキー"><i class="fa fa-link" aria-hidden="true"></i></a>AWS アクセスキー</h2>
+<p><strong>アクセスキーはAWSで個人で識別する認証情報(ユーザ名のようなもの)</strong></p>
+<p>AWSにアクセスするにはまずアクセスキーが必要。
+アクセスキーはAWSで個人で識別する認証情報であり、アクセスキーID(ユーザ名のようなもの)とシークレットアクセスキー(パスワードのようなもの)</p>
+<h2 id="s3のアクセスキーとシークレットキーを作る方法"><a name="s3のアクセスキーとシークレットキーを作る方法" class="plugin-anchor" href="#s3のアクセスキーとシークレットキーを作る方法"><i class="fa fa-link" aria-hidden="true"></i></a>S3のアクセスキーとシークレットキーを作る方法</h2>
+<p><a href="https://off.tokyo/blog/s3-aws/" target="_blank">参考URL</a></p>
+<ol>
+<li>S3のアクセスキーとシークレットキーを作成するにはIAMユーザを作る必要がある。</li>
+<li>グループのを作る</li>
+<li>グループの名前と使用用途を決める。例: node.jsからs3へ画像をアップしたrい、取得したり</li>
+</ol>
+<h2 id="バージニア北の理由"><a name="バージニア北の理由" class="plugin-anchor" href="#バージニア北の理由"><i class="fa fa-link" aria-hidden="true"></i></a>バージニア北の理由</h2>
+<p>バージニア北のが色々制限はゆるい。</p>
+<h2 id="cloudfrontとapi-gatewayの違い"><a name="cloudfrontとapi-gatewayの違い" class="plugin-anchor" href="#cloudfrontとapi-gatewayの違い"><i class="fa fa-link" aria-hidden="true"></i></a>CloudFrontとAPI Gatewayの違い</h2>
+<p>API GatewayがListenするのはHTTPSのみで、<strong>HTTPリクエストを受け付ける事はできない</strong>
+一方、CloudFrontはHTTPとHTTPSの両方のリクエストを受けられるのでCloudFrontを経由することでAPI GatewayへのリクエストをHTTPで受けることができる。</p>
+<h2 id="aws配下のファイルについて"><a name="aws配下のファイルについて" class="plugin-anchor" href="#aws配下のファイルについて"><i class="fa fa-link" aria-hidden="true"></i></a>~/.aws/配下のファイルについて</h2>
+<p>config
+<strong>AWS CLI</strong>を使うときのプロファイル別情報</p>
+<p>credentials
+<strong>AWS SDK, AWS CLI</strong>を使う時の認証情報</p>
+<ul>
+<li>ここでのプロファイルとは
+アクセスキー、シークレットキーのペアに名前をつけて管理する機能。</li>
+</ul>
+<pre><code class="lang-config">[default]
+aws_access_key_id=AKIAIOSFODNN7EXAMPLE
+aws_secret_access_key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+
+[test-user]
+aws_access_key_id=AKIAI44QH8DHBEXAMPLE
+aws_secret_access_key=je7MtGbClwBF/2Zp9Utk/h3yCo8nvbEXAMPLEKEY
+</code></pre>
+<p>環境ごとに分けること。</p>
+<p><code>$ aws s3 ls --profile cfc-dev</code>
+上記コマンドはawsクレデンシャルが反映されているか確認できる。</p>
+<h2 id="スイッチロールとは"><a name="スイッチロールとは" class="plugin-anchor" href="#スイッチロールとは"><i class="fa fa-link" aria-hidden="true"></i></a>スイッチロールとは</h2>
+<p>スイッチロール自体のメリットは<strong>一度ログアウトしてから、もう一度別のアカウントでログインする必要がなくなる。</strong></p>
+<p><a href="https://dev.classmethod.jp/articles/switch-role-with-awscli/" target="_blank">参考URL</a></p>
+<p><img src="image/スイッチロール.png" alt></p>
+<h3 id="cliでのスイッチロール"><a name="cliでのスイッチロール" class="plugin-anchor" href="#cliでのスイッチロール"><i class="fa fa-link" aria-hidden="true"></i></a>CLIでのスイッチロール</h3>
+<p>マネジメントコンソールからスイッチロールは可能
+AWS CLIからもスイッチロールは可能</p>
+<h2 id="aws-configure"><a name="aws-configure" class="plugin-anchor" href="#aws-configure"><i class="fa fa-link" aria-hidden="true"></i></a>aws configure</h2>
+<p>defaultのクレデンシャルをconfigに実装することができる。</p>
+<h2 id="awsアクセスキー"><a name="awsアクセスキー" class="plugin-anchor" href="#awsアクセスキー"><i class="fa fa-link" aria-hidden="true"></i></a>AWSアクセスキー</h2>
+<p><strong>CLI、SDK、&amp; APIアクセスに使用するAWSアクセスキー</strong>
+アクセスキーを使用して、AWS CLI、Tools for PowerShell、AWS SDK、または直接AWS API呼び出しからプログラムでAWSを呼び出すことができます。一度に持つことができるアクセスキーは最大2つ (アクティブまたは非アクティブ）</p>
+<p>保護の観点から、シークレットキーは誰とも共有しないでください。また、<strong>業界のベストプラクティスとして頻繁にキーを更新することが推奨されている。</strong>
+シークレットキーは、作成時に表示またはダウンロードできるのみです。既存のシークレットキーを正しく配置できなかった場合は、新しいアクセスキーペアを作成する必要がある。</p>
+<p><img src="image/AWSアクセスキー.png" alt="AWSアクセスキー"></p>
+<h2 id="aws-シークレットマネージャー"><a name="aws-シークレットマネージャー" class="plugin-anchor" href="#aws-シークレットマネージャー"><i class="fa fa-link" aria-hidden="true"></i></a>AWS シークレットマネージャー</h2>
+<h2 id="aws-基本を学んだ後"><a name="aws-基本を学んだ後" class="plugin-anchor" href="#aws-基本を学んだ後"><i class="fa fa-link" aria-hidden="true"></i></a>aws 基本を学んだ後</h2>
+<p><a href="https://blog.microcms.io/aws-vault-introduction/" target="_blank">参考URL</a></p>
+<h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>Tips</h2>
+<p><a href="https://zenn.dev/nemolize/articles/3a5d03a7974eea" target="_blank">aws-vaultでアクセスキーをセキュアに保存しつつ、MFAもシームレスにやる</a>
+<a href="https://qiita.com/mm-Genqiita/items/f93285a6058c64b39f23" target="_blank">AWS Secrets Managerを使おう！</a></p>
+<h2 id="aws-kmsamazon-key-management-service"><a name="aws-kmsamazon-key-management-service" class="plugin-anchor" href="#aws-kmsamazon-key-management-service"><i class="fa fa-link" aria-hidden="true"></i></a>AWS KMS(Amazon Key Management Service)</h2>
+<p><a href="https://qiita.com/miyuki_samitani/items/c3c871e2312b9a47b9e2" target="_blank">参考URL</a></p>
+<p>鍵を管理するところ。
+元々の鍵をマスターキー
+暗号化された鍵をデータキーとしてAWSで保存ができる。</p>
+<h2 id="serverless-frameworkとsamを比較してみる"><a name="serverless-frameworkとsamを比較してみる" class="plugin-anchor" href="#serverless-frameworkとsamを比較してみる"><i class="fa fa-link" aria-hidden="true"></i></a>Serverless FrameworkとSAMを比較してみる</h2>
+<p>AWSでサーバレスアーキテクチャ構築するときに代表的なフレームワークであるServerless FrameworkとSAMを比較してみたよ
+筆者の判定だとServerless Frameworkに軍配かな
+SAMはプラグインがやや少ないのと癖が強いから今後に期待！</p>
+<p>Serverless Frameworkとの違いは色々あるのですが、開発したAPIをローカルで実行する場合の最大の違いは……</p>
+<p>リクエストをローカルで受け取る
+Dockerプロセスが立ち上がる
+Lambdaが実行される
+という三段階にあると考えています。
+特に2番が曲者で、上記の記事では</p>
+<p>DynamoDBをDockerでローカルに構築する
+DynamoDBが起動するネットワークを作成
+Lambda実行のDockerプロセスが機動するネットワークを指定
+という流れで、LambdaがDynamoDBにアクセスできるようにしています。</p>
+<p>……これ、デバッグが難しいです……
+DynamoDBが動いているネットワークが指定されちゃってるので、逆にローカル実行した際にネックになっちゃってるみたいでアクセスが上手くできなかったです。</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../cloud.html" class="navigation navigation-prev " aria-label="Previous page: Cloud">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="apigateway.html" class="navigation navigation-next " aria-label="Next page: Apigateway">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Aws","level":"2.7.3.1","depth":3,"next":{"title":"Apigateway","level":"2.7.3.1.1","depth":4,"path":"infrastructure/cloud/aws/apigateway.md","ref":"infrastructure/cloud/aws/apigateway.md","articles":[]},"previous":{"title":"Cloud","level":"2.7.3","depth":2,"path":"infrastructure/cloud/cloud.md","ref":"infrastructure/cloud/cloud.md","articles":[{"title":"Aws","level":"2.7.3.1","depth":3,"path":"infrastructure/cloud/aws/aws.md","ref":"infrastructure/cloud/aws/aws.md","articles":[{"title":"Apigateway","level":"2.7.3.1.1","depth":4,"path":"infrastructure/cloud/aws/apigateway.md","ref":"infrastructure/cloud/aws/apigateway.md","articles":[]},{"title":"App Runner","level":"2.7.3.1.2","depth":4,"path":"infrastructure/cloud/aws/app*runner.md","ref":"infrastructure/cloud/aws/app*runner.md","articles":[]},{"title":"Aurora","level":"2.7.3.1.3","depth":4,"path":"infrastructure/cloud/aws/aurora.md","ref":"infrastructure/cloud/aws/aurora.md","articles":[]},{"title":"Aws Cli","level":"2.7.3.1.4","depth":4,"path":"infrastructure/cloud/aws/aws*cli.md","ref":"infrastructure/cloud/aws/aws*cli.md","articles":[]},{"title":"Aws Sam","level":"2.7.3.1.5","depth":4,"path":"infrastructure/cloud/aws/aws*sam.md","ref":"infrastructure/cloud/aws/aws*sam.md","articles":[]},{"title":"Aws Vault","level":"2.7.3.1.6","depth":4,"path":"infrastructure/cloud/aws/aws*vault.md","ref":"infrastructure/cloud/aws/aws*vault.md","articles":[]},{"title":"Cloudfront","level":"2.7.3.1.7","depth":4,"path":"infrastructure/cloud/aws/cloudfront.md","ref":"infrastructure/cloud/aws/cloudfront.md","articles":[]},{"title":"Cloudtrail","level":"2.7.3.1.8","depth":4,"path":"infrastructure/cloud/aws/cloudtrail.md","ref":"infrastructure/cloud/aws/cloudtrail.md","articles":[]},{"title":"Dynamodb","level":"2.7.3.1.9","depth":4,"path":"infrastructure/cloud/aws/dynamodb.md","ref":"infrastructure/cloud/aws/dynamodb.md","articles":[]},{"title":"Ec 2","level":"2.7.3.1.10","depth":4,"path":"infrastructure/cloud/aws/ec2.md","ref":"infrastructure/cloud/aws/ec2.md","articles":[]},{"title":"Enterprise","level":"2.7.3.1.11","depth":4,"path":"infrastructure/cloud/aws/enterprise.md","ref":"infrastructure/cloud/aws/enterprise.md","articles":[]},{"title":"Eventbridge","level":"2.7.3.1.12","depth":4,"path":"infrastructure/cloud/aws/eventbridge.md","ref":"infrastructure/cloud/aws/eventbridge.md","articles":[]},{"title":"Iam","level":"2.7.3.1.13","depth":4,"path":"infrastructure/cloud/aws/iam.md","ref":"infrastructure/cloud/aws/iam.md","articles":[]},{"title":"Lambda","level":"2.7.3.1.14","depth":4,"path":"infrastructure/cloud/aws/lambda.md","ref":"infrastructure/cloud/aws/lambda.md","articles":[]},{"title":"Redshift","level":"2.7.3.1.15","depth":4,"path":"infrastructure/cloud/aws/redshift.md","ref":"infrastructure/cloud/aws/redshift.md","articles":[]},{"title":"Route 53","level":"2.7.3.1.16","depth":4,"path":"infrastructure/cloud/aws/route53.md","ref":"infrastructure/cloud/aws/route53.md","articles":[]},{"title":"S 3","level":"2.7.3.1.17","depth":4,"path":"infrastructure/cloud/aws/s3.md","ref":"infrastructure/cloud/aws/s3.md","articles":[]},{"title":"Secrets Manager","level":"2.7.3.1.18","depth":4,"path":"infrastructure/cloud/aws/secrets*manager.md","ref":"infrastructure/cloud/aws/secrets*manager.md","articles":[]},{"title":"Ses","level":"2.7.3.1.19","depth":4,"path":"infrastructure/cloud/aws/ses.md","ref":"infrastructure/cloud/aws/ses.md","articles":[]},{"title":"Systems Manager Parameter Store","level":"2.7.3.1.20","depth":4,"path":"infrastructure/cloud/aws/systems*manager*parameter*store.md","ref":"infrastructure/cloud/aws/systems*manager*parameter*store.md","articles":[]},{"title":"X Ray","level":"2.7.3.1.21","depth":4,"path":"infrastructure/cloud/aws/x*ray.md","ref":"infrastructure/cloud/aws/x*ray.md","articles":[]}]},{"title":"Gcp","level":"2.7.3.2","depth":3,"path":"infrastructure/cloud/gcp/gcp.md","ref":"infrastructure/cloud/gcp/gcp.md","articles":[{"title":"Emulator","level":"2.7.3.2.1","depth":4,"path":"infrastructure/cloud/gcp/emulator.md","ref":"infrastructure/cloud/gcp/emulator.md","articles":[]},{"title":"Firebase Storage","level":"2.7.3.2.2","depth":4,"path":"infrastructure/cloud/gcp/firebase_storage.md","ref":"infrastructure/cloud/gcp/firebase_storage.md","articles":[]},{"title":"Firebase","level":"2.7.3.2.3","depth":4,"path":"infrastructure/cloud/gcp/firebase.md","ref":"infrastructure/cloud/gcp/firebase.md","articles":[]},{"title":"Firestore","level":"2.7.3.2.4","depth":4,"path":"infrastructure/cloud/gcp/firestore.md","ref":"infrastructure/cloud/gcp/firestore.md","articles":[]},{"title":"Function","level":"2.7.3.2.5","depth":4,"path":"infrastructure/cloud/gcp/function.md","ref":"infrastructure/cloud/gcp/function.md","articles":[]}]},{"title":"Heroku","level":"2.7.3.3","depth":3,"path":"infrastructure/cloud/heroku/heroku.md","ref":"infrastructure/cloud/heroku/heroku.md","articles":[]},{"title":"Ngrok","level":"2.7.3.4","depth":3,"path":"infrastructure/cloud/ngrok/ngrok.md","ref":"infrastructure/cloud/ngrok/ngrok.md","articles":[]},{"title":"Cloud","level":"2.7.3.5","depth":3,"path":"infrastructure/cloud/cloud.md","ref":"infrastructure/cloud/cloud.md","articles":[]}]},"articles":[{"title":"Apigateway","level":"2.7.3.1.1","depth":4,"path":"infrastructure/cloud/aws/apigateway.md","ref":"infrastructure/cloud/aws/apigateway.md","articles":[]},{"title":"App Runner","level":"2.7.3.1.2","depth":4,"path":"infrastructure/cloud/aws/app*runner.md","ref":"infrastructure/cloud/aws/app*runner.md","articles":[]},{"title":"Aurora","level":"2.7.3.1.3","depth":4,"path":"infrastructure/cloud/aws/aurora.md","ref":"infrastructure/cloud/aws/aurora.md","articles":[]},{"title":"Aws Cli","level":"2.7.3.1.4","depth":4,"path":"infrastructure/cloud/aws/aws*cli.md","ref":"infrastructure/cloud/aws/aws*cli.md","articles":[]},{"title":"Aws Sam","level":"2.7.3.1.5","depth":4,"path":"infrastructure/cloud/aws/aws*sam.md","ref":"infrastructure/cloud/aws/aws*sam.md","articles":[]},{"title":"Aws Vault","level":"2.7.3.1.6","depth":4,"path":"infrastructure/cloud/aws/aws*vault.md","ref":"infrastructure/cloud/aws/aws*vault.md","articles":[]},{"title":"Cloudfront","level":"2.7.3.1.7","depth":4,"path":"infrastructure/cloud/aws/cloudfront.md","ref":"infrastructure/cloud/aws/cloudfront.md","articles":[]},{"title":"Cloudtrail","level":"2.7.3.1.8","depth":4,"path":"infrastructure/cloud/aws/cloudtrail.md","ref":"infrastructure/cloud/aws/cloudtrail.md","articles":[]},{"title":"Dynamodb","level":"2.7.3.1.9","depth":4,"path":"infrastructure/cloud/aws/dynamodb.md","ref":"infrastructure/cloud/aws/dynamodb.md","articles":[]},{"title":"Ec 2","level":"2.7.3.1.10","depth":4,"path":"infrastructure/cloud/aws/ec2.md","ref":"infrastructure/cloud/aws/ec2.md","articles":[]},{"title":"Enterprise","level":"2.7.3.1.11","depth":4,"path":"infrastructure/cloud/aws/enterprise.md","ref":"infrastructure/cloud/aws/enterprise.md","articles":[]},{"title":"Eventbridge","level":"2.7.3.1.12","depth":4,"path":"infrastructure/cloud/aws/eventbridge.md","ref":"infrastructure/cloud/aws/eventbridge.md","articles":[]},{"title":"Iam","level":"2.7.3.1.13","depth":4,"path":"infrastructure/cloud/aws/iam.md","ref":"infrastructure/cloud/aws/iam.md","articles":[]},{"title":"Lambda","level":"2.7.3.1.14","depth":4,"path":"infrastructure/cloud/aws/lambda.md","ref":"infrastructure/cloud/aws/lambda.md","articles":[]},{"title":"Redshift","level":"2.7.3.1.15","depth":4,"path":"infrastructure/cloud/aws/redshift.md","ref":"infrastructure/cloud/aws/redshift.md","articles":[]},{"title":"Route 53","level":"2.7.3.1.16","depth":4,"path":"infrastructure/cloud/aws/route53.md","ref":"infrastructure/cloud/aws/route53.md","articles":[]},{"title":"S 3","level":"2.7.3.1.17","depth":4,"path":"infrastructure/cloud/aws/s3.md","ref":"infrastructure/cloud/aws/s3.md","articles":[]},{"title":"Secrets Manager","level":"2.7.3.1.18","depth":4,"path":"infrastructure/cloud/aws/secrets*manager.md","ref":"infrastructure/cloud/aws/secrets*manager.md","articles":[]},{"title":"Ses","level":"2.7.3.1.19","depth":4,"path":"infrastructure/cloud/aws/ses.md","ref":"infrastructure/cloud/aws/ses.md","articles":[]},{"title":"Systems Manager Parameter Store","level":"2.7.3.1.20","depth":4,"path":"infrastructure/cloud/aws/systems*manager*parameter*store.md","ref":"infrastructure/cloud/aws/systems*manager*parameter*store.md","articles":[]},{"title":"X Ray","level":"2.7.3.1.21","depth":4,"path":"infrastructure/cloud/aws/x*ray.md","ref":"infrastructure/cloud/aws/x*ray.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"infrastructure/cloud/aws/aws.md","mtime":"2023-01-14T02:23:00.565Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-14T02:23:08.305Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-expand-active-chapter/expand-active-chapter.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

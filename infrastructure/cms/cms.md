@@ -1,7 +1,0 @@
-# cms
-
-cmsについてのpage
-
-wordpress
-microcmsなど
-
