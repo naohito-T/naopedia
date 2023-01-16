@@ -1,4 +1,7 @@
 # デザイン
+
+デザイン関連についてまとめているページ
+
 [世界中のサイトを評価しているやばいサイト](https://www.awwwards.com/)
 [コリスサイト(web design)](https://coliss.com/articles/build-websites/operation/css/css-tricks-dark-futuristic-web3-look.html)
 [モーション周期表を視覚化しておりそれを見れるもの](http://foxcodex.html.xdomain.jp/index.html)

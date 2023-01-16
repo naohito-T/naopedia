@@ -9,6 +9,7 @@ book形式でまとめる方が良いと思い、プログラマーとしての�
 
 thank you!  
 [honkit](https://github.com/honkit/honkit)  
+[Gitbook Summary](https://www.npmjs.com/package/gitbook-summary)  
 [GitBook によるドキュメント作成](http://mebiusbox.github.io/contents/gitbook/)
 
 ## 文章の校正について
