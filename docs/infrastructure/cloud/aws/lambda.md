@@ -155,13 +155,39 @@ Lambda Functionは大きく3つのレイヤーに分かれたレイヤー化ア�
 
 簡単な実行であればexport.handlerを呼び出すやつで十分
 
+## Lambda容量制限
+[参考URL](https://zenn.dev/xxpiyomaruxx/articles/d7419ec1138d6a)
+
+以下である必要がある。
+- zip圧縮後50MB
+- zip圧縮前250MB
+※これ`or`かもしれない。
+
+また、Lambda deployに関してコンテナイメージのサポートが導入されておりその場合は10GBで良いとのこと。コンテナイメージにするのもいいかもしれない。
+
+
 ## Lambda@Edge とは
 
 cloudfrontのエッジロケーションからコードを実行するLambda関数のことで、**ユーザーに近い場所**でコードが実行されるので高速なコンテンツ配信が可能になる仕組み。
 コードをLambdaにアップロードするだけで自動的にコードの実行やスケーリングが行われる。
 そのためLambda@EdgeはLambdaとcloudfrontから成り立つ。
 
-## Lambdaをexpressでdeployする
+**メリット**
+
+- 低レイテンシーのコンテンツを配信
+ユーザに近いロケーションからコードを実行するので
+低レイテンシーの配信が可能。
+
+
+
+
+---
+
+## Tips
+
+[LambdaのJest Test](https://dev.classmethod.jp/articles/serverless-unit-test-with-jest/)
+
+### Lambdaをexpressでdeployする
 [参考URL](https://dev.classmethod.jp/articles/vendia-serverless-express/)
 
 `@vendia/serverless-express`を使用する。
@@ -175,19 +201,3 @@ APIGateway+Lambda上でExpressを動かせるというライブラリ。
 
 >この手法のデメリット
 >- 気になる点を挙げるとすれば、王道のAPIgw+Lambda Wayとはいえず、ややHackyな手法ではあると思います。ExpressのようなWeb Application Frameworkを使うならECSやAppRunnerを使う方が素直な感じはします。それでもECSなどを使う場合と比べてLambdaにはゼロスケール1できるという強みがあるので、存外悪くない手法だと思います。
-
-## Lambda容量制限
-[参考URL](https://zenn.dev/xxpiyomaruxx/articles/d7419ec1138d6a)
-
-以下である必要がある。
-- zip圧縮後50MB
-- zip圧縮前250MB
-※これ`or`かもしれない。
-
-また、Lambda deployに関してコンテナイメージのサポートが導入されておりその場合は10GBで良いとのこと。コンテナイメージにするのもいいかもしれない。
-
----
-
-## Tips
-
-[LambdaのJest Test](https://dev.classmethod.jp/articles/serverless-unit-test-with-jest/)

@@ -37,3 +37,8 @@ iOSがreferrerを廃止したとのこと。そのためやめた方がいい
 [参考URL](https://human-nature.hatenablog.com/entry/2016/10/15/130135)
 
 DBのテーブル名のルールと統一するとわかりやすくなる。
+
+## PURL: Persistent URL
+
+永続的URL
+Persistent URL (PURL) は、ユーザーが要求した Web リソースの適切な場所に要求をリダイレクトする Uniform Resource Locator (URL) です。これは、Web リソースを直接指すのではなく、中間解決サービスと呼ばれる Web サービスの一種であるため、Web サイトがサーバーやホストを変更する原因となる絶え間なく変化する Web インフラストラクチャにもかかわらず、一定のままであることを意図しています。リソースの実際の現在のアドレスで PURL を解決し、リクエストをリダイレクトします。

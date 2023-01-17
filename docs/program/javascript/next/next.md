@@ -131,6 +131,23 @@ export async function getServerSideProps() {
 }
 ```
 
+#### getServerSidePropsが実行されるタイミング
+[リファレンス](https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props)
+
+#### next/link next/routerを介したgetServerSidePropsとURL直接アクセスのgetServerSidePropsの違い
+[参考URL](https://zenn.dev/yami_beta/articles/f31a8a496a7073)
+
+- /nowへ直接アクセス
+`http://localhost:3000/now`に直接アクセスします。
+返ってくるHTMLは`getServerSideProps`の処理が実行され、取得したデータが埋め込まれています。
+
+- / から /nowへ`<Link>`で遷移
+getServerSideProps はクライアントサイドルーティングでページにアクセスした場合も実行されます。
+このとき getServerSideProps の実行結果は JSON で返ってくる。
+
+#### Serverless Componentsでdeployした場合のLambda@Edge レスポンス制限
+[海外の方記事](https://backbencher.dev/nextjs-serverless-502-error-lambda-invalid-json)
+
 ### SSGとして動作させる(pages)
 
 そのpages配下をSSGとして動作させたい場合は以下
