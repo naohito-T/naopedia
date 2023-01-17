@@ -4967,7 +4967,9 @@
                                 
                                 <h1 id="favicon"><a name="favicon" class="plugin-anchor" href="#favicon"><i class="fa fa-link" aria-hidden="true"></i></a>favicon</h1>
 <p><a href="https://zenn.dev/pacchiy/articles/e4dcd7bd29d387" target="_blank">参考URL(これが一番参考になる)</a></p>
-<h2 id="配置"><a name="配置" class="plugin-anchor" href="#配置"><i class="fa fa-link" aria-hidden="true"></i></a>配置</h2>
+<p>ファビコンとはfavorite icon（お気に入りアイコン）の略で2000年代の初頭から存在しているコンセプト。
+在では主にブラウザのタブに表示され、そのかわいい画像は表示しているWebサイトを区別するのに役立っている。</p>
+<h2 id="配置注意点"><a name="配置注意点" class="plugin-anchor" href="#配置注意点"><i class="fa fa-link" aria-hidden="true"></i></a>配置注意点</h2>
 <p>favicon画像は<strong>ルートディレクトリの直下に置く</strong>
 ※一部のブラウザでルートディレクトリ以外の階層にあるfavicon画像を読み込まないため。</p>
 <h2 id="ico"><a name="ico" class="plugin-anchor" href="#ico"><i class="fa fa-link" aria-hidden="true"></i></a>ICO</h2>
@@ -4984,6 +4986,22 @@
 </ul>
 <p>というメリットがあり、将来的にはSVGを使うことが増えるが今のところSafariが未対応。
 SVGとICO（またはPNG）を併記するのが良い。</p>
+<h2 id="2023現在-ファビコン設定方法"><a name="2023現在-ファビコン設定方法" class="plugin-anchor" href="#2023現在-ファビコン設定方法"><i class="fa fa-link" aria-hidden="true"></i></a>2023現在 ファビコン設定方法</h2>
+<p><a href="https://coliss.com/articles/build-websites/operation/work/how-to-favicon.html" target="_blank">参考URL</a></p>
+<p>最近のブラウザやデバイスに対応させる最小限ファビコンセットは6種類のファイルで対応できる。<br>過去は20個以上のPNGファイルを用意しなければいけなかった。<br>今は代わりに、必要なのは5つのアイコンと1つのJSONファイルだけ。  </p>
+<ul>
+<li>favicon.ico</li>
+<li>icon.svg</li>
+<li>apple-touch-icon.png</li>
+<li>icon-192.png</li>
+<li>icon-512.png</li>
+<li>manifest.webmanifest</li>
+</ul>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;icon&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/favicon.ico&quot;</span> <span class="hljs-attr">sizes</span>=<span class="hljs-string">&quot;any&quot;</span>&gt;</span><span class="hljs-comment">&lt;!-- 32×32 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;icon&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/icon.svg&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;image/svg+xml&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;apple-touch-icon&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/apple-touch-icon.png&quot;</span>&gt;</span><span class="hljs-comment">&lt;!-- 180×180 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;manifest&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/manifest.webmanifest&quot;</span>&gt;</span>
+</code></pre>
 
                                 
                                 </section>
@@ -5027,7 +5045,7 @@ SVGとICO（またはPNG）を併記するのが良い。</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Favicon","level":"2.16.1","depth":2,"next":{"title":"Ogp","level":"2.16.2","depth":2,"path":"software/ogp/ogp.md","ref":"software/ogp/ogp.md","articles":[]},"previous":{"title":"Software","level":"2.16","depth":1,"path":"software/software.md","ref":"software/software.md","articles":[{"title":"Favicon","level":"2.16.1","depth":2,"path":"software/favicon/favicon.md","ref":"software/favicon/favicon.md","articles":[]},{"title":"Ogp","level":"2.16.2","depth":2,"path":"software/ogp/ogp.md","ref":"software/ogp/ogp.md","articles":[]},{"title":"Package Management","level":"2.16.3","depth":2,"path":"software/package/package.md","ref":"software/package/package.md","articles":[]},{"title":"Time","level":"2.16.4","depth":2,"path":"software/time/time.md","ref":"software/time/time.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"software/favicon/favicon.md","mtime":"2023-01-14T03:28:56.946Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-14T03:29:06.566Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Favicon","level":"2.16.1","depth":2,"next":{"title":"Ogp","level":"2.16.2","depth":2,"path":"software/ogp/ogp.md","ref":"software/ogp/ogp.md","articles":[]},"previous":{"title":"Software","level":"2.16","depth":1,"path":"software/software.md","ref":"software/software.md","articles":[{"title":"Favicon","level":"2.16.1","depth":2,"path":"software/favicon/favicon.md","ref":"software/favicon/favicon.md","articles":[]},{"title":"Ogp","level":"2.16.2","depth":2,"path":"software/ogp/ogp.md","ref":"software/ogp/ogp.md","articles":[]},{"title":"Package Management","level":"2.16.3","depth":2,"path":"software/package/package.md","ref":"software/package/package.md","articles":[]},{"title":"Time","level":"2.16.4","depth":2,"path":"software/time/time.md","ref":"software/time/time.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"software/favicon/favicon.md","mtime":"2023-01-17T11:20:18.731Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-17T11:20:27.691Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

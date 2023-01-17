@@ -5089,11 +5089,29 @@ Lambdaの実行環境にはAWS CLIはプリインストールされていない�
 </ul>
 <h2 id="lambda-local実行"><a name="lambda-local実行" class="plugin-anchor" href="#lambda-local実行"><i class="fa fa-link" aria-hidden="true"></i></a>Lambda local実行</h2>
 <p>簡単な実行であればexport.handlerを呼び出すやつで十分</p>
+<h2 id="lambda容量制限"><a name="lambda容量制限" class="plugin-anchor" href="#lambda容量制限"><i class="fa fa-link" aria-hidden="true"></i></a>Lambda容量制限</h2>
+<p><a href="https://zenn.dev/xxpiyomaruxx/articles/d7419ec1138d6a" target="_blank">参考URL</a></p>
+<p>以下である必要がある。</p>
+<ul>
+<li>zip圧縮後50MB</li>
+<li>zip圧縮前250MB
+※これ<code>or</code>かもしれない。</li>
+</ul>
+<p>また、Lambda deployに関してコンテナイメージのサポートが導入されておりその場合は10GBで良いとのこと。コンテナイメージにするのもいいかもしれない。</p>
 <h2 id="lambdaedge-とは"><a name="lambdaedge-とは" class="plugin-anchor" href="#lambdaedge-とは"><i class="fa fa-link" aria-hidden="true"></i></a>Lambda@Edge とは</h2>
 <p>cloudfrontのエッジロケーションからコードを実行するLambda関数のことで、<strong>ユーザーに近い場所</strong>でコードが実行されるので高速なコンテンツ配信が可能になる仕組み。
 コードをLambdaにアップロードするだけで自動的にコードの実行やスケーリングが行われる。
 そのためLambda@EdgeはLambdaとcloudfrontから成り立つ。</p>
-<h2 id="lambdaをexpressでdeployする"><a name="lambdaをexpressでdeployする" class="plugin-anchor" href="#lambdaをexpressでdeployする"><i class="fa fa-link" aria-hidden="true"></i></a>Lambdaをexpressでdeployする</h2>
+<p><strong>メリット</strong></p>
+<ul>
+<li>低レイテンシーのコンテンツを配信
+ユーザに近いロケーションからコードを実行するので
+低レイテンシーの配信が可能。</li>
+</ul>
+<hr>
+<h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>Tips</h2>
+<p><a href="https://dev.classmethod.jp/articles/serverless-unit-test-with-jest/" target="_blank">LambdaのJest Test</a></p>
+<h3 id="lambdaをexpressでdeployする"><a name="lambdaをexpressでdeployする" class="plugin-anchor" href="#lambdaをexpressでdeployする"><i class="fa fa-link" aria-hidden="true"></i></a>Lambdaをexpressでdeployする</h3>
 <p><a href="https://dev.classmethod.jp/articles/vendia-serverless-express/" target="_blank">参考URL</a></p>
 <p><code>@vendia/serverless-express</code>を使用する。
 APIGateway+Lambda上でExpressを動かせるというライブラリ。
@@ -5110,18 +5128,6 @@ APIGateway+Lambda上でExpressを動かせるというライブラリ。
 <li>気になる点を挙げるとすれば、王道のAPIgw+Lambda Wayとはいえず、ややHackyな手法ではあると思います。ExpressのようなWeb Application Frameworkを使うならECSやAppRunnerを使う方が素直な感じはします。それでもECSなどを使う場合と比べてLambdaにはゼロスケール1できるという強みがあるので、存外悪くない手法だと思います。</li>
 </ul>
 </blockquote>
-<h2 id="lambda容量制限"><a name="lambda容量制限" class="plugin-anchor" href="#lambda容量制限"><i class="fa fa-link" aria-hidden="true"></i></a>Lambda容量制限</h2>
-<p><a href="https://zenn.dev/xxpiyomaruxx/articles/d7419ec1138d6a" target="_blank">参考URL</a></p>
-<p>以下である必要がある。</p>
-<ul>
-<li>zip圧縮後50MB</li>
-<li>zip圧縮前250MB
-※これ<code>or</code>かもしれない。</li>
-</ul>
-<p>また、Lambda deployに関してコンテナイメージのサポートが導入されておりその場合は10GBで良いとのこと。コンテナイメージにするのもいいかもしれない。</p>
-<hr>
-<h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>Tips</h2>
-<p><a href="https://dev.classmethod.jp/articles/serverless-unit-test-with-jest/" target="_blank">LambdaのJest Test</a></p>
 
                                 
                                 </section>
@@ -5165,7 +5171,7 @@ APIGateway+Lambda上でExpressを動かせるというライブラリ。
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Lambda","level":"2.7.3.1.14","depth":4,"next":{"title":"Redshift","level":"2.7.3.1.15","depth":4,"path":"infrastructure/cloud/aws/redshift.md","ref":"infrastructure/cloud/aws/redshift.md","articles":[]},"previous":{"title":"Iam","level":"2.7.3.1.13","depth":4,"path":"infrastructure/cloud/aws/iam.md","ref":"infrastructure/cloud/aws/iam.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"infrastructure/cloud/aws/lambda.md","mtime":"2023-01-14T03:28:56.938Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-14T03:29:06.566Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Lambda","level":"2.7.3.1.14","depth":4,"next":{"title":"Redshift","level":"2.7.3.1.15","depth":4,"path":"infrastructure/cloud/aws/redshift.md","ref":"infrastructure/cloud/aws/redshift.md","articles":[]},"previous":{"title":"Iam","level":"2.7.3.1.13","depth":4,"path":"infrastructure/cloud/aws/iam.md","ref":"infrastructure/cloud/aws/iam.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"infrastructure/cloud/aws/lambda.md","mtime":"2023-01-17T11:20:18.723Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-17T11:20:27.691Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

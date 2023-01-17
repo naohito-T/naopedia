@@ -5060,6 +5060,22 @@ Next.jsがSWCの利用を推進しており、Next.js 12からはデフォルト
   }
 }
 </code></pre>
+<h4 id="getserversidepropsが実行されるタイミング"><a name="getserversidepropsが実行されるタイミング" class="plugin-anchor" href="#getserversidepropsが実行されるタイミング"><i class="fa fa-link" aria-hidden="true"></i></a>getServerSidePropsが実行されるタイミング</h4>
+<p><a href="https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props" target="_blank">リファレンス</a></p>
+<h4 id="nextlink-nextrouterを介したgetserversidepropsとurl直接アクセスのgetserversidepropsの違い"><a name="nextlink-nextrouterを介したgetserversidepropsとurl直接アクセスのgetserversidepropsの違い" class="plugin-anchor" href="#nextlink-nextrouterを介したgetserversidepropsとurl直接アクセスのgetserversidepropsの違い"><i class="fa fa-link" aria-hidden="true"></i></a>next/link next/routerを介したgetServerSidePropsとURL直接アクセスのgetServerSidePropsの違い</h4>
+<p><a href="https://zenn.dev/yami_beta/articles/f31a8a496a7073" target="_blank">参考URL</a></p>
+<ul>
+<li><p>/nowへ直接アクセス
+<code>http://localhost:3000/now</code>に直接アクセスします。
+返ってくるHTMLは<code>getServerSideProps</code>の処理が実行され、取得したデータが埋め込まれています。</p>
+</li>
+<li><p>/ から /nowへ<code>&lt;Link&gt;</code>で遷移
+getServerSideProps はクライアントサイドルーティングでページにアクセスした場合も実行されます。
+このとき getServerSideProps の実行結果は JSON で返ってくる。</p>
+</li>
+</ul>
+<h4 id="serverless-componentsでdeployした場合のlambdaedge-レスポンス制限"><a name="serverless-componentsでdeployした場合のlambdaedge-レスポンス制限" class="plugin-anchor" href="#serverless-componentsでdeployした場合のlambdaedge-レスポンス制限"><i class="fa fa-link" aria-hidden="true"></i></a>Serverless Componentsでdeployした場合のLambda@Edge レスポンス制限</h4>
+<p><a href="https://backbencher.dev/nextjs-serverless-502-error-lambda-invalid-json" target="_blank">海外の方記事</a></p>
 <h3 id="ssgとして動作させるpages"><a name="ssgとして動作させるpages" class="plugin-anchor" href="#ssgとして動作させるpages"><i class="fa fa-link" aria-hidden="true"></i></a>SSGとして動作させる(pages)</h3>
 <p>そのpages配下をSSGとして動作させたい場合は以下
 ※静的に生成されているため以下の<strong>ランダムな数字は変わらない</strong></p>
@@ -5213,6 +5229,9 @@ DBなどのサーバリソースにアクセス可能
 <hr>
 <h2 id="nextimage"><a name="nextimage" class="plugin-anchor" href="#nextimage"><i class="fa fa-link" aria-hidden="true"></i></a>next/image</h2>
 <p><a href="https://www.wantedly.com/companies/wantedly/post_articles/385515" target="_blank">参考URL</a></p>
+<p><code>next/image</code>が自身で持っている画像サーバが処理をしてくれるようになる。
+仕組みとして、<code>next/image</code>画像配信用のエンドポイントを立ててそこから配信される。
+エンドポイントとしてのURLは以下となる。<br><code>https://igsr5.dev/_next/image?url=OOOO</code><br>このURLの中にある<code>_next/image</code>がデフォルトで持つ画像配信用のエンドポイント。<br>ンドポイントがリクエスト毎に画像加工やキャッシュなどを行っています。反対にビルド時には画像の加工は行われておらず全てオンデマンドで行われている。<br>気をつけポイントとして Vercel 以外で Next.js をデプロイするときに _next/image もアクセス可能な状態にしておくことが挙げられます。（_next/ 配下は他にも Next.js 的に大事なエンドポイントが詰まっているのでミスらないためには _next/* で公開してしまうのもあり）  </p>
 <ul>
 <li>レイアウトシフトが起きない</li>
 <li>サーバサイドでの画像リサイズ</li>
@@ -5453,7 +5472,7 @@ frontend/.next
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Next","level":"2.14.5.7","depth":3,"next":{"title":"Node","level":"2.14.5.8","depth":3,"path":"program/javascript/node/node.md","ref":"program/javascript/node/node.md","articles":[]},"previous":{"title":"Nest","level":"2.14.5.6","depth":3,"path":"program/javascript/nest/nest.md","ref":"program/javascript/nest/nest.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"program/javascript/next/next.md","mtime":"2023-01-14T03:28:56.942Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-14T03:29:06.566Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Next","level":"2.14.5.7","depth":3,"next":{"title":"Node","level":"2.14.5.8","depth":3,"path":"program/javascript/node/node.md","ref":"program/javascript/node/node.md","articles":[]},"previous":{"title":"Nest","level":"2.14.5.6","depth":3,"path":"program/javascript/nest/nest.md","ref":"program/javascript/nest/nest.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"program/javascript/next/next.md","mtime":"2023-01-17T11:20:18.727Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-17T11:20:27.691Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
