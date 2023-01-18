@@ -2801,9 +2801,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.14.5.5.7" data-path="../../../program/javascript/middleware/swr.html">
+        <li class="chapter " data-level="2.14.5.5.7" data-path="../../../program/javascript/middleware/swr.md">
             
-                <a href="../../../program/javascript/middleware/swr.html">
+                <span>
             
                     
                     Swr
@@ -5023,7 +5023,7 @@
 <p>Pythonを例にとると、Lambdaの実行環境は/opt/python/とディレクトリが構成されているため、作成するLayerは展開される構成が/opt/python/&quot;作成したLayer&quot;となる必要があります</p>
 </blockquote>
 <h2 id="lambda-layersを作成serverless版"><a name="lambda-layersを作成serverless版" class="plugin-anchor" href="#lambda-layersを作成serverless版"><i class="fa fa-link" aria-hidden="true"></i></a>Lambda Layersを作成(Serverless版)</h2>
-<p><a href="https://dev.classmethod.jp/articles/serverless-framework-node-modules-to-lambda-layers/" target="_blank"></a></p>
+<p><a href="https://dev.classmethod.jp/articles/serverless-framework-node-modules-to-lambda-layers/" target="_blank">参考URL</a></p>
 <hr>
 <h2 id="lambda-コールドスタートとウォームスタート"><a name="lambda-コールドスタートとウォームスタート" class="plugin-anchor" href="#lambda-コールドスタートとウォームスタート"><i class="fa fa-link" aria-hidden="true"></i></a>Lambda コールドスタートとウォームスタート</h2>
 <p><a href="https://dev.classmethod.jp/articles/lambda-memory-alloc-and-coldstart/" target="_blank">これまでの常識は間違っていた？！Lambdaのコールドスタート対策にはメモリ割り当てを減らすという選択肢が有効に働く場面も</a></p>
@@ -5042,8 +5042,8 @@
   <span class="hljs-built_in">console</span>.log(local);  <span class="hljs-comment">// localは逐一時間が更新される</span>
 </code></pre>
 <h2 id="lambda対応言語"><a name="lambda対応言語" class="plugin-anchor" href="#lambda対応言語"><i class="fa fa-link" aria-hidden="true"></i></a>Lambda対応言語</h2>
-<p>LambdaはJava、Node.js、C#、Pythonのプログラミング言語に対応しているので、各種「機能」（プログラム）はこの言語で開発すれば良い。</p>
-<p>aws-sdkはLambdaサーバにはすでに入っており、node-modulesに本来含める必要はないのでnpm uninstall aws-sdkしてから再圧縮すると容量削減につながります。あまりファイルサイズが大きいとインライン編集できなくなるので注意しましょう。</p>
+<p>LambdaはJava、Node.js、C#、Pythonのプログラミング言語に対応しているので、各種「機能」（プログラム）はこの言語で開発すれば良い。
+aws-sdkはLambdaサーバにはすでに入っており、node-modulesに本来含める必要はないのでnpm uninstall aws-sdkしてから再圧縮すると容量削減につながります。あまりファイルサイズが大きいとインライン編集できなくなるので注意しましょう。</p>
 <h2 id="lambda対応イベント"><a name="lambda対応イベント" class="plugin-anchor" href="#lambda対応イベント"><i class="fa fa-link" aria-hidden="true"></i></a>Lambda対応イベント</h2>
 <p>S3のイベント発生（ファイルアップロード）などをトリガーにデータ処理を行う
 リアルタ</p>
@@ -5071,8 +5071,8 @@ Lambdaの公式ドキュメントに、/tmpディレクトリに対して以下�
 <blockquote>
 <p>各実行環境は、/tmp ディレクトリ内のディスク領域を 512 MB に提供します。ディレクトリのコンテンツは、実行環境が停止された際に維持され、複数の呼び出しに使用できる一時的なキャッシュを提供します。キャッシュに保存したデータが存在するかどうかを確認するための追加コードを追加できます。デプロイのサイズ制限の詳細については、「Lambda のクォータ」を参照してください。</p>
 </blockquote>
-<p>512MBの一時領域（<code>/tmp</code>ディレクトリ）が提供されている。そのためそちらを使用しファイルの出力と書き込みを行える。 </p>
-<p>Lambda上でAWS CLIを実行したいと思いました。 AWS CLIにはs3 syncコマンドのような、SDKには未実装の便利な機能があるためです。
+<p>512MBの一時領域（<code>/tmp</code>ディレクトリ）が提供されている。そのためそちらを使用しファイルの出力と書き込みを行える。 
+Lambda上でAWS CLIを実行したいと思いました。 AWS CLIにはs3 syncコマンドのような、SDKには未実装の便利な機能があるためです。
 Lambdaの実行環境にはAWS CLIはプリインストールされていないので、ひと工夫が必要になります。</p>
 <h2 id="lambdaでのaws-sdk"><a name="lambdaでのaws-sdk" class="plugin-anchor" href="#lambdaでのaws-sdk"><i class="fa fa-link" aria-hidden="true"></i></a>LambdaでのAWS-SDK</h2>
 <p>LambdaにはAWS SDKがインストールされる。</p>
@@ -5098,16 +5098,6 @@ Lambdaの実行環境にはAWS CLIはプリインストールされていない�
 ※これ<code>or</code>かもしれない。</li>
 </ul>
 <p>また、Lambda deployに関してコンテナイメージのサポートが導入されておりその場合は10GBで良いとのこと。コンテナイメージにするのもいいかもしれない。</p>
-<h2 id="lambdaedge-とは"><a name="lambdaedge-とは" class="plugin-anchor" href="#lambdaedge-とは"><i class="fa fa-link" aria-hidden="true"></i></a>Lambda@Edge とは</h2>
-<p>cloudfrontのエッジロケーションからコードを実行するLambda関数のことで、<strong>ユーザーに近い場所</strong>でコードが実行されるので高速なコンテンツ配信が可能になる仕組み。
-コードをLambdaにアップロードするだけで自動的にコードの実行やスケーリングが行われる。
-そのためLambda@EdgeはLambdaとcloudfrontから成り立つ。</p>
-<p><strong>メリット</strong></p>
-<ul>
-<li>低レイテンシーのコンテンツを配信
-ユーザに近いロケーションからコードを実行するので
-低レイテンシーの配信が可能。</li>
-</ul>
 <hr>
 <h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>Tips</h2>
 <p><a href="https://dev.classmethod.jp/articles/serverless-unit-test-with-jest/" target="_blank">LambdaのJest Test</a></p>
@@ -5171,7 +5161,7 @@ APIGateway+Lambda上でExpressを動かせるというライブラリ。
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Lambda","level":"2.7.3.1.14","depth":4,"next":{"title":"Redshift","level":"2.7.3.1.15","depth":4,"path":"infrastructure/cloud/aws/redshift.md","ref":"infrastructure/cloud/aws/redshift.md","articles":[]},"previous":{"title":"Iam","level":"2.7.3.1.13","depth":4,"path":"infrastructure/cloud/aws/iam.md","ref":"infrastructure/cloud/aws/iam.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"infrastructure/cloud/aws/lambda.md","mtime":"2023-01-17T11:20:18.723Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-17T11:20:27.691Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Lambda","level":"2.7.3.1.14","depth":4,"next":{"title":"Redshift","level":"2.7.3.1.15","depth":4,"path":"infrastructure/cloud/aws/redshift.md","ref":"infrastructure/cloud/aws/redshift.md","articles":[]},"previous":{"title":"Iam","level":"2.7.3.1.13","depth":4,"path":"infrastructure/cloud/aws/iam.md","ref":"infrastructure/cloud/aws/iam.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"infrastructure/cloud/aws/lambda.md","mtime":"2023-01-18T05:24:49.697Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-18T05:24:57.369Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

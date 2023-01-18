@@ -2801,9 +2801,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.14.5.5.7" data-path="../middleware/swr.html">
+        <li class="chapter " data-level="2.14.5.5.7" data-path="../middleware/swr.md">
             
-                <a href="../middleware/swr.html">
+                <span>
             
                     
                     Swr
@@ -5049,6 +5049,7 @@ Next.jsがSWCの利用を推進しており、Next.js 12からはデフォルト
 <p><a href="https://www.gaji.jp/blog/2022/03/17/9343/" target="_blank">参考URL</a></p>
 <p>Nextでクエリ文字列を使いたい時は<code>getServerSideProps</code>を使う
 <code>getStaticProps</code>では使えない。</p>
+<hr>
 <h3 id="ssrとして動作させるpages"><a name="ssrとして動作させるpages" class="plugin-anchor" href="#ssrとして動作させるpages"><i class="fa fa-link" aria-hidden="true"></i></a>SSRとして動作させる(pages)</h3>
 <p>※都度生成されているため以下の<strong>ランダムな数字は変わる</strong></p>
 <pre><code class="lang-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getServerSideProps</span>(<span class="hljs-params"></span>) </span>{
@@ -5060,6 +5061,18 @@ Next.jsがSWCの利用を推進しており、Next.js 12からはデフォルト
   }
 }
 </code></pre>
+<h3 id="ssrフロー"><a name="ssrフロー" class="plugin-anchor" href="#ssrフロー"><i class="fa fa-link" aria-hidden="true"></i></a>SSRフロー</h3>
+<p><a href="https://maasaablog.com/development/frontend/nextjs/3512/" target="_blank">参考URL</a></p>
+<ol>
+<li>ブラウザからサーバー（Node.js）へリクエスト</li>
+<li>サーバー（Node.js）で<code>HTML</code>をレンダリングしてブラウザに返却<ol>
+<li>動的なデータが含まれる場合はgetServerSideProps()でApiサーバーリクエスト</li>
+<li>動的なデータがない場合は<code>HTML</code>をそのままブラウザに返却</li>
+</ol>
+</li>
+</ol>
+<h3 id="ssr回避させる"><a name="ssr回避させる" class="plugin-anchor" href="#ssr回避させる"><i class="fa fa-link" aria-hidden="true"></i></a>SSR回避させる</h3>
+<p><a href="https://nishinatoshiharu.com/next-exec-only-client/" target="_blank">SSR回避 実装パターン集</a></p>
 <h4 id="getserversidepropsが実行されるタイミング"><a name="getserversidepropsが実行されるタイミング" class="plugin-anchor" href="#getserversidepropsが実行されるタイミング"><i class="fa fa-link" aria-hidden="true"></i></a>getServerSidePropsが実行されるタイミング</h4>
 <p><a href="https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props" target="_blank">リファレンス</a></p>
 <h4 id="nextlink-nextrouterを介したgetserversidepropsとurl直接アクセスのgetserversidepropsの違い"><a name="nextlink-nextrouterを介したgetserversidepropsとurl直接アクセスのgetserversidepropsの違い" class="plugin-anchor" href="#nextlink-nextrouterを介したgetserversidepropsとurl直接アクセスのgetserversidepropsの違い"><i class="fa fa-link" aria-hidden="true"></i></a>next/link next/routerを介したgetServerSidePropsとURL直接アクセスのgetServerSidePropsの違い</h4>
@@ -5070,8 +5083,8 @@ Next.jsがSWCの利用を推進しており、Next.js 12からはデフォルト
 返ってくるHTMLは<code>getServerSideProps</code>の処理が実行され、取得したデータが埋め込まれています。</p>
 </li>
 <li><p>/ から /nowへ<code>&lt;Link&gt;</code>で遷移
-getServerSideProps はクライアントサイドルーティングでページにアクセスした場合も実行されます。
-このとき getServerSideProps の実行結果は JSON で返ってくる。</p>
+getServerSidePropsはクライアントサイドルーティングでページにアクセスした場合も実行されます。
+このときgetServerSidePropsの実行結果は<code>JSON</code>で返ってくる。</p>
 </li>
 </ul>
 <h4 id="serverless-componentsでdeployした場合のlambdaedge-レスポンス制限"><a name="serverless-componentsでdeployした場合のlambdaedge-レスポンス制限" class="plugin-anchor" href="#serverless-componentsでdeployした場合のlambdaedge-レスポンス制限"><i class="fa fa-link" aria-hidden="true"></i></a>Serverless Componentsでdeployした場合のLambda@Edge レスポンス制限</h4>
@@ -5090,8 +5103,6 @@ getServerSideProps はクライアントサイドルーティングでページ�
 </code></pre>
 <p>Static（通称SSG、SG）を利用するメリット
 <strong>CDNに静的ファイルをキャッシュ</strong>することで表示のスピードUPを実現</p>
-<h2 id="ssr回避させる"><a name="ssr回避させる" class="plugin-anchor" href="#ssr回避させる"><i class="fa fa-link" aria-hidden="true"></i></a>SSR回避させる</h2>
-<p><a href="https://nishinatoshiharu.com/next-exec-only-client/" target="_blank">SSR回避 実装パターン集</a></p>
 <h2 id="isrincremental-static-regeneration"><a name="isrincremental-static-regeneration" class="plugin-anchor" href="#isrincremental-static-regeneration"><i class="fa fa-link" aria-hidden="true"></i></a>ISR(Incremental Static Regeneration)</h2>
 <p><a href="https://nextjs.org/docs/basic-features/data-fetching/overview#incremental-static-regeneration" target="_blank">リファレンス</a></p>
 <p><a href="https://zenn.dev/catnose99/articles/8bed46fb271e44" target="_blank">Next ISRで動的コンテンツをキャッシュするときの戦略</a>
@@ -5124,8 +5135,8 @@ ISRとは、動的なコンテンツを含むページも静的ページとし�
 <p><code>$ next dev</code>
 ローカルでアプリケーションを起動します。
 <code>getStaticProps</code>（SSGで利用するmethod）を利用した場合でも<strong>SSR動作</strong>になる。
-このコマンドでは、ホットリロードやエラーレポートなどの開発モードでアプリケーションを起動できる</p>
-<p>ただし、create-next-appでスキャフォールディングしたプロジェクトに用意されているdevコマンドで起動したアプリはサーバーサイドレンダリング（以下SSR）が有効になっており、<strong>静的HTMLのみの確認ができない</strong></p>
+このコマンドでは、ホットリロードやエラーレポートなどの開発モードでアプリケーションを起動できる
+ただし、create-next-appでスキャフォールディングしたプロジェクトに用意されているdevコマンドで起動したアプリはサーバーサイドレンダリング（以下SSR）が有効になっており、<strong>静的HTMLのみの確認ができない</strong></p>
 <p>そこでNext.jsで静的HTMLエクスポートしたアプリをローカルで確認する方法を調べました。
 <a href="https://qiita.com/Nossa/items/bdc6a9705e89ea8fc250" target="_blank">参考URL </a></p>
 <p><code>$ next build</code>
@@ -5249,14 +5260,8 @@ next/imageでは画像の表示領域やユーザのディスプレイ解像度�
 <p><a href="https://qiita.com/Yuki_Oshima/items/5c0dfd8f7af8fb76af8f" target="_blank">かなりのTipsが散りばめられている</a>
 <a href="https://zenn.dev/izumin/scraps/15c9ad1248154f" target="_blank">nextの仕組みを読み解く</a></p>
 <h3 id="外部ライブラリの利用"><a name="外部ライブラリの利用" class="plugin-anchor" href="#外部ライブラリの利用"><i class="fa fa-link" aria-hidden="true"></i></a>外部ライブラリの利用</h3>
-<p>ときおり普通のReactで動くライブラリがNext.jsでビルドすると動かなかったりします。</p>
-<p>こうした場合は、動的インポート（Dynamic Import）という機能で対処できる場合があります。動的インポートしたコンポーネントはクライアントサイドでレンダリングされるため、実質的にReactと同じように処理されるためです。</p>
-<hr>
-<h2 id="サードパーティ"><a name="サードパーティ" class="plugin-anchor" href="#サードパーティ"><i class="fa fa-link" aria-hidden="true"></i></a>サードパーティ</h2>
-<h2 id="jest"><a name="jest" class="plugin-anchor" href="#jest"><i class="fa fa-link" aria-hidden="true"></i></a>Jest</h2>
-<p>Next.js(12): SWCには自動で組み込まれている
-<a href="https://nextjs.org/docs/advanced-features/compiler" target="_blank">Nextリファレンス(12)</a></p>
-<hr>
+<p>ときおり普通のReactで動くライブラリがNext.jsでビルドすると動かなかったりします。
+こうした場合は、動的インポート（Dynamic Import）という機能で対処できる場合があります。動的インポートしたコンポーネントはクライアントサイドでレンダリングされるため、実質的にReactと同じように処理されるためです。</p>
 <h2 id="モダンなcss-→-css-in-js"><a name="モダンなcss-→-css-in-js" class="plugin-anchor" href="#モダンなcss-→-css-in-js"><i class="fa fa-link" aria-hidden="true"></i></a>モダンなCSS → CSS in JS</h2>
 <h2 id="styled-components"><a name="styled-components" class="plugin-anchor" href="#styled-components"><i class="fa fa-link" aria-hidden="true"></i></a>styled-components</h2>
 <p><a href="https://qiita.com/taneba/items/4547830b461d11a69a20" target="_blank">styled-components基本</a></p>
@@ -5280,12 +5285,6 @@ ThemeProviderは、_app.jsで使用する。</p>
 <p>Next.jsとstyled-componentsが実行される前提とする環境が異なります。（styled-componentは元々クライアント側で動くことを前提としています）そのため、サーバーサイドでもstyled-componentsが働くようにする必要がある。</p>
 <p>上記を対応するために、Next.js 12以前はBabel用styled-componentsのライブラリをダウンロードしなければいけず、めんどくさかった。
 <a href="https://code-log.hatenablog.com/entry/2020/01/26/200134" target="_blank">参考URL</a></p>
-<h2 id="swiper"><a name="swiper" class="plugin-anchor" href="#swiper"><i class="fa fa-link" aria-hidden="true"></i></a>Swiper</h2>
-<p>老舗のスライダー作成ツール
-jQuery &amp; nuxt &amp; nextなど色々使える。
-apiが充実しているわけではないため、もはや過去の記事を見て推測し適用しないと行けない。</p>
-<p><a href="https://swiperjs.com/demos" target="_blank">swiper</a>
-<a href="https://b-risk.jp/blog/2022/04/swiper/" target="_blank">swiper</a></p>
 <h2 id="nextdynamic"><a name="nextdynamic" class="plugin-anchor" href="#nextdynamic"><i class="fa fa-link" aria-hidden="true"></i></a>next/dynamic</h2>
 <p>dynamic import（動的インポート）とは動的にimportを実行するための機能
 ES2020でJSの仕様として導入された。dynamic importを利用すると<strong>非同期でモジュールを読み込む。</strong></p>
@@ -5295,7 +5294,7 @@ ES2020でJSの仕様として導入された。dynamic importを利用すると<
 <a href="https://zenn.dev/unreact/articles/nextjs-routing-dynamic-routes" target="_blank">参考URL</a>
 <a href="https://nishinatoshiharu.com/overview-next-dynamic-import/" target="_blank">default exportとnamed exportでdynamic importする</a></p>
 <h2 id="next-locale"><a name="next-locale" class="plugin-anchor" href="#next-locale"><i class="fa fa-link" aria-hidden="true"></i></a>next locale</h2>
-<p><a href="https://postd.cc/localizing-your-nextjs-app/" target="_blank">https://postd.cc/localizing-your-nextjs-app/</a></p>
+<p><a href="https://postd.cc/localizing-your-nextjs-app/" target="_blank">参考URL</a></p>
 <h2 id="next-router"><a name="next-router" class="plugin-anchor" href="#next-router"><i class="fa fa-link" aria-hidden="true"></i></a>next router</h2>
 <p>Next.jsのrouterにはstateがありません。</p>
 <h2 id="next-error"><a name="next-error" class="plugin-anchor" href="#next-error"><i class="fa fa-link" aria-hidden="true"></i></a>next error</h2>
@@ -5418,8 +5417,8 @@ frontend/.next
 ├── static
 └── trace
 </code></pre>
-<h2 id="serverless-nextjs-plugin"><a name="serverless-nextjs-plugin" class="plugin-anchor" href="#serverless-nextjs-plugin"><i class="fa fa-link" aria-hidden="true"></i></a>Serverless Nextjs Plugin</h2>
-<p>サーバレスモードで</p>
+<h2 id="serverless-componentsでのdeployした際の処理フロー"><a name="serverless-componentsでのdeployした際の処理フロー" class="plugin-anchor" href="#serverless-componentsでのdeployした際の処理フロー"><i class="fa fa-link" aria-hidden="true"></i></a>Serverless Componentsでのdeployした際の処理フロー</h2>
+<p><a href="https://www.keisuke69.net/entry/2020/11/27/163208" target="_blank">参考URL</a></p>
 <h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>Tips</h2>
 <ul>
 <li><p>next起動時にHookを仕掛けたい
@@ -5428,6 +5427,44 @@ frontend/.next
 <li><p>Lambda@EdgeでSSRする
 <a href="https://qiita.com/fumiki/items/5f4408ce844520a922c2" target="_blank">参考URL</a></p>
 </li>
+</ul>
+<h1 id="swr"><a name="swr" class="plugin-anchor" href="#swr"><i class="fa fa-link" aria-hidden="true"></i></a>SWR</h1>
+<p><a href="https://dev.classmethod.jp/articles/getting-started-swr-with-nextjs/" target="_blank">参考URL</a>
+<a href="https://zenn.dev/mast1ff/articles/5b48a87242f9f0" target="_blank">SWRを使おうぜって話（導入についてわかりやすい）</a></p>
+<p>データ取得専用のReact Hooksライブラリ（あくまでGETに使う）
+※POSTなどにはオススメはしない。</p>
+<p>Next.jsと同じチームによって作成されている、データ取得のためのReact Hooksライブラリ</p>
+<h2 id="仕組み"><a name="仕組み" class="plugin-anchor" href="#仕組み"><i class="fa fa-link" aria-hidden="true"></i></a>仕組み</h2>
+<blockquote>
+<p>“SWR” という名前は、 HTTP RFC 5861 で提唱された HTTP キャッシュ無効化戦略である stale-while-revalidate に由来しています。 SWR は、まずキャッシュからデータを返し（stale）、次にフェッチリクエストを送り（revalidate）、最後に最新のデータを持ってくるという戦略です。</p>
+</blockquote>
+<p>この考え方の仕組みにより、データが高速に返却されさらに自動で再フェッチ（revalidate）されるようになっている。</p>
+<h2 id="メリット"><a name="メリット" class="plugin-anchor" href="#メリット"><i class="fa fa-link" aria-hidden="true"></i></a>メリット</h2>
+<p>SWRのメリットは以下</p>
+<ul>
+<li>fetchを使用したクライアントサイドのデータ取得</li>
+<li>データ取得状態の管理</li>
+<li>エラー処理</li>
+<li>データキャッシュ</li>
+</ul>
+<h2 id="useswrが何をしているのか"><a name="useswrが何をしているのか" class="plugin-anchor" href="#useswrが何をしているのか"><i class="fa fa-link" aria-hidden="true"></i></a>useSWRが何をしているのか</h2>
+<p>関数が受け取るもの</p>
+<ul>
+<li>key: リクエストするユニークな文字列（通常URLを指定する）</li>
+<li>fetcher: （任意）第一引数に渡したURLを引数に取るfetch関数</li>
+<li>options: （任意）SWRのオプション</li>
+</ul>
+<p>関数が返すもの</p>
+<ul>
+<li>data: fetcherによって取得したデータ</li>
+<li>error: fetcherによってthrowされたエラー</li>
+<li>isValidating: リクエストまたは再検証の読み込みがあるか否かのBool値</li>
+<li>mutate: キャッシュされたデータを更新する関数
+を返却します。
+このとき、dataの状態は
+取得が完了していない場合はundefined
+取得が完了した場合はその内容
+となり、dataがundefinedか否かで読み込み中かどうかをUIに伝えることができます。</li>
 </ul>
 
                                 
@@ -5472,7 +5509,7 @@ frontend/.next
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Next","level":"2.14.5.7","depth":3,"next":{"title":"Node","level":"2.14.5.8","depth":3,"path":"program/javascript/node/node.md","ref":"program/javascript/node/node.md","articles":[]},"previous":{"title":"Nest","level":"2.14.5.6","depth":3,"path":"program/javascript/nest/nest.md","ref":"program/javascript/nest/nest.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"program/javascript/next/next.md","mtime":"2023-01-17T11:20:18.727Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-17T11:20:27.691Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Next","level":"2.14.5.7","depth":3,"next":{"title":"Node","level":"2.14.5.8","depth":3,"path":"program/javascript/node/node.md","ref":"program/javascript/node/node.md","articles":[]},"previous":{"title":"Nest","level":"2.14.5.6","depth":3,"path":"program/javascript/nest/nest.md","ref":"program/javascript/nest/nest.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"program/javascript/next/next.md","mtime":"2023-01-18T05:24:49.701Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-18T05:24:57.369Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
