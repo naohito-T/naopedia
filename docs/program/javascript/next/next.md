@@ -116,6 +116,8 @@ Nextでクエリ文字列を使いたい時は`getServerSideProps`を使う
 `getStaticProps`では使えない。
 
 
+---
+
 ### SSRとして動作させる(pages)
 
 ※都度生成されているため以下の**ランダムな数字は変わる**
@@ -131,6 +133,17 @@ export async function getServerSideProps() {
 }
 ```
 
+### SSRフロー
+[参考URL](https://maasaablog.com/development/frontend/nextjs/3512/)
+
+1. ブラウザからサーバー（Node.js）へリクエスト
+2. サーバー（Node.js）で`HTML`をレンダリングしてブラウザに返却
+  1. 動的なデータが含まれる場合はgetServerSideProps()でApiサーバーリクエスト
+  2. 動的なデータがない場合は`HTML`をそのままブラウザに返却
+
+### SSR回避させる
+[SSR回避 実装パターン集](https://nishinatoshiharu.com/next-exec-only-client/)
+
 #### getServerSidePropsが実行されるタイミング
 [リファレンス](https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props)
 
@@ -142,8 +155,8 @@ export async function getServerSideProps() {
 返ってくるHTMLは`getServerSideProps`の処理が実行され、取得したデータが埋め込まれています。
 
 - / から /nowへ`<Link>`で遷移
-getServerSideProps はクライアントサイドルーティングでページにアクセスした場合も実行されます。
-このとき getServerSideProps の実行結果は JSON で返ってくる。
+getServerSidePropsはクライアントサイドルーティングでページにアクセスした場合も実行されます。
+このときgetServerSidePropsの実行結果は`JSON`で返ってくる。
 
 #### Serverless Componentsでdeployした場合のLambda@Edge レスポンス制限
 [海外の方記事](https://backbencher.dev/nextjs-serverless-502-error-lambda-invalid-json)
@@ -166,13 +179,6 @@ export async function getStaticProps() {
 
 Static（通称SSG、SG）を利用するメリット
 **CDNに静的ファイルをキャッシュ**することで表示のスピードUPを実現
-
-## SSR回避させる
-
-[SSR回避 実装パターン集](https://nishinatoshiharu.com/next-exec-only-client/)
-
-
-
 
 ## ISR(Incremental Static Regeneration)
 
@@ -216,7 +222,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 ローカルでアプリケーションを起動します。
 `getStaticProps`（SSGで利用するmethod）を利用した場合でも**SSR動作**になる。
 このコマンドでは、ホットリロードやエラーレポートなどの開発モードでアプリケーションを起動できる
-
 ただし、create-next-appでスキャフォールディングしたプロジェクトに用意されているdevコマンドで起動したアプリはサーバーサイドレンダリング（以下SSR）が有効になっており、**静的HTMLのみの確認ができない**
 
 そこでNext.jsで静的HTMLエクスポートしたアプリをローカルで確認する方法を調べました。
@@ -406,22 +411,8 @@ next/imageでは画像の表示領域やユーザのディスプレイ解像度�
 ### 外部ライブラリの利用
 
 ときおり普通のReactで動くライブラリがNext.jsでビルドすると動かなかったりします。
-
 こうした場合は、動的インポート（Dynamic Import）という機能で対処できる場合があります。動的インポートしたコンポーネントはクライアントサイドでレンダリングされるため、実質的にReactと同じように処理されるためです。
 
-
-
-
----
-
-## サードパーティ
-
-## Jest
-
-Next.js(12): SWCには自動で組み込まれている
-[Nextリファレンス(12)](https://nextjs.org/docs/advanced-features/compiler)
-
----
 
 ## モダンなCSS → CSS in JS
 
@@ -459,14 +450,6 @@ Next.jsとstyled-componentsが実行される前提とする環境が異なり�
 上記を対応するために、Next.js 12以前はBabel用styled-componentsのライブラリをダウンロードしなければいけず、めんどくさかった。
 [参考URL](https://code-log.hatenablog.com/entry/2020/01/26/200134)
 
-## Swiper
-
-老舗のスライダー作成ツール
-jQuery & nuxt & nextなど色々使える。
-apiが充実しているわけではないため、もはや過去の記事を見て推測し適用しないと行けない。
-
-[swiper](https://swiperjs.com/demos)
-[swiper](https://b-risk.jp/blog/2022/04/swiper/)
 
 ## next/dynamic
 
@@ -482,8 +465,7 @@ Next.jsにおけるdynamic importのつかいどころは主に『SSR回避』�
 [default exportとnamed exportでdynamic importする](https://nishinatoshiharu.com/overview-next-dynamic-import/)
 
 ## next locale
-https://postd.cc/localizing-your-nextjs-app/
-
+[参考URL](https://postd.cc/localizing-your-nextjs-app/)
 ## next router
 
 Next.jsのrouterにはstateがありません。
@@ -630,9 +612,8 @@ frontend/.next
 └── trace
 ```
 
-## Serverless Nextjs Plugin
-
-サーバレスモードで
+## Serverless Componentsでのdeployした際の処理フロー
+[参考URL](https://www.keisuke69.net/entry/2020/11/27/163208)
 
 ## Tips
 
@@ -641,3 +622,46 @@ frontend/.next
 
 - Lambda@EdgeでSSRする
 [参考URL](https://qiita.com/fumiki/items/5f4408ce844520a922c2)
+
+
+
+# SWR
+[参考URL](https://dev.classmethod.jp/articles/getting-started-swr-with-nextjs/)
+[SWRを使おうぜって話（導入についてわかりやすい）](https://zenn.dev/mast1ff/articles/5b48a87242f9f0)
+
+データ取得専用のReact Hooksライブラリ（あくまでGETに使う）
+※POSTなどにはオススメはしない。
+
+Next.jsと同じチームによって作成されている、データ取得のためのReact Hooksライブラリ
+
+## 仕組み
+
+>“SWR” という名前は、 HTTP RFC 5861 で提唱された HTTP キャッシュ無効化戦略である stale-while-revalidate に由来しています。 SWR は、まずキャッシュからデータを返し（stale）、次にフェッチリクエストを送り（revalidate）、最後に最新のデータを持ってくるという戦略です。
+
+この考え方の仕組みにより、データが高速に返却されさらに自動で再フェッチ（revalidate）されるようになっている。
+
+## メリット
+
+SWRのメリットは以下
+- fetchを使用したクライアントサイドのデータ取得
+- データ取得状態の管理
+- エラー処理
+- データキャッシュ
+
+## useSWRが何をしているのか
+
+関数が受け取るもの
+- key: リクエストするユニークな文字列（通常URLを指定する）
+- fetcher: （任意）第一引数に渡したURLを引数に取るfetch関数
+- options: （任意）SWRのオプション
+
+関数が返すもの
+- data: fetcherによって取得したデータ
+- error: fetcherによってthrowされたエラー
+- isValidating: リクエストまたは再検証の読み込みがあるか否かのBool値
+- mutate: キャッシュされたデータを更新する関数
+を返却します。
+このとき、dataの状態は
+取得が完了していない場合はundefined
+取得が完了した場合はその内容
+となり、dataがundefinedか否かで読み込み中かどうかをUIに伝えることができます。

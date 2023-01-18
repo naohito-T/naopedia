@@ -58,12 +58,11 @@ Lambda Layersとは、複数のLambda関数で外部ライブラリやビジネ�
 >Pythonを例にとると、Lambdaの実行環境は/opt/python/とディレクトリが構成されているため、作成するLayerは展開される構成が/opt/python/"作成したLayer"となる必要があります
 
 ## Lambda Layersを作成(Serverless版)
-[](https://dev.classmethod.jp/articles/serverless-framework-node-modules-to-lambda-layers/)
+[参考URL](https://dev.classmethod.jp/articles/serverless-framework-node-modules-to-lambda-layers/)
 
 ---
 
 ## Lambda コールドスタートとウォームスタート
-
 [これまでの常識は間違っていた？！Lambdaのコールドスタート対策にはメモリ割り当てを減らすという選択肢が有効に働く場面も](https://dev.classmethod.jp/articles/lambda-memory-alloc-and-coldstart/)
 
 グローバルな環境で変数を設定すると再利用される可能性がある。
@@ -87,7 +86,6 @@ exports.handler = async (event) => {}
 ## Lambda対応言語
 
 LambdaはJava、Node.js、C#、Pythonのプログラミング言語に対応しているので、各種「機能」（プログラム）はこの言語で開発すれば良い。
-
 aws-sdkはLambdaサーバにはすでに入っており、node-modulesに本来含める必要はないのでnpm uninstall aws-sdkしてから再圧縮すると容量削減につながります。あまりファイルサイズが大きいとインライン編集できなくなるので注意しましょう。
 
 ## Lambda対応イベント
@@ -106,7 +104,6 @@ Lambdaをパブリックに公開したり、シンプルな認証でも問題�
 >S3に画像ファイルがアップロードされたら、リサイズしたサムネイル画像を生成する、とかは分かりやすいですかね。
 
 ## 料金
-
 [Lambdaでgoを実装](https://techblog.kiramex.com/entry/2020/01/23/173128)
 
 毎月100万リクエストまで無料なんです。くり返します。毎月100万リクエストまで無料です！
@@ -123,7 +120,6 @@ Lambdaではexports.handler以下が実行されます。
 
 
 ## Lambdaでディレクトリを使用したい場合
-
 [参考URL](https://cloud5.jp/lambda_tmp_directory/)
 
 /tmpディレクトリ
@@ -132,7 +128,6 @@ Lambdaの公式ドキュメントに、/tmpディレクトリに対して以下�
 >各実行環境は、/tmp ディレクトリ内のディスク領域を 512 MB に提供します。ディレクトリのコンテンツは、実行環境が停止された際に維持され、複数の呼び出しに使用できる一時的なキャッシュを提供します。キャッシュに保存したデータが存在するかどうかを確認するための追加コードを追加できます。デプロイのサイズ制限の詳細については、「Lambda のクォータ」を参照してください。
 
 512MBの一時領域（`/tmp`ディレクトリ）が提供されている。そのためそちらを使用しファイルの出力と書き込みを行える。 
-
 Lambda上でAWS CLIを実行したいと思いました。 AWS CLIにはs3 syncコマンドのような、SDKには未実装の便利な機能があるためです。
 Lambdaの実行環境にはAWS CLIはプリインストールされていないので、ひと工夫が必要になります。
 
@@ -166,25 +161,9 @@ Lambda Functionは大きく3つのレイヤーに分かれたレイヤー化ア�
 また、Lambda deployに関してコンテナイメージのサポートが導入されておりその場合は10GBで良いとのこと。コンテナイメージにするのもいいかもしれない。
 
 
-## Lambda@Edge とは
-
-cloudfrontのエッジロケーションからコードを実行するLambda関数のことで、**ユーザーに近い場所**でコードが実行されるので高速なコンテンツ配信が可能になる仕組み。
-コードをLambdaにアップロードするだけで自動的にコードの実行やスケーリングが行われる。
-そのためLambda@EdgeはLambdaとcloudfrontから成り立つ。
-
-**メリット**
-
-- 低レイテンシーのコンテンツを配信
-ユーザに近いロケーションからコードを実行するので
-低レイテンシーの配信が可能。
-
-
-
-
 ---
 
 ## Tips
-
 [LambdaのJest Test](https://dev.classmethod.jp/articles/serverless-unit-test-with-jest/)
 
 ### Lambdaをexpressでdeployする
