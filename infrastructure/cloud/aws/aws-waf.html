@@ -145,19 +145,6 @@
             
         </li>
     
-        <li class="chapter " data-level="2.1.2" data-path="../../../book/book.html">
-            
-                <a href="../../../book/book.html">
-            
-                    
-                    Book
-            
-                </a>
-            
-
-            
-        </li>
-    
 
             </ul>
             
@@ -168,7 +155,7 @@
                 <a href="../../../cli/cli.html">
             
                     
-                    Cli
+                    CLI
             
                 </a>
             
@@ -4981,13 +4968,47 @@
                                 <h1 id="aws-waf"><a name="aws-waf" class="plugin-anchor" href="#aws-waf"><i class="fa fa-link" aria-hidden="true"></i></a>AWS WAF</h1>
 <p><a href="https://www.wafcharm.com/jp/blog/aws-waf-basic-structure/" target="_blank">AWS WAF解説</a></p>
 <h2 id="構成図"><a name="構成図" class="plugin-anchor" href="#構成図"><i class="fa fa-link" aria-hidden="true"></i></a>構成図</h2>
-<p><img src="https://gyazo.com/369da6037459ed60e58925b875a18908" alt="構成"></p>
+<p><img src="https://i.gyazo.com/369da6037459ed60e58925b875a18908.png" alt="構成図"></p>
 <h2 id="wafとは"><a name="wafとは" class="plugin-anchor" href="#wafとは"><i class="fa fa-link" aria-hidden="true"></i></a>WAFとは</h2>
 <p>AWSが提供するWeb Application Firewall</p>
 <ul>
 <li><code>L7(HTTP/HTTPS)</code>アプリケーション層の防御  </li>
 <li>Web ACLによりアクセスの制限を実現  </li>
 <li>SQL InjectionやXSS, アプリケーション固有の攻撃に対応</li>
+</ul>
+<h2 id="aws-waf各用語"><a name="aws-waf各用語" class="plugin-anchor" href="#aws-waf各用語"><i class="fa fa-link" aria-hidden="true"></i></a>AWS WAF各用語</h2>
+<ul>
+<li><p>Web ACL
+ウェブアクセスコントロールリストで<code>Rules</code>を紐づける<br>1つのWeb ACLに適用可能な<code>Rule</code>は10個まで
+CloudFront, ALB, API GatewayにWebACLを関連付けして利用</p>
+</li>
+<li><p>Rules
+具体的な条件を指定する<code>Condition</code>を紐付け管理する
+1つのRuleに適用可能な<code>Condition</code>は10個まで</p>
+</li>
+</ul>
+<p>＜Conditions＞
+防ぎたい攻撃の条件を具体的に定義する
+SQL InjectionやXSSの<code>Condition</code>が用意されている
+アプリケーション固有の攻撃に対応する場合は独自の条件を記述する</p>
+<h2 id="aws-wafでweb-applicationを防御する手順"><a name="aws-wafでweb-applicationを防御する手順" class="plugin-anchor" href="#aws-wafでweb-applicationを防御する手順"><i class="fa fa-link" aria-hidden="true"></i></a>AWS WAFでWeb Applicationを防御する手順</h2>
+<p>次の手順を踏む</p>
+<ol>
+<li>アクセス制御の目的に合わせて<code>Condition</code>を作成</li>
+<li>作成した<code>Condition</code>を含む<code>Rule</code>を作成</li>
+<li>作成した<code>Rule</code>を適用するための<code>Web ACL</code>を作成</li>
+<li>作成したRuleを<code>Web ACL</code>に適用</li>
+<li>Web ACLをCloudFront, ALB, API Gatewayのいずれかに適用</li>
+</ol>
+<h2 id="aws-waf-で許可または拒否可能なリクエスト"><a name="aws-waf-で許可または拒否可能なリクエスト" class="plugin-anchor" href="#aws-waf-で許可または拒否可能なリクエスト"><i class="fa fa-link" aria-hidden="true"></i></a>AWS WAF で許可または拒否可能なリクエスト</h2>
+<p>AWS WAFでは以下の種類のリクエストを許可または拒否することが可能。
+AWS WAFでは、1 Web ACLに設定できるルール数には限りがあるためサイトの用途に応じて適切に選択することが重要。</p>
+<ul>
+<li>送信元IPアドレスが、特定のIPアドレスまたはIPアドレス範囲</li>
+<li>送信元IPアドレスが、特定の国</li>
+<li>リクエストの特定の部分の文字列マッチング（正規表現可）</li>
+<li>指定した長さを超えている</li>
+<li>SQLインジェクションやクロスサイトスクリプトが含まれている</li>
 </ul>
 
                                 
@@ -5032,7 +5053,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"WAF","level":"2.7.3.1.7","depth":4,"next":{"title":"Cloudfront","level":"2.7.3.1.8","depth":4,"path":"infrastructure/cloud/aws/cloudfront.md","ref":"infrastructure/cloud/aws/cloudfront.md","articles":[]},"previous":{"title":"AWS Vault","level":"2.7.3.1.6","depth":4,"path":"infrastructure/cloud/aws/aws-vault.md","ref":"infrastructure/cloud/aws/aws-vault.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"infrastructure/cloud/aws/aws-waf.md","mtime":"2023-01-18T07:27:51.977Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-18T07:28:01.421Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"WAF","level":"2.7.3.1.7","depth":4,"next":{"title":"Cloudfront","level":"2.7.3.1.8","depth":4,"path":"infrastructure/cloud/aws/cloudfront.md","ref":"infrastructure/cloud/aws/cloudfront.md","articles":[]},"previous":{"title":"AWS Vault","level":"2.7.3.1.6","depth":4,"path":"infrastructure/cloud/aws/aws-vault.md","ref":"infrastructure/cloud/aws/aws-vault.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"infrastructure/cloud/aws/aws-waf.md","mtime":"2023-01-19T13:32:10.038Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-19T13:32:19.409Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
