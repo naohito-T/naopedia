@@ -6,15 +6,27 @@
 アプリケーションをユーザに公開する場合、それがGUIであってもインターフェイスが必要になる。
 Webアプリケーションを公開する場合にはWeb APIを利用するのが一般的であり、AWSもAPIをフルマネージドで活用するためのAPI Gatewayを提供している。
 
+## Amazon API Gatewayとは？
+
+Amazon APIGatewayは規模にかかわらず、簡単にAPIの作成と保護、そして公開、モニタリングが可能なフルマネージドサービス。
+API Gatewayは簡単にAPIを作成し公開できるサービスでかつ、APIに求められるさまざまな機能をカバーしている。  
+そしてAPI Gatewayはクライアントからリクエストを受け取ってそれをバックエンドに渡し、バックエンドからレスポンスを受け取ってクライアントに返す。  
+プロキシのような働きをしている。
+
+## API GatewayとCloudFrontの違い
+
+API GatewayがListenするのはHTTPSのみで、HTTPリクエストを受け付けることはできません。 一方CloudFrontはHTTPとHTTPSの両方のリクエストを受けられるので、CloudFrontを経由することでAPI GatewayへのリクエストをHTTPで受けることができます。
+
 ## API Gatewayの種類
 [参考URL](https://zenn.dev/marokanatani/articles/aws_api_gateway_behavior_go_around)
 
-2種類ある。
-REST API（v1）やHTTP API（v2）
+2種類ある。  
+REST API（v1）やHTTP API（v2）  
 ※HTTP APIの方が後発で機能が少ない分、高速かつ料金が安い。
 
 ## Serverless Frameworkを使用する場合
 [API GatewayでServerless Frameworkを使用する場合の注意点](https://zenn.dev/marokanatani/articles/aws_api_gateway_behavior_go_around)
+
 Serverless Frameworkを使用する場合
 REST APIを使用する場合はhttp
 HTTP APIを使用する場合はhttpApiを設定する。
@@ -22,17 +34,6 @@ HTTP APIを使用する場合はhttpApiを設定する。
 ## そもそもAPIとは?
 
 アプリケーションが呼び出せば、予期した結果を返されるような仕組み。
-
-## Amazon API Gatewayとは？
-
-Amazon APIGatewayは規模にかかわらず、簡単にAPIの作成と保護、そして公開、モニタリングが可能なフルマネージドサービス。
-API Gatewayは簡単にAPIを作成し公開できるサービスでかつ、APIに求められるさまざまな機能をカバーしています。
-そしてAPI Gatewayはクライアントからリクエストを受け取ってそれをバックエンドに渡し、バックエンドからレスポンスを受け取ってクライアントに返す。
-プロキシのような働きをしている。
-
-## API GatewayとCloudFrontの違い
-
-API GatewayがListenするのはHTTPSのみで、HTTPリクエストを受け付けることはできません。 一方CloudFrontはHTTPとHTTPSの両方のリクエストを受けられるので、CloudFrontを経由することでAPI GatewayへのリクエストをHTTPで受けることができます。
 
 ## アクセス制限周り
 

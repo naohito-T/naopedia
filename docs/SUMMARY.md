@@ -4,11 +4,12 @@
 
 ## Category
 
+各章のカテゴリー
+
 * [Book](book/book.md)
   * [Principle](book/principle/principle.md)
-  * [Book](book/book.md)
 
-* [Cli](cli/cli.md)
+* [CLI](cli/cli.md)
   * [File Manager](cli/file*manager/file*manager.md)
   * [Make](cli/make/make.md)
   * [Shell](cli/shell/shell.md)
