@@ -32,6 +32,7 @@ describeでブロック化されている場合は、describeに潜っていく�
 これによりテストは高速（外部リソースへアクセスしないから）で信頼性の高いものになる。
 
 ## JestでのTest Double
+[参考URL](https://naokirin.hatenablog.com/entry/2022/02/23/180811)
 
 Test Doubleの分類としてJestでは細かい分類はされておらず、基本的には`jest.mock` `jest.spyOn`を使う。
 

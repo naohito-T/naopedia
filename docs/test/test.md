@@ -1,12 +1,6 @@
 # Test
-[E2E Test導入で嬉しいこと](https://logmi.jp/tech/articles/323523)
-[メルペイのテスト方針](https://engineering.mercari.com/blog/entry/20211208-test-automation-policy-in-merpay-frontend/)
-[Test管理ツール(Excelとかで管理していたのをさらに管理する)](https://gift-tech.co.jp/articles/Qase/)
-[webアプリケーション開発で個人的に重視しているテストの話](https://nakka-k.hatenablog.com/entry/2019/06/25/000752)
-[E2E テストを導入するのか](https://commerce-engineer.rakuten.careers/entry/tech/0031)
 
-## Test ガントチャート
-![ガンドチャート](image/test.png)
+Test概念について
 
 ## Test フェーズ
 
@@ -280,3 +274,11 @@ Excelでテストケースを管理していてこんなことで悩んでいま
 ## mockデータ作成ツール
 
 https://fakerjs.dev/api/
+
+
+## Tips
+[E2E Test導入で嬉しいこと](https://logmi.jp/tech/articles/323523)  
+[メルペイのテスト方針](https://engineering.mercari.com/blog/entry/20211208-test-automation-policy-in-merpay-frontend/)  
+[Test管理ツール(Excelとかで管理していたのをさらに管理する)](https://gift-tech.co.jp/articles/Qase/)  
+[webアプリケーション開発で個人的に重視しているテストの話](https://nakka-k.hatenablog.com/entry/2019/06/25/000752)  
+[E2E テストを導入するのか](https://commerce-engineer.rakuten.careers/entry/tech/0031)  
