@@ -1,5 +1,9 @@
 # css animation
 
+CSSのみで要素にアニメーションを付けたい場合、以下の2種類の方法がある
+- CSS Transition
+- CSS Animation
+
 
 ## animation-timing-function
 

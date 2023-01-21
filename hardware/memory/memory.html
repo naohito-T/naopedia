@@ -4970,9 +4970,66 @@
 <h2 id="ramラム-random-access-memory"><a name="ramラム-random-access-memory" class="plugin-anchor" href="#ramラム-random-access-memory"><i class="fa fa-link" aria-hidden="true"></i></a>RAM(ラム) Random Access Memory</h2>
 <p>電源が落とすと消える媒体</p>
 <h2 id="romロム-read-only-memory"><a name="romロム-read-only-memory" class="plugin-anchor" href="#romロム-read-only-memory"><i class="fa fa-link" aria-hidden="true"></i></a>ROM(ロム) Read Only Memory</h2>
-<p>こちらはRead Onlyという名前の通り、書き込み不可・読み出しのみ可能なメモリを指す。例えばゲームソフトや音楽CDなどがこれにあたる。一昔前に「おーい、ファミコンのロムカセット貸してくれよー！」なんて言ったことのある人も多いはずだ。
-※なぜかデータを保存するストレージ容量を「ROM ○GB」として表記する慣習がある。2017年現在も大手3キャリアのスペック表を見ると、保存領域の容量をROMとして表現している。まるでRAMの対義語かのように。
-どうやらこの表現を使っているのは日本だけのようで、海外では「Internal Memory Storage」（内部メモリストレージ）としっかり表記しているほうが多</p>
+<p>こちらはRead Onlyという名前の通り、書き込み不可・読み出しのみ可能なメモリを指す。<br>たとえばゲームソフトや音楽CDなどがこれにあたる。<br>※なぜかデータを保存するストレージ容量を「ROM ○GB」として表記する慣習がある。2017年現在も大手3キャリアのスペック表を見ると、保存領域の容量をROMとして表現している。まるでRAMの対義語かのように。<br>どうやらこの表現を使っているのは日本だけのようで、海外では「Internal Memory Storage」（内部メモリストレージ）としっかり表記しているほうが多い。</p>
+<h2 id="pcがもっさりする理由"><a name="pcがもっさりする理由" class="plugin-anchor" href="#pcがもっさりする理由"><i class="fa fa-link" aria-hidden="true"></i></a>PCがもっさりする理由</h2>
+<p><a href="https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q14237302854" target="_blank">参考URL</a></p>
+<ul>
+<li><p>Chrome
+Chromeはメモリがあればあるだけ食う、メモリ食いアプリで有名。
+タブを開きまくるのは気をつける。</p>
+</li>
+<li><p>ターミナルで<code>sudo purge</code>コマンドを用いてメモリを解放する。
+アプリを開いている状態で実行しても気休めレベル<br>行うとしたらアプリすべてを起動した逆順に終了していき<code>Finder</code>のみの状態で行わないと本来の価値半減（macOSの場合）</p>
+</li>
+</ul>
+<h2 id="pc-もっさり改善"><a name="pc-もっさり改善" class="plugin-anchor" href="#pc-もっさり改善"><i class="fa fa-link" aria-hidden="true"></i></a>PC もっさり改善</h2>
+<p>最低でも週1再起動した方がいい。<br>使用頻度が高いのであれば2、3日に1度は再起動をするべき。</p>
+<h2 id="メモリで意識すべきこと"><a name="メモリで意識すべきこと" class="plugin-anchor" href="#メモリで意識すべきこと"><i class="fa fa-link" aria-hidden="true"></i></a>メモリで意識すべきこと</h2>
+<p><a href="https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q14237302854" target="_blank">参考URL</a></p>
+<p><strong>メモリデフラグ</strong>を気にすることが重要。<br>メモリは一度デフラグすると再起動するまで解放されない。</p>
+<p>たとえばアプリA B Cがあったとして下記条件。</p>
+<p>アプリ起動順番 : A B C
+パソコン搭載メモリ容量 : 8GB
+メモリ使用容量
+A : 1GB
+B : 3GB
+C : 2GB
+D : 残メモリ容量2GB (総容量8 - 使用量6)</p>
+<p>ここでアプリBを終了すると、空き容量は計5GBになります。<br>ただし、一度に使用できる容量が5GBではありません。<br>2GBと3GBという個別の空き容量があるだけで、使えるのはそのどれか。
+この分かれた状態を、デフラグと言います。</p>
+<p>メモリを正しく開放するには、起動した逆順にアプリを終了していかないといけません。
+今回の場合だとC B Aですね。<br>そうしないと上記2GBと3GBというような断片化が生じます。<br>メモリ空き容量はあるけど、メモリ不足って状態です。<br>こうやって断片化したメモリは、パソコン再起動しない限りは開放されません。</p>
+<p>内蔵ストレージの空き容量も重要。<br>システムが入っているストレージの空き容量が重要で、外付けに空き容量あってもまったく関係ない、意味ありません。</p>
+<p>一時作業領域、メモリ不足時（スワップ）に内蔵ストレージを代用します。<br>Macなら常に20GB以上、理想35GB以上の空き容量確保。<br>それに加え、行う作業、開くファイルの大きさに応じて、より空き容量を加算確保していく。<br>たとえば動画編集で扱う素材が計25GBで、書き出しが20GBとしたら、45GB以上を加算する必用があるって事です。  </p>
+<p>もし内蔵ストレージがSSDなら、空き容量はより重要になります。
+全体の最低でも25%以上の空き容量を常に確保しないとSSD本来の速度が出ません。</p>
+<h2 id="デフラグについて"><a name="デフラグについて" class="plugin-anchor" href="#デフラグについて"><i class="fa fa-link" aria-hidden="true"></i></a>デフラグについて</h2>
+<p><a href="https://aprico-media.com/posts/1370" target="_blank">参考URL</a></p>
+<blockquote>
+<p>デフラグとはコンピュータのファイルを書き込んだり、削除したりを繰り返していると、ファイルがあちこちに点在した状態となります。データは順序よく並べて書き込まれているのではなく状況によっては飛び飛びの領域に書き込まれます。
+この断片化したデータを整理し、ファイルや空き領域を配置し直すことをデフラグと呼んでいます。</p>
+</blockquote>
+<p>HDDの場合、デフラグは必要。<br>SSDの場合はHDDと構造が異なるため、断片化は速度低下の原因にならない。</p>
+<blockquote>
+<p>その代わりに「最適化」を行うことで削除したデータをTrim機能によってSSD上から削除ができます。
+そうすることで次にデータを書き込むことが高速になります。</p>
+</blockquote>
+<h2 id="trim機能とは"><a name="trim機能とは" class="plugin-anchor" href="#trim機能とは"><i class="fa fa-link" aria-hidden="true"></i></a>Trim機能とは</h2>
+<p>Trim機能とはOSがSSDに削除したデータをSSDに不要なファイルであるという情報を伝達することで消去を行うことです。</p>
+<blockquote>
+<p>この情報を伝達することでSSD側でゴミ箱で消去した不要ファイルであるとSSDが判断し、タイミングをみて消去が行われ、消去によって空いたブロックにデータの記録が行われるようになるというものです。</p>
+</blockquote>
+<h2 id="macではデフラグは不要"><a name="macではデフラグは不要" class="plugin-anchor" href="#macではデフラグは不要"><i class="fa fa-link" aria-hidden="true"></i></a>Macではデフラグは不要</h2>
+<p>それでは、Macでも同じHDDやSSDを使用しているのだからデフラグが必要なのではないかと思われるでしょう。</p>
+<p>Macでは自動デフラグ機能がバックグラウンドで常時起動しているため、デフラグは自動的に行わます。</p>
+<p>OS側でファイルに書き込むときはディスク領域を最適化して、サイズの大きいファイルが断片化されないように実行しているため、デフラグに関しては意識する必要がないということです。</p>
+<h2 id="macで処理速度の改善が見込める方法"><a name="macで処理速度の改善が見込める方法" class="plugin-anchor" href="#macで処理速度の改善が見込める方法"><i class="fa fa-link" aria-hidden="true"></i></a>Macで処理速度の改善が見込める方法</h2>
+<p>上記でMacではデフラグが必要ではないと書きましたが、Macを使用し続けると処理速度が遅くなる。<br>そのため再起動やディスクユーティリティの修復を使って改善する。</p>
+<h2 id="macでのメモリ使用量を把握する。"><a name="macでのメモリ使用量を把握する。" class="plugin-anchor" href="#macでのメモリ使用量を把握する。"><i class="fa fa-link" aria-hidden="true"></i></a>Macでのメモリ使用量を把握する。</h2>
+<p><a href="https://macpaw.com/ja/how-to/reduce-memory-usage-on-mac" target="_blank">Macのメモリ使用量を簡単に減らす7つの方法 (MacBook Pro、Air、iMacで適用可)</a><br><a href="https://apple.stackexchange.com/questions/420445/what-is-this-qemu-system-aarch64-process-and-why-is-it-using-almost-3-gb-of-ram" target="_blank">アクティビティモニターの見方</a></p>
+<p>アクティビティモニター初期表示では仮装メモリ使用量のため実メモリ使用量のタブを増やしてみること。  </p>
+<h2 id="macのハードディスクの空き容量を開放する"><a name="macのハードディスクの空き容量を開放する" class="plugin-anchor" href="#macのハードディスクの空き容量を開放する"><i class="fa fa-link" aria-hidden="true"></i></a>Macのハードディスクの空き容量を開放する</h2>
+<p><a href="https://qiita.com/kiyodori/items/0fcc87bb8ab1cb31c731" target="_blank">参考URL</a></p>
 
                                 
                                 </section>
@@ -5016,7 +5073,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Memory","level":"2.6.5","depth":2,"next":{"title":"Os","level":"2.6.6","depth":2,"path":"hardware/os/os.md","ref":"hardware/os/os.md","articles":[{"title":"Bsd","level":"2.6.6.1","depth":3,"path":"hardware/os/bsd/bsd.md","ref":"hardware/os/bsd/bsd.md","articles":[]},{"title":"Linux","level":"2.6.6.2","depth":3,"path":"hardware/os/linux/linux.md","ref":"hardware/os/linux/linux.md","articles":[{"title":"Ubunt","level":"2.6.6.2.1","depth":4,"path":"hardware/os/linux/ubunt/ubunt.md","ref":"hardware/os/linux/ubunt/ubunt.md","articles":[]},{"title":"Linux","level":"2.6.6.2.2","depth":4,"path":"hardware/os/linux/linux.md","ref":"hardware/os/linux/linux.md","articles":[]}]},{"title":"Mac","level":"2.6.6.3","depth":3,"path":"hardware/os/mac/mac.md","ref":"hardware/os/mac/mac.md","articles":[]}]},"previous":{"title":"Gpu","level":"2.6.4","depth":2,"path":"hardware/gpu/gpu.md","ref":"hardware/gpu/gpu.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"hardware/memory/memory.md","mtime":"2023-01-19T13:32:10.038Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-19T13:32:19.409Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Memory","level":"2.6.5","depth":2,"next":{"title":"Os","level":"2.6.6","depth":2,"path":"hardware/os/os.md","ref":"hardware/os/os.md","articles":[{"title":"Bsd","level":"2.6.6.1","depth":3,"path":"hardware/os/bsd/bsd.md","ref":"hardware/os/bsd/bsd.md","articles":[]},{"title":"Linux","level":"2.6.6.2","depth":3,"path":"hardware/os/linux/linux.md","ref":"hardware/os/linux/linux.md","articles":[{"title":"Ubunt","level":"2.6.6.2.1","depth":4,"path":"hardware/os/linux/ubunt/ubunt.md","ref":"hardware/os/linux/ubunt/ubunt.md","articles":[]},{"title":"Linux","level":"2.6.6.2.2","depth":4,"path":"hardware/os/linux/linux.md","ref":"hardware/os/linux/linux.md","articles":[]}]},{"title":"Mac","level":"2.6.6.3","depth":3,"path":"hardware/os/mac/mac.md","ref":"hardware/os/mac/mac.md","articles":[]}]},"previous":{"title":"Gpu","level":"2.6.4","depth":2,"path":"hardware/gpu/gpu.md","ref":"hardware/gpu/gpu.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"hardware/memory/memory.md","mtime":"2023-01-21T05:24:09.768Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-21T05:24:18.644Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

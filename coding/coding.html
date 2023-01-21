@@ -4966,67 +4966,58 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="コーディングprogram"><a name="コーディングprogram" class="plugin-anchor" href="#コーディングprogram"><i class="fa fa-link" aria-hidden="true"></i></a>コーディング(program)</h1>
-<p><a href="https://qiita.com/hirokidaichi/items/c9a76191216f3cc6c4b2" target="_blank">新人プログラマに知ってもらいたいメソッドを読みやすくするいくつかの原則</a>
-<a href="https://progeigo.org/learning/essential-words-600-plus/" target="_blank">プログラミング英語検定(これみれば変数名とか付けられる)</a></p>
+<p><a href="https://qiita.com/hirokidaichi/items/c9a76191216f3cc6c4b2" target="_blank">新人プログラマに知ってもらいたいメソッドを読みやすくするいくつかの原則</a><br><a href="https://progeigo.org/learning/essential-words-600-plus/" target="_blank">プログラミング英語検定(これみれば変数名とか付けられる)</a></p>
 <h2 id="コーディング速度をあげるコツ"><a name="コーディング速度をあげるコツ" class="plugin-anchor" href="#コーディング速度をあげるコツ"><i class="fa fa-link" aria-hidden="true"></i></a>コーディング速度をあげるコツ</h2>
 <p>コーディング速度を上げる一番の考え方は<strong>迷いをなくすこと。</strong></p>
-<h2 id="俯瞰してみる力をつける構造化"><a name="俯瞰してみる力をつける構造化" class="plugin-anchor" href="#俯瞰してみる力をつける構造化"><i class="fa fa-link" aria-hidden="true"></i></a>俯瞰してみる力をつける(構造化)</h2>
-<p>たとえば
-TSとして関数側が</p>
-<pre><code class="lang-ts"><span class="hljs-keyword">interface</span> CarvingComponentType {
-  [k: <span class="hljs-built_in">string</span>]: CarvingComponentReturnType;
-}
-
-<span class="hljs-keyword">const</span> carvingType: CarvingComponentType = {
-  <span class="hljs-comment">// card repeating or cancel or failed = 要は既に加入している</span>
-  <span class="hljs-attr">canPayment</span>: { <span class="hljs-attr">register</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">newLicense</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">canNotNewLicense</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">subscription</span>: <span class="hljs-literal">true</span> },
-  <span class="hljs-comment">// card cancel</span>
-  <span class="hljs-attr">undoPayment</span>: { <span class="hljs-attr">register</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">newLicense</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">canNotNewLicense</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">subscription</span>: <span class="hljs-literal">true</span> },
-  <span class="hljs-comment">// newLicense</span>
-  <span class="hljs-attr">newPayment</span>: { <span class="hljs-attr">register</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">newLicense</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">canNotNewLicense</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">subscription</span>: <span class="hljs-literal">false</span> },
-  <span class="hljs-comment">// konbini</span>
-  <span class="hljs-attr">konbiniInComplete</span>: { <span class="hljs-attr">register</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">newLicense</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">canNotNewLicense</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">subscription</span>: <span class="hljs-literal">true</span> },
-  <span class="hljs-comment">// まったく通らない</span>
-  <span class="hljs-attr">none</span>: { <span class="hljs-attr">register</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">newLicense</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">canNotNewLicense</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">subscription</span>: <span class="hljs-literal">true</span> },
-};
-
-<span class="hljs-comment">// 最終的にここを出力したい場合</span>
-{ <span class="hljs-attr">register</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">newLicense</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">canNotNewLicense</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">subscription</span>: <span class="hljs-literal">true</span> }
-
-<span class="hljs-comment">// 型定義は以下とし関数にセットし、受け取る側にもセットする</span>
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> CarvingComponentReturnType {
-  <span class="hljs-attr">register</span>: <span class="hljs-built_in">boolean</span>;
-  newLicense: <span class="hljs-built_in">boolean</span>;
-  canNotNewLicense: <span class="hljs-built_in">boolean</span>;
-  subscription: <span class="hljs-built_in">boolean</span>;
-}
-<span class="hljs-keyword">const</span> carvingComponent = (
-  license: License | <span class="hljs-literal">null</span>,
-  <span class="hljs-attr">userLicenses</span>: UserLicense[] | <span class="hljs-literal">null</span>,
-  <span class="hljs-attr">orders</span>: Order[],
-): <span class="hljs-function"><span class="hljs-params">CarvingComponentReturnType</span> =&gt;</span> {}
-
-<span class="hljs-comment">// 受け取る側はこちらで定義ができると</span>
-<span class="hljs-keyword">const</span> { carvingComponent } = useCarvingComponent();
-</code></pre>
 <h2 id="共通化したい時の考え方"><a name="共通化したい時の考え方" class="plugin-anchor" href="#共通化したい時の考え方"><i class="fa fa-link" aria-hidden="true"></i></a>共通化したい時の考え方</h2>
+<p>共通化したい時のTips</p>
 <ul>
 <li>一階層上を作りwrapする</li>
-<li>共通化処理に対しapiを外から渡すようにすればいい。</li>
+<li>カリー化で適用する</li>
+<li>abstractで共通処理を抜き出す</li>
 </ul>
 <h2 id="マジックナンバーをやめる"><a name="マジックナンバーをやめる" class="plugin-anchor" href="#マジックナンバーをやめる"><i class="fa fa-link" aria-hidden="true"></i></a>マジックナンバーをやめる</h2>
-<p>別の人がコードを見たときに何の数字かわからなくなる。
-また、変数として持っておくことで変更が用意。メンテナンス性が上がる
-そしてコード内の変更ではなくなるためテストが不要となる（これは言い回しでどうにかなりそう。ロジックは変更していませんなど変数を変更しただけだよと）</p>
-<p>文字列でもマジックナンバーと同じように変数で持っておく
-<strong>値が変わったらぶっ壊れる</strong>とかは変数で管理するべき。
-また、ここで念頭にconfigとして別ファイルに責務を与えられないか考える。</p>
+<p>number or stringどちらもやめるべき</p>
+<h2 id="コメントの書き方"><a name="コメントの書き方" class="plugin-anchor" href="#コメントの書き方"><i class="fa fa-link" aria-hidden="true"></i></a>コメントの書き方</h2>
+<p><a href="https://next.rikunabi.com/journal/20131216_t21_iq/" target="_blank">アンチプラクティスから学ぶ洗練されたコメントの書き方</a></p>
+<p>変数名/クラス名/関数名で明白なことは書かない。</p>
+<p>コミュニケーションでの理論で<strong>グライスの公理（Grice’s Maxims）</strong>というのがある。<br>円滑なコミュニケーションが満たすべき4つの条件を説明している。</p>
+<ul>
+<li>量の公理（Maxim of Quantity）: 情報を過不足なく提供する。</li>
+<li>質の公理（Maxim of Quality）: 根拠のないことを述べない。嘘をつかない。</li>
+<li>関係性の公理（Maxim of Relation）: 関係のないことは述べない。</li>
+<li>様式の公理（Maxim of Manner）: 簡潔に理路整然と述べる。</li>
+</ul>
+<p>上記をコメントに落としてみる
+以下のようなコメントは、グライスの公理に反しているものが多く、ソースコード上の円滑なコミュニケーションを阻害する。</p>
+<ul>
+<li>量の公理に違反: コメントを書きすぎている/コメントが説明不足</li>
+<li>質の公理に違反: コメントが間違っている</li>
+<li>関係性の公理に違反: コードと関係のないコメント</li>
+<li>様式の公理に違反: ストレートではなく、まわりくどい、曖昧なコメント</li>
+</ul>
+<p>それぞれについて見てみる。</p>
+<h3 id="量の公理に違反"><a name="量の公理に違反" class="plugin-anchor" href="#量の公理に違反"><i class="fa fa-link" aria-hidden="true"></i></a>量の公理に違反</h3>
+<p>それぞれのステップでコメントを書くことは、あまり推奨されていない。
+書きすぎると量の公理に違反する。ステップにコメントが多い場合は<strong>変数名や関数の切り出し・クラスの分割など検討すること。</strong></p>
+<h2 id="良いプログラマーと悪いプログラマーのコメント意識"><a name="良いプログラマーと悪いプログラマーのコメント意識" class="plugin-anchor" href="#良いプログラマーと悪いプログラマーのコメント意識"><i class="fa fa-link" aria-hidden="true"></i></a>良いプログラマーと悪いプログラマーのコメント意識</h2>
+<blockquote>
+<p>良いプログラマーは
+少数の本当に優れたコメントを書くように務める
+理由を説明するコメントを書く
+大量のコメントを書くことよりも、優れたコードを書くことのほうに集中する
+理にかなった有用なコメントを書く</p>
+<p>悪いプログラマーは
+優れたコメントとそうでないコメントの違いがわからない
+方法を説明するコメントを書く
+コメントが自分以外には理解できないものであっても気にしない
+不適切なコードを支える目的で多数のコメントを書く
+ソースファイルに冗長な情報(改版履歴など)を大量に盛り込む</p>
+</blockquote>
+<hr>
 <h2 id="正規表現でvscodeを検索する"><a name="正規表現でvscodeを検索する" class="plugin-anchor" href="#正規表現でvscodeを検索する"><i class="fa fa-link" aria-hidden="true"></i></a>正規表現でvscodeを検索する</h2>
 <p>正規表現を普段から使えるようにするための特訓として、vscodeの検索で使う。
 ゲームのランタイムで正規表現を使わないとのこと（負荷が高いパターンなどあるため）</p>
-<h2 id="db-検索は-1-回で終わらせる。"><a name="db-検索は-1-回で終わらせる。" class="plugin-anchor" href="#db-検索は-1-回で終わらせる。"><i class="fa fa-link" aria-hidden="true"></i></a>DB 検索は 1 回で終わらせる。</h2>
-<p>DBにアクセスする部分で、一度の検索で終わらせるべき。処理が重いため
-ただ副問い合わせなどをするとパフォーマンスはどちらが上なのかは知りたい</p>
 <h2 id="関数を作るのも、クラスを作るのも関心の分離を考えるべき"><a name="関数を作るのも、クラスを作るのも関心の分離を考えるべき" class="plugin-anchor" href="#関数を作るのも、クラスを作るのも関心の分離を考えるべき"><i class="fa fa-link" aria-hidden="true"></i></a>関数を作るのも、クラスを作るのも関心の分離を考えるべき</h2>
 <p>アプリケーションを3層に分けたとき（プレゼンテーション・ビジネスロジック・データアクセス）をベースに考えるとわかりやすい
 ビジネスロジックをデータアクセスと切り離すというのは保存先がファイルだろうと、RDBだろうとドキュメントDBだろうと、保存ができるようにする。</p>
@@ -5319,7 +5310,7 @@ console.log(Math.random());
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Coding","level":"2.3","depth":1,"next":{"title":"Algorithm","level":"2.3.1","depth":2,"path":"coding/algorithm/algorithm.md","ref":"coding/algorithm/algorithm.md","articles":[]},"previous":{"title":"Terminal","level":"2.2.4","depth":2,"path":"cli/terminal/terminal.md","ref":"cli/terminal/terminal.md","articles":[]},"articles":[{"title":"Algorithm","level":"2.3.1","depth":2,"path":"coding/algorithm/algorithm.md","ref":"coding/algorithm/algorithm.md","articles":[]},{"title":"Atcoder","level":"2.3.2","depth":2,"path":"coding/atcoder/atcoder.md","ref":"coding/atcoder/atcoder.md","articles":[{"title":"Onlinejuji","level":"2.3.2.1","depth":3,"path":"coding/atcoder/onlinejuji.md","ref":"coding/atcoder/onlinejuji.md","articles":[]}]},{"title":"Design Pattern","level":"2.3.3","depth":2,"path":"coding/design*pattern/design*pattern.md","ref":"coding/design*pattern/design*pattern.md","articles":[]},{"title":"Namerules","level":"2.3.4","depth":2,"path":"coding/namerules/namerules.md","ref":"coding/namerules/namerules.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"coding/coding.md","mtime":"2023-01-19T13:32:10.034Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-19T13:32:19.409Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Coding","level":"2.3","depth":1,"next":{"title":"Algorithm","level":"2.3.1","depth":2,"path":"coding/algorithm/algorithm.md","ref":"coding/algorithm/algorithm.md","articles":[]},"previous":{"title":"Terminal","level":"2.2.4","depth":2,"path":"cli/terminal/terminal.md","ref":"cli/terminal/terminal.md","articles":[]},"articles":[{"title":"Algorithm","level":"2.3.1","depth":2,"path":"coding/algorithm/algorithm.md","ref":"coding/algorithm/algorithm.md","articles":[]},{"title":"Atcoder","level":"2.3.2","depth":2,"path":"coding/atcoder/atcoder.md","ref":"coding/atcoder/atcoder.md","articles":[{"title":"Onlinejuji","level":"2.3.2.1","depth":3,"path":"coding/atcoder/onlinejuji.md","ref":"coding/atcoder/onlinejuji.md","articles":[]}]},{"title":"Design Pattern","level":"2.3.3","depth":2,"path":"coding/design*pattern/design*pattern.md","ref":"coding/design*pattern/design*pattern.md","articles":[]},{"title":"Namerules","level":"2.3.4","depth":2,"path":"coding/namerules/namerules.md","ref":"coding/namerules/namerules.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"coding/coding.md","mtime":"2023-01-21T05:24:09.764Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-21T05:24:18.644Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
