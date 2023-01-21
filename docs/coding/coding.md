@@ -1,79 +1,71 @@
 # コーディング(program)
-
-[新人プログラマに知ってもらいたいメソッドを読みやすくするいくつかの原則](https://qiita.com/hirokidaichi/items/c9a76191216f3cc6c4b2)
+[新人プログラマに知ってもらいたいメソッドを読みやすくするいくつかの原則](https://qiita.com/hirokidaichi/items/c9a76191216f3cc6c4b2)  
 [プログラミング英語検定(これみれば変数名とか付けられる)](https://progeigo.org/learning/essential-words-600-plus/)
 
 ## コーディング速度をあげるコツ
 
 コーディング速度を上げる一番の考え方は**迷いをなくすこと。**
 
-## 俯瞰してみる力をつける(構造化)
-
-たとえば
-TSとして関数側が
-
-```ts
-interface CarvingComponentType {
-  [k: string]: CarvingComponentReturnType;
-}
-
-const carvingType: CarvingComponentType = {
-  // card repeating or cancel or failed = 要は既に加入している
-  canPayment: { register: true, newLicense: false, canNotNewLicense: false, subscription: true },
-  // card cancel
-  undoPayment: { register: false, newLicense: false, canNotNewLicense: false, subscription: true },
-  // newLicense
-  newPayment: { register: false, newLicense: true, canNotNewLicense: false, subscription: false },
-  // konbini
-  konbiniInComplete: { register: false, newLicense: false, canNotNewLicense: false, subscription: true },
-  // まったく通らない
-  none: { register: true, newLicense: false, canNotNewLicense: false, subscription: true },
-};
-
-// 最終的にここを出力したい場合
-{ register: true, newLicense: false, canNotNewLicense: false, subscription: true }
-
-// 型定義は以下とし関数にセットし、受け取る側にもセットする
-export interface CarvingComponentReturnType {
-  register: boolean;
-  newLicense: boolean;
-  canNotNewLicense: boolean;
-  subscription: boolean;
-}
-const carvingComponent = (
-  license: License | null,
-  userLicenses: UserLicense[] | null,
-  orders: Order[],
-): CarvingComponentReturnType => {}
-
-// 受け取る側はこちらで定義ができると
-const { carvingComponent } = useCarvingComponent();
-```
-
 ## 共通化したい時の考え方
 
+共通化したい時のTips
 - 一階層上を作りwrapする
-- 共通化処理に対しapiを外から渡すようにすればいい。
+- カリー化で適用する
+- abstractで共通処理を抜き出す
 
 ## マジックナンバーをやめる
 
-別の人がコードを見たときに何の数字かわからなくなる。
-また、変数として持っておくことで変更が用意。メンテナンス性が上がる
-そしてコード内の変更ではなくなるためテストが不要となる（これは言い回しでどうにかなりそう。ロジックは変更していませんなど変数を変更しただけだよと）
+number or stringどちらもやめるべき
 
-文字列でもマジックナンバーと同じように変数で持っておく
-**値が変わったらぶっ壊れる**とかは変数で管理するべき。
-また、ここで念頭にconfigとして別ファイルに責務を与えられないか考える。
+## コメントの書き方
+[アンチプラクティスから学ぶ洗練されたコメントの書き方](https://next.rikunabi.com/journal/20131216_t21_iq/)
+
+変数名/クラス名/関数名で明白なことは書かない。
+
+コミュニケーションでの理論で**グライスの公理（Grice’s Maxims）**というのがある。  
+円滑なコミュニケーションが満たすべき4つの条件を説明している。
+
+- 量の公理（Maxim of Quantity）: 情報を過不足なく提供する。
+- 質の公理（Maxim of Quality）: 根拠のないことを述べない。嘘をつかない。
+- 関係性の公理（Maxim of Relation）: 関係のないことは述べない。
+- 様式の公理（Maxim of Manner）: 簡潔に理路整然と述べる。
+
+上記をコメントに落としてみる
+以下のようなコメントは、グライスの公理に反しているものが多く、ソースコード上の円滑なコミュニケーションを阻害する。
+- 量の公理に違反: コメントを書きすぎている/コメントが説明不足
+- 質の公理に違反: コメントが間違っている
+- 関係性の公理に違反: コードと関係のないコメント
+- 様式の公理に違反: ストレートではなく、まわりくどい、曖昧なコメント
+
+それぞれについて見てみる。
+
+###  量の公理に違反
+
+それぞれのステップでコメントを書くことは、あまり推奨されていない。
+書きすぎると量の公理に違反する。ステップにコメントが多い場合は**変数名や関数の切り出し・クラスの分割など検討すること。**
+
+
+## 良いプログラマーと悪いプログラマーのコメント意識
+
+>良いプログラマーは
+>少数の本当に優れたコメントを書くように務める
+>理由を説明するコメントを書く
+>大量のコメントを書くことよりも、優れたコードを書くことのほうに集中する
+>理にかなった有用なコメントを書く
+
+>悪いプログラマーは
+>優れたコメントとそうでないコメントの違いがわからない
+>方法を説明するコメントを書く
+>コメントが自分以外には理解できないものであっても気にしない
+>不適切なコードを支える目的で多数のコメントを書く
+>ソースファイルに冗長な情報(改版履歴など)を大量に盛り込む
+
+---
 
 ## 正規表現でvscodeを検索する
 
 正規表現を普段から使えるようにするための特訓として、vscodeの検索で使う。
 ゲームのランタイムで正規表現を使わないとのこと（負荷が高いパターンなどあるため）
-
-## DB 検索は 1 回で終わらせる。
-
-DBにアクセスする部分で、一度の検索で終わらせるべき。処理が重いため
-ただ副問い合わせなどをするとパフォーマンスはどちらが上なのかは知りたい
 
 ## 関数を作るのも、クラスを作るのも関心の分離を考えるべき
 

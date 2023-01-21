@@ -15,7 +15,6 @@ Gridが視覚的に作成できる。
 [filter:drop-shadowジェネレーター](https://www.bad-company.jp/drop-shadow)
 
 ## css box-shadowジェネレーター
-
 [box-shadowジェネレーター](https://www.bad-company.jp/box-shadow)
 
 ## css グラデーションジェネレーター
@@ -33,3 +32,6 @@ Gridが視覚的に作成できる。
 
 ## GitHubなどでフォントが切り替えられないときに使用する
 [参考URL](https://charactercalculator.com/ja/font-changer/)
+
+## CSS cubic-bezierをコピペで作成できるサイト
+[参考URL](実際の動きを見ながらCSSのcubic-bezierをコピペできるWebサービス「Easings」)
