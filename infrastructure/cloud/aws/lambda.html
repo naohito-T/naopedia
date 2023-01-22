@@ -4994,13 +4994,19 @@
 </li>
 </ul>
 <h2 id="lambdaが台頭した理由"><a name="lambdaが台頭した理由" class="plugin-anchor" href="#lambdaが台頭した理由"><i class="fa fa-link" aria-hidden="true"></i></a>Lambdaが台頭した理由</h2>
-<p><a href="https://service.plan-b.co.jp/blog/tech/30863/" target="_blank">Lambdaが台頭した理由</a>
-<a href="https://qiita.com/Keisuke69/items/9951a93fd711360a61c5" target="_blank">AWSのLambdaを色々暴く</a></p>
+<p><a href="https://service.plan-b.co.jp/blog/tech/30863/" target="_blank">Lambdaが台頭した理由</a><br><a href="https://qiita.com/Keisuke69/items/9951a93fd711360a61c5" target="_blank">AWSのLambdaを色々暴く</a></p>
 <blockquote>
 <p>業務で使うサーバーが、いつの間にかAWSになってから、毎日AWSを業務で利用しています。 AWSには、沢山のサービスがありますが、私のお気に入りはAWS Lambdaです。
 理由は、とりあえずシンプルに作れるから！
 プロジェクトが始まると、切り出せそうな処理はどんどんLambda Functionとして作ってはデプロイを繰り返します。
 結果、案件も終わりが見えた頃には、「Lambda Functionいっぱい問題」発生。 このパターンが日常的にあり、修正や管理のコストが大きくなることが多いです。</p>
+</blockquote>
+<h2 id="lambda関数に求められる実装"><a name="lambda関数に求められる実装" class="plugin-anchor" href="#lambda関数に求められる実装"><i class="fa fa-link" aria-hidden="true"></i></a>Lambda関数に求められる実装</h2>
+<p><a href="https://enterprisegeeks.hatenablog.com/entry/2017/04/21/150204" target="_blank">実装&amp;キャッシュについてまとまっている</a></p>
+<p>AWSの公式ドキュメントによると、AWS Lambdaの関数は<strong>ステートレス</strong>な実装にする必要がある。<br>一方でステートレスな実装を追求すると、外部サーバからのデータ取得処理が増え、結果として処理パフォーマンス悪化を引き起こす場合が多い。  </p>
+<p>ステートレスな実装を謳っているが<code>/tmp</code>ファルダの提供があるため少なからずキャッシュの利用は可能そう。</p>
+<blockquote>
+<p>Lambda関数はあらゆる状態を持たない実装にすべき」ことを示すのではなく、「外部にマスタがある静的なデータはLambda関数上のキャッシュとして保持し、次回リクエスト時に再利用して良い」</p>
 </blockquote>
 <h2 id="lambdaを最低限ローカルで実行しテストする簡単"><a name="lambdaを最低限ローカルで実行しテストする簡単" class="plugin-anchor" href="#lambdaを最低限ローカルで実行しテストする簡単"><i class="fa fa-link" aria-hidden="true"></i></a>Lambdaを最低限ローカルで実行しテストする(簡単)</h2>
 <p><a href="https://qiita.com/zaburo/items/d78a0a4462007e57d5d8" target="_blank">参考URL</a></p>
@@ -5161,7 +5167,7 @@ APIGateway+Lambda上でExpressを動かせるというライブラリ。
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Lambda","level":"2.7.3.1.15","depth":4,"next":{"title":"Redshift","level":"2.7.3.1.16","depth":4,"path":"infrastructure/cloud/aws/redshift.md","ref":"infrastructure/cloud/aws/redshift.md","articles":[]},"previous":{"title":"Iam","level":"2.7.3.1.14","depth":4,"path":"infrastructure/cloud/aws/iam.md","ref":"infrastructure/cloud/aws/iam.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"infrastructure/cloud/aws/lambda.md","mtime":"2023-01-21T05:38:25.814Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-21T05:38:34.446Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Lambda","level":"2.7.3.1.15","depth":4,"next":{"title":"Redshift","level":"2.7.3.1.16","depth":4,"path":"infrastructure/cloud/aws/redshift.md","ref":"infrastructure/cloud/aws/redshift.md","articles":[]},"previous":{"title":"Iam","level":"2.7.3.1.14","depth":4,"path":"infrastructure/cloud/aws/iam.md","ref":"infrastructure/cloud/aws/iam.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"infrastructure/cloud/aws/lambda.md","mtime":"2023-01-22T02:19:47.308Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-22T02:19:55.507Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
