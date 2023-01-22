@@ -24,7 +24,7 @@ docker volume prune -f
 [参考URL](https://zenn.dev/kirisaki/scraps/89bf93bfd9a0d6)
 
 作成したイメージがどうなっているかを確認したいとき。
-レイヤーについて詳しく見れる。
+レイヤーについて詳しく見れられる。
 
 `docker save -o [name].tar [image id]`
 
