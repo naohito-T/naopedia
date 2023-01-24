@@ -111,3 +111,8 @@ OS側でファイルに書き込むときはディスク領域を最適化して
 ## Macのハードディスクの空き容量を開放する
 [参考URL](https://qiita.com/kiyodori/items/0fcc87bb8ab1cb31c731)
 
+## LRU【Least Recently Used】LRU方式 / LRU制御方式
+[参考URL](https://e-words.jp/w/LRU.html)
+
+
+>LRUとは、広さの限られた一時的な保管場所が満杯になったとき何を棄てるか決定する基準の一つで、**最も過去に使用されたものから順に破棄する**方式。IT分野以外でも書類の整理方法などに応用されている。

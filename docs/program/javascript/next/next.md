@@ -55,7 +55,12 @@ Next.jsでは、**ブラウザへ送信する前にpre-Rendering**をおこな�
 
 ### CSR
 
+CSRのデータフェッチは相対パスでもいい。
+
 ### SSR
+
+### CSR と SSRのデータフェッチ違い
+[参考URL](https://stackoverflow.com/questions/44342226/next-js-error-only-absolute-urls-are-supported)
 
 ### ISG（Incremental Static Generation）
 [Link と ISR が引き起こす Next.js の過負荷](https://zenn.dev/takepepe/articles/nextjs-isr-prefetch)

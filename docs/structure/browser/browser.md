@@ -1,5 +1,6 @@
 # browser
 [参考URL](https://zenn.dev/silverbirder/articles/e10295948e17ca)
+[リファレンス](https://developer.mozilla.org/ja/docs/Web/Performance/How_browsers_work)
 
 ブラウザの仕組みについて記載する。
 

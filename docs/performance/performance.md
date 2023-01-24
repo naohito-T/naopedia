@@ -26,6 +26,9 @@
 - 配列アクセスのパフォーマンス 
 [参考URL](https://zenn.dev/itte/articles/737a3ca709aad0)
 
+- Webサイトのパフォーマンスを上げる
+[リファレンス](https://developer.mozilla.org/ja/docs/Web/Performance/How_browsers_work)
+
 ## イベントの調整
 
 >解決策の1つは、イベントを延期し、何回かのイベントを一度にまとめて扱うことです。この点で役立つ、よく使われる2つの関数があります。throttleとdebounceです。
