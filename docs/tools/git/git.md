@@ -614,9 +614,8 @@ $ git diff HEAD 'HEAD@{2015-06-01 0:00}'
 
 
 ## コミットメッセージ
-
 [参考URL](https://qiita.com/konatsu_p/items/dfe199ebe3a7d2010b3e)
-プレフィックスにつけるとわかりやすいかも
+プレフィックスにつけsるとわかりやすいかも
 
 ```sh
 # 新しい機能
@@ -636,3 +635,6 @@ $ git diff HEAD 'HEAD@{2015-06-01 0:00}'
 # ビルド、補助ツール、ライブラリ関連
 [chore]
 ```
+
+## コミットメッセージの仕様
+[Conventional Commitsでコミットメッセージを分かりやすくする](https://soudai-s.com/align-commit-messages-by-conventional-commits)
