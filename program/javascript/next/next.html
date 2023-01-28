@@ -5004,70 +5004,21 @@ webpack等の設定の必要がない。</p>
 </li>
 </ol>
 <hr>
-<h2 id="仕組み"><a name="仕組み" class="plugin-anchor" href="#仕組み"><i class="fa fa-link" aria-hidden="true"></i></a>仕組み</h2>
-<p>Next.jsでは、<strong>ブラウザへ送信する前にpre-Rendering</strong>をおこなっている。
-<a href="https://blog.microcms.io/nextjs-sg-ssr/" target="_blank">SSGとSSRの違い</a></p>
+<h2 id="データフェッチ仕組み"><a name="データフェッチ仕組み" class="plugin-anchor" href="#データフェッチ仕組み"><i class="fa fa-link" aria-hidden="true"></i></a>データフェッチ仕組み</h2>
+<p><a href="https://blog.microcms.io/nextjs-sg-ssr/" target="_blank">SSGとSSRの違い</a>
+<a href="https://nextjs.org/docs/basic-features/data-fetching/overview" target="_blank">リファレンス</a></p>
+<p>Next.jsでは、<strong>ブラウザへ送信する前にpre-Rendering</strong>をおこなっている。</p>
 <h3 id="csr"><a name="csr" class="plugin-anchor" href="#csr"><i class="fa fa-link" aria-hidden="true"></i></a>CSR</h3>
 <p>CSRのデータフェッチは相対パスでもいい。</p>
 <h3 id="ssr"><a name="ssr" class="plugin-anchor" href="#ssr"><i class="fa fa-link" aria-hidden="true"></i></a>SSR</h3>
 <p>SSRのデータフェッチが絶対パスではないといけない理由</p>
 <blockquote>
 <p>エラーではありません。isomorphic-unfetch は SSR モードで実行されているため、Node.js はそこから取得する絶対 URL を知る必要があります。これは、バックエンドがブラウザーの設定を認識していないためです。</p>
-</blockquote>
-<h3 id="csr-と-ssrのデータフェッチ違い"><a name="csr-と-ssrのデータフェッチ違い" class="plugin-anchor" href="#csr-と-ssrのデータフェッチ違い"><i class="fa fa-link" aria-hidden="true"></i></a>CSR と SSRのデータフェッチ違い</h3>
-<p><a href="https://stackoverflow.com/questions/44342226/next-js-error-only-absolute-urls-are-supported" target="_blank">参考URL</a></p>
-<h3 id="isg（incremental-static-generation）"><a name="isg（incremental-static-generation）" class="plugin-anchor" href="#isg（incremental-static-generation）"><i class="fa fa-link" aria-hidden="true"></i></a>ISG（Incremental Static Generation）</h3>
-<p><a href="https://zenn.dev/takepepe/articles/nextjs-isr-prefetch" target="_blank">Link と ISR が引き起こす Next.js の過負荷</a></p>
-<p>ISG（Incremental Static Generation）は、Next.jsがオンデマンドでページを静的生成するアプローチです。「オンデマンドで静的生成する」ことで、ビルドタイムの静的生成をスキップできる。
-※膨大なDynamic routeを提供するページであっても静的生成を現実的なものにする。実際に<strong>ページがリクエストされるまでそのページは静的生成されない</strong></p>
-<ul>
-<li>発動条件
-<code>getStaticPaths の fallback オプションを true か &apos;blocking&apos; にすることで発動する</code></li>
-</ul>
-<h4 id="linkとisgの関係"><a name="linkとisgの関係" class="plugin-anchor" href="#linkとisgの関係"><i class="fa fa-link" aria-hidden="true"></i></a>LinkとISGの関係</h4>
-<p>実行されるタイミングは以下となる。</p>
-<ol>
-<li>ページが直叩きされたとき</li>
-<li><code>Link</code>コンポーネントにマウスオーバーした時</li>
-<li><code>Link</code>コンポーネントが画面内に入った時（prefetch={true}時）</li>
-</ol>
-<h3 id="isr（incremental-static-regeneration）"><a name="isr（incremental-static-regeneration）" class="plugin-anchor" href="#isr（incremental-static-regeneration）"><i class="fa fa-link" aria-hidden="true"></i></a>ISR（Incremental Static Regeneration）</h3>
-<p>ISGの「再生成が起こらない」課題を解決するアプローチ（データ陳腐化防止）
-<code>revalidate</code>オプションを付与することで、一度生成したページであっても、指定経過時間後に再生成を試む。
-<code>revalidate</code>オプションの付与で ISG は ISR になるが、あまりにも短い指定をするとタイトルのような過負荷を引き起こすことが懸念されます。</p>
-<h4 id="linkとisrの関係"><a name="linkとisrの関係" class="plugin-anchor" href="#linkとisrの関係"><i class="fa fa-link" aria-hidden="true"></i></a>LinkとISRの関係</h4>
-<h3 id="nextjs12での仕組み"><a name="nextjs12での仕組み" class="plugin-anchor" href="#nextjs12での仕組み"><i class="fa fa-link" aria-hidden="true"></i></a>Next.js12での仕組み</h3>
-<blockquote>
-<p>Next.jsでは、すべてのアプリケーションが本番環境でより速くビルドされ、ローカル開発では即座にフィードバックが得られるようにしたいと考えています。Next.js 12には、ネイティブ・コンパイルの利点を活かしたまったく新しいRustコンパイラが搭載されています。</p>
-</blockquote>
-<p>SWCは<strong>Rust製の高速なトランスパイラ。</strong>
-Next.jsがSWCの利用を推進しており、Next.js 12からはデフォルトのトランスパイラがBabelからSWCに変更。
-またSWCのソースコードはいくつかに分けてクレート化されており、Next.jsのみならずDeonの内部でも利用されています。</p>
-<p><strong>Babel vs SWC</strong>
-<img src="image/swc.png" alt="SWC"></p>
-<h3 id="next-swcnextjs-compiler"><a name="next-swcnextjs-compiler" class="plugin-anchor" href="#next-swcnextjs-compiler"><i class="fa fa-link" aria-hidden="true"></i></a>Next-SWC(Next.js Compiler)</h3>
-<p><a href="https://www.wantedly.com/companies/wantedly/post_articles/386129" target="_blank">とても参考になる</a></p>
-<p>Next.jsがデフォルトで使うSWCは、SWCのラッパーになっていて、SWCで使える機能が一部制限されていたり、拡張されていたりします。このデフォルトで使われるSWCのことをNext-SWCという（公式ではNext.js Compilerとも呼ばれている）</p>
-<h2 id="ディレクトリ移動"><a name="ディレクトリ移動" class="plugin-anchor" href="#ディレクトリ移動"><i class="fa fa-link" aria-hidden="true"></i></a>ディレクトリ移動</h2>
-<p>srcディレクトリは多くのアプリで一般的であり、nextはサポートしている。
-※しかし<code>next.config.js</code>や<code>tsconfig.json</code>のような設定ファイルは、環境変数と同様にルートディレクトリに配置してください。
-これらはsrcに配置しても動作しません。publicディレクトリについても同様</p>
 <h2 id="ssrとssgについて"><a name="ssrとssgについて" class="plugin-anchor" href="#ssrとssgについて"><i class="fa fa-link" aria-hidden="true"></i></a>SSRとSSGについて</h2>
+</blockquote>
 <p><a href="https://www.gaji.jp/blog/2022/03/17/9343/" target="_blank">参考URL</a></p>
 <p>Nextでクエリ文字列を使いたい時は<code>getServerSideProps</code>を使う
 <code>getStaticProps</code>では使えない。</p>
-<hr>
-<h3 id="ssrとして動作させるpages"><a name="ssrとして動作させるpages" class="plugin-anchor" href="#ssrとして動作させるpages"><i class="fa fa-link" aria-hidden="true"></i></a>SSRとして動作させる(pages)</h3>
-<p>※都度生成されているため以下の<strong>ランダムな数字は変わる</strong></p>
-<pre><code class="lang-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getServerSideProps</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-keyword">const</span> random = <span class="hljs-built_in">Math</span>.floor( <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">100</span> );
-  <span class="hljs-keyword">return</span> {
-    <span class="hljs-attr">props</span>: {
-      random,
-    },
-  }
-}
-</code></pre>
 <h3 id="ssrフロー"><a name="ssrフロー" class="plugin-anchor" href="#ssrフロー"><i class="fa fa-link" aria-hidden="true"></i></a>SSRフロー</h3>
 <p><a href="https://maasaablog.com/development/frontend/nextjs/3512/" target="_blank">参考URL</a></p>
 <ol>
@@ -5094,22 +5045,42 @@ getServerSidePropsはクライアントサイドルーティングでページ�
 このときgetServerSidePropsの実行結果は<code>JSON</code>で返ってくる。</p>
 </li>
 </ul>
-<h4 id="serverless-componentsでdeployした場合のlambdaedge-レスポンス制限"><a name="serverless-componentsでdeployした場合のlambdaedge-レスポンス制限" class="plugin-anchor" href="#serverless-componentsでdeployした場合のlambdaedge-レスポンス制限"><i class="fa fa-link" aria-hidden="true"></i></a>Serverless Componentsでdeployした場合のLambda@Edge レスポンス制限</h4>
-<p><a href="https://backbencher.dev/nextjs-serverless-502-error-lambda-invalid-json" target="_blank">海外の方記事</a></p>
-<h3 id="ssgとして動作させるpages"><a name="ssgとして動作させるpages" class="plugin-anchor" href="#ssgとして動作させるpages"><i class="fa fa-link" aria-hidden="true"></i></a>SSGとして動作させる(pages)</h3>
-<p>そのpages配下をSSGとして動作させたい場合は以下
-※静的に生成されているため以下の<strong>ランダムな数字は変わらない</strong></p>
-<pre><code class="lang-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getStaticProps</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-keyword">const</span> random = <span class="hljs-built_in">Math</span>.floor( <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">100</span> );
-  <span class="hljs-keyword">return</span> {
-    <span class="hljs-attr">props</span>: {
-      random,
-    },
-  }
-}
-</code></pre>
+<h3 id="csr-と-ssrのデータフェッチ違い"><a name="csr-と-ssrのデータフェッチ違い" class="plugin-anchor" href="#csr-と-ssrのデータフェッチ違い"><i class="fa fa-link" aria-hidden="true"></i></a>CSR と SSRのデータフェッチ違い</h3>
+<p><a href="https://stackoverflow.com/questions/44342226/next-js-error-only-absolute-urls-are-supported" target="_blank">参考URL</a></p>
+<h3 id="ssg"><a name="ssg" class="plugin-anchor" href="#ssg"><i class="fa fa-link" aria-hidden="true"></i></a>SSG</h3>
 <p>Static（通称SSG、SG）を利用するメリット
 <strong>CDNに静的ファイルをキャッシュ</strong>することで表示のスピードUPを実現</p>
+<h3 id="isg（incremental-static-generation）"><a name="isg（incremental-static-generation）" class="plugin-anchor" href="#isg（incremental-static-generation）"><i class="fa fa-link" aria-hidden="true"></i></a>ISG（Incremental Static Generation）</h3>
+<p><a href="https://zenn.dev/takepepe/articles/nextjs-isr-prefetch" target="_blank">Link と ISR が引き起こす Next.js の過負荷</a></p>
+<p>ISG（Incremental Static Generation）は、Next.jsがオンデマンドでページを静的生成するアプローチです。「オンデマンドで静的生成する」ことで、ビルドタイムの静的生成をスキップできる。
+※膨大なDynamic routeを提供するページであっても静的生成を現実的なものにする。実際に<strong>ページがリクエストされるまでそのページは静的生成されない</strong></p>
+<ul>
+<li>発動条件
+<code>getStaticPaths の fallback オプションを true か &apos;blocking&apos; にすることで発動する</code></li>
+</ul>
+<h4 id="linkとisgの関係"><a name="linkとisgの関係" class="plugin-anchor" href="#linkとisgの関係"><i class="fa fa-link" aria-hidden="true"></i></a>LinkとISGの関係</h4>
+<p>実行されるタイミングは以下となる。</p>
+<ol>
+<li>ページが直叩きされたとき</li>
+<li><code>Link</code>コンポーネントにマウスオーバーした時</li>
+<li><code>Link</code>コンポーネントが画面内に入った時（prefetch={true}時）</li>
+</ol>
+<h3 id="isr（incremental-static-regeneration）"><a name="isr（incremental-static-regeneration）" class="plugin-anchor" href="#isr（incremental-static-regeneration）"><i class="fa fa-link" aria-hidden="true"></i></a>ISR（Incremental Static Regeneration）</h3>
+<p>ISGの「再生成が起こらない」課題を解決するアプローチ（データ陳腐化防止）
+<code>revalidate</code>オプションを付与することで、一度生成したページであっても、指定経過時間後に再生成を試む。
+<code>revalidate</code>オプションの付与でISGはISRになるが、あまりにも短い指定をするとタイトルのような過負荷を引き起こすことが懸念されます。</p>
+<h4 id="linkとisrの関係"><a name="linkとisrの関係" class="plugin-anchor" href="#linkとisrの関係"><i class="fa fa-link" aria-hidden="true"></i></a>LinkとISRの関係</h4>
+<h3 id="nextjs12での仕組み"><a name="nextjs12での仕組み" class="plugin-anchor" href="#nextjs12での仕組み"><i class="fa fa-link" aria-hidden="true"></i></a>Next.js12での仕組み</h3>
+<blockquote>
+<p>Next.jsでは、すべてのアプリケーションが本番環境でより速くビルドされ、ローカル開発では即座にフィードバックが得られるようにしたいと考えています。Next.js 12には、ネイティブ・コンパイルの利点を活かしたまったく新しいRustコンパイラが搭載されています。</p>
+</blockquote>
+<p>SWCは<strong>Rust製の高速なトランスパイラ。</strong>
+Next.jsがSWCの利用を推進しており、Next.js 12からはデフォルトのトランスパイラがBabelからSWCに変更。
+またSWCのソースコードはいくつかに分けてクレート化されており、Next.jsのみならずDeonの内部でも利用されています。</p>
+<p><strong>Babel vs SWC</strong>
+<img src="image/swc.png" alt="SWC"></p>
+<h4 id="serverless-componentsでdeployした場合のlambdaedge-レスポンス制限"><a name="serverless-componentsでdeployした場合のlambdaedge-レスポンス制限" class="plugin-anchor" href="#serverless-componentsでdeployした場合のlambdaedge-レスポンス制限"><i class="fa fa-link" aria-hidden="true"></i></a>Serverless Componentsでdeployした場合のLambda@Edge レスポンス制限</h4>
+<p><a href="https://backbencher.dev/nextjs-serverless-502-error-lambda-invalid-json" target="_blank">海外の方記事</a></p>
 <h2 id="isrincremental-static-regeneration"><a name="isrincremental-static-regeneration" class="plugin-anchor" href="#isrincremental-static-regeneration"><i class="fa fa-link" aria-hidden="true"></i></a>ISR(Incremental Static Regeneration)</h2>
 <p><a href="https://nextjs.org/docs/basic-features/data-fetching/overview#incremental-static-regeneration" target="_blank">リファレンス</a></p>
 <p><a href="https://zenn.dev/catnose99/articles/8bed46fb271e44" target="_blank">Next ISRで動的コンテンツをキャッシュするときの戦略</a>
@@ -5436,10 +5407,8 @@ frontend/.next
 </li>
 </ul>
 <h1 id="swr"><a name="swr" class="plugin-anchor" href="#swr"><i class="fa fa-link" aria-hidden="true"></i></a>SWR</h1>
-<p><a href="https://dev.classmethod.jp/articles/getting-started-swr-with-nextjs/" target="_blank">参考URL</a>
-<a href="https://zenn.dev/mast1ff/articles/5b48a87242f9f0" target="_blank">SWRを使おうぜって話（導入についてわかりやすい）</a></p>
-<p>データ取得専用のReact Hooksライブラリ（あくまでGETに使う）
-※POSTなどにはオススメはしない。</p>
+<p><a href="https://www.wantedly.com/companies/wantedly/post_articles/386129" target="_blank">とても参考になる</a><br><a href="https://dev.classmethod.jp/articles/getting-started-swr-with-nextjs/" target="_blank">参考URL</a><br><a href="https://zenn.dev/mast1ff/articles/5b48a87242f9f0" target="_blank">SWRを使おうぜって話（導入についてわかりやすい）</a></p>
+<p>Next.jsがデフォルトで使うSWCは、SWCのラッパーになっていて、SWCで使える機能が一部制限されていたり、拡張されていたりします。このデフォルトで使われるSWCのことをNext-SWCという（公式ではNext.js Compilerとも呼ばれている）<br>データ取得専用のReact Hooksライブラリ（あくまでGETに使う）<br>※POSTなどには使用できるがおすすめはしない</p>
 <p>Next.jsと同じチームによって作成されている、データ取得のためのReact Hooksライブラリ</p>
 <h2 id="仕組み"><a name="仕組み" class="plugin-anchor" href="#仕組み"><i class="fa fa-link" aria-hidden="true"></i></a>仕組み</h2>
 <blockquote>
@@ -5516,7 +5485,7 @@ frontend/.next
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Next","level":"2.14.5.7","depth":3,"next":{"title":"Node","level":"2.14.5.8","depth":3,"path":"program/javascript/node/node.md","ref":"program/javascript/node/node.md","articles":[]},"previous":{"title":"Nest","level":"2.14.5.6","depth":3,"path":"program/javascript/nest/nest.md","ref":"program/javascript/nest/nest.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"program/javascript/next/next.md","mtime":"2023-01-28T00:46:58.562Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-28T00:47:10.423Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Next","level":"2.14.5.7","depth":3,"next":{"title":"Node","level":"2.14.5.8","depth":3,"path":"program/javascript/node/node.md","ref":"program/javascript/node/node.md","articles":[]},"previous":{"title":"Nest","level":"2.14.5.6","depth":3,"path":"program/javascript/nest/nest.md","ref":"program/javascript/nest/nest.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"program/javascript/next/next.md","mtime":"2023-01-28T03:55:25.264Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-28T03:55:33.361Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
