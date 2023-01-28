@@ -59,6 +59,9 @@ CSRのデータフェッチは相対パスでもいい。
 
 ### SSR
 
+SSRのデータフェッチが絶対パスではないといけない理由
+>エラーではありません。isomorphic-unfetch は SSR モードで実行されているため、Node.js はそこから取得する絶対 URL を知る必要があります。これは、バックエンドがブラウザーの設定を認識していないためです。
+
 ### CSR と SSRのデータフェッチ違い
 [参考URL](https://stackoverflow.com/questions/44342226/next-js-error-only-absolute-urls-are-supported)
 
