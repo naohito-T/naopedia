@@ -48,10 +48,11 @@ webpack等の設定の必要がない。
 
 ---
 
-## 仕組み
+## データフェッチ仕組み
+[SSGとSSRの違い](https://blog.microcms.io/nextjs-sg-ssr/)
+[リファレンス](https://nextjs.org/docs/basic-features/data-fetching/overview)
 
 Next.jsでは、**ブラウザへ送信する前にpre-Rendering**をおこなっている。
-[SSGとSSRの違い](https://blog.microcms.io/nextjs-sg-ssr/)
 
 ### CSR
 
@@ -61,85 +62,12 @@ CSRのデータフェッチは相対パスでもいい。
 
 SSRのデータフェッチが絶対パスではないといけない理由
 >エラーではありません。isomorphic-unfetch は SSR モードで実行されているため、Node.js はそこから取得する絶対 URL を知る必要があります。これは、バックエンドがブラウザーの設定を認識していないためです。
-
-### CSR と SSRのデータフェッチ違い
-[参考URL](https://stackoverflow.com/questions/44342226/next-js-error-only-absolute-urls-are-supported)
-
-### ISG（Incremental Static Generation）
-[Link と ISR が引き起こす Next.js の過負荷](https://zenn.dev/takepepe/articles/nextjs-isr-prefetch)
-
-ISG（Incremental Static Generation）は、Next.jsがオンデマンドでページを静的生成するアプローチです。「オンデマンドで静的生成する」ことで、ビルドタイムの静的生成をスキップできる。
-※膨大なDynamic routeを提供するページであっても静的生成を現実的なものにする。実際に**ページがリクエストされるまでそのページは静的生成されない**
-
-- 発動条件
-`getStaticPaths の fallback オプションを true か 'blocking' にすることで発動する`
-
-#### LinkとISGの関係
-
-実行されるタイミングは以下となる。
-
-1. ページが直叩きされたとき
-2. `Link`コンポーネントにマウスオーバーした時
-3. `Link`コンポーネントが画面内に入った時（prefetch={true}時）
-
-### ISR（Incremental Static Regeneration）
-
-ISGの「再生成が起こらない」課題を解決するアプローチ（データ陳腐化防止）
-`revalidate`オプションを付与することで、一度生成したページであっても、指定経過時間後に再生成を試む。
-`revalidate`オプションの付与で ISG は ISR になるが、あまりにも短い指定をするとタイトルのような過負荷を引き起こすことが懸念されます。
-
-#### LinkとISRの関係
-
-
-
-
-### Next.js12での仕組み
-
->Next.jsでは、すべてのアプリケーションが本番環境でより速くビルドされ、ローカル開発では即座にフィードバックが得られるようにしたいと考えています。Next.js 12には、ネイティブ・コンパイルの利点を活かしたまったく新しいRustコンパイラが搭載されています。
-
-SWCは**Rust製の高速なトランスパイラ。**
-Next.jsがSWCの利用を推進しており、Next.js 12からはデフォルトのトランスパイラがBabelからSWCに変更。
-またSWCのソースコードはいくつかに分けてクレート化されており、Next.jsのみならずDeonの内部でも利用されています。
-
-**Babel vs SWC**
-![SWC](image/swc.png)
-
-### Next-SWC(Next.js Compiler)
-
-[とても参考になる](https://www.wantedly.com/companies/wantedly/post_articles/386129)
-
-Next.jsがデフォルトで使うSWCは、SWCのラッパーになっていて、SWCで使える機能が一部制限されていたり、拡張されていたりします。このデフォルトで使われるSWCのことをNext-SWCという（公式ではNext.js Compilerとも呼ばれている）
-
-## ディレクトリ移動
-
-srcディレクトリは多くのアプリで一般的であり、nextはサポートしている。
-※しかし`next.config.js`や`tsconfig.json`のような設定ファイルは、環境変数と同様にルートディレクトリに配置してください。
-これらはsrcに配置しても動作しません。publicディレクトリについても同様
-
 ## SSRとSSGについて
 
 [参考URL](https://www.gaji.jp/blog/2022/03/17/9343/)
 
 Nextでクエリ文字列を使いたい時は`getServerSideProps`を使う
 `getStaticProps`では使えない。
-
-
----
-
-### SSRとして動作させる(pages)
-
-※都度生成されているため以下の**ランダムな数字は変わる**
-
-```ts
-export async function getServerSideProps() {
-  const random = Math.floor( Math.random() * 100 );
-  return {
-    props: {
-      random,
-    },
-  }
-}
-```
 
 ### SSRフロー
 [参考URL](https://maasaablog.com/development/frontend/nextjs/3512/)
@@ -166,27 +94,58 @@ export async function getServerSideProps() {
 getServerSidePropsはクライアントサイドルーティングでページにアクセスした場合も実行されます。
 このときgetServerSidePropsの実行結果は`JSON`で返ってくる。
 
-#### Serverless Componentsでdeployした場合のLambda@Edge レスポンス制限
-[海外の方記事](https://backbencher.dev/nextjs-serverless-502-error-lambda-invalid-json)
+### CSR と SSRのデータフェッチ違い
+[参考URL](https://stackoverflow.com/questions/44342226/next-js-error-only-absolute-urls-are-supported)
 
-### SSGとして動作させる(pages)
 
-そのpages配下をSSGとして動作させたい場合は以下
-※静的に生成されているため以下の**ランダムな数字は変わらない**
-
-```ts
-export async function getStaticProps() {
-  const random = Math.floor( Math.random() * 100 );
-  return {
-    props: {
-      random,
-    },
-  }
-}
-```
+### SSG
 
 Static（通称SSG、SG）を利用するメリット
 **CDNに静的ファイルをキャッシュ**することで表示のスピードUPを実現
+
+### ISG（Incremental Static Generation）
+[Link と ISR が引き起こす Next.js の過負荷](https://zenn.dev/takepepe/articles/nextjs-isr-prefetch)
+
+ISG（Incremental Static Generation）は、Next.jsがオンデマンドでページを静的生成するアプローチです。「オンデマンドで静的生成する」ことで、ビルドタイムの静的生成をスキップできる。
+※膨大なDynamic routeを提供するページであっても静的生成を現実的なものにする。実際に**ページがリクエストされるまでそのページは静的生成されない**
+
+- 発動条件
+`getStaticPaths の fallback オプションを true か 'blocking' にすることで発動する`
+
+#### LinkとISGの関係
+
+実行されるタイミングは以下となる。
+
+1. ページが直叩きされたとき
+2. `Link`コンポーネントにマウスオーバーした時
+3. `Link`コンポーネントが画面内に入った時（prefetch={true}時）
+
+### ISR（Incremental Static Regeneration）
+
+ISGの「再生成が起こらない」課題を解決するアプローチ（データ陳腐化防止）
+`revalidate`オプションを付与することで、一度生成したページであっても、指定経過時間後に再生成を試む。
+`revalidate`オプションの付与でISGはISRになるが、あまりにも短い指定をするとタイトルのような過負荷を引き起こすことが懸念されます。
+
+#### LinkとISRの関係
+
+
+
+
+### Next.js12での仕組み
+
+>Next.jsでは、すべてのアプリケーションが本番環境でより速くビルドされ、ローカル開発では即座にフィードバックが得られるようにしたいと考えています。Next.js 12には、ネイティブ・コンパイルの利点を活かしたまったく新しいRustコンパイラが搭載されています。
+
+SWCは**Rust製の高速なトランスパイラ。**
+Next.jsがSWCの利用を推進しており、Next.js 12からはデフォルトのトランスパイラがBabelからSWCに変更。
+またSWCのソースコードはいくつかに分けてクレート化されており、Next.jsのみならずDeonの内部でも利用されています。
+
+**Babel vs SWC**
+![SWC](image/swc.png)
+
+
+#### Serverless Componentsでdeployした場合のLambda@Edge レスポンス制限
+[海外の方記事](https://backbencher.dev/nextjs-serverless-502-error-lambda-invalid-json)
+
 
 ## ISR(Incremental Static Regeneration)
 
@@ -631,14 +590,14 @@ frontend/.next
 - Lambda@EdgeでSSRする
 [参考URL](https://qiita.com/fumiki/items/5f4408ce844520a922c2)
 
-
-
 # SWR
-[参考URL](https://dev.classmethod.jp/articles/getting-started-swr-with-nextjs/)
+[とても参考になる](https://www.wantedly.com/companies/wantedly/post_articles/386129)  
+[参考URL](https://dev.classmethod.jp/articles/getting-started-swr-with-nextjs/)  
 [SWRを使おうぜって話（導入についてわかりやすい）](https://zenn.dev/mast1ff/articles/5b48a87242f9f0)
 
-データ取得専用のReact Hooksライブラリ（あくまでGETに使う）
-※POSTなどにはオススメはしない。
+Next.jsがデフォルトで使うSWCは、SWCのラッパーになっていて、SWCで使える機能が一部制限されていたり、拡張されていたりします。このデフォルトで使われるSWCのことをNext-SWCという（公式ではNext.js Compilerとも呼ばれている）  
+データ取得専用のReact Hooksライブラリ（あくまでGETに使う）  
+※POSTなどには使用できるがおすすめはしない
 
 Next.jsと同じチームによって作成されている、データ取得のためのReact Hooksライブラリ
 
