@@ -2,12 +2,26 @@
 [参考URL](https://techblog.yahoo.co.jp/advent-calendar-2017/jwt/)
 [JWTハンドブック(今度読む)](https://assets.ctfassets.net/2ntc334xpx65/5HColfm15cUhMmDQnupNzd/30d5913d94e79462043f6d8e3f557351/jwt-handbook-jp.pdf)
 
+## JWT構造
+
+`<ヘッダー>.<ペイロード>.<署名>`
+
+署名の対象は`ヘッダー.ペイロード`に対してである。  
+JWTは元のデータを`base64url`でエンコードしたもの。
 
 ## JWTとは(JSON Web Token)
+
+JWTではシンプルにトークンの形式のみが規定されており、payload部分のフォーマットやトークン自身の使われ方についてはほとんど言及していない。
 
 JWTは**JSONベースのデータを暗号化して作られる文字列で認証や認可のための仕組みとして利用される。**
 属性情報（Claim: クレーム）をJSONデータ構造で表現したトークンの仕様。
 JSONを使ったコンパクトでurl-safeなクレームの表現方法であり、OAuth2やOpenID Connectなんかで使われます。
+
+## OpenID ConnectでのJWT
+[OpenID ConnectとJWT の関わり - Oauth2.0 との違いなど](https://zenn.dev/mikakane/articles/tutorial_for_openid)
+
+OpenID Connectで規程されるID Tokenは、JWTのpayload部に一定のフォーマットを提供するもの。
+また、ID Tokenを利用した認証フローの流れなどトークンの利用方法についても細かい規定を追加していまする
 
 ## 通常のトークン認証との違い
 
@@ -37,11 +51,6 @@ JWTでは
 JWTは単なるJSONのため、アクセストークンとして用いることにおりさまざまな情報を含めることができる。
 それにより、認証サーバとアプリケーションサーバを分割しているようなアーキテクチャであれば、認証サーバの負荷を軽減することに寄与します。
 
-
-
-## JWT構造
-
-<ヘッダー>.<ペイロード>.<署名>
 
 ## JWTのClaimについて
 [参考URL](https://kamichidu.github.io/post/2017/01/24-about-json-web-token/)

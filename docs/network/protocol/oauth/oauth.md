@@ -1,4 +1,4 @@
-# OAuth
+# OAuth(認可)
 [一番分かりやすい OAuth の説明](https://qiita.com/TakahikoKawasaki/items/e37caf50776e00e733be)
 [passportの説明](https://www.passportjs.org/concepts/oauth2/?utm_source=github&utm_medium=referral&utm_campaign=passport-google-oauth20&utm_content=nav-concept)
 
@@ -17,12 +17,10 @@ OAuth = 認可（権限の認可:行動やリソースの許可をすること�
 ## OAuthにとってのGoogleやFacebook
 [参考URL](https://www.passportjs.org/concepts/oauth2/terminology/)
 
-OAuth 2.0の用語では、Facebookは承認サーバー(AS) です。
+OAuth 2.0の用語では、Facebookは**承認サーバー（AS）**
 認可サーバーの目的は、ユーザーを認証して認可を取得することです。承認は通常、ユーザーに同意を求めるプロンプトによって取得されます。承認が取得されると、承認サーバーはアプリケーションにアクセス トークンを発行します。
 
-
-
-## OAuthがないと
+## OAuthがない場合
 
 OAuthは、第三者となるアプリケーションに対して安全にアクセス権限を提供するためのプロトコル。
 たとえば、GitHubのAPIを利用するアプリケーションAをOAuthなしで使うとすると、通常はGitHubのユーザIDとパスワードをアプリケーションAに預ける必要がある。
@@ -31,96 +29,66 @@ OAuthは、第三者となるアプリケーションに対して安全にアク
 アプリケーションAの運営者がその気になれば、ユーザをGitHubから退会させることもできるでしょう。
 OAuthを利用すると、パスワードをアプリケーションAに渡さずともよくなります。さらに、アプリケーションAがその機能を提供するのに必要な権限だけを与えることができる、
 
-
-## OpenID Connect
-
->OAuth 2.0を使ってID連携をする際に、OAuth 2.0では標準化されていない機能で、かつID連携には共通して必要となる機能を標準化した』OAuth 2.0の拡張仕様のひとつである
-
-- OpenID Connectによる認証のフロー
-このOpenID Connectは広く使われている認証方法のためフローを押さえておく。
-**まずIDトークンというユーザ情報が含まれたアクセストークンがあり、これを次のフローでやりとりする。**
-
-| 順番  | リクエスト元 | 相手     | 内容                       |
-| --- | ------ | ------ | ------------------------ |
-| 1   | クライアント | プロバイダー | IDトークンを要求する              |
-| 2   | プロバイダー | ユーザ    | IDトークンの発行可否を聞く。あわせて認証を行う |
-| 3   | ユーザ    | プロバイダー | 発行可否と、発行する場合に認証情報を送る     |
-| 4   | プロバイダー | クライアント | IDトークンを発行する              |
-
-※この１と４のやりとりを標準化したのがOpenID Connect
-OAuthが『アクセストークンを発行する仕組み』なのに対して、OpenID Connectはこれを拡張して『IDトークンを発行する仕組み』と考えるとわかりやすいかもしれません。
-
->詳しいことはさておき、『Googleなどのアカウント認証を使う』=『OpenID Connectを使う』という認識がもてればいいのかな、と思います。
-
->Googleの認証方法はOpenID Connectではない
->OpenID Connectについて書きましたが、実際のところGoogleやTwitterの認証はOpenID Connectではありません。GoogleはOpenID Connectの仕様に準拠しつつ、OAuth 2.0を採用しています。TwitterはOAuth 1.0aという仕様で、OpenID Connectには準拠していません。
->いずれにしてもOAuthをベースにした認証を行なっていますが、ここではわかりやすさのためにOpenID Connectという用語に統一して説明しています。
-
-
-## SMS認証
-[参考URL](https://www.aspicjapan.org/asu/article/4367)
-
-SMS認証とは、ユーザーのスマホや携帯電話にSMS（ショートメッセージ）を送信し、そこに記載された一時的な確認コードをWeb上で入力することで、本人確認を正しく行う認証システム。
-
-企業側の動作
-ユーザーからSMS認証の要求を受けたら、API経由でSMS送信サービスに送信を要求する
-SMS送信サービスが認証コードを記載したSMSをユーザーに送信
-Web上で認証コードが入力されると、API経由でSMS送信サービスから企業側に送達結果が通知される
-正しいことが確認されたら認証完了
-SMS送信サービスで認証を行うためには、自社システムとのAPI連携が必須です。サービスによってAPI連携の仕様が異なるため、連携可能かどうか確認しておく必要があります。
-
-## OAuth flow
-
-[参考URL](https://qiita.com/TakahikoKawasaki/items/200951e5b5929f840a1f)
+## OAuth 認証フロー
+[参考URL](https://qiita.com/TakahikoKawasaki/items/200951e5b5929f840a1f)  
 [これ実装するのにいいかもしれない。](https://qiita.com/TakahikoKawasaki/items/e508a14ed960347cff11)
 
-## 認証と認可の違い
-[参考URL](https://zenn.dev/tanaka_takeru/articles/aecd36a805886d)
+## OAuth OpenID Connectの役割違い
 
-先に結論を述べると、認証と認可は何を確認しているかという点で違いがあります。
+一般的にOAuth2は認可、OpenID Connectは認証の仕組みという形で区別される。
+OAuth2は、サードパーティからの権限移譲で、`Scope`という概念を用いた権限の認可システムを構築するもの。  
+もちろんOauth2も認可の過程で認証の仕組みを用意していますが、その実態はアクセストークンと言う形でサービス提供者によって**比較的バラバラの運用**が取られてました。  
+ここに、OpenID ConnectはID Tokenという形で**トークンのフォーマットや利用形態を定義したもの。**
 
-認証
-「あなたは誰ですか？」を確認
-認可
-「あなたには、リソースにアクセスする権限がありますか？」を確認
+OAuth2は認可、OpenID Connectは認証の仕組みといわれるのは、技術的関心の中心がどこにあるか、を示したものに過ぎない。
 
-英語と省略表記について
-認証と認可、同じような日本語ですが、実は英語も似ています。
+OAuth2を用いたシステムにも（アクセストークンベースの）認証の仕組みはもちろんあり、
+OpenID Connectを用いるシステムでも、認可のシステムを実現することはもちろん可能。
 
-認証：Authentication、AuthC や AuthN と略されることも
-認可：Authorization、AuthZ と略されることも
+## OpenID Connect(認証)
+
+>一般の方々に対してはOpenID Connectは認証の仕様であるという説明で良いと思います。一方、技術的な理解を渇望しているエンジニアの方々に対しては、OpenID Connect は ID トークン を発行するための仕様であるという割り切り方を勧めたほうが良いと考えています。というわけで、まず、ID トークンについて説明しようと思います。
+
+OpenID ConnectはOAuth2.0に**認証の仕組みを導入するにあたって、**主に以下のような規約を定義しています。
+
+- Oauth2.0のAuthorization Request送信後のトークンのやり取り
+- ユーザ認証情報を表現する上でのトークンの規約
+- この2つを総称して、ID Tokenを発行するための仕組みという形で呼んでいます。
+
+## OpenID Connect(認証)で定義されるトークンのやりとり
+
+OpenID Connectでは、Oauth2.0のAuthorization Request送信後のトークンのやり取りを大きく ３つのパターンで定めています。
+
+- Authorization Code Flow
+- Implicit Flow
+- Hybrid Flow
+
+OpenID Connectを利用した**認証フローがどの方式を利用しているか**は、Oauth2.0のAuthorization Requestにおけるresponse_type値を確認することで判断できる。
+
+- response_typeの値が`code -> Authorization Code Flow`
+- response_typeの値が`code を含まず id_token を含む -> Implicit Flow`
+- その他 -> `Hybrid Flow`
+
+どのフローで認証を行ったとしても、最終的にはID TokenとAccess Tokenがクライアントに返却される。
+
+## OpenID Connect利用される ID Token(JWT)の規約
+[OpenID ConnectとJWT の関わり - Oauth2.0 との違いなど](https://zenn.dev/mikakane/articles/tutorial_for_openid)
+
+ID Tokenは、OpenID Connectで定義されるユーザの認証に関するトークン。
+ID Tokenは、OpenID Connectで定められたそれぞれの認証フローの中でクライアントに対して返却される。
+
+ID Tokenは**JWTのフォーマットで表現されるトークン**です。
+
+JWTでは、シンプルにトークンの形式のみが規程されており、payload部分のフォーマットやトークン自身の使われ方についてはほとんど言及されていなかった。
+
+OpenID Connectで規程されるID Tokenは、JWTのpayload部に一定のフォーマットを提供するもの。
+また、ID Tokenを利用した認証フローの流れなどトークンの利用方法についても細かい規定を追加しています。
 
 
 
-## 認証
 
-認証は「あなたは誰ですか？」を確認すること。
-たとえば、次に挙げたものを確認することが認証です。
 
-What you are：相手自身の特徴を確認
-例）指紋認証や顔認証
-What you have：相手が持っているものを確認
-例）免許証やパスポート
-What you know：相手が知っていることを確認
-例）emailとpassword
 
-## 認可とは
+## OAuthとJWTの関わり
+[参考URL](https://zenn.dev/mikakane/articles/tutorial_for_openid)
 
-一方、認可は「あなたには、リソースにアクセスする権限がありますか？」を確認することです。
-たとえば次のような事例が認可です。
-
-家の鍵を持っているから、家に入ることができる
-バスの乗車券を持っているから、バスに乗ることができる
-
-## 認証と認可の違い
-
-認可で例示した「家の鍵を持っているから、家に入ることができる」ケースを考えると、認証と認可が異なる概念であることが分かります。
-その人は、家の鍵を持っていたので家に入ることができた（認可された）
-しかし、その鍵は奪ったものかもしれないし、一時的に借りたものかもしれない。
-つまり、鍵を持っていたからといって、その家の住人であるとは限らない（認証はされていない）
-
-一方、次のようなケースでは認証と認可を同時に行っています。
-
-**わかりやすい**
-パスポートは本人確認に用いられつつ（認証）、これにより渡航する権利を得られる（認可）
-免許証は本人確認に用いられつつ（認証）、これにより自動車を運転する権利を得られる（認可）
