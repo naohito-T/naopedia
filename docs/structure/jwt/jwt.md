@@ -1,6 +1,7 @@
 # JWT(JSON Web Token) : ジョット
-[参考URL](https://techblog.yahoo.co.jp/advent-calendar-2017/jwt/)
-[JWTハンドブック(今度読む)](https://assets.ctfassets.net/2ntc334xpx65/5HColfm15cUhMmDQnupNzd/30d5913d94e79462043f6d8e3f557351/jwt-handbook-jp.pdf)
+[参考URL](https://techblog.yahoo.co.jp/advent-calendar-2017/jwt/)  
+[JWTハンドブック(今度読む)](https://assets.ctfassets.net/2ntc334xpx65/5HColfm15cUhMmDQnupNzd/30d5913d94e79462043f6d8e3f557351/jwt-handbook-jp.pdf)  
+[JWS,JWE,JWKなどの仕様について詳しい](https://qiita.com/TakahikoKawasaki/items/8f0e422c7edd2d220e06)
 
 ## JWT構造
 
@@ -11,7 +12,10 @@ JWTは元のデータを`base64url`でエンコードしたもの。
 
 ## JWTとは(JSON Web Token)
 
-JWTではシンプルにトークンの形式のみが規定されており、payload部分のフォーマットやトークン自身の使われ方についてはほとんど言及していない。
+JWTとは、JSON形式で表現されたクレーム (claim) の集合を、`JWS`もしくは`JWE`に埋め込んだもの。  
+JWTではシンプルにトークンの形式のみが規定されており**payload部分のフォーマットやトークン自身の使われ方についてはほとんど言及していない。**
+言及しているのがOpenID Connect。
+
 
 JWTは**JSONベースのデータを暗号化して作られる文字列で認証や認可のための仕組みとして利用される。**
 属性情報（Claim: クレーム）をJSONデータ構造で表現したトークンの仕様。
@@ -51,20 +55,6 @@ JWTでは
 JWTは単なるJSONのため、アクセストークンとして用いることにおりさまざまな情報を含めることができる。
 それにより、認証サーバとアプリケーションサーバを分割しているようなアーキテクチャであれば、認証サーバの負荷を軽減することに寄与します。
 
-
-## JWTのClaimについて
-[参考URL](https://kamichidu.github.io/post/2017/01/24-about-json-web-token/)
-
-JWTで表現されるJSONオブジェクトはClaims Set（Claimの集合）と呼ばれます。 
-ClaimとはJSONの`key, value`の一対を意味します。
-
-
-
-## exp
-
-- 期限を無期限にする
-JWT内に存在する場合にのみ、`exp`フィールドを検証します。JWTにこのフィールドが含まれていない場合、トークンは無期限に有効とみなされます。
-
 ### ヘッダー
 
 ヘッダーはJWTの署名検証を行うために必要な情報を格納するためのパートとなっている
@@ -82,6 +72,8 @@ URL-safeに表現するためにBase64urlエンコードがされている。
 }
 ```
 
+---
+
 ### ペイロード
 
 payloadに含める値をクレームと言う。
@@ -96,6 +88,22 @@ payloadに含める値をクレームと言う。
   "sub": "1234567890"
 }
 ```
+
+## JWTのClaimについて
+[参考URL](https://kamichidu.github.io/post/2017/01/24-about-json-web-token/)
+
+JWTで表現されるJSONオブジェクトはClaims Set（Claimの集合）と呼ばれます。  
+ClaimとはJSONの`key, value`の一対を意味する。  
+JWTに含めるべき**クレームとして必須なものは実はない。**  
+JWTがどのようなクレーム群を含むべきかは、JWTを利用する個々のアプリケーションの範疇としている。  
+
+### exp
+
+- 期限を無期限にする
+JWT内に存在する場合にのみ、`exp`フィールドを検証します。JWTにこのフィールドが含まれていない場合、トークンは無期限に有効とみなされます。
+
+
+---
 
 ### 署名
 

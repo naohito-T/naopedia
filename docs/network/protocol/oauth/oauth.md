@@ -57,7 +57,7 @@ OpenID ConnectはOAuth2.0に**認証の仕組みを導入するにあたって�
 
 ## OpenID Connect(認証)で定義されるトークンのやりとり
 
-OpenID Connectでは、Oauth2.0のAuthorization Request送信後のトークンのやり取りを大きく ３つのパターンで定めています。
+OpenID Connectでは、Oauth2.0のAuthorization Request送信後のトークンのやり取りt大きく ３つのパターンで定めています。
 
 - Authorization Code Flow
 - Implicit Flow
@@ -71,10 +71,11 @@ OpenID Connectを利用した**認証フローがどの方式を利用してい�
 
 どのフローで認証を行ったとしても、最終的にはID TokenとAccess Tokenがクライアントに返却される。
 
-## OpenID Connect利用される ID Token(JWT)の規約
+## OpenID Connect利用される ID Token(JWT)
+[IDトークンが分かれば OpenID Connect が分かる](https://qiita.com/TakahikoKawasaki/items/8f0e422c7edd2d220e06)  
 [OpenID ConnectとJWT の関わり - Oauth2.0 との違いなど](https://zenn.dev/mikakane/articles/tutorial_for_openid)
 
-ID Tokenは、OpenID Connectで定義されるユーザの認証に関するトークン。
+ID Tokenは、OpenID Connectで定義されるユーザの認証に関するトークン。  
 ID Tokenは、OpenID Connectで定められたそれぞれの認証フローの中でクライアントに対して返却される。
 
 ID Tokenは**JWTのフォーマットで表現されるトークン**です。
@@ -85,10 +86,15 @@ OpenID Connectで規程されるID Tokenは、JWTのpayload部に一定のフォ
 また、ID Tokenを利用した認証フローの流れなどトークンの利用方法についても細かい規定を追加しています。
 
 
-
-
-
-
 ## OAuthとJWTの関わり
 [参考URL](https://zenn.dev/mikakane/articles/tutorial_for_openid)
+
+IDトークンは**JWTの一種**  
+[参考URL](https://qiita.com/TakahikoKawasaki/items/8f0e422c7edd2d220e06#7-id-%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3)
+
+OpenID ConnectがOAuth 2.0に対しておこなった主要な拡張が、IDトークンというデータ構造。  
+IDトークンが`JWT`として表現されることも明記されている。
+
+IDトークンの仕様では、RFC 7519で定義されているクレームのいくつかを必須のクレームとしている。  
+具体的には`iss, sub, aud, exp, iat`は必須とされています。
 
