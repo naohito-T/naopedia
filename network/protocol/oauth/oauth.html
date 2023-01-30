@@ -5005,7 +5005,7 @@ OpenID Connectを用いるシステムでも、認可のシステムを実現す
 <li>この2つを総称して、ID Tokenを発行するための仕組みという形で呼んでいます。</li>
 </ul>
 <h2 id="openid-connect認証で定義されるトークンのやりとり"><a name="openid-connect認証で定義されるトークンのやりとり" class="plugin-anchor" href="#openid-connect認証で定義されるトークンのやりとり"><i class="fa fa-link" aria-hidden="true"></i></a>OpenID Connect(認証)で定義されるトークンのやりとり</h2>
-<p>OpenID Connectでは、Oauth2.0のAuthorization Request送信後のトークンのやり取りを大きく ３つのパターンで定めています。</p>
+<p>OpenID Connectでは、Oauth2.0のAuthorization Request送信後のトークンのやり取りt大きく ３つのパターンで定めています。</p>
 <ul>
 <li>Authorization Code Flow</li>
 <li>Implicit Flow</li>
@@ -5018,16 +5018,38 @@ OpenID Connectを用いるシステムでも、認可のシステムを実現す
 <li>その他 -&gt; <code>Hybrid Flow</code></li>
 </ul>
 <p>どのフローで認証を行ったとしても、最終的にはID TokenとAccess Tokenがクライアントに返却される。</p>
-<h2 id="openid-connect利用される-id-tokenjwtの規約"><a name="openid-connect利用される-id-tokenjwtの規約" class="plugin-anchor" href="#openid-connect利用される-id-tokenjwtの規約"><i class="fa fa-link" aria-hidden="true"></i></a>OpenID Connect利用される ID Token(JWT)の規約</h2>
-<p><a href="https://zenn.dev/mikakane/articles/tutorial_for_openid" target="_blank">OpenID ConnectとJWT の関わり - Oauth2.0 との違いなど</a></p>
-<p>ID Tokenは、OpenID Connectで定義されるユーザの認証に関するトークン。
-ID Tokenは、OpenID Connectで定められたそれぞれの認証フローの中でクライアントに対して返却される。</p>
+<h2 id="openid-connect利用される-id-tokenjwt"><a name="openid-connect利用される-id-tokenjwt" class="plugin-anchor" href="#openid-connect利用される-id-tokenjwt"><i class="fa fa-link" aria-hidden="true"></i></a>OpenID Connect利用される ID Token(JWT)</h2>
+<p><a href="https://qiita.com/TakahikoKawasaki/items/8f0e422c7edd2d220e06" target="_blank">IDトークンが分かれば OpenID Connect が分かる</a><br><a href="https://zenn.dev/mikakane/articles/tutorial_for_openid" target="_blank">OpenID ConnectとJWT の関わり - Oauth2.0 との違いなど</a></p>
+<p>ID Tokenは、OpenID Connectで定義されるユーザの認証に関するトークン。<br>ID Tokenは、OpenID Connectで定められたそれぞれの認証フローの中でクライアントに対して返却される。</p>
 <p>ID Tokenは<strong>JWTのフォーマットで表現されるトークン</strong>です。</p>
 <p>JWTでは、シンプルにトークンの形式のみが規程されており、payload部分のフォーマットやトークン自身の使われ方についてはほとんど言及されていなかった。</p>
 <p>OpenID Connectで規程されるID Tokenは、JWTのpayload部に一定のフォーマットを提供するもの。
 また、ID Tokenを利用した認証フローの流れなどトークンの利用方法についても細かい規定を追加しています。</p>
 <h2 id="oauthとjwtの関わり"><a name="oauthとjwtの関わり" class="plugin-anchor" href="#oauthとjwtの関わり"><i class="fa fa-link" aria-hidden="true"></i></a>OAuthとJWTの関わり</h2>
 <p><a href="https://zenn.dev/mikakane/articles/tutorial_for_openid" target="_blank">参考URL</a></p>
+<p>IDトークンは<strong>JWTの一種</strong><br><a href="https://qiita.com/TakahikoKawasaki/items/8f0e422c7edd2d220e06#7-id-%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3" target="_blank">参考URL</a></p>
+<p>OpenID ConnectがOAuth 2.0に対しておこなった主要な拡張が、IDトークンというデータ構造。<br>IDトークンが<code>JWT</code>として表現されることも明記されている。</p>
+<p>IDトークンの仕様では、RFC 7519で定義されているクレームのいくつかを必須のクレームとしている。<br>具体的には<code>iss, sub, aud, exp, iat</code>は必須とされている。</p>
+<h2 id="idトークンでの各クレーム"><a name="idトークンでの各クレーム" class="plugin-anchor" href="#idトークンでの各クレーム"><i class="fa fa-link" aria-hidden="true"></i></a>IDトークンでの各クレーム</h2>
+<p><a href="https://qiita.com/TakahikoKawasaki/items/8f0e422c7edd2d220e06#7-id-%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3" target="_blank">参考URL</a><br>JWTにある識別子と同名のものもあるが、少し指定内容が変わる。<br>IDトークンでは<code>iss, sub, aud, exp, iat</code>が必須とされている。</p>
+<h3 id="issクレーム"><a name="issクレーム" class="plugin-anchor" href="#issクレーム"><i class="fa fa-link" aria-hidden="true"></i></a>issクレーム</h3>
+<blockquote>
+<p>issクレームは、JWTの発行者 (issuer) を識別するための識別子です。iss クレームの値は、RFC 7519 では文字列か URI (StringOrURI) とされていますが、OpenID Connect Core 1.0 のほうの定義では、より条件が多くなっており、「https:// で始まる URL (ただしクエリー部とフラグメント部は含まない)」とされています。</p>
+</blockquote>
+<p>IDトークン発行サーバーは、他者の識別子との衝突を避けるため、issクレームの値を自分の管理下にあるドメイン名のURLとすべきです</p>
+<h2 id="subクレーム"><a name="subクレーム" class="plugin-anchor" href="#subクレーム"><i class="fa fa-link" aria-hidden="true"></i></a>subクレーム</h2>
+<p>subクレームは、ユーザーの一意識別子を表す。</p>
+<blockquote>
+<p>値の形式は、RFC 7519 では文字列か URI (StringOrURI) とされており、OpenID Connect Core 1.0 では 255 文字以内の ASCII 文字列とされています。</p>
+<p>突然、「ユーザーの一意識別子」というものがでてきました。
+これまで説明はしていませんでしたが、IDトークンはユーザーを認証した結果発行されるものなので、どのユーザーが認証されたのかの情報が含まれることになります。
+その「どのユーザーが認証されたのか」という情報にあたる部分が、subクレームです。sub クレームの値は、ID トークン発行者のシステム内において、ユーザーを一意に特定することが可能な識別子です。</p>
+</blockquote>
+<p>ルール</p>
+<blockquote>
+<p>ユーザーの一意識別子は、一般的には、データベース内のユーザーテーブルのプライマリーキーやそれに準ずるものです。特に気にしないのであれば、プライマリーキーの値をそのまま sub の値として用いてもかまいません。気にするのであれば、何らかのロジックを用いて元々の値を変換してから sub クレームの値として用いることになります。場合によっては、ID トークンの発行を依頼したプログラムの違いによって、同じプライマリーキーから異なる sub クレーム値を生成してもかまいません</p>
+</blockquote>
+<h2 id><a name class="plugin-anchor" href="#"><i class="fa fa-link" aria-hidden="true"></i></a> </h2>
 
                                 
                                 </section>
@@ -5071,7 +5093,7 @@ ID Tokenは、OpenID Connectで定められたそれぞれの認証フローの�
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Oauth","level":"2.11.1.3","depth":3,"next":{"title":"Protocol","level":"2.11.1.4","depth":3,"path":"network/protocol/protocol.md","ref":"network/protocol/protocol.md","articles":[]},"previous":{"title":"Http","level":"2.11.1.2","depth":3,"path":"network/protocol/http/http.md","ref":"network/protocol/http/http.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"network/protocol/oauth/oauth.md","mtime":"2023-01-30T14:17:25.645Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-30T14:17:34.166Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Oauth","level":"2.11.1.3","depth":3,"next":{"title":"Protocol","level":"2.11.1.4","depth":3,"path":"network/protocol/protocol.md","ref":"network/protocol/protocol.md","articles":[]},"previous":{"title":"Http","level":"2.11.1.2","depth":3,"path":"network/protocol/http/http.md","ref":"network/protocol/http/http.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"network/protocol/oauth/oauth.md","mtime":"2023-01-30T15:02:16.440Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-30T15:02:24.571Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

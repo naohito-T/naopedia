@@ -4966,13 +4966,13 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="jwtjson-web-token--ジョット"><a name="jwtjson-web-token--ジョット" class="plugin-anchor" href="#jwtjson-web-token--ジョット"><i class="fa fa-link" aria-hidden="true"></i></a>JWT(JSON Web Token) : ジョット</h1>
-<p><a href="https://techblog.yahoo.co.jp/advent-calendar-2017/jwt/" target="_blank">参考URL</a>
-<a href="https://assets.ctfassets.net/2ntc334xpx65/5HColfm15cUhMmDQnupNzd/30d5913d94e79462043f6d8e3f557351/jwt-handbook-jp.pdf" target="_blank">JWTハンドブック(今度読む)</a></p>
+<p><a href="https://techblog.yahoo.co.jp/advent-calendar-2017/jwt/" target="_blank">参考URL</a><br><a href="https://assets.ctfassets.net/2ntc334xpx65/5HColfm15cUhMmDQnupNzd/30d5913d94e79462043f6d8e3f557351/jwt-handbook-jp.pdf" target="_blank">JWTハンドブック(今度読む)</a><br><a href="https://qiita.com/TakahikoKawasaki/items/8f0e422c7edd2d220e06" target="_blank">JWS,JWE,JWKなどの仕様について詳しい</a></p>
 <h2 id="jwt構造"><a name="jwt構造" class="plugin-anchor" href="#jwt構造"><i class="fa fa-link" aria-hidden="true"></i></a>JWT構造</h2>
 <p><code>&lt;ヘッダー&gt;.&lt;ペイロード&gt;.&lt;署名&gt;</code></p>
 <p>署名の対象は<code>ヘッダー.ペイロード</code>に対してである。<br>JWTは元のデータを<code>base64url</code>でエンコードしたもの。</p>
 <h2 id="jwtとはjson-web-token"><a name="jwtとはjson-web-token" class="plugin-anchor" href="#jwtとはjson-web-token"><i class="fa fa-link" aria-hidden="true"></i></a>JWTとは(JSON Web Token)</h2>
-<p>JWTではシンプルにトークンの形式のみが規定されており、payload部分のフォーマットやトークン自身の使われ方についてはほとんど言及していない。</p>
+<p>JWTとは、JSON形式で表現されたクレーム (claim) の集合を、<code>JWS</code>もしくは<code>JWE</code>に埋め込んだもの。<br>JWTではシンプルにトークンの形式のみが規定されており<strong>payload部分のフォーマットやトークン自身の使われ方についてはほとんど言及していない。</strong>
+言及しているのがOpenID Connect。</p>
 <p>JWTは<strong>JSONベースのデータを暗号化して作られる文字列で認証や認可のための仕組みとして利用される。</strong>
 属性情報（Claim: クレーム）をJSONデータ構造で表現したトークンの仕様。
 JSONを使ったコンパクトでurl-safeなクレームの表現方法であり、OAuth2やOpenID Connectなんかで使われます。</p>
@@ -5000,15 +5000,6 @@ JWTでは<strong>公開鍵を利用してクライアント側でトークンの
 <p><a href="https://ritou.hatenablog.com/entry/20140927/1411811648" target="_blank">わかりやすい</a></p>
 <p>JWTは単なるJSONのため、アクセストークンとして用いることにおりさまざまな情報を含めることができる。
 それにより、認証サーバとアプリケーションサーバを分割しているようなアーキテクチャであれば、認証サーバの負荷を軽減することに寄与します。</p>
-<h2 id="jwtのclaimについて"><a name="jwtのclaimについて" class="plugin-anchor" href="#jwtのclaimについて"><i class="fa fa-link" aria-hidden="true"></i></a>JWTのClaimについて</h2>
-<p><a href="https://kamichidu.github.io/post/2017/01/24-about-json-web-token/" target="_blank">参考URL</a></p>
-<p>JWTで表現されるJSONオブジェクトはClaims Set（Claimの集合）と呼ばれます。 
-ClaimとはJSONの<code>key, value</code>の一対を意味します。</p>
-<h2 id="exp"><a name="exp" class="plugin-anchor" href="#exp"><i class="fa fa-link" aria-hidden="true"></i></a>exp</h2>
-<ul>
-<li>期限を無期限にする
-JWT内に存在する場合にのみ、<code>exp</code>フィールドを検証します。JWTにこのフィールドが含まれていない場合、トークンは無期限に有効とみなされます。</li>
-</ul>
 <h3 id="ヘッダー"><a name="ヘッダー" class="plugin-anchor" href="#ヘッダー"><i class="fa fa-link" aria-hidden="true"></i></a>ヘッダー</h3>
 <p>ヘッダーはJWTの署名検証を行うために必要な情報を格納するためのパートとなっている
 文字列の形式としては、キー名と値のペアで表現されたJSONをBase64urlエンコードした文字列となる</p>
@@ -5021,6 +5012,7 @@ URL-safeに表現するためにBase64urlエンコードがされている。</p
   <span class="hljs-string">&quot;alg&quot;</span>: <span class="hljs-string">&quot;HS256&quot;</span>
 }
 </code></pre>
+<hr>
 <h3 id="ペイロード"><a name="ペイロード" class="plugin-anchor" href="#ペイロード"><i class="fa fa-link" aria-hidden="true"></i></a>ペイロード</h3>
 <p>payloadに含める値をクレームと言う。
 ペイロードはやり取りに必要な属性情報(Claim: クレーム)
@@ -5032,6 +5024,15 @@ URL-safeに表現するためにBase64urlエンコードがされている。</p
   <span class="hljs-string">&quot;sub&quot;</span>: <span class="hljs-string">&quot;1234567890&quot;</span>
 }
 </code></pre>
+<h2 id="jwtのclaimについて"><a name="jwtのclaimについて" class="plugin-anchor" href="#jwtのclaimについて"><i class="fa fa-link" aria-hidden="true"></i></a>JWTのClaimについて</h2>
+<p><a href="https://kamichidu.github.io/post/2017/01/24-about-json-web-token/" target="_blank">参考URL</a></p>
+<p>JWTで表現されるJSONオブジェクトはClaims Set（Claimの集合）と呼ばれます。<br>ClaimとはJSONの<code>key, value</code>の一対を意味する。<br>JWTに含めるべき<strong>クレームとして必須なものは実はない。</strong><br>JWTがどのようなクレーム群を含むべきかは、JWTを利用する個々のアプリケーションの範疇としている。  </p>
+<h3 id="exp"><a name="exp" class="plugin-anchor" href="#exp"><i class="fa fa-link" aria-hidden="true"></i></a>exp</h3>
+<ul>
+<li>期限を無期限にする
+JWT内に存在する場合にのみ、<code>exp</code>フィールドを検証します。JWTにこのフィールドが含まれていない場合、トークンは無期限に有効とみなされます。</li>
+</ul>
+<hr>
 <h3 id="署名"><a name="署名" class="plugin-anchor" href="#署名"><i class="fa fa-link" aria-hidden="true"></i></a>署名</h3>
 <p>署名パートは、エンコード済みヘッダー、ピリオド（&quot;.&quot;）、エンコード済みペイロードを連結したものを入力値として&quot;alg&quot;の署名アルゴリズムで署名し、Base64urlエンコードすることにより作成されます。</p>
 <p><code>TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ</code></p>
@@ -5251,7 +5252,7 @@ CookieにSecure属性やHttpOnly属性をつければ安全性はいくらか高
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Jwt","level":"2.17.12","depth":2,"next":{"title":"Mermaid","level":"2.17.13","depth":2,"path":"structure/mermaid/mermaid.md","ref":"structure/mermaid/mermaid.md","articles":[{"title":"Sample","level":"2.17.13.1","depth":3,"path":"structure/mermaid/sample.md","ref":"structure/mermaid/sample.md","articles":[]},{"title":"Test","level":"2.17.13.2","depth":3,"path":"structure/mermaid/test.md","ref":"structure/mermaid/test.md","articles":[]}]},"previous":{"title":"Inner Source","level":"2.17.11.1","depth":3,"path":"structure/innersource/inner*source.md","ref":"structure/innersource/inner*source.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"structure/jwt/jwt.md","mtime":"2023-01-30T14:17:25.649Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-30T14:17:34.166Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Jwt","level":"2.17.12","depth":2,"next":{"title":"Mermaid","level":"2.17.13","depth":2,"path":"structure/mermaid/mermaid.md","ref":"structure/mermaid/mermaid.md","articles":[{"title":"Sample","level":"2.17.13.1","depth":3,"path":"structure/mermaid/sample.md","ref":"structure/mermaid/sample.md","articles":[]},{"title":"Test","level":"2.17.13.2","depth":3,"path":"structure/mermaid/test.md","ref":"structure/mermaid/test.md","articles":[]}]},"previous":{"title":"Inner Source","level":"2.17.11.1","depth":3,"path":"structure/innersource/inner*source.md","ref":"structure/innersource/inner*source.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"structure/jwt/jwt.md","mtime":"2023-01-30T15:02:16.448Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-30T15:02:24.571Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
