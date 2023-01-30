@@ -4965,7 +4965,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="oauth"><a name="oauth" class="plugin-anchor" href="#oauth"><i class="fa fa-link" aria-hidden="true"></i></a>OAuth</h1>
+                                <h1 id="oauth認可"><a name="oauth認可" class="plugin-anchor" href="#oauth認可"><i class="fa fa-link" aria-hidden="true"></i></a>OAuth(認可)</h1>
 <p><a href="https://qiita.com/TakahikoKawasaki/items/e37caf50776e00e733be" target="_blank">一番分かりやすい OAuth の説明</a>
 <a href="https://www.passportjs.org/concepts/oauth2/?utm_source=github&amp;utm_medium=referral&amp;utm_campaign=passport-google-oauth20&amp;utm_content=nav-concept" target="_blank">passportの説明</a></p>
 <p>OAuthはプロトコルのひとつ。</p>
@@ -4978,113 +4978,56 @@
 <p>このOAuthを拡張し、ユーザー情報の取得についてなどを標準化したのがOpenID Connectが策定された。</p>
 <h2 id="oauthにとってのgoogleやfacebook"><a name="oauthにとってのgoogleやfacebook" class="plugin-anchor" href="#oauthにとってのgoogleやfacebook"><i class="fa fa-link" aria-hidden="true"></i></a>OAuthにとってのGoogleやFacebook</h2>
 <p><a href="https://www.passportjs.org/concepts/oauth2/terminology/" target="_blank">参考URL</a></p>
-<p>OAuth 2.0の用語では、Facebookは承認サーバー(AS) です。
+<p>OAuth 2.0の用語では、Facebookは<strong>承認サーバー（AS）</strong>
 認可サーバーの目的は、ユーザーを認証して認可を取得することです。承認は通常、ユーザーに同意を求めるプロンプトによって取得されます。承認が取得されると、承認サーバーはアプリケーションにアクセス トークンを発行します。</p>
-<h2 id="oauthがないと"><a name="oauthがないと" class="plugin-anchor" href="#oauthがないと"><i class="fa fa-link" aria-hidden="true"></i></a>OAuthがないと</h2>
+<h2 id="oauthがない場合"><a name="oauthがない場合" class="plugin-anchor" href="#oauthがない場合"><i class="fa fa-link" aria-hidden="true"></i></a>OAuthがない場合</h2>
 <p>OAuthは、第三者となるアプリケーションに対して安全にアクセス権限を提供するためのプロトコル。
 たとえば、GitHubのAPIを利用するアプリケーションAをOAuthなしで使うとすると、通常はGitHubのユーザIDとパスワードをアプリケーションAに預ける必要がある。</p>
 <p>この手法ではパスワード漏洩の危険が増しますし、アプリケーションAはGitHubに対してユーザと同じ権限を持つことになってしまう。
 アプリケーションAの運営者がその気になれば、ユーザをGitHubから退会させることもできるでしょう。
 OAuthを利用すると、パスワードをアプリケーションAに渡さずともよくなります。さらに、アプリケーションAがその機能を提供するのに必要な権限だけを与えることができる、</p>
-<h2 id="openid-connect"><a name="openid-connect" class="plugin-anchor" href="#openid-connect"><i class="fa fa-link" aria-hidden="true"></i></a>OpenID Connect</h2>
+<h2 id="oauth-認証フロー"><a name="oauth-認証フロー" class="plugin-anchor" href="#oauth-認証フロー"><i class="fa fa-link" aria-hidden="true"></i></a>OAuth 認証フロー</h2>
+<p><a href="https://qiita.com/TakahikoKawasaki/items/200951e5b5929f840a1f" target="_blank">参考URL</a><br><a href="https://qiita.com/TakahikoKawasaki/items/e508a14ed960347cff11" target="_blank">これ実装するのにいいかもしれない。</a></p>
+<h2 id="oauth-openid-connectの役割違い"><a name="oauth-openid-connectの役割違い" class="plugin-anchor" href="#oauth-openid-connectの役割違い"><i class="fa fa-link" aria-hidden="true"></i></a>OAuth OpenID Connectの役割違い</h2>
+<p>一般的にOAuth2は認可、OpenID Connectは認証の仕組みという形で区別される。
+OAuth2は、サードパーティからの権限移譲で、<code>Scope</code>という概念を用いた権限の認可システムを構築するもの。<br>もちろんOauth2も認可の過程で認証の仕組みを用意していますが、その実態はアクセストークンと言う形でサービス提供者によって<strong>比較的バラバラの運用</strong>が取られてました。<br>ここに、OpenID ConnectはID Tokenという形で<strong>トークンのフォーマットや利用形態を定義したもの。</strong></p>
+<p>OAuth2は認可、OpenID Connectは認証の仕組みといわれるのは、技術的関心の中心がどこにあるか、を示したものに過ぎない。</p>
+<p>OAuth2を用いたシステムにも（アクセストークンベースの）認証の仕組みはもちろんあり、
+OpenID Connectを用いるシステムでも、認可のシステムを実現することはもちろん可能。</p>
+<h2 id="openid-connect認証"><a name="openid-connect認証" class="plugin-anchor" href="#openid-connect認証"><i class="fa fa-link" aria-hidden="true"></i></a>OpenID Connect(認証)</h2>
 <blockquote>
-<p>OAuth 2.0を使ってID連携をする際に、OAuth 2.0では標準化されていない機能で、かつID連携には共通して必要となる機能を標準化した』OAuth 2.0の拡張仕様のひとつである</p>
+<p>一般の方々に対してはOpenID Connectは認証の仕様であるという説明で良いと思います。一方、技術的な理解を渇望しているエンジニアの方々に対しては、OpenID Connect は ID トークン を発行するための仕様であるという割り切り方を勧めたほうが良いと考えています。というわけで、まず、ID トークンについて説明しようと思います。</p>
 </blockquote>
+<p>OpenID ConnectはOAuth2.0に<strong>認証の仕組みを導入するにあたって、</strong>主に以下のような規約を定義しています。</p>
 <ul>
-<li>OpenID Connectによる認証のフロー
-このOpenID Connectは広く使われている認証方法のためフローを押さえておく。
-<strong>まずIDトークンというユーザ情報が含まれたアクセストークンがあり、これを次のフローでやりとりする。</strong></li>
+<li>Oauth2.0のAuthorization Request送信後のトークンのやり取り</li>
+<li>ユーザ認証情報を表現する上でのトークンの規約</li>
+<li>この2つを総称して、ID Tokenを発行するための仕組みという形で呼んでいます。</li>
 </ul>
-<table>
-<thead>
-<tr>
-<th>順番</th>
-<th>リクエスト元</th>
-<th>相手</th>
-<th>内容</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>クライアント</td>
-<td>プロバイダー</td>
-<td>IDトークンを要求する</td>
-</tr>
-<tr>
-<td>2</td>
-<td>プロバイダー</td>
-<td>ユーザ</td>
-<td>IDトークンの発行可否を聞く。あわせて認証を行う</td>
-</tr>
-<tr>
-<td>3</td>
-<td>ユーザ</td>
-<td>プロバイダー</td>
-<td>発行可否と、発行する場合に認証情報を送る</td>
-</tr>
-<tr>
-<td>4</td>
-<td>プロバイダー</td>
-<td>クライアント</td>
-<td>IDトークンを発行する</td>
-</tr>
-</tbody>
-</table>
-<p>※この１と４のやりとりを標準化したのがOpenID Connect
-OAuthが『アクセストークンを発行する仕組み』なのに対して、OpenID Connectはこれを拡張して『IDトークンを発行する仕組み』と考えるとわかりやすいかもしれません。</p>
-<blockquote>
-<p>詳しいことはさておき、『Googleなどのアカウント認証を使う』=『OpenID Connectを使う』という認識がもてればいいのかな、と思います。</p>
-<p>Googleの認証方法はOpenID Connectではない
-OpenID Connectについて書きましたが、実際のところGoogleやTwitterの認証はOpenID Connectではありません。GoogleはOpenID Connectの仕様に準拠しつつ、OAuth 2.0を採用しています。TwitterはOAuth 1.0aという仕様で、OpenID Connectには準拠していません。
-いずれにしてもOAuthをベースにした認証を行なっていますが、ここではわかりやすさのためにOpenID Connectという用語に統一して説明しています。</p>
-</blockquote>
-<h2 id="sms認証"><a name="sms認証" class="plugin-anchor" href="#sms認証"><i class="fa fa-link" aria-hidden="true"></i></a>SMS認証</h2>
-<p><a href="https://www.aspicjapan.org/asu/article/4367" target="_blank">参考URL</a></p>
-<p>SMS認証とは、ユーザーのスマホや携帯電話にSMS（ショートメッセージ）を送信し、そこに記載された一時的な確認コードをWeb上で入力することで、本人確認を正しく行う認証システム。</p>
-<p>企業側の動作
-ユーザーからSMS認証の要求を受けたら、API経由でSMS送信サービスに送信を要求する
-SMS送信サービスが認証コードを記載したSMSをユーザーに送信
-Web上で認証コードが入力されると、API経由でSMS送信サービスから企業側に送達結果が通知される
-正しいことが確認されたら認証完了
-SMS送信サービスで認証を行うためには、自社システムとのAPI連携が必須です。サービスによってAPI連携の仕様が異なるため、連携可能かどうか確認しておく必要があります。</p>
-<h2 id="oauth-flow"><a name="oauth-flow" class="plugin-anchor" href="#oauth-flow"><i class="fa fa-link" aria-hidden="true"></i></a>OAuth flow</h2>
-<p><a href="https://qiita.com/TakahikoKawasaki/items/200951e5b5929f840a1f" target="_blank">参考URL</a>
-<a href="https://qiita.com/TakahikoKawasaki/items/e508a14ed960347cff11" target="_blank">これ実装するのにいいかもしれない。</a></p>
-<h2 id="認証と認可の違い"><a name="認証と認可の違い" class="plugin-anchor" href="#認証と認可の違い"><i class="fa fa-link" aria-hidden="true"></i></a>認証と認可の違い</h2>
-<p><a href="https://zenn.dev/tanaka_takeru/articles/aecd36a805886d" target="_blank">参考URL</a></p>
-<p>先に結論を述べると、認証と認可は何を確認しているかという点で違いがあります。</p>
-<p>認証
-「あなたは誰ですか？」を確認
-認可
-「あなたには、リソースにアクセスする権限がありますか？」を確認</p>
-<p>英語と省略表記について
-認証と認可、同じような日本語ですが、実は英語も似ています。</p>
-<p>認証：Authentication、AuthC や AuthN と略されることも
-認可：Authorization、AuthZ と略されることも</p>
-<h2 id="認証"><a name="認証" class="plugin-anchor" href="#認証"><i class="fa fa-link" aria-hidden="true"></i></a>認証</h2>
-<p>認証は「あなたは誰ですか？」を確認すること。
-たとえば、次に挙げたものを確認することが認証です。</p>
-<p>What you are：相手自身の特徴を確認
-例）指紋認証や顔認証
-What you have：相手が持っているものを確認
-例）免許証やパスポート
-What you know：相手が知っていることを確認
-例）emailとpassword</p>
-<h2 id="認可とは"><a name="認可とは" class="plugin-anchor" href="#認可とは"><i class="fa fa-link" aria-hidden="true"></i></a>認可とは</h2>
-<p>一方、認可は「あなたには、リソースにアクセスする権限がありますか？」を確認することです。
-たとえば次のような事例が認可です。</p>
-<p>家の鍵を持っているから、家に入ることができる
-バスの乗車券を持っているから、バスに乗ることができる</p>
-<h2 id="認証と認可の違い"><a name="認証と認可の違い" class="plugin-anchor" href="#認証と認可の違い"><i class="fa fa-link" aria-hidden="true"></i></a>認証と認可の違い</h2>
-<p>認可で例示した「家の鍵を持っているから、家に入ることができる」ケースを考えると、認証と認可が異なる概念であることが分かります。
-その人は、家の鍵を持っていたので家に入ることができた（認可された）
-しかし、その鍵は奪ったものかもしれないし、一時的に借りたものかもしれない。
-つまり、鍵を持っていたからといって、その家の住人であるとは限らない（認証はされていない）</p>
-<p>一方、次のようなケースでは認証と認可を同時に行っています。</p>
-<p><strong>わかりやすい</strong>
-パスポートは本人確認に用いられつつ（認証）、これにより渡航する権利を得られる（認可）
-免許証は本人確認に用いられつつ（認証）、これにより自動車を運転する権利を得られる（認可）</p>
+<h2 id="openid-connect認証で定義されるトークンのやりとり"><a name="openid-connect認証で定義されるトークンのやりとり" class="plugin-anchor" href="#openid-connect認証で定義されるトークンのやりとり"><i class="fa fa-link" aria-hidden="true"></i></a>OpenID Connect(認証)で定義されるトークンのやりとり</h2>
+<p>OpenID Connectでは、Oauth2.0のAuthorization Request送信後のトークンのやり取りを大きく ３つのパターンで定めています。</p>
+<ul>
+<li>Authorization Code Flow</li>
+<li>Implicit Flow</li>
+<li>Hybrid Flow</li>
+</ul>
+<p>OpenID Connectを利用した<strong>認証フローがどの方式を利用しているか</strong>は、Oauth2.0のAuthorization Requestにおけるresponse_type値を確認することで判断できる。</p>
+<ul>
+<li>response_typeの値が<code>code -&gt; Authorization Code Flow</code></li>
+<li>response_typeの値が<code>code を含まず id_token を含む -&gt; Implicit Flow</code></li>
+<li>その他 -&gt; <code>Hybrid Flow</code></li>
+</ul>
+<p>どのフローで認証を行ったとしても、最終的にはID TokenとAccess Tokenがクライアントに返却される。</p>
+<h2 id="openid-connect利用される-id-tokenjwtの規約"><a name="openid-connect利用される-id-tokenjwtの規約" class="plugin-anchor" href="#openid-connect利用される-id-tokenjwtの規約"><i class="fa fa-link" aria-hidden="true"></i></a>OpenID Connect利用される ID Token(JWT)の規約</h2>
+<p><a href="https://zenn.dev/mikakane/articles/tutorial_for_openid" target="_blank">OpenID ConnectとJWT の関わり - Oauth2.0 との違いなど</a></p>
+<p>ID Tokenは、OpenID Connectで定義されるユーザの認証に関するトークン。
+ID Tokenは、OpenID Connectで定められたそれぞれの認証フローの中でクライアントに対して返却される。</p>
+<p>ID Tokenは<strong>JWTのフォーマットで表現されるトークン</strong>です。</p>
+<p>JWTでは、シンプルにトークンの形式のみが規程されており、payload部分のフォーマットやトークン自身の使われ方についてはほとんど言及されていなかった。</p>
+<p>OpenID Connectで規程されるID Tokenは、JWTのpayload部に一定のフォーマットを提供するもの。
+また、ID Tokenを利用した認証フローの流れなどトークンの利用方法についても細かい規定を追加しています。</p>
+<h2 id="oauthとjwtの関わり"><a name="oauthとjwtの関わり" class="plugin-anchor" href="#oauthとjwtの関わり"><i class="fa fa-link" aria-hidden="true"></i></a>OAuthとJWTの関わり</h2>
+<p><a href="https://zenn.dev/mikakane/articles/tutorial_for_openid" target="_blank">参考URL</a></p>
 
                                 
                                 </section>
@@ -5128,7 +5071,7 @@ What you know：相手が知っていることを確認
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Oauth","level":"2.11.1.3","depth":3,"next":{"title":"Protocol","level":"2.11.1.4","depth":3,"path":"network/protocol/protocol.md","ref":"network/protocol/protocol.md","articles":[]},"previous":{"title":"Http","level":"2.11.1.2","depth":3,"path":"network/protocol/http/http.md","ref":"network/protocol/http/http.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"network/protocol/oauth/oauth.md","mtime":"2023-01-28T03:55:25.264Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-28T03:55:33.361Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Oauth","level":"2.11.1.3","depth":3,"next":{"title":"Protocol","level":"2.11.1.4","depth":3,"path":"network/protocol/protocol.md","ref":"network/protocol/protocol.md","articles":[]},"previous":{"title":"Http","level":"2.11.1.2","depth":3,"path":"network/protocol/http/http.md","ref":"network/protocol/http/http.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"network/protocol/oauth/oauth.md","mtime":"2023-01-30T14:17:25.645Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-30T14:17:34.166Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
