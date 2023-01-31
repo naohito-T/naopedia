@@ -1,0 +1,5 @@
+# localStorage
+
+localStorageはWebStorageのひとつで、ユーザのPCに保存するタイプ。
+localStorageやcookieは反対にセッションが途切れてもデータを残しておけるので、
+たとえばIDやパスワードを保存して簡単にログインできる仕組みや、ECサイトでショッピングカートに商品のデータを保存する時などに使われています。
