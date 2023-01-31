@@ -4973,50 +4973,6 @@
 <p>同期的にブロックする処理があると、ブラウザでは大きな問題となる。
 JSは基本的にブラウザのメインスレッド（UIスレッドとも呼ばれる）で実行されるため。
 メインスレッドは表示の更新といったUIに関する処理も行なっているためメインスレッドが他の処理で占有されると表示が更新されなくなりフリーズしたようになる。</p>
-<h2 id="ブラウザにデータを保存する他の技術"><a name="ブラウザにデータを保存する他の技術" class="plugin-anchor" href="#ブラウザにデータを保存する他の技術"><i class="fa fa-link" aria-hidden="true"></i></a>ブラウザにデータを保存する他の技術</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>sessionStorage</th>
-<th>localStorage</th>
-<th>cookie</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>データ保存期間</td>
-<td>ウインドウ・タブを閉じるまで</td>
-<td>永続的</td>
-<td>指定できる</td>
-</tr>
-<tr>
-<td>保存容量</td>
-<td>5~10MB</td>
-<td>5~10MB</td>
-<td>最大4KB</td>
-</tr>
-<tr>
-<td>別ウィンドウ/別タブからのアクセス</td>
-<td>不可</td>
-<td>可</td>
-<td>可</td>
-</tr>
-</tbody>
-</table>
-<h2 id="sessionstorage"><a name="sessionstorage" class="plugin-anchor" href="#sessionstorage"><i class="fa fa-link" aria-hidden="true"></i></a>sessionStorage</h2>
-<p>sessionStorageはブラウザに保存するタイプ。
-診断コンテンツなど、ページを閲覧している間だけ一時的にデータを保存しておきたい時など使用する。</p>
-<ul>
-<li><strong>ブラウザを閉じるとデータがクリアされる。</strong></li>
-<li>同じタブ内の別ページはデータが保持される</li>
-<li>別タブはデータが保持されない。</li>
-<li>別ウィンドウにはデータは渡せない。</li>
-</ul>
-<h2 id="localstorage"><a name="localstorage" class="plugin-anchor" href="#localstorage"><i class="fa fa-link" aria-hidden="true"></i></a>localStorage</h2>
-<p>localStorageはWebStorageのひとつで、ユーザのPCに保存するタイプ。
-localStorageやcookieは反対にセッションが途切れてもデータを残しておけるので、
-たとえばIDやパスワードを保存して簡単にログインできる仕組みや、ECサイトでショッピングカートに商品のデータを保存する時などに使われています。</p>
 <h2 id="sessionセッション"><a name="sessionセッション" class="plugin-anchor" href="#sessionセッション"><i class="fa fa-link" aria-hidden="true"></i></a>session(セッション)</h2>
 <ul>
 <li>セッションIDの<strong>生成方法はHTTPの仕様として定まっていない。</strong>サーバー側の実装に依存する</li>
@@ -5129,7 +5085,7 @@ CSS → Style Rulesの作成</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Browser","level":"2.17.4","depth":2,"next":{"title":"Db","level":"2.17.5","depth":2,"path":"structure/db/db.md","ref":"structure/db/db.md","articles":[{"title":"db設計で使えるtips","level":"2.17.5.1","depth":3,"path":"structure/db/db設計で使えるtips.md","ref":"structure/db/db設計で使えるtips.md","articles":[]}]},"previous":{"title":"Authorization","level":"2.17.3","depth":2,"path":"structure/authorization/authorization.md","ref":"structure/authorization/authorization.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"structure/browser/browser.md","mtime":"2023-01-30T15:20:02.601Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-30T15:20:15.489Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Browser","level":"2.17.4","depth":2,"next":{"title":"Db","level":"2.17.5","depth":2,"path":"structure/db/db.md","ref":"structure/db/db.md","articles":[{"title":"db設計で使えるtips","level":"2.17.5.1","depth":3,"path":"structure/db/db設計で使えるtips.md","ref":"structure/db/db設計で使えるtips.md","articles":[]}]},"previous":{"title":"Authorization","level":"2.17.3","depth":2,"path":"structure/authorization/authorization.md","ref":"structure/authorization/authorization.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"structure/browser/browser.md","mtime":"2023-01-31T01:19:03.331Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-31T01:19:14.564Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -4965,21 +4965,16 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="firestore"><a name="firestore" class="plugin-anchor" href="#firestore"><i class="fa fa-link" aria-hidden="true"></i></a>Firestore</h1>
-<p><a href="https://medium.com/google-cloud-jp/firestore1-a62405a7cd82" target="_blank">一番参考になる。</a></p>
-<p>Firestoreとは
-NoSQLドキュメント指向データベース
-一般的に、アプリケーションで取り扱われる<strong>エンティティはオブジェクトモデル</strong>によって表現される。
-ドキュメント指向データベースではこのオブジェクトモデルをドキュメントという形式で表現し、ストレージに永続化する
-Firestoreでは、<strong>各ドキュメントをコレクションによってグループ化</strong>する。</p>
-<p>FireStoreのクエリには、<strong>高いパフォーマンスを実現する上で犠牲にせざるを得なかった様々な制約</strong>がある。
+                                <h1 id="firestore"><a name="firestore" class="plugin-anchor" href="#firestore"><i class="fa fa-link" aria-hidden="true"></i></a>FireStore</h1>
+<p><a href="https://medium.com/google-cloud-jp/firestore1-a62405a7cd82" target="_blank">一番参考になる</a></p>
+<p>NoSQLドキュメント指向データベース<br>一般的に、アプリケーションで取り扱われる<strong>エンティティはオブジェクトモデル</strong>によって表現される。<br>ドキュメント指向データベースではこのオブジェクトモデルをドキュメントという形式で表現し、ストレージに永続化する<br>FireStore<strong>各ドキュメントをコレクションによってグループ化</strong>する。  </p>
+<p>FireStoreのクエリには、<strong>高いパフォーマンスを実現する上で犠牲にせざるを得なかったさまざまな制約</strong>がある。
 データモデルの設計を行う際には、これらの<strong>制約をよく理解した上で効率よくデータが取得できるように考慮しなければならない。</strong></p>
-<h2 id="firestore-tips"><a name="firestore-tips" class="plugin-anchor" href="#firestore-tips"><i class="fa fa-link" aria-hidden="true"></i></a>Firestore Tips</h2>
+<h2 id="firestore-tips"><a name="firestore-tips" class="plugin-anchor" href="#firestore-tips"><i class="fa fa-link" aria-hidden="true"></i></a>FireStore Tips</h2>
 <p>これだけは覚えておけ</p>
-<p>Firestoreにおける<strong>データ構造の表現であるドキュメントとコレクション。</strong>
+<p>FireStoreにおける<strong>データ構造の表現であるドキュメントとコレクション。</strong>
 データアクセスの基礎となる<strong>リファレンス</strong>と<strong>スナップショット</strong>
-Firestoreのドキュメントにはデータサイズの上限がある。
-ドキュメントの型である、マップやリストなどのネストした構造はアプリケーションによって生成される(つまり、ユーザの操作によって時間とともに数が増えていくような)適していない。そのためのサブコレクション
+FireStoreのドキュメントにはデータサイズの上限がある。<br>ドキュメントの型である、マップやリストなどのネストした構造はアプリケーションによって生成される(つまり、ユーザの操作によって時間とともに数が増えていくような)適していない。そのためのサブコレクション
 <strong>書き込みに関しては単一のドキュメントに対する操作だけが定義されている。</strong>
 →RDBのように1回のクエリで複数レコードの特定の列をまとめて更新するといった機能が提供されていない。このような操作は対象となるドキュメントをすべて取得してからひとつひとつ更新をかける形で実現する。</p>
 <h2 id="ドキュメント"><a name="ドキュメント" class="plugin-anchor" href="#ドキュメント"><i class="fa fa-link" aria-hidden="true"></i></a>ドキュメント</h2>
@@ -4989,7 +4984,7 @@ Firestoreのドキュメントにはデータサイズの上限がある。
 これによりORMの手間を大幅に省略することができる。</p>
 <h2 id="コレクション"><a name="コレクション" class="plugin-anchor" href="#コレクション"><i class="fa fa-link" aria-hidden="true"></i></a>コレクション</h2>
 <p>コレクションはドキュメントを格納するためのコンテナー
-Firestoreはスキーマレスのため同一のコレクション内であっても各ドキュメントにどのようなフィールドをもたせるかを自由に設計できるが、<strong>ほとんどのユースケースにおいてはコレクション内のすべてのドキュメントが同一のフィールドを持つようにすべき。</strong>
+FireStoreはスキーマレスのため同一のコレクション内であっても各ドキュメントにどのようなフィールドをもたせるかを自由に設計できるが、<strong>ほとんどのユースケースにおいてはコレクション内のすべてのドキュメントが同一のフィールドを持つようにすべき。</strong>
 →このような設計方針を採用することで、クエリの発行やセキュリティルールでの取り扱いが容易になる(まあ当たり前か)</p>
 <p>制約
 コレクション内の<strong>各ドキュメントにはそれぞれ一意なIDを割り当てる必要がある。</strong>
@@ -5049,7 +5044,7 @@ IDはコレクション内で一意であればよく、他のコレクション
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Firestore","level":"2.7.3.2.4","depth":4,"next":{"title":"Function","level":"2.7.3.2.5","depth":4,"path":"infrastructure/cloud/gcp/function.md","ref":"infrastructure/cloud/gcp/function.md","articles":[]},"previous":{"title":"Firebase","level":"2.7.3.2.3","depth":4,"path":"infrastructure/cloud/gcp/firebase.md","ref":"infrastructure/cloud/gcp/firebase.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"infrastructure/cloud/gcp/firestore.md","mtime":"2023-01-30T15:20:02.593Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-30T15:20:15.489Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Firestore","level":"2.7.3.2.4","depth":4,"next":{"title":"Function","level":"2.7.3.2.5","depth":4,"path":"infrastructure/cloud/gcp/function.md","ref":"infrastructure/cloud/gcp/function.md","articles":[]},"previous":{"title":"Firebase","level":"2.7.3.2.3","depth":4,"path":"infrastructure/cloud/gcp/firebase.md","ref":"infrastructure/cloud/gcp/firebase.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"infrastructure/cloud/gcp/firestore.md","mtime":"2023-01-31T01:19:03.323Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-31T01:19:14.564Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
