@@ -61,8 +61,8 @@ Webアプリケーションという観点から一般的にはWAFといえばWe
 ---
 
 ## CORS(Cross-Origin Resource Sharing) : クロスオリジンソースシェアリング
-[リファレンス](https://develwoper.mozilla.org/ja/docs/Glossary/CORS)
-[参考URL](https://qiita.com/ryosuketter/items/a60a2bc0220a5cbff17e)
+[リファレンス](https://develwoper.mozilla.org/ja/docs/Glossary/CORS)  
+[参考URL](https://qiita.com/ryosuketter/items/a60a2bc0220a5cbff17e)  
 [仕組みが書いてある](https://www.twilio.com/blog/add-cors-support-express-typescript-api-jp)
 
 オリジン間リソース共有（CORS）とは、最新ブラウザに装備されている**セキュリティプロトコル。**
@@ -81,6 +81,10 @@ http://localhost:5000
   |       |       |
 scheme hostname  port
 ```
+
+### CORSがなかった時代
+
+CORSがなかった時代は**同一オリジンのみ通信ができた**
 
 ## Preflight request (プリフライトリクエスト)
 [リファレンス](https://developer.mozilla.org/ja/docs/Glossary/Preflight_request#:~:text=CORS%20%E3%81%AE%E3%83%97%E3%83%AA%E3%83%95%E3%83%A9%E3%82%A4%E3%83%88%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88,%E3%81%97%E3%81%A6%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%81%97%E3%81%BE%E3%81%99%E3%80%82)
@@ -263,3 +267,19 @@ ALBでは
 
 ## Webhookとセキュリティー
 [参考URL](https://qiita.com/en30/items/6a5dfae217c1f9ebc2dd)
+
+## SPAセキュリティ
+[わかりやすい](https://www.slideshare.net/ockeghem/phpconf2021spasecurity)
+
+SPAでもセキュリティの基本は同じ
+
+- フロント側（JS）
+クロスサイトスクリプティング
+オープンリダイレクト
+evalインジェクション
+
+- サーバー側（API)
+SQLインジェクション
+クロスサイトスクリプティング（反射型、持続型）
+クロスサイトリクエストフォージェリ（CSRF）
+

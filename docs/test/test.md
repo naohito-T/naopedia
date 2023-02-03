@@ -282,3 +282,13 @@ https://fakerjs.dev/api/
 [Test管理ツール(Excelとかで管理していたのをさらに管理する)](https://gift-tech.co.jp/articles/Qase/)  
 [webアプリケーション開発で個人的に重視しているテストの話](https://nakka-k.hatenablog.com/entry/2019/06/25/000752)  
 [E2E テストを導入するのか](https://commerce-engineer.rakuten.careers/entry/tech/0031)  
+
+## アサーションを含める個数
+
+基本ひとつのTestにひとつのアサーション（Jestで言うと`expect`）を含めるのがいいと言われている。  
+最高でも2つぐらいか
+
+## Test Words
+
+assertion:アサーション  
+テストの評価

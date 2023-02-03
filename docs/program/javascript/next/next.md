@@ -223,6 +223,10 @@ SWRはRenderingの種類ではない。Stale-While-Revalidateというキャッ�
 Vercelが開発する、HTTP RFC 5861で提唱された、SWRというキャッシュ無効化戦略に基づくライブラリ。
 簡単に言うと、最初は普通にデータを取得してキャッシュとしてセット、次に参照された時にいったんキャッシュを返し裏でまたフェッチして、フェッチが完了したらキャッシュを最新のものに置き換えるというキャッシュ戦略をよしなにやってくれる。
 
+## Next.jsにimport React from 'react'はいるのか？
+[参考URL](https://stackoverflow.com/questions/63090037/importing-react-into-pages-in-next-js-and-also-react-and-cra-apps)
+
+結論いらない。
 
 ## pages/apiとは(API Route)
 
