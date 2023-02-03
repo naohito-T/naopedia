@@ -4966,12 +4966,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="httphypertext-transfer-protocol"><a name="httphypertext-transfer-protocol" class="plugin-anchor" href="#httphypertext-transfer-protocol"><i class="fa fa-link" aria-hidden="true"></i></a>HTTP(HyperText Transfer Protocol)</h1>
-<p><a href="https://developer.mozilla.org/ja/docs/Web/HTTP" target="_blank">リファレンス(一番わかりやすい)</a>
-<a href="https://www.tohoho-web.com/ex/http.htm" target="_blank">HTTP入門</a>
-<a href="https://qiita.com/suin/items/316cb8aaf8dfcf11abae" target="_blank">冪等性について</a>
-<a href="https://techracho.bpsinc.jp/hachi8833/2022_08_02/77493" target="_blank">ブラウザからサーバまでわかりやすい</a>
-<a href="https://atmarkit.itmedia.co.jp/ait/articles/1507/31/news004.html" target="_blank">プロトコル</a>
-<a href="https://atmarkit.itmedia.co.jp/ait/articles/1508/31/news016.html" target="_blank">HTTPの仕組み再入門</a></p>
+<p><a href="https://developer.mozilla.org/ja/docs/Web/HTTP" target="_blank">リファレンス(一番わかりやすい)</a><br><a href="https://www.tohoho-web.com/ex/http.htm" target="_blank">HTTP入門</a><br><a href="https://qiita.com/suin/items/316cb8aaf8dfcf11abae" target="_blank">冪等性について</a><br><a href="https://techracho.bpsinc.jp/hachi8833/2022_08_02/77493" target="_blank">ブラウザからサーバまでわかりやすい</a><br><a href="https://atmarkit.itmedia.co.jp/ait/articles/1507/31/news004.html" target="_blank">プロトコル</a><br><a href="https://atmarkit.itmedia.co.jp/ait/articles/1508/31/news016.html" target="_blank">HTTPの仕組み再入門</a></p>
 <h2 id="httpとは"><a name="httpとは" class="plugin-anchor" href="#httpとは"><i class="fa fa-link" aria-hidden="true"></i></a>HTTPとは</h2>
 <p>HTTP(HyperText Transfer Protocol)は<strong>サーバとクライアント(ブラウザ)の間でウェブページを送受信するためのプロトコル</strong>
 また、World Wide Web上の通信方法を示すものであり、この通信はクライアントからサーバーへのリクエストとサーバーからクライアントへのレスポンスで構成される。
@@ -4979,8 +4974,24 @@
 <p>HTTP自体は<strong>ステートレス（状態を保持せず1回で完結すること）</strong>なプロトコル
 リクエスト (GET) =&gt; レスポンス (200 OK ...) で手続きが完結。
 SMTPのように複数の手続きを踏む必要はなく、その時の状態も保持していない。</p>
+<h2 id="http-歴史"><a name="http-歴史" class="plugin-anchor" href="#http-歴史"><i class="fa fa-link" aria-hidden="true"></i></a>HTTP 歴史</h2>
+<p>現在最新のversionは1.1<br>1.1になる前には0.9と1.0の2つのバージョンが存在していた。<br>また1.1の後継もある。<br>※0.9に関しては仕様書は存在しない。Berners-LeeがWebを発明していたときのプロトコルが呼ばれている。  </p>
+<ul>
+<li>0.9 : headerがなかった</li>
+<li>1.0 : IETFが標準化された最初のバージョン</li>
+<li>1.1 : HTTPの完成</li>
+</ul>
+<p>チャンク転送・Acceptヘッダーによるコンテントネゴシエーション・複雑なキャッシュコントロール、持続的接続などの機能。</p>
+<p>1.1以降も議論が続けられているが、<strong>HTTPそのものの価値をRESTアーキテクチャスタイルに見出した結果、HTTP1.1を有効に活用していこう。</strong>
+というのが現代的な開発スタイルとなっている。</p>
+<h2 id="http-仕組み"><a name="http-仕組み" class="plugin-anchor" href="#http-仕組み"><i class="fa fa-link" aria-hidden="true"></i></a>HTTP 仕組み</h2>
+<p>BASEとなっているのはTCP/IP<br>HTTP内でのクライアント</p>
+<blockquote>
+<p>今回POSTメソッドについて言及しましたが、HTTPプロトコル（rfc2616）では、メッセージボディをセットできるメソッドについては特に言及していないため、POST以外のメソッド（たとえばGETメソッド）でもメッセージボディをセットすることはできます。
+ですが、ブラウザからGETメソッドでリクエストを送信する場合、通常はメッセージボディではなくHTTPパラメータとして設定されます。
+このため、サーバー側の処理としてGETメソッドの処理ではメッセージボディに何かデータが設定されてくるということは一般的には期待しません。</p>
+</blockquote>
 <h2 id="通常のhttpリクエストのおさらい"><a name="通常のhttpリクエストのおさらい" class="plugin-anchor" href="#通常のhttpリクエストのおさらい"><i class="fa fa-link" aria-hidden="true"></i></a>通常のHTTPリクエストのおさらい</h2>
-<p>パーフェクトruby on rails 3-5-1セクションを見る</p>
 <ol>
 <li>ブラウザがHTMLをリクエストする</li>
 <li>サーバがリクエストを受け付け、DBに問い合わせを行うなどをしてHTMLを生成</li>
@@ -4991,14 +5002,13 @@ SMTPのように複数の手続きを踏む必要はなく、その時の状態�
 <li>アセットのパース</li>
 <li>HTMLのレンダリングが完了する。</li>
 </ol>
-<p>JSやCSSなどアセットのリクエストはレスポンスを受診しHTMLのパースが始まったタイミングで実行される。
-そのためHTMLのパースがどんなに早く終わってもアセットのダウンロード待ちが発生してしまうと全体の描画を効率化するためにはアセットのリクエストをもっと早くするべき。</p>
+<p>JSやCSSなどアセットのリクエストはレスポンスを受診し<strong>HTMLのパースが始まったタイミングで実行される。</strong><br>そのためHTMLのパースがどんなに早く終わってもアセットのダウンロード待ちが発生してしまうと全体の描画を効率化するためには<strong>アセットのリクエストをもっと早くするべき。</strong></p>
 <h3 id="アセットのロード開始タイミングを早める"><a name="アセットのロード開始タイミングを早める" class="plugin-anchor" href="#アセットのロード開始タイミングを早める"><i class="fa fa-link" aria-hidden="true"></i></a>アセットのロード開始タイミングを早める</h3>
-<p>HTTPにはpreloadという仕組みがあり、HTTPレスポンスヘッダーーやHTMLのタグ中にこのアセットを先にロードしてくださいと指定ができる。</p>
-<p>レスポンスヘッダーに次の要素を追加</p>
+<p>HTTPにはpreloadという仕組みがあり、<strong>HTTPレスポンスヘッダーやHTMLのタグ中にこのアセットを先にロードしてください</strong>と指定ができる。</p>
+<p>レスポンスヘッダーに次の要素を追加する</p>
 <pre><code>Link: &lt;/css/something.css&gt;; rel=preload; as=style
 Link: &lt;/js/main.js&gt;; rel=preload; as=script
-</code></pre><p>このヘッダーーを受け取るとブラウザはHTMLを取った直後、HTMLをパースする前にアセットのリクエストを開始できる。</p>
+</code></pre><p>このヘッダーーを受け取るとブラウザはHTMLを取った直後、<strong>HTMLをパースする前にアセットのリクエストを開始できる。</strong></p>
 <h2 id="http-20"><a name="http-20" class="plugin-anchor" href="#http-20"><i class="fa fa-link" aria-hidden="true"></i></a>HTTP 2.0</h2>
 <p>HTTPの仕様ではステータスコードが決まるまでレスポンスを返せなかった。
 つまり、application.jsを利用することが自明だったとしてもWebアプリケーション自身がレスポンスを返すまでは待つ必要がありました。
@@ -5008,30 +5018,12 @@ Link: &lt;/js/main.js&gt;; rel=preload; as=script
 <p>主要なブラウザが軒並みES6をサポートした事により、 ES6で書かれたコードをトランスパイルすることなく、そのまま動作するようになったこと。
 HTTP/2が普及したことによりwebpackでファイルを結合するメリットが薄れたこと。</p>
 <h2 id="http-30"><a name="http-30" class="plugin-anchor" href="#http-30"><i class="fa fa-link" aria-hidden="true"></i></a>HTTP 3.0</h2>
+<p>N/A</p>
 <h2 id="localhostのhttps化"><a name="localhostのhttps化" class="plugin-anchor" href="#localhostのhttps化"><i class="fa fa-link" aria-hidden="true"></i></a>localhostのhttps化</h2>
 <p><a href="https://blog.jxck.io/entries/2020-06-29/https-for-localhost.html" target="_blank">参考URL</a></p>
 <h2 id="閲覧ページのhttp-versionを調べる"><a name="閲覧ページのhttp-versionを調べる" class="plugin-anchor" href="#閲覧ページのhttp-versionを調べる"><i class="fa fa-link" aria-hidden="true"></i></a>閲覧ページのHTTP versionを調べる</h2>
 <p><a href="https://laboradian.com/hot-to-know-http-version/" target="_blank">参考URL</a></p>
 <hr>
-<h2 id="http-歴史"><a name="http-歴史" class="plugin-anchor" href="#http-歴史"><i class="fa fa-link" aria-hidden="true"></i></a>HTTP 歴史</h2>
-<p>現在最新のversionは1.1
-1.1になる前には0.9と1.0の2つのバージョンが存在していた。
-また1.1の後継もある。
-※0.9に関しては仕様書は存在しない。Berners-LeeがWebを発明していたときのプロトコルが呼ばれている。</p>
-<p>0.9 : headerがなかった</p>
-<p>1.0 : IETFが標準化された最初のバージョン</p>
-<p>1.1 : HTTPの完成
-→チャンク転送・Acceptヘッダーによるコンテントネゴシエーション・複雑なキャッシュコントロール、持続的接続などの機能。</p>
-<p>1.1以降も議論が続けれているが、HTTPそのものの価値を、RESTアーキテクチャスタイルに見出した結果、HTTP1.1を有効に活用していこう。。というのが現代的な開発スタイルとなっている。</p>
-<hr>
-<h2 id="http-仕組み"><a name="http-仕組み" class="plugin-anchor" href="#http-仕組み"><i class="fa fa-link" aria-hidden="true"></i></a>HTTP 仕組み</h2>
-<p>BASEとなっているのはTCP/IP
-HTTP内でのクライアント</p>
-<blockquote>
-<p>今回POSTメソッドについて言及しましたが、HTTPプロトコル（rfc2616）では、メッセージボディをセットできるメソッドについては特に言及していないため、POST以外のメソッド（たとえばGETメソッド）でもメッセージボディをセットすることはできます。
-ですが、ブラウザからGETメソッドでリクエストを送信する場合、通常はメッセージボディではなくHTTPパラメータとして設定されます。
-このため、サーバー側の処理としてGETメソッドの処理ではメッセージボディに何かデータが設定されてくるということは一般的には期待しません。</p>
-</blockquote>
 <h2 id="http-content-negotiationコンテントネゴシエーション"><a name="http-content-negotiationコンテントネゴシエーション" class="plugin-anchor" href="#http-content-negotiationコンテントネゴシエーション"><i class="fa fa-link" aria-hidden="true"></i></a>HTTP content negotiation(コンテントネゴシエーション)</h2>
 <p><a href="https://developer.mozilla.org/ja/docs/Web/HTTP/Content_negotiation" target="_blank">リファレンス</a></p>
 <blockquote>
@@ -5422,7 +5414,7 @@ health checkなどに使われるかもしれない。</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Http","level":"2.11.1.2","depth":3,"next":{"title":"Oauth","level":"2.11.1.3","depth":3,"path":"network/protocol/oauth/oauth.md","ref":"network/protocol/oauth/oauth.md","articles":[]},"previous":{"title":"Grpc","level":"2.11.1.1","depth":3,"path":"network/protocol/grpc/grpc.md","ref":"network/protocol/grpc/grpc.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"network/protocol/http/http.md","mtime":"2023-01-31T01:19:03.327Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-31T01:19:14.564Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Http","level":"2.11.1.2","depth":3,"next":{"title":"Oauth","level":"2.11.1.3","depth":3,"path":"network/protocol/oauth/oauth.md","ref":"network/protocol/oauth/oauth.md","articles":[]},"previous":{"title":"Grpc","level":"2.11.1.1","depth":3,"path":"network/protocol/grpc/grpc.md","ref":"network/protocol/grpc/grpc.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"network/protocol/http/http.md","mtime":"2023-02-03T07:16:18.869Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-02-03T07:16:28.315Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

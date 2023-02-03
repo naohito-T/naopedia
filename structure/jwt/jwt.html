@@ -4967,9 +4967,6 @@
                                 
                                 <h1 id="jwtjson-web-token--ジョット"><a name="jwtjson-web-token--ジョット" class="plugin-anchor" href="#jwtjson-web-token--ジョット"><i class="fa fa-link" aria-hidden="true"></i></a>JWT(JSON Web Token) : ジョット</h1>
 <p><a href="https://techblog.yahoo.co.jp/advent-calendar-2017/jwt/" target="_blank">参考URL</a><br><a href="https://assets.ctfassets.net/2ntc334xpx65/5HColfm15cUhMmDQnupNzd/30d5913d94e79462043f6d8e3f557351/jwt-handbook-jp.pdf" target="_blank">JWTハンドブック(今度読む)</a><br><a href="https://qiita.com/TakahikoKawasaki/items/8f0e422c7edd2d220e06" target="_blank">JWS,JWE,JWKなどの仕様について詳しい</a></p>
-<h2 id="jwt構造"><a name="jwt構造" class="plugin-anchor" href="#jwt構造"><i class="fa fa-link" aria-hidden="true"></i></a>JWT構造</h2>
-<p><code>&lt;ヘッダー&gt;.&lt;ペイロード&gt;.&lt;署名&gt;</code></p>
-<p>署名の対象は<code>ヘッダー.ペイロード</code>に対してである。<br>JWTは元のデータを<code>base64url</code>でエンコードしたもの。</p>
 <h2 id="jwtとはjson-web-token"><a name="jwtとはjson-web-token" class="plugin-anchor" href="#jwtとはjson-web-token"><i class="fa fa-link" aria-hidden="true"></i></a>JWTとは(JSON Web Token)</h2>
 <p>JWTとは、JSON形式で表現されたクレーム (claim) の集合を、<code>JWS</code>もしくは<code>JWE</code>に埋め込んだもの。<br>JWTではシンプルにトークンの形式のみが規定されており<strong>payload部分のフォーマットやトークン自身の使われ方についてはほとんど言及していない。</strong>
 言及しているのがOpenID Connect。</p>
@@ -4996,13 +4993,18 @@ JWTでは<strong>公開鍵を利用してクライアント側でトークンの
 の仕様に基づき、JWTが利用されますが、<strong>現状使われている多くのJWTが署名付きのものである</strong></li>
 </ul>
 <hr>
+<h2 id="jwt認証メリット"><a name="jwt認証メリット" class="plugin-anchor" href="#jwt認証メリット"><i class="fa fa-link" aria-hidden="true"></i></a>JWT認証メリット</h2>
+<p>JWT認証のメリットはその実装のシンプルさと、ステートレスなことにある。<br>現実的にはDB参照とか必要になったりする（一時トークンを保存するテーブル）が、JWT認証の場合<strong>改ざん検証だけで済むのは魅力的。</strong><br>しかしトレードオフでリアルタイムでユーザ無効化ができないくらい。  </p>
 <h2 id="アクセストークンとしてjwtを利用することの利点"><a name="アクセストークンとしてjwtを利用することの利点" class="plugin-anchor" href="#アクセストークンとしてjwtを利用することの利点"><i class="fa fa-link" aria-hidden="true"></i></a>アクセストークンとしてJWTを利用することの利点</h2>
 <p><a href="https://ritou.hatenablog.com/entry/20140927/1411811648" target="_blank">わかりやすい</a></p>
 <p>JWTは単なるJSONのため、アクセストークンとして用いることにおりさまざまな情報を含めることができる。
 それにより、認証サーバとアプリケーションサーバを分割しているようなアーキテクチャであれば、認証サーバの負荷を軽減することに寄与します。</p>
+<h2 id="jwt構造"><a name="jwt構造" class="plugin-anchor" href="#jwt構造"><i class="fa fa-link" aria-hidden="true"></i></a>JWT構造</h2>
+<p>一般的にはJWS形式のJWTが使われる。<br>JWS形式のJWTは以下のフォーマット<br><code>&lt;ヘッダー&gt;.&lt;ペイロード&gt;.&lt;署名&gt;</code></p>
+<p>署名の対象は<code>ヘッダー.ペイロード</code>に対して。<br>JWTは元のデータを<code>base64url</code>でエンコードしたもの。</p>
 <h3 id="ヘッダー"><a name="ヘッダー" class="plugin-anchor" href="#ヘッダー"><i class="fa fa-link" aria-hidden="true"></i></a>ヘッダー</h3>
-<p>ヘッダーはJWTの署名検証を行うために必要な情報を格納するためのパートとなっている
-文字列の形式としては、キー名と値のペアで表現されたJSONをBase64urlエンコードした文字列となる</p>
+<p>ヘッダーを除いた残りのセクションに関する情報を伝えるのに使われる。
+文字列の形式としては、キー名と値のペアで表現されたJSONをBase64urlエンコードした文字列となるl</p>
 <p>Base64エンコードの場合は&quot;+&quot;, &quot;/&quot;, &quot;=&quot;が含まれるが、<strong>JWTはURIのクエリパラメーターなどに使用されることを想定しているため</strong>
 URL-safeに表現するためにBase64urlエンコードがされている。</p>
 <pre><code class="lang-json"><span class="hljs-comment">// JWTをデコードする</span>
@@ -5015,7 +5017,7 @@ URL-safeに表現するためにBase64urlエンコードがされている。</p
 <hr>
 <h3 id="ペイロード"><a name="ペイロード" class="plugin-anchor" href="#ペイロード"><i class="fa fa-link" aria-hidden="true"></i></a>ペイロード</h3>
 <p>payloadに含める値をクレームと言う。
-ペイロードはやり取りに必要な属性情報(Claim: クレーム)
+ペイロードはやり取りに必要な属性情報（Claim: クレーム）
 ペイロードの内容はアプリケーションによっては異なるため、必須とされるものは存在しませんが、相互運用性のある属性情報については予約済みパラメーターとして提供されています。
 ヘッダーと同様に、JSONをBase64urlエンコードした文字列なので、デコードが容易にできます。</p>
 <pre><code class="lang-json">{
@@ -5024,9 +5026,27 @@ URL-safeに表現するためにBase64urlエンコードがされている。</p
   <span class="hljs-string">&quot;sub&quot;</span>: <span class="hljs-string">&quot;1234567890&quot;</span>
 }
 </code></pre>
-<h2 id="claimクレーム"><a name="claimクレーム" class="plugin-anchor" href="#claimクレーム"><i class="fa fa-link" aria-hidden="true"></i></a>Claim(クレーム)</h2>
+<h3 id="claimクレーム"><a name="claimクレーム" class="plugin-anchor" href="#claimクレーム"><i class="fa fa-link" aria-hidden="true"></i></a>Claim(クレーム)</h3>
 <p><a href="https://kamichidu.github.io/post/2017/01/24-about-json-web-token/" target="_blank">参考URL</a></p>
 <p>情報のやりとりにおいて要求する項目のこと（日本で一般的に使われるクレームではない）<br>一般的なデータ構造に加えて、JWTは<strong>異なるアプリケーション間で使えるようにするためにクレームをと呼ばれるフィールドを用意している。</strong><br>JWTで表現されるJSONオブジェクトはClaims Set（Claimの集合）と呼ばれます。<br>ClaimとはJSONの<code>key, value</code>の一対を意味する。<br>JWTに含めるべき<strong>クレームとして必須なものは実はない。</strong><br>JWTがどのようなクレーム群を含むべきかは、JWTを利用する個々のアプリケーションの範疇としている。<br>JWTのクレームで必須を定義しているのはOpenID Connect</p>
+<h3 id="audaudienceクレーム"><a name="audaudienceクレーム" class="plugin-anchor" href="#audaudienceクレーム"><i class="fa fa-link" aria-hidden="true"></i></a>aud(Audience)クレーム</h3>
+<p><a href="https://scrapbox.io/sudow/%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3%E3%81%AEaud%E3%82%AF%E3%83%AC%E3%83%BC%E3%83%A0%E3%81%A8ID%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3%E3%81%AEaud%E3%82%AF%E3%83%AC%E3%83%BC%E3%83%A0" target="_blank">アクセストークンのaudクレームとIDトークンのaudクレーム</a></p>
+<ul>
+<li>アクセストークンのaudクレーム<blockquote>
+<p>aud（audience）クレームはJWTを利用することが想定された主体の識別子一覧である。JWT を処理するために意図されたそれぞれの対象は, オーディエンスクレームの値に自身の識別子が含まれていることを確認し, aud に自身の識別子が含まれない場合はその JWT の処理を拒否しなければならない</p>
+</blockquote>
+</li>
+</ul>
+<p>JWTの仕様ではaudクレームは「JWTを利用する主体を表現するため」のクレームらしい。
+[OAuth 2.0]の認可を受けたクライアントはアクセストークンを検証せずにリソースサーバに送る。（アクセストークンとしてJWTが使われていれば）リソースサーバがJWTの検証をするので、そのときにリソースサーバ自身のURIがaudに含まれていることを確認して、もし含まれていなければ検証失敗にする必要がある。
+つまりアクセストークンのaudはアクセスされるリソースサーバのURIを入れるのが正しい？</p>
+<ul>
+<li>IDトークンのaudクレーム<blockquote>
+<p>REQUIRED. ID Token の想定されるオーディエンス (Audience). この値は Relying Party の OAuth 2.0 client_id を含まなければならない (MUST). 他のオーディエンスの識別子を含んでもよい (MAY). 一般的には aud は大文字小文字を区別した文字列の配列であるが, オーディエンスが単体の場合は aud 値を大文字小文字を区別した単一文字列としてもよい (MAY).j</p>
+</blockquote>
+</li>
+</ul>
+<p>OpenIDの仕様としてはJWT (ID Token) の検証をする主体がIDPのクライアントになるので、クライアントが自身のclient_idがaudに含まれていることを確認して、もし含まれていなければ検証失敗にする必要がある。</p>
 <h3 id="exp"><a name="exp" class="plugin-anchor" href="#exp"><i class="fa fa-link" aria-hidden="true"></i></a>exp</h3>
 <ul>
 <li>期限を無期限にする
@@ -5038,10 +5058,86 @@ JWT内に存在する場合にのみ、<code>exp</code>フィールドを検証�
 <p><code>TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ</code></p>
 <p>↑の文字列を<strong>ヘッダーで指定されたアルゴリズムで署名検証</strong>することにより ID Tokenの正当性を評価できる。</p>
 <hr>
+<h2 id="jwt認証フロー"><a name="jwt認証フロー" class="plugin-anchor" href="#jwt認証フロー"><i class="fa fa-link" aria-hidden="true"></i></a>JWT認証フロー</h2>
+<p><a href="https://christina04.hatenablog.com/entry/2016/06/07/123000" target="_blank">JWTを認証用トークンに使う時調べたこと</a></p>
+<h3 id="cookieとの認証フロー比較"><a name="cookieとの認証フロー比較" class="plugin-anchor" href="#cookieとの認証フロー比較"><i class="fa fa-link" aria-hidden="true"></i></a>Cookieとの認証フロー比較</h3>
+<p>認証フロー自体はほぼ同じ。<br>Cookieは<code>Cookie</code>ヘッダーを使う。<br>Tokenは<code>Authorization</code>ヘッダーを使う。  </p>
+<h3 id="token認証のメリット"><a name="token認証のメリット" class="plugin-anchor" href="#token認証のメリット"><i class="fa fa-link" aria-hidden="true"></i></a>Token認証のメリット</h3>
+<ul>
+<li>Cookieに依存しないため、CSRF脆弱性がなくなる</li>
+<li>ネイティブプラットフォームで扱いやすい</li>
+<li>特定の暗号スキームに依存しない（＝JWT以外も扱える）</li>
+<li>短命であればステートレスも許容できる（＝サーバ側にセッションストアが不要）</li>
+<li>長命であればrevoke機能は必須なのでセッションストアは必要。</li>
+</ul>
+<h3 id="tokenの送信に使うヘッダー"><a name="tokenの送信に使うヘッダー" class="plugin-anchor" href="#tokenの送信に使うヘッダー"><i class="fa fa-link" aria-hidden="true"></i></a>Tokenの送信に使うヘッダー</h3>
+<p><code>Authorization</code>ヘッダーに対し、Bearerスキームを設定するのが一般的。<br><code>Authorization: Bearer &lt;token&gt;</code></p>
+<hr>
+<h2 id="token発行フロー"><a name="token発行フロー" class="plugin-anchor" href="#token発行フロー"><i class="fa fa-link" aria-hidden="true"></i></a>Token発行フロー</h2>
+<p><a href="https://gyazo.com/7c01c30b184cce98c5b515088df68064" target="_blank"><img src="https://i.gyazo.com/7c01c30b184cce98c5b515088df68064.png" alt="Image from Gyazo"></a></p>
+<p>以下みたいに分けてシステムを構築するのがベスト。  </p>
+<ul>
+<li>Authサーバ認証＆認可を行う    JWTを発行（署名）</li>
+<li>リソースサーバ認可されていればリソース（機能）を提供する（＝通常のAPIサーバ）JWTの署名検証を行う</li>
+</ul>
+<p>モノリスなシステム構成であればAuthサーバとリソースサーバを同一にするケースもよくある。</p>
+<hr>
 <h2 id="jwtの保存先"><a name="jwtの保存先" class="plugin-anchor" href="#jwtの保存先"><i class="fa fa-link" aria-hidden="true"></i></a>JWTの保存先</h2>
-<p>ローカルストレージはJSで簡単にアクセスできるためやめた方がいい。
-他の部分</p>
-<p>Cookieも検討に入るが、ローカルストレージよりはマシなだけ</p>
+<p>Tokenの保存先は主に<code>インメモリ or Cookie or localStorage</code>がある。  </p>
+<h3 id="インメモリのケース"><a name="インメモリのケース" class="plugin-anchor" href="#インメモリのケース"><i class="fa fa-link" aria-hidden="true"></i></a>インメモリのケース</h3>
+<ul>
+<li><p>メリット</p>
+<ul>
+<li>サードパーティライブラリによるサプライチェーン攻撃の影響がほぼない
+CookieではないのでCSRFを防げる</li>
+</ul>
+</li>
+<li><p>デメリット</p>
+<ul>
+<li>JavaScriptでアクセスできるのでXSSの影響を受ける</li>
+<li>ブラウザを閉じると揮発するのでJWTの再発行が必要</li>
+</ul>
+</li>
+</ul>
+<h3 id="cookieのケース"><a name="cookieのケース" class="plugin-anchor" href="#cookieのケース"><i class="fa fa-link" aria-hidden="true"></i></a>Cookieのケース</h3>
+<ul>
+<li><p>メリット</p>
+<ul>
+<li>secure属性（httpsの通信の時のみCookieを送信）、httpOnly属性（JavaScriptからアクセスできなくなる）をつけることでXSS脆弱性があってもセッションハイジャックは防げる</li>
+</ul>
+</li>
+<li><p>デメリット</p>
+<ul>
+<li>Cookieヘッダーでサーバへ送る場合はCSRF脆弱性が残る（ただしSameSite属性を使うことで防御できる）</li>
+<li>重要な処理に「パスワード再入力」といった対策を挟むのも1つ</li>
+<li>単なる保存先として利用（httpOnly属性を使わない）し、Authorizationヘッダーで送る場合はCSRFを防げるが、上記のhttpOnly属性が使えない</li>
+<li>またJavaScriptでアクセスできるようになるためXSSの影響を受けるようになる</li>
+</ul>
+</li>
+</ul>
+<h3 id="localstorageのケース"><a name="localstorageのケース" class="plugin-anchor" href="#localstorageのケース"><i class="fa fa-link" aria-hidden="true"></i></a>localStorageのケース</h3>
+<ul>
+<li><p>メリット</p>
+<ul>
+<li>CookieではないのでCSRFを防げる</li>
+</ul>
+</li>
+<li><p>デメリット</p>
+<ul>
+<li>Cookieと異なり、secure属性やhttpOnly属性がないため、XSS脆弱性があった場合セッションハイジャックされやすい（なのでフレームワークなどを利用してXSS脆弱性を排除する対策を行う必要がある）</li>
+<li>JavaScriptでアクセスできるのでサードパーティライブラリのサプライチェーン攻撃を受ける可能性がある</li>
+<li>きちんと対応していないブラウザがちょこちょこある</li>
+<li>IE系で使えないバージョンがある</li>
+<li>iOSのプライベートブラウジングで使えない</li>
+</ul>
+</li>
+</ul>
+<p>※localStorageはcookieと異なりプロトコル（http, https）まで一致するかを見て同一生成元ポリシーを適用するので、デフォルトでsecure属性があるものと言える。</p>
+<p><a href="https://gyazo.com/d27b888b6c03bb694ce389c6af5f2f75" target="_blank"><img src="https://i.gyazo.com/d27b888b6c03bb694ce389c6af5f2f75.png" alt="Image from Gyazo"></a></p>
+<h3 id="現在"><a name="現在" class="plugin-anchor" href="#現在"><i class="fa fa-link" aria-hidden="true"></i></a>現在</h3>
+<p>現在はSameSite属性が主要ブラウザでほぼサポートされたので、Cookieの方がセキュアに保存できると言えます。
+なのでWebブラウザではCookieを用いて管理することが推奨されます。
+詳細を↓でまとめました。</p>
 <hr>
 <h2 id="サーバ側のjwt取得方法"><a name="サーバ側のjwt取得方法" class="plugin-anchor" href="#サーバ側のjwt取得方法"><i class="fa fa-link" aria-hidden="true"></i></a>サーバ側のJWT取得方法</h2>
 <ol>
@@ -5252,7 +5348,7 @@ CookieにSecure属性やHttpOnly属性をつければ安全性はいくらか高
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Jwt","level":"2.17.12","depth":2,"next":{"title":"Mermaid","level":"2.17.13","depth":2,"path":"structure/mermaid/mermaid.md","ref":"structure/mermaid/mermaid.md","articles":[{"title":"Sample","level":"2.17.13.1","depth":3,"path":"structure/mermaid/sample.md","ref":"structure/mermaid/sample.md","articles":[]},{"title":"Test","level":"2.17.13.2","depth":3,"path":"structure/mermaid/test.md","ref":"structure/mermaid/test.md","articles":[]}]},"previous":{"title":"Inner Source","level":"2.17.11.1","depth":3,"path":"structure/innersource/inner*source.md","ref":"structure/innersource/inner*source.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"structure/jwt/jwt.md","mtime":"2023-01-31T01:19:03.335Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-31T01:19:14.564Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Jwt","level":"2.17.12","depth":2,"next":{"title":"Mermaid","level":"2.17.13","depth":2,"path":"structure/mermaid/mermaid.md","ref":"structure/mermaid/mermaid.md","articles":[{"title":"Sample","level":"2.17.13.1","depth":3,"path":"structure/mermaid/sample.md","ref":"structure/mermaid/sample.md","articles":[]},{"title":"Test","level":"2.17.13.2","depth":3,"path":"structure/mermaid/test.md","ref":"structure/mermaid/test.md","articles":[]}]},"previous":{"title":"Inner Source","level":"2.17.11.1","depth":3,"path":"structure/innersource/inner*source.md","ref":"structure/innersource/inner*source.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"structure/jwt/jwt.md","mtime":"2023-02-03T07:16:18.877Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-02-03T07:16:28.315Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
