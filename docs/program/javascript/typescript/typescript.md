@@ -1,5 +1,5 @@
 # TypeScript
-[TypeScript特有の組み込み型関数](https://log.pocka.io/ja/posts/typescript-builtin-type-functions/#thistype)
+[TypeScript特有の組み込み型関数](https://log.pocka.io/ja/posts/typescript-builtin-type-functions/#thistype)  
 [Type challenge](https://github.com/type-challenges/type-challenges)
 
 ## TypeScriptのエラー
@@ -45,7 +45,6 @@ TypeScriptで型定義用のファイルを作る際に、ライブラリが生�
 named importだと呼び出し側で名前を変更することができなくなるため、基本named importの方がいい。
 
 ## import した時に、TypeScriptの型定義がない場合取れる対策
-
 [参考URL](https://medium.com/@ryutamaki/npm-module-%E3%81%AB-typescript-%E3%81%AE%E5%9E%8B%E5%AE%9A%E7%BE%A9%E3%81%8C%E3%81%AA%E3%81%84%E6%99%82%E3%81%AB-%E3%81%A8%E3%82%8A%E3%81%82%E3%81%88%E3%81%9A%E3%83%93%E3%83%AB%E3%83%89%E3%81%8C%E9%80%9A%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B-fcc090804b21)
 
 1. `npm install --save-dev @types/package-name` をためす
@@ -58,8 +57,8 @@ named importだと呼び出し側で名前を変更することができなく�
 
 [参考URL](https://typescriptbook.jp/overview/typescript-is-not-that)
 
-結論はTypeScriptの実行パフォーマンスはJavaScriptと同じ。
-これを理解するには理解するべきことがある。
+結論はTypeScriptの実行パフォーマンスはJavaScriptと同じ。  
+これを理解するには理解するべきことがある。  
 - TypeScriptのランタイムはない
 - TypeScriptコンパイラは最適化しない。
 
@@ -98,14 +97,12 @@ typesRootsがtsconfig.jsonに指定されている場合は**そのパッケー�
 ## TypeScript インデックスシグネチャを安全に使う
 [インデックスシグネチャで特定の文字だけのIndexを扱う](https://blog.mitsuruog.info/2019/03/typescript-limited-set-of-index-signature)
 
-
 動的に任意のプロパティを作成・使用したいときに使うかもしれないが、だいたいは`Map`などで代用ができる。
 
 ## TypeScript 型定義集
 
 ```TS
 export class typeSampleModel {
-
     // プリミティブな型
     str: string;                              // 文字列
     num: number;                              // 数値
@@ -152,7 +149,7 @@ export class typeSampleModel {
 ```
 
 ## tsconfig.json
-
+[サバイバルTypeScript](https://typescriptbook.jp/reference/tsconfig/tsconfig.json-settings)
 [tsconfigあらかた設定](https://www.pg-fl.jp/program/tips/tsconfig_dirs.htm)
 
 - tsconfig設定の種類の概念
@@ -213,12 +210,11 @@ types設定が「[]」（空配列）である場合は、typeRoots設定にか�
 ## アロー関数が連続しているのは共通処理をしたいためのカリー化
 [参考URL](https://zenn.dev/tsucchiiinoko/articles/54076f7b135246)
 
-## 名前空間
+## namespace 名前空間
 
-**名前空間はグローバルな名前空間でJavaScriptのオブジェクトに単純に名前がつけられたもの。**
-namespaceではなくモジュールの仕組みを使うべし
-
-TypeScriptでゃnamespaceキーワードを使って名前空間を定義することができるが、通常はより柔軟性の高いモジュールの仕組みを使うのが推奨されている（といってもファイルを分けるだけだが）
+**名前空間はグローバルな名前空間でJavaScriptのオブジェクトに単純に名前がつけられたもの。**  
+`namespace`ではなくモジュールの仕組みを使う方がいい。  
+TypeScriptでゃnamespaceキーワードを使って名前空間を定義することができるが、通常はより柔軟性の高い**モジュールの仕組み**を使うのが推奨されている（といってもファイルを分けるだけ）
 
 - namespaceが非推奨な理由
 namespaceを使うと同じファイル内で階層化された名前空間を作ることができるが、あくまでその階層構造はグローバルに占有されている。
@@ -279,8 +275,7 @@ TypeScriptのアンビエント宣言 (Ambient Declarations) を行うと、既�
 ライブラリが知ることのできない（自身のプロジェクト固有の定義）型をライブラリのルートに注入し行き渡らせる手法
 interface宣言結合を利用したテクニックであり、さまざまなライブラリ型定義でも採用されている。
 
-
-### Uncaught (in promise) 
+### Uncaught (in promise)
 [リファレンス](https://developer.mozilla.org/ja/docs/Web/API/Window/unhandledrejection_event)
 
 以下の場合が起こる。そしてブラウザでハンドリングができる。
@@ -295,6 +290,37 @@ new Promise(function() {
   throw new Error("Whoops!");
 }); // エラーを処理する catch がない
 ```
+
+---
+
+## TypeScript コンパイラ種類表
+
+### ts-node
+
+tsファイルをjsファイルにコンパイルすることなく実行する。
+`ts-node`のデフォルトでは、指定ファイルと依存関係にないファイルは読み込んでくれない。
+
+オプション
+```sh
+# 型チェックを行わず、トランスパイル(ts->js)のみ行う
+# 高速な起動が可能
+-T, --transpile-only
+
+# tsconfig.ts のパスを指定できる
+# 1つのプロジェクト内で複数の tsconfig.ts を使用したい時に便利
+-P, --project <path>
+
+# 指定ファイルと依存関係にないファイルは読み込んでくれない。
+# 起動時に--filesオプションを付与すれば読み込んでくれる
+# https://zenn.dev/ryo_kawamata/articles/ts-node-my-types
+--files
+```
+
+### ts-node-dev
+
+tsファイルをjsファイルにコンパイルすることなく、起動することができ、さらに監視モードで素早く再起動が使用できる。  
+nodemonよりts-node-devのほうが大幅に再起動の速度が早いと公式に記載がある。
+
 
 ---
 

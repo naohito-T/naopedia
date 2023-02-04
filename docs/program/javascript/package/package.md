@@ -2,18 +2,22 @@
 
 npmの管理ファイルであるpackage.jsonについて記載する。
 
+## 各項目について
+[package.jsonの中身を理解する](https://qiita.com/dondoko-susumu/items/cf252bd6494412ed7847)
+
 ## 今まで知らずにいたnpmスクリプトでできる3つのこと
 [今まで知らずにいたnpmスクリプトでできる3つのこと](https://www.twilio.com/blog/npm-scripts-jp)
 
-## npmのprivate registry(なくなった)
+## npmのprivate registry 過去のやつのため注意
+[npm Docs](https://docs.npmjs.com/creating-and-publishing-private-packages)
 
-会社など、プライベートな空間がある場合に、Node.jsパッケージ管理にnpm private registryという手法がある。
+会社など、プライベートな空間がある場合に、Node.jsパッケージ管理にnpm private registryという手法がある。  
 **npmのレジストリ**にprivateでパッケージをpublishする形式
 
 **注意**
 >この移行が終わったタイミングで、GitHubがnpmを買収することが発表され、将来的にnpm private registryはGitHub Packages Registryへと統合される予定です。
 
-[npm Docs](https://docs.npmjs.com/creating-and-publishing-private-packages)
+
 
 ## pre/postがついたスクリプト
 
