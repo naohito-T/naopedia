@@ -1,37 +1,26 @@
 # OpenAPI
-[参考URL](https://zenn.dev/chida/articles/25f4016560f6bf)
-[参考URL(これが一番参考になる)](https://zenn.dev/mabubu0203/articles/a34937c9d5892f)
-[openapiをチームに共有する](https://zenn.dev/d_forest/articles/bec25d3a1b111ed37a09)
+[参考URL](https://zenn.dev/chida/articles/25f4016560f6bf)  
+[参考URL(これが一番参考になる)](https://zenn.dev/mabubu0203/articles/a34937c9d5892f)  
+[openapiをチームに共有する](https://zenn.dev/d_forest/articles/bec25d3a1b111ed37a09)  
 
-- OpenAPI
-RESTful APIの仕様を記述するためのフォーマット
+コード自動生成やモックサーバーに活用させることで徹底した**スキーマファーストな開発を行うこと**ができる。
 
-- Swagger
-OpenAPIを使用するツールのこと
+## 覚えるべき大項目
 
-## Swaggerでよく使われるツール
-
-- Swagger Editor
-ブラウザ上でAPI仕様書を書くためのエディター
-
-- Swagger UI
-API仕様書からドキュメントを生成するツール
-
-- Swagger Codegen
-API仕様書からコードを生成するツール
-
-## 結論
-
-Stoplight Studioで書けば一番理解が進む。
-
-## OpenAPIでできること
-
-OpenAPIはフォーマットを学習することで、API仕様の記述スピードが上がり、記述の統一化が図れます。
-OpenAPIは基本的なAPI仕様の記述フォーマットの提供だけでなく、各種ツールを用いることで開発を行う上でのさまざまなメリットを与えてくれます。
-たとえば、記述したAPI仕様のドキュメント化、コードの自動生成、API仕様に沿って建てられたAPIサーバに対するテストなどを行うことができます。
-
+```yml
+openapi: 3.0.3  # [必須] Open API バージョンを指定します
+info:           # [必須] API 定義の基本情報を記載します
+  ...
+servers:        # API サーバの情報を記載します
+  ...
+paths:          # [必須] エンドポイントのリクエストやレスポンスを記載する。メインとなる部分
+  ...
+components:     # 共通部分をここにまとめておきます
+  ...
+```
 
 ## 各フィールド
+[わかりやすい](https://zenn.dev/peraichi_blog/articles/01ges56ak79g2rket9wm27w9pc)  
 [参考URL](https://www.alpha.co.jp/blog/202208_02)
 
 ### infoフィールド
@@ -43,39 +32,40 @@ OpenAPIは基本的なAPI仕様の記述フォーマットの提供だけでな�
 >summary is short, description is more detailed.
 >Think of the summary as a short one or two sentence explanation of what the intended purpose of the element is. You won't be able to describe all the subtle details, but at a high level, it should be able to explain the purpose of the element.
 
-summaryは短く、descriptionはより詳細に。
-要約は、その要素の意図する目的が何であるかを1～2文の短い文章で説明したものだと考えてください。微妙なディテールをすべて記述することはできないでしょうが、高いレベルで、その要素の目的を説明することができるはずです。
+summaryは短く、descriptionはより詳細に。  
+要約は、その要素の意図する目的が何であるかを1～2文の短い文章で説明したものだと考える。  
+微妙なディテールをすべて記述することはできないでしょうが、高いレベルで、その要素の目的を説明することができるはず。
 
 ### serverフィールド
 
-サーバの情報を定義するフィールド
-※`server`は必須でないのでなくてもいい。
+サーバの情報を定義するフィールド  
+※`server`は必須でないのでなくてもいい。  
 
 ただし記載するとAPIエンドポイントに対するベースURLとして機能する（3.0から）
 [リファレンス](https://swagger.io/docs/specification/api-host-and-base-path/)
 
-また以下もオススメ
+また以下もオススメ  
 >ここで variables を使って任意のホスト、ポートを設定できるようにすることで、この API を各個人の開発環境などからテストすることができます。
 
 ### tags
 
-
-APIで使用されるタグの情報を定義するフィールドのリスト。
-各種ツールによってパースされる際は、記述された順序で出力される。
-タグ名はユニークで無ければならない。
-エンドポイントをグルーピングし、意味のある塊として扱うために定義する。
-各エンドポイントでtagsに指定することで**定義をタグで分類できる。**
+APIで使用されるタグの情報を定義するフィールドのリスト。  
+各種ツールによってパースされる際は、記述された順序で出力される。  
+タグ名はユニークで無ければならない。  
+**エンドポイントをグルーピング**し、意味のある塊として扱うために定義する。  
+各エンドポイントでtagsに指定することで**定義をタグで分類できる。**  
 
 ## エンドポイント
 [参考URL](https://zenn.dev/mabubu0203/articles/a34937c9d5892f)
 
-エンドポイントの情報を定義するフィールド。これがメイン
-エンドポイントは操作対象の名詞にすること。
-名詞は人、もの、場所など、物事の名称をあらわす自立語。体言ともいい、活用がなく単独で主語になります。「犬」「東京」「私」などが名詞です。
+エンドポイントの情報を定義するフィールド。これがメイン  
+エンドポイントは操作対象の名詞にすること。  
+名詞は人、もの、場所など、物事の名称をあらわす自立語。体言ともいい、活用がなく単独で主語になる。  
+「犬」「東京」「私」などが名詞。
 
 ### paths
 
-各種APIのエンドポイントを指定する。
+各種APIのエンドポイントを指定する。  
 **serversで定義したURLにこのパスを結合したもの**が最終的なエンドポイントとなる。
 
 書式としては以下
@@ -95,13 +85,14 @@ paths:
 - operationId
 [OpenAPIにはoperationIdを書こう](https://joe-noh.hatenablog.com/entry/2017/05/02/234247#:~:text=operationId%20%E3%81%A3%E3%81%A6%E3%81%AA%E3%81%AB,%E6%96%87%E5%AD%97%E5%88%97%E3%81%AE%E3%81%93%E3%81%A8%E3%81%A7%E3%81%99%E3%80%82)
 
-付与するとパーマリンクが発行できるみたい（ReDocだと）
+付与するとパーマリンクが発行できるみたい（ReDocだと）  
+OpenAPIを利用するツールで`operationId`を利用することができるため付与する。  
 
 ### components
 [参考URL](https://qiita.com/shigeru10/items/8f20fafd04f7901da939)
 
-componentsはpaths等から使えるコンポーネントを書く（別フィールドから`$ref`で参照する。）
-componentsを使うと記述量が減る、APIのSchemaとして登録されるのでAPI利用者によりわかりやすく表記されr。
+componentsはpaths等から使えるコンポーネントを書く（別フィールドから`$ref`で参照する。）  
+componentsを使うと記述量が減る、APIのSchemaとして登録されるのでAPI利用者によりわかりやすく表記される。
 
 - schemas
 UserやProduct等のモデル
@@ -129,7 +120,8 @@ API定義で**再利用可能なオブジェクト**を定義できる。
 
 ## allOf
 
-allOfはスキーマを合わせるときに使用します。下記の例はMessagesのcomponentとWebhooksのcomponentを合わせるという意味になります。
+allOfは**スキーマを合わせるとき**に使用する。  
+下記の例はMessagesのcomponentとWebhooksのcomponentを合わせるという意味になる。  
 ```yml
 allOf:
     - $ref: '#/components/schemas/Messages'
@@ -137,8 +129,9 @@ allOf:
 ```
 
 ## oneOf
+[１つのステータスコードに対して複数のレスポンスを定義 (oneOf)](https://thinline196.hatenablog.com/entry/2019/09/18/181947)
 
-oneOfはどちらかが適用されるという意味で、選択肢を表したい時に便利です。
+oneOfは**どちらかが適用されるという意味**で、選択肢を表したい時に便利。  
 ```yml
 allOf:
     - $ref: '#/components/schemas/Messages'
@@ -146,51 +139,16 @@ allOf:
 ```
 
 ## Tips
-
 - Redoc
-[参考URL](https://qiita.com/rhirabay/items/59c134aa052dbc4b982b)
+[参考URL](https://qiita.com/rhirabay/items/59c134aa052dbc4b982b)  
+
 - vscodeプラグインオススメ一覧
-[参考URL](https://zenn.dev/s_t_pool/articles/954dfe51b950c18d08e9)
-- descriptionを改行したい
+[参考URL](https://zenn.dev/s_t_pool/articles/954dfe51b950c18d08e9)  
+
+- descriptionを改行したい  
 description: の後に "|"を入れることで、それ以降の文章に空白文字があった場合、改行として認識してくれる。
-- 作成したopenapiを公開する（できるの？）
+
+- 作成したopenapiを公開する
 [swaggerhubを使ってAPI作成後、公開まで](https://qiita.com/koki-iwaizumi/items/9235fb69f2773c95f21b)
 
-# OpenAPI Specification(OAS)
-
-## OpenAPIとは
-
-[参考URL](https://girigiribauer.com/tech/20190318/)
-
-RESTful APIに関するインターフェイス定義
-Swagger 3.0からOpenAPIに名前が変わったため、OpenAPI 3.0はSwagger 3.0でもある。
-
-## OpenAPI 現在
-
-まずOAIとコミュニティのゴタゴタがあり、魅力が落ちていたこと。またgRPC、GraphQLと魅力的な競合技術があるため、Webやスマホアプリ界隈がOpenAPIから離れつつあること。そして5GCでAPI定義に採用されているものの、サービス実装者（モバイル機器ベンダー）にとってOSSで公開するメリットがないこと。
-
-## OpenAPI（Swagger）のAPI開発Docker環境を整備した（yaml分割編集、SwaggerUI表示、モックサーバー、静的HTML出力）
-
-[参考URL(使える)](https://qiita.com/minato-naka/items/3b0bcf0788a2150f3171)
-
-
-## OpenAPI(Swagger)
-
-`openapi.yml`を作成し**openapi-generator**を使用するだけでymlから各対応言語で生成できる。
-
-各周辺ツール
-- Swagger Editor
-定義ファイルの編集
-- Swagger UI
-ドキュメント閲覧
-
-## OpenAPIに準じた設計書の作成方法
-
-[Stoplight 使い方](https://note.com/shift_tech/n/n2d0265731777)
-
-1. YAML or JSONを手作業で書く
-2. Stoplight Studioを使う
-
-
-
-
+[OpenAPI（Swagger）のAPI開発Docker環境を整備した（yaml分割編集、SwaggerUI表示、モックサーバー、静的HTML出力）](https://qiita.com/minato-naka/items/3b0bcf0788a2150f3171)
