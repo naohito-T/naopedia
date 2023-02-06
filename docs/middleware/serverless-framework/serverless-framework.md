@@ -1,6 +1,12 @@
 # serverless-framework
 [サーバーレスの使い方まとめ](https://serverless.co.jp/blog/25/)
 
+## serverless-framework AWS認証情報セットアップ
+[リファレンス](https://www.serverless.com/framework/docs/providers/aws/guide/credentials)
+
+AWS_PROFILEに環境変数を設定するといける。
+`export AWS_PROFILE="profileName2"`
+
 ## サービス
 
 serverlessは**サービスという単位**で実行環境を作っていく。
