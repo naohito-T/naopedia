@@ -4966,8 +4966,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="typescript"><a name="typescript" class="plugin-anchor" href="#typescript"><i class="fa fa-link" aria-hidden="true"></i></a>TypeScript</h1>
-<p><a href="https://log.pocka.io/ja/posts/typescript-builtin-type-functions/#thistype" target="_blank">TypeScript特有の組み込み型関数</a>
-<a href="https://github.com/type-challenges/type-challenges" target="_blank">Type challenge</a></p>
+<p><a href="https://log.pocka.io/ja/posts/typescript-builtin-type-functions/#thistype" target="_blank">TypeScript特有の組み込み型関数</a><br><a href="https://github.com/type-challenges/type-challenges" target="_blank">Type challenge</a></p>
 <h2 id="typescriptのエラー"><a name="typescriptのエラー" class="plugin-anchor" href="#typescriptのエラー"><i class="fa fa-link" aria-hidden="true"></i></a>TypeScriptのエラー</h2>
 <p><a href="https://qiita.com/shibukawa/items/ffe7264ecff78f55b296" target="_blank">セオリーなerrorハンドリング</a></p>
 <blockquote>
@@ -5012,8 +5011,7 @@ TypeScriptで型定義用のファイルを作る際に、ライブラリが生�
 <p><a href="https://qiita.com/suin/items/03baa7cf7dd8e9a9f010" target="_blank">参考URL</a></p>
 <h2 id="typescriptコンパイラについて"><a name="typescriptコンパイラについて" class="plugin-anchor" href="#typescriptコンパイラについて"><i class="fa fa-link" aria-hidden="true"></i></a>TypeScriptコンパイラについて</h2>
 <p><a href="https://typescriptbook.jp/overview/typescript-is-not-that" target="_blank">参考URL</a></p>
-<p>結論はTypeScriptの実行パフォーマンスはJavaScriptと同じ。
-これを理解するには理解するべきことがある。</p>
+<p>結論はTypeScriptの実行パフォーマンスはJavaScriptと同じ。<br>これを理解するには理解するべきことがある。  </p>
 <ul>
 <li>TypeScriptのランタイムはない</li>
 <li>TypeScriptコンパイラは最適化しない。</li>
@@ -5060,7 +5058,6 @@ typesRootsがtsconfig.jsonに指定されている場合は<strong>そのパッ�
 <p>動的に任意のプロパティを作成・使用したいときに使うかもしれないが、だいたいは<code>Map</code>などで代用ができる。</p>
 <h2 id="typescript-型定義集"><a name="typescript-型定義集" class="plugin-anchor" href="#typescript-型定義集"><i class="fa fa-link" aria-hidden="true"></i></a>TypeScript 型定義集</h2>
 <pre><code class="lang-TS"><span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">typeSampleModel</span> </span>{
-
     <span class="hljs-comment">// プリミティブな型</span>
     <span class="hljs-attr">str</span>: <span class="hljs-built_in">string</span>;                              <span class="hljs-comment">// 文字列</span>
     num: <span class="hljs-built_in">number</span>;                              <span class="hljs-comment">// 数値</span>
@@ -5105,7 +5102,8 @@ typesRootsがtsconfig.jsonに指定されている場合は<strong>そのパッ�
 }
 </code></pre>
 <h2 id="tsconfigjson"><a name="tsconfigjson" class="plugin-anchor" href="#tsconfigjson"><i class="fa fa-link" aria-hidden="true"></i></a>tsconfig.json</h2>
-<p><a href="https://www.pg-fl.jp/program/tips/tsconfig_dirs.htm" target="_blank">tsconfigあらかた設定</a></p>
+<p><a href="https://typescriptbook.jp/reference/tsconfig/tsconfig.json-settings" target="_blank">サバイバルTypeScript</a>
+<a href="https://www.pg-fl.jp/program/tips/tsconfig_dirs.htm" target="_blank">tsconfigあらかた設定</a></p>
 <ul>
 <li>tsconfig設定の種類の概念</li>
 </ul>
@@ -5168,10 +5166,8 @@ types設定が「[]」（空配列）である場合は、typeRoots設定にか�
 </code></pre>
 <h2 id="アロー関数が連続しているのは共通処理をしたいためのカリー化"><a name="アロー関数が連続しているのは共通処理をしたいためのカリー化" class="plugin-anchor" href="#アロー関数が連続しているのは共通処理をしたいためのカリー化"><i class="fa fa-link" aria-hidden="true"></i></a>アロー関数が連続しているのは共通処理をしたいためのカリー化</h2>
 <p><a href="https://zenn.dev/tsucchiiinoko/articles/54076f7b135246" target="_blank">参考URL</a></p>
-<h2 id="名前空間"><a name="名前空間" class="plugin-anchor" href="#名前空間"><i class="fa fa-link" aria-hidden="true"></i></a>名前空間</h2>
-<p><strong>名前空間はグローバルな名前空間でJavaScriptのオブジェクトに単純に名前がつけられたもの。</strong>
-namespaceではなくモジュールの仕組みを使うべし</p>
-<p>TypeScriptでゃnamespaceキーワードを使って名前空間を定義することができるが、通常はより柔軟性の高いモジュールの仕組みを使うのが推奨されている（といってもファイルを分けるだけだが）</p>
+<h2 id="namespace-名前空間"><a name="namespace-名前空間" class="plugin-anchor" href="#namespace-名前空間"><i class="fa fa-link" aria-hidden="true"></i></a>namespace 名前空間</h2>
+<p><strong>名前空間はグローバルな名前空間でJavaScriptのオブジェクトに単純に名前がつけられたもの。</strong><br><code>namespace</code>ではなくモジュールの仕組みを使う方がいい。<br>TypeScriptでゃnamespaceキーワードを使って名前空間を定義することができるが、通常はより柔軟性の高い<strong>モジュールの仕組み</strong>を使うのが推奨されている（といってもファイルを分けるだけ）</p>
 <ul>
 <li>namespaceが非推奨な理由
 namespaceを使うと同じファイル内で階層化された名前空間を作ることができるが、あくまでその階層構造はグローバルに占有されている。
@@ -5229,6 +5225,27 @@ interface宣言結合を利用したテクニックであり、さまざまな�
   <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;Whoops!&quot;</span>);
 }); <span class="hljs-comment">// エラーを処理する catch がない</span>
 </code></pre>
+<hr>
+<h2 id="typescript-コンパイラ種類表"><a name="typescript-コンパイラ種類表" class="plugin-anchor" href="#typescript-コンパイラ種類表"><i class="fa fa-link" aria-hidden="true"></i></a>TypeScript コンパイラ種類表</h2>
+<h3 id="ts-node"><a name="ts-node" class="plugin-anchor" href="#ts-node"><i class="fa fa-link" aria-hidden="true"></i></a>ts-node</h3>
+<p>tsファイルをjsファイルにコンパイルすることなく実行する。
+<code>ts-node</code>のデフォルトでは、指定ファイルと依存関係にないファイルは読み込んでくれない。</p>
+<p>オプション</p>
+<pre><code class="lang-sh"><span class="hljs-comment"># 型チェックを行わず、トランスパイル(ts-&gt;js)のみ行う</span>
+<span class="hljs-comment"># 高速な起動が可能</span>
+-T, --transpile-only
+
+<span class="hljs-comment"># tsconfig.ts のパスを指定できる</span>
+<span class="hljs-comment"># 1つのプロジェクト内で複数の tsconfig.ts を使用したい時に便利</span>
+-P, --project &lt;path&gt;
+
+<span class="hljs-comment"># 指定ファイルと依存関係にないファイルは読み込んでくれない。</span>
+<span class="hljs-comment"># 起動時に--filesオプションを付与すれば読み込んでくれる</span>
+<span class="hljs-comment"># https://zenn.dev/ryo_kawamata/articles/ts-node-my-types</span>
+--files
+</code></pre>
+<h3 id="ts-node-dev"><a name="ts-node-dev" class="plugin-anchor" href="#ts-node-dev"><i class="fa fa-link" aria-hidden="true"></i></a>ts-node-dev</h3>
+<p>tsファイルをjsファイルにコンパイルすることなく、起動することができ、さらに監視モードで素早く再起動が使用できる。<br>nodemonよりts-node-devのほうが大幅に再起動の速度が早いと公式に記載がある。</p>
 <hr>
 <h2 id="タイプガードtype-guard"><a name="タイプガードtype-guard" class="plugin-anchor" href="#タイプガードtype-guard"><i class="fa fa-link" aria-hidden="true"></i></a>タイプガード(Type Guard)</h2>
 <p><a href="https://qiita.com/propella/items/33433278497f290ceadb" target="_blank">参考URL</a></p>
@@ -5335,7 +5352,7 @@ pilot.name ??= <span class="hljs-string">&quot;shinji&quot;</span>;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Typescript","level":"2.14.5.14","depth":3,"next":{"title":"Type Techniques","level":"2.14.5.14.1","depth":4,"path":"program/javascript/typescript/type*techniques.md","ref":"program/javascript/typescript/type*techniques.md","articles":[]},"previous":{"title":"Storybook","level":"2.14.5.13","depth":3,"path":"program/javascript/storybook/storybook.md","ref":"program/javascript/storybook/storybook.md","articles":[]},"articles":[{"title":"Type Techniques","level":"2.14.5.14.1","depth":4,"path":"program/javascript/typescript/type*techniques.md","ref":"program/javascript/typescript/type*techniques.md","articles":[]},{"title":"Typings","level":"2.14.5.14.2","depth":4,"path":"program/javascript/typescript/typings.md","ref":"program/javascript/typescript/typings.md","articles":[]},{"title":"Zod","level":"2.14.5.14.3","depth":4,"path":"program/javascript/typescript/zod.md","ref":"program/javascript/typescript/zod.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"program/javascript/typescript/typescript.md","mtime":"2023-02-04T06:10:40.732Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-02-04T06:10:54.048Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Typescript","level":"2.14.5.14","depth":3,"next":{"title":"Type Techniques","level":"2.14.5.14.1","depth":4,"path":"program/javascript/typescript/type*techniques.md","ref":"program/javascript/typescript/type*techniques.md","articles":[]},"previous":{"title":"Storybook","level":"2.14.5.13","depth":3,"path":"program/javascript/storybook/storybook.md","ref":"program/javascript/storybook/storybook.md","articles":[]},"articles":[{"title":"Type Techniques","level":"2.14.5.14.1","depth":4,"path":"program/javascript/typescript/type*techniques.md","ref":"program/javascript/typescript/type*techniques.md","articles":[]},{"title":"Typings","level":"2.14.5.14.2","depth":4,"path":"program/javascript/typescript/typings.md","ref":"program/javascript/typescript/typings.md","articles":[]},{"title":"Zod","level":"2.14.5.14.3","depth":4,"path":"program/javascript/typescript/zod.md","ref":"program/javascript/typescript/zod.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"program/javascript/typescript/typescript.md","mtime":"2023-02-06T00:57:52.510Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-02-06T00:58:00.112Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
