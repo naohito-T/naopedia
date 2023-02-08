@@ -227,7 +227,8 @@ Expires
 HTTP RFC 5861で提唱された、SWRというキャッシュ無効化戦略
 
 ## メモリキャッシュ or キャッシュメモリ
-[参考URL](https://www.fujitsu.com/jp/products/computing/servers/unix/term/cache/#:~:text=%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5%E3%83%A1%E3%83%A2%E3%83%AA%E3%81%A8%E3%81%AF%E3%80%81CPU,%E4%BF%9D%E5%AD%98%E3%81%97%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%BE%E3%81%99%E3%80%82)
+[参考URL](https://www.fujitsu.com/jp/products/computing/servers/unix/term/cache/#:~:text=%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5%E3%83%A1%E3%83%A2%E3%83%AA%E3%81%A8%E3%81%AF%E3%80%81CPU,%E4%BF%9D%E5%AD%98%E3%81%97%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%BE%E3%81%99%E3%80%82)  
+[メモリキャッシュ周り比較](https://www.bucyou.net/blog/1224)
 
 キャッシュメモリとは、CPUとメインメモリ（主記憶装置）の間にある記憶装置のこと。  
 CPUはアクセスする頻度の高いデータや命令をキャッシュメモリに保存しておく。  

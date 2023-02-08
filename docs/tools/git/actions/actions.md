@@ -161,11 +161,12 @@ ymlのjogsのtest名がnameに紐付きじゃばらで出る
 
 
 ## job
+[Job間での共有（リファレンス）](https://github.blog/changelog/2020-04-15-github-actions-new-workflow-features/)
+[複数Job間でデータを共有する](https://qiita.com/yokawasa/items/dc46ae6936b745af8b80)
 
 ひとつのファイルに複数のjobを指定可能。
 原則として各jobは並列に実行されるが依存関係（他のジョブ終了を待つ）を設定することも可能。
 
-[複数Job間でデータを共有する](https://qiita.com/yokawasa/items/dc46ae6936b745af8b80)
 
 各ジョブは**仮想環境の新しいインスタンスで実行される**（つまり別々のGitHub Actions Runner（別々のOS）で実行される）
 したがって**ジョブ間で環境変数やファイル/セットアップ処理の結果などは共有されない**

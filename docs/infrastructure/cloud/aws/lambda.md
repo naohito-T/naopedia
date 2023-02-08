@@ -190,3 +190,8 @@ APIGateway+Lambda上でExpressを動かせるというライブラリ。
 
 >この手法のデメリット
 >- 気になる点を挙げるとすれば、王道のAPIgw+Lambda Wayとはいえず、ややHackyな手法ではあると思います。ExpressのようなWeb Application Frameworkを使うならECSやAppRunnerを使う方が素直な感じはします。それでもECSなどを使う場合と比べてLambdaにはゼロスケール1できるという強みがあるので、存外悪くない手法だと思います。
+
+## Lambda TypeScript middy
+[middyについて](https://kiririmode.hatenablog.jp/entry/20220702/1656752084)
+
+middyはLambda関数用のミドルウェアエンジンで

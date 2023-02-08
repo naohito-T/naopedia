@@ -1,24 +1,21 @@
 # CSS
-
-[CSSリファレンス](https://developer.mozilla.org/ja/docs/Learn/CSS/First_steps)
+[CSSリファレンス](https://developer.mozilla.org/ja/docs/Learn/CSS/First_steps)  
+[Webの教科書](https://web-design-textbook.com/css-textbook.html)
 
 ## CSSを本当に理解するには
-
-CSSを理解するには、レイアウトアルゴリズムがどのように機能するかを理解する必要があります。プロパティを知るだけでは不十分
 [参考URL](https://coliss.com/articles/build-websites/operation/css/about-css-layout-algorithms.html)
 
-
-flexbox: IE対応かは不明
-grid layout: IE対応していないのであれば積極的に使う
+CSSを理解するには、レイアウトアルゴリズムがどのように機能するかを理解する必要がある。  
+プロパティを知るだけでは不十分
 
 ## cssとは
 
 CSSは**宣言型プログラミング言語**だが、近年JavaScriptのような命令型の要素も増えてきている。
 
 ## CSSの条件分岐
+[参考URL](https://coliss.com/articles/build-websites/operation/css/writing-logic-in-css.html)
 
 命令型要素について
-[参考URL](https://coliss.com/articles/build-websites/operation/css/writing-logic-in-css.html)
 
 1. 属性セレクターで対応する方法
 

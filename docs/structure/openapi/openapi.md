@@ -2,6 +2,7 @@
 [参考URL](https://zenn.dev/chida/articles/25f4016560f6bf)  
 [参考URL(これが一番参考になる)](https://zenn.dev/mabubu0203/articles/a34937c9d5892f)  
 [openapiをチームに共有する](https://zenn.dev/d_forest/articles/bec25d3a1b111ed37a09)  
+[OpenAPIを分割する](https://tech.buysell-technologies.com/entry/2021/09/21/095238#:~:text=openapi.yaml%20%E3%81%AE%E5%88%86%E5%89%B2,-%E3%81%BE%E3%81%9A%E3%81%AF%20openapi.yaml&text=OpenAPI%20%E3%81%A7%E3%81%AF%20%24ref%20%E3%82%AD%E3%83%BC%E3%83%AF%E3%83%BC%E3%83%89%E3%82%92,%E3%81%99%E3%82%8B%E3%81%93%E3%81%A8%E3%81%8C%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%99%E3%80%82)
 
 コード自動生成やモックサーバーに活用させることで徹底した**スキーマファーストな開発を行うこと**ができる。
 
