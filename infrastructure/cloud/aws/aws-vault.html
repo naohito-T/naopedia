@@ -1327,9 +1327,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.7.3.1.1" data-path="apigateway.html">
+        <li class="chapter " data-level="2.7.3.1.1" data-path="apigateway.md">
             
-                <a href="apigateway.html">
+                <span>
             
                     
                     Apigateway
@@ -1340,9 +1340,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.7.3.1.2" data-path="app-runner.html">
+        <li class="chapter " data-level="2.7.3.1.2" data-path="app-runner.md">
             
-                <a href="app-runner.html">
+                <span>
             
                     
                     App Runner
@@ -1353,9 +1353,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.7.3.1.3" data-path="aurora.html">
+        <li class="chapter " data-level="2.7.3.1.3" data-path="aurora.md">
             
-                <a href="aurora.html">
+                <span>
             
                     
                     Aurora
@@ -1418,9 +1418,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.7.3.1.8" data-path="cloudfront.html">
+        <li class="chapter " data-level="2.7.3.1.8" data-path="cloudfront.md">
             
-                <a href="cloudfront.html">
+                <span>
             
                     
                     Cloudfront
@@ -1431,9 +1431,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.7.3.1.9" data-path="cloudtrail.html">
+        <li class="chapter " data-level="2.7.3.1.9" data-path="cloudtrail.md">
             
-                <a href="cloudtrail.html">
+                <span>
             
                     
                     Cloudtrail
@@ -1444,9 +1444,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.7.3.1.10" data-path="dynamodb.html">
+        <li class="chapter " data-level="2.7.3.1.10" data-path="dynamodb.md">
             
-                <a href="dynamodb.html">
+                <span>
             
                     
                     Dynamodb
@@ -1457,9 +1457,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.7.3.1.11" data-path="ec2.html">
+        <li class="chapter " data-level="2.7.3.1.11" data-path="ec2.md">
             
-                <a href="ec2.html">
+                <span>
             
                     
                     Ec 2
@@ -1496,9 +1496,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.7.3.1.14" data-path="iam.html">
+        <li class="chapter " data-level="2.7.3.1.14" data-path="iam.md">
             
-                <a href="iam.html">
+                <span>
             
                     
                     Iam
@@ -4966,22 +4966,19 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="aws-vault"><a name="aws-vault" class="plugin-anchor" href="#aws-vault"><i class="fa fa-link" aria-hidden="true"></i></a>aws-vault</h1>
-<p>aws-vaultは<strong>AWSのアクセスキーをOSのキーストアに保存</strong>する。
-これによりアクセスキーを暗号化して保持することが可能。
-macOSであればKeyChain、Windowsであれば資格情報マネージャーに保存される。
-これにより<strong>マルウェア経由でのアクセスは拒否される。</strong></p>
-<p>また<code>~/.aws/credentials</code>に保存されていたアクセスキーとシークレットキーの平文から解放される。</p>
-<p><a href="https://qiita.com/kangaechu/items/cb8f68e3866ee5af71c8" target="_blank">aws-vaultについてのあれこれ</a>
-<a href="https://dev.classmethod.jp/articles/switch-role-with-awscli/" target="_blank">IAM初心者がAWS CLIでスイッチロールするまで</a>
-<a href="https://hackers-high.com/aws/aws-vault-on-linux/" target="_blank">aws-vaultをLinux環境でも使う方法【セキュリティ向上】</a>
-<a href="https://blog.microcms.io/aws-vault-introduction/" target="_blank">aws-vault を使って AWS のアクセスキーを暗号化して扱おう</a>
-<a href="https://www.qualimente.com/2018/10/22/how-to-use-aws-vault-to-managing-credentials-for-an-aws-account/" target="_blank">aws-vaultのセッションをきる</a></p>
+<p><a href="https://qiita.com/kangaechu/items/cb8f68e3866ee5af71c8" target="_blank">aws-vaultについてのあれこれ</a><br><a href="https://dev.classmethod.jp/articles/switch-role-with-awscli/" target="_blank">IAM初心者がAWS CLIでスイッチロールするまで</a><br><a href="https://hackers-high.com/aws/aws-vault-on-linux/" target="_blank">aws-vaultをLinux環境でも使う方法【セキュリティ向上】</a><br><a href="https://blog.microcms.io/aws-vault-introduction/" target="_blank">aws-vault を使って AWS のアクセスキーを暗号化して扱おう</a><br><a href="https://www.qualimente.com/2018/10/22/how-to-use-aws-vault-to-managing-credentials-for-an-aws-account/" target="_blank">aws-vaultのセッションをきる</a>  </p>
+<p>aws-vaultは<strong>AWSのアクセスキーをOSのキーストアに保存</strong>するライブラリ<br>これによりアクセスキーを暗号化して保持することが可能。<br>macOSであればKeyChain、Windowsであれば資格情報マネージャーに保存される。<br>これにより<strong>マルウェア経由でのアクセスは拒否される。</strong></p>
+<p>ようは<code>~/.aws/credentials</code>に保存されていたアクセスキーとシークレットキーの平文から解放される。  </p>
+<h2 id="aws-vault設定"><a name="aws-vault設定" class="plugin-anchor" href="#aws-vault設定"><i class="fa fa-link" aria-hidden="true"></i></a>aws-vault設定</h2>
+<p><a href="https://dev.classmethod.jp/articles/cli-switch-role/" target="_blank">参考URL</a></p>
+<h2 id="aws-configおさらい"><a name="aws-configおさらい" class="plugin-anchor" href="#aws-configおさらい"><i class="fa fa-link" aria-hidden="true"></i></a>aws configおさらい</h2>
+<p><a href="https://dev.classmethod.jp/articles/aws-cli-configuration-file-env-option/" target="_blank">参考URL</a></p>
 <h2 id="aws-vault-exec"><a name="aws-vault-exec" class="plugin-anchor" href="#aws-vault-exec"><i class="fa fa-link" aria-hidden="true"></i></a>aws-vault exec</h2>
 <p>aws-vault execは<strong>認証情報を含んだ環境変数を追加</strong>し、<code>--</code>以下のコマンドを実行します。
 <code>$ aws-vault exec private -- aws s3 ls</code></p>
 <h2 id="aws-vault-ls"><a name="aws-vault-ls" class="plugin-anchor" href="#aws-vault-ls"><i class="fa fa-link" aria-hidden="true"></i></a>aws-vault ls</h2>
 <p>aws-vaultで登録しているプロファイルを確認できる。</p>
-<h2 id="保存したキーチェーンで絵中身を見る"><a name="保存したキーチェーンで絵中身を見る" class="plugin-anchor" href="#保存したキーチェーンで絵中身を見る"><i class="fa fa-link" aria-hidden="true"></i></a>保存したキーチェーンで絵中身を見る</h2>
+<h2 id="保存したキーチェーンで中身を見る"><a name="保存したキーチェーンで中身を見る" class="plugin-anchor" href="#保存したキーチェーンで中身を見る"><i class="fa fa-link" aria-hidden="true"></i></a>保存したキーチェーンで中身を見る</h2>
 <p><a href="https://qiita.com/minamijoyo/items/5ed3113434e51308ded1" target="_blank">参考URL</a></p>
 <h2 id="aws-vaultが利用するファイル"><a name="aws-vaultが利用するファイル" class="plugin-anchor" href="#aws-vaultが利用するファイル"><i class="fa fa-link" aria-hidden="true"></i></a>aws-vaultが利用するファイル</h2>
 <p><code>~/.aws/config</code>の編集が必要です。
@@ -5034,7 +5031,7 @@ aws-vaultは<code>~/.aws/credentials</code>を利用しない。</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"AWS Vault","level":"2.7.3.1.6","depth":4,"next":{"title":"WAF","level":"2.7.3.1.7","depth":4,"path":"infrastructure/cloud/aws/aws-waf.md","ref":"infrastructure/cloud/aws/aws-waf.md","articles":[]},"previous":{"title":"AWS Sam","level":"2.7.3.1.5","depth":4,"path":"infrastructure/cloud/aws/aws-sam.md","ref":"infrastructure/cloud/aws/aws-sam.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"infrastructure/cloud/aws/aws-vault.md","mtime":"2023-02-11T01:45:26.438Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-02-11T01:45:40.754Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"AWS Vault","level":"2.7.3.1.6","depth":4,"next":{"title":"WAF","level":"2.7.3.1.7","depth":4,"path":"infrastructure/cloud/aws/aws-waf.md","ref":"infrastructure/cloud/aws/aws-waf.md","articles":[]},"previous":{"title":"AWS Sam","level":"2.7.3.1.5","depth":4,"path":"infrastructure/cloud/aws/aws-sam.md","ref":"infrastructure/cloud/aws/aws-sam.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"infrastructure/cloud/aws/aws-vault.md","mtime":"2023-02-11T06:14:37.479Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-02-11T06:14:45.535Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
