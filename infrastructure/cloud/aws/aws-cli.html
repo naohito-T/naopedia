@@ -1470,9 +1470,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.7.3.1.12" data-path="enterprise.html">
+        <li class="chapter " data-level="2.7.3.1.12" data-path="enterprise.md">
             
-                <a href="enterprise.html">
+                <span>
             
                     
                     Enterprise
@@ -4966,11 +4966,18 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="aws-cli"><a name="aws-cli" class="plugin-anchor" href="#aws-cli"><i class="fa fa-link" aria-hidden="true"></i></a>AWS CLI</h1>
-<p><a href="https://dev.classmethod.jp/articles/20200415-awscli-credential-files/" target="_blank">[初心者向けTips]AWS CLI認証情報ファイルに最低限設定しておく項目</a>
-<a href="https://zenn.dev/kkenjii/articles/try-aws-cli-mfa" target="_blank">AWS CLIでMFA認証を行ってコマンドを実行できるようにする</a> </p>
+<p><a href="https://dev.classmethod.jp/articles/20200415-awscli-credential-files/" target="_blank">[初心者向けTips]AWS CLI認証情報ファイルに最低限設定しておく項目</a><br><a href="https://zenn.dev/kkenjii/articles/try-aws-cli-mfa" target="_blank">AWS CLIでMFA認証を行ってコマンドを実行できるようにする</a> </p>
 <p>AWSコマンドラインインターフェイス (AWS CLI) は、AWSのサービスを管理するための統合ツール。
 ダウンロードおよび設定用の単一のツールのみを使用して、コマンドラインからAWSの複数のサービスを制御し、スクリプトを使用してこれらを自動化することができる。</p>
-<h3 id="aws-cliを使うとき"><a name="aws-cliを使うとき" class="plugin-anchor" href="#aws-cliを使うとき"><i class="fa fa-link" aria-hidden="true"></i></a>AWS CLIを使うとき</h3>
+<h3 id="aws-cli優先順位"><a name="aws-cli優先順位" class="plugin-anchor" href="#aws-cli優先順位"><i class="fa fa-link" aria-hidden="true"></i></a>AWS CLI優先順位</h3>
+<p><a href="https://dev.classmethod.jp/articles/aws-cli-configuration-file-env-option/" target="_blank">参考URL</a></p>
+<p><code>~/.aws/config</code>の設定内容は環境変数やコマンドラインオプションによって上書きされる。</p>
+<p>優先順位は以下</p>
+<ol>
+<li>コマンドラインオプション</li>
+<li>環境変数</li>
+<li>AWS CLIコンフィグファイル</li>
+</ol>
 <h2 id="aws-cliを使う前の準備"><a name="aws-cliを使う前の準備" class="plugin-anchor" href="#aws-cliを使う前の準備"><i class="fa fa-link" aria-hidden="true"></i></a>aws-cliを使う前の準備</h2>
 <p>aws-cliをインストールしてクレデンシャルを設定しておく必要がある。
 AWSのクレデンシャルを登録するために、アクセスキー/シークレットキーを取得する必要。</p>
@@ -5034,7 +5041,7 @@ AWSのクレデンシャルを登録するために、アクセスキー/シー�
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"AWS CLI","level":"2.7.3.1.4","depth":4,"next":{"title":"AWS Sam","level":"2.7.3.1.5","depth":4,"path":"infrastructure/cloud/aws/aws-sam.md","ref":"infrastructure/cloud/aws/aws-sam.md","articles":[]},"previous":{"title":"Aurora","level":"2.7.3.1.3","depth":4,"path":"infrastructure/cloud/aws/aurora.md","ref":"infrastructure/cloud/aws/aurora.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"infrastructure/cloud/aws/aws-cli.md","mtime":"2023-02-11T06:14:37.479Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-02-11T06:14:45.535Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"AWS CLI","level":"2.7.3.1.4","depth":4,"next":{"title":"AWS Sam","level":"2.7.3.1.5","depth":4,"path":"infrastructure/cloud/aws/aws-sam.md","ref":"infrastructure/cloud/aws/aws-sam.md","articles":[]},"previous":{"title":"Aurora","level":"2.7.3.1.3","depth":4,"path":"infrastructure/cloud/aws/aurora.md","ref":"infrastructure/cloud/aws/aurora.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"infrastructure/cloud/aws/aws-cli.md","mtime":"2023-02-11T10:12:19.754Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-02-11T10:12:29.989Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
