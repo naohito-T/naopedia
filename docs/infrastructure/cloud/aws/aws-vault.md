@@ -18,6 +18,10 @@ macOSであればKeyChain、Windowsであれば資格情報マネージャーに
 ## aws configおさらい
 [参考URL](https://dev.classmethod.jp/articles/aws-cli-configuration-file-env-option/)
 
+## aws-vault add
+
+aws-vaultで使用するユーザを作成する。
+
 ## aws-vault exec
 
 aws-vault execは**認証情報を含んだ環境変数を追加**し、`--`以下のコマンドを実行します。
@@ -27,8 +31,11 @@ aws-vault execは**認証情報を含んだ環境変数を追加**し、`--`以�
 
 aws-vaultで登録しているプロファイルを確認できる。
 
-## 保存したキーチェーンで中身を見る
+## 保存したキーチェーンの中身を見る
 [参考URL](https://qiita.com/minamijoyo/items/5ed3113434e51308ded1)
+
+macOSだとキーチェーンで中身が見られる。
+
 
 ## aws-vaultが利用するファイル
 
