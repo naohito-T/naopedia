@@ -1,8 +1,8 @@
 # Docker
-[Dockerfile(リフェレンス)](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
-[入門Docker](https://y-ohgi.com/introduction-docker/)
-[軽量なDockerfileの作り方](https://qiita.com/watawuwu/items/d547d0cb1ab1db5e079c)
-[Dockerfile ベストプラティクス(かなりすごい)](https://zenn.dev/esaka/articles/cae40a30bbbfa495e6a9)
+[Dockerfile(リフェレンス)](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)  
+[入門Docker](https://y-ohgi.com/introduction-docker/)  
+[軽量なDockerfileの作り方](https://qiita.com/watawuwu/items/d547d0cb1ab1db5e079c)  
+[Dockerfile ベストプラティクス(かなりすごい)](https://zenn.dev/esaka/articles/cae40a30bbbfa495e6a9)  
 [Dockerセキュリティ（これもLTに入れる）](https://qiita.com/ohhara_shiojiri/items/08909bfaed8073af57f0)
 
 ```sh
@@ -23,8 +23,9 @@ docker volume prune -f
 ## Docker imageの中身を見る(レイヤー)
 [参考URL](https://zenn.dev/kirisaki/scraps/89bf93bfd9a0d6)
 
-作成したイメージがどうなっているかを確認したいとき。
-レイヤーについて詳しく見れられる。
+以下の要望があるときに見れる  
+作成したイメージがどうなっているかを確認したいとき。  
+レイヤーについて詳しく見られる。  
 
 `docker save -o [name].tar [image id]`
 
