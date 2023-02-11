@@ -1,17 +1,42 @@
 # Amazon API Gateway
 
-[参考URL](https://dev.classmethod.jp/articles/what-does-amazon-api-gateway-do/)
+[参考URL](https://dev.classmethod.jp/articles/what-does-amazon-api-gateway-do/)  
 [Amazon CloudFrontでAPI Gatewayの痒いところに手を届ける](https://dev.classmethod.jp/articles/cache-api-gateway-by-cloudfront/)
 
-アプリケーションをユーザに公開する場合、それがGUIであってもインターフェイスが必要になる。
+アプリケーションをユーザに公開する場合、それがGUIであってもインターフェイスが必要になる。  
 Webアプリケーションを公開する場合にはWeb APIを利用するのが一般的であり、AWSもAPIをフルマネージドで活用するためのAPI Gatewayを提供している。
 
 ## Amazon API Gatewayとは？
 
-Amazon APIGatewayは規模にかかわらず、簡単にAPIの作成と保護、そして公開、モニタリングが可能なフルマネージドサービス。
+Amazon APIGatewayは規模にかかわらず、簡単にAPIの作成と保護、そして公開、モニタリングが可能なフルマネージドサービス。  
 API Gatewayは簡単にAPIを作成し公開できるサービスでかつ、APIに求められるさまざまな機能をカバーしている。  
 そしてAPI Gatewayはクライアントからリクエストを受け取ってそれをバックエンドに渡し、バックエンドからレスポンスを受け取ってクライアントに返す。  
-プロキシのような働きをしている。
+プロキシのような働きをしている。  
+
+## HTTPプロキシとして進化した経緯
+[参考URL](https://qiita.com/_mogaming/items/4e9d8c62739399b076b7)
+
+>今までのAPI Gatewayでは、HTTPプロキシとして利用するには、通したいリクエストのすべてのリソースパスとメソッドを設定する必要がありました。これが非常に面倒でした。
+
+だが、大量に設定する必要のあったものが`/{proxy+}`だけで簡単にオールスルーのプロキシが作れるようになった。  
+
+利用シーンの抜粋  
+- レートリミットをかける
+  API Gatewayは比較的楽にレートリミットをかけることができるので、既存APIにGatewayを挟んで使う
+- とりあえず全部Lambdaに飛ばしてゴニョゴニョする
+  リクエストパスに応じて振り分けるとか
+
+## Lambdaからのレスポンス形式
+
+以下のようにしないとAPI Gatewayが502を返してしまう。
+
+```sh
+{
+    "statusCode": httpStatusCode,
+    "headers": { "headerName": "headerValue", ... },
+    "body": "..."
+}
+```
 
 ## API GatewayとCloudFrontの違い
 
