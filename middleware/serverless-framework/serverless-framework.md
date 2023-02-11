@@ -1,4 +1,5 @@
 # serverless-framework
+[サーバーレス動作](https://qiita.com/mkin/items/0a82c84df084496544c6)
 [サーバーレスの使い方まとめ](https://serverless.co.jp/blog/25/)
 
 ## serverless-framework AWS認証情報セットアップ
