@@ -80,8 +80,21 @@ const user = connection.getRepository(User).find({
 ## entity
 [参考URL](https://qiita.com/haman0104/items/8cc69429b1d02aefed35)
 [参考URL(詳しい)](https://www.infoq.com/jp/articles/typescript-mysql/)
-entityはDBのテーブルと一対一で構成する。
+entityはDBのテーブルと一対一で構成する。  
 ※実際はClassで作成するため関連するmethodなども記載していいかは議論が生じる
+
+## Entityファイル
+[postgres entity 種類](https://github.com/typeorm/typeorm/blob/master/test/functional/database-schema/column-types/postgres/entity/Post.ts)
+[全entity](https://github.com/typeorm/typeorm/tree/master/test/functional/database-schema/column-types)
+
+`@Entity`をつけたものがテーブル対象になる。
+データベースの列の型は、使用したプロパティの型から推測
+
+データ型
+[サポートされている列の型](https://typeorm.io/entities#column-types)
+
+データベースの列の型は、使用したプロパティの型から推測されます。
+ただし、列の型をデコレータに明示的に指定することで、データベースがサポートする任意の列の型を使用できる。
 
 ## サポートしている関係
 
@@ -141,19 +154,6 @@ JoinTable
 
 ## Tips
 [TypeORM知見まとめ](https://zenn.dev/uttk/scraps/343e888f62360b)
-
-## Entityファイル
-[postgres entity 種類](https://github.com/typeorm/typeorm/blob/master/test/functional/database-schema/column-types/postgres/entity/Post.ts)
-[全entity](https://github.com/typeorm/typeorm/tree/master/test/functional/database-schema/column-types)
-
-`@Entity`をつけたものがテーブル対象になる。
-データベースの列の型は、使用したプロパティの型から推測
-
-データ型
-[サポートされている列の型](https://typeorm.io/entities#column-types)
-
-データベースの列の型は、使用したプロパティの型から推測されます。
-ただし、列の型をデコレータに明示的に指定することで、データベースがサポートする任意の列の型を使用できる。
 
 
 ## デコレータオプション
