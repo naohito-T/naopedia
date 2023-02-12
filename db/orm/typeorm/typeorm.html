@@ -5034,8 +5034,16 @@ Node.jsやブラウザ上など、さまざまなプラットフォームをサ�
 <h2 id="entity"><a name="entity" class="plugin-anchor" href="#entity"><i class="fa fa-link" aria-hidden="true"></i></a>entity</h2>
 <p><a href="https://qiita.com/haman0104/items/8cc69429b1d02aefed35" target="_blank">参考URL</a>
 <a href="https://www.infoq.com/jp/articles/typescript-mysql/" target="_blank">参考URL(詳しい)</a>
-entityはDBのテーブルと一対一で構成する。
-※実際はClassで作成するため関連するmethodなども記載していいかは議論が生じる</p>
+entityはDBのテーブルと一対一で構成する。<br>※実際はClassで作成するため関連するmethodなども記載していいかは議論が生じる</p>
+<h2 id="entityファイル"><a name="entityファイル" class="plugin-anchor" href="#entityファイル"><i class="fa fa-link" aria-hidden="true"></i></a>Entityファイル</h2>
+<p><a href="https://github.com/typeorm/typeorm/blob/master/test/functional/database-schema/column-types/postgres/entity/Post.ts" target="_blank">postgres entity 種類</a>
+<a href="https://github.com/typeorm/typeorm/tree/master/test/functional/database-schema/column-types" target="_blank">全entity</a></p>
+<p><code>@Entity</code>をつけたものがテーブル対象になる。
+データベースの列の型は、使用したプロパティの型から推測</p>
+<p>データ型
+<a href="https://typeorm.io/entities#column-types" target="_blank">サポートされている列の型</a></p>
+<p>データベースの列の型は、使用したプロパティの型から推測されます。
+ただし、列の型をデコレータに明示的に指定することで、データベースがサポートする任意の列の型を使用できる。</p>
 <h2 id="サポートしている関係"><a name="サポートしている関係" class="plugin-anchor" href="#サポートしている関係"><i class="fa fa-link" aria-hidden="true"></i></a>サポートしている関係</h2>
 <p>TypeORMはエンティティ間のいくつかの種類の関係をサポートします。</p>
 <p>1対1
@@ -5071,15 +5079,6 @@ entityはDBのテーブルと一対一で構成する。
 <p>上を見ればわかるだろう。ひとつのチケットに対して複数のオプションがある。S</p>
 <h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>Tips</h2>
 <p><a href="https://zenn.dev/uttk/scraps/343e888f62360b" target="_blank">TypeORM知見まとめ</a></p>
-<h2 id="entityファイル"><a name="entityファイル" class="plugin-anchor" href="#entityファイル"><i class="fa fa-link" aria-hidden="true"></i></a>Entityファイル</h2>
-<p><a href="https://github.com/typeorm/typeorm/blob/master/test/functional/database-schema/column-types/postgres/entity/Post.ts" target="_blank">postgres entity 種類</a>
-<a href="https://github.com/typeorm/typeorm/tree/master/test/functional/database-schema/column-types" target="_blank">全entity</a></p>
-<p><code>@Entity</code>をつけたものがテーブル対象になる。
-データベースの列の型は、使用したプロパティの型から推測</p>
-<p>データ型
-<a href="https://typeorm.io/entities#column-types" target="_blank">サポートされている列の型</a></p>
-<p>データベースの列の型は、使用したプロパティの型から推測されます。
-ただし、列の型をデコレータに明示的に指定することで、データベースがサポートする任意の列の型を使用できる。</p>
 <h2 id="デコレータオプション"><a name="デコレータオプション" class="plugin-anchor" href="#デコレータオプション"><i class="fa fa-link" aria-hidden="true"></i></a>デコレータオプション</h2>
 <ul>
 <li>cascade
@@ -5143,7 +5142,7 @@ Promiseを使って任意のタイミングで遅延して読み込む。
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Typeorm","level":"2.4.2.1","depth":3,"next":{"title":"Orm","level":"2.4.2.2","depth":3,"path":"db/orm/orm.md","ref":"db/orm/orm.md","articles":[]},"previous":{"title":"Orm","level":"2.4.2","depth":2,"path":"db/orm/orm.md","ref":"db/orm/orm.md","articles":[{"title":"Typeorm","level":"2.4.2.1","depth":3,"path":"db/orm/typeorm/typeorm.md","ref":"db/orm/typeorm/typeorm.md","articles":[]},{"title":"Orm","level":"2.4.2.2","depth":3,"path":"db/orm/orm.md","ref":"db/orm/orm.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"db/orm/typeorm/typeorm.md","mtime":"2023-02-11T13:43:42.027Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-02-11T13:43:51.258Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Typeorm","level":"2.4.2.1","depth":3,"next":{"title":"Orm","level":"2.4.2.2","depth":3,"path":"db/orm/orm.md","ref":"db/orm/orm.md","articles":[]},"previous":{"title":"Orm","level":"2.4.2","depth":2,"path":"db/orm/orm.md","ref":"db/orm/orm.md","articles":[{"title":"Typeorm","level":"2.4.2.1","depth":3,"path":"db/orm/typeorm/typeorm.md","ref":"db/orm/typeorm/typeorm.md","articles":[]},{"title":"Orm","level":"2.4.2.2","depth":3,"path":"db/orm/orm.md","ref":"db/orm/orm.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"db/orm/typeorm/typeorm.md","mtime":"2023-02-12T00:30:17.871Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-02-12T00:30:25.656Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
