@@ -4967,22 +4967,24 @@
                                 
                                 <h1 id="test"><a name="test" class="plugin-anchor" href="#test"><i class="fa fa-link" aria-hidden="true"></i></a>Test</h1>
 <p><a href="../GLOSSARY.html#test" class="glossary-term" title="これは、テスト用の単語です。">Test</a>概念について</p>
+<h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>Tips</h2>
+<p><a href="https://logmi.jp/tech/articles/323523" target="_blank">E2E Test導入で嬉しいこと</a><br><a href="https://engineering.mercari.com/blog/entry/20211208-test-automation-policy-in-merpay-frontend/" target="_blank">メルペイのテスト方針</a><br><a href="https://gift-tech.co.jp/articles/Qase/" target="_blank">Test管理ツール(Excelとかで管理していたのをさらに管理する)</a><br><a href="https://nakka-k.hatenablog.com/entry/2019/06/25/000752" target="_blank">webアプリケーション開発で個人的に重視しているテストの話</a><br><a href="https://commerce-engineer.rakuten.careers/entry/tech/0031" target="_blank">E2E テストを導入するのか</a>  </p>
 <h2 id="test-フェーズ"><a name="test-フェーズ" class="plugin-anchor" href="#test-フェーズ"><i class="fa fa-link" aria-hidden="true"></i></a>Test フェーズ</h2>
-<p>単体テスト    一部分 ( モジュール内のクラスや関数 )のテスト
-結合テスト    機能を結合したもの（単体テスト済みのモジュールを組み合わたもの）のテスト
-システムテスト    システム全体（機能・非機能）のテスト</p>
+<ul>
+<li>単体テスト    一部分 ( モジュール内のクラスや関数 )のテスト</li>
+<li>結合テスト    機能を結合したもの（単体テスト済みのモジュールを組み合わたもの）のテスト</li>
+<li>システムテスト    システム全体（機能・非機能）のテスト</li>
+</ul>
 <h2 id="test-概要"><a name="test-概要" class="plugin-anchor" href="#test-概要"><i class="fa fa-link" aria-hidden="true"></i></a>Test 概要</h2>
-<p><strong>1. ユニットテスト</strong>
-ユニットテストはJestを用いて、主にTypeScriptで記述された関数ロジックをテストする。※Vuex、vueファイルは除く</p>
-<p><strong>2. インテグレーションテスト</strong>
-インテグレーションテストは主にWebページ単位のテストで、Nuxtでいうところのpages配下のページコンポーネント単位のテストに相当します。Vueコンポーネントやユーティリティ関数、Nuxt middlewareやplugin、Vuex Storeなどページに含まれるものすべてが統合されます。ユニットテストで対象外としていた、コンポーネントやVuex Storeロジックもここで担保されます。Cypressを用いており、該当のアプリケーションと同じリポジトリにテストコードも置きます。</p>
+<p><strong>1. ユニットテスト</strong><br>ユニットテストはJestを用いて、主にTypeScriptで記述された関数ロジックをテストする。<br>※Vuex、vueファイルは除く</p>
+<p><strong>2. インテグレーションテスト</strong><br>インテグレーションテストは主にWebページ単位のテストで、Nuxtでいうところのpages配下のページコンポーネント単位のテストに相当します。Vueコンポーネントやユーティリティ関数、Nuxt middlewareやplugin、Vuex Storeなどページに含まれるものすべてが統合されます。ユニットテストで対象外としていた、コンポーネントやVuex Storeロジックもここで担保されます。Cypressを用いており、該当のアプリケーションと同じリポジトリにテストコードも置きます。</p>
 <blockquote>
 <p>元々は Vue <a href="../GLOSSARY.html#test" class="glossary-term" title="これは、テスト用の単語です。">Test</a> Utils などを用いてインテグレーションテストを行っていました。しかし、Nuxt 固有の処理や Vuex State、ブラウザ固有の処理のモックなど、テストのための設定が多くなってしまっていまいテスト運用に難がありました。代わりに Cypress を用いる方針に現在はシフトしています。Cypress の機能で API レスポンスだけモックし、それ以外はリアルなアプリケーションを実際のブラウザ上でテストすることができます。</p>
 </blockquote>
 <p><strong>3. シナリオテスト</strong></p>
 <p>シナリオテストは予期している挙動すべてを確認するテスト
 QAチームがマニュアルで実施する。ある機能が追加・変更された時に全パターンを網羅的にテストする。
-逆に言うと、ある機能が追加・変更されない限り、繰り返し実施されることはありません。現在、シナリオテストは自動化をしない方針です。仕様に変更があった場合の更新コストが大きく、かつ CI として実行し続けるにはシナリオテストケース数が膨大でテスト実行に時間がかかるためです。</p>
+逆に言うと、ある機能が追加・変更されない限り、繰り返し実施されることはありません。現在、シナリオテストは自動化をしない方針です。仕様に変更があった場合の更新コストが大きく、かつCIとして実行し続けるにはシナリオテストケース数が膨大でテスト実行に時間がかかるためです。</p>
 <blockquote>
 <p>インテグレーションテストとの違いはテスト対象です。インテグレーションテストはあくまでフロントエンドアプリケーション単体をテストするのに対して、シナリオテストは本番相当の環境を用いて、フロントエンドアプリケーションを介してバックエンドやインフラも総合してテストをします。</p>
 </blockquote>
@@ -5170,18 +5172,16 @@ Job DSLとはJenkinsの新しいジョブの設定をDSL(Domain Specific Languag
 </ul>
 <h2 id="testrailとは"><a name="testrailとは" class="plugin-anchor" href="#testrailとは"><i class="fa fa-link" aria-hidden="true"></i></a>TestRailとは</h2>
 <p>ブラウザベースでテスト管理できる有償ツール</p>
-<h2 id="er"><a name="er" class="plugin-anchor" href="#er"><i class="fa fa-link" aria-hidden="true"></i></a>ER</h2>
+<h2 id="e2e"><a name="e2e" class="plugin-anchor" href="#e2e"><i class="fa fa-link" aria-hidden="true"></i></a>E2E</h2>
 <p><a href="https://qiita.com/mt0m/items/7e18d8802843d9f60d28" target="_blank">E2E テスト</a></p>
-<h2 id="mockデータ作成ツール"><a name="mockデータ作成ツール" class="plugin-anchor" href="#mockデータ作成ツール"><i class="fa fa-link" aria-hidden="true"></i></a>mockデータ作成ツール</h2>
-<p><a href="https://fakerjs.dev/api/" target="_blank">https://fakerjs.dev/api/</a></p>
-<h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>Tips</h2>
-<p><a href="https://logmi.jp/tech/articles/323523" target="_blank">E2E Test導入で嬉しいこと</a><br><a href="https://engineering.mercari.com/blog/entry/20211208-test-automation-policy-in-merpay-frontend/" target="_blank">メルペイのテスト方針</a><br><a href="https://gift-tech.co.jp/articles/Qase/" target="_blank">Test管理ツール(Excelとかで管理していたのをさらに管理する)</a><br><a href="https://nakka-k.hatenablog.com/entry/2019/06/25/000752" target="_blank">webアプリケーション開発で個人的に重視しているテストの話</a><br><a href="https://commerce-engineer.rakuten.careers/entry/tech/0031" target="_blank">E2E テストを導入するのか</a>  </p>
 <h2 id="アサーションを含める個数"><a name="アサーションを含める個数" class="plugin-anchor" href="#アサーションを含める個数"><i class="fa fa-link" aria-hidden="true"></i></a>アサーションを含める個数</h2>
-<p>基本ひとつの<a href="../GLOSSARY.html#test" class="glossary-term" title="これは、テスト用の単語です。">Test</a>にひとつのアサーション（Jestで言うと<code>expect</code>）を含めるのがいいと言われている。<br>最高でも2つぐらいか</p>
+<p>基本ひとつの<a href="../GLOSSARY.html#test" class="glossary-term" title="これは、テスト用の単語です。">Test</a>にひとつのアサーション（Jestで言うと<code>expect</code>）を含めるのがいいと言われている。<br>最高でも2つぐらいがいいと思う。</p>
 <h2 id="test-words"><a name="test-words" class="plugin-anchor" href="#test-words"><i class="fa fa-link" aria-hidden="true"></i></a>Test Words</h2>
 <p>assertion:アサーション<br>テストの評価</p>
 <h2 id="ファクトリーメソッド"><a name="ファクトリーメソッド" class="plugin-anchor" href="#ファクトリーメソッド"><i class="fa fa-link" aria-hidden="true"></i></a>ファクトリーメソッド</h2>
 <p>fakerなどを使って手書きで書いていいが、その言語にあるFactoryライブラリなどを調べてみるのもいいかもしれない</p>
+<h2 id="mockデータ作成ツール"><a name="mockデータ作成ツール" class="plugin-anchor" href="#mockデータ作成ツール"><i class="fa fa-link" aria-hidden="true"></i></a>mockデータ作成ツール</h2>
+<p><a href="https://fakerjs.dev/api/" target="_blank">https://fakerjs.dev/api/</a></p>
 
                                 
                                 </section>
@@ -5225,7 +5225,7 @@ Job DSLとはJenkinsの新しいジョブの設定をDSL(Domain Specific Languag
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Test","level":"2.19","depth":1,"next":{"title":"E 2 E","level":"2.19.1","depth":2,"path":"test/e2e/e2e.md","ref":"test/e2e/e2e.md","articles":[]},"previous":{"title":"画像処理","level":"2.18.5","depth":2,"path":"technology/画像処理.md","ref":"technology/画像処理.md","articles":[]},"articles":[{"title":"E 2 E","level":"2.19.1","depth":2,"path":"test/e2e/e2e.md","ref":"test/e2e/e2e.md","articles":[]},{"title":"Web UI","level":"2.19.2","depth":2,"path":"test/webUI/webui.md","ref":"test/webUI/webui.md","articles":[{"title":"Cypress","level":"2.19.2.1","depth":3,"path":"test/webUI/cypress/cypress.md","ref":"test/webUI/cypress/cypress.md","articles":[]},{"title":"Jest","level":"2.19.2.2","depth":3,"path":"test/webUI/jest/jest.md","ref":"test/webUI/jest/jest.md","articles":[{"title":"Testing Library","level":"2.19.2.2.1","depth":4,"path":"test/webUI/jest/testing*library.md","ref":"test/webUI/jest/testing*library.md","articles":[]}]},{"title":"Playwright","level":"2.19.2.3","depth":3,"path":"test/webUI/playwright/playwright.md","ref":"test/webUI/playwright/playwright.md","articles":[]},{"title":"Selenium","level":"2.19.2.4","depth":3,"path":"test/webUI/selenium/selenium.md","ref":"test/webUI/selenium/selenium.md","articles":[]},{"title":"Webui","level":"2.19.2.5","depth":3,"path":"test/webUI/webui.md","ref":"test/webUI/webui.md","articles":[]}]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"test/test.md","mtime":"2023-02-13T00:48:10.876Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-02-13T00:48:20.128Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Test","level":"2.19","depth":1,"next":{"title":"E 2 E","level":"2.19.1","depth":2,"path":"test/e2e/e2e.md","ref":"test/e2e/e2e.md","articles":[]},"previous":{"title":"画像処理","level":"2.18.5","depth":2,"path":"technology/画像処理.md","ref":"technology/画像処理.md","articles":[]},"articles":[{"title":"E 2 E","level":"2.19.1","depth":2,"path":"test/e2e/e2e.md","ref":"test/e2e/e2e.md","articles":[]},{"title":"Web UI","level":"2.19.2","depth":2,"path":"test/webUI/webui.md","ref":"test/webUI/webui.md","articles":[{"title":"Cypress","level":"2.19.2.1","depth":3,"path":"test/webUI/cypress/cypress.md","ref":"test/webUI/cypress/cypress.md","articles":[]},{"title":"Jest","level":"2.19.2.2","depth":3,"path":"test/webUI/jest/jest.md","ref":"test/webUI/jest/jest.md","articles":[{"title":"Testing Library","level":"2.19.2.2.1","depth":4,"path":"test/webUI/jest/testing*library.md","ref":"test/webUI/jest/testing*library.md","articles":[]}]},{"title":"Playwright","level":"2.19.2.3","depth":3,"path":"test/webUI/playwright/playwright.md","ref":"test/webUI/playwright/playwright.md","articles":[]},{"title":"Selenium","level":"2.19.2.4","depth":3,"path":"test/webUI/selenium/selenium.md","ref":"test/webUI/selenium/selenium.md","articles":[]},{"title":"Webui","level":"2.19.2.5","depth":3,"path":"test/webUI/webui.md","ref":"test/webUI/webui.md","articles":[]}]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"test/test.md","mtime":"2023-02-13T07:05:37.755Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-02-13T07:05:51.623Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
