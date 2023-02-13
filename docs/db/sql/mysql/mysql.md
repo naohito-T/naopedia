@@ -3,7 +3,6 @@
 ## dumpとリストアについて
 [参考URL](https://tex2e.github.io/blog/database/mysql-dump-restore)
 
-
 ---
 
 ## 文字コード
@@ -38,3 +37,9 @@ utf8mb4
 ## Dockerで起動時に複数DBを立ち上げる
 [参考URL](https://ysuzuki19.github.io/post/docker-mysql-postgres-multiple-databases)  
 [参考URL](https://onexlab-io.medium.com/docker-compose-mysql-multiple-database-fe640938e06b)
+
+
+## Grant系
+
+権限操作について記載する
+[ユーザの作成](https://qiita.com/ritukiii/items/afdc91e68d0cf3e0f383)
