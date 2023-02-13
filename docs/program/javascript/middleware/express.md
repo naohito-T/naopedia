@@ -1,6 +1,9 @@
-# express
+# Express
 
-http serverでnodeで動作する
+Express関連でためになったものを記す。
+
+## Express 型拡張
+[コード](https://github.com/tomnil/typedexpress/blob/master/src/index.ts)
 
 ## session
 [参考URL](https://kazuhira-r.hatenablog.com/entry/2021/12/29/023347)
