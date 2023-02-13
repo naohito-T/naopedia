@@ -4,6 +4,7 @@ SQLの普遍的なものについて記載していく。
 
 ## SQLがオンラインでできる
 [SQL Fiddle](http://sqlfiddle.com/)
+[使い方説明](https://osakanav.com/sql-fiddle)
 
 ## チューニング
 [WebLogic Server参照から学ぶ](https://docs.oracle.com/cd/F25597_01/document/products/wls/docs92/perform/topten.html#wp1132669)

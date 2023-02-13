@@ -15,6 +15,9 @@
 2. GraphQL API
 3. WebSocket API
 
+## Google blog
+[API 設計: gRPC、OpenAPI、REST の概要と、それらを使用するタイミングを理解する](https://cloud.google.com/blog/ja/products/api-management/understanding-grpc-openapi-and-rest-and-when-to-use-them)
+
 ## 上記のAPI種類が決まったら
 
 - セキュアな通信か
