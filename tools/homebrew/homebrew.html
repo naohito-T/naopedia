@@ -4966,9 +4966,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="homebrew"><a name="homebrew" class="plugin-anchor" href="#homebrew"><i class="fa fa-link" aria-hidden="true"></i></a>Homebrew</h1>
-<p>忘れてはいけないのは、homebrewは<strong>ユーザーレベルでインストールするパッケージマネージャー</strong></p>
-<p>ホストマシンでひとつではないため汎用性が高い。
-Homebrewではホームディレクトリ内でパッケージを管理するためsudoを使わないのもメリット</p>
+<p>忘れてはいけないのは、homebrewは<strong>ユーザーレベルでインストールするパッケージマネージャー。</strong><br>ホストマシンひとつに対し、ひとつのパッケージマネージャーではないため汎用性が高い。<br>Homebrewではホームディレクトリ内でパッケージを管理するためsudoを使わないのもメリット。</p>
 <h2 id="ユビキタス"><a name="ユビキタス" class="plugin-anchor" href="#ユビキタス"><i class="fa fa-link" aria-hidden="true"></i></a>ユビキタス</h2>
 <p>フォーミュラ: Homebrewではインストールしたパッケージのこと</p>
 <h2 id="brewfileを作成"><a name="brewfileを作成" class="plugin-anchor" href="#brewfileを作成"><i class="fa fa-link" aria-hidden="true"></i></a>Brewfileを作成</h2>
@@ -4978,8 +4976,7 @@ $ brew bundle dump
 </code></pre>
 <hr>
 <h2 id="コマンド"><a name="コマンド" class="plugin-anchor" href="#コマンド"><i class="fa fa-link" aria-hidden="true"></i></a>コマンド</h2>
-<p><a href="https://parashuto.com/rriver/tools/homebrew-most-used-commands" target="_blank">参考URL</a>
-<a href="https://qiita.com/fuqda/items/db8aff0ba4068aea2cc6" target="_blank">参考URL2</a></p>
+<p><a href="https://parashuto.com/rriver/tools/homebrew-most-used-commands" target="_blank">参考URL</a><br><a href="https://qiita.com/fuqda/items/db8aff0ba4068aea2cc6" target="_blank">参考URL2</a>  </p>
 <h3 id="brew-info-フォーミュラ"><a name="brew-info-フォーミュラ" class="plugin-anchor" href="#brew-info-フォーミュラ"><i class="fa fa-link" aria-hidden="true"></i></a>brew info [フォーミュラ]</h3>
 <p><code>brew info</code>で表示される以下項目の説明</p>
 <p>×はまだパッケージを持っていないということ。
@@ -5001,8 +4998,8 @@ brew services list
 <h2 id="brew-list"><a name="brew-list" class="plugin-anchor" href="#brew-list"><i class="fa fa-link" aria-hidden="true"></i></a>brew list</h2>
 <p>インストールしたパッケージを一覧に出す</p>
 <h2 id="brew-uninstall"><a name="brew-uninstall" class="plugin-anchor" href="#brew-uninstall"><i class="fa fa-link" aria-hidden="true"></i></a>brew uninstall</h2>
-<h2 id="brew-shellenv"><a name="brew-shellenv" class="plugin-anchor" href="#brew-shellenv"><i class="fa fa-link" aria-hidden="true"></i></a>brew shellenv</h2>
-<p>homebrewnの設定ファイルが確認できる。</p>
+<h2 id="brew-shellenvコマンド"><a name="brew-shellenvコマンド" class="plugin-anchor" href="#brew-shellenvコマンド"><i class="fa fa-link" aria-hidden="true"></i></a>brew shellenvコマンド</h2>
+<p>homebrewの設定状況を確認できる。</p>
 <pre><code class="lang-sh">$ brew shellenv
 <span class="hljs-built_in">export</span> HOMEBREW_PREFIX=<span class="hljs-string">&quot;/usr/local&quot;</span>;
 <span class="hljs-built_in">export</span> HOMEBREW_CELLAR=<span class="hljs-string">&quot;/usr/local/Cellar&quot;</span>;
@@ -5056,14 +5053,13 @@ brew services list
 </tr>
 </tbody>
 </table>
-<h2 id="homebrew-インストーラー"><a name="homebrew-インストーラー" class="plugin-anchor" href="#homebrew-インストーラー"><i class="fa fa-link" aria-hidden="true"></i></a>Homebrew インストーラー</h2>
+<h2 id="homebrew-リポジトリディレクトリ"><a name="homebrew-リポジトリディレクトリ" class="plugin-anchor" href="#homebrew-リポジトリディレクトリ"><i class="fa fa-link" aria-hidden="true"></i></a>Homebrew リポジトリディレクトリ</h2>
 <p>現時点のHomebrewのインストーラーは、
 Rosettaを有効にしているターミナルでは<code>/usr/local/</code>を基準にしたディレクトリ下でIntel向けのバイナリを
 Rosettaを無効にしているターミナルでは<code>/opt/homebrew/</code>を基準にしたディレクトリ下でM1向けのバイナリを
 展開するように動きます。(2021年1月初めごろにはすでにこの挙動になっていました）</p>
 <p>/usr/local/binはもともとパスが通っているのでそこに入ったbrewコマンドはそのまま動きますが、/opt/homebrew/binにはパスが通っていないのでそこに入ったbrewコマンドを動かすにはパスを通す必要があります。
 その時&quot;パスを通す&quot;という作業をさせるのではなく、他に必要なもろもろをおこなうeval $(/opt/homebrew/bin/brew shellenv)を実行するように上記メッセージでは促しています。</p>
-<h2 id><a name class="plugin-anchor" href="#"><i class="fa fa-link" aria-hidden="true"></i></a> </h2>
 <p>macOS各環境インストール</p>
 <p><a href="https://webrandum.net/cannot-install-under-rosetta2-in-arm-default-prefix/" target="_blank">参考URL</a></p>
 <pre><code class="lang-sh">$ arch -x86_64 /bin/bash -c <span class="hljs-string">&quot;<span class="hljs-subst">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)</span>&quot;</span>
@@ -5211,7 +5207,7 @@ PATHを変更する</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Homebrew","level":"2.21.4","depth":2,"next":{"title":"Intellij","level":"2.21.5","depth":2,"path":"tools/intellij/intellij.md","ref":"tools/intellij/intellij.md","articles":[]},"previous":{"title":"Gtm","level":"2.21.3","depth":2,"path":"tools/gtm/gtm.md","ref":"tools/gtm/gtm.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"tools/homebrew/homebrew.md","mtime":"2023-02-14T01:36:14.150Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-02-14T01:36:22.788Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Homebrew","level":"2.21.4","depth":2,"next":{"title":"Intellij","level":"2.21.5","depth":2,"path":"tools/intellij/intellij.md","ref":"tools/intellij/intellij.md","articles":[]},"previous":{"title":"Gtm","level":"2.21.3","depth":2,"path":"tools/gtm/gtm.md","ref":"tools/gtm/gtm.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"tools/homebrew/homebrew.md","mtime":"2023-02-14T05:23:22.757Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-02-14T05:23:32.393Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
