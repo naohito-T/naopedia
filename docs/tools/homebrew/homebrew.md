@@ -1,16 +1,14 @@
 # Homebrew
 
-忘れてはいけないのは、homebrewは**ユーザーレベルでインストールするパッケージマネージャー**
-
-ホストマシンでひとつではないため汎用性が高い。
-Homebrewではホームディレクトリ内でパッケージを管理するためsudoを使わないのもメリット
+忘れてはいけないのは、homebrewは**ユーザーレベルでインストールするパッケージマネージャー。**  
+ホストマシンひとつに対し、ひとつのパッケージマネージャーではないため汎用性が高い。  
+Homebrewではホームディレクトリ内でパッケージを管理するためsudoを使わないのもメリット。
 
 ## ユビキタス
 
 フォーミュラ: Homebrewではインストールしたパッケージのこと
 
 ## Brewfileを作成
-
 [参考URL](https://kakakakakku.hatenablog.com/entry/2020/09/17/124653)
 
 ```sh
@@ -21,9 +19,8 @@ $ brew bundle dump
 ---
 
 ## コマンド
-
-[参考URL](https://parashuto.com/rriver/tools/homebrew-most-used-commands)
-[参考URL2](https://qiita.com/fuqda/items/db8aff0ba4068aea2cc6)
+[参考URL](https://parashuto.com/rriver/tools/homebrew-most-used-commands)  
+[参考URL2](https://qiita.com/fuqda/items/db8aff0ba4068aea2cc6)  
 
 ### brew info [フォーミュラ]
 
@@ -59,9 +56,9 @@ brew services list
 
 ## brew uninstall
 
-## brew shellenv
+## brew shellenvコマンド
 
-homebrewnの設定ファイルが確認できる。
+homebrewの設定状況を確認できる。
 
 ```sh
 $ brew shellenv
@@ -96,7 +93,7 @@ export INFOPATH="/usr/local/share/info:${INFOPATH:-}";
 | keg    |  樽、醸成用   |  make材料   |
 |  formula   | 調理法、手順    |   ビルド方法、手順が書かれたスクリプト  |
 
-## Homebrew インストーラー
+## Homebrew リポジトリディレクトリ
 
 現時点のHomebrewのインストーラーは、
 Rosettaを有効にしているターミナルでは`/usr/local/`を基準にしたディレクトリ下でIntel向けのバイナリを
@@ -105,8 +102,6 @@ Rosettaを無効にしているターミナルでは`/opt/homebrew/`を基準に
 
 /usr/local/binはもともとパスが通っているのでそこに入ったbrewコマンドはそのまま動きますが、/opt/homebrew/binにはパスが通っていないのでそこに入ったbrewコマンドを動かすにはパスを通す必要があります。
 その時"パスを通す"という作業をさせるのではなく、他に必要なもろもろをおこなうeval $(/opt/homebrew/bin/brew shellenv)を実行するように上記メッセージでは促しています。
-
-## 
 
 macOS各環境インストール
 
