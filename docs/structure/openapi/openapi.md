@@ -134,7 +134,7 @@ allOf:
 
 oneOfは**どちらかが適用されるという意味**で、選択肢を表したい時に便利。  
 ```yml
-allOf:
+oneOf:
     - $ref: '#/components/schemas/Messages'
     - $ref: '#/components/schemas/Webhooks'
 ```
