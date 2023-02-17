@@ -4982,15 +4982,9 @@ SMTPのように複数の手続きを踏む必要はなく、その時の状態�
 <li>1.1 : HTTPの完成</li>
 </ul>
 <p>チャンク転送・Acceptヘッダーによるコンテントネゴシエーション・複雑なキャッシュコントロール、持続的接続などの機能。</p>
-<p>1.1以降も議論が続けられているが、<strong>HTTPそのものの価値をRESTアーキテクチャスタイルに見出した結果、HTTP1.1を有効に活用していこう。</strong>
-というのが現代的な開発スタイルとなっている。</p>
+<p>1.1以降も議論が続けられているが、<strong>HTTPそのものの価値をRESTアーキテクチャスタイルに見出した結果、HTTP1.1を有効に活用していこう。</strong><br>というのが現代的な開発スタイルとなっている。</p>
 <h2 id="http-仕組み"><a name="http-仕組み" class="plugin-anchor" href="#http-仕組み"><i class="fa fa-link" aria-hidden="true"></i></a>HTTP 仕組み</h2>
-<p>BASEとなっているのはTCP/IP<br>HTTP内でのクライアント</p>
-<blockquote>
-<p>今回POSTメソッドについて言及しましたが、HTTPプロトコル（rfc2616）では、メッセージボディをセットできるメソッドについては特に言及していないため、POST以外のメソッド（たとえばGETメソッド）でもメッセージボディをセットすることはできます。
-ですが、ブラウザからGETメソッドでリクエストを送信する場合、通常はメッセージボディではなくHTTPパラメータとして設定されます。
-このため、サーバー側の処理としてGETメソッドの処理ではメッセージボディに何かデータが設定されてくるということは一般的には期待しません。</p>
-</blockquote>
+<p>BASEとなっているのはTCP/IP  </p>
 <h2 id="通常のhttpリクエストのおさらい"><a name="通常のhttpリクエストのおさらい" class="plugin-anchor" href="#通常のhttpリクエストのおさらい"><i class="fa fa-link" aria-hidden="true"></i></a>通常のHTTPリクエストのおさらい</h2>
 <ol>
 <li>ブラウザがHTMLをリクエストする</li>
@@ -5019,6 +5013,24 @@ Link: &lt;/js/main.js&gt;; rel=preload; as=script
 HTTP/2が普及したことによりwebpackでファイルを結合するメリットが薄れたこと。</p>
 <h2 id="http-30"><a name="http-30" class="plugin-anchor" href="#http-30"><i class="fa fa-link" aria-hidden="true"></i></a>HTTP 3.0</h2>
 <p>N/A</p>
+<h2 id="httpでサーバへデータを渡す"><a name="httpでサーバへデータを渡す" class="plugin-anchor" href="#httpでサーバへデータを渡す"><i class="fa fa-link" aria-hidden="true"></i></a>HTTPでサーバへデータを渡す</h2>
+<p>HTTP内でのクライアント  </p>
+<blockquote>
+<p>今回POSTメソッドについて言及しましたが、HTTPプロトコル（rfc2616）では、メッセージボディをセットできるメソッドについては特に言及していないため、POST以外のメソッド（たとえばGETメソッド）でもメッセージボディをセットすることはできます。
+ですが、ブラウザからGETメソッドでリクエストを送信する場合、通常はメッセージボディではなくHTTPパラメータとして設定されます。
+このため、サーバー側の処理としてGETメソッドの処理ではメッセージボディに何かデータが設定されてくるということは一般的には期待しません。</p>
+</blockquote>
+<h2 id="クエリパラメーター"><a name="クエリパラメーター" class="plugin-anchor" href="#クエリパラメーター"><i class="fa fa-link" aria-hidden="true"></i></a>クエリパラメーター</h2>
+<p>?以降のフォーマットに関してどういう値設計にするのかのルールはとくに明言されていない（RFC）</p>
+<blockquote>
+<p>しかし,query構成要素はしばしば key=valueの対の形式で識別するための情報を運ぶために使用され、そこで頻繁に使用された値は別のURIの参照のため時にはそれあらの文字をパーセントエンコーディングすることを避ける方がユーザビリティのためには良い</p>
+</blockquote>
+<p>とあるように一般論として<code>key=value</code>の形式であるぐらいしかRFC上では語られていない。</p>
+<h2 id="クエリパラメーターを配列で渡したいとき"><a name="クエリパラメーターを配列で渡したいとき" class="plugin-anchor" href="#クエリパラメーターを配列で渡したいとき"><i class="fa fa-link" aria-hidden="true"></i></a>クエリパラメーターを配列で渡したいとき</h2>
+<p><code>https://stg.www.yumenographia.com/tickets/?dates=2021-10-07,2021-10-10,2021-10-11,2021-10-12</code></p>
+<p>?の後に<code>,(カンマ)</code>区切りで渡す。それをserver側で配列に変換するのがひとつのやり方。</p>
+<h2 id="クエリパラメーター変換"><a name="クエリパラメーター変換" class="plugin-anchor" href="#クエリパラメーター変換"><i class="fa fa-link" aria-hidden="true"></i></a>クエリパラメーター変換</h2>
+<p>numberなどで送ってもどうやらstringに変換されるっぽい。</p>
 <h2 id="localhostのhttps化"><a name="localhostのhttps化" class="plugin-anchor" href="#localhostのhttps化"><i class="fa fa-link" aria-hidden="true"></i></a>localhostのhttps化</h2>
 <p><a href="https://blog.jxck.io/entries/2020-06-29/https-for-localhost.html" target="_blank">参考URL</a></p>
 <h2 id="閲覧ページのhttp-versionを調べる"><a name="閲覧ページのhttp-versionを調べる" class="plugin-anchor" href="#閲覧ページのhttp-versionを調べる"><i class="fa fa-link" aria-hidden="true"></i></a>閲覧ページのHTTP versionを調べる</h2>
@@ -5128,17 +5140,6 @@ http://example.com:8080
 <h2 id="クロスサイトクロスオリジン"><a name="クロスサイトクロスオリジン" class="plugin-anchor" href="#クロスサイトクロスオリジン"><i class="fa fa-link" aria-hidden="true"></i></a>クロスサイト(クロスオリジン)</h2>
 <p>スキーマ（httpやhttps）やホスト名・ポート番号のどれか1つでも異なるウェブサイトのことを「クロスサイト（またはクロスオリジン）」という。
 クロスサイトな2つのサイト間では、簡単にデータがやりとりできないようになっています（セキュリティを保つため）</p>
-<h2 id="クエリパラメーター"><a name="クエリパラメーター" class="plugin-anchor" href="#クエリパラメーター"><i class="fa fa-link" aria-hidden="true"></i></a>クエリパラメーター</h2>
-<p>?以降のフォーマットに関してどういう値設計にするのかのルールはとくに明言されていない遠事（RFC）</p>
-<blockquote>
-<p>しかし,query構成要素はしばしば key=valueの対の形式で識別するための情報を運ぶために使用され、そこで頻繁に使用された値は別のURIの参照のため時にはそれあらの文字をパーセントエンコーディングすることを避ける方がユーザビリティのためには良い</p>
-</blockquote>
-<p>とあるように一般論として<code>key=value</code>の形式であるぐらいしかRFC上では語られていない。</p>
-<h2 id="クエリパラメーターを配列で渡したいとき"><a name="クエリパラメーターを配列で渡したいとき" class="plugin-anchor" href="#クエリパラメーターを配列で渡したいとき"><i class="fa fa-link" aria-hidden="true"></i></a>クエリパラメーターを配列で渡したいとき</h2>
-<p><code>https://stg.www.yumenographia.com/tickets/?dates=2021-10-07,2021-10-10,2021-10-11,2021-10-12</code></p>
-<p>?の後に<code>,(カンマ)</code>区切りで渡す。それをserver側で配列に変換するのがひとつのやり方。</p>
-<h2 id="クエリパラメーター変換"><a name="クエリパラメーター変換" class="plugin-anchor" href="#クエリパラメーター変換"><i class="fa fa-link" aria-hidden="true"></i></a>クエリパラメーター変換</h2>
-<p>numberなどで送ってもどうやらstringに変換されるっぽい。</p>
 <hr>
 <h2 id="httpヘッダー"><a name="httpヘッダー" class="plugin-anchor" href="#httpヘッダー"><i class="fa fa-link" aria-hidden="true"></i></a>HTTPヘッダー</h2>
 <p><a href="https://www.cloudflare.com/ja-jp/learning/cdn/glossary/what-is-cache-control/" target="_blank">参考URL</a></p>
@@ -5414,7 +5415,7 @@ health checkなどに使われるかもしれない。</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Http","level":"2.11.1.2","depth":3,"next":{"title":"Oauth","level":"2.11.1.3","depth":3,"path":"network/protocol/oauth/oauth.md","ref":"network/protocol/oauth/oauth.md","articles":[]},"previous":{"title":"Grpc","level":"2.11.1.1","depth":3,"path":"network/protocol/grpc/grpc.md","ref":"network/protocol/grpc/grpc.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"network/protocol/http/http.md","mtime":"2023-02-15T02:15:58.641Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-02-15T02:16:08.189Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Http","level":"2.11.1.2","depth":3,"next":{"title":"Oauth","level":"2.11.1.3","depth":3,"path":"network/protocol/oauth/oauth.md","ref":"network/protocol/oauth/oauth.md","articles":[]},"previous":{"title":"Grpc","level":"2.11.1.1","depth":3,"path":"network/protocol/grpc/grpc.md","ref":"network/protocol/grpc/grpc.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"network/protocol/http/http.md","mtime":"2023-02-17T05:50:55.461Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-02-17T05:51:08.334Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
