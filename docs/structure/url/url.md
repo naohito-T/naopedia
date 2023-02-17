@@ -5,6 +5,13 @@ URL設計についてまとめる
 ## ブログ作成時のURL設計について
 [参考URL](ブログ作成時のWordPressのURL設計について)
 
+## URL複数単語の場合
+[URL命名規則](https://blog.zelkova.cc/2019/06/case-of-parameters-for-web-api.html)
+
+URLにはアンダースコアではなく、ハイフン（-）を使用する  
+※URLに_（アンダースコア）を使わないのは、DNS名で使える文字に_（アンダースコア）がないため。
+
+
 ## URLセーフ
 [参考URL](https://jp.quora.com/JWT%E3%81%AE%E3%82%88%E3%81%86%E3%81%AAURL%E3%82%BB%E3%83%BC%E3%83%95%E3%81%AA%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3-URL%E3%82%BB%E3%83%BC%E3%83%95%E3%81%A3%E3%81%A6%E3%81%AA%E3%82%93%E3%81%A7%E3%81%99%E3%81%8B)
 
