@@ -2,7 +2,7 @@
 [[初心者向けTips]AWS CLI認証情報ファイルに最低限設定しておく項目](https://dev.classmethod.jp/articles/20200415-awscli-credential-files/)  
 [AWS CLIでMFA認証を行ってコマンドを実行できるようにする](https://zenn.dev/kkenjii/articles/try-aws-cli-mfa) 
 
-AWSコマンドラインインターフェイス (AWS CLI) は、AWSのサービスを管理するための統合ツール。
+AWSコマンドラインインターフェイス (AWS CLI) は、AWSのサービスを管理するための統合ツール。  
 ダウンロードおよび設定用の単一のツールのみを使用して、コマンドラインからAWSの複数のサービスを制御し、スクリプトを使用してこれらを自動化することができる。
 
 ### AWS CLI優先順位
@@ -15,6 +15,19 @@ AWSコマンドラインインターフェイス (AWS CLI) は、AWSのサービ
 1. コマンドラインオプション
 2. 環境変数
 3. AWS CLIコンフィグファイル
+
+## aws-cliで使用できるサンプルenv
+[リファレンス](https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/cli-configure-envvars.html)
+
+```sh
+# 以下の値はサンプル
+export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
+export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+export AWS_DEFAULT_REGION=us-west-2
+```
+
+## aws-cli keyをGitHubに流出させない
+[参考URL｀](https://kakakakakku.hatenablog.com/entry/2017/02/06/100706)
 
 ## aws-cliを使う前の準備
 
