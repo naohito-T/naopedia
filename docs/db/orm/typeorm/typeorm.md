@@ -183,7 +183,8 @@ Promiseを使って任意のタイミングで遅延して読み込む。
 ## TypeORMにおいて、`date` は `Date` でなく `string` にmapされるので気をつけましょう
 [参考URL](https://dev.to/e_ntyo/typeorm-date-date-string-map-3el1)
 
-
+## TypeORMにおいての論理削除について
+[TypeORMで子エンティティへの削除処理の伝搬について](https://blog.rhyztech.net/typeorm_relation_delete/)
 
 
 

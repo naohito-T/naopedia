@@ -1,12 +1,20 @@
 # DDD(Domain Driven Design)
-
-[ddd1](https://qiita.com/katokonn1020/items/767b611e83fc71571c37)
+[ddd1](https://qiita.com/katokonn1020/items/767b611e83fc71571c37)  
 [ddd2](https://qiita.com/katokonn1020/items/d1db11920f624251547f)
 
 - 参考になる書類とのこと。
 Domain Driven design Quickly
 エリック・エヴァンスのドメイン駆動設計
 現場で役立つシステム設計の原則
+
+## DDDを導入する心構え
+[DDDで設計するならCQRSの利用を検討すべき](DDDで設計するならCQRSの利用を検討すべき)
+
+- 大事なのは一方向で依存し合っていることだけ。
+- 小さいプロジェクトではオーバースペック気味
+- その場合はCQRSなどの利用を考える
+
+
 
 ## DDD(Domain Driven Design)とは
 

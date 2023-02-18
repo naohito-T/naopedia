@@ -37,6 +37,10 @@ ER図を書いていくことになる（デファクトスタンダード）
 ## table 命名規則
 [参考URL](https://qiita.com/tatsuya_1995/items/4b706fc40fe2f300bbc0)
 
+## 一時的なレコードと永続化が必要なレコードを同じテーブルには入れない
+[設計参考](https://tech.tabechoku.com/entry/2020/06/15/132518)  
+>構造が同じでも意味が違うデータは分けて管理すべきだと、私は思います。 その方がレコードの行数も少なく抑えられて、注文テーブルを引くコストが下がります。
+
 ## SQL設計
 [DB・テーブル設計のプラクティス](https://neos21.net/tech/design/db-table-practices.html#%E3%83%80%E3%83%9F%E3%83%BC%E3%83%87%E3%83%BC%E3%82%BF)  
 [SQLアンチパターンを避けるためのチェックリスト①（DB論理設計編）](https://www.ketancho.net/entry/2018/03/07/080000)

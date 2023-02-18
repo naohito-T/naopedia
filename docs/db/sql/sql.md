@@ -108,3 +108,17 @@ SELECT * FROM 利用者 WHERE ID IN (3, 1, 2, 1, 4);
 
 ## SQLアンチパターン
 [SQLアンチパターン勉強会　第三回：IDリクワイアド](https://qiita.com/ayayo/items/ba38853bca0c2cc2acb7)
+
+## 論理削除は実用的なのか
+[参考URL](https://mr-star.hatenablog.com/entry/RDB%E3%81%AE%E8%AB%96%E7%90%86%E5%89%8A%E9%99%A4%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)
+
+論理削除は削除とみなしフラグを立てるだけ。  
+問題の本質として**削除という状態をテーブルに持たせてしまっているのがだめ**  
+
+以下の場合は削除フラグを持たせてもいい  
+- 対象のテーブルが小さくINDEXが不要
+- そのテーブルが関連するテーブルの親になることがなくデータを取得する際にJOINの対象になることがない。
+- UNIQUE制約や外部キーが不要
+
+論理削除を使わない場合の対象法としては、削除するデータは別テーブルに移動することが良いと言われている。  
+[【テーブル設計】削除フラグを使わず削除テーブルを使うべき](https://yaruki-strong-zero.hatenablog.jp/entry/delete_table_instead_delete_flag)
