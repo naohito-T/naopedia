@@ -1,5 +1,6 @@
 # 暗号化
-
+[とほほの暗号化入門](https://www.tohoho-web.com/ex/crypt.html)
+[暗号化初心者](https://qiita.com/opengl-8080/items/85df520e2d8c4e19be8e)
 暗号化 : 復号する必要がある。
 ハッシュ化 : 復号する必要がない
 

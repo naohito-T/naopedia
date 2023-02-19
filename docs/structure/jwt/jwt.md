@@ -3,16 +3,20 @@
 [JWTハンドブック(今度読む)](https://assets.ctfassets.net/2ntc334xpx65/5HColfm15cUhMmDQnupNzd/30d5913d94e79462043f6d8e3f557351/jwt-handbook-jp.pdf)  
 [JWS,JWE,JWKなどの仕様について詳しい](https://qiita.com/TakahikoKawasaki/items/8f0e422c7edd2d220e06)
 
-## JWTとは(JSON Web Token)
+## JWTとは
 
 JWTとは、JSON形式で表現されたクレーム (claim) の集合を、`JWS`もしくは`JWE`に埋め込んだもの。  
-JWTではシンプルにトークンの形式のみが規定されており**payload部分のフォーマットやトークン自身の使われ方についてはほとんど言及していない。**
-言及しているのがOpenID Connect。
+JWTではシンプルにトークンの形式のみが規定されており**payload部分のフォーマットやトークン自身の使われ方についてはほとんど言及していない。**  
+言及しているのがOpenID Connect。  
 
-
-JWTは**JSONベースのデータを暗号化して作られる文字列で認証や認可のための仕組みとして利用される。**
+JWTは**JSONベースのデータを暗号化して作られる文字列で認証や認可のための仕組みとして利用される。**  
 属性情報（Claim: クレーム）をJSONデータ構造で表現したトークンの仕様。
 JSONを使ったコンパクトでurl-safeなクレームの表現方法であり、OAuth2やOpenID Connectなんかで使われます。
+
+## 通常のトークン認証との違い
+
+通常のトークン形式の認証では、トークンの正当性を確認するためにサーバへの問い合わせが必要。  
+JWTでは公開鍵を利用してクライアント側でトークンの正当性を確認できるという特徴がある。
 
 ## OpenID ConnectでのJWT
 [OpenID ConnectとJWT の関わり - Oauth2.0 との違いなど](https://zenn.dev/mikakane/articles/tutorial_for_openid)
@@ -448,3 +452,15 @@ Web Storage APIのlocalStorageを使うやり方です。これもCookieと同�
 **また、CookieやlocalStorageを使う場合は有効期限を短くしてリスクを下げるなどの対策が必要だと思います。**
 
 ## アクセストークンとリフレッシュトークン
+
+
+## JWS(JSON Web Signature)
+
+JSONに電子署名をして`URL-safe`な文字列として表現したもの。  
+RSAで電子署名するのが一般的
+[JWTによるJSONに対する電子署名と、そのユースケース](https://dev.classmethod.jp/articles/json-signing-jws-jwt-usecase/)
+
+## JWE(JSON Web Encryption)
+
+JSONを暗号化して`URL-safe`な文字列として表現したもの。
+
