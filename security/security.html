@@ -4975,15 +4975,10 @@
 <p>企業側の動作
 ユーザーからSMS認証の要求を受けたら、API経由でSMS送信サービスに送信を要求する。<br>SMS送信サービスが認証コードを記載したSMSをユーザーに送信<br>Web上で認証コードが入力されると、API経由でSMS送信サービスから企業側に送達結果が通知される。<br>正しいことが確認されたら認証完了<br>SMS送信サービスで認証を行うためには、自社システムとのAPI連携が必須。<br>サービスによってAPI連携の仕様が異なるため、連携可能かどうか確認しておく必要がある。  </p>
 <h2 id="認可とは"><a name="認可とは" class="plugin-anchor" href="#認可とは"><i class="fa fa-link" aria-hidden="true"></i></a>認可とは</h2>
-<p>一方、認可は「あなたには、リソースにアクセスする権限がありますか？」を確認することです。
-たとえば次のような事例が認可です。  </p>
-<p>家の鍵を持っているから、家に入ることができる
+<p>一方、認可は「あなたには、リソースにアクセスする権限がありますか？」を確認すること。  </p>
+<p>たとえば次のような事例が認可。<br>家の鍵を持っているから、家に入ることができる
 バスの乗車券を持っているから、バスに乗ることができる  </p>
 <h2 id="認証と認可の違い"><a name="認証と認可の違い" class="plugin-anchor" href="#認証と認可の違い"><i class="fa fa-link" aria-hidden="true"></i></a>認証と認可の違い</h2>
-<p>認可で例示した「家の鍵を持っているから、家に入ることができる」ケースを考えると、認証と認可が異なる概念である。<br>その人は、家の鍵を持っていたので家に入ることができた（認可された）
-しかし、その鍵は奪ったものかもしれないし、一時的に借りたものかもしれない。
-つまり、鍵を持っていたからといって、その家の住人であるとは限らない（認証はされていない）</p>
-<p>一方、次のようなケースでは認証と認可を同時に行っています。</p>
 <p><strong>わかりやすい</strong>
 パスポートは本人確認に用いられつつ（認証）、これにより渡航する権利を得られる（認可）
 免許証は本人確認に用いられつつ（認証）、これにより自動車を運転する権利を得られる（認可）</p>
@@ -5018,10 +5013,8 @@ scheme hostname  port
 <h2 id="preflight-request-プリフライトリクエスト"><a name="preflight-request-プリフライトリクエスト" class="plugin-anchor" href="#preflight-request-プリフライトリクエスト"><i class="fa fa-link" aria-hidden="true"></i></a>Preflight request (プリフライトリクエスト)</h2>
 <p><a href="https://developer.mozilla.org/ja/docs/Glossary/Preflight_request#:~:text=CORS%20%E3%81%AE%E3%83%97%E3%83%AA%E3%83%95%E3%83%A9%E3%82%A4%E3%83%88%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88,%E3%81%97%E3%81%A6%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%81%97%E3%81%BE%E3%81%99%E3%80%82" target="_blank">リファレンス</a></p>
 <h2 id="ブラウザの仕組み"><a name="ブラウザの仕組み" class="plugin-anchor" href="#ブラウザの仕組み"><i class="fa fa-link" aria-hidden="true"></i></a>ブラウザの仕組み</h2>
-<p>ブラウザは<strong>すべてのリクエストにOriginヘッダーを追加する。</strong>
-リクエストがサーバーに届くと、リクエストのオリジンがリソース取得許可リストに含まれている場合に、サーバーがAccess-Control-Allow-Originヘッダーをレスポンスに追加する。
-この情報からブラウザはコンテンツがこのオリジンにアクセスできると判断します。</p>
-<p>下の例では、すべてのオリジンからのリソースリクエストを許可しています。</p>
+<p>ブラウザは<strong>すべてのリクエストにOriginヘッダーを追加する。</strong><br>リクエストがサーバーに届くと、リクエストのオリジンがリソース取得許可リストに含まれている場合に、サーバーが<code>Access-Control-Allow-Origin</code>ヘッダーをレスポンスに追加する。
+この情報からブラウザはコンテンツがこのオリジンにアクセスできると判断する。</p>
 <h3 id="同一オリジンポリシー"><a name="同一オリジンポリシー" class="plugin-anchor" href="#同一オリジンポリシー"><i class="fa fa-link" aria-hidden="true"></i></a>同一オリジンポリシー</h3>
 <p><a href="https://developer.mozilla.org/ja/docs/Web/Security/Same-origin_policy" target="_blank">リファレンス</a></p>
 <p>同一オリジンポリシーは重要なセキュリティの仕組みであり、あるオリジンによって読み込まれた文書やスクリプトが、他のオリジンにあるリソースにアクセスできる方法を制限するもの。</p>
@@ -5043,6 +5036,14 @@ scheme hostname  port
 </ul>
 <p>dbにパスワードが保存される時によく使われる（平文で保存はだめ）
 <a href="https://medium-company.com/bcrypt/" target="_blank">dbに平文を保存してはいけない理由</a></p>
+<ul>
+<li>ハッシュのアタック方法
+<a href="https://www.wakuwakubank.com/posts/739-node-crypto/" target="_blank">参考URL</a></li>
+</ul>
+<p>レインボーテーブル攻撃対策
+ソルト（Salt）の使用<br>パスワードごとに別々のソルトを用意して、同じパスワードでもハッシュ値が異なるようにする。</p>
+<p>オフライン総当たり攻撃対策
+ストレッチング（ハッシュ関数を繰り返して実行）によって、ハッシュ化の処理を意図的に遅くする。<br>ただし、パスワード認証の時間が長くなるというトレードオフがある。</p>
 <h3 id="ソルト"><a name="ソルト" class="plugin-anchor" href="#ソルト"><i class="fa fa-link" aria-hidden="true"></i></a>ソルト</h3>
 <p>ソルトとは、パスワードをハッシュ値へと変更する際にパスワードへ付与するランダムな文字列のこと。</p>
 <h3 id="ストレッチング"><a name="ストレッチング" class="plugin-anchor" href="#ストレッチング"><i class="fa fa-link" aria-hidden="true"></i></a>ストレッチング</h3>
@@ -5145,6 +5146,13 @@ SQLインジェクション
 クロスサイトリクエストフォージェリ（CSRF）</p>
 </li>
 </ul>
+<h2 id="暗号鍵の管理"><a name="暗号鍵の管理" class="plugin-anchor" href="#暗号鍵の管理"><i class="fa fa-link" aria-hidden="true"></i></a>暗号鍵の管理</h2>
+<p><a href="https://www.ogis-ri.co.jp/otc/hiroba/technical/security/operation-cryptographic-key.html" target="_blank">参考URL</a></p>
+<p>暗号鍵を利用すると主に次の2つのことが実現できる。  </p>
+<ul>
+<li>情報資産を第三者へ読み取られないようにする【暗号化】</li>
+<li>情報資産が改ざんされていないかどうかを確認する【改ざん防止】</li>
+</ul>
 
                                 
                                 </section>
@@ -5188,7 +5196,7 @@ SQLインジェクション
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Security","level":"2.15","depth":1,"next":{"title":"Encrypt","level":"2.15.1","depth":2,"path":"security/encrypt/encrypt.md","ref":"security/encrypt/encrypt.md","articles":[]},"previous":{"title":"新たな言語を学ぶ前に","level":"2.14.12","depth":2,"path":"program/新たな言語を学ぶ前に.md","ref":"program/新たな言語を学ぶ前に.md","articles":[]},"articles":[{"title":"Encrypt","level":"2.15.1","depth":2,"path":"security/encrypt/encrypt.md","ref":"security/encrypt/encrypt.md","articles":[]},{"title":"Proxy","level":"2.15.2","depth":2,"path":"security/proxy/proxy.md","ref":"security/proxy/proxy.md","articles":[]},{"title":"Recaptcha","level":"2.15.3","depth":2,"path":"security/recaptcha/recaptcha.md","ref":"security/recaptcha/recaptcha.md","articles":[]},{"title":"Ssh","level":"2.15.4","depth":2,"path":"security/ssh/ssh.md","ref":"security/ssh/ssh.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"security/security.md","mtime":"2023-02-19T00:16:54.325Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-02-19T00:17:08.562Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Security","level":"2.15","depth":1,"next":{"title":"Encrypt","level":"2.15.1","depth":2,"path":"security/encrypt/encrypt.md","ref":"security/encrypt/encrypt.md","articles":[]},"previous":{"title":"新たな言語を学ぶ前に","level":"2.14.12","depth":2,"path":"program/新たな言語を学ぶ前に.md","ref":"program/新たな言語を学ぶ前に.md","articles":[]},"articles":[{"title":"Encrypt","level":"2.15.1","depth":2,"path":"security/encrypt/encrypt.md","ref":"security/encrypt/encrypt.md","articles":[]},{"title":"Proxy","level":"2.15.2","depth":2,"path":"security/proxy/proxy.md","ref":"security/proxy/proxy.md","articles":[]},{"title":"Recaptcha","level":"2.15.3","depth":2,"path":"security/recaptcha/recaptcha.md","ref":"security/recaptcha/recaptcha.md","articles":[]},{"title":"Ssh","level":"2.15.4","depth":2,"path":"security/ssh/ssh.md","ref":"security/ssh/ssh.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"security/security.md","mtime":"2023-02-19T02:51:32.881Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-02-19T02:51:41.204Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

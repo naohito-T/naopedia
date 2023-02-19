@@ -4966,13 +4966,16 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="node"><a name="node" class="plugin-anchor" href="#node"><i class="fa fa-link" aria-hidden="true"></i></a>node</h1>
-<p>TypeScriptのコードを実行する
-TypeScript → JavaScriptに変換してからnodeでの実行
-<strong>ts-nodeだと1ステップでTypeScriptのコードを実行できる</strong></p>
-<p>通常、TypeScriptで書かれたNode.jsプロジェクトは、tscでtranspileをし、生成されたJavaScriptファイルを実行する必要がある。ts-nodeを使うことでこのステップを省略する。</p>
+<p><a href="https://nodejs.org/api/documentation.html" target="_blank">公式リファレンス</a></p>
+<h2 id="typescriptのコードを実行する"><a name="typescriptのコードを実行する" class="plugin-anchor" href="#typescriptのコードを実行する"><i class="fa fa-link" aria-hidden="true"></i></a>TypeScriptのコードを実行する</h2>
+<ul>
+<li><p>通常の実行方法<br>TypeScript → JavaScriptに変換してからnodeでの実行<br>通常、TypeScriptで書かれたNode.jsプロジェクトは、tscでtranspileをし、生成されたJavaScriptファイルを実行する必要がある。ts-nodeを使うことでこのステップを省略する。</p>
+</li>
+<li><p>ts-nodeの実行<br><strong>ts-nodeだと1ステップでTypeScriptのコードを実行できる</strong></p>
+</li>
+</ul>
 <h2 id="nodejsとは"><a name="nodejsとは" class="plugin-anchor" href="#nodejsとは"><i class="fa fa-link" aria-hidden="true"></i></a>Node.jsとは</h2>
-<p>Node.jsは<code>ノンブロッキングI/O</code>という仕組みにより、「大量の小さな通信」の処理を得意としており、チャットアプリや小規模なゲームのサーバープログラム開発言語として用いられることが増えている。
-また、クライアントサイドと同じJavaScriptでサーバーサイドのプログラムを書けるため、新たにサーバーサイド言語を覚える必要がないという利点もある。</p>
+<p>Node.jsは<code>ノンブロッキングI/O</code>という仕組みにより、「大量の小さな通信」の処理を得意としており、チャットアプリや小規模なゲームのサーバープログラム開発言語として用いられることが増えている。<br>また、クライアントサイドと同じJavaScriptでサーバーサイドのプログラムを書けるため、新たにサーバーサイド言語を覚える必要がないという利点もある。</p>
 <h2 id="nodejsのrepl環境をカスタマイズする"><a name="nodejsのrepl環境をカスタマイズする" class="plugin-anchor" href="#nodejsのrepl環境をカスタマイズする"><i class="fa fa-link" aria-hidden="true"></i></a>Node.jsのREPL環境をカスタマイズする</h2>
 <p><a href="https://kazamori.jp/blogs/2021/07/20/customize-node-repl/" target="_blank">参考URL</a>
 <a href="https://github.com/kazamori/typeorm-performance-issues-sample" target="_blank">リポジトリ</a></p>
@@ -4980,7 +4983,6 @@ TypeScript → JavaScriptに変換してからnodeでの実行
 <p><code>NODE_ENV=production yarn install</code>とすればdevDependenciesがインストールされない</p>
 <h2 id="node-path取得"><a name="node-path取得" class="plugin-anchor" href="#node-path取得"><i class="fa fa-link" aria-hidden="true"></i></a>node path取得</h2>
 <p><a href="https://zenn.dev/ignorant_kenji/articles/25280934f2c50b0c13ff" target="_blank">参考URL</a></p>
-<p>以下を実行すればわかる</p>
 <pre><code class="lang-js"><span class="hljs-built_in">console</span>.log(process.argv[<span class="hljs-number">1</span>], <span class="hljs-string">&quot;c.js&quot;</span>, <span class="hljs-string">&quot;cwd&quot;</span>, process.cwd());
 <span class="hljs-built_in">console</span>.log(process.argv[<span class="hljs-number">1</span>], <span class="hljs-string">&quot;c.js&quot;</span>, <span class="hljs-string">&quot;__dirname&quot;</span>, __dirname);
 <span class="hljs-built_in">console</span>.log(process.argv[<span class="hljs-number">1</span>], <span class="hljs-string">&quot;c.js&quot;</span>, <span class="hljs-string">&quot;path.resolve&quot;</span>, <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;path&quot;</span>).resolve(<span class="hljs-string">&quot;&quot;</span>));
@@ -4999,40 +5001,18 @@ TypeScript → JavaScriptに変換してからnodeでの実行
 <p><a href="https://zenn.dev/hibikine/articles/27621a7f95e761#discuss" target="_blank">参考URL</a></p>
 <h2 id="npm-便利スクリプト"><a name="npm-便利スクリプト" class="plugin-anchor" href="#npm-便利スクリプト"><i class="fa fa-link" aria-hidden="true"></i></a>npm 便利スクリプト</h2>
 <p><a href="https://qiita.com/mysticatea/items/12bb6579b9155fd74586" target="_blank">参考URL</a></p>
-<h2 id="node-jsとは"><a name="node-jsとは" class="plugin-anchor" href="#node-jsとは"><i class="fa fa-link" aria-hidden="true"></i></a>Node jsとは</h2>
-<h2 id="packagejson"><a name="packagejson" class="plugin-anchor" href="#packagejson"><i class="fa fa-link" aria-hidden="true"></i></a>package.json</h2>
-<ul>
-<li>npm script</li>
-</ul>
-<p><code>$ npm run</code>で実行できるエイリアスコマンド
-<code>$ npm run</code>で実行するとローカルnode_moduleにインストールしたpackageのコマンドを実行できる。</p>
-<ul>
-<li>優先度</li>
-</ul>
-<p>package.jsonが一番優先度が高いのは当たり前
-.prettierrc(拡張子無し)などは次に優先度が高くなる。つまり、package.jsonにpretterの設定を書けば一番優先度が高くなる</p>
-<ul>
-<li>vscode連携との罠</li>
-</ul>
-<p>VSCodeのPrettier拡張機能にはPrettier本体がバンドル(含まれて)いる
-つまり、Prettier拡張機能さえインストールしていれば、VSCodeではPrettierが使えるということ
-VScodeの設定 (settings.json) に Prettier の細かい設定があるのも、そこで設定された内容で Prettier のフォーマットを実行するため。</p>
-<blockquote>
-<p>えー、じゃあ別に Prettier 本体をインストールする必要はないし、設定ファイル (.prettierrc) も作らなくていいんじゃないの？と思ってしまいそうですが、 Prettier 拡張機能の公式ドキュメントにはプロジェクトのローカルにインストールされている Prettier と設定ファイルを使用することを推奨する旨がしっかり記載されています。
-当然といえば当然ですが、チームで開発する場合はパッケージのバージョンや設定を揃えないといけないですし、そもそも VSCode 以外のエディタを使っている人もいるかもしれないので、設定の統一が難しくなってしまいます。
-Prettier 拡張機能にバンドルされている Prettier や VSCode の設定は、あくまでもフォールバック的な位置付けで、優先される設定もローカルの Prettier 設定ファイル (.prettierrc) が上位になっています。</p>
-</blockquote>
 <h2 id="npm-固定"><a name="npm-固定" class="plugin-anchor" href="#npm-固定"><i class="fa fa-link" aria-hidden="true"></i></a>npm 固定</h2>
-<p>nodeとnpmは違うからね</p>
 <p><a href="https://qiita.com/hirorock/items/3a98a43f38aec39aab4f" target="_blank">npm固定</a></p>
-<p>プロジェクト内に.npmrcを作成する
+<p>プロジェクト内に<code>.npmrc</code>を作成する
 作成することで<code>npm install</code>の際にengineを確認してバージョンバージョンの問題があった場合はインストールさせない</p>
 <h2 id="browserslistの更新を要求された場合"><a name="browserslistの更新を要求された場合" class="plugin-anchor" href="#browserslistの更新を要求された場合"><i class="fa fa-link" aria-hidden="true"></i></a>Browserslistの更新を要求された場合</h2>
 <p><a href="https://dev.classmethod.jp/articles/asked-to-update-the-browserslist-when-building-react-app/" target="_blank">参考URL</a></p>
 <h2 id="npxコマンドについて"><a name="npxコマンドについて" class="plugin-anchor" href="#npxコマンドについて"><i class="fa fa-link" aria-hidden="true"></i></a>npxコマンドについて</h2>
-<p><code>$ npx create-nx-workspace</code>
-Nxは、ファーストクラスのモノレポサポートと強力な統合を備えた次世代ビルドシステム</p>
 <p><a href="https://www.npmjs.com/package/create-nx-workspace" target="_blank">リファレンス</a></p>
+<h2 id="node-stream-api"><a name="node-stream-api" class="plugin-anchor" href="#node-stream-api"><i class="fa fa-link" aria-hidden="true"></i></a>Node stream api</h2>
+<p><a href="https://nodejs.org/api/stream.html" target="_blank">リファレンス</a>
+<a href="https://dev.classmethod.jp/articles/node-js-stream-newbie/" target="_blank">Node.js Streamに入門してみた</a></p>
+<p>Streamのメリットは大きな容量のファイルを読み取り・書き込み・加工する際に<strong>ちょっとずつ処理</strong>することで最大メモリ使用量を抑えることがメリット。</p>
 
                                 
                                 </section>
@@ -5076,7 +5056,7 @@ Nxは、ファーストクラスのモノレポサポートと強力な統合を
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Node","level":"2.14.5.8","depth":3,"next":{"title":"Nuxt","level":"2.14.5.9","depth":3,"path":"program/javascript/nuxt/nuxt.md","ref":"program/javascript/nuxt/nuxt.md","articles":[]},"previous":{"title":"Next","level":"2.14.5.7","depth":3,"path":"program/javascript/next/next.md","ref":"program/javascript/next/next.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"program/javascript/node/node.md","mtime":"2023-02-19T00:16:54.321Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-02-19T00:17:08.562Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Node","level":"2.14.5.8","depth":3,"next":{"title":"Nuxt","level":"2.14.5.9","depth":3,"path":"program/javascript/nuxt/nuxt.md","ref":"program/javascript/nuxt/nuxt.md","articles":[]},"previous":{"title":"Next","level":"2.14.5.7","depth":3,"path":"program/javascript/next/next.md","ref":"program/javascript/next/next.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"program/javascript/node/node.md","mtime":"2023-02-19T02:51:32.877Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-02-19T02:51:41.204Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
