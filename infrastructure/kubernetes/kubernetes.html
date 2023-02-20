@@ -4966,13 +4966,8 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="kubernetes"><a name="kubernetes" class="plugin-anchor" href="#kubernetes"><i class="fa fa-link" aria-hidden="true"></i></a>kubernetes</h1>
-<p>綴が長いことから略してk8s(8はubernete)という8文字の意味</p>
-<p>従来の仮想化とは異なるアプローチのシステム構築方法であり、使い方によっては開発工数や運用工数の削減に大きく貢献する。
-kubernetesの基礎技術としてあるのがコンテナー</p>
-<blockquote>
-<p>コンテナーとはプロセスの実行空間を隔離するための技術</p>
-</blockquote>
-<p>コンテナーを本番サーバで使うときは、さまざまな運用上の工夫が必要。
+<p>綴が長いことから略してk8s(8はubernete)という8文字の意味<br>従来の仮想化とは異なるアプローチのシステム構築方法であり、使い方によっては開発工数や運用工数の削減に大きく貢献する。<br>kubernetesの基礎技術としてあるのがDocker</p>
+<p>Dockerを本番サーバで使うときは、さまざまな運用上の工夫が必要。
 たとえば</p>
 <ul>
 <li>障害が生じても止まらないようにするための冗長性</li>
@@ -4982,6 +4977,8 @@ kubernetesの基礎技術としてあるのがコンテナー</p>
 など</li>
 </ul>
 <p><strong>こうした運用を手助けするのがKubernetes</strong></p>
+<h2 id="kubernetesでのenvを暗号化する"><a name="kubernetesでのenvを暗号化する" class="plugin-anchor" href="#kubernetesでのenvを暗号化する"><i class="fa fa-link" aria-hidden="true"></i></a>Kubernetesでのenvを暗号化する</h2>
+<p><a href="https://kakakakakku.hatenablog.com/entry/2020/11/02/102132" target="_blank">参考URL</a></p>
 <h2 id="超初心者入門"><a name="超初心者入門" class="plugin-anchor" href="#超初心者入門"><i class="fa fa-link" aria-hidden="true"></i></a>超初心者入門</h2>
 <p><a href="https://tech-lab.sios.jp/archives/29650" target="_blank">参考URL</a></p>
 <h2 id="プロジェクトでの採用事例"><a name="プロジェクトでの採用事例" class="plugin-anchor" href="#プロジェクトでの採用事例"><i class="fa fa-link" aria-hidden="true"></i></a>プロジェクトでの採用事例</h2>
@@ -5057,7 +5054,7 @@ kubernetesはkubernetesクラスター全体の状態をetcdというDBで管理
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Kubernetes","level":"2.7.6","depth":2,"next":{"title":"Localstack","level":"2.7.7","depth":2,"path":"infrastructure/localstack/localstack.md","ref":"infrastructure/localstack/localstack.md","articles":[]},"previous":{"title":"オーケストレーションツール","level":"2.7.5.3","depth":3,"path":"infrastructure/docker/オーケストレーションツール.md","ref":"infrastructure/docker/オーケストレーションツール.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"infrastructure/kubernetes/kubernetes.md","mtime":"2023-02-20T01:03:38.770Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-02-20T01:03:46.775Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Kubernetes","level":"2.7.6","depth":2,"next":{"title":"Localstack","level":"2.7.7","depth":2,"path":"infrastructure/localstack/localstack.md","ref":"infrastructure/localstack/localstack.md","articles":[]},"previous":{"title":"オーケストレーションツール","level":"2.7.5.3","depth":3,"path":"infrastructure/docker/オーケストレーションツール.md","ref":"infrastructure/docker/オーケストレーションツール.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"infrastructure/kubernetes/kubernetes.md","mtime":"2023-02-20T09:32:34.660Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-02-20T09:32:42.516Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
