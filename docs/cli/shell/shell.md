@@ -4,6 +4,12 @@
 
 >Unix は 1969 年 AT&Tの ベル研究所で誕生しました。継続していく開発の中で BSD 系 と呼ばれる分岐が生まれました。本流は最終的に System V 系と呼ばれるようになりました。その Unix の開発の過程で多数のコマンドが生まれ Unix はより便利になっていきました。しかし互換性をそれほど重視していなかったためかコマンドを含む Unix は移植性が低下していきました。そこで生まれたのが POSIX です。1988 年にシステムインターフェースが、1992 年にシェルとコマンドが標準化されました。
 
+## BSD系コマンド
+[リファレンス](https://man.freebsd.org/cgi/man.cgi?manpath=FreeBSD+5.3-RELEASE+and+Ports)
+
+## Linux系コマンド
+[リファレンス](https://linux.die.net/man/1/base64)
+
 ## ログイン時に表示されるメッセージをカスタマイズする
 
 [参考URL](https://qiita.com/Possum55/items/99704f4a9c6205fac3fa)

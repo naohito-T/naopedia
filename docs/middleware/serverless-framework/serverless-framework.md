@@ -8,6 +8,9 @@
 AWS_PROFILEに環境変数を設定するといける。
 `export AWS_PROFILE="profileName2"`
 
+## deployする前に処理を挟む
+[参考URL](https://dev.classmethod.jp/articles/create-serverless-framework-plugin-for-specific-action-before-deploy/)
+
 ## サービス
 
 serverlessは**サービスという単位**で実行環境を作っていく。
@@ -137,7 +140,7 @@ functions:
 
 ## GitHubに上がった既存のサービスをインポートする
 
-すでにGitHubへ上がっている既存サービスの開発を行う場合は、そのままローカルにインポートしてServerlessをセットアップしたいと思います。
+すでにGitHubへ上がっている既存サービスの開発を行う場合は、そのままローカルにインポートしてServerlessをセットアップできる。
 `serverless install -u [GITHUB URL OF SERVICE]`
 
 ## サービス単位デプロイ
@@ -160,7 +163,7 @@ provider:
 
 ## ファンクション単位のデプロイ
 
-serverless deploy -vはサービス全体のデプロイを行います。ファンクションの一部を修正したなどのケースで、サービス全体がデプロイされるのは大変です。
+serverless deploy -vはサービス全体のデプロイを行います。ファンクションの一部を修正したなどのケースで、サービス全体がデプロイされるのは大変。  
 Serverlessはファンクション単位でのデプロイもserverless deploy function -f <yourfunction>にて可能です。
 
 ---
@@ -290,7 +293,6 @@ v3（2系後半のバージョンも含む）以降は、ネイティブでサ�
 
 serverless v2コマンドに関しては
 
-`serverless.yml`で`component: '@sls-next/serverless-component@3.7.0'`などを使用するとそっちのコンポーネントを使うことになるため`serverless package`など通常通りにはできず`component: '@sls-next/serverless-component@3.7.0'`に実装されていないと実行できない。
-ひとつのファイルにはひとつのコンポーネントのみが使用できる。
-
-理解としてはcomponentを使うと`serverless.yml`がそのコンポーネント仕様になる
+`serverless.yml`で`component: '@sls-next/serverless-component@3.7.0'`などを使用するとそっちのコンポーネントを使うことになるため`serverless package`など通常通りにはできず`component: '@sls-next/serverless-component@3.7.0'`に実装されていないと実行できない。  
+ひとつのファイルにはひとつのコンポーネントのみが使用できる。  
+※理解としてはcomponentを使うと`serverless.yml`がそのコンポーネント仕様になる
