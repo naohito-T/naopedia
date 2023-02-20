@@ -11,6 +11,9 @@ AWS_PROFILEに環境変数を設定するといける。
 ## deployする前に処理を挟む
 [参考URL](https://dev.classmethod.jp/articles/create-serverless-framework-plugin-for-specific-action-before-deploy/)
 
+## serverless URLからstageを取る
+[参考URL](https://stackoverflow.com/questions/46857335/how-to-remove-stage-from-urls-for-aws-lambda-functions-serverless-framework)
+
 ## サービス
 
 serverlessは**サービスという単位**で実行環境を作っていく。
@@ -296,3 +299,9 @@ serverless v2コマンドに関しては
 `serverless.yml`で`component: '@sls-next/serverless-component@3.7.0'`などを使用するとそっちのコンポーネントを使うことになるため`serverless package`など通常通りにはできず`component: '@sls-next/serverless-component@3.7.0'`に実装されていないと実行できない。  
 ひとつのファイルにはひとつのコンポーネントのみが使用できる。  
 ※理解としてはcomponentを使うと`serverless.yml`がそのコンポーネント仕様になる
+
+## serverlessとlocalStack
+[参考URL](https://tech.sawa-lab.net/archives/473)
+localStackはプラグインよりもdockerで準備する。  
+serverlessにはプラグイン（serverless-localsStack）があり、設定することで簡単にS3やRDSなどのモックを利用することができるようになる。  
+しかし、これはあくまでLambdaを実行する時に作成されてLambdaから利用する前提の仕組みになっている。
