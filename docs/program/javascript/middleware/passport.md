@@ -16,6 +16,10 @@ npm install --save passport
 npm install --save passport-google-oauth20
 ```
 
+## ストラテジー(戦略)
+
+>Passportは認証のためにストラテジーと呼ばれるものを認証に使用します。 ストラテジーは、ユーザーIDとパスワードを用いた検証や、OAuthを用いた権限付与、OpenIDを用いた分散認証を実装しています。
+
 ## ログイン状態の仕組み
 
 Passport.jsは一般的に、セッション（session）と組み合わせて使用する。
@@ -33,12 +37,26 @@ Passport.jsは一般的に、セッション（session）と組み合わせて�
 - passportとStrategyの紐づけは`passport.use(new Strategy(～))`で行う。
 - new Strategy()の2番目の引数に**認証が成功した後に呼ばれる関数**を定義する
 
+ストラテジーは検証用コールバック（verify callback）と呼ばれるものを必要とします。  
+このコールバックの目的は、認証情報を照合し、ユーザーを特定することです。
+
+## passport.session()
+[passport.session()が実際に行っていること](https://applingo.tokyo/article/1700)
+
+`app.use(passport.session())`は、`app.use(passport.authenticate('session'))`
+と同じ。  
+つまり、sessionでアクセス認証を行っている。
+また`req.user`を管理していてクライアントCookieから`session id`を読み込んでそれをもとにユーザー情報へ`deserialize`している。
+
+
+
 ## passportとセッションの紐づけ
 
 - セッションIDとユニークユーザー識別子を紐づけて、セッションデータとして保存する。
 - ユーザーデータから、ユニークユーザー識別子を取り出して、セッションIDと紐づけする方法を、passport.serializerUser()で定義する
 
-passportには、ユーザ情報をセッションに保存するシリアライズ、IDからユーザ情報を特定し、req.userに格納するデシリアライズという機能があります。
+passportには、ユーザ情報を**セッションに保存するシリアライズ**  
+IDからユーザ情報を特定し、req.userに格納する**デシリアライズと**いう機能があります。
 
 ```ts
 // シリアライズ
