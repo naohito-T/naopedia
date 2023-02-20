@@ -4979,6 +4979,10 @@
 npm install --save passport
 npm install --save passport-google-oauth20
 </code></pre>
+<h2 id="ストラテジー戦略"><a name="ストラテジー戦略" class="plugin-anchor" href="#ストラテジー戦略"><i class="fa fa-link" aria-hidden="true"></i></a>ストラテジー(戦略)</h2>
+<blockquote>
+<p>Passportは認証のためにストラテジーと呼ばれるものを認証に使用します。 ストラテジーは、ユーザーIDとパスワードを用いた検証や、OAuthを用いた権限付与、OpenIDを用いた分散認証を実装しています。</p>
+</blockquote>
 <h2 id="ログイン状態の仕組み"><a name="ログイン状態の仕組み" class="plugin-anchor" href="#ログイン状態の仕組み"><i class="fa fa-link" aria-hidden="true"></i></a>ログイン状態の仕組み</h2>
 <p>Passport.jsは一般的に、セッション（session）と組み合わせて使用する。
 セッションと組み合わせて使用し、一度認証が完了するとログイン状態はセッションとして保存され、2回目以降のアクセスでは<strong>セッションIDからユーザーデータが復元</strong>され、ログイン状態が維持されるようになる。</p>
@@ -4993,12 +4997,18 @@ npm install --save passport-google-oauth20
 <li>passportとStrategyの紐づけは<code>passport.use(new Strategy(～))</code>で行う。</li>
 <li>new Strategy()の2番目の引数に<strong>認証が成功した後に呼ばれる関数</strong>を定義する</li>
 </ul>
+<p>ストラテジーは検証用コールバック（verify callback）と呼ばれるものを必要とします。<br>このコールバックの目的は、認証情報を照合し、ユーザーを特定することです。</p>
+<h2 id="passportsession"><a name="passportsession" class="plugin-anchor" href="#passportsession"><i class="fa fa-link" aria-hidden="true"></i></a>passport.session()</h2>
+<p><a href="https://applingo.tokyo/article/1700" target="_blank">passport.session()が実際に行っていること</a></p>
+<p><code>app.use(passport.session())</code>は、<code>app.use(passport.authenticate(&apos;session&apos;))</code>
+と同じ。<br>つまり、sessionでアクセス認証を行っている。
+また<code>req.user</code>を管理していてクライアントCookieから<code>session id</code>を読み込んでそれをもとにユーザー情報へ<code>deserialize</code>している。</p>
 <h2 id="passportとセッションの紐づけ"><a name="passportとセッションの紐づけ" class="plugin-anchor" href="#passportとセッションの紐づけ"><i class="fa fa-link" aria-hidden="true"></i></a>passportとセッションの紐づけ</h2>
 <ul>
 <li>セッションIDとユニークユーザー識別子を紐づけて、セッションデータとして保存する。</li>
 <li>ユーザーデータから、ユニークユーザー識別子を取り出して、セッションIDと紐づけする方法を、passport.serializerUser()で定義する</li>
 </ul>
-<p>passportには、ユーザ情報をセッションに保存するシリアライズ、IDからユーザ情報を特定し、req.userに格納するデシリアライズという機能があります。</p>
+<p>passportには、ユーザ情報を<strong>セッションに保存するシリアライズ</strong><br>IDからユーザ情報を特定し、req.userに格納する<strong>デシリアライズと</strong>いう機能があります。</p>
 <pre><code class="lang-ts"><span class="hljs-comment">// シリアライズ</span>
 passport.serializeUser(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">user, done</span>) </span>{
   done(<span class="hljs-literal">null</span>, user.id);
@@ -5067,7 +5077,7 @@ passport.deserializeUser(<span class="hljs-keyword">async</span> <span class="hl
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Passport","level":"2.14.5.5.5","depth":4,"next":{"title":"Recoil","level":"2.14.5.5.6","depth":4,"path":"program/javascript/middleware/recoil.md","ref":"program/javascript/middleware/recoil.md","articles":[]},"previous":{"title":"Express","level":"2.14.5.5.4","depth":4,"path":"program/javascript/middleware/express.md","ref":"program/javascript/middleware/express.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"program/javascript/middleware/passport.md","mtime":"2023-02-19T02:51:32.877Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-02-19T02:51:41.204Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Passport","level":"2.14.5.5.5","depth":4,"next":{"title":"Recoil","level":"2.14.5.5.6","depth":4,"path":"program/javascript/middleware/recoil.md","ref":"program/javascript/middleware/recoil.md","articles":[]},"previous":{"title":"Express","level":"2.14.5.5.4","depth":4,"path":"program/javascript/middleware/express.md","ref":"program/javascript/middleware/express.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"program/javascript/middleware/passport.md","mtime":"2023-02-20T01:03:38.774Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-02-20T01:03:46.775Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
