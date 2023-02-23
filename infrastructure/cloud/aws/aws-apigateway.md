@@ -81,6 +81,8 @@ Amazon API GatewayでAPIキー認証を設定すればip制限よりもう少し
 
 >API Gatewayの前にCloudFront Distribution を使用することで、APIGatewayのパフォーマンスを向上させることができます。API Gatewayのエッジ最適化 API エンドポイントを使用すると、最寄りのCloudFront Point of PresenceでAPI呼び出しを終了できます。
 
+cloudfrontが前段にくる。利用する理由としてはキャッシング動作を制御するが主な理由。
+
 API Gatewayの前でCloudFront Distributionを使用する理由
 - レイテンシーを削減
 - セキュリティを強化する
