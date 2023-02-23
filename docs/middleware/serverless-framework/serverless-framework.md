@@ -302,6 +302,7 @@ serverless v2コマンドに関しては
 
 ## serverlessとlocalStack
 [参考URL](https://tech.sawa-lab.net/archives/473)
+
 localStackはプラグインよりもdockerで準備する。  
 serverlessにはプラグイン（serverless-localsStack）があり、設定することで簡単にS3やRDSなどのモックを利用することができるようになる。  
 しかし、これはあくまでLambdaを実行する時に作成されてLambdaから利用する前提の仕組みになっている。
