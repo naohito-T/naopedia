@@ -4966,12 +4966,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="localstack"><a name="localstack" class="plugin-anchor" href="#localstack"><i class="fa fa-link" aria-hidden="true"></i></a>localStack</h1>
-<p><a href="https://qiita.com/yasomaru/items/fa708a1f21a79e637868" target="_blank">参考URL(詳しく書いてある)</a>
-今度これをやってみる
-<a href="https://pecorino.tokyo/2020/10/10/localstack/" target="_blank">参考URL</a>
-<a href="https://tech.unifa-e.com/entry/2020/12/16/080000" target="_blank">このブログはいい。</a></p>
-<h2 id="localstackのdocker-composeと起動スクリプトさらす"><a name="localstackのdocker-composeと起動スクリプトさらす" class="plugin-anchor" href="#localstackのdocker-composeと起動スクリプトさらす"><i class="fa fa-link" aria-hidden="true"></i></a>LocalStackのdocker-composeと起動スクリプトさらす</h2>
-<p><a href="https://www.tomray.dev/nestjs-docker-compose-postgres#apple-m1-chip-configs" target="_blank">参考</a></p>
+<p><a href="https://qiita.com/yasomaru/items/fa708a1f21a79e637868" target="_blank">参考URL(詳しく書いてある)</a><br>今度これをやってみる<br><a href="https://pecorino.tokyo/2020/10/10/localstack/" target="_blank">参考URL</a><br><a href="https://tech.unifa-e.com/entry/2020/12/16/080000" target="_blank">このブログはいい。</a><br><a href="https://www.tomray.dev/nestjs-docker-compose-postgres#apple-m1-chip-configs" target="_blank">Docker Compose を使用した NestJS、Redis、Postgres のローカル開発</a></p>
 <h2 id="v0110以降"><a name="v0110以降" class="plugin-anchor" href="#v0110以降"><i class="fa fa-link" aria-hidden="true"></i></a>v0.11.0以降</h2>
 <p>混同しやすいためしっかり覚えておく。</p>
 <ul>
@@ -4980,6 +4975,13 @@ v0.11.0以前は、サービスごとにポートが指定されていたがv0.1
 </li>
 <li><p>UIは？
 有料版のみ8080番が利用可能。</p>
+</li>
+<li><p>無料版で使えないサービスは？
+EC2とRDS</p>
+</li>
+<li><p><code>awslocal</code>コマンドとは？
+awsコマンドのラッパーコマンド<br>エンドポイント指定などを省略できる。
+同じコマンドのためaws-cliを見ればいい。</p>
 </li>
 </ul>
 <h2 id="起動確認"><a name="起動確認" class="plugin-anchor" href="#起動確認"><i class="fa fa-link" aria-hidden="true"></i></a>起動確認</h2>
@@ -5035,7 +5037,7 @@ v0.11.0以前は、サービスごとにポートが指定されていたがv0.1
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Localstack","level":"2.7.7","depth":2,"next":{"title":"Mail","level":"2.7.8","depth":2,"path":"infrastructure/mail/mail.md","ref":"infrastructure/mail/mail.md","articles":[]},"previous":{"title":"Kubernetes","level":"2.7.6","depth":2,"path":"infrastructure/kubernetes/kubernetes.md","ref":"infrastructure/kubernetes/kubernetes.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"infrastructure/localstack/localstack.md","mtime":"2023-02-23T12:07:34.576Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-02-23T12:07:42.358Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Localstack","level":"2.7.7","depth":2,"next":{"title":"Mail","level":"2.7.8","depth":2,"path":"infrastructure/mail/mail.md","ref":"infrastructure/mail/mail.md","articles":[]},"previous":{"title":"Kubernetes","level":"2.7.6","depth":2,"path":"infrastructure/kubernetes/kubernetes.md","ref":"infrastructure/kubernetes/kubernetes.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"infrastructure/localstack/localstack.md","mtime":"2023-02-25T03:33:06.836Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-02-25T03:33:16.360Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
