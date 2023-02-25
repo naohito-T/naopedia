@@ -2,6 +2,20 @@
 [サーバーレス動作](https://qiita.com/mkin/items/0a82c84df084496544c6)
 [サーバーレスの使い方まとめ](https://serverless.co.jp/blog/25/)
 
+設定ファイルparent設定
+
+```yml
+frameworkVersion:
+service:
+# サーバーレスのプラグインを当てることができる（自作もOK）
+plugins:
+# AWSのserverless FrameworkがAWS CloudFormationをスタックを作成する
+provider:
+custom:
+resources:
+functions:
+```
+
 ## serverless-framework AWS認証情報セットアップ
 [リファレンス](https://www.serverless.com/framework/docs/providers/aws/guide/credentials)
 

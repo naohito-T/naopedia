@@ -1,11 +1,9 @@
 # localStack
-[参考URL(詳しく書いてある)](https://qiita.com/yasomaru/items/fa708a1f21a79e637868)
-今度これをやってみる
-[参考URL](https://pecorino.tokyo/2020/10/10/localstack/)
-[このブログはいい。](https://tech.unifa-e.com/entry/2020/12/16/080000)
-
-## LocalStackのdocker-composeと起動スクリプトさらす
-[参考](https://www.tomray.dev/nestjs-docker-compose-postgres#apple-m1-chip-configs)
+[参考URL(詳しく書いてある)](https://qiita.com/yasomaru/items/fa708a1f21a79e637868)  
+今度これをやってみる  
+[参考URL](https://pecorino.tokyo/2020/10/10/localstack/)  
+[このブログはいい。](https://tech.unifa-e.com/entry/2020/12/16/080000)  
+[Docker Compose を使用した NestJS、Redis、Postgres のローカル開発](https://www.tomray.dev/nestjs-docker-compose-postgres#apple-m1-chip-configs)
 
 ## v0.11.0以降
 
@@ -16,6 +14,15 @@ v0.11.0以前は、サービスごとにポートが指定されていたがv0.1
 
 - UIは？
 有料版のみ8080番が利用可能。
+
+- 無料版で使えないサービスは？
+EC2とRDS
+
+- `awslocal`コマンドとは？
+awsコマンドのラッパーコマンド  
+エンドポイント指定などを省略できる。
+同じコマンドのためaws-cliを見ればいい。
+
 
 ## 起動確認
 
