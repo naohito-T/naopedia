@@ -9,9 +9,11 @@ frameworkVersion:
 service:
 # サーバーレスのプラグインを当てることができる（自作もOK）
 plugins:
-# AWSのserverless FrameworkがAWS CloudFormationをスタックを作成する
+# Lambdaから他リソースを操作するためのIAMを設定する
 provider:
+# プラグインのカスタムを記載する。
 custom:
+# AWSのserverless FrameworkがAWS CloudFormationをスタックを作成する
 resources:
 functions:
 ```
@@ -286,7 +288,7 @@ serverlessが提供するコマンド（3系のみ？）
 
 - dotenv
 serverless-dotenv-pluginを使用して ${env:xxx} のような環境変数の参照ができなくなった。
-v3（2系後半のバージョンも含む）以降は、ネイティブでサポートされているため、useDotenv: true を設定することで参照できます。
+v3（2系後半のバージョンも含む）以降は、ネイティブでサポートされているため、`useDotenv: true`を設定することで参照できます。
 
 
 ## プラグインのインストール
