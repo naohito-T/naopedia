@@ -1,6 +1,7 @@
 # serverless-framework
-[サーバーレス動作](https://qiita.com/mkin/items/0a82c84df084496544c6)
-[サーバーレスの使い方まとめ](https://serverless.co.jp/blog/25/)
+[サーバーレス動作](https://qiita.com/mkin/items/0a82c84df084496544c6)  
+[サーバーレスの使い方まとめ](https://serverless.co.jp/blog/25/)  
+[Serverless Frameworkでカスタムドメインを設定する](https://wellknowledge.org/serverless0624/)
 
 設定ファイルparent設定
 
