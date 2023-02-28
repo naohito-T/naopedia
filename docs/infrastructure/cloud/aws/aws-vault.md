@@ -4,6 +4,7 @@
 [aws-vaultをLinux環境でも使う方法【セキュリティ向上】](https://hackers-high.com/aws/aws-vault-on-linux/)  
 [aws-vault を使って AWS のアクセスキーを暗号化して扱おう](https://blog.microcms.io/aws-vault-introduction/)  
 [aws-vaultのセッションをきる](https://www.qualimente.com/2018/10/22/how-to-use-aws-vault-to-managing-credentials-for-an-aws-account/)  
+[aws-vault（初心者はわかりやすい）](https://labs.septeni.co.jp/entry/2018/01/12/113000)  
 
 aws-vaultは**AWSのアクセスキーをOSのキーストアに保存**するライブラリ  
 これによりアクセスキーを暗号化して保持することが可能。  
