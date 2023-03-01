@@ -25,7 +25,7 @@ aws-vaultで使用するユーザを作成する。
 
 ## aws-vault exec
 
-aws-vault execは**認証情報を含んだ環境変数を追加**し、`--`以下のコマンドを実行します。
+aws-vault execは**認証情報を含んだ環境変数を追加**し、`--`以下のコマンドを実行します。  
 `$ aws-vault exec private -- aws s3 ls`
 
 ## aws-vault ls
