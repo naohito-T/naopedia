@@ -230,8 +230,8 @@ Freeアカウントで2,000分/月無料。
 
 ## Permission
 
-リポジトリごとにどのGitHub Actionを利用できるのか？
-あるいは、Workflow中でリポジトリの読み書きを許可するかを設定できる
+リポジトリごとにどのGitHub Actionを利用できるのか？  
+あるいは、Workflow中でリポジトリの読み書きを許可するかを設定できる  
 
 設定はリポジトリのSettings/Actionsにある。
 
@@ -394,9 +394,9 @@ on:
 このコンテキストは、GitHub上のGitHub Actionsの画面からworkflowを実行できるようにするTrigger
 
 以下のことができるようになる
-・Web UI から任意のタイミングで実行
-・実行時にパラメータを渡す
-・repository_dispatch のように curl でも呼び出せる?
+・Web UIから任意のタイミングで実行
+・実行時にパラメーターを渡す
+・repository_dispatch のうに curl でも呼び出せる?
 
 ## workflowの構造
 
@@ -650,7 +650,6 @@ jobs:
 ```
 
 ## Tips
-
 GitHub cdがダサいとき
 [参考URL](https://blog.takuchalle.dev/post/2020/02/20/github_actions_change_directory/)
 
@@ -696,11 +695,9 @@ defaults:
 `jobs.<job_id>.steps[*].uses`を使うと、自分でrunを書かなくても、誰かが公開したactionを使える。だがactionによっては、今回のユースケースに合わず、使えないものがある。
 
 ## 今回のpushはCIをスキップしたい
-
 [参考URL](https://zenn.dev/snowcait/articles/ef60401313a3fc)
 
 ## Jest coverage report
-
 [Jest coverage report でプルリクエスト毎にコードカバレッジを可視化する](https://oikawa.dev/posts/20210810_jest-coverage-report-action)
 
 ## artifacts: 成果物をuploadする。
@@ -744,7 +741,6 @@ GHESはGitHubサービスアプライアンスサーバ。
 以前は単にGitHub Enterpriseと呼ばれていましたが、GitHub.comのbusiness cloudサービスを拡充し、クラウド側の GitHub.com business cloudとオンプレミス側のGitHub Enterpriseを合わせて、GitHub Enterpriseと呼ぶようになりました。そしてクラウド側に限定する場合はGitHub Enterprise Cloud、そしてここで取り上げるオンプレミス側をGitHub Enterprise Serverと呼ぶようになりました。昨今は単に「GitHub Enterprise」で検索などすると、GitHub Enterprise Cloudな記事が多くなったような気がして寂しい限りです。
 
 ## Private ActionsWorkflow Stepを共有する
-
 [PrivateリポジトリのActionsWorkflow内Stepを共有するためCompositeRunStepを外部参照無しに同リポジトリ内で完結させてみた](https://dev.classmethod.jp/articles/composite-run-step-with-private-repos/)
 
 ## ホームディレクトリ

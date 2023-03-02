@@ -1,18 +1,24 @@
 # OAuth(認可)
-[一番分かりやすい OAuth の説明](https://qiita.com/TakahikoKawasaki/items/e37caf50776e00e733be)
+[一番分かりやすい OAuth の説明](https://qiita.com/TakahikoKawasaki/items/e37caf50776e00e733be)  
 [passportの説明](https://www.passportjs.org/concepts/oauth2/?utm_source=github&utm_medium=referral&utm_campaign=passport-google-oauth20&utm_content=nav-concept)
+
+## OAuthとは
 
 OAuthはプロトコルのひとつ。
 
-OAuth = 認可（権限の認可:行動やリソースの許可をすること）
-**権限の認可を行う**オープンスタンダードライブラリ。
+OAuth = 認可（権限の認可:行動やリソースの許可をすること）  
+**権限の認可を行う**オープンスタンダードライブラリ。  
 まず、前提知識として、OAuthという『アクセストークンを発行する仕組み』がある。
 アクセストークンは、アプリケーションをAPI経由で操作するときなんかに使われる。
 例としてTwitterクライアントを自作するときにアクセストークンを使ったりします。
 
 **このOAuthは前述のとおりアクセストークンを発行する仕組みであって、認証については定められていません。認証に必要な、ユーザー情報などの取得については決まっていない。**
 
-このOAuthを拡張し、ユーザー情報の取得についてなどを標準化したのがOpenID Connectが策定された。
+このOAuthを拡張し、ユーザー情報の取得についてなどを標準化したのが`OpenID Connect`
+
+例文  
+サードパーティアプリによるユーザーのリソースを保持する（Google）HTTPサービスへの限定的なアクセス（一部の操作）を可能にする認可フレームワーク（アクセストークンの発行方法に関するルールのこと）
+
 
 ## OAuthが必要な理由
 
@@ -25,9 +31,6 @@ OAuth = 認可（権限の認可:行動やリソースの許可をすること�
 >アカウントを発行して管理するサービス提供者側も大変です。発行したアカウントの情報が漏えいでもして、さらにそのアカウントが別サービスでも使いまわされたりしていようものならこちらも ＼(^o^)／ｵﾜﾀ な状況になることは間違いありません。
 >というわけで、Web サービスの利用者としてもあちこちにアカウントを作ったりしたくないし、サービス提供側としても、アカウントの管理なんか自分でやりたくないわけです。どうせ最近は誰でも Google や Facebook や Yahoo! なんかのアカウント持ってるんだから、アカウントの管理は実績のある人たちに任せてこっちは**都度「この人誰？」**って聞いて教えてもらえばいいんです。
 >その仕組みとして、OpenID Connectという認証プロトコルが登場しました。
-
-
-
 
 ## OAuthにとってのGoogleやFacebook
 [参考URL](https://www.passportjs.org/concepts/oauth2/terminology/)
@@ -50,7 +53,7 @@ OAuthを利用すると、パスワードをアプリケーションAに渡さ�
 
 ## OAuth 認証フロー
 [参考URL](https://qiita.com/TakahikoKawasaki/items/200951e5b5929f840a1f)  
-[これ実装するのにいいかもしれない。](https://qiita.com/TakahikoKawasaki/items/e508a14ed960347cff11)
+[これ実装するのにいいかもしれない](https://qiita.com/TakahikoKawasaki/items/e508a14ed960347cff11)
 
 ## OAuth OpenID Connectの役割違い
 
@@ -76,7 +79,7 @@ OpenID ConnectはOAuth2.0に**認証の仕組みを導入するにあたって�
 
 ## OpenID Connect(認証)で定義されるトークンのやりとり
 
-OpenID Connectでは、Oauth2.0のAuthorization Request送信後のトークンのやり取りt大きく ３つのパターンで定めています。
+OpenID Connectでは、Oauth2.0のAuthorization Request送信後のトークンのやり取りt大きく3つのパターンで定めています。
 
 - Authorization Code Flow
 - Implicit Flow
@@ -101,7 +104,7 @@ ID Tokenは**JWTのフォーマットで表現されるトークン**です。
 
 JWTでは、シンプルにトークンの形式のみが規程されており、payload部分のフォーマットやトークン自身の使われ方についてはほとんど言及されていなかった。
 
-OpenID Connectで規程されるID Tokenは、JWTのpayload部に一定のフォーマットを提供するもの。
+OpenID Connectで規程されるID Tokenは、JWTのpayload部に一定のフォーマットを提供するもの。  
 また、ID Tokenを利用した認証フローの流れなどトークンの利用方法についても細かい規定を追加しています。
 
 ## OAuthとJWTの関わり
@@ -153,9 +156,15 @@ IDトークンでは、Unixエポック (1970年1月1日（世界標準時）か
 
 ## iat(issued at)
 
-iatクレームは JWTが発行された日時を示しています。  
+iatクレームはJWTが発行された日時を示しています。  
 expクレームと同様、Unixエポックからの経過秒数で表現されています。
 
+
+## OAuth 2.0 認可コードグラント概要
+
+OAuth2.0には、**アクセス権の付与の方法（グラントタイプ）**が複数定義されている。  
+その中のひとつ、認可コードグラント（Authorization Code Grant）について説明する。  
+パブリッククライアント用のグラントタイプとして「PKCEを用いた認可コードグラント」も存在するが、ここでは記載しない。
 
 
 
