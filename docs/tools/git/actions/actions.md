@@ -67,7 +67,6 @@ GitHubにはこう書いてありますが、falseが空値で返ってくるこ
       ${{ runner.os }}-go-
 ```
 
-
 - uses: actions/cache@v1がやっていること
 path, keyは必須で、restore-keysのみオプションです。
 
