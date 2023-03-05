@@ -4986,8 +4986,14 @@
 <li>メッセージング アプリケーションのチューニング</li>
 </ul>
 <h2 id="生クエリ"><a name="生クエリ" class="plugin-anchor" href="#生クエリ"><i class="fa fa-link" aria-hidden="true"></i></a>生クエリ</h2>
-<p>生クエリとは、SQLそのままのこと、、？
-ORMなどを使用していないとかかな？</p>
+<p>生クエリとは、SQL文そのままのこと。<br>アプリケーション層でそのまま記載しているのも生クエリ（ORM不使用）</p>
+<h2 id="リレーション"><a name="リレーション" class="plugin-anchor" href="#リレーション"><i class="fa fa-link" aria-hidden="true"></i></a>リレーション</h2>
+<p>リレーションは単方向と双方向しかない。<br>一方向で参照されている側は何も知らないということ。<br>つまり参照されている側から参照先を知ることは難しくなる。そういう時は双方向にする。</p>
+<h2 id="集約の実装とlazy-loading"><a name="集約の実装とlazy-loading" class="plugin-anchor" href="#集約の実装とlazy-loading"><i class="fa fa-link" aria-hidden="true"></i></a>集約の実装とLazy Loading</h2>
+<p><a href="https://emonkak.hatenablog.com/entry/2017/10/01/113453" target="_blank">集約の実装とLazy Loading</a><br><a href="https://qiita.com/tanakahisateru/items/c60de82d88c1f05fafdf" target="_blank">Lazy Loadとは</a></p>
+<blockquote>
+<p>関連をたくさん持った巨大な集約というのは扱いづらいし、双方向の関連は複雑さを生む。 必要最低限かつ、単方向の関連しか持たない集約が望ましい</p>
+</blockquote>
 <h2 id="クエリービルダー"><a name="クエリービルダー" class="plugin-anchor" href="#クエリービルダー"><i class="fa fa-link" aria-hidden="true"></i></a>クエリービルダー</h2>
 <p>ORMとか使っていると、どうしても生のSQLを書きたくなる時がある。
 その時はクエリービルダーで検索する</p>
@@ -5023,16 +5029,13 @@ postgresだと高速。mysqlだと遅いとのこと。</p>
 <strong>※マイグレーションではRubyのDSLを持っているので生のSQLを作成する必要はない。</strong>
 そしてスキーマとスキーマへの変更をDBの種類へ依存せずに済む。</p>
 <h2 id="バルクインサート"><a name="バルクインサート" class="plugin-anchor" href="#バルクインサート"><i class="fa fa-link" aria-hidden="true"></i></a>バルクインサート</h2>
-<p>バルクインサートとは、RDBのテーブルに行を追加する際、複数の行を1回のSQL文の実行で追加すること。
-データベースに対する命令のひとつでありたくさんのデータを、まとめて一気にデータベースに突っ込むときに使う命令
-大量のデータを1回の命令でデータベースに入れられる、insert文っぽいやつ</p>
+<p>バルクインサートとは、RDBのテーブルに行を追加する際、複数の行を1回のSQL文の実行で追加すること。<br>データベースに対する命令のひとつでありたくさんのデータを、まとめて一気にデータベースに突っ込むとき使う命令<br>大量のデータを1回の命令でデータベースに入れられる、insert文っぽいやつ</p>
 <h2 id="sqlクエリのn1問題"><a name="sqlクエリのn1問題" class="plugin-anchor" href="#sqlクエリのn1問題"><i class="fa fa-link" aria-hidden="true"></i></a>SQLクエリのN+1問題</h2>
-<p><a href="https://qiita.com/muroya2355/items/d4eecbe722a8ddb2568b" target="_blank">参考URL</a>
-<a href="https://www.techscore.com/blog/2012/12/25/rails%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E7%B4%B9%E4%BB%8B-n1%E5%95%8F%E9%A1%8C%E3%82%92%E6%A4%9C%E5%87%BA%E3%81%99%E3%82%8B%E3%80%8Cbullet%E3%80%8D/" target="_blank">RailsでのN+1問題発見ツール</a></p>
+<p><a href="https://qiita.com/muroya2355/items/d4eecbe722a8ddb2568b" target="_blank">参考URL</a><br><a href="https://www.techscore.com/blog/2012/12/25/rails%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E7%B4%B9%E4%BB%8B-n1%E5%95%8F%E9%A1%8C%E3%82%92%E6%A4%9C%E5%87%BA%E3%81%99%E3%82%8B%E3%80%8Cbullet%E3%80%8D/" target="_blank">RailsでのN+1問題発見ツール</a>  </p>
 <p>SQLでの対応策としては2種類ある。</p>
 <ul>
 <li><p>JOIN句による表の結合
-テーブル結合自体に時間がかかるが、1件のクエリ￥で欲しい情報を得られる。</p>
+テーブル結合自体に時間がかかるが、1件のクエリで欲しい情報を得られる。</p>
 </li>
 <li><p>Eager Loading（必要なデータを事前にロード）
 テーブルの取得に1回クエリを発行。
@@ -5051,6 +5054,8 @@ userIDs <span class="hljs-operator">=</span> [<span class="hljs-number">3</span>
 <span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> 利用者 <span class="hljs-keyword">WHERE</span> ID <span class="hljs-keyword">IN</span> (<span class="hljs-number">3</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>);
 </code></pre>
 <p>これで必要な書籍情報と、利用者情報がすべて取得できました。今後クエリは発行しません。</p>
+<h2 id="集約の実装とlazy-loading"><a name="集約の実装とlazy-loading" class="plugin-anchor" href="#集約の実装とlazy-loading"><i class="fa fa-link" aria-hidden="true"></i></a>集約の実装とLazy Loading</h2>
+<p><a href="https://emonkak.hatenablog.com/entry/2017/10/01/113453" target="_blank">参照URL</a></p>
 <h2 id="sqlアンチパターン"><a name="sqlアンチパターン" class="plugin-anchor" href="#sqlアンチパターン"><i class="fa fa-link" aria-hidden="true"></i></a>SQLアンチパターン</h2>
 <p><a href="https://qiita.com/ayayo/items/ba38853bca0c2cc2acb7" target="_blank">SQLアンチパターン勉強会　第三回：IDリクワイアド</a></p>
 <h2 id="論理削除は実用的なのか"><a name="論理削除は実用的なのか" class="plugin-anchor" href="#論理削除は実用的なのか"><i class="fa fa-link" aria-hidden="true"></i></a>論理削除は実用的なのか</h2>
@@ -5106,7 +5111,7 @@ userIDs <span class="hljs-operator">=</span> [<span class="hljs-number">3</span>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Sql","level":"2.4.3","depth":2,"next":{"title":"Mysql","level":"2.4.3.1","depth":3,"path":"db/sql/mysql/mysql.md","ref":"db/sql/mysql/mysql.md","articles":[]},"previous":{"title":"Orm","level":"2.4.2.2","depth":3,"path":"db/orm/orm.md","ref":"db/orm/orm.md","articles":[]},"articles":[{"title":"Mysql","level":"2.4.3.1","depth":3,"path":"db/sql/mysql/mysql.md","ref":"db/sql/mysql/mysql.md","articles":[]},{"title":"Postgres","level":"2.4.3.2","depth":3,"path":"db/sql/postgres/postgres.md","ref":"db/sql/postgres/postgres.md","articles":[]},{"title":"Sqlite","level":"2.4.3.3","depth":3,"path":"db/sql/sqlite/sqlite.md","ref":"db/sql/sqlite/sqlite.md","articles":[]},{"title":"Sql","level":"2.4.3.4","depth":3,"path":"db/sql/sql.md","ref":"db/sql/sql.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"db/sql/sql.md","mtime":"2023-03-05T08:47:52.631Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-03-05T08:48:03.490Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Sql","level":"2.4.3","depth":2,"next":{"title":"Mysql","level":"2.4.3.1","depth":3,"path":"db/sql/mysql/mysql.md","ref":"db/sql/mysql/mysql.md","articles":[]},"previous":{"title":"Orm","level":"2.4.2.2","depth":3,"path":"db/orm/orm.md","ref":"db/orm/orm.md","articles":[]},"articles":[{"title":"Mysql","level":"2.4.3.1","depth":3,"path":"db/sql/mysql/mysql.md","ref":"db/sql/mysql/mysql.md","articles":[]},{"title":"Postgres","level":"2.4.3.2","depth":3,"path":"db/sql/postgres/postgres.md","ref":"db/sql/postgres/postgres.md","articles":[]},{"title":"Sqlite","level":"2.4.3.3","depth":3,"path":"db/sql/sqlite/sqlite.md","ref":"db/sql/sqlite/sqlite.md","articles":[]},{"title":"Sql","level":"2.4.3.4","depth":3,"path":"db/sql/sql.md","ref":"db/sql/sql.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"db/sql/sql.md","mtime":"2023-03-05T12:56:52.886Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-03-05T12:57:07.168Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
