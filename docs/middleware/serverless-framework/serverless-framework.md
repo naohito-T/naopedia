@@ -1,7 +1,12 @@
 # serverless-framework
 [サーバーレス動作](https://qiita.com/mkin/items/0a82c84df084496544c6)  
-[サーバーレスの使い方まとめ](https://serverless.co.jp/blog/25/)  
+[サーバーレスの使い方まとめ（リファレンス）](https://serverless.co.jp/blog/25/)  
 [Serverless Frameworkでカスタムドメインを設定する](https://wellknowledge.org/serverless0624/)
+
+## V３でのアップデート内容
+[参考URL](https://makky12.hatenablog.com/entry/2022/08/22/120500)
+
+## 設定ファイル
 
 設定ファイルparent設定
 
@@ -18,6 +23,22 @@ custom:
 resources:
 functions:
 ```
+
+## frameworkVersion
+
+フレームワークのversionを記載する
+
+## plugins
+
+プラグインを当てるセクション  
+- 自作のプラグインを当てることも可能。
+- プラグインの当て方に順番がある。
+
+## resource
+[リファレンス](https://www.serverless.com/framework/docs/providers/aws/guide/serverless.yml?prod_DOCS_SEARCH%5Bquery%5D=self%3A#provider)
+
+今までproviderセクションに定義できるのはAPI Gatewayだけだったが、それ以外のリソースもproviderで定義可能になった（V3）  
+※今まではresourcesセクションにまとめて定義していた
 
 ## serverless framework v3
 [【Serverless Framework】version3の新機能＆知らなかった機能](https://makky12.hatenablog.com/entry/2022/08/22/120500)
@@ -176,8 +197,6 @@ Serverlessはデフォルトで`dev`というステージかつ`us-east-1`リー
 もしこれを変更したければ`serverless.yml`に以下のように設定する。
 
 ```yml
-serverless.yml 
-
 service: service-name
 provider:
   name: aws
@@ -193,7 +212,7 @@ Serverlessはファンクション単位でのデプロイもserverless deploy f
 ---
 
 ## serverlessで使用できる変数
-[リファレンス](https://serverless.co.jp/blog/25/)
+[リファレンス](https://serverless.co.jp/blog/25/)  
 >Serverless Frameworkはserverless.yml内で変数を定義することで柔軟なサービス設定が可能となっています。
 
 ### 環境変数を参照する場合
@@ -241,8 +260,8 @@ serverless deploy --stage devとした場合は、${opt:stage}はdevが返りま
 ---
 
 ## Serverless Components
-[リファレンス](https://serverless.co.jp/blog/51/)
-[参考URL](https://qiita.com/G-awa/items/04dec937925d2875d320)
+[リファレンス](https://serverless.co.jp/blog/51/)  
+[参考URL](https://qiita.com/G-awa/items/04dec937925d2875d320)  
 >従来Serverless Frameworkはfunctionとeventは簡単に定義できていましたが、インフラリソースをプロビジョニングするためにはどうしても Cloudformation を定義する必要がありました。
 >また、プロビジョニングできる対象も AWS や GCP などの特定のクラウドベンダーのサービスにしか対応しておらず、Auth0 などを使用する場合は自前で構成管理をする必要がありました。Serverless Components なら様々な SaaS に対応できます。
 
