@@ -19,6 +19,10 @@ resources:
 functions:
 ```
 
+## serverless framework v3
+[【Serverless Framework】version3の新機能＆知らなかった機能](https://makky12.hatenablog.com/entry/2022/08/22/120500)
+
+
 ## serverless-framework AWS認証情報セットアップ
 [リファレンス](https://www.serverless.com/framework/docs/providers/aws/guide/credentials)
 
