@@ -1,7 +1,8 @@
 # JWT(JSON Web Token) : ジョット
 [参考URL](https://techblog.yahoo.co.jp/advent-calendar-2017/jwt/)  
 [JWTハンドブック(今度読む)](https://assets.ctfassets.net/2ntc334xpx65/5HColfm15cUhMmDQnupNzd/30d5913d94e79462043f6d8e3f557351/jwt-handbook-jp.pdf)  
-[JWS,JWE,JWKなどの仕様について詳しい](https://qiita.com/TakahikoKawasaki/items/8f0e422c7edd2d220e06)
+[JWS,JWE,JWKなどの仕様について詳しい](https://qiita.com/TakahikoKawasaki/items/8f0e422c7edd2d220e06)  
+[SPAで使うことの懸念](https://www.wakuwakubank.com/posts/523-it-jwt/#index_id9)
 
 ## JWTとは
 
@@ -422,8 +423,8 @@ Cookie: SID=<セッションID>
 
 ### アクセストークンをどう保持するか
 
-パスワードやOpenID Connectでユーザー認証を行うと、アクセストークンが発行されます。
-これをヘッダーに乗せて認証します。つまり、クライアント側でアクセストークンを保持しておかなければなりません。
+パスワードやOpenID Connectでユーザー認証を行うと、アクセストークンが発行されます。  
+これをヘッダーに乗せて認証します。つまり、クライアント側でアクセストークンを保持しておかなければなりません。  
 
 アクセストークンはどう保存すればいいのでしょうか。大きく次の4つがありますが、結論からいうと可能な限り『OS標準のストレージ』か『メモリ』に保持します：
 
@@ -464,3 +465,9 @@ RSAで電子署名するのが一般的
 
 JSONを暗号化して`URL-safe`な文字列として表現したもの。
 
+
+## SPAでのJWT
+[参考URL](https://www.wakuwakubank.com/posts/523-it-jwt/#index_id9)
+
+>SPAでJWTを利用する場合、JWTを保存する場所によって発生するセキュリティ上の脆弱性について理解しておく必要があります。
+> XSS や CSRF の脆弱性に対する根拠のある対策ができていない場合、サーバー側でRedisなどを利用したセッション管理を検討したほうが良いかと思います。
