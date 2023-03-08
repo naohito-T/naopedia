@@ -1,6 +1,6 @@
 # Next
-[NextJS リファレンス](https://nextjs.org/docs/api-reference/next/image)
-
+[NextJS リファレンス](https://nextjs.org/docs/api-reference/next/image)  
+[next/routerをmockする](https://fwywd.com/tech/next-testing-mock)
 
 ## SPAで軽視されがちな部分
 

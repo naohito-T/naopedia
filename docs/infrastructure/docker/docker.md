@@ -20,6 +20,9 @@ docker volume prune -f
 - Volume Trickでnode_modulesがバインドマウントされるのを回避する
 - VScodeでnode_modulesを参照できない問題を解決する。
 
+## Docker が軽い方がいい理由
+[参考URL](https://blog.mosuke.tech/entry/2020/07/09/container-image-size/)
+
 ## Docker imageの中身を見る(レイヤー)
 [参考URL](https://zenn.dev/kirisaki/scraps/89bf93bfd9a0d6)
 

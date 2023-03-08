@@ -1,5 +1,5 @@
 # Jest
-[参考URL](https://jestjs.io/ja/docs/configuration)
+[参考URL](https://jestjs.io/ja/docs/configuration)  
 [リファレンス](https://jestjs.io/ja/docs/25.x/tutorial-async)
 
 ## Jestテストの並行実行と逐次実行を理解する
