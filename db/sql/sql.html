@@ -4987,13 +4987,52 @@
 </ul>
 <h2 id="生クエリ"><a name="生クエリ" class="plugin-anchor" href="#生クエリ"><i class="fa fa-link" aria-hidden="true"></i></a>生クエリ</h2>
 <p>生クエリとは、SQL文そのままのこと。<br>アプリケーション層でそのまま記載しているのも生クエリ（ORM不使用）</p>
-<h2 id="リレーション"><a name="リレーション" class="plugin-anchor" href="#リレーション"><i class="fa fa-link" aria-hidden="true"></i></a>リレーション</h2>
+<hr>
+<h2 id="リレーション-外部キー制約参照整合性ともいう"><a name="リレーション-外部キー制約参照整合性ともいう" class="plugin-anchor" href="#リレーション-外部キー制約参照整合性ともいう"><i class="fa fa-link" aria-hidden="true"></i></a>リレーション 外部キー制約(参照整合性ともいう)</h2>
 <p>リレーションは単方向と双方向しかない。<br>一方向で参照されている側は何も知らないということ。<br>つまり参照されている側から参照先を知ることは難しくなる。そういう時は双方向にする。</p>
 <h2 id="集約の実装とlazy-loading"><a name="集約の実装とlazy-loading" class="plugin-anchor" href="#集約の実装とlazy-loading"><i class="fa fa-link" aria-hidden="true"></i></a>集約の実装とLazy Loading</h2>
 <p><a href="https://emonkak.hatenablog.com/entry/2017/10/01/113453" target="_blank">集約の実装とLazy Loading</a><br><a href="https://qiita.com/tanakahisateru/items/c60de82d88c1f05fafdf" target="_blank">Lazy Loadとは</a></p>
 <blockquote>
 <p>関連をたくさん持った巨大な集約というのは扱いづらいし、双方向の関連は複雑さを生む。 必要最低限かつ、単方向の関連しか持たない集約が望ましい</p>
 </blockquote>
+<h2 id="カスケード"><a name="カスケード" class="plugin-anchor" href="#カスケード"><i class="fa fa-link" aria-hidden="true"></i></a>カスケード</h2>
+<p><a href="https://go-to-k.hatenablog.com/entry/2021/10/14/005047" target="_blank">MySQLカスケード参考URL</a></p>
+<p>リレーションにおけるオプションのひとつで、依存関係を持った親と子のレコード同士の整合性を保つために、親への操作を子のレコードにも一貫して操作を連動させるような仕組み。</p>
+<p>具体的には、親テーブルのレコードを削除または更新したときに、子テーブルの関連するレコードを自動的に削除または更新してくれる機能。</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> child (
+    id <span class="hljs-type">INT</span>, 
+    parent_id <span class="hljs-type">INT</span>,
+    <span class="hljs-keyword">FOREIGN</span> KEY (parent_id) 
+        <span class="hljs-keyword">REFERENCES</span> parent(id)
+        <span class="hljs-keyword">ON</span> UPDATE CASCADE
+        <span class="hljs-keyword">ON</span> <span class="hljs-keyword">DELETE</span> CASCADE
+);
+</code></pre>
+<p>カスケードメリット
+削除処理の実装コスト削減</p>
+<p>カスケードデメリット</p>
+<ul>
+<li>外部キーの利点である誤削除防止がなくなって、オペミス・実装ミスの防止ができない</li>
+<li>明示的にDELETEクエリを投げたテーブル以外のテーブル・レコードに関して何を消したか（何が消えたか）わからない</li>
+<li>運用コストの増加（リスク増加・ミス時のリカバリコスト増加）</li>
+</ul>
+<blockquote>
+<p>カスケード削除に頼り切ってしまうと、親のテーブルに削除を投げた際に、どのテーブルのどの行が削除されたのかが明示的にはわからないというのは、開発において思わぬ想定の挙動を生む可能性があります。
+それなのであれば、多少コストがかかっても自前で削除ロジックを組み、削除したいテーブル・レコードに対する削除処理を1つずつ書いたほうが安心に繋がります。
+また、DBの操作ログ・監査ログからも、該当削除クエリによる影響範囲などが追いづらいという点もあります。</p>
+</blockquote>
+<h3 id="カスケードオプション"><a name="カスケードオプション" class="plugin-anchor" href="#カスケードオプション"><i class="fa fa-link" aria-hidden="true"></i></a>カスケードオプション</h3>
+<p>SET NULL
+親の削除・更新時、子テーブルの外部キーカラムの値をNULLにする</p>
+<p>RESTRICT
+親の削除・更新時、その行に該当する外部キーカラムのデータを持つレコードが子テーブルにあれば、親の削除・更新を拒否する</p>
+<p>NO ACTION
+MySQLではRESTRICTと同等であり、一部のRDBでは遅延チェックが働く</p>
+<p>SET DEFAULT
+MySQLではこの定義文は拒否される</p>
+<p>CASCADE
+上記説明を参照</p>
+<hr>
 <h2 id="クエリービルダー"><a name="クエリービルダー" class="plugin-anchor" href="#クエリービルダー"><i class="fa fa-link" aria-hidden="true"></i></a>クエリービルダー</h2>
 <p>ORMとか使っていると、どうしても生のSQLを書きたくなる時がある。
 その時はクエリービルダーで検索する</p>
@@ -5111,7 +5150,7 @@ userIDs <span class="hljs-operator">=</span> [<span class="hljs-number">3</span>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Sql","level":"2.4.3","depth":2,"next":{"title":"Mysql","level":"2.4.3.1","depth":3,"path":"db/sql/mysql/mysql.md","ref":"db/sql/mysql/mysql.md","articles":[]},"previous":{"title":"Orm","level":"2.4.2.2","depth":3,"path":"db/orm/orm.md","ref":"db/orm/orm.md","articles":[]},"articles":[{"title":"Mysql","level":"2.4.3.1","depth":3,"path":"db/sql/mysql/mysql.md","ref":"db/sql/mysql/mysql.md","articles":[]},{"title":"Postgres","level":"2.4.3.2","depth":3,"path":"db/sql/postgres/postgres.md","ref":"db/sql/postgres/postgres.md","articles":[]},{"title":"Sqlite","level":"2.4.3.3","depth":3,"path":"db/sql/sqlite/sqlite.md","ref":"db/sql/sqlite/sqlite.md","articles":[]},{"title":"Sql","level":"2.4.3.4","depth":3,"path":"db/sql/sql.md","ref":"db/sql/sql.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"db/sql/sql.md","mtime":"2023-03-08T08:50:45.109Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-03-08T08:50:52.755Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Sql","level":"2.4.3","depth":2,"next":{"title":"Mysql","level":"2.4.3.1","depth":3,"path":"db/sql/mysql/mysql.md","ref":"db/sql/mysql/mysql.md","articles":[]},"previous":{"title":"Orm","level":"2.4.2.2","depth":3,"path":"db/orm/orm.md","ref":"db/orm/orm.md","articles":[]},"articles":[{"title":"Mysql","level":"2.4.3.1","depth":3,"path":"db/sql/mysql/mysql.md","ref":"db/sql/mysql/mysql.md","articles":[]},{"title":"Postgres","level":"2.4.3.2","depth":3,"path":"db/sql/postgres/postgres.md","ref":"db/sql/postgres/postgres.md","articles":[]},{"title":"Sqlite","level":"2.4.3.3","depth":3,"path":"db/sql/sqlite/sqlite.md","ref":"db/sql/sqlite/sqlite.md","articles":[]},{"title":"Sql","level":"2.4.3.4","depth":3,"path":"db/sql/sql.md","ref":"db/sql/sql.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"db/sql/sql.md","mtime":"2023-03-09T05:23:36.730Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-03-09T05:23:45.280Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
