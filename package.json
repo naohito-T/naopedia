@@ -1,8 +1,8 @@
 {
   "name": "naopedia",
-  "version": "1.0.0",
-  "description": "知識の蓄え",
-  "main": "index.js",
+  "version": "1.1.1",
+  "description": "Tips Knowledge Book",
+  "main": "_book/index.html",
   "directories": {
     "doc": "docs"
   },
@@ -10,8 +10,13 @@
     "type": "git",
     "url": "git+ssh://git@github.com/naohito-T/naopedia.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "code",
+    "Tips",
+    "Knowledge",
+    "book"
+  ],
+  "author": "naohito-T",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/naohito-T/naopedia/issues"
@@ -19,7 +24,9 @@
   "homepage": "https://github.com/naohito-T/naopedia#readme",
   "scripts": {
     "build": "honkit build",
-    "serve": "honkit serve"
+    "serve": "honkit serve",
+    "c": "yarn changeset",
+    "c:v": "yarn changeset version"
   },
   "dependencies": {
     "gitbook-plugin-advanced-emoji": "^0.2.2",
@@ -31,6 +38,7 @@
     "gitbook-plugin-intopic-toc": "^1.1.1"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.26.0",
     "honkit": "^4.0.4"
   }
 }

@@ -1,3 +1,3 @@
-# Honkit は、.gitignoreも見てくれるそうなので、Git管理すらしなくて良いファイルは、そちらに記載して、Honkit でビルドする時だけ除外したいものを.bookignoreに書くようにする。
+# Not Build fot Honkit
 package.json
 package-lock.json

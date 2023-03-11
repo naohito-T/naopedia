@@ -10,3 +10,6 @@ docs/temp
 # png
 images
 image
+
+# log
+yarn-error.log

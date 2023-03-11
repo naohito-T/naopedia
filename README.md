@@ -46,5 +46,14 @@ thank you!
 
 ## 作中の画像について
 
-Gyazoに配置はしてます。
+Gyazoに配置
 
+## バージョニング
+[repository](https://github.com/changesets/changesets/blob/main/docs/intro-to-using-changesets.md)
+
+```sh
+# 保留
+$ yarn c
+# changelog反映
+$ yarn c:v
+```

@@ -1,5 +1,6 @@
 # AWS Cloud Formation
 [AWS CloudFormation テンプレートの基礎](https://qiita.com/leomaro7/items/05f2f92061d869b08109)
+[CloudFormationで認証情報を扱うベストプラクティス](https://techblog.nhn-techorus.com/archives/17674)
 
 ## ユビキタス
 

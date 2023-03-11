@@ -1,7 +1,7 @@
 # Git
 
 ## wiki
-[これをやる](https://dev.classmethod.jp/articles/editing-wiki-content-locally-on-github/)
+c[これをやる](https://dev.classmethod.jp/articles/editing-wiki-content-locally-on-github/)
 
 ## 多分一番これがいい
 [参考URL(御作法)](https://zenn.dev/mstssk/articles/4051e3df72a84c)

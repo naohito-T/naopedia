@@ -8,17 +8,17 @@
 
 ## GitHub Actions 料金
 
-※前提としてプライベートリポジトリが料金かかる。パブリックは無料。
-OSによって料金が変わる。
-Linuxは1分あたり0.008ドルと安価
-Windowsは0.016ドル（2倍）
-macOSは0.08ドル（10倍）という価格
+※前提としてプライベートリポジトリが料金かかる。パブリックは無料。  
+OSによって料金が変わる。  
+Linuxは1分あたり0.008ドルと安価  
+Windowsは0.016ドル（2倍）  
+macOSは0.08ドル（10倍）という価格  
 
 ## GitHub Actions実行単位
 
-3つの実行単位が存在する。
+3つの実行単位が存在する。  
 - workflow
-- Job
+- Job（1つのworkflow複数指定可能）
 - Step
 
 ## 高速化
@@ -33,6 +33,9 @@ GitHub Actionsでもキャッシュ機能が提供されている。
 ## Action内で止まる条件
 
 GitHub Actionsの処理では警告（warn）はsuccessとして通るので注意。
+
+## GitHub Actions ワークフローで複数のジョブ実行を制御する
+[GitHub Actions ワークフローで複数のジョブ実行を制御する](https://blog.kondoumh.com/entry/2021/01/22/133427)
 
 ## cache
 
@@ -163,9 +166,9 @@ ymlのjogsのtest名がnameに紐付きじゃばらで出る
 [Job間での共有（リファレンス）](https://github.blog/changelog/2020-04-15-github-actions-new-workflow-features/)
 [複数Job間でデータを共有する](https://qiita.com/yokawasa/items/dc46ae6936b745af8b80)
 
-ひとつのファイルに複数のjobを指定可能。
-原則として各jobは並列に実行されるが依存関係（他のジョブ終了を待つ）を設定することも可能。
-
+ひとつのファイルに複数のjobを指定可能。  
+原則として各jobは並列に実行されるが依存関係（他のジョブ終了を待つ）を設定することも可能（needs）
+needsなどを指定しない場合は並列で実行される
 
 各ジョブは**仮想環境の新しいインスタンスで実行される**（つまり別々のGitHub Actions Runner（別々のOS）で実行される）
 したがって**ジョブ間で環境変数やファイル/セットアップ処理の結果などは共有されない**
@@ -186,13 +189,13 @@ jobs:
 
 ## Steps
 
-実行コンテキストという観点
+実行コンテキストという観点  
 GitHub Actionsでは**Stepごとに1つのシェルが与えられる。**（つまり異なるStepに書かれたコマンドは違うシェル上で実行される）
 
 jobが実行する処理の集合
-同じjobのstepは同じ仮想環境で実行されるので**ファイルやセットアップ処理は共有できる。**
-しかし各ステップは別プロセスなので**ステップ内で定義した環境変数は共有できない。**
-`jobs.<job_id>.env`で定義した環境変数は全stepで利用できる
+同じjobのstepは同じ仮想環境で実行されるので**ファイルやセットアップ処理は共有できる。**  
+しかし各ステップは別プロセスなので**ステップ内で定義した環境変数は共有できない。**  
+`jobs.<job_id>.env`で定義した環境変数は全stepで利用できる  
 ※jobの中にさらに細かい粒度で、stepが存在:stepはjobと違い**上から順に実行される**
 
 ```yml
@@ -236,8 +239,9 @@ Freeアカウントで2,000分/月無料。
 
 ## ファイルシステム
 
-Dockerコンテナーで実行されるアクションには、`/github`パスの下に静的なディレクトリがある。
-Dockerコンテナーで実行されないアクションでは3つのディレクトリが作成される。これらのディレクトリパスは動的に生成されるので一定ではない。各ディレクトリの位置は対応する環境変数で取得する。
+Dockerコンテナーで実行されるアクションには、`/github`パスの下に静的なディレクトリがある。  
+Dockerコンテナーで実行されないアクションでは3つのディレクトリが作成される。これらのディレクトリパスは動的に生成されるので一定ではない。  
+各ディレクトリの位置は対応する環境変数で取得する。
 home（HOME）： ユーザ認証情報などのユーザ関連データが書き込まれる
 workspace（GITHUB_WORKSPACE）：アクションが実行されるワークディレクトリ
 workflow：workflow/event.json（GITHUB_EVENT_PATH）が書き込まれるディレクトリ
@@ -310,46 +314,9 @@ GitHub自身が作成しているActionがリポジトリで公開されてい�
     # * (HEAD detached at pull/21/merge)
 ```
 
-
-
-
-## github action local実行 (act)
-
-[参考(これがいい)](https://dev.classmethod.jp/articles/act-for-github-actions-local-execution-tool/)
-
+## GitHub action local実行 (act)
+[参考(これがいい)](https://dev.classmethod.jp/articles/act-for-github-actions-local-execution-tool/)  
 [参考URL](https://zenn.dev/usagiga/articles/f44be764419e15700247)
-
-push
-`$ act`
-pull_request
-`$ act pull_request`
-
-```sh
-# Command structure:
-act [<event>] [options]
-If no event name passed, will default to "on: push"
-
-# List the actions for the default event:
-act -l
-
-# List the actions for a specific event:
-act workflow_dispatch -l
-
-# Run the default (`push`) event:
-act
-
-# Run a specific event:
-act pull_request
-
-# Run a specific job:
-act -j test
-
-# Run in dry-run mode:
-act -n
-
-# Enable verbose-logging (can be used with any of the above commands)
-act -v
-```
 
 ----
 
@@ -387,7 +354,6 @@ on:
 ```
 
 ## workflow_dispatch
-
 [Workflow Dispatch最高](https://note.com/watura/n/nd9e55ceb77ac)
 
 このコンテキストは、GitHub上のGitHub Actionsの画面からworkflowを実行できるようにするTrigger
@@ -496,7 +462,6 @@ jobs: # jobsの内容がname配下に表示される
 ```
 
 ## envについて
-
 [github secret KEY](https://qiita.com/inouet/items/c7d39ac4641c05eec4a0)
 
 仮想環境でactionが実行されるため、それを反映させるためにdirenvで反映させるのはめんどくさそう
@@ -775,11 +740,10 @@ work
 ```
 
 ## 作業ディレクトリ(default)
-
 [参考URL](https://www.bioerrorlog.work/entry/github-actions-default-workspace)
 
 ## 重複したStepを分ける 'Composite Run Step'
-[参考URL](https://dev.classmethod.jp/articles/composite-run-step-with-private-repos/)
+[参考URL](https://dev.classmethod.jp/articles/composite-run-step-with-private-repos/)  
 [usesも使えるようになった](https://dev.classmethod.jp/articles/using-uses-on-composite-steps/)
 
 public & privateどっちもできる。
@@ -813,9 +777,9 @@ if: contains(github.event_name, '***')
 ※キャンセルすることなども可能。
 
 ## Composite Action: 複合アクション
-[リファレンス（様々なモジュール化）](https://docs.github.com/ja/actions/creating-actions/about-custom-actions)
-[リファレンス（composite）](https://docs.github.com/ja/actions/creating-actions/creating-a-composite-action)
-[Composite Action実践ガイド](https://zenn.dev/tmknom/books/pragmatic-composite-action/viewer/introduction)
+[リファレンス（様々なモジュール化）](https://docs.github.com/ja/actions/creating-actions/about-custom-actions)  
+[リファレンス（composite）](https://docs.github.com/ja/actions/creating-actions/creating-a-composite-action)  
+[Composite Action実践ガイド](https://zenn.dev/tmknom/books/pragmatic-composite-action/viewer/introduction)  
 [GitHub Actions の Composite Action で post 処理を実現する方法](https://srz-zumix.blogspot.com/2022/08/github-actions-composite-action-post.html)
 
 Composite ActionはGitHub Actionsのモジュール化技法の1つ。
@@ -825,6 +789,7 @@ Composite ActionはGitHub Actionsのモジュール化技法の1つ。
 
 ### 制約
 [制約一覧](https://dev.classmethod.jp/articles/use-composite-run-steps-wisely/)
+
 ファイル名は`action.yml` or `action.yaml`でないといけない。
 
 ### 作成するときに考慮するべきこと
@@ -851,5 +816,4 @@ jsなども使える。
 
 ## Tips
 [GitHub Actionsによる作業自動化 実例集](https://qiita.com/technote-space/items/253290d1f2a0f99409ae)
-
 [後で読め](https://blog.sa2taka.com/post/github-actions-diff-branches/)
