@@ -7,6 +7,18 @@
 [Lambdaの落とし穴 - 脆弱なライブラリによる危険性とセキュリティ対策](https://blog.flatt.tech/entry/lambda_library_security#AWS-Lambda-%E3%81%A7%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3%E7%9A%84%E3%81%AB%E6%B0%97%E3%81%AB%E3%81%99%E3%81%B9%E3%81%8D%E7%82%B9)
 
 ## LambdaにはEIP(Elastic IP)を割り当てられない
+[Lambda用 VPCネットワーク](https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/foundation-networking.html)
+
+## Lambdaが実行されるところ
+
+Lambda関数は常に**Lambdaサービスが所有するVPC内で実行される**  
+LambdaはこのVPCにネットワークアクセスとセキュリティルールを適用し、VPCを自動的に維持および監視します。
+
+## LambdaをVPC外のリソースにアクセスさせる
+[参考URL](https://valmore.work/aws-lambda-s3/)
+
+NATを使う
+VPC Endpointを使用する
 
 
 
