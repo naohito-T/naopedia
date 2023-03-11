@@ -1,5 +1,4 @@
 # Amazon API Gateway
-
 [参考URL](https://dev.classmethod.jp/articles/what-does-amazon-api-gateway-do/)  
 [Amazon CloudFrontでAPI Gatewayの痒いところに手を届ける](https://dev.classmethod.jp/articles/cache-api-gateway-by-cloudfront/)
 
@@ -89,9 +88,8 @@ API Gatewayの前でCloudFront Distributionを使用する理由
 - キャッシング動作を制御する
 - APIのTLS設定を制御する。
 
-
 ## Lambdaからエラーレスポンスが返ってきた時に処理をする
 [参考URL](https://docs.aws.amazon.com/ja_jp/apigateway/latest/developerguide/handle-errors-in-lambda-integration.html)
 
-エラーをthrowしても処理できないっぽい（できそうだけど）
+エラーをthrowしても処理できないっぽい（できそうだけど）  
 現状一番簡単なのはエラーをcatchした後、ステータスコードと一緒にJSONレスポンスとして返せば良さそう。
