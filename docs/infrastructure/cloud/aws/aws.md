@@ -1,11 +1,28 @@
-# aws
+# AWS
 
-aws関連
+AWS関連やAWSユビキタスについて記載する。
 
 ## AWS 勉強サイト
 [AWS Cloud Quest](https://www.itmedia.co.jp/news/articles/2203/17/news092.html)
 
 ---
+
+## EIP(Elastic IP)
+[EIPについて](https://orange-operation.jp/sharing/11919.html)
+
+Elastic IPアドレスは、AWSに登録したアカウントに紐つけされるIPアドレスです。
+IPアドレスは基本的にパブリックIPアドレスとプライベートIPアドレスの２つに分けることができ、パブリックIPアドレスはインターネットを通じて機器を利用する際に割り当てられるアドレスで、もっともポピュラーなIPアドレスと言えます。
+一方のプライベートIPアドレスはインターネットではなくローカルのネットワークでのみ割り当てられるIPアドレスで、インターネットからは遮断されたIPです。
+
+パブリックIPもプライベートIPもサーバーを再起動すると変更されてしまうという特性を持っているのですが、このElastic IPは**サーバーを再起動しても同じIPアドレスを割り当てることができる性質を持っています。**
+
+
+## AWSを操作方法種類
+
+- GUI（マネジメントコンソール）
+- CLI（AWS CLI）
+- SDK（プログラム）
+※pythonでのSDKは`boto3`という   
 
 ## config credentialsを作成する
 

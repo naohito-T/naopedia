@@ -30,9 +30,12 @@ GitHub Actionsでもキャッシュ機能が提供されている。
 
 ---
 
-## Action内で止まる条件
+## Action内ではwarnでは止まらない
 
 GitHub Actionsの処理では警告（warn）はsuccessとして通るので注意。
+
+## プルリクエストのpaths条件
+[ベン図で記載がありわかりやすい](https://qiita.com/nacam403/items/3e2a5df5e88ba20aa76a)
 
 ## GitHub Actions ワークフローで複数のジョブ実行を制御する
 [GitHub Actions ワークフローで複数のジョブ実行を制御する](https://blog.kondoumh.com/entry/2021/01/22/133427)
