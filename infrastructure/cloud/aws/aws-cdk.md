@@ -1,7 +1,13 @@
 # AWS CDK（AWS Cloud Development Kit）
-[5分で理解するAWS CDK](https://qiita.com/Brutus/items/6c8d9bfaab7af53d154a)
+[5分で理解するAWS CDK](https://qiita.com/Brutus/items/6c8d9bfaab7af53d154a)  
 
 TypeScriptおよびPythonなどのプログラミング言語を使用して、AWSリソースを定義し、Terraformの様に**Infrastructure as Code（以降、IaC）**を実現する手段として、クラウドインフラのリソースをプロビジョニングすることが可能。
+
+## serverless frameworkとcdkの違い
+[serverless frameworkとcdkの違い](https://sst.dev/chapters/using-aws-cdk-with-serverless-framework.html)
+
+
+
 
 ## スタック
 
