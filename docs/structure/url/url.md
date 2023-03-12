@@ -2,6 +2,11 @@
 
 URL設計についてまとめる
 
+## www
+[wwwありとwwwなしって結局どっちがいいの？](https://mtame.jp/column/www/)
+
+固い印象を与えたいときは`www`をつける
+
 ## ブログ作成時のURL設計について
 [参考URL](ブログ作成時のWordPressのURL設計について)
 

@@ -1,5 +1,7 @@
 # network
-[ネットワーク技術者](https://www.itbook.info/study/mag.html)
+[ネットワーク技術者](https://www.itbook.info/study/mag.html)  
+[JPNIC（network講座）](https://www.nic.ad.jp/ja/basics/terms/cidr.html)  
+[ipアドレスを確認できるサイト](https://www.ipvx.info/)
 
 ネットワーク関連のPage
 
@@ -9,13 +11,11 @@
 インターネットは世界中のネットワークの集まり、家や会社でネッとワークを作ることでネットワーク上のそれぞれのスマホ同士で接続が可能
 
 ## ネットワーク原因調査
-
 [参考URL](https://christina04.hatenablog.com/entry/2017/12/08/190000)
 
 - ネットワーク原因調査
 
 ## ネットワーク疎通コマンド
-
 [参考URL](https://yaruki-strong-zero.hatenablog.jp/entry/network_debug)
 
 
@@ -141,3 +141,7 @@ TCPで行う通信と異なり、ローカルファイルを指定して通信�
 たとえば、KubernetesのPod内のコンテナー間で通信を行う場合に使うことができます。
 ボリュームを共有してマウントすることで通信ができるので、ドメインの名前解決に縛られることが無くなります。
 ポートで通信を行う場合と比べて制限を受けない部分もあるので、一度使ってみてはどうですか？
+
+## CIDR(Classless Inter-Domain Routing)
+
+c
