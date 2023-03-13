@@ -1,4 +1,5 @@
 # Shell
+[シェルスクリプトをtypescriptで書く](https://zenn.dev/korosuke613/scraps/07729cd55a628b)
 
 ## 歴史
 

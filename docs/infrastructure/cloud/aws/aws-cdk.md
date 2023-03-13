@@ -6,9 +6,6 @@ TypeScriptおよびPythonなどのプログラミング言語を使用して、A
 ## serverless frameworkとcdkの違い
 [serverless frameworkとcdkの違い](https://sst.dev/chapters/using-aws-cdk-with-serverless-framework.html)
 
-
-
-
 ## スタック
 
 AWS CDKのデプロイ単位は**スタック**と呼ばれる  
