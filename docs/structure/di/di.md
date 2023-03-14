@@ -20,3 +20,11 @@ DIコンテナーファイルとしてクラスの対応リストを保持して
 事前に依存するオブジェクトを登録しておいて使う時になったらDIコンテナー経由でオブジェクトを取得する。  
 ※この設定はスタートアップスクリプトなどに登録しておくようにする。
 
+## Decoratorとは
+[参考URL](https://info.drobe.co.jp/blog/engineering/typescript-decorator)
+
+
+
+
+
+
