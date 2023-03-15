@@ -5,8 +5,8 @@ AWS関連やAWSユビキタスについて記載する。
 ## AWS
 [AWS構成図を自動で作成する](CDKで構築したAWS環境の構成図を自動生成するツール「CDK-Dia」を検証してみた)
 
-
-
+## AWS セキュリティ
+[本番環境で実践したいAWSセキュリティのベストプラクティス26選](https://sysdig.jp/blog/26-aws-security-best-practices/)
 
 ## AWS 勉強サイト
 [AWS Cloud Quest](https://www.itmedia.co.jp/news/articles/2203/17/news092.html)
