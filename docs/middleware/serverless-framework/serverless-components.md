@@ -1,7 +1,9 @@
 # Serverless Components
+[リファレンス](https://github.com/serverless/components)  
 [Serverless Components はオレたちの未来を劇的にスケールさせるか](https://qiita.com/G-awa/items/04dec937925d2875d320)
-Serverless Frameworkに新しく搭載された機能。
-Serverless Componentsは無料で使えるが、GA版に伴いserverless.comへのログインが必要になっています。
+
+Serverless Frameworkに新しく搭載された機能。  
+Serverless Componentsは無料で使えるが、GA版に伴いserverless.comへのログインが必要になっている。
 
 Serverless Componentsは今までのServerless Frameworkとは以下が違う。
 - CloudFormationに非依存でデプロイが速い
