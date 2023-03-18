@@ -1483,9 +1483,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.7.3.1.13" data-path="eventbridge.html">
+        <li class="chapter " data-level="2.7.3.1.13" data-path="eventbridge.md">
             
-                <a href="eventbridge.html">
+                <span>
             
                     
                     Event bridge
@@ -4970,6 +4970,11 @@
 <strong>マルチAZ構成</strong>もできる。</p>
 <h2 id="lambdaを採用する方針"><a name="lambdaを採用する方針" class="plugin-anchor" href="#lambdaを採用する方針"><i class="fa fa-link" aria-hidden="true"></i></a>Lambdaを採用する方針</h2>
 <p>非同期な通信処理、イベント駆動で処理をするサービスにはLambdaを採用する。<br>同期的な通信処理、APIなどを提供するサービスにはECSを採用する。</p>
+<h2 id="lambdaを採用する例文"><a name="lambdaを採用する例文" class="plugin-anchor" href="#lambdaを採用する例文"><i class="fa fa-link" aria-hidden="true"></i></a>Lambdaを採用する例文</h2>
+<blockquote>
+<p>すでにユーザー数が増加してアプリケーション全体のパフォーマンスが劣化していることに加えて、アプリケーションの運用業務の比率も高まっています。
+また開発期間が長くなることも懸念しています。さらに、今後もユーザー数、そして購入数が増えることを考えたときに、領収書を作る機能をSampleBookStoreの中心的な機能から切り離すことにより、負荷の軽減ができると考えました。要件として購入と同期的に実行する必要がなく、「なるべく早く」で十分な点もポイントです。筆者自身の実体験としても、購入後にすぐ領収書が必要だとしても数分間は待てますし、場合によっては月末の経費精算時にまとめてダウンロードすることもあります。また、セール時期など、大量に購入が行われる時期には領収書を作る機能にもより負荷がかかります。こういった背景から、非同期処理として実装することが望ましいと考えました</p>
+</blockquote>
 <h2 id="lambdaのセキュリティ"><a name="lambdaのセキュリティ" class="plugin-anchor" href="#lambdaのセキュリティ"><i class="fa fa-link" aria-hidden="true"></i></a>Lambdaのセキュリティ</h2>
 <p><a href="https://blog.flatt.tech/entry/lambda_library_security#AWS-Lambda-%E3%81%A7%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3%E7%9A%84%E3%81%AB%E6%B0%97%E3%81%AB%E3%81%99%E3%81%B9%E3%81%8D%E7%82%B9" target="_blank">Lambdaの落とし穴 - 脆弱なライブラリによる危険性とセキュリティ対策</a></p>
 <h2 id="lambdaにはeipelastic-ipを割り当てられない"><a name="lambdaにはeipelastic-ipを割り当てられない" class="plugin-anchor" href="#lambdaにはeipelastic-ipを割り当てられない"><i class="fa fa-link" aria-hidden="true"></i></a>LambdaにはEIP(Elastic IP)を割り当てられない</h2>
@@ -5136,11 +5141,9 @@ APIGateway+Lambda上でExpressを動かせるというライブラリ。
 </blockquote>
 <h2 id="lambda-typescript-middy"><a name="lambda-typescript-middy" class="plugin-anchor" href="#lambda-typescript-middy"><i class="fa fa-link" aria-hidden="true"></i></a>Lambda TypeScript middy</h2>
 <p><a href="https://kiririmode.hatenablog.jp/entry/20220702/1656752084" target="_blank">middyについて</a></p>
-<p>middyはLambda関数用のミドルウェアエンジンで</p>
+<p>middyはLambda関数用のミドルウェアエンジン。</p>
 <h2 id="lambdaでenvを管理しない方がいい理由"><a name="lambdaでenvを管理しない方がいい理由" class="plugin-anchor" href="#lambdaでenvを管理しない方がいい理由"><i class="fa fa-link" aria-hidden="true"></i></a>Lambdaでenvを管理しない方がいい理由</h2>
-<p>Lambdaには、サードパーティーライブラリをアップロードして組み込むことができます。開発を効率化するなどの目的で、ライブラリを導入することは多いと思われます。
-しかし、導入したライブラリやそのライブラリが依存する他のライブラリに、セキュリティ的に問題がある脆弱性が含まれている可能性があります。
-もし導入しているライブラリに脆弱性がある場合、ライブラリを通して脆弱性攻撃が行われる可能性がある。</p>
+<p>Lambdaには、サードパーティーライブラリをアップロードして組み込むことができます。開発を効率化するなどの目的で、ライブラリを導入することは多いと思われます。<br>しかし、導入したライブラリやそのライブラリが依存する他のライブラリに、セキュリティ的に問題がある脆弱性が含まれている可能性があります。<br>もし導入しているライブラリに脆弱性がある場合、ライブラリを通して脆弱性攻撃が行われる可能性があるためなるべくなら含まない方がいい。</p>
 
                                 
                                 </section>
@@ -5184,7 +5187,7 @@ APIGateway+Lambda上でExpressを動かせるというライブラリ。
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Lambda","level":"2.7.3.1.15","depth":4,"next":{"title":"Redshift","level":"2.7.3.1.16","depth":4,"path":"infrastructure/cloud/aws/redshift.md","ref":"infrastructure/cloud/aws/redshift.md","articles":[]},"previous":{"title":"Iam","level":"2.7.3.1.14","depth":4,"path":"infrastructure/cloud/aws/iam.md","ref":"infrastructure/cloud/aws/iam.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"infrastructure/cloud/aws/lambda.md","mtime":"2023-03-18T01:33:32.408Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-03-18T01:33:42.478Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Lambda","level":"2.7.3.1.15","depth":4,"next":{"title":"Redshift","level":"2.7.3.1.16","depth":4,"path":"infrastructure/cloud/aws/redshift.md","ref":"infrastructure/cloud/aws/redshift.md","articles":[]},"previous":{"title":"Iam","level":"2.7.3.1.14","depth":4,"path":"infrastructure/cloud/aws/iam.md","ref":"infrastructure/cloud/aws/iam.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"infrastructure/cloud/aws/lambda.md","mtime":"2023-03-18T02:37:20.348Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-03-18T02:37:27.380Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
