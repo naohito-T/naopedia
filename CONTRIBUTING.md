@@ -1,2 +1,4 @@
 # Contribution Guide
-[参考URL](https://dev.classmethod.jp/articles/output-contributing-md-for-team-building/)
+
+文章の添削など大歓迎です。  
+開発フローとしは以下を参考にしてください。

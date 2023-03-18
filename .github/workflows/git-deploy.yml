@@ -44,7 +44,7 @@ jobs:
       - name: Build
         run: yarn build
 
-      # しかしGitHub Pagesの仕様として_から始まるディレクトリが見えず404となる
+      # GitHub Pagesの仕様として_から始まるディレクトリが見えず404となる
       # つまりHTMLからJSを読み込めない
       # これを回避するために.nojekyllファイルをoutディレクトリに作る
       - name: add nojekyll

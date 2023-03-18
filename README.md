@@ -46,15 +46,15 @@ thank you!
 
 ## 作中の画像について
 
-Gyazoに配置
+Gyazoに配置しております。
 
 ## バージョニング
-[repository](https://github.com/changesets/changesets/blob/main/docs/intro-to-using-changesets.md)
+[repository](https://github.com/changesets/changesets/blob/main/docs/intro-to-using-changesets.md)  
 [参考URL](https://zenn.dev/mouse_484/articles/easy-changesets)
 
 ```sh
-# 保留
+# 反映させる文章をスタックに保存
 $ yarn c
-# changelog反映
+# スタックからchangelogへ反映
 $ yarn c:v
 ```
