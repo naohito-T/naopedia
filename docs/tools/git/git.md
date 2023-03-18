@@ -1,7 +1,7 @@
 # Git
 
 ## wiki
-c[これをやる](https://dev.classmethod.jp/articles/editing-wiki-content-locally-on-github/)
+[これをやる](https://dev.classmethod.jp/articles/editing-wiki-content-locally-on-github/)
 
 ## 多分一番これがいい
 [参考URL(御作法)](https://zenn.dev/mstssk/articles/4051e3df72a84c)
@@ -18,6 +18,17 @@ $ git push origin topic --force-with-lease
 --force-with-leaseとは
 PUSHの際、ローカルrefとリモートrefを比較しローカルが最新か判定し、最新でなければPUSHが失敗するというもの。
 ※ただし、直前にfetchしているとPUSHが成功してしまうので注意
+
+## ブランチ戦略
+
+ソースコードリポジトリでどのようにブランチを構成するか、という戦略をブランチ戦略と呼びます。  
+言い換えると、どのような目的でブランチを作成し、そのブランチをいつ、どのようにマージするかという戦略。
+
+このブランチ戦略にはいくつか既存のパターンが存在しています。有名なパターンとして、「GitFlow」や「GitHubFlow」などがあります。  
+これらのパターンを元にブランチ戦略を決めている現場も多いのではないでしょうか。  
+パターンは便利ですが、開発しているソフトウェア、サービスにマッチするものかは慎重に検討する必要があるでしょう。
+
+ブランチ戦略では長命ブランチが増えれば増えるほど、マージにかかる工数や不整合も増えていきます。ブランチ戦略を考える際には、「このブランチの寿命はどのくらいか」や「このブランチをマージする際のコストはどのくらいか」といった点を考慮し、長命なブランチを最小限に抑える。
 
 ## git reset (git commitを取り消す)
 [参考URL](https://tech-blog.rakus.co.jp/entry/20210528/git)

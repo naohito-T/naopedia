@@ -1,11 +1,23 @@
 # API
-[参考URL](https://www.infoq.com/jp/articles/ballerina-fullstack-rest-api/?itm_source=infoq&itm_medium=related_content_link&itm_campaign=relatedContent_news_clk)
-[実稼働環境におけるベスト・プラクティス: パフォーマンスと信頼性](https://expressjs.com/ja/advanced/best-practice-performance.html#proxy)
-[Express×Helmetでウェブセキュリティを学ぶ](https://qiita.com/qianer-fengtian/items/148602c437e1703aa764)
+[参考URL](https://www.infoq.com/jp/articles/ballerina-fullstack-rest-api/?itm_source=infoq&itm_medium=related_content_link&itm_campaign=relatedContent_news_clk)  
+[実稼働環境におけるベスト・プラクティス: パフォーマンスと信頼性](https://expressjs.com/ja/advanced/best-practice-performance.html#proxy)  
+[Express×Helmetでウェブセキュリティを学ぶ](https://qiita.com/qianer-fengtian/items/148602c437e1703aa764)  
 [WebLogic Server のチューニングにおける重要推奨事項](https://docs.oracle.com/cd/F25597_01/document/products/wls/docs92/perform/topten.html)
 
 補足すると
 >Oracle WebLogic Serverは、Javaなどのエンタープライズ・アプリケーションをオンプレミスやクラウドで開発、導入、稼働するために統合された拡張可能なプラットフォームです。WebLogic Serverは、Java Enterprise Edition（EE）とJakarta EEの堅牢でマチュア、そしてスケーラブルな実装を提供します。
+
+## 冪等な処理を行うAPIの作り方
+
+何度も呼び出されても変わらず返すためにはDBなどにプライマリーキーを設定する。  
+2度呼び出された場合はエラーを返すことができるようになる。
+[![Image from Gyazo](https://i.gyazo.com/1c1fdf6299e97699ab6137256f76b645.png)](https://gyazo.com/1c1fdf6299e97699ab6137256f76b645)
+
+## モノシリックなAPIを作るべきではない
+
+ポイントAPIなど、分離することで違うサービスにも提供ができる。  
+バックエンドサービスひとつで賄っていたのが、責務によって分けることが良い場合もある。
+
 
 ## API種類
 

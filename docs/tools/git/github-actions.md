@@ -9,6 +9,15 @@
 ## dependabot.yml
 [dependabot.yml設定リファレンス](https://docs.github.com/ja/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file#reviewers)
 
+## GitHub ActionsからIAMロールを利用する。
+
+Actions secretsはGitHub側で暗号化されていますが、アクセスキーに紐づくAWS IAM（Identity and AccessManagement）ポリシーも必要最低限の権限付与に留めることが重要。
+しかし、特定のAWS IAMユーザーに紐づく固定のアクセスキーをGitHub Actionsのようなサービスに設定する運用にはまだ懸念が残る、。
+、GitHubActionsでサポートされているOpenIDConnectを使ったしくみを組み合わせることで、AWS IAM Roleから一時的なアクセスキーを取得できるようになります。
+以下の例では、もともとaws accesskey idとaws secret accesskeyを設定していたところがrole to assumeに変わっています。このようにGitHubActionsに固定のアクセスキーを設定する必要がなくなり、よりセキュアに運用できます。
+
+
+
 
 ## GitHub actions debug
 
