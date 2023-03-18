@@ -260,3 +260,6 @@ CloudFormationの比較的簡単な例を紹介しましたが、とくにAWSLam
 そしてsam deployコマンドを実行すると、AWSCloudFormationのしくみを使ってデプロイします。
 
 
+## 第7章
+
+要件にあったデータベースの選択

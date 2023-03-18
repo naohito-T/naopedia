@@ -2,6 +2,9 @@
 [TypeScript特有の組み込み型関数](https://log.pocka.io/ja/posts/typescript-builtin-type-functions/#thistype)  
 [Type challenge](https://github.com/type-challenges/type-challenges)
 
+## overloadから型定義を取得する
+[参考URL](https://zenn.dev/uhyo/articles/typescript-overload-infer)
+
 ## TypeScriptのエラー
 [セオリーなerrorハンドリング](https://qiita.com/shibukawa/items/ffe7264ecff78f55b296)
 
