@@ -422,8 +422,8 @@ type Foo = A["foo"]; // type Foo = number
 ## Conditional Types
 [Conditional Types](https://qiita.com/Quramy/items/b45711789605ef9f96de)
 
-TypeScript 2.8で導入された。
-型定義における条件分岐（三項演算子と同じ）
+TypeScript 2.8で導入された。  
+型定義における条件分岐（三項演算子と同じ）  
 ```ts
 type MyCondition<T, U, X, Y> = T extends U ? X : Y;
 ```

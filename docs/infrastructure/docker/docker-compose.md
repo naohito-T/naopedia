@@ -1,14 +1,16 @@
 # docker-compose
 
-Docker操作の補佐をするPython製のツール（ver2ではGo製に変わっている）
+Docker操作の補佐をするPython製のツール（ver2ではGo製に変わっている）  
+Docker Engineの一部ではない。  
+**docker-compose.yml内ではホスト側のシェルの環境変数が使える。**  
+→つまり、host側で環境変数が設定されているためdirenvなどで読み込ませるのが良いのではないか？  
+設定した環境変数にどのような値が挿入されるかは、 `docker-compose config`コマンドで確認ができる。  
 
-Docker Engineの一部ではない。
-**docker-compose.yml内ではホスト側のシェルの環境変数が使える。**
-→つまり、host側で環境変数が設定されているためdirenvなどで読み込ませるのが良いのではないか？
-設定した環境変数にどのような値が挿入されるかは、 `docker-compose config`コマンドで確認ができる。
-
-> docker-compose はローカルで Docker のオーケストレーションを行うためのツールです。Docker のビルドから Network や Volume の管理をコードベースで定義して行ってくれます。
+> docker-compose はローカルで Docker のオーケストレーションを行うためのツールです。Docker のビルドから Network や Volume の管理をコードベースで定義して行ってくれます。  
 docker-compose.ymlをdocker-compose.ymlというツールで読み込ませて実行すると**ボリュームやネットワークが作られ**、まとめてコンテナーが起動する。
+
+## docker-composeでポート番号を考えなくてもよくなる方法
+[参考URL](https://wand-ta.hatenablog.com/entry/2020/05/23/011001)
 
 ## docker-compose で解決できるもの
 
