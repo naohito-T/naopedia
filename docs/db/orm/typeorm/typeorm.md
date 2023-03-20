@@ -1,9 +1,7 @@
 # TypeORM
+[リファレンス](https://typeorm.io/)
 
-TypeORMは、TypeScriptおよびJavaScriptで使用できるORMとされている。
-Node.jsやブラウザ上など、さまざまなプラットフォームをサポートしているともされています。
-
-## スタイル
+## パターンスタイルサポート
 
 スタイルとしては、Active RecordとData Mapperの2つのパターンをサポートしている。
 
@@ -11,25 +9,31 @@ Node.jsやブラウザ上など、さまざまなプラットフォームをサ�
 
 0.2系が現在主流であるが0.3系が最新（2022/10/09現在）
 
+## キャッシュ
+[リファレンス](https://typeorm.io/caching)
+
+デフォルトのキャッシュの有効期間は1000ms（1秒）
+これは、クエリ ビルダー コードが呼び出されてから 1 秒後にキャッシュが無効になることを意味します。実際には、これは、ユーザーが 3 秒以内にユーザー ページを 150 回開いた場合、この期間中に実行されるクエリは 3 つだけであることを意味します。1 秒間のキャッシュ ウィンドウの間に挿入されたユーザーは、ユーザーに返されません。
+
+デフォルトでは、TypeORM は と呼ばれる別のテーブルを使用しquery-result-cache、そこにすべてのクエリと結果を格納します
+
+
+
 ## 0.3系 参考
-[参考URL](https://blog.open.tokyo.jp/2022/05/04/upgrade-typeorm-0-3.html)
-[参考URL](https://zenn.dev/hasegawasatoshi/articles/8110ce79119dd0)
-[参考URL](https://kazuhira-r.hatenablog.com/entry/2022/03/13/235304)
-[参考URL](https://qiita.com/Aurum64/items/f5962bd2a643447dbef9)
-[参考URL](https://blog.open.tokyo.jp/2022/05/04/upgrade-typeorm-0-3.html)
-[これが一番参考になるかも](https://blog.rhyztech.net/typeorm_0.2_to_0.3/)
-[参考URL](https://developer.mamezou-tech.com/blogs/2022/07/27/typeorm-with-typescript/)
+[参考URL](https://blog.open.tokyo.jp/2022/05/04/upgrade-typeorm-0-3.html)  
+[参考URL](https://zenn.dev/hasegawasatoshi/articles/8110ce79119dd0)  
+[参考URL](https://kazuhira-r.hatenablog.com/entry/2022/03/13/235304)  
+[参考URL](https://qiita.com/Aurum64/items/f5962bd2a643447dbef9)  
+[参考URL](https://blog.open.tokyo.jp/2022/05/04/upgrade-typeorm-0-3.html)  
+[これが一番参考になるかも](https://blog.rhyztech.net/typeorm_0.2_to_0.3/)  
+[参考URL](https://developer.mamezou-tech.com/blogs/2022/07/27/typeorm-with-typescript/)  
 [参考URL](https://developer.mamezou-tech.com/blogs/2022/07/27/typeorm-with-typescript/#%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E3%81%AB%E6%8E%A5%E7%B6%9A%E3%81%99%E3%8%8B)
-
-## config file
-
-0.2では`ormconfig.ts`に接続オプションを記述していたようですが、0.3では非推奨になった。
 
 ## TypeORM & Express & Dockerで環境構築
 [TypeORM をサクッと試せる Docker 環境を TypeORM CLI を使って構築する方法](https://dev.classmethod.jp/articles/typeorm-sandbox-in-docker-by-typeorm-cli/)
 
 ## TypeORM CLI option
-[リファレンス](https://typeorm.biunav.com/en/using-cli.html#drop-database-schema)
+[リファレンス](https://typeorm.biunav.com/en/using-cli.html#drop-database-schema)  
 [参考URL](https://qiita.com/Aurum64/items/f5962bd2a643447dbef9)
 
 - create（空のマイグレーションファイル作成）
@@ -47,7 +51,6 @@ Node.jsやブラウザ上など、さまざまなプラットフォームをサ�
 `npx typeorm-ts-node-commonjs migration:revert -d src/data-source.ts`
 
 ## Find option 一覧
-
 [参考URL](https://qiita.com/quzq/items/dca3424c7353ce37215c)
 
 ---
@@ -78,7 +81,7 @@ const user = connection.getRepository(User).find({
 ```
 
 ## entity
-[参考URL](https://qiita.com/haman0104/items/8cc69429b1d02aefed35)
+[参考URL](https://qiita.com/haman0104/items/8cc69429b1d02aefed35)  
 [参考URL(詳しい)](https://www.infoq.com/jp/articles/typescript-mysql/)
 entityはDBのテーブルと一対一で構成する。  
 ※実際はClassで作成するため関連するmethodなども記載していいかは議論が生じる
@@ -167,10 +170,12 @@ JoinTable
 ## TypeORMのEager relationsとLazy relationsについて
 [参考URL](https://kazamori.jp/blogs/2021/07/12/typeorm-lazy-relations-memory/)
 
-Eager relations
+TypeORMでは、データベースからEntityを取得するときに関連しているEntityを2種類の方法で取得できる。
+
+Eager relations  
 Entityと関連Entityを同じタイミングで読み込む。
 
-Lazy relations
+Lazy relations  
 Promiseを使って任意のタイミングで遅延して読み込む。
 オプションで`{lazy: true}`を設定しなくても型として`Promise`を指定するとTypeORMは自動的に`Lazy relations`として扱います。 
 
