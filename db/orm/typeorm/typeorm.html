@@ -4966,28 +4966,22 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="typeorm"><a name="typeorm" class="plugin-anchor" href="#typeorm"><i class="fa fa-link" aria-hidden="true"></i></a>TypeORM</h1>
-<p>TypeORMは、TypeScriptおよびJavaScriptで使用できるORMとされている。
-Node.jsやブラウザ上など、さまざまなプラットフォームをサポートしているともされています。</p>
-<h2 id="スタイル"><a name="スタイル" class="plugin-anchor" href="#スタイル"><i class="fa fa-link" aria-hidden="true"></i></a>スタイル</h2>
+<p><a href="https://typeorm.io/" target="_blank">リファレンス</a></p>
+<h2 id="パターンスタイルサポート"><a name="パターンスタイルサポート" class="plugin-anchor" href="#パターンスタイルサポート"><i class="fa fa-link" aria-hidden="true"></i></a>パターンスタイルサポート</h2>
 <p>スタイルとしては、Active RecordとData Mapperの2つのパターンをサポートしている。</p>
 <h2 id="version"><a name="version" class="plugin-anchor" href="#version"><i class="fa fa-link" aria-hidden="true"></i></a>version</h2>
 <p>0.2系が現在主流であるが0.3系が最新（2022/10/09現在）</p>
+<h2 id="キャッシュ"><a name="キャッシュ" class="plugin-anchor" href="#キャッシュ"><i class="fa fa-link" aria-hidden="true"></i></a>キャッシュ</h2>
+<p><a href="https://typeorm.io/caching" target="_blank">リファレンス</a></p>
+<p>デフォルトのキャッシュの有効期間は1000ms（1秒）
+これは、クエリ ビルダー コードが呼び出されてから 1 秒後にキャッシュが無効になることを意味します。実際には、これは、ユーザーが 3 秒以内にユーザー ページを 150 回開いた場合、この期間中に実行されるクエリは 3 つだけであることを意味します。1 秒間のキャッシュ ウィンドウの間に挿入されたユーザーは、ユーザーに返されません。</p>
+<p>デフォルトでは、TypeORM は と呼ばれる別のテーブルを使用しquery-result-cache、そこにすべてのクエリと結果を格納します</p>
 <h2 id="03系-参考"><a name="03系-参考" class="plugin-anchor" href="#03系-参考"><i class="fa fa-link" aria-hidden="true"></i></a>0.3系 参考</h2>
-<p><a href="https://blog.open.tokyo.jp/2022/05/04/upgrade-typeorm-0-3.html" target="_blank">参考URL</a>
-<a href="https://zenn.dev/hasegawasatoshi/articles/8110ce79119dd0" target="_blank">参考URL</a>
-<a href="https://kazuhira-r.hatenablog.com/entry/2022/03/13/235304" target="_blank">参考URL</a>
-<a href="https://qiita.com/Aurum64/items/f5962bd2a643447dbef9" target="_blank">参考URL</a>
-<a href="https://blog.open.tokyo.jp/2022/05/04/upgrade-typeorm-0-3.html" target="_blank">参考URL</a>
-<a href="https://blog.rhyztech.net/typeorm_0.2_to_0.3/" target="_blank">これが一番参考になるかも</a>
-<a href="https://developer.mamezou-tech.com/blogs/2022/07/27/typeorm-with-typescript/" target="_blank">参考URL</a>
-<a href="https://developer.mamezou-tech.com/blogs/2022/07/27/typeorm-with-typescript/#%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E3%81%AB%E6%8E%A5%E7%B6%9A%E3%81%99%E3%8%8B" target="_blank">参考URL</a></p>
-<h2 id="config-file"><a name="config-file" class="plugin-anchor" href="#config-file"><i class="fa fa-link" aria-hidden="true"></i></a>config file</h2>
-<p>0.2では<code>ormconfig.ts</code>に接続オプションを記述していたようですが、0.3では非推奨になった。</p>
+<p><a href="https://blog.open.tokyo.jp/2022/05/04/upgrade-typeorm-0-3.html" target="_blank">参考URL</a><br><a href="https://zenn.dev/hasegawasatoshi/articles/8110ce79119dd0" target="_blank">参考URL</a><br><a href="https://kazuhira-r.hatenablog.com/entry/2022/03/13/235304" target="_blank">参考URL</a><br><a href="https://qiita.com/Aurum64/items/f5962bd2a643447dbef9" target="_blank">参考URL</a><br><a href="https://blog.open.tokyo.jp/2022/05/04/upgrade-typeorm-0-3.html" target="_blank">参考URL</a><br><a href="https://blog.rhyztech.net/typeorm_0.2_to_0.3/" target="_blank">これが一番参考になるかも</a><br><a href="https://developer.mamezou-tech.com/blogs/2022/07/27/typeorm-with-typescript/" target="_blank">参考URL</a><br><a href="https://developer.mamezou-tech.com/blogs/2022/07/27/typeorm-with-typescript/#%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E3%81%AB%E6%8E%A5%E7%B6%9A%E3%81%99%E3%8%8B" target="_blank">参考URL</a></p>
 <h2 id="typeorm--express--dockerで環境構築"><a name="typeorm--express--dockerで環境構築" class="plugin-anchor" href="#typeorm--express--dockerで環境構築"><i class="fa fa-link" aria-hidden="true"></i></a>TypeORM &amp; Express &amp; Dockerで環境構築</h2>
 <p><a href="https://dev.classmethod.jp/articles/typeorm-sandbox-in-docker-by-typeorm-cli/" target="_blank">TypeORM をサクッと試せる Docker 環境を TypeORM CLI を使って構築する方法</a></p>
 <h2 id="typeorm-cli-option"><a name="typeorm-cli-option" class="plugin-anchor" href="#typeorm-cli-option"><i class="fa fa-link" aria-hidden="true"></i></a>TypeORM CLI option</h2>
-<p><a href="https://typeorm.biunav.com/en/using-cli.html#drop-database-schema" target="_blank">リファレンス</a>
-<a href="https://qiita.com/Aurum64/items/f5962bd2a643447dbef9" target="_blank">参考URL</a></p>
+<p><a href="https://typeorm.biunav.com/en/using-cli.html#drop-database-schema" target="_blank">リファレンス</a><br><a href="https://qiita.com/Aurum64/items/f5962bd2a643447dbef9" target="_blank">参考URL</a></p>
 <ul>
 <li><p>create（空のマイグレーションファイル作成）
 <code>typeorm migration:create src/migration/UserMigration</code>
@@ -5032,8 +5026,7 @@ Node.jsやブラウザ上など、さまざまなプラットフォームをサ�
 });
 </code></pre>
 <h2 id="entity"><a name="entity" class="plugin-anchor" href="#entity"><i class="fa fa-link" aria-hidden="true"></i></a>entity</h2>
-<p><a href="https://qiita.com/haman0104/items/8cc69429b1d02aefed35" target="_blank">参考URL</a>
-<a href="https://www.infoq.com/jp/articles/typescript-mysql/" target="_blank">参考URL(詳しい)</a>
+<p><a href="https://qiita.com/haman0104/items/8cc69429b1d02aefed35" target="_blank">参考URL</a><br><a href="https://www.infoq.com/jp/articles/typescript-mysql/" target="_blank">参考URL(詳しい)</a>
 entityはDBのテーブルと一対一で構成する。<br>※実際はClassで作成するため関連するmethodなども記載していいかは議論が生じる</p>
 <h2 id="entityファイル"><a name="entityファイル" class="plugin-anchor" href="#entityファイル"><i class="fa fa-link" aria-hidden="true"></i></a>Entityファイル</h2>
 <p><a href="https://github.com/typeorm/typeorm/blob/master/test/functional/database-schema/column-types/postgres/entity/Post.ts" target="_blank">postgres entity 種類</a>
@@ -5088,10 +5081,9 @@ entityはDBのテーブルと一対一で構成する。<br>※実際はClassで
 親Entityを各種更新した際、いっしょに子も更新するかどうか。取得時には影響しない</p>
 <h2 id="typeormのeager-relationsとlazy-relationsについて"><a name="typeormのeager-relationsとlazy-relationsについて" class="plugin-anchor" href="#typeormのeager-relationsとlazy-relationsについて"><i class="fa fa-link" aria-hidden="true"></i></a>TypeORMのEager relationsとLazy relationsについて</h2>
 <p><a href="https://kazamori.jp/blogs/2021/07/12/typeorm-lazy-relations-memory/" target="_blank">参考URL</a></p>
-<p>Eager relations
-Entityと関連Entityを同じタイミングで読み込む。</p>
-<p>Lazy relations
-Promiseを使って任意のタイミングで遅延して読み込む。
+<p>TypeORMでは、データベースからEntityを取得するときに関連しているEntityを2種類の方法で取得できる。</p>
+<p>Eager relations<br>Entityと関連Entityを同じタイミングで読み込む。</p>
+<p>Lazy relations<br>Promiseを使って任意のタイミングで遅延して読み込む。
 オプションで<code>{lazy: true}</code>を設定しなくても型として<code>Promise</code>を指定するとTypeORMは自動的に<code>Lazy relations</code>として扱います。 </p>
 <h2 id="typeormをreplで実行する"><a name="typeormをreplで実行する" class="plugin-anchor" href="#typeormをreplで実行する"><i class="fa fa-link" aria-hidden="true"></i></a>TypeORMをREPLで実行する</h2>
 <p><a href="https://kazamori.jp/blogs/2021/07/12/typeorm-lazy-relations-memory/" target="_blank">参考URL</a></p>
@@ -5144,7 +5136,7 @@ Promiseを使って任意のタイミングで遅延して読み込む。
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Typeorm","level":"2.4.2.1","depth":3,"next":{"title":"Orm","level":"2.4.2.2","depth":3,"path":"db/orm/orm.md","ref":"db/orm/orm.md","articles":[]},"previous":{"title":"Orm","level":"2.4.2","depth":2,"path":"db/orm/orm.md","ref":"db/orm/orm.md","articles":[{"title":"Typeorm","level":"2.4.2.1","depth":3,"path":"db/orm/typeorm/typeorm.md","ref":"db/orm/typeorm/typeorm.md","articles":[]},{"title":"Orm","level":"2.4.2.2","depth":3,"path":"db/orm/orm.md","ref":"db/orm/orm.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"db/orm/typeorm/typeorm.md","mtime":"2023-03-19T13:09:37.439Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-03-19T13:09:47.318Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Typeorm","level":"2.4.2.1","depth":3,"next":{"title":"Orm","level":"2.4.2.2","depth":3,"path":"db/orm/orm.md","ref":"db/orm/orm.md","articles":[]},"previous":{"title":"Orm","level":"2.4.2","depth":2,"path":"db/orm/orm.md","ref":"db/orm/orm.md","articles":[{"title":"Typeorm","level":"2.4.2.1","depth":3,"path":"db/orm/typeorm/typeorm.md","ref":"db/orm/typeorm/typeorm.md","articles":[]},{"title":"Orm","level":"2.4.2.2","depth":3,"path":"db/orm/orm.md","ref":"db/orm/orm.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"db/orm/typeorm/typeorm.md","mtime":"2023-03-20T14:53:07.457Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-03-20T14:53:15.444Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
