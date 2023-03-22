@@ -44,6 +44,10 @@ AWS Lambda関数の**タイムアウト設定は最大で15分**ですので、�
 Amazon EC2あるいはAWS Fargateが選択肢となる。  
 Fargateを利用すると、Dockerなどのコンテナランタイムを含むAmazonEC2インスタンスの管理が不要となるため、コンテナワークロードの運用負荷が軽減されます
 
+## Docker Linter
+
+DockerfileのLinterとしてhadolintというものがデファクトスタンダードとして存在する。
+
 ## Docker node_modules テクニック
 [参考URL](https://zenn.dev/yumemi_inc/articles/3d327557af3554)
 
@@ -77,8 +81,8 @@ Fargateを利用すると、Dockerなどのコンテナランタイムを含むA
 
 
 ## docker 仕組み
-
-Dockerは**ビルドのステップごとにファイルシステムの変更差分を積み重ねることでイメージを作成する。**
+[参考URL](https://tech.plaid.co.jp/improve_docker_build_efficiency)  
+Dockerは**ビルドのステップごとにファイルシステムの変更差分を積み重ねることでイメージを作成する。**  
 先にGemfileをイメージに組み込んでbundle installを実行しておかなければソースコードを変更するたびに毎回bundle installをする必要がある。
 
 ```Dockerfile
@@ -89,6 +93,9 @@ RUN bundle install
 RUN yarn install
 ```
 上記のような工夫をすることでGemfileの内容に変化がなかった場合は`bundle install`の工程までキャッシュを利用することが可能になり2回目以降のビルドが大きく高速化される。
+
+
+
 
 ---
 
@@ -462,7 +469,12 @@ Dockerfileは改良しやすいメリットがある。
 
 ## レイヤー
 
-どのようなレイヤーで構成されているかは`docker history`で確認できる。
+Layerは`RUN / COPY / ADD`でのみ作成され、それ以外は一時的なLayerとして作成されます。（つまり無闇にこれらのステートメントを小分けにせず可能な限りまとめて記述 && で接続する 事も重要）
+
+どのようなレイヤーで構成されているかは`docker history`で確認できる。  
+Docker ImageはUnionFS という複数のFS（Layer）にあるファイルを透過的に一つのものとして扱う技術が使われ、Dockerfileの命令によって作成された全ての中間Layerをマージして最終的に一つのFSとなる。
+
+
 
 ---
 
@@ -574,6 +586,12 @@ docker restart とか docker-compose restart とか systemctl restart docker の
 
 [参考URL](https://qiita.com/mmclsntr/items/709863ba98a4855988f3)
 
+## ビルドコンテキスト
+
+ビルドコンテキストとは`docker build`実行時に指定するディレクトリのこと。  
+`docker build`コマンドを実行した構築時、ビルドコンテキストとして現在のディレクトリ以下にある全てのファイルやディレクトリをDockerデーモンに送信してしまう。  
+このような事態を防ぐためにもDockerfile用のディレクトリを作成し、そのディレクトリには無駄なファイルは配置しないようにすべき。
+
 ## Dockerのコンテキストとは
 
 >docker build コマンドを実行したときの、カレントなワーキングディレクトリのことを ビルドコンテキスト（build context）と呼びます。 デフォルトで Dockerfile は、カレントなワーキングディレクトリにあるものとみなされます。 ただしファイルフラグ（-f）を使って別のディレクトリとすることもできます。 Dockerfile が実際にどこにあったとしても、カレントディレクトリ配下にあるファイルやディレクトリの内容がすべて、ビルドコンテキストとして Docker デーモンに送られることになります。
@@ -589,12 +607,13 @@ docker restart とか docker-compose restart とか systemctl restart docker の
 
 構築時、ビルドコンテキストとして現在のディレクトリ以下にある全てのファイルやディレクトリをDocker deamonに送信してしまいます。ビルドコンテキストに余分なディレクトリ・ファイルがあると、build時に時間がかかる、メモリを消費する原因となります。たとえば、ビルドコンテキストに100MBのファイルがあるとimageのサイズが100MBプラスとなってしまいます。このような事態を防ぐためにも**Dokcerfile用のディレクトリを作成し、そのディレクトリには無駄なファイルは配置しないようにすべきです。**
 
-## docker ignore the
+## .dockerignore
 
-.dockerignoreを使ったファイル除外の指定
-Dockerfile用のディレクトリを作ったがそのディレクトリ内にビルドコンテキストとして含みたくないファイルが存在する、もしくはDockerfileをアプリのソースファイルが配置されているディレクトリと同じにしたいということもあると思います。
+dockerignoreとは、DockerfileのCOPYコマンドでコピーしたくないファイルやディレクトリを指定するファイルのこと。  
+dockerignoreを作成することで、ビルド時間の短縮、docker imageサイズの最適化などの効果があります。
 
-**そんなときに .dockerignore を用いると、ビルドコンテキストとして無視します。**
+仕組み
+>Dockerfileからイメージをビルドする場合、Dockerfileの存在するディレクトリの中身はtarで固められdaemonへと送られます。DockerfileのCOPYコマンドを使用して、必要なファイルをコピーします。
 
 ## docker network
 
