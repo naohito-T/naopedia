@@ -4979,45 +4979,25 @@
 <p>たとえば次のような事例が認可。<br>家の鍵を持っているから、家に入ることができる
 バスの乗車券を持っているから、バスに乗ることができる  </p>
 <h2 id="認証と認可の違い"><a name="認証と認可の違い" class="plugin-anchor" href="#認証と認可の違い"><i class="fa fa-link" aria-hidden="true"></i></a>認証と認可の違い</h2>
-<p><strong>わかりやすい</strong>
-パスポートは本人確認に用いられつつ（認証）、これにより渡航する権利を得られる（認可）
+<p><strong>わかりやすい</strong><br>パスポートは本人確認に用いられつつ（認証）、これにより渡航する権利を得られる（認可）
 免許証は本人確認に用いられつつ（認証）、これにより自動車を運転する権利を得られる（認可）</p>
 <h2 id="wafweb-application-firewall"><a name="wafweb-application-firewall" class="plugin-anchor" href="#wafweb-application-firewall"><i class="fa fa-link" aria-hidden="true"></i></a>WAF(Web Application Firewall)</h2>
-<p><a href="https://www.infraexpert.com/study/security17.html" target="_blank">参考URL</a>
-<a href="https://dev.classmethod.jp/articles/fully-understood-aws-waf-v2/" target="_blank">参考URL</a></p>
-<p>従来の<strong>ファイアウォールやIDS/IPSでは防ぐことができない不正な攻撃からWebアプリケーションを防御するファイアウォール</strong>のこと。
-Webアプリケーションという観点から一般的にはWAFといえばWebサーバが利用するポート80番・443番のトラフィックを双方向で監視して悪意あるユーザからWebアプリケーションとその背後にあるデータを守る製品のこと。</p>
+<p><a href="https://www.infraexpert.com/study/security17.html" target="_blank">参考URL</a><br><a href="https://dev.classmethod.jp/articles/fully-understood-aws-waf-v2/" target="_blank">参考URL</a></p>
+<p>従来の<strong>ファイアウォールやIDS/IPSでは防ぐことができない不正な攻撃からWebアプリケーションを防御するファイアウォール</strong>のこと。<br>Webアプリケーションという観点から一般的にはWAFといえばWebサーバが利用するポート80番・443番のトラフィックを双方向で監視して悪意あるユーザからWebアプリケーションとその背後にあるデータを守る製品のこと。</p>
 <p>※一般的なWebアプリケーションに対する攻撃手段としてSQLインジェクションやXSS（クロスサイトスクリプティング）などの脅威から保護する。</p>
 <p><img src="images/waf.png" alt="WAF"></p>
 <h2 id="redos"><a name="redos" class="plugin-anchor" href="#redos"><i class="fa fa-link" aria-hidden="true"></i></a>ReDoS</h2>
 <p><a href="https://yamory.io/blog/about-redos-attack/" target="_blank">ReDos</a></p>
 <hr>
-<h2 id="corscross-origin-resource-sharing--クロスオリジンソースシェアリング"><a name="corscross-origin-resource-sharing--クロスオリジンソースシェアリング" class="plugin-anchor" href="#corscross-origin-resource-sharing--クロスオリジンソースシェアリング"><i class="fa fa-link" aria-hidden="true"></i></a>CORS(Cross-Origin Resource Sharing) : クロスオリジンソースシェアリング</h2>
-<p><a href="https://develwoper.mozilla.org/ja/docs/Glossary/CORS" target="_blank">リファレンス</a><br><a href="https://qiita.com/ryosuketter/items/a60a2bc0220a5cbff17e" target="_blank">参考URL</a><br><a href="https://www.twilio.com/blog/add-cors-support-express-typescript-api-jp" target="_blank">仕組みが書いてある</a></p>
-<p>オリジン間リソース共有（CORS）とは、最新ブラウザに装備されている<strong>セキュリティプロトコル。</strong>
-HTTPリクエストを開始したオリジンに応じて、異なるオリジンで共有するリソースの許可、制限を行う。</p>
-<blockquote>
-<p>フロントエンドの JavaScript コードがアクセスすることをブロックするかどうかを決めるものです。</p>
-</blockquote>
-<pre><code>https://www.twilio.com
-  ^       ^
-  |       |
-scheme hostname
-
-http://localhost:5000
-  ^       ^       ^
-  |       |       |
-scheme hostname  port
-</code></pre><h3 id="corsがなかった時代"><a name="corsがなかった時代" class="plugin-anchor" href="#corsがなかった時代"><i class="fa fa-link" aria-hidden="true"></i></a>CORSがなかった時代</h3>
-<p>CORSがなかった時代は<strong>同一オリジンのみ通信ができた</strong></p>
 <h2 id="preflight-request-プリフライトリクエスト"><a name="preflight-request-プリフライトリクエスト" class="plugin-anchor" href="#preflight-request-プリフライトリクエスト"><i class="fa fa-link" aria-hidden="true"></i></a>Preflight request (プリフライトリクエスト)</h2>
 <p><a href="https://developer.mozilla.org/ja/docs/Glossary/Preflight_request#:~:text=CORS%20%E3%81%AE%E3%83%97%E3%83%AA%E3%83%95%E3%83%A9%E3%82%A4%E3%83%88%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88,%E3%81%97%E3%81%A6%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%81%97%E3%81%BE%E3%81%99%E3%80%82" target="_blank">リファレンス</a></p>
+<p>プリフライトリクエストはそもそもセキュリティのための機能ではない。<br>プリフライトリクエストが発生するということは、HTTPkメッセージのやり取りが1回増えるということなので、パフォーマンス上、望ましくない。</p>
 <h2 id="ブラウザの仕組み"><a name="ブラウザの仕組み" class="plugin-anchor" href="#ブラウザの仕組み"><i class="fa fa-link" aria-hidden="true"></i></a>ブラウザの仕組み</h2>
 <p>ブラウザは<strong>すべてのリクエストにOriginヘッダーを追加する。</strong><br>リクエストがサーバーに届くと、リクエストのオリジンがリソース取得許可リストに含まれている場合に、サーバーが<code>Access-Control-Allow-Origin</code>ヘッダーをレスポンスに追加する。
 この情報からブラウザはコンテンツがこのオリジンにアクセスできると判断する。</p>
 <h3 id="同一オリジンポリシー"><a name="同一オリジンポリシー" class="plugin-anchor" href="#同一オリジンポリシー"><i class="fa fa-link" aria-hidden="true"></i></a>同一オリジンポリシー</h3>
 <p><a href="https://developer.mozilla.org/ja/docs/Web/Security/Same-origin_policy" target="_blank">リファレンス</a></p>
-<p>同一オリジンポリシーは重要なセキュリティの仕組みであり、あるオリジンによって読み込まれた文書やスクリプトが、他のオリジンにあるリソースにアクセスできる方法を制限するもの。</p>
+<p>同一オリジンポリシーは重要なセキュリティの仕組みであり、あるオリジンによって読み込まれた文書やスクリプトが、他のオリジンにあるリソースへアクセスできる方法を制限するもの。</p>
 <h3 id="オリジンの定義"><a name="オリジンの定義" class="plugin-anchor" href="#オリジンの定義"><i class="fa fa-link" aria-hidden="true"></i></a>オリジンの定義</h3>
 <p>2つのページのプロトコル、ポート番号（もしあれば）ホストが等しい場合、両者のページは同じオリジンとみなす。</p>
 <hr>
@@ -5200,7 +5180,7 @@ SQLインジェクション
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Security","level":"2.15","depth":1,"next":{"title":"Encrypt","level":"2.15.1","depth":2,"path":"security/encrypt/encrypt.md","ref":"security/encrypt/encrypt.md","articles":[]},"previous":{"title":"新たな言語を学ぶ前に","level":"2.14.12","depth":2,"path":"program/新たな言語を学ぶ前に.md","ref":"program/新たな言語を学ぶ前に.md","articles":[]},"articles":[{"title":"Encrypt","level":"2.15.1","depth":2,"path":"security/encrypt/encrypt.md","ref":"security/encrypt/encrypt.md","articles":[]},{"title":"Proxy","level":"2.15.2","depth":2,"path":"security/proxy/proxy.md","ref":"security/proxy/proxy.md","articles":[]},{"title":"Recaptcha","level":"2.15.3","depth":2,"path":"security/recaptcha/recaptcha.md","ref":"security/recaptcha/recaptcha.md","articles":[]},{"title":"Ssh","level":"2.15.4","depth":2,"path":"security/ssh/ssh.md","ref":"security/ssh/ssh.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"security/security.md","mtime":"2023-03-22T02:55:40.632Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-03-22T02:55:50.728Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Security","level":"2.15","depth":1,"next":{"title":"Encrypt","level":"2.15.1","depth":2,"path":"security/encrypt/encrypt.md","ref":"security/encrypt/encrypt.md","articles":[]},"previous":{"title":"新たな言語を学ぶ前に","level":"2.14.12","depth":2,"path":"program/新たな言語を学ぶ前に.md","ref":"program/新たな言語を学ぶ前に.md","articles":[]},"articles":[{"title":"Encrypt","level":"2.15.1","depth":2,"path":"security/encrypt/encrypt.md","ref":"security/encrypt/encrypt.md","articles":[]},{"title":"Proxy","level":"2.15.2","depth":2,"path":"security/proxy/proxy.md","ref":"security/proxy/proxy.md","articles":[]},{"title":"Recaptcha","level":"2.15.3","depth":2,"path":"security/recaptcha/recaptcha.md","ref":"security/recaptcha/recaptcha.md","articles":[]},{"title":"Ssh","level":"2.15.4","depth":2,"path":"security/ssh/ssh.md","ref":"security/ssh/ssh.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"security/security.md","mtime":"2023-03-24T00:19:38.572Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-03-24T00:19:50.261Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -9,6 +9,11 @@ Docker Engineの一部ではない。
 > docker-compose はローカルで Docker のオーケストレーションを行うためのツールです。Docker のビルドから Network や Volume の管理をコードベースで定義して行ってくれます。  
 docker-compose.ymlをdocker-compose.ymlというツールで読み込ませて実行すると**ボリュームやネットワークが作られ**、まとめてコンテナーが起動する。
 
+## docker-compose 優先度
+
+`docker run`と同様に、Dockerfileで指定されたオプションがデフォルトとして尊重されます（例：CMD,EXPOSE,VOLUME,ENV）  
+そのため、docker-compose.ymlで再び定義する必要はありません。
+
 ## docker-composeでポート番号を考えなくてもよくなる方法
 [参考URL](https://wand-ta.hatenablog.com/entry/2020/05/23/011001)
 
@@ -160,14 +165,14 @@ stdin_openとは標準入出力とエラー出力をコンテナーに結びつ�
 [参考URL](https://pc.atsuhiro-me.net/entry/2020/03/19/105714)
 [Docker for Mac のボリュームの遅さを cached オプションで解消](https://qiita.com/koshigoe/items/52749db8836b4e3fbfc4)
 
-バインドマウントはローカルのファイルをマウントする。
-ボリュームマウントはdockerシステム（ローカル）内に存在しているボリュームを指定。
-存在しない場合は、指定した名称でボリュームが生成されます。
+バインドマウントはローカルのファイルをマウントする。  
+ボリュームマウントはdockerシステム（ローカル）内に存在しているボリュームを指定。  
+存在しない場合は、指定した名称でボリュームが生成されます。  
 指定しない場合は、無名（無意味な文字列）でボリュームが生成されます。
 
-ボリュームのマウントを行う。
-volumesでは**パスを指定するとDockerエンジンはボリュームを作成する**
->コマンドの場合、`sh -v $(pwd)/public:/var/www/html/public:ro <IMAGE ID>`オプションと同一です。
+ボリュームのマウントを行う。  
+volumesでは**パスを指定するとDockerエンジンはボリュームを作成する**  
+>コマンドの場合、`sh -v $(pwd)/public:/var/www/html/public:ro <IMAGE ID>`オプションと同一。
 
 1行で記述
 [SOURCE:]TARGET[:MODE]
@@ -184,7 +189,7 @@ volumes:
   mydata:
 ```
 
-sourceはホスト側で、targetはコンテナー側です、mydataはvolumeの名前で，パスではない
+sourceはホスト側で、targetはコンテナー側です、mydataはvolumeの名前でパスではない
 **"/"から開始すると，絶対パスとなる。**
 
 ```yml
@@ -214,15 +219,24 @@ volumes:
 ```
 
 services内で定義しているvolumes: は、いわゆるバインドマウントです。
-実際のコンテナ内では、何を参照するか？をホスト側から明示しています。
+実際のコンテナー内では、何を参照するか？をホスト側から明示しています。
 
 2に関して
 トップレベルのvolumes: は、Dockerシステム（ローカル）内に存在しているボリュームを指定しています。いわゆるボリュームです。
 external: の中にnameを指定することで、docker-compose外で作成したボリュームを指定できます。
 
+## volume trick
+
+
+```yml
+volumes:
+      - $PWD/backend:/app/backend:cached # バインドマウント
+      - node_modules_data:/app/backend/node_modules # バインドマウントするフォルダ中のnode_modulesのみvolumeマウントの対象とする
+```
+
 ## volumes の pathの指定
 
-絶対パスではホストの環境が変わった時に動かなくなるため，相対パスを指定するのが慣例。
+絶対パスではホストの環境が変わった時に動かなくなるため相対パスを指定するのが慣例。
 相対パスはdocker-composeのymlファイルが基準となります。
 このため，ホストの環境が変わっても問題ないですが，プロジェクト内でのymlファイルの場所を変更する時は修正が必要になります。
 
