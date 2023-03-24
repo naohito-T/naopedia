@@ -6,6 +6,12 @@
 [プロトコル](https://atmarkit.itmedia.co.jp/ait/articles/1507/31/news004.html)  
 [HTTPの仕組み再入門](https://atmarkit.itmedia.co.jp/ait/articles/1508/31/news016.html)
 
+## HTTPリクエスト種類
+
+- form: 同期通信
+- XMLHttpRequests: 非同期通信（CORS対象）
+- fetch: 非同期通信（CORS対象）
+
 ## HTTPとは
 
 HTTP(HyperText Transfer Protocol)は**サーバとクライアント(ブラウザ)の間でウェブページを送受信するためのプロトコル**
@@ -536,6 +542,14 @@ Cache-Controlはさまざまなキャッシュのコントロールを行うヘ�
 
 [参考URL](https://yuw27b.hatenablog.com/entry/2020/03/07/162305)
 
+## OPTIONS
+
+REST APIにアクセスする際、ブラウザがAPIサーバに対してHTTP（もしくはHTTPS）の
+OPTIONSメソッドでリクエストを投げることがある。
+利用用途としては**サーバーがどのメソッドをサポートしているかを調査する**メソッド。
+
+
+
 
 ---
 
@@ -587,4 +601,22 @@ HTTP Status Codesの401と403は、それぞれ認証・認可の失敗を意味
 403 Forbidden
 **認可の失敗**を意味しています
 つまり「認証はしました。だけどあなたにはリクエストを通すための権限がありません」というメッセージ
+
+
+## Preflight request (プリフライトリクエスト)
+[リファレンス](https://developer.mozilla.org/ja/docs/Glossary/Preflight_request#:~:text=CORS%20%E3%81%AE%E3%83%97%E3%83%AA%E3%83%95%E3%83%A9%E3%82%A4%E3%83%88%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88,%E3%81%97%E3%81%A6%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%81%97%E3%81%BE%E3%81%99%E3%80%82)
+
+Content-Typeフィールドに`application/json`という値をセットすると、プリフライト・リクエストが発生することになる。
+
+シンプルリクエストに当てはまらないリクエストがプリフライトリクエストとなる。  
+プリフライトリクエストはそもそもセキュリティのための機能ではない。  
+プリフライトリクエストが発生するということは、**HTTPメッセージのやり取りが1回増えるということ**なので、パフォーマンス上、望ましくない。
+
+
+1. CORS許可してないAPIをContent-Typeをapplication/jsonでPOSTリクエストする
+→CORSとかプリフライトリクエストに関するエラーが出て失敗するはず
+
+2. CORS許可しているAPIをContent-Typeをapplication/jsonでPOSTリクエストする
+→プリフライトリクエストが送られるはず（つまりOPTIONSメソッドとPOSTメソッドのリクエストが飛ぶ）
+
 
