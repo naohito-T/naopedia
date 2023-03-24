@@ -31,16 +31,15 @@ SMS送信サービスで認証を行うためには、自社システムとのAP
 
 ## 認証と認可の違い
 
-**わかりやすい**
+**わかりやすい**   
 パスポートは本人確認に用いられつつ（認証）、これにより渡航する権利を得られる（認可）
 免許証は本人確認に用いられつつ（認証）、これにより自動車を運転する権利を得られる（認可）
 
 ## WAF(Web Application Firewall)
-
-[参考URL](https://www.infraexpert.com/study/security17.html)
+[参考URL](https://www.infraexpert.com/study/security17.html)  
 [参考URL](https://dev.classmethod.jp/articles/fully-understood-aws-waf-v2/)
 
-従来の**ファイアウォールやIDS/IPSでは防ぐことができない不正な攻撃からWebアプリケーションを防御するファイアウォール**のこと。
+従来の**ファイアウォールやIDS/IPSでは防ぐことができない不正な攻撃からWebアプリケーションを防御するファイアウォール**のこと。  
 Webアプリケーションという観点から一般的にはWAFといえばWebサーバが利用するポート80番・443番のトラフィックを双方向で監視して悪意あるユーザからWebアプリケーションとその背後にあるデータを守る製品のこと。
 
 ※一般的なWebアプリケーションに対する攻撃手段としてSQLインジェクションやXSS（クロスサイトスクリプティング）などの脅威から保護する。
@@ -48,40 +47,17 @@ Webアプリケーションという観点から一般的にはWAFといえばWe
 ![WAF](images/waf.png)
 
 ## ReDoS
-
 [ReDos](https://yamory.io/blog/about-redos-attack/)
 
 ---
 
-## CORS(Cross-Origin Resource Sharing) : クロスオリジンソースシェアリング
-[リファレンス](https://develwoper.mozilla.org/ja/docs/Glossary/CORS)  
-[参考URL](https://qiita.com/ryosuketter/items/a60a2bc0220a5cbff17e)  
-[仕組みが書いてある](https://www.twilio.com/blog/add-cors-support-express-typescript-api-jp)
 
-オリジン間リソース共有（CORS）とは、最新ブラウザに装備されている**セキュリティプロトコル。**
-HTTPリクエストを開始したオリジンに応じて、異なるオリジンで共有するリソースの許可、制限を行う。
->フロントエンドの JavaScript コードがアクセスすることをブロックするかどうかを決めるものです。
-
-
-```
-https://www.twilio.com
-  ^       ^
-  |       |
-scheme hostname
-
-http://localhost:5000
-  ^       ^       ^
-  |       |       |
-scheme hostname  port
-```
-
-### CORSがなかった時代
-
-CORSがなかった時代は**同一オリジンのみ通信ができた**
 
 ## Preflight request (プリフライトリクエスト)
 [リファレンス](https://developer.mozilla.org/ja/docs/Glossary/Preflight_request#:~:text=CORS%20%E3%81%AE%E3%83%97%E3%83%AA%E3%83%95%E3%83%A9%E3%82%A4%E3%83%88%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88,%E3%81%97%E3%81%A6%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%81%97%E3%81%BE%E3%81%99%E3%80%82)
-
+  
+プリフライトリクエストはそもそもセキュリティのための機能ではない。  
+プリフライトリクエストが発生するということは、HTTPkメッセージのやり取りが1回増えるということなので、パフォーマンス上、望ましくない。
 
 
 ## ブラウザの仕組み
@@ -93,7 +69,7 @@ CORSがなかった時代は**同一オリジンのみ通信ができた**
 ### 同一オリジンポリシー
 [リファレンス](https://developer.mozilla.org/ja/docs/Web/Security/Same-origin_policy)
 
-同一オリジンポリシーは重要なセキュリティの仕組みであり、あるオリジンによって読み込まれた文書やスクリプトが、他のオリジンにあるリソースにアクセスできる方法を制限するもの。
+同一オリジンポリシーは重要なセキュリティの仕組みであり、あるオリジンによって読み込まれた文書やスクリプトが、他のオリジンにあるリソースへアクセスできる方法を制限するもの。
 
 ### オリジンの定義
 
