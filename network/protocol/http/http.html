@@ -4967,6 +4967,12 @@
                                 
                                 <h1 id="httphypertext-transfer-protocol"><a name="httphypertext-transfer-protocol" class="plugin-anchor" href="#httphypertext-transfer-protocol"><i class="fa fa-link" aria-hidden="true"></i></a>HTTP(HyperText Transfer Protocol)</h1>
 <p><a href="https://developer.mozilla.org/ja/docs/Web/HTTP" target="_blank">リファレンス(一番わかりやすい)</a><br><a href="https://www.tohoho-web.com/ex/http.htm" target="_blank">HTTP入門</a><br><a href="https://qiita.com/suin/items/316cb8aaf8dfcf11abae" target="_blank">冪等性について</a><br><a href="https://techracho.bpsinc.jp/hachi8833/2022_08_02/77493" target="_blank">ブラウザからサーバまでわかりやすい</a><br><a href="https://atmarkit.itmedia.co.jp/ait/articles/1507/31/news004.html" target="_blank">プロトコル</a><br><a href="https://atmarkit.itmedia.co.jp/ait/articles/1508/31/news016.html" target="_blank">HTTPの仕組み再入門</a></p>
+<h2 id="httpリクエスト種類"><a name="httpリクエスト種類" class="plugin-anchor" href="#httpリクエスト種類"><i class="fa fa-link" aria-hidden="true"></i></a>HTTPリクエスト種類</h2>
+<ul>
+<li>form: 同期通信</li>
+<li>XMLHttpRequests: 非同期通信（CORS対象）</li>
+<li>fetch: 非同期通信（CORS対象）</li>
+</ul>
 <h2 id="httpとは"><a name="httpとは" class="plugin-anchor" href="#httpとは"><i class="fa fa-link" aria-hidden="true"></i></a>HTTPとは</h2>
 <p>HTTP(HyperText Transfer Protocol)は<strong>サーバとクライアント(ブラウザ)の間でウェブページを送受信するためのプロトコル</strong>
 また、World Wide Web上の通信方法を示すものであり、この通信はクライアントからサーバーへのリクエストとサーバーからクライアントへのレスポンスで構成される。
@@ -5341,6 +5347,10 @@ Cache-Controlはさまざまなキャッシュのコントロールを行うヘ�
 <p>クエリパラメーター問題
 見られたくないものを送るときはPOSTで送るかHTTPのリクエストヘッダーーに入れるかだが、リクエスト先がRESTfulなAPIで、セマンティクス的にGETがふさわしい場合、HTTPのカスタムヘッダーーなどを使用する</p>
 <p><a href="https://yuw27b.hatenablog.com/entry/2020/03/07/162305" target="_blank">参考URL</a></p>
+<h2 id="options"><a name="options" class="plugin-anchor" href="#options"><i class="fa fa-link" aria-hidden="true"></i></a>OPTIONS</h2>
+<p>REST APIにアクセスする際、ブラウザがAPIサーバに対してHTTP（もしくはHTTPS）の
+OPTIONSメソッドでリクエストを投げることがある。
+利用用途としては<strong>サーバーがどのメソッドをサポートしているかを調査する</strong>メソッド。</p>
 <hr>
 <h2 id="http-レスポンスステータスコード"><a name="http-レスポンスステータスコード" class="plugin-anchor" href="#http-レスポンスステータスコード"><i class="fa fa-link" aria-hidden="true"></i></a>HTTP レスポンスステータスコード</h2>
 <h2 id="200系"><a name="200系" class="plugin-anchor" href="#200系"><i class="fa fa-link" aria-hidden="true"></i></a>200系</h2>
@@ -5371,6 +5381,18 @@ health checkなどに使われるかもしれない。</p>
 <p>403 Forbidden
 <strong>認可の失敗</strong>を意味しています
 つまり「認証はしました。だけどあなたにはリクエストを通すための権限がありません」というメッセージ</p>
+<h2 id="preflight-request-プリフライトリクエスト"><a name="preflight-request-プリフライトリクエスト" class="plugin-anchor" href="#preflight-request-プリフライトリクエスト"><i class="fa fa-link" aria-hidden="true"></i></a>Preflight request (プリフライトリクエスト)</h2>
+<p><a href="https://developer.mozilla.org/ja/docs/Glossary/Preflight_request#:~:text=CORS%20%E3%81%AE%E3%83%97%E3%83%AA%E3%83%95%E3%83%A9%E3%82%A4%E3%83%88%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88,%E3%81%97%E3%81%A6%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%81%97%E3%81%BE%E3%81%99%E3%80%82" target="_blank">リファレンス</a></p>
+<p>Content-Typeフィールドに<code>application/json</code>という値をセットすると、プリフライト・リクエストが発生することになる。</p>
+<p>シンプルリクエストに当てはまらないリクエストがプリフライトリクエストとなる。<br>プリフライトリクエストはそもそもセキュリティのための機能ではない。<br>プリフライトリクエストが発生するということは、<strong>HTTPメッセージのやり取りが1回増えるということ</strong>なので、パフォーマンス上、望ましくない。</p>
+<ol>
+<li><p>CORS許可してないAPIをContent-Typeをapplication/jsonでPOSTリクエストする
+→CORSとかプリフライトリクエストに関するエラーが出て失敗するはず</p>
+</li>
+<li><p>CORS許可しているAPIをContent-Typeをapplication/jsonでPOSTリクエストする
+→プリフライトリクエストが送られるはず（つまりOPTIONSメソッドとPOSTメソッドのリクエストが飛ぶ）</p>
+</li>
+</ol>
 
                                 
                                 </section>
@@ -5414,7 +5436,7 @@ health checkなどに使われるかもしれない。</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Http","level":"2.11.1.2","depth":3,"next":{"title":"Oauth","level":"2.11.1.3","depth":3,"path":"network/protocol/oauth/oauth.md","ref":"network/protocol/oauth/oauth.md","articles":[]},"previous":{"title":"Grpc","level":"2.11.1.1","depth":3,"path":"network/protocol/grpc/grpc.md","ref":"network/protocol/grpc/grpc.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"network/protocol/http/http.md","mtime":"2023-03-24T00:19:38.568Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-03-24T00:19:50.261Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Http","level":"2.11.1.2","depth":3,"next":{"title":"Oauth","level":"2.11.1.3","depth":3,"path":"network/protocol/oauth/oauth.md","ref":"network/protocol/oauth/oauth.md","articles":[]},"previous":{"title":"Grpc","level":"2.11.1.1","depth":3,"path":"network/protocol/grpc/grpc.md","ref":"network/protocol/grpc/grpc.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"network/protocol/http/http.md","mtime":"2023-03-24T06:01:55.221Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-03-24T06:02:02.036Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
