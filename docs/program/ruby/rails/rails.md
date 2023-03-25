@@ -1,15 +1,14 @@
 # Ruby on Rails
-
-[Railsガイド(これを見ろ)(本リファレンス)](https://railsguides.jp/)
-[Rails](https://atmarkit.itmedia.co.jp/ait/articles/1102/23/news109_3.html)
-[Railsのクリーンアーキテクチャ](https://qiita.com/shunjikonishi/items/e39ed8091e1dca817468)
-[【Rails】hashid-railsを用いてIDを難読化・暗号化させる方法](https://techtechmedia.com/hashid-rails/)
+[Railsガイド(これを見ろ)(本リファレンス)](https://railsguides.jp/)  
+[Rails](https://atmarkit.itmedia.co.jp/ait/articles/1102/23/news109_3.html)  
+[Railsのクリーンアーキテクチャ](https://qiita.com/shunjikonishi/items/e39ed8091e1dca817468)  
+[【Rails】hashid-railsを用いてIDを難読化・暗号化させる方法](https://techtechmedia.com/hashid-rails/)  
 [Railsでの名前空間について(わかりやすい)](https://ja.stackoverflow.com/questions/86424/rails%E3%81%AE%E5%90%8D%E5%89%8D%E7%A9%BA%E9%96%93%E3%81%AE%E7%9B%AE%E7%9A%84%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E7%96%91%E5%95%8F)
 
 ## Rails作者
-
-DHHが語っているシリーズ
 [大規模開発に強い理由](https://pr.forkwell.com/articles/dhh-rails-large-scale-development/)
+
+DHH（作者）が語っているシリーズ
 
 ---
 
@@ -35,7 +34,6 @@ Rails 7といえば、Node.jsを裏で使う必要がなくなった。
 `importmap-rails`を使うことで、フロントエンドのJavaScriptのライブラリを管理してくれるようになる。
 
 ## importmap-rails
-
 [参考URL](https://www.bokukoko.info/entry/2022/02/15/153751)
 
 >これで初期化した Rails アプリには なんと、package.json, yarn.lock が存在しない！
@@ -63,7 +61,6 @@ railsではJS/CSSなどを総称してassetsと呼んでいる
 >Rails7はimportmapとは別に、JavaScriptのバンドラやCSSのフレームワークを導入するしくみを用意している。
 
 ### Rails7.0でのアセット管理
-
 [Rails 7でフロントエンド開発が大きく変わる](https://re-engines.com/2021/12/27/rails7-frontend/)
 
 >Rails 7.0 では、新たに4つのGemが登場します。これまでとは異なり、開発者はこれらのGemを自分のプロジェクトに合う組み合わせで採用することになります。
