@@ -13,6 +13,23 @@ ActiveRecordによるモデルには大きく分けて3つの側面がある。
 3. ビジネスロジックの実装的な振る舞いに関するところ、すなわちバリデーションやレコード保存時などに実行するさまざまなコールバックなどを実行する役割。
 
 
+## Active record モデル命名規則
+
+[![Image from Gyazo](https://i.gyazo.com/f02b7d1d3b91557b6e119f9fa8d2dea5.png)](https://gyazo.com/f02b7d1d3b91557b6e119f9fa8d2dea5)
+
+## Active record モデル関連　コマンド
+[参考URL](https://qiita.com/zaru/items/cde2c46b6126867a1a64)
+
+```sh
+# マイグレーションファイル作成コマンド
+$ rails generate migration クラス名
+
+# モデル作成
+$ rails generate model モデル名
+```
+
+
+
 ---
 
 [参考URL](https://railsdoc.com/migration)
