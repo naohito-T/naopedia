@@ -6,6 +6,11 @@
 ## AWSアカウント整理
 [![Image from Gyazo](https://i.gyazo.com/8342b4e4d930c6adfaab794a37b7f078.png)](https://gyazo.com/8342b4e4d930c6adfaab794a37b7f078)
 
+- AWSでアカウントを作る（ルートユーザー）
+- ルートユーザーでIAMユーザーを作成する（admin権限で）
+- admin権限で操作を今後する。人によってIAMユーザーを作ってあげる
+- サービスごとのロールをアタッチする。
+
 ## IAMとは
 [IAMユーザーを作ってみよう](https://www.idaten.ne.jp/portal/page/out/secolumn/multicloud/column005.html)
 
