@@ -559,8 +559,9 @@ OPTIONSメソッドでリクエストを投げることがある。
 
 ### 204
 
-ステータスコードが204のときは、レスポンスbodyを含んではならない。
-health checkなどに使われるかもしれない。
+ステータスコードが204のときは、レスポンスbodyを含んではならない。  
+health checkなどに使われる。  
+※万が一204でレスポンスを返しても切り捨てられる。
 
 ## 300系
 [301と302のちがい](https://www.sakurasaku-labo.jp/blogs/301_redirect)
@@ -619,4 +620,33 @@ Content-Typeフィールドに`application/json`という値をセットする�
 2. CORS許可しているAPIをContent-Typeをapplication/jsonでPOSTリクエストする
 →プリフライトリクエストが送られるはず（つまりOPTIONSメソッドとPOSTメソッドのリクエストが飛ぶ）
 
+## Referer(リファラー)
+[知ってるようで知らないRefererとReferrer-Policyのお話](https://qiita.com/c0ridrew/items/7f2c9dad12543fa2662f)
+
+Refererを送っているのはwebブラウザ  
+ブラウザが自動でRequestヘッダーのrefererに送信元のURL情報を付与しています。
+
+## Refererが生じる脆弱性
+
+登録ボタンを押すとメールが送信され、そのメールに以下のようなメールアドレスとパスワードが埋め込まれたhttps://example.com/auth?email=hogehoge@gmail.com&password=hugahuga123&token=ndjask819Sjksというリンクが貼られています。
+
+URLに情報がすでに入っていることにより、このリンクをクリックすることでメアドとパスワードを再度入力することなく、認証に成功します。
+
+そしてサイト内に貼ってある外部リンクhttps://insecure.example.comに遷移したとしましょう。そうするとreferer情報としてReferer: https://example.com/auth?email=hogehoge@gmail.com&password=hugahuga123&token=ndjask819Sjksがhttps://insecure.example.comに送られてしまいます。
+
+もしこのサイトの運営者が悪意のある人だった場合、Referer情報から個人情報を取得し、悪用することができてしまう。
+
+どうすればこの脆弱性を回避することができるでしょうか？
+URLにセキュアな情報を入れないようにすることは大事ですがUX向上のためどうしても入れたい場合（認証でのリダイレクトログインなど）もあるかと思います。
+
+そんな時に登場するのがReferrer-Policyです。
+
+## Referrer-Policyの役割
+
+Referrer-Policyは以下のようなmetaタグに設定することでrefererを送信するブラウザの挙動を変更することができる。
+
+
+```html
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+```
 
