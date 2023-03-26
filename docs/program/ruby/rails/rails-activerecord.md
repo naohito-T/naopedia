@@ -323,8 +323,6 @@ validates :number, :name, presence: true
 ```
 
 
-
-
 ## Rails ActiveRecord まとめ
 
 モデルはデータベースのテーブルに対応するオブジェクト。モデルクラスのインスタンスはテーブルの1つのレコードにあたる
@@ -336,4 +334,15 @@ saveメソッドがバリデーションを実行する。
 
 ## Rails ポリモーフィック
 [参考URL](https://blog.agile.esm.co.jp/entry/rails-polymorphic-story)
+
+## STI(Single Table Inheritance) 単一テーブル継承(STI)
+[参考URL](https://qiita.com/niwa1903/items/218713c076fb0075712f)  
+[参考URL](https://sakaishun.com/2021/08/08/stisingle-table-inheritance/)
+
+同じカラム設計のテーブルを、ひとつのテーブルにまとめて継承することで余計なテーブルを増やさずにDRYなテーブル設計するというもの。
+
+同一テーブル内に継承関係のあるクラスのカラムをすべて持ってしまうことを言います。
+たとえば次のような継承関係にあるモデルがあるとします。
+
+
 

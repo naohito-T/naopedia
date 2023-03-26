@@ -5,6 +5,10 @@
 [【Rails】hashid-railsを用いてIDを難読化・暗号化させる方法](https://techtechmedia.com/hashid-rails/)  
 [Railsでの名前空間について(わかりやすい)](https://ja.stackoverflow.com/questions/86424/rails%E3%81%AE%E5%90%8D%E5%89%8D%E7%A9%BA%E9%96%93%E3%81%AE%E7%9B%AE%E7%9A%84%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E7%96%91%E5%95%8F)
 
+## Rails処理概要
+
+[![Image from Gyazo](https://i.gyazo.com/f932132c9b8d23e980053158fd9eece8.png)](https://gyazo.com/f932132c9b8d23e980053158fd9eece8)
+
 ## Rails作者
 [大規模開発に強い理由](https://pr.forkwell.com/articles/dhh-rails-large-scale-development/)
 
@@ -1083,10 +1087,13 @@ Railsではこの機能を提供するため、いくつものZeitwerkローダ�
 
 [参考URL](https://qiita.com/kon_yu/items/c5a1a5e5a4ef878425dd)
 
-## マイグレーションファイルとスキーマファイルの関係
+## マイグレーション
 
+### マイグレーションファイルとスキーマファイルの関係
 [参考URL](https://pick-up-tech.com/blog/%E3%83%9E%E3%82%A4%E3%82%B0%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%A8%E3%82%B9%E3%82%AD%E3%83%BC%E3%83%9E%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%EF%BC%88migration-schema-rake%EF%BC%89)
 
+### マイグレーションファイルの削除
+[参考URL](https://qiita.com/ISSO33/items/33a935cb3255c269bef2)
 
 ## Railsでのミドルウェア
 
