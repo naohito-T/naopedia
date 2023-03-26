@@ -20,12 +20,39 @@ ActiveRecordによるモデルには大きく分けて3つの側面がある。
 ## Active record モデル関連　コマンド
 [参考URL](https://qiita.com/zaru/items/cde2c46b6126867a1a64)
 
+※/db/migrate/ 以下にマイグレーションファイルが作成されるので、NOT NULLだったり、**カラム名の修正とかをしたい場合は、ここで直接修正してしまう。**
+
 ```sh
 # マイグレーションファイル作成コマンド
 $ rails generate migration クラス名
 
 # モデル作成
 $ rails generate model モデル名
+
+# テーブルを作成する
+$ rails g model モデル名 フィールド:型:(unique|index) 以降必要なだけ
+
+$ rails g model User uuid:string:unique name:string
+```
+
+## マイグレーション実行＆ロールバック＆確認
+
+```sh
+# 実行
+$ rake db:migrate
+
+# ロールバック
+$ rake db:rollback
+
+# 確認
+$ rake db:migrate:status
+
+ Status   Migration ID    Migration Name
+--------------------------------------------------
+   up     20140909055128  Create users
+   up     20140909055234  Create spots
+   up     20140909055735  Create user spots
+   up     20140909072813  Change options to user spot
 ```
 
 
@@ -305,3 +332,8 @@ validates :number, :name, presence: true
 データベースの中にテーブルを作成するにはマイグレーションスクリプトを記述
 データベースの作成やマイグレーションにはbin/railsコマンドを使う
 saveメソッドがバリデーションを実行する。
+
+
+## Rails ポリモーフィック
+[参考URL](https://blog.agile.esm.co.jp/entry/rails-polymorphic-story)
+
