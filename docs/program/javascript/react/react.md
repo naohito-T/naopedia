@@ -1,8 +1,12 @@
 # React
+[onClickが2度呼ばれる](https://numb86-tech.hatenablog.com/entry/2019/10/19/175907)
 
 ---
 
-[onClickが2度呼ばれる](https://numb86-tech.hatenablog.com/entry/2019/10/19/175907)
+## Error Boundary
+[Error Boundary試せるサイト](https://playcode.io/1006344)
+
+promiseのキャッチができない。
 
 ## React再レンダリング
 [React の再レンダリングを防ぐ3つのパターン](https://zenn.dev/azukiazusa/articles/react-rerender-patterns)

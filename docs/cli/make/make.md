@@ -1,11 +1,9 @@
 # Makefile
-[参考URL](http://masahir0y.blogspot.com/2012/02/linuxmakefile-4.html)
-[Makefile ことはじめ](https://qiita.com/kasei-san/items/ad25df63260e86c5cc71)
+[参考URL](http://masahir0y.blogspot.com/2012/02/linuxmakefile-4.html)  
 
-Makefileはプロジェクトでよく使用されるタスクランナー
-JSを使用する場合はpackage.jsonを使う`npm run`
-
-LinuxカーネルのMakefileで多様されている
+ビルドツールになる、しかしよく使用されるタスクランナーとしても使用される場合がある  
+JSを使用する場合はpackage.jsonを使う`npm run`  
+LinuxカーネルのMakefileで多用されている
 
 ## make ファイル コマンド解析
 
@@ -114,6 +112,10 @@ make: `clean' is up to date.
 ```
 
 ---
+
+## Makefile条件文
+[リファレンス](http://quruli.ivory.ne.jp/document/make_3.79.1/make-jp_6.html)
+
 
 ## make データ型
 
