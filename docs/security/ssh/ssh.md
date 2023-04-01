@@ -17,3 +17,9 @@ Host github github.com
 ## ssh接続でタイムアウトをしないようにする
 
 [参考URL](https://gist.github.com/toyokawah/ea3270eeaf03d612349ab91670e53f7e)
+
+## ssh-keygen
+
+公開鍵と秘密鍵を作成するコマンド  
+オプション説明は以下  
+[参考URL](https://tech-blog.rakus.co.jp/entry/20210727/ssh)
