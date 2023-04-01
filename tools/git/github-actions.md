@@ -16,9 +16,6 @@ Actions secretsはGitHub側で暗号化されていますが、アクセスキ�
 、GitHubActionsでサポートされているOpenIDConnectを使ったしくみを組み合わせることで、AWS IAM Roleから一時的なアクセスキーを取得できるようになります。
 以下の例では、もともとaws accesskey idとaws secret accesskeyを設定していたところがrole to assumeに変わっています。このようにGitHubActionsに固定のアクセスキーを設定する必要がなくなり、よりセキュアに運用できます。
 
-
-
-
 ## GitHub actions debug
 
 この記述で対応可能
@@ -731,6 +728,28 @@ GHESはGitHubサービスアプライアンスサーバ。
 
 ## Private ActionsWorkflow Stepを共有する
 [PrivateリポジトリのActionsWorkflow内Stepを共有するためCompositeRunStepを外部参照無しに同リポジトリ内で完結させてみた](https://dev.classmethod.jp/articles/composite-run-step-with-private-repos/)
+
+## private リポジトリをcloneする
+
+なんか3種類ありそう
+
+- PersonalAccessToken(PAT)
+- SSH接続
+- GitHub Apps
+
+## GitHub Apps とは
+
+GitHub Appsは、Organizationや個人アカウントに直接インストールでき、特定のリポジトリへのアクセス権を付与することが可能です。GitHub Appsの主な特長は次の3つです。
+
+- アクセス権限を細かく設定することができる。
+- インストール単位がUser/Organizationの保持するリポジトリ単位になる。
+- リポジトリにおけるイベントの発生も受け取ることができる（Webhookを備える）。
+またGitHub Appsは、パーソナルアクセストークン（personal access token）と異なり、個人アカウントに紐づかないので会社組織等で使う際の管理に向いています。
+
+パーソナルアクセストークンを採用してしまうと、**ユーザーに紐付いたアクセスキーが発行されてしまうため、設定したユーザーが退職したり、異動したりしてアカウントが停止されたりするとアクセスキーも無効になり、認証エラーになってしまいます。**
+
+
+
 
 ## ホームディレクトリ
 
