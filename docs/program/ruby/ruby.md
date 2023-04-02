@@ -1,9 +1,8 @@
 # Ruby
-
-[他言語からRuby入門について](https://www.ruby-lang.org/ja/documentation/ruby-from-other-languages/)
-[Rubyist Magazine](https://magazine.rubyist.net/articles/0061/0061-ForeWord.html)
-[ruby リファレンス](https://www.ruby-lang.org/ja/documentation/)
-[Ruby paint](https://hawksnowlog.blogspot.com/2020/09/output-ansi-color-code-with-ruby-paint.html)
+[他言語からRuby入門について](https://www.ruby-lang.org/ja/documentation/ruby-from-other-languages/)  
+[Rubyist Magazine](https://magazine.rubyist.net/articles/0061/0061-ForeWord.html)  
+[ruby リファレンス](https://www.ruby-lang.org/ja/documentation/)  
+[Ruby paint](https://hawksnowlog.blogspot.com/2020/09/output-ansi-color-code-with-ruby-paint.html)  
 
 ## ruby document
 [参考URL](https://techblg.app/articles/how-to-generate-document-by-yard-ruby/)
@@ -34,7 +33,7 @@ JavaやC#のような言語では、利用する前に変数の名前とそこ�
 JavaやC#のような言語では、宣言という行為を経て始めてデータを格納するための領域がメモリ上に確保される
 
 Rubyでは？
-Rubyでも変数の宣言は必要だが、スクリプト上で**変数に初めて値を格納したタイミングで変数のための領域が自動的にメモリ上に確保される。**
+Rubyでも変数の宣言は必要だが、スクリプト上で**変数にはじめて値を格納したタイミングで変数のための領域が自動的にメモリ上に確保される。**
 
 ### require, include, extend
 
@@ -45,7 +44,7 @@ require
 loadとの違いは、requireはすでにメモリに展開されていた場合はたとえ対象ファイルに変更があっても読み込みしないが、loadはする、そうです。
 読み込み先が頻繁に更新されるときは、loadを使ってその変更をタイムリーにひろう、ために使うそうです。
 
-include
+
 
 
 
@@ -357,7 +356,9 @@ putsと同じ結果を返す
 ## 式
 
 **式は何らかの値を返す**
-Rubyでは式と文の区別はあまりない(if文の結果を変数に入れられるため)
+Rubyでは式と文の区別はあまりない（if文の結果を変数に入れられるため）
+
+---
 
 ## 演算子
 
@@ -367,7 +368,7 @@ Rubyでは式と文の区別はあまりない(if文の結果を変数に入れ�
 =~ # 文字列と正規表現が一致するかを判定するRubyの演算子
 ```
 
-## ||演算子
+### ||
 
 [参考URL](https://qiita.com/ngron/items/4d3ca9827d1969fccd60)
 
@@ -379,7 +380,13 @@ p hoge
 => 1
 ```
 
-## 代入演算子としての||演算子
+## ::(コロン2つ)
+
+`::`は、**左側の要素が右側の要素のネームスペース内**にあることを示す演算子。  
+つまり、上記の例で`::`はUserモジュール内にApisモジュールがあり、さらにその中にV1モジュールを定義するということを意味しています。  
+User::Apis::V1という表現は、「Userモジュール内にApisモジュールがあり、その中にV1モジュールを定義する」という意味になります。
+
+## 代入演算子としての ||
 
 左辺が存在しない（偽）の場合、右辺の値が代入されるイメージです
 
@@ -393,10 +400,10 @@ p hoge
 
 [参考URL](https://qiita.com/onikan/items/e3a12e23e10ca301a9fc)
 
-Rubyでは通常、レシーバーに対してメソッドが実行された時、レシーバー(オブジェクト)がnilだった場合にエラーを返す
+Rubyでは通常、レシーバーに対してメソッドが実行された時、レシーバー（オブジェクト）がnilだった場合にエラーを返す
 
-しかしプログラムによってはエラーを返したくない時がある、そんな時に使うのが&.
-&.はオブジェクトがnilだった場合にエラーではなく、nilを返してくれる
+しかしプログラムによってはエラーを返したくない時がある、そんな時に使うのが`&.`
+オブジェクトがnilだった場合にエラーではなく、nilを返してくれる
 
 ## &.(ぼっち演算子) メリット
 

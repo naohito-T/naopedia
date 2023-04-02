@@ -438,3 +438,8 @@ console.log(Math.random());
 // expected output: a number from 0 to <1
 ```
 
+
+## ユースケース
+
+なんらかの目的を達成するために行われるユーザとアプリケーションの間の一連のやり取りを表したものです
+
