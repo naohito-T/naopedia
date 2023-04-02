@@ -4964,10 +4964,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="ruby"><a name="ruby" class="plugin-anchor" href="#ruby"><i class="fa fa-link" aria-hidden="true"></i></a>Ruby</h1>
-<p><a href="https://www.ruby-lang.org/ja/documentation/ruby-from-other-languages/" target="_blank">他言語からRuby入門について</a>
-<a href="https://magazine.rubyist.net/articles/0061/0061-ForeWord.html" target="_blank">Rubyist Magazine</a>
-<a href="https://www.ruby-lang.org/ja/documentation/" target="_blank">ruby リファレンス</a>
-<a href="https://hawksnowlog.blogspot.com/2020/09/output-ansi-color-code-with-ruby-paint.html" target="_blank">Ruby paint</a></p>
+<p><a href="https://www.ruby-lang.org/ja/documentation/ruby-from-other-languages/" target="_blank">他言語からRuby入門について</a><br><a href="https://magazine.rubyist.net/articles/0061/0061-ForeWord.html" target="_blank">Rubyist Magazine</a><br><a href="https://www.ruby-lang.org/ja/documentation/" target="_blank">ruby リファレンス</a><br><a href="https://hawksnowlog.blogspot.com/2020/09/output-ansi-color-code-with-ruby-paint.html" target="_blank">Ruby paint</a>  </p>
 <h2 id="ruby-document"><a name="ruby-document" class="plugin-anchor" href="#ruby-document"><i class="fa fa-link" aria-hidden="true"></i></a>ruby document</h2>
 <p><a href="https://techblg.app/articles/how-to-generate-document-by-yard-ruby/" target="_blank">参考URL</a></p>
 <p>YARDで書くというのがある。やはり<code>@example</code>が重要。</p>
@@ -4985,14 +4982,13 @@
 <p>JavaやC#のような言語では、利用する前に変数の名前とそこに格納できるデータの種類（データ型）をあらかじめ宣言する必要がある、
 JavaやC#のような言語では、宣言という行為を経て始めてデータを格納するための領域がメモリ上に確保される</p>
 <p>Rubyでは？
-Rubyでも変数の宣言は必要だが、スクリプト上で<strong>変数に初めて値を格納したタイミングで変数のための領域が自動的にメモリ上に確保される。</strong></p>
+Rubyでも変数の宣言は必要だが、スクリプト上で<strong>変数にはじめて値を格納したタイミングで変数のための領域が自動的にメモリ上に確保される。</strong></p>
 <h3 id="require-include-extend"><a name="require-include-extend" class="plugin-anchor" href="#require-include-extend"><i class="fa fa-link" aria-hidden="true"></i></a>require, include, extend</h3>
 <p><a href="https://qiita.com/suzukiry/items/db936ff7312ba7d97315" target="_blank">違いについて</a></p>
 <p>require
 ファイルをメモリに読み込む
 loadとの違いは、requireはすでにメモリに展開されていた場合はたとえ対象ファイルに変更があっても読み込みしないが、loadはする、そうです。
 読み込み先が頻繁に更新されるときは、loadを使ってその変更をタイムリーにひろう、ために使うそうです。</p>
-<p>include</p>
 <h2 id="language-server-protocolはlsp"><a name="language-server-protocolはlsp" class="plugin-anchor" href="#language-server-protocolはlsp"><i class="fa fa-link" aria-hidden="true"></i></a>Language Server Protocolは(LSP)</h2>
 <p><a href="https://zenn.dev/massu_devix/articles/e400308d55011d" target="_blank">Rubyプロジェクトにsolargraphとrobocopを入れる</a></p>
 <h2 id="ruby他言語との違い"><a name="ruby他言語との違い" class="plugin-anchor" href="#ruby他言語との違い"><i class="fa fa-link" aria-hidden="true"></i></a>Ruby他言語との違い</h2>
@@ -5218,12 +5214,13 @@ d
 putsと同じ結果を返す</p>
 <h2 id="式"><a name="式" class="plugin-anchor" href="#式"><i class="fa fa-link" aria-hidden="true"></i></a>式</h2>
 <p><strong>式は何らかの値を返す</strong>
-Rubyでは式と文の区別はあまりない(if文の結果を変数に入れられるため)</p>
+Rubyでは式と文の区別はあまりない（if文の結果を変数に入れられるため）</p>
+<hr>
 <h2 id="演算子"><a name="演算子" class="plugin-anchor" href="#演算子"><i class="fa fa-link" aria-hidden="true"></i></a>演算子</h2>
 <p>気をつけること</p>
 <pre><code class="lang-ruby">=~ <span class="hljs-comment"># 文字列と正規表現が一致するかを判定するRubyの演算子</span>
 </code></pre>
-<h2 id="演算子"><a name="演算子" class="plugin-anchor" href="#演算子"><i class="fa fa-link" aria-hidden="true"></i></a>||演算子</h2>
+<h3 id><a name class="plugin-anchor" href="#"><i class="fa fa-link" aria-hidden="true"></i></a>||</h3>
 <p><a href="https://qiita.com/ngron/items/4d3ca9827d1969fccd60" target="_blank">参考URL</a></p>
 <pre><code class="lang-ruby"><span class="hljs-comment"># 代入</span>
 hoge = <span class="hljs-literal">nil</span> <span class="hljs-params">||</span> <span class="hljs-literal">false</span> <span class="hljs-params">||</span> <span class="hljs-number">1</span> <span class="hljs-params">||</span> <span class="hljs-number">2</span>
@@ -5231,7 +5228,9 @@ hoge = <span class="hljs-literal">nil</span> <span class="hljs-params">||</span>
 p hoge
 =&gt; <span class="hljs-number">1</span>
 </code></pre>
-<h2 id="代入演算子としての演算子"><a name="代入演算子としての演算子" class="plugin-anchor" href="#代入演算子としての演算子"><i class="fa fa-link" aria-hidden="true"></i></a>代入演算子としての||演算子</h2>
+<h2 id="コロン2つ"><a name="コロン2つ" class="plugin-anchor" href="#コロン2つ"><i class="fa fa-link" aria-hidden="true"></i></a>::(コロン2つ)</h2>
+<p><code>::</code>は、<strong>左側の要素が右側の要素のネームスペース内</strong>にあることを示す演算子。<br>つまり、上記の例で<code>::</code>はUserモジュール内にApisモジュールがあり、さらにその中にV1モジュールを定義するということを意味しています。<br>User::Apis::V1という表現は、「Userモジュール内にApisモジュールがあり、その中にV1モジュールを定義する」という意味になります。</p>
+<h2 id="代入演算子としての-"><a name="代入演算子としての-" class="plugin-anchor" href="#代入演算子としての-"><i class="fa fa-link" aria-hidden="true"></i></a>代入演算子としての ||</h2>
 <p>左辺が存在しない（偽）の場合、右辺の値が代入されるイメージです</p>
 <pre><code class="lang-ruby">hoge <span class="hljs-params">||</span>= <span class="hljs-number">1</span>
 p hoge
@@ -5239,9 +5238,9 @@ p hoge
 </code></pre>
 <h2 id="ぼっち演算子"><a name="ぼっち演算子" class="plugin-anchor" href="#ぼっち演算子"><i class="fa fa-link" aria-hidden="true"></i></a>&amp;.(ぼっち演算子)</h2>
 <p><a href="https://qiita.com/onikan/items/e3a12e23e10ca301a9fc" target="_blank">参考URL</a></p>
-<p>Rubyでは通常、レシーバーに対してメソッドが実行された時、レシーバー(オブジェクト)がnilだった場合にエラーを返す</p>
-<p>しかしプログラムによってはエラーを返したくない時がある、そんな時に使うのが&amp;.
-&amp;.はオブジェクトがnilだった場合にエラーではなく、nilを返してくれる</p>
+<p>Rubyでは通常、レシーバーに対してメソッドが実行された時、レシーバー（オブジェクト）がnilだった場合にエラーを返す</p>
+<p>しかしプログラムによってはエラーを返したくない時がある、そんな時に使うのが<code>&amp;.</code>
+オブジェクトがnilだった場合にエラーではなく、nilを返してくれる</p>
 <h2 id="ぼっち演算子-メリット"><a name="ぼっち演算子-メリット" class="plugin-anchor" href="#ぼっち演算子-メリット"><i class="fa fa-link" aria-hidden="true"></i></a>&amp;.(ぼっち演算子) メリット</h2>
 <p>返り値が「〇〇かnil」を返すみたいなメソッドがRubyにはあります。それを受け取ったレシーバーに、レシーバーに「nilが想定されていないメソッド」を使ってしまうと、エラーが出力されてしまいます。</p>
 <p>そんな時に「&amp;.」を使うことで、そのメソッドはエラーではなく、nilを返してくれるようになります。</p>
@@ -5825,7 +5824,7 @@ RubyはJavaのような言語と比べて動的であり一度生成したイン
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Ruby","level":"2.14.10","depth":2,"next":{"title":"Gem","level":"2.14.10.1","depth":3,"ref":"","articles":[{"title":"Seed Fu","level":"2.14.10.1.1","depth":4,"path":"program/ruby/gem/seed*fu.md","ref":"program/ruby/gem/seed*fu.md","articles":[]}]},"previous":{"title":"Python","level":"2.14.9","depth":2,"path":"program/python/python.md","ref":"program/python/python.md","articles":[]},"articles":[{"title":"Gem","level":"2.14.10.1","depth":3,"ref":"","articles":[{"title":"Seed Fu","level":"2.14.10.1.1","depth":4,"path":"program/ruby/gem/seed*fu.md","ref":"program/ruby/gem/seed*fu.md","articles":[]}]},{"title":"Rails","level":"2.14.10.2","depth":3,"path":"program/ruby/rails/rails.md","ref":"program/ruby/rails/rails.md","articles":[{"title":"Activerecord 2","level":"2.14.10.2.1","depth":4,"path":"program/ruby/rails/activerecord2.md","ref":"program/ruby/rails/activerecord2.md","articles":[]},{"title":"Rails Activerecord","level":"2.14.10.2.2","depth":4,"path":"program/ruby/rails/rails*activerecord.md","ref":"program/ruby/rails/rails*activerecord.md","articles":[]},{"title":"Rails Perfect","level":"2.14.10.2.3","depth":4,"path":"program/ruby/rails/rails*perfect.md","ref":"program/ruby/rails/rails*perfect.md","articles":[]},{"title":"Rails Third Party","level":"2.14.10.2.4","depth":4,"path":"program/ruby/rails/rails*third*party.md","ref":"program/ruby/rails/rails*third*party.md","articles":[]},{"title":"Rails View","level":"2.14.10.2.5","depth":4,"path":"program/ruby/rails/rails*view.md","ref":"program/ruby/rails/rails*view.md","articles":[]},{"title":"Railsbook","level":"2.14.10.2.6","depth":4,"path":"program/ruby/rails/railsbook.md","ref":"program/ruby/rails/railsbook.md","articles":[]}]},{"title":"Method","level":"2.14.10.3","depth":3,"path":"program/ruby/method.md","ref":"program/ruby/method.md","articles":[]},{"title":"Ruby Review","level":"2.14.10.4","depth":3,"path":"program/ruby/ruby*review.md","ref":"program/ruby/ruby*review.md","articles":[]},{"title":"Ruby","level":"2.14.10.5","depth":3,"path":"program/ruby/ruby.md","ref":"program/ruby/ruby.md","articles":[]},{"title":"独習ruby","level":"2.14.10.6","depth":3,"path":"program/ruby/独習ruby.md","ref":"program/ruby/独習ruby.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"program/ruby/ruby.md","mtime":"2023-04-01T01:52:37.762Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-04-01T01:52:45.565Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Ruby","level":"2.14.10","depth":2,"next":{"title":"Gem","level":"2.14.10.1","depth":3,"ref":"","articles":[{"title":"Seed Fu","level":"2.14.10.1.1","depth":4,"path":"program/ruby/gem/seed*fu.md","ref":"program/ruby/gem/seed*fu.md","articles":[]}]},"previous":{"title":"Python","level":"2.14.9","depth":2,"path":"program/python/python.md","ref":"program/python/python.md","articles":[]},"articles":[{"title":"Gem","level":"2.14.10.1","depth":3,"ref":"","articles":[{"title":"Seed Fu","level":"2.14.10.1.1","depth":4,"path":"program/ruby/gem/seed*fu.md","ref":"program/ruby/gem/seed*fu.md","articles":[]}]},{"title":"Rails","level":"2.14.10.2","depth":3,"path":"program/ruby/rails/rails.md","ref":"program/ruby/rails/rails.md","articles":[{"title":"Activerecord 2","level":"2.14.10.2.1","depth":4,"path":"program/ruby/rails/activerecord2.md","ref":"program/ruby/rails/activerecord2.md","articles":[]},{"title":"Rails Activerecord","level":"2.14.10.2.2","depth":4,"path":"program/ruby/rails/rails*activerecord.md","ref":"program/ruby/rails/rails*activerecord.md","articles":[]},{"title":"Rails Perfect","level":"2.14.10.2.3","depth":4,"path":"program/ruby/rails/rails*perfect.md","ref":"program/ruby/rails/rails*perfect.md","articles":[]},{"title":"Rails Third Party","level":"2.14.10.2.4","depth":4,"path":"program/ruby/rails/rails*third*party.md","ref":"program/ruby/rails/rails*third*party.md","articles":[]},{"title":"Rails View","level":"2.14.10.2.5","depth":4,"path":"program/ruby/rails/rails*view.md","ref":"program/ruby/rails/rails*view.md","articles":[]},{"title":"Railsbook","level":"2.14.10.2.6","depth":4,"path":"program/ruby/rails/railsbook.md","ref":"program/ruby/rails/railsbook.md","articles":[]}]},{"title":"Method","level":"2.14.10.3","depth":3,"path":"program/ruby/method.md","ref":"program/ruby/method.md","articles":[]},{"title":"Ruby Review","level":"2.14.10.4","depth":3,"path":"program/ruby/ruby*review.md","ref":"program/ruby/ruby*review.md","articles":[]},{"title":"Ruby","level":"2.14.10.5","depth":3,"path":"program/ruby/ruby.md","ref":"program/ruby/ruby.md","articles":[]},{"title":"独習ruby","level":"2.14.10.6","depth":3,"path":"program/ruby/独習ruby.md","ref":"program/ruby/独習ruby.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"program/ruby/ruby.md","mtime":"2023-04-02T03:16:10.765Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-04-02T03:16:21.115Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
