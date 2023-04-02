@@ -9,12 +9,48 @@
 
 [![Image from Gyazo](https://i.gyazo.com/f932132c9b8d23e980053158fd9eece8.png)](https://gyazo.com/f932132c9b8d23e980053158fd9eece8)
 
+
 ## Rails作者
 [大規模開発に強い理由](https://pr.forkwell.com/articles/dhh-rails-large-scale-development/)
 
 DHH（作者）が語っているシリーズ
 
+## Railsオートロードするファイル
+
+```sh
+# Railsが自動で読み込むファイルは、以下のディレクトリ内にあるファイルです。
+app/assets
+app/channels
+app/controllers
+app/helpers
+app/jobs
+app/mailers
+app/models
+app/views
+```
+また、Railsの命名規則に従っているファイルも自動的に読み込まれます。具体的には、以下のようなファイル名に対応しています。
+
+- モデル名の単数形.rb
+- コントローラー名の複数形_controller.rb
+- ヘルパー名の複数形_helper.rb
+- ビュー名の複数形.erb、haml、slimなどのテンプレートエンジンの拡張子を持つファイル
+- ジョブ名の複数形_job.rb
+- メーラー名の複数形_mailer.rb
+
+以上の命名規則に従って、自動的にファイルを読み込むことができます。ただし、ディレクトリ構造やファイル名が命名規則に従っていない場合は、明示的にrequireする必要があります。
+
 ---
+
+## .ruと.rbの違い
+
+`.rbファイル`は、Rubyのソースコードが含まれるファイル  
+`.ruファイル`は、Rackアプリケーションのエントリーポイントとして機能するRack upファイル
+
+具体的には`.rbファイル`はRubyスクリプトを作成するために使用され、Rubyコードを実行するために、Rubyインタープリタまたはコンパイラによって読み込まれます。
+一方`.ruファイル`は、Rackアプリケーションのエントリーポイントであり、Webサーバーによって読み込まれ、Rackアプリケーションを起動します。
+
+Rackは、Webアプリケーションのインターフェースとして機能する仕組みで、.ruファイルにはRackアプリケーションの情報が含まれています。.rbファイルとは異なり、.ruファイルには実際のアプリケーションコードが含まれていない場合があります。
+
 
 ## 最新Railsについて
 [Rails7変更点](https://qiita.com/jnchito/items/5c41a7031404c313da1f)
