@@ -656,3 +656,9 @@ $ git diff HEAD 'HEAD@{2015-06-01 0:00}'
 - コミットルール
 
 この2点を決める必要がある
+
+## スカッシュマージ
+
+使用していいのかチームで必ず討論になる。
+[参考URL](https://mmiyauchi.com/?p=3435)
+[スカッシュマージから脱却した話](https://www.wantedly.com/companies/socialdog/post_articles/461640)
