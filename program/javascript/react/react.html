@@ -4973,16 +4973,15 @@
 <p>promiseのキャッチができない。</p>
 <h2 id="react再レンダリング"><a name="react再レンダリング" class="plugin-anchor" href="#react再レンダリング"><i class="fa fa-link" aria-hidden="true"></i></a>React再レンダリング</h2>
 <p><a href="https://zenn.dev/azukiazusa/articles/react-rerender-patterns" target="_blank">React の再レンダリングを防ぐ3つのパターン</a></p>
-<p>基本中の基本
-Reactは以下条件の時再レンダリングされる。</p>
+<p>基本中の基本<br>Reactは以下条件の時再レンダリングされる。  </p>
 <ul>
 <li>コンポーネントのstateが更新された</li>
-<li>親のコンポーネントが再レンダリングされた
-パフォーマンス上で問題になるのは不必要な再レンダリングが実行されている場合。</li>
+<li>親のコンポーネントが再レンダリングされた</li>
 </ul>
+<p>パフォーマンス上で問題になるのは不必要な再レンダリングが実行されている場合。</p>
 <h3 id="reactの思想から外れないようにパフォーマンスチューニングをする"><a name="reactの思想から外れないようにパフォーマンスチューニングをする" class="plugin-anchor" href="#reactの思想から外れないようにパフォーマンスチューニングをする"><i class="fa fa-link" aria-hidden="true"></i></a>Reactの思想から外れないようにパフォーマンスチューニングをする</h3>
-<p>stateを変更→関連するcomponentが再レンダリング」の自動化がReactの基本思想で、かつReactを使って得られる恩恵の一つ。なので極力それに従った書き方をすべき。
-恩恵 = 開発者が考えることが減る→構造の理解が楽になりバグも減る。</p>
+<p><strong>stateを変更→関連するcomponentが再レンダリングの自動化</strong>がReactの基本思想で、かつReactを使って得られる恩恵のひとつ。<br>なので極力それに従った書き方をすべき。</p>
+<p>恩恵 = 開発者が考えることが減る→構造の理解が楽になりバグも減る。</p>
 <p>それで起きる性能問題はメモ化で解決するべき。メモ化で増える記述量はReactを使う以上甘受すべきものだし、性能問題との天秤は十分釣り合っている。
 これがライブラリとしての基本思想なので、これから外れるとReact本体の変更に追従するのが大変になる可能性がある。それが表出した一つの例が</p>
 <h2 id="関数コンポーネントのレンダリング"><a name="関数コンポーネントのレンダリング" class="plugin-anchor" href="#関数コンポーネントのレンダリング"><i class="fa fa-link" aria-hidden="true"></i></a>関数コンポーネントのレンダリング</h2>
@@ -5181,7 +5180,7 @@ cssの長い命名規則から解き放たれる</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"React","level":"2.14.5.12","depth":3,"next":{"title":"Hooks","level":"2.14.5.12.1","depth":4,"path":"program/javascript/react/hooks.md","ref":"program/javascript/react/hooks.md","articles":[]},"previous":{"title":"Package","level":"2.14.5.11","depth":3,"path":"program/javascript/package/package.md","ref":"program/javascript/package/package.md","articles":[]},"articles":[{"title":"Hooks","level":"2.14.5.12.1","depth":4,"path":"program/javascript/react/hooks.md","ref":"program/javascript/react/hooks.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"program/javascript/react/react.md","mtime":"2023-04-07T01:48:26.755Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-04-07T01:48:35.803Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"React","level":"2.14.5.12","depth":3,"next":{"title":"Hooks","level":"2.14.5.12.1","depth":4,"path":"program/javascript/react/hooks.md","ref":"program/javascript/react/hooks.md","articles":[]},"previous":{"title":"Package","level":"2.14.5.11","depth":3,"path":"program/javascript/package/package.md","ref":"program/javascript/package/package.md","articles":[]},"articles":[{"title":"Hooks","level":"2.14.5.12.1","depth":4,"path":"program/javascript/react/hooks.md","ref":"program/javascript/react/hooks.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"program/javascript/react/react.md","mtime":"2023-04-14T08:10:20.669Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-04-14T08:10:29.427Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
