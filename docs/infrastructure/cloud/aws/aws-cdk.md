@@ -3,6 +3,8 @@
 
 TypeScriptおよびPythonなどのプログラミング言語を使用して、AWSリソースを定義し、Terraformの様に**Infrastructure as Code（以降、IaC）**を実現する手段として、クラウドインフラのリソースをプロビジョニングすることが可能。
 
+CDKにはL1~L3までの概念があるため忘れないこと。
+
 ## serverless frameworkとcdkの違い
 [serverless frameworkとcdkの違い](https://sst.dev/chapters/using-aws-cdk-with-serverless-framework.html)
 
@@ -59,3 +61,84 @@ $ aws sts get-caller-identity
 $ aws configure get region
 ap-northeast-1
 ```
+
+## AWS CDK 実践
+[参考URL](https://dev.classmethod.jp/articles/cdk-practice-1-introduction/)
+
+VPCから作成するのが慣例（自分の陣地をとるみたいな）
+
+## Construct
+
+CDK上においてクラウドコンポーネントは`Construct`という単位の**基本ビルディングブロック**として提供されており、リソース作成に必要なすべてがカプセル化されています。  
+そしてこのConstructは以下の3つのレイヤーに分けられています。
+
+- L3: Patterns
+  - 複数のリソースを含む構成パターンを事前定義したもの
+- L2: High-level constructs
+  - デフォルト値や便利なメソッドを定義したAWSリソースを表すクラス
+- L1: Low-level constructs
+  - CFnリソースおよびプロパティと1:1で対応（**Cfn**というプレフィックスがついたもの）
+
+
+クラス（Construct）Vpcは`L2`であり、それを作成することでネットワーク構築に必要な（ベストプラクティスとされる）他のリソースが適切な設定値で軒並み一緒に作られてしまったというわけです。
+
+## Context
+[参考URL](https://dev.classmethod.jp/articles/cdk-practice-4-context/)
+
+**CFnのパラメーター**のように使える機能
+
+- スタックやConstructに関連付けできるキーと値のペア
+- キーと値の型はstring
+  - 他の型にしたい場合は変換処理が必要
+
+6つの異なる方法でCDKアプリに提供される  
+
+- 現在のAWSアカウントから自動的に
+- CDKコマンドの --contextオプション
+- プロジェクトのcdk.context.jsonファイル
+- プロジェクトのcdk.jsonファイル
+- ~/.cdk.jsonファイルのcontextキー
+- construct.node.setContextメソッド
+
+6つの方法はいずれも暗黙的に`App Construct`に設定されるためアプリケーション内のConstructインスタンスでContextの値を取得できる。
+
+### パラメーターとの棲み分け
+
+
+Contextを使う。
+CfnParameterというクラスも存在するのですが、AWS公式から非推奨となっている。
+
+## AWS CDKにおけるテスト
+
+AWS CDKではテストは以下の3つのカテゴリに分類される
+
+- Snapshot tests
+- Fine-grained assertions
+- Validation tests
+
+### Snapshot tests
+
+テスト実行時点で作成されるCFnテンプレート（スナップショット）と事前に保存されているベースラインテンプレートを比較してテストします。  
+
+### Fine-grained assertions
+
+生成されたCFnテンプレートの一部をテストする。  
+以下のような項目をチェックできます。
+
+- どんなリソースがあるか
+- リソースのプロパティ
+- リソースの数
+- 出力（Outputs）の内容
+
+### Validation tests
+
+Constructが無効なデータを受け取った時にエラー（例外）を発生させることを確認するテストです。  
+以下のサンプルはretentionDaysに無効な値を入れた場合に意図した例外が発生することを確認しています。
+
+## Metadata
+[参考URL](https://dev.classmethod.jp/articles/cdk-practice-6-metadata/)
+
+CFnのテンプレートセクションのひとつ。  
+このセクションを利用して、開発者はテンプレートに関する追加情報を付与することが可能。
+任意項目なので無くても問題ありません。
+
