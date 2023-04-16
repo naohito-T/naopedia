@@ -4966,14 +4966,13 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="hardware-page"><a name="hardware-page" class="plugin-anchor" href="#hardware-page"><i class="fa fa-link" aria-hidden="true"></i></a>hardware Page</h1>
-<p>またディレクトリなど変更するかも</p>
+<p>ハードウェア関連</p>
 <h2 id="cpuとgpuの違い"><a name="cpuとgpuの違い" class="plugin-anchor" href="#cpuとgpuの違い"><i class="fa fa-link" aria-hidden="true"></i></a>CPUとGPUの違い</h2>
 <p><a href="https://www.intel.co.jp/content/www/jp/ja/products/docs/processors/cpu-vs-gpu.html" target="_blank">参考URL</a></p>
 <h2 id="gpu"><a name="gpu" class="plugin-anchor" href="#gpu"><i class="fa fa-link" aria-hidden="true"></i></a>GPU</h2>
-<p>GPUは、特定の3Dレンダリング・タスクの加速化のための専門的ASICとして開発された</p>
+<p>GPUは、特定の<strong>3Dレンダリング・タスク</strong>の加速化のための専門的ASICとして開発された</p>
 <h2 id="内蔵グラフィックスとは"><a name="内蔵グラフィックスとは" class="plugin-anchor" href="#内蔵グラフィックスとは"><i class="fa fa-link" aria-hidden="true"></i></a>内蔵グラフィックスとは</h2>
-<p>内蔵または共有グラフィックスはCPUと同じチップに組み込まれている。
-CPUによっては、専用グラフィックスまたはディスクリート・グラフィックスに依存するのではなくGPUを内蔵しているものもあります。
+<p>内蔵または共有グラフィックスはCPUと同じチップに組み込まれている。<br>CPUによっては、専用グラフィックスまたはディスクリート・グラフィックスに依存するのではなくGPUを内蔵しているものもあります。
 また、IGPまたは統合グラフィックス・プロセッサーとも呼ばれ、CPUとメモリーを共有します。</p>
 <hr>
 <h2 id="メモリ領域の分類"><a name="メモリ領域の分類" class="plugin-anchor" href="#メモリ領域の分類"><i class="fa fa-link" aria-hidden="true"></i></a>メモリ領域の分類</h2>
@@ -4986,12 +4985,11 @@ CPUによっては、専用グラフィックスまたはディスクリート�
 <p>ローカル変数はスコープ範囲内で有効なため、スコープの始まりでメモリを確保しスコープの終わりでメモリを解放すれば十分。
 ローカル変数の割当と解放もコンパイラによって自動的に行われる。このときに配置さえるメモリ領域をスタック領域という。</p>
 <h2 id="ヒープ領域"><a name="ヒープ領域" class="plugin-anchor" href="#ヒープ領域"><i class="fa fa-link" aria-hidden="true"></i></a>ヒープ領域</h2>
-<p>プログラムを設計する上で、<strong>何らかの情報をスコープの範囲を超えて扱いたいことがある</strong>
-このような場合に利用するのがヒープ領域</p>
+<p>プログラムを設計する上で、<strong>何らかの情報をスコープの範囲を超えて扱いたいことがある</strong><br>このような場合に利用するのがヒープ領域  </p>
 <blockquote>
 <p>ヒープ領域は柔軟に使える分、プログラマが責任を持って割り当て・解放を行わなければなりません。
-また、ヒープ領域はポインタを介して読み書きを行う必要があります。</p>
-<p>ヒープ領域はメモリを有効活用したい場合のためのものです。 メモリ有効活用する必要のない場合は、予めグローバル変数として必要な分だけメモリを確保しておけば十分なことが多いです。</p>
+また、ヒープ領域はポインタを介して読み書きを行う必要があります。
+ヒープ領域はメモリを有効活用したい場合のためのものです。 メモリ有効活用する必要のない場合は、予めグローバル変数として必要な分だけメモリを確保しておけば十分なことが多いです。</p>
 </blockquote>
 <hr>
 <h2 id="並行と並列の違い"><a name="並行と並列の違い" class="plugin-anchor" href="#並行と並列の違い"><i class="fa fa-link" aria-hidden="true"></i></a>並行と並列の違い</h2>
@@ -5001,19 +4999,16 @@ CPUによっては、専用グラフィックスまたはディスクリート�
 </blockquote>
 <ul>
 <li><p>並行（concurrent）
-ある任意時間時でひとつの仕事しか行なわないが、復数の仕事を切り替えることにより同時に実行すること。
-複数の仕事（スレッド）を実行状態として保てている状態。</p>
+ある任意時間時でひとつの仕事しか行なわないが、復数の仕事を切り替えることにより同時に実行すること。<br>複数の仕事（スレッド）を実行状態として保てている状態。</p>
 </li>
-<li><p>並列（pararell）
-ある任意時間時で複数の仕事を同時に実行すること。
-並列は並行を包含していることに注意。</p>
+<li><p>並列（parallel）
+ある任意時間時で複数の仕事を同時に実行すること。<br>並列は並行を包含していることに注意。</p>
 </li>
 </ul>
-<p>JSで例える</p>
 <hr>
 <h2 id="標準入力と標準出力"><a name="標準入力と標準出力" class="plugin-anchor" href="#標準入力と標準出力"><i class="fa fa-link" aria-hidden="true"></i></a>標準入力と標準出力</h2>
 <p>コマンドは必要に応じて何らかのデータを受け取り、処理をして結果を出力する。
-特に何も指定していない場合、<strong>入力はキーボード</strong>, <strong>出力は画面</strong>となる。これをそれぞれ<strong>標準入力</strong>と<strong>標準出力</strong>という。</p>
+とくに何も指定していない場合、<strong>入力はキーボード</strong>, <strong>出力は画面</strong>となる。これをそれぞれ<strong>標準入力</strong>と<strong>標準出力</strong>という。</p>
 <ul>
 <li>パイプ
 <code>dmesg | more</code>はdmesgコマンドの標準出力を、moreコマンドの標準入力につなげている</li>
@@ -5031,10 +5026,9 @@ LANケーブルを挿す穴がくっついている。</p>
 <h2 id="0000"><a name="0000" class="plugin-anchor" href="#0000"><i class="fa fa-link" aria-hidden="true"></i></a>0.0.0.0</h2>
 <p><a href="https://qiita.com/Masato338/items/f162394fbc37fc490dfb" target="_blank">参考URL</a></p>
 <p>ローカルマシン上のすべてのIPv4アドレスのこと。
-仮想環境(Docker)で起動したRailsはlocalhostのipアドレス127.0.0.1でアクセスできない。
-そのため仮想外部からアクセスできるようにip 0.0.0.0に紐付けする必要がある。</p>
+仮想環境（Docker）で起動したRailsはlocalhostのipアドレス<code>127.0.0.1</code>でアクセスできない。<br>そのため仮想外部からアクセスできるようにipを<code>0.0.0.0</code>に紐付けする必要がある。</p>
 <p>前提として
-マシンというのは複数のネットワークインターフェイスを持っている(つまりは複数のIPアドレスを持っている)
+マシンというのは複数のネットワークインターフェイスを持っている（つまりは複数のIPアドレスを持っている）
 <code>ifconfig</code>でネットワークインターフェイスを見ることができる。
 grepで狭めた場合</p>
 <pre><code class="lang-sh">$ ifconfig | grep <span class="hljs-string">&quot;inet&quot;</span>
@@ -5063,6 +5057,8 @@ grepで狭めた場合</p>
 UNIXでは、ルートパーティション以外のパーティションは、ルートパーティション（またはそこにマウントされたパーティション）のどこかにマウントされることで、ファイルシステムからアクセス可能になる。</p>
 <h2 id="マイコン"><a name="マイコン" class="plugin-anchor" href="#マイコン"><i class="fa fa-link" aria-hidden="true"></i></a>マイコン</h2>
 <p><a href="https://monoist.itmedia.co.jp/mn/series/2053/" target="_blank">参考URL</a></p>
+<h2 id="ephemeralポート"><a name="ephemeralポート" class="plugin-anchor" href="#ephemeralポート"><i class="fa fa-link" aria-hidden="true"></i></a>Ephemeralポート</h2>
+<p>Ephemeralポートとは、PCがサーバーにアクセスするときに<strong>一時的に利用するポート</strong>のことです。<br>mac OSだと49152―65535、Amazon Linuxだと32768―61000といったようにOSの種類やバージョンによって異なる。<br>すべてのポートに対応させるためには、ポート範囲として1024―65535を設定しておけば問題ないでしょう。</p>
 
                                 
                                 </section>
@@ -5106,7 +5102,7 @@ UNIXでは、ルートパーティション以外のパーティションは、�
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Hardware","level":"2.6","depth":1,"next":{"title":"Compiler","level":"2.6.1","depth":2,"path":"hardware/compiler/compiler.md","ref":"hardware/compiler/compiler.md","articles":[]},"previous":{"title":"使えそうなデザイン","level":"2.5.15","depth":2,"path":"design/使えそうなデザイン.md","ref":"design/使えそうなデザイン.md","articles":[]},"articles":[{"title":"Compiler","level":"2.6.1","depth":2,"path":"hardware/compiler/compiler.md","ref":"hardware/compiler/compiler.md","articles":[]},{"title":"CPU","level":"2.6.2","depth":2,"path":"hardware/cpu/cpu.md","ref":"hardware/cpu/cpu.md","articles":[{"title":"M1","level":"2.6.2.1","depth":3,"path":"hardware/cpu/m1/m1.md","ref":"hardware/cpu/m1/m1.md","articles":[]}]},{"title":"Domain","level":"2.6.3","depth":2,"path":"hardware/domain/domain.md","ref":"hardware/domain/domain.md","articles":[]},{"title":"Gpu","level":"2.6.4","depth":2,"path":"hardware/gpu/gpu.md","ref":"hardware/gpu/gpu.md","articles":[]},{"title":"Memory","level":"2.6.5","depth":2,"path":"hardware/memory/memory.md","ref":"hardware/memory/memory.md","articles":[]},{"title":"Os","level":"2.6.6","depth":2,"path":"hardware/os/os.md","ref":"hardware/os/os.md","articles":[{"title":"Bsd","level":"2.6.6.1","depth":3,"path":"hardware/os/bsd/bsd.md","ref":"hardware/os/bsd/bsd.md","articles":[]},{"title":"Linux","level":"2.6.6.2","depth":3,"path":"hardware/os/linux/linux.md","ref":"hardware/os/linux/linux.md","articles":[{"title":"Ubunt","level":"2.6.6.2.1","depth":4,"path":"hardware/os/linux/ubunt/ubunt.md","ref":"hardware/os/linux/ubunt/ubunt.md","articles":[]},{"title":"Linux","level":"2.6.6.2.2","depth":4,"path":"hardware/os/linux/linux.md","ref":"hardware/os/linux/linux.md","articles":[]}]},{"title":"Mac","level":"2.6.6.3","depth":3,"path":"hardware/os/mac/mac.md","ref":"hardware/os/mac/mac.md","articles":[]}]},{"title":"Physics","level":"2.6.7","depth":2,"path":"hardware/physics/physics.md","ref":"hardware/physics/physics.md","articles":[]},{"title":"Vps","level":"2.6.8","depth":2,"path":"hardware/vps/vps.md","ref":"hardware/vps/vps.md","articles":[]},{"title":"Hardware","level":"2.6.9","depth":2,"path":"hardware/hardware.md","ref":"hardware/hardware.md","articles":[]},{"title":"リモートLinuxサーバ","level":"2.6.10","depth":2,"path":"hardware/リモートLinuxサーバ.md","ref":"hardware/リモートLinuxサーバ.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"hardware/hardware.md","mtime":"2023-04-16T13:18:22.002Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-04-16T13:18:32.979Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Hardware","level":"2.6","depth":1,"next":{"title":"Compiler","level":"2.6.1","depth":2,"path":"hardware/compiler/compiler.md","ref":"hardware/compiler/compiler.md","articles":[]},"previous":{"title":"使えそうなデザイン","level":"2.5.15","depth":2,"path":"design/使えそうなデザイン.md","ref":"design/使えそうなデザイン.md","articles":[]},"articles":[{"title":"Compiler","level":"2.6.1","depth":2,"path":"hardware/compiler/compiler.md","ref":"hardware/compiler/compiler.md","articles":[]},{"title":"CPU","level":"2.6.2","depth":2,"path":"hardware/cpu/cpu.md","ref":"hardware/cpu/cpu.md","articles":[{"title":"M1","level":"2.6.2.1","depth":3,"path":"hardware/cpu/m1/m1.md","ref":"hardware/cpu/m1/m1.md","articles":[]}]},{"title":"Domain","level":"2.6.3","depth":2,"path":"hardware/domain/domain.md","ref":"hardware/domain/domain.md","articles":[]},{"title":"Gpu","level":"2.6.4","depth":2,"path":"hardware/gpu/gpu.md","ref":"hardware/gpu/gpu.md","articles":[]},{"title":"Memory","level":"2.6.5","depth":2,"path":"hardware/memory/memory.md","ref":"hardware/memory/memory.md","articles":[]},{"title":"Os","level":"2.6.6","depth":2,"path":"hardware/os/os.md","ref":"hardware/os/os.md","articles":[{"title":"Bsd","level":"2.6.6.1","depth":3,"path":"hardware/os/bsd/bsd.md","ref":"hardware/os/bsd/bsd.md","articles":[]},{"title":"Linux","level":"2.6.6.2","depth":3,"path":"hardware/os/linux/linux.md","ref":"hardware/os/linux/linux.md","articles":[{"title":"Ubunt","level":"2.6.6.2.1","depth":4,"path":"hardware/os/linux/ubunt/ubunt.md","ref":"hardware/os/linux/ubunt/ubunt.md","articles":[]},{"title":"Linux","level":"2.6.6.2.2","depth":4,"path":"hardware/os/linux/linux.md","ref":"hardware/os/linux/linux.md","articles":[]}]},{"title":"Mac","level":"2.6.6.3","depth":3,"path":"hardware/os/mac/mac.md","ref":"hardware/os/mac/mac.md","articles":[]}]},{"title":"Physics","level":"2.6.7","depth":2,"path":"hardware/physics/physics.md","ref":"hardware/physics/physics.md","articles":[]},{"title":"Vps","level":"2.6.8","depth":2,"path":"hardware/vps/vps.md","ref":"hardware/vps/vps.md","articles":[]},{"title":"Hardware","level":"2.6.9","depth":2,"path":"hardware/hardware.md","ref":"hardware/hardware.md","articles":[]},{"title":"リモートLinuxサーバ","level":"2.6.10","depth":2,"path":"hardware/リモートLinuxサーバ.md","ref":"hardware/リモートLinuxサーバ.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button","expand-active-chapter"],"root":"./docs","styles":{"website":"styles/website.css","mobi":"styles/mobi.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expand-active-chapter":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"naohito-T","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"naopedia","language":"ja","gitbook":"*"},"file":{"path":"hardware/hardware.md","mtime":"2023-04-16T13:31:13.041Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-04-16T13:31:23.198Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
