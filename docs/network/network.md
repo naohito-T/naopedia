@@ -5,6 +5,10 @@
 
 ネットワーク関連のPage
 
+## AWSで作成するネットワーク依存関係
+
+[![Image from Gyazo](https://i.gyazo.com/f8439b9aa49bee8577d26561aea49b28.png)](https://gyazo.com/f8439b9aa49bee8577d26561aea49b28)
+
 ## ネットワークとインターネットの違い
 
 ネットワークはコンピューターー同士の接続。
