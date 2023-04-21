@@ -1,4 +1,9 @@
-# リモート Linux サーバを開発環境にする
+# ヘッドレス仮装マシン headless virtual machine
+
+>GUIがなく、コマンドラインから操作する仮想マシンのことを「ヘッドレス仮想マシン (headless virtual machine)」と呼ぶことがあります。また、「コマンドライン仮想マシン (command-line virtual machine)」とも呼ばれます。AWSの場合、CLIやAPIを使用して、コマンドラインから仮想マシンを制御することができます。
+
+
+## リモート Linux サーバを開発環境にする
 
 以下を見て触発された
 [リモートの Linux サーバを開発環境にする](https://text.superbrothers.dev/210316-using-a-linux-server-as-a-development-environment/)
@@ -67,4 +72,5 @@ apt upgrade
 apt -y install xrdp tigervnc-standalone-server
 systemctl enable xrdp
 ```
+
 
