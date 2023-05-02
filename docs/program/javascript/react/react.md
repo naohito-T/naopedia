@@ -26,7 +26,7 @@ Reactは以下条件の時再レンダリングされる。
 恩恵 = 開発者が考えることが減る→構造の理解が楽になりバグも減る。
 
 それで起きる性能問題はメモ化で解決するべき。メモ化で増える記述量はReactを使う以上甘受すべきものだし、性能問題との天秤は十分釣り合っている。
-これがライブラリとしての基本思想なので、これから外れるとReact本体の変更に追従するのが大変になる可能性がある。それが表出した一つの例が
+これがライブラリとしての基本思想なので、これから外れるとReact本体の変更に追従するのが大変になる可能性がある。それが表出したひとつの例が
 
 
 
@@ -214,13 +214,6 @@ Reactユーザーのこの問題を解決するために、React 16では**Error
 cssの長い命名規則から解き放たれる
 
 
-## React testing-library
-
-[React testing-library で getByText, getByRole, getAllByRole を比較する](https://dev.to/kaede_io/react-testing-library-de-getbytext-getbyrole-getallbyrole-wobi-jiao-suru-2o26)
-
-
-
-
 ## Tips
 
 
@@ -235,3 +228,11 @@ cssの長い命名規則から解き放たれる
 ## これ面白そう
 [参考URL](https://qiita.com/FumioNonaka/items/be00620c14e8955ea869)
 [これも面白い](https://liginc.co.jp/587025)
+
+
+## React Test
+
+### testing-library
+[React testing-library で getByText, getByRole, getAllByRole を比較する](https://dev.to/kaede_io/react-testing-library-de-getbytext-getbyrole-getallbyrole-wobi-jiao-suru-2o26)
+
+[react-hooks-testing-libraryドキュメント](https://react-hooks-testing-library.com/)
