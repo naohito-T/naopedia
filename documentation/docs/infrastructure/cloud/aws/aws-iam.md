@@ -81,7 +81,7 @@ IAMユーザを作成してCredentialを発行しなくても、一時的にAWS�
 EC2などにIAMロールをアサインした際にも内部で同一の処理が発生している
 
 ## クレデンシャル
-[参考URL]([AWSにおけるクレデンシャル](https://dev.classmethod.jp/articles/iam-bestpractice-1/))
+[AWSにおけるクレデンシャル](https://dev.classmethod.jp/articles/iam-bestpractice-1/)
 
 まず、AWSにおけるクレデンシャルは大きく2種類に分かれる。
 

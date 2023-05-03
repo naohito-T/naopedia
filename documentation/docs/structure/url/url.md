@@ -8,7 +8,6 @@ URL設計についてまとめる
 固い印象を与えたいときは`www`をつける
 
 ## ブログ作成時のURL設計について
-[参考URL](ブログ作成時のWordPressのURL設計について)
 
 ## URL複数単語の場合
 [URL命名規則](https://blog.zelkova.cc/2019/06/case-of-parameters-for-web-api.html)

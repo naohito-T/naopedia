@@ -34,4 +34,3 @@ Gridが視覚的に作成できる。
 [参考URL](https://charactercalculator.com/ja/font-changer/)
 
 ## CSS cubic-bezierをコピペで作成できるサイト
-[参考URL](実際の動きを見ながらCSSのcubic-bezierをコピペできるWebサービス「Easings」)
