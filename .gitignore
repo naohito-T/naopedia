@@ -13,3 +13,6 @@ image
 
 # log
 yarn-error.log
+
+# tmp
+tmp
