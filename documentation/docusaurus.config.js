@@ -21,7 +21,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/naohito-T/naopedia/tree/edit/main/',
+          editUrl: 'https://github.com/naohito-T/naopedia/edit/main/documentation/docs/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
