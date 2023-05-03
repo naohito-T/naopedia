@@ -41,13 +41,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         },
         items: [
           {
-            label: 'Docs',
-            items: [
-              {
-                label: 'naopedia docs',
-                to: '/docs/intro',
-              },
-            ],
+            label: 'docs',
+            to: '/docs/intro',
           },
           {
             label: 'Community',
