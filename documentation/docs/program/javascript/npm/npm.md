@@ -1,4 +1,12 @@
-# package.json 覚書
+# npm
+
+
+## npmとは
+
+npmとはNode.jsのパッケージを管理するシステム、パッケージ管理システム。  
+アプリケーションを作成する際、便利なパッケージをそのプロジェクトにインストールして、使用することができる。
+
+## package.json 覚書
 
 npmの管理ファイルであるpackage.jsonについて記載する。
 
@@ -16,8 +24,6 @@ npmの管理ファイルであるpackage.jsonについて記載する。
 
 **注意**
 >この移行が終わったタイミングで、GitHubがnpmを買収することが発表され、将来的にnpm private registryはGitHub Packages Registryへと統合される予定です。
-
-
 
 ## pre/postがついたスクリプト
 
@@ -130,6 +136,12 @@ npm ls glob-parent
 # or
 yarn list --pattern glob-parent
 ```
+
+## npm workspace
+[参考URL](https://gist.github.com/LeeDDHH/2fb2959ddeb5564ca157605f7830a24a)
+
+ワークスペースの最大メリットは重複したパッケージをインストールしなくても良くなること。  
+ルートディレクトリの`node_modules`へ依存関係をインストールする
 
 ## yarn workspace
 [リファレンス](https://classic.yarnpkg.com/en/docs/workspaces/)

@@ -5,21 +5,27 @@
 
 ---
 
-## 文字コード
+## デフォルト文字コード
+
+MySQLのデフォルトの文字コードは、UTF-8ではなく`latin1`となっている。
+
+## 文字コードをUTF-8にする
 [utf8とutf8mb4](https://penpen-dev.com/blog/mysql-utf8-utf8mb4/)
 
 MySQLではなぜ2種類あるのか
 
-utf8
+UTF-8
 1~3バイトまで対応
 
 utf8mb4
 1~4バイトまで対応
 
-## 本来のUTF-8
+## 本来のUTF8
 
-本来UTF-8は1~4バイトで文字を表すルール
-なので、MySQLのutf8はそもそもUTF-8と呼べない。
+本来のUTF8は`1~4`バイトで文字を表すルール  
+そのため、MySQLのutf8はそもそもUTF-8と呼べない。
+
+---
 
 ## MySQLのSQLについて
 
