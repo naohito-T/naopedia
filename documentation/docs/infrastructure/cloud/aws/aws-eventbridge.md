@@ -15,4 +15,3 @@ AmazonSQSなど、それぞれのサービスに対して同じメッセージ�
 [![Image from Gyazo](https://i.gyazo.com/1942efa706a04b40665e28e4ae956b9b.png)](https://gyazo.com/1942efa706a04b40665e28e4ae956b9b)
 
 
-
