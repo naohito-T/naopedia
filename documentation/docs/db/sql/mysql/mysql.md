@@ -9,6 +9,12 @@
 
 MySQLのデフォルトの文字コードは、UTF-8ではなく`latin1`となっている。
 
+- dbの文字コードを確認する
+` SHOW VARIABLES LIKE 'character_set_database';`
+
+- mysqlクライアントの文字コードを確認する
+`status;`
+
 ## 文字コードをUTF-8にする
 [utf8とutf8mb4](https://penpen-dev.com/blog/mysql-utf8-utf8mb4/)
 
