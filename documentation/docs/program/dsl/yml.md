@@ -1,11 +1,19 @@
 # YAML
-
-ymlファイルトピックについてまとめる
-
 [ymlでしか使えない構文など](https://nju33.com/notes/github-actions/articles#%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3)
 
-ymlを継承した時などparseしてくれる。
+ymlを継承した時などparseしてくれる。  
 [参考URL](http://yaml-online-parser.appspot.com/?yaml=foo%3A+%26foo%0A++a%3A+1%0A++b%3A+2%0A++c%3A+3%0A%0Abar%3A%0A++%3C%3C%3A+*foo%0A++c%3A+%22changed%22%0A++d%3A+4%0A%0Abaz%3A%0A++%3C%3C%3A+%26awesome%0A++++awesome%3A+%22cat%22%0A++great%3A+%22god%22%0A++bad%3A+%22human%22%0A%0Astatus%3A%0A++%3C%3C%3A+*awesome%0A++work%3A+true&type=json)
+
+## ymlデータ型
+
+YAMLでは、以下のデータ型を表現できる。
+
+- スカラー値 (Scalar value): 文字列、整数、浮動小数点数、真偽値、null
+- シーケンス (Sequence): 配列、リスト
+- マッピング (Mapping): オブジェクト、連想配列、ハッシュ
+
+また、YAMLは自己記述型言語であり、自由度が高いため、オリジナルのデータ型を作成することもできる。  
+ただし、YAMLの処理系がそのデータ型を解釈できるように、対応する処理を記述する必要があります。
 
 ## Online YAML Parser
 [参考URL](https://yaml-online-parser.appspot.com/)
