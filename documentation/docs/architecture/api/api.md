@@ -4,9 +4,6 @@
 [Express×Helmetでウェブセキュリティを学ぶ](https://qiita.com/qianer-fengtian/items/148602c437e1703aa764)  
 [WebLogic Server のチューニングにおける重要推奨事項](https://docs.oracle.com/cd/F25597_01/document/products/wls/docs92/perform/topten.html)
 
-補足すると
->Oracle WebLogic Serverは、Javaなどのエンタープライズ・アプリケーションをオンプレミスやクラウドで開発、導入、稼働するために統合された拡張可能なプラットフォームです。WebLogic Serverは、Java Enterprise Edition（EE）とJakarta EEの堅牢でマチュア、そしてスケーラブルな実装を提供します。
-
 ## 冪等な処理を行うAPIの作り方
 
 何度も呼び出されても変わらず返すためにはDBなどにプライマリーキーを設定する。  
@@ -38,7 +35,7 @@
 - 監視、可観測性、ログ
 
 ## API設計に関するまとめ
-[参考URL](https://qiita.com/kudojp/items/47b7486ee2f02e841a95)
+[参考URL](https://qiita.com/kudojp/items/47b7486ee2f02e841a95)  
 [REST_APIのコツ](https://www.slideshare.net/pospome/rest-api-57207424)
 
 - LSUDs
@@ -52,10 +49,10 @@ Hypermedia As The Engine Of Application State（リソース同士に関連性�
 
 ## APIリクエスト(POST/PUT)のcontent-type
 
-- application/x-www-form-urlencoded
+- application/x-www-form-urlencoded  
 body部分にkey-value形式で送信したいデータを格納する。
 
-- application/json（こっちのが主流）
+- application/json（こっちのが主流）  
 body部分にJSON形式で送信したいデータを格納する。
 
 ## APIレスポンスのcontent-typeとフォーマット
@@ -69,45 +66,11 @@ body部分にJSON形式で送信したいデータを格納する。
 
 - application/vnd.collection+json(Collection JSON)
 
-## レスポンス圧縮
+## レスポンス圧縮する必要性
 [gzip圧縮方法について徹底解説](https://digitalidentity.co.jp/blog/creative/gzipcompress.html)
 
 
 ---
-
-
-## Session セッション
-[セッションのクッキーを設定する場合のベストプラクティス](https://blog.ohgaki.net/session-and-cookie)
-
-セッションはCookieを使って実現するのが一般的
-HTTPセッションは通常クッキーを利用して行います。クッキーを利用したセッションの場合、お薦めする設定は以下の通りです。
-
-1. ドメイン名は指定しない
-
-2. パスはルート（/）を指定する
-パスですが、アプリの中にはURIパスを検出してパスを設定してクッキーを送るようにしている物もあります。ルート（/）とサブディレクトリ（/app1/など）にクッキーが設定されている場合、ルートの方が優先されるので安全面を考えるとルートの方が良いです。
-
-3. セッション管理用のクッキーはセッションクッキー（有効期間0）にする
-常識として知っておくべき知識です。クッキーの有効期限が0の場合、普通のブラウザは**クッキーをメモリにみ保存します。**
-つまりブラウザを終了させるとクッキーが消えます。セッション管理には必ず有効期限0を指定すべきです。
-
-4. httponly属性を付ける
-
-5. 可能な場合は必ずsecure属性をつける
-
-6. 複数アプリケーションを利用する場合はsession.nameまたはsession_name()でセッションクッキー名で指定する（アプリケーションの固有名デフォルトで設定し、設定項目として変更できるようにする）
-
-## Session管理でやってはいけないこと
-
-1. 有効期限の長いセッションを再ログイン用に使う
-有効期限の長いセッションに良いことはない。
-たとえば、公共のPCや友人のPCを使った時にブラウザを閉じてもまだログインした状態が続くのは良くありません。
-自動ログインを有効にする場合は別の使い捨ての認証用クッキー（再認証用のトークン）を用い、ログインする場合に自動ログインするか、しないか選択できるようにしてユーザが制御できるようにします。ユーザが明示的にログオフした場合は再認証トークンも必ず無効にします。
-
-2. Trans SIDを不要なのに有効にする
-Trans SID(URLの書き換えによるセッション）を絶対に利用してはならない、とは言いませんが特別な理由がない限り有効にしてはなりません。ページやURLをメールなどで送信するとセッションIDが漏洩します。
-
-最後にセッションIDは少なくとも定期的にsession_regenerate_id()で更新すべきです。ログインした時の更新は必須です。
 
 ## リクエストをparseする
 
@@ -128,13 +91,6 @@ Content-Typeがapplication/x-www-form-urlencodedのケース
 
 ---
 
-## Mockデータに関して
-
-テストデータ作成ライブラリを使うか
-自作を使うか
-
----
-
 ここからは書籍Webを支える技術を参考にする
 
 
@@ -147,7 +103,7 @@ Content-Typeがapplication/x-www-form-urlencodedのケース
 
 アーキテクチャ: ブラウザ/サーバ/プロキシ/HTTP/URI/HTML
 ↓
-アーキテクチャスタイル（マクロ）アーキテクチャパターン): REST/MVC(Model-View-Controller)/パイプフィルタ/イベントシステム
+アーキテクチャスタイル（マクロ）アーキテクチャパターン: REST/MVC(Model-View-Controller)/パイプフィルター/イベントシステム
 
 
 ## デザインパターン
