@@ -1,52 +1,28 @@
 # React Hooks
-
-React HooksはReact 16.8で追加された新機能であり、stateなどのReact機能をクラスコンポーネントを使用せず使えるようになる。
-
-関数型コンポーネントについて
-関数型のReactコンポーネントにおいて、内部状態またはプロパティが変更されると、コンポーネントの関数が再実行されるからです。
-関数型のReactコンポーネントにおいて、関数の結果が前回の呼び出し時と異なれば、レンダリングが発生するからです。
-
-## カスタムフック
-[カスタムフック参考URL](https://qiita.com/sonatard/items/617f324228f75b9c802f)
-
-useStateやuseEffectなどロジックは分離できる。
-それをhooksフォルダーに入れて分け、ファイル名の先頭にuseとつけるのが慣習とのこと。
->React Hooks以前は、ロジックの再利用がコンポーネントに依存してしまいロジック単独でのモジュール化が難しいという問題がありました。
->しかしReact Hooksのカスタムフックという独自のフックを作成する機能を使うことで、Viewに依存するこなくロジックだけを再利用することができるようになります。
-
-- カスタムフックを作る理由
-カスタムフックを作る理由は、普通の関数を作る理由とまったく同じであり、すなわち責務の分離とかカプセル化です。 一度カスタムフックとして分離された以上、インターフェイスの内側のことはカスタムフック内で完結すべきです。 カスタムフックを使う側はカスタムフックの内側のことを知るべきではなく、その逆も然りです。
-
-
-
-
-## Hooks
-
-コレが現在の主体
-
 [主要なhooks参考](https://qiita.com/seira/items/0e6a2d835f1afb50544d)
+
+React HooksはReact 16.8で追加された新機能であり、stateなどのReact機能をクラスコンポーネントを使用せず使えるようになるもの
+
 ## useState
 
-関数が状態を持てるようになる。
-関数とは？もともとの定義って決まった処理を返す。じゃなかったっけ。
-それに状態をもたせるようにした。
+**関数が状態**を持てるようになる。  
+関数とは？もともとの定義って決まった処理を返すというものを理解しておくこと。  
+それに状態をもたせるようにした。  
 一番トップのコンポーネントでuseStateを宣言して子コンポーネントで共有する。
-→用はひとつの関数内で状態を管理する。
-
-
 
 ## useEffect
 [useEffect が API 呼び出しを行うのに適していない理由](https://medium.com/wesionary-team/why-useeffect-is-a-bad-place-to-make-api-calls-98a606735c1c)
-関数内のある状態に着目して処理をほどこす。
 
-- useEffect無限ループ
+関数内の**ある状態に着目して処理**をほどこす。
+
+### useEffect無限ループについて
 
 >関数型の React コンポーネントにおいて、内部状態またはプロパティが変更されると、コンポーネントの関数が再実行されるからです。
 >関数型の React コンポーネントにおいて、関数の結果が前回の呼び出し時と異なれば、レンダリングが発生するからです。
 
 ## useRef
 
-関数コンポーネントでは、Classコンポーネント時のref属性の代わりにuseRefを使って要素への参照を行う。
+関数コンポーネントでは、Classコンポーネント時のref属性の代わりにuseRefを使って要素への参照を行う。  
 ※useRefではuseStateのようにコンポーネント内での値を保持することができる。
 
 - DOMの参照例
@@ -70,7 +46,7 @@ const App = () => {
 
 ## useStateとuseRefの違い
 
->コンポーネントの再レンダリングはしたくないけど、内部に保持している値だけを更新したい場合は、保持したい値をuseStateではなく、useRefを利用するのが良さそうです。
+コンポーネントの再レンダリングはしたくないけど、内部に保持している値だけを更新したい場合は、保持したい値をuseStateではなく、useRefを利用するのが良い。
 
 ## useReducer
 
@@ -84,7 +60,7 @@ const App = () => {
 const [state, dispatch] = useReducer(reducer, initialState);
 ```
 
-dispatchを実行すればレンダリングが走る.
+dispatchを実行すればレンダリングが走る
 
 - 使用例
 たとえば、レンダリングが走らないな。とか思ったときに強制的にレンダリングをかけたい場合
@@ -95,22 +71,37 @@ const [_, dispatch] = useReducer((boolean) => !boolean, false);
 あとはdispatchを特定の場所で実行すればレンダリングがかかる。
 
 ## useContext
+[React Context APIわかりやすい](https://gotohayato.com/content/523/)  
+[useContextでundefinedを抜く](https://medium.com/@rivoltafilippo/typing-react-context-to-avoid-an-undefined-default-value-2c7c5a7d5947)
 
-[React Context APIわかりやすい](https://gotohayato.com/content/523/)
+**※コンポーネントの再利用をより難しくするため慎重に利用しなくてはならない。**  
+useContextとは、Context機能をよりシンプルに使えるようになった機能（JSのContextのスタックの概念）
 
-**※コンポーネントの再利用をより難しくするため慎重に利用しなくてはならない。**
-useContextとは、Context機能をよりシンプルに使えるようになった機能(JSのContextのスタックの概念)
+useContext() + Contextオブジェクト + Providerコンポーネント  
+これがuseContextの正体
 
-**重要: useContextを呼び出すコンポーネントはコンテキストの値が変化するたびに毎回再レンダーされる。**
+## Context APIについて
 
-useContext()の使う前に、ReactのContext APIを理解する上で重要な3つの概念について理解するべき
+
+Context APIとは、Contextオブジェクトとそれに備わったProviderとConsumer 、この3つを提供するもの。  
+
+フックのひとつであるuseContext()はこの`Consumer`の代わりになるものです。  
+Consumerをそのまま使うと複雑になりがちな処理が`useContext()`を使うとシンプルに書ける。  
+
+### useContext重要なこと
+
+useContextを呼び出すコンポーネントはコンテキストの値が変化するたびに毎回再レンダーされる。
+
+### useContextを理解するために
+
+useContextを使う前に、ReactのContext APIを理解する上で重要な3つの概念について理解するべき
 
 1. Contextオブジェクト
 2. Context Provider
 3. Context Consumer
 
-- Context オブジェクト
-Contextオブジェクトとは、コンポーネントツリー上直接の親子関係にない(=ツリー上離れたところにいる)
+- Contextオブジェクト
+Contextオブジェクトとは、コンポーネントツリー上直接の親子関係にない（=ツリー上離れたところにいる）  
 コンポーネント間で同じ値を共有するための道具。**範囲が限定されたグローバル変数のようなものと理解する**
 
 各ContextオブジェクトにはProviderとConsumerという2つのコンポーネントが備わっている
@@ -121,18 +112,13 @@ Context.Consumer
 ```
 
 - Context Provider
-Context Providerとは、Contextオブジェクトが持つコンポーネントで**対象の値の利用可能な範囲を指定するために使うもの**
+Context Providerとは、Contextオブジェクトが持つコンポーネントで**対象の値の利用可能な範囲を指定するために使うもの**  
 具体的には**コンポーネントツリー上でContext Providerの内側にあるすべてのコンポーネントからそのProviderに対応したコンテキストの値を利用できる。**
 
 - Context Consumer
 Context Consumerとは、Context Providerと同じくContextオブジェクトに備わったコンポーネントのひとつで**コンテキスト値を利用したい場合で使うもの**
 
-Context Consumerを使えばコンポーネントツリーを外に見ていって一番近くにあるContext ProviderのContextに紐付けられた値にアクセスすることができる。
-
-Context API とは、Context オブジェクトとそれに備わった Provider と Consumer 、この 3 つを提供するものです。
-
-フックのひとつである useContext() はこの Consumer の代わりになるものです。 Consumer をそのまま使うと複雑になりがちな処理が useContext() を使うとシンプルに書けます。 今回は Consumer は使わず、この「 useContext() + Context オブジェクト + Provider コンポーネント」の組み合わせで Context API を利用する形を紹介します。
-
+Context Consumerを使えばコンポーネントツリーを外に見ていって一番近くにあるContext ProviderのContextに紐付けられた値にアクセスすることができる。  
 
 ## React パフォーマンス最適化API
 [以下のは参考から](https://zenn.dev/nus3/articles/1978a344cfaa4d3359c1)
@@ -202,3 +188,21 @@ const App: React.VFC = () => {
 >seCallbackは、初回の呼び出し（Appの初回のレンダリング）では渡された関数をそのまま返します。 よって、handleClickはconsole.log("clicked!");を実行する関数となります。 Appが再レンダリングされたとき、useCallbackの返り値としては初回レンダリング時のときの関数オブジェクトが再利用されます（useCallbackに渡された関数オブジェクトは今回は捨てられます）。 つまり、handleClickは初回のレンダリング時も2回目のレンダリング時も同じ（===の意味で等しい）関数オブジェクトになります1。 useCallbackを噛まさない場合は、handleClickは毎回新しく作られた関数オブジェクトとなるでしょう。
 
 >逆の見方をすれば、useCallbackの使用に常に意味があるわけではないということです。 このように、**React.memoで囲われたコンポーネントに関数を渡すような場合でなければuseCallbackが無駄**ということになります。 useMemoやuseCallbackの使用に慎重になる人はこのような無駄を気にしているのでしょう。
+
+
+## カスタムフック
+[カスタムフック参考URL](https://qiita.com/sonatard/items/617f324228f75b9c802f)
+
+コンポーネントのロジックを分割できる。  
+※ルールとしてプレフィックスに`use`をつけないといけない  
+
+>React Hooks以前は、ロジックの再利用がコンポーネントに依存してしまいロジック単独でのモジュール化が難しいという問題がありました。
+>しかしReact Hooksのカスタムフックという独自のフックを作成する機能を使うことで、Viewに依存するこなくロジックだけを再利用することができるようになります。
+
+### カスタムフックを作る理由
+
+カスタムフックを作る理由は、普通の関数を作る理由とまったく同じ。  
+すなわち責務の分離とかカプセル化。  
+一度カスタムフックとして分離された以上、インターフェイスの内側のことはカスタムフック内で完結すべきです。  
+カスタムフックを使う側はカスタムフックの内側のことを知るべきではなく、その逆も然りです。
+
