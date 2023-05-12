@@ -13,6 +13,31 @@
 >すでにユーザー数が増加してアプリケーション全体のパフォーマンスが劣化していることに加えて、アプリケーションの運用業務の比率も高まっています。
 >また開発期間が長くなることも懸念しています。さらに、今後もユーザー数、そして購入数が増えることを考えたときに、領収書を作る機能をSampleBookStoreの中心的な機能から切り離すことにより、負荷の軽減ができると考えました。要件として購入と同期的に実行する必要がなく、「なるべく早く」で十分な点もポイントです。筆者自身の実体験としても、購入後にすぐ領収書が必要だとしても数分間は待てますし、場合によっては月末の経費精算時にまとめてダウンロードすることもあります。また、セール時期など、大量に購入が行われる時期には領収書を作る機能にもより負荷がかかります。こういった背景から、非同期処理として実装することが望ましいと考えました
 
+## Lambda実行方法
+
+### cliから実行する場合  
+
+```sh
+$ aws lambda invoke --function-name alb-backend-anycolor-dev-migration --cli-binary-format raw-in-base64-out --payload '{"type": "show"}' a.json
+```
+
+`--payload`はLambdaがリクエストを受け取ったときによしなにjsonとしてparseしてくれる。
+
+```typescript
+export const handler: Handler<RequestSchema> = async (event, context) => {
+  console.log(event.type)
+};
+```
+
+### httpで叩きたい場合
+
+>Lambda関数を（AWS認証無しの）HTTPS経由で実行するには、Lambdaの前段にAmazon API Gatewayを設置する必要があった。
+
+API Gatewayをかます必要があったが、現在はLambda自体がURLを持てるようになっている。
+
+
+
+
 ## Lambdaのセキュリティ
 [Lambdaの落とし穴 - 脆弱なライブラリによる危険性とセキュリティ対策](https://blog.flatt.tech/entry/lambda_library_security#AWS-Lambda-%E3%81%A7%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3%E7%9A%84%E3%81%AB%E6%B0%97%E3%81%AB%E3%81%99%E3%81%B9%E3%81%8D%E7%82%B9)
 
