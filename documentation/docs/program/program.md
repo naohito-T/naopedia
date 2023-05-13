@@ -570,3 +570,55 @@ increment(); // 3
 
 >この例では、counter()関数が実行されると、countという変数が定義されます。その後、counter()関数から関数を返すことで、クロージャーを作成しています。返された関数は、外部の変数countを参照し、その値をインクリメントしてコンソールに出力します。
 >このように、クロージャーを使用することで、関数内で変数を保持し、その値を引き継いで利用することができます。また、ReactのuseEffectフックでは、クロージャーを使用することで、副作用を制御することができます。
+
+## デコレーター
+
+JavaScriptにコンパイルされた後は、デコレーターは一般的に関数として表現されます。  
+デコレーターは、通常、クラスやクラスのメソッドなどの関数定義の前に@記号を付けて使用されます。たとえば次のようなコードがあります。
+
+```typescript
+function log(target, name, descriptor) {
+  const original = descriptor.value;
+  descriptor.value = function(...args) {
+    console.log(`Calling "${name}" with`, args);
+    const result = original.apply(this, args);
+    console.log(`"${name}" returned`, result);
+    return result;
+  };
+  return descriptor;
+}
+
+class Calculator {
+  @log
+  double(n) {
+    return n * 2;
+  }
+}
+```
+
+この例では、`log`というデコレーター関数を定義し、`@log`を用いて`Calculator`クラスの`double`メソッドにデコレーターを適用しています。コンパイルされたJavaScriptのコードは以下のようになります。
+
+```javascript
+function log(target, name, descriptor) {
+  const original = descriptor.value;
+  descriptor.value = function(...args) {
+    console.log(`Calling "${name}" with`, args);
+    const result = original.apply(this, args);
+    console.log(`"${name}" returned`, result);
+    return result;
+  };
+  return descriptor;
+}
+
+class Calculator {
+  double(n) {
+    return n * 2;
+  }
+}
+__decorate([
+  log
+], Calculator.prototype, "double", null);
+```
+
+コンパイルされたJavaScriptのコードでは、`__decorate`という関数が追加されています。この関数は、デコレーターを適用したメソッドに関する情報を受け取り、対応するプロパティディスクリプターを変更しています。  
+つまり、デコレーターは**静的な型チェックやIDEの自動補完などの恩恵を受けつつ、ランタイムでの動作を変更するためのシンタックスシュガー**
