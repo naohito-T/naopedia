@@ -90,55 +90,6 @@
 
 []: ブラケット
 
-## api ディレクトリ構造 example
-
-```
-|- @types ライブラリの型定義の拡張
-|- application domain/serviceの実装部分
-|- db Migrationファイル
-|- domain
-    |- entity ORMの定義が書かれている
-    |- service できることの記載
-|- handler ここがメインのHandler実装
-    |- [旧]{tmp} ここはリファクタで消える
-|- helper entityの拡張
-|- interface
-    |- endpoint
-    |- params
-        |- builder Entityなどからtypesに整形するための処理
-        |- error エラーの定義が書かれている
-        |- schema Validationに使っていたのちに消す予定
-        |- types Request, Responseの値の型を定義している
-    |- router ここがAPIの要件
-|- job Job群
-|- lib 各種ライブラリや、拡張
-    |- aws
-    |- express
-    |- file
-    |- random
-    |- slack
-    |- time
-    |- twilio
-    |- vivox
-|- middleware ミドルウェア群が書かれている
-|- [旧] models
-|- platform - Auth系の処理がまとまっている
-|- registration - entityごとでDBへのアクセスのまとまった処理
-|- setting - 設定ファイルが入っている
-|- [旧] utils - utility
-```
-
-## バージョン
-
-[参考URL](https://docs.oracle.com/cd/E19253-01/819-0395/chp-vers-1/index.html)
-
-x.y.z
-
-x : メジャーな
-x.y : マイナーリリース
-x.y.z : マイクロリリース
-
-
 ## プロセスとスレッド
 
 [参考URL](https://lab.mo-t.com/blog/andonlabo-process-and-thread)
