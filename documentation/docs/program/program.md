@@ -216,6 +216,34 @@ const isLatestTerm = async (user: User): boolean => {
 };
 ```
 
+### 純粋関数参考
+
+以下に、引数を直接変更する例と新しい値を返す例を示します。
+
+引数を直接変更する例：
+
+```typescript
+function addToCart(item: Item, cart: Cart): void {
+  cart.items.push(item);
+  cart.total += item.price;
+}
+```
+
+この関数は、引数の`cart`オブジェクトの`items`プロパティと`total`プロパティを変更しています。これは副作用を持つ関数です。
+
+新しい値を返す例：
+
+```typescript
+function addToCart(item: Item, cart: Cart): Cart {
+  return {
+    items: [...cart.items, item],
+    total: cart.total + item.price,
+  };
+}
+```
+
+この関数は、引数の`cart`オブジェクトを変更するのではなく、新しい`Cart`オブジェクトを返します。これは副作用を持たない関数であり、純粋関数と呼ばれます。
+
 ### 非同期関数
 
 非同期関数は副作用を持つ可能性がある。  
