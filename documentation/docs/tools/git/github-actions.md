@@ -9,6 +9,10 @@
 ## dependabot.yml
 [dependabot.yml設定リファレンス](https://docs.github.com/ja/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file#reviewers)
 
+## GitHub actionsまとめる
+[GitHub ActionsのTipsやベストプラクティスを淡々と記録する](https://zenn.dev/tmknom/scraps/f05911dad51689)  
+[GitHub Appsトークン解体新書：GitHub ActionsからPATを駆逐する技術](https://zenn.dev/tmknom/articles/github-apps-token)
+
 ## GitHub ActionsからIAMロールを利用する。
 
 Actions secretsはGitHub側で暗号化されていますが、アクセスキーに紐づくAWS IAM（Identity and AccessManagement）ポリシーも必要最低限の権限付与に留めることが重要。
@@ -195,7 +199,7 @@ needsなどを指定しない場合は並列で実行される
 
 - 共有したい場合
 解決策の1つにArtifactsのUpload/Downloadがある。
-残念ながら今のところGitHub ActionsにはJob間で共有可能なグローバルスコープの変数などはなく...
+残念ながら今のところGitHub ActionsにはJob間で共有可能なグローバルスコープの変数などはない。
 
 
 ```yml
@@ -298,7 +302,7 @@ GitHub自身が作成しているActionがリポジトリで公開されてい�
 ```
 
 **プルリクエストの内容で実行するかしないかを決める**
-コンテキストgithubにワークフローに関する情報が色々入っている
+コンテキストはGitHubのワークフローに関する情報が色々入っている
 たとえば、プルリクエストイベントでトリガーするワークフローだとgithub.event.pull_requestにGitHub REST APIのpull_request相当のプルリクの情報が格納されている
 
 [githubコンテキスト](https://docs.github.com/ja/actions/learn-github-actions/contexts)
@@ -340,7 +344,6 @@ GitHub自身が作成しているActionがリポジトリで公開されてい�
 ----
 
 ## workflows 各コマンド名について
-
 [チートシート](https://zenn.dev/masaaania/articles/c930f2f755a577)
 
 ```yml
@@ -380,7 +383,7 @@ on:
 以下のことができるようになる
 ・Web UIから任意のタイミングで実行
 ・実行時にパラメーターを渡す
-・repository_dispatch のうに curl でも呼び出せる?
+・repository_dispatchのcurlでも呼び出せる
 
 ## workflowの構造
 
@@ -721,7 +724,7 @@ GitHub Enterprise Serverはオンプレミス用のアプライアンス（意:�
 [DeNAのblog](https://engineering.dena.com/blog/2019/12/dena-github-enterprise-server/#:~:text=GHES%E3%81%AF%E5%88%A9%E7%94%A8%E8%80%85%E3%81%AE,%E3%81%A8%E5%A4%A7%E3%81%8D%E3%81%8F%E7%95%B0%E3%81%AA%E3%82%8B%E7%89%B9%E6%80%A7%E3%81%A7%E3%81%99%E3%80%82)
 
 GHESはGitHubサービスアプライアンスサーバ。
-以前は単にGitHub Enterpriseと呼ばれていましたが、GitHub.comのbusiness cloudサービスを拡充し、クラウド側の GitHub.com business cloudとオンプレミス側のGitHub Enterpriseを合わせて、GitHub Enterpriseと呼ぶようになりました。そしてクラウド側に限定する場合はGitHub Enterprise Cloud、そしてここで取り上げるオンプレミス側をGitHub Enterprise Serverと呼ぶようになりました。昨今は単に「GitHub Enterprise」で検索などすると、GitHub Enterprise Cloudな記事が多くなったような気がして寂しい限りです。
+以前は単にGitHub Enterpriseと呼ばれていましたが、GitHub.comのbusiness cloudサービスを拡充し、クラウド側のGitHub.com business cloudとオンプレミス側のGitHub Enterpriseを合わせて、GitHub Enterpriseと呼ぶようになりました。そしてクラウド側に限定する場合はGitHub Enterprise Cloud、そしてここで取り上げるオンプレミス側をGitHub Enterprise Serverと呼ぶようになりました。昨今は単に「GitHub Enterprise」で検索などすると、GitHub Enterprise Cloudな記事が多くなったような気がして寂しい限りです。
 
 ## Private ActionsWorkflow Stepを共有する
 [PrivateリポジトリのActionsWorkflow内Stepを共有するためCompositeRunStepを外部参照無しに同リポジトリ内で完結させてみた](https://dev.classmethod.jp/articles/composite-run-step-with-private-repos/)
