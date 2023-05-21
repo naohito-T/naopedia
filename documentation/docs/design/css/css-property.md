@@ -2,6 +2,41 @@
 
 よくわからないプロパティを記していく
 
+## width
+
+- 100%とautoの違い
+
+> 【width:auto】の場合は、左右の余白 10px を含んで横幅 100%になります。 【width:100%】の場合は、左右の余白 10px を含まずに横幅 100%になるため、実際の横幅は 100%+20px（左右の余白分）になります。
+たとえばPC版のコーディングから行うとして、widthをpx指定したときなどはブレイクポイントを設けてSP版用に幅を上書きする。
+この流れはよくある。共に、親要素の幅に合わせるとういう意味では同じですが、paddingやborderを指定する場合にちょっと違ってきます。
+
+MediaQueriesをつかってwidthを上書きする場合はこちらが便利です。
+
+
+width autoだとflexのjustifyがきく
+
+>どんなシーンで使えるか
+>画像を例にすれば、ページいっぱいの背景画像などでしょうか。モバイル端末は向きによってタテ・ヨコの長さが変わるので、JavaScript で向きの判定処理をして動的にサイズを調整するといったことを自前で作る必要がなくなるかと思います。
+
+vw(viewport width) ビューポートの幅に対する割合
+vh(viewport height) ビューポートの高さに対する割合
+vmin(viewport minimum) ビューポートの幅と高さのうち、値が小さい方に対する割合
+vmax(viewport max) ビューポートの幅と高さのうち、値が大きい方に対する割合
+
+## vw, vh, vmin, vmaxについて
+[参考URL(一番わかりやすい)](https://coliss.com/articles/build-websites/operation/css/css-viewport-units.html)
+
+### vw
+
+`4vw` はビューポートの幅を基準としています。ビューポートとは、ブラウザの表示領域のこと。  
+`vw`（viewport width）は、ビューポートの幅に対する割合を表す単位。  
+ビューポートの幅を100とした場合、`1vw` はビューポートの幅の1%に相当します。同様に、`4vw` はビューポートの幅の4%を意味します。
+
+つまり、`4vw` の値を持つパディングは、ビューポートの幅に対して可変的に変化します。ビューポートが広い場合、パディングも広くなります。ビューポートが狭い場合、パディングも狭くなります。
+
+たとえば、ビューポートの幅が800pxの場合、`4vw` の値は `0.04 * 800 = 32px` となります。したがって、パディングは32pxとなります。
+このようにして、ビューポートの幅に応じて要素のパディングが自動的に調整されるため、レスポンシブなデザインが実現できます。
+
 ## linear-gradient()
 
 liner-gradient()はCSSの関数で、2つ以上の色の連続的な直線に沿った変化から構成される画像を生成する
@@ -148,3 +183,27 @@ clamp()を使うと記述が1行で済むうえに、可読性とデザインの
 
 ## transform 3D関連
 [参考URL](https://ics.media/entry/210519/)
+
+## CSSのz-index: 10000;はいらなくなる。
+[参考URL](https://coliss.com/articles/build-websites/operation/css/what-is-the-top-layer.html)
+
+## box-shadowは古い？
+[参考URL](https://ferret-plus.com/8961?page=2)
+
+## object-fit
+[わかりやすい](https://webdesignday.jp/inspiration/technique/css/7976/)
+
+`object-fit: fill`  
+object-fitはCSSだけで画像をコンテナーにフィットさせてトリミングもできるプロパティ
+
+## fit-content
+[参考URL](https://pulpxstyle.com/fit-content/)
+
+`width: fit-content`
+
+## calc()
+[参考URL(コリス)](https://coliss.com/articles/build-websites/operation/css/how-calc-works-by-ire.html)
+
+calc()は計算された値がブラウザに反映されるのではなく**ブラウザによって解析された値が実際のcalc()の計算式となる。**
+これはブラウザにおける値がより動的になり、ビューポートの変更に合わせて適応できることを意味する（都度計算される）
+たとえば、ビューポートの高さから絶対値を引いた要素をビューポートの変更に合わせて適応させることができます。
