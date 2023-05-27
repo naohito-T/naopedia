@@ -70,7 +70,7 @@ flashは**直後のリクエスト**でのみ参照可能になるという特�
 
 ## 電話番号認証
 
-userが電話番号で送る。一意な認証コードを発行しSMSでユー ザに送信。送信した認証コードをユーザに入力してもらい認証を完了する。
+userが電話番号で送る。一意な認証コードを発行しSMSでユーザに送信。送信した認証コードをユーザに入力してもらい認証を完了する。
 ユーザが電話番号を入力したらSMSを送信するのはtwilioなどを使用する。
 
 ## 公開・非公開
@@ -79,3 +79,6 @@ userが電話番号で送る。一意な認証コードを発行しSMSでユー 
 
 ## コピーライトについて
 [参考URL](https://www.evoworx.co.jp/blog/small-tags-in-copyright/)
+
+## 画像をトリミングする
+[動きがわかりやすい](https://codesandbox.io/s/react-image-crop-demo-with-react-hooks-forked-8iq6w3?file=/src/canvasPreview.ts)
