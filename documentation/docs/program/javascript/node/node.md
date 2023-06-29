@@ -69,6 +69,16 @@ console.log(process.argv[1], "c.js", "path.resolve", require("path").resolve("")
 
 Streamのメリットは大きな容量のファイルを読み取り・書き込み・加工する際に**ちょっとずつ処理**することで最大メモリ使用量を抑えることがメリット。
 
+## nodeのversion上げ方
+[参考URL](https://zenn.dev/ymmt1089/articles/20221120_node_16to18)
+
+nodeだけを上げたい場合
+
+node_modulesとlockファイルを消して対象のnode versionに変更したあとinstallする
+
+依存ライブラリも追従したい場合
+
+yarnであれば上記対応後、yarn upgradeを実施する
 
 
 
