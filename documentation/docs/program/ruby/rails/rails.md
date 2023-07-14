@@ -1242,7 +1242,6 @@ webpackerは、自前でwebpackをRailsに導入せずとも簡単にwebpackをR
 [参考URL](https://qiita.com/tomokazu0112/items/89f69c47761ac782ce13)
 
 ## Rails Formオブジェクト
-
 [参考URL](https://qiita.com/ren0826jam/items/0effb716067a861e71f2)
 
 モデルとフォームの責務を切り分けられることで、単体のモデルに依存しない場合やフォーム専用の特別な処理をモデルに書きたくない場合に用いたりする。
