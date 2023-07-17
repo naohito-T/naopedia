@@ -2,10 +2,12 @@
 
 デザイン関連についてまとめているページ
 
-[世界中のサイトを評価しているやばいサイト](https://www.awwwards.com/)
-[コリスサイト(web design)](https://coliss.com/articles/build-websites/operation/css/css-tricks-dark-futuristic-web3-look.html)
-[モーション周期表を視覚化しておりそれを見れるもの](http://foxcodex.html.xdomain.jp/index.html)
-[新しいサイトを作成する時に参考とすべきUX(google)](https://developers.google.com/web/fundamentals/design-and-ux/ux-basics?hl=ja)
+## 参考URL
+
+[世界中のサイトを評価しているサイト](https://www.awwwards.com/)  
+[コリスサイト(web design)](https://coliss.com/articles/build-websites/operation/css/css-tricks-dark-futuristic-web3-look.html)  
+[モーション周期表を視覚化しておりそれを見れるもの](http://foxcodex.html.xdomain.jp/index.html)  
+[新しいサイトを作成する時に参考とすべきUX(google)](https://developers.google.com/web/fundamentals/design-and-ux/ux-basics?hl=ja)  
 [clipを簡単に実装できる](https://bennettfeely.com/clippy/)
 
 ## デザインツール(ブラウザ)
@@ -288,5 +290,15 @@ css pixel / reference pixel
 CSSで使う論理上のピクセル。デバイス・ピクセルが物理的なピクセルの数であるのに対し、CSSピクセルは論理上のピクセルの数です。デバイス・ピクセルとCSSピクセルの数が同じだったころは問題はありませんでした。しかし、Retinaディスプレイの登場で、それらが違う数になったため、デバイス・ピクセルとCSSピクセルを明確に分けて考える必要が出てきました。
 
 
-例) iPhone 4のデバイス・ピクセルとCSSピクセルの違い
+例  
+iPhone 4のデバイス・ピクセルとCSSピクセルの違い
 たとえばiPhone 4のスクリーンの物理的なピクセル数であるデバイス・ピクセルは640 x 960pxですが、論理上のピクセル数であるCSSピクセルは320 x 480pxになります。そのため、iPhone 4の場合、1つのCSSピクセルを4つのデバイス・ピクセルを使って表現しています。
+
+## UI(User Interface)
+
+UIはUser Interface（ユーザーインターフェイス）の略で、ユーザーがアプリケーションやウェブサイトとやり取りするためのインターフェイス（画面、ボタン、メニューなど）を指します。UIデザインは、使いやすさ、視覚的な魅力、一貫性などを考慮して、ユーザーがスムーズに操作できるようなインターフェイスをデザインすることです。
+
+## UX(User Experience)
+
+UXはUser Experience（ユーザーエクスペリエンス）の略で、ユーザーがアプリケーションやウェブサイトを使用する際の全体的な体験や感情を指します。UXデザインは、ユーザーが求めるニーズや目標を理解し、それに応じて使いやすく、満足度の高い体験を提供するための設計や改善を行います。UIとUXは密接に関連しており、使いやすいインターフェイスを通じて良いユーザーエクスペリエンスを実現することを目指します。
+

@@ -21,3 +21,11 @@
   align-items: center;
   justify-content: center;
 }
+
+
+.main {
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}

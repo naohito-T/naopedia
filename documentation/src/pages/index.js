@@ -47,10 +47,16 @@ export default function Home() {
       <MySEO />
       <Layout
         title={`${siteConfig.title}`}
-        description="Tips book for engineers by naohito-T">
+        description="Tips book for engineers by naohito-T"
+        wrapperClassName='extend-layout-css'>
         <HomepageHeader />
-        <main>
-          <HomepageFeatures />
+        <main className={styles.main}>
+          {/* <HomepageFeatures /> */}
+          <h1 align="center">
+            <a href="https://git.io/typing-svg">
+              <img src="https://readme-typing-svg.herokuapp.com/?lines=Hello!+👋;This+is+Naopedia....;From+Tokyo,+Japan&center=true&size=30" />
+            </a>
+          </h1>
         </main>
       </Layout>
     </>

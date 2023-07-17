@@ -1,8 +1,7 @@
 {
   "name": "naopedia",
   "version": "1.1.1",
-  "description": "Tips Knowledge Book",
-  "main": "_book/index.html",
+  "description": "Naopedia",
   "directories": {
     "doc": "docs"
   },
@@ -21,24 +20,12 @@
   "bugs": {
     "url": "https://github.com/naohito-T/naopedia/issues"
   },
-  "homepage": "https://github.com/naohito-T/naopedia#readme",
+  "homepage": "https://naopedia.netlify.app/",
   "scripts": {
-    "build": "honkit build",
-    "serve": "honkit serve",
     "c": "yarn changeset",
     "c:v": "yarn changeset version"
   },
-  "dependencies": {
-    "gitbook-plugin-advanced-emoji": "^0.2.2",
-    "gitbook-plugin-anchors": "^0.7.1",
-    "gitbook-plugin-back-to-top-button": "^0.1.4",
-    "gitbook-plugin-copy-code-button": "^0.0.2",
-    "gitbook-plugin-expand-active-chapter": "^1.0.0",
-    "gitbook-plugin-hide-published-with": "^0.0.1",
-    "gitbook-plugin-intopic-toc": "^1.1.1"
-  },
   "devDependencies": {
-    "@changesets/cli": "^2.26.0",
-    "honkit": "^4.0.4"
+    "@changesets/cli": "^2.26.0"
   }
 }
