@@ -2,7 +2,14 @@
 
 AWS関連やAWSユビキタスについて記載する。
 
-## AWS
+## AWSのリソース命名規則
+[命名規則](https://dev.classmethod.jp/articles/aws-name-rule/)
+
+ケバブケースが推奨（S3のバケット名に大文字とアンダースコアを含めることができないため）
+
+タグ名は？
+タグはパスカルケースがおすすめ
+
 
 ## AWS セキュリティ
 [本番環境で実践したいAWSセキュリティのベストプラクティス26選](https://sysdig.jp/blog/26-aws-security-best-practices/)
