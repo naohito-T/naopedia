@@ -3,10 +3,18 @@
 
 TypeScriptおよびPythonなどのプログラミング言語を使用して、AWSリソースを定義し、Terraformの様に**Infrastructure as Code（以降、IaC）**を実現する手段として、クラウドインフラのリソースをプロビジョニングすることが可能。
 
-CDKにはL1~L3までの概念があるため忘れないこと。
+CDKには**L1 ~ L3**までの概念があるため忘れないこと。
 
 ## serverless frameworkとcdkの違い
 [serverless frameworkとcdkの違い](https://sst.dev/chapters/using-aws-cdk-with-serverless-framework.html)
+
+## はじめてCDKで作成するとき
+
+AWS CDKのアプリを環境（アカウント/リージョン）にはじめてデプロイする場合は初期設定を行います。cdk bootstrapコマンドを実行しましょう。
+
+`$ cdk bootstrap`
+
+これによりデプロイプロセスの際に使用されるCFnのテンプレートやアセットを保存するためのS3バケットが作成されます。
 
 ## スタック
 
