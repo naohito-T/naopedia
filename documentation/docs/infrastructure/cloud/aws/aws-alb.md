@@ -25,3 +25,8 @@ ELBとは「Elastic Load Balancing」の略称で、元々はこのELBがAWSに�
 
 一方でALBはレイヤー7だけで機能するロードバランサーであり、ELBとは違ってアプリケーション層に特化するスタイルを取っています。
 そのためより便利で使いやすい機能の実装や追加が可能となり、全体のサポート力が高まることになったのでしょう。
+
+## API GatewayとALBの比較
+[HTTPSの終端：API GatewayとALBの比較とセキュリティ上の考察](https://zenn.dev/mizuba/articles/a3e47dd750bee6)
+
+
