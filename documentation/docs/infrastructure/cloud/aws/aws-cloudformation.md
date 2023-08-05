@@ -118,10 +118,19 @@ AWS::StackName	スタックの名前
 
 AWS Systems Manager(SSM) パラメータストアやAWS Secret Managerに保存した値を動的に参照することができる。
 
-リソースのパラメーターをSSMパラメータストア に外出しして管理する。スタック作成時にも利用する
-パスワードなど秘匿情報を SSMパラメータストア Secure Strings または Secret Mamager に保存して テンプレートからスタックを作成するときに参照する
-などの利用シーンがあります。
+リソースのパラメーターをSSMパラメータストアに外出しして管理する。スタック作成時にも利用する
+パスワードなど秘匿情報をSSMパラメータストア`Secure Strings`または`Secret Manager`に保存してテンプレートからスタックを作成するときに参照するなどの利用シーンがある。
 
-秘匿情報は SSMパラメータストア Secure Strings または Secret Mamagerに保存しましょう。 テンプレートにパスワードを書いてしまうと、CloudFormationのコンソールから見れる状態になってしまいます。 また、大規模な環境で多くのスタックで共通して使われるパラメータがある場合は、 SSMパラメータストアに保存して利用してもらうと、管理が楽になることが多いです。
+秘匿情報はSSMパラメータストア`Secure Strings`または`Secret Manager`に保存しましょう。  
+テンプレートにパスワードを書いてしまうと、CloudFormationのコンソールから見ることができる状態になってしまいます。  
+また、大規模な環境で多くのスタックで共通して使われるパラメーターがある場合は、 SSMパラメータストアに保存して利用してもらうと、管理が楽になることが多い。
+
+## cdk bootstrap(CDKToolkit)
+[cdk bootstrap(CDKToolkit)を使いこなす](https://zenn.dev/rrrraaaaa6/articles/61319c356dc964)
+
+CDKアプリケーションをデプロイするにあたって必要なリソースを作る呪文が`cdk bootstrap`というコマンド。  
+このコマンドを実行すると`CDKToolkit`という名前の`CloudFormation Stack`が作成される
+
+
 
 
