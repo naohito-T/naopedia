@@ -143,10 +143,10 @@ yarn list --pattern glob-parent
 ルートディレクトリの`node_modules`へ依存関係をインストールする
 
 ## yarn workspace
-[リファレンス](https://classic.yarnpkg.com/en/docs/workspaces/)
-[参考URL](https://qiita.com/suzukalight/items/0b22f11ad05308f638a6)
-[これがわかりやすい ](https://qiita.com/frozenbonito/items/8230d4a3cb5ea1b32802)
-[tsで導入し](https://ito-u-oti.com/react-monorepo/)
+[リファレンス](https://classic.yarnpkg.com/en/docs/workspaces/)  
+[参考URL](https://qiita.com/suzukalight/items/0b22f11ad05308f638a6)  
+[これがわかりやすい ](https://qiita.com/frozenbonito/items/8230d4a3cb5ea1b32802)  
+[tsで導入し](https://ito-u-oti.com/react-monorepo/)  
 
 >デフォルトで利用できるパッケージのアーキテクチャを設定する新しい方法です。ワークスペースにより複数のパッケージを設定する際に、 yarn install を一度実行するだけで、それらのすべてが単一のパスにインストールされるようになります。
 
@@ -165,16 +165,15 @@ monorepo環境の管理には、現在においては**Lerna**などが方法と
 `$ npm init -w packages/a`
 
 ### TypeScriptでのモノレポ
-[リファレンス](https://www.typescriptlang.org/docs/handbook/project-references.html)
-[参考URL](https://zenn.dev/katsumanarisawa/articles/58103deb4f12b4)
-プロジェクト参照と言われている。
-TypeScriptプログラムをより小さな部分に構造化できる。
+[リファレンス](https://www.typescriptlang.org/docs/handbook/project-references.html)  
+[参考URL](https://zenn.dev/katsumanarisawa/articles/58103deb4f12b4)  
+
+プロジェクト参照と言われている。  
+TypeScriptプログラムをより小さな部分に構造化できる。  
 これを行うことで、ビルド時間を大幅に短縮し、コンポーネント間の論理的な分離を強化し、新しいより優れた方法でコードを編成できます。
 
 tscまた、--buildフラグの新しいモードを導入しています。これは、プロジェクト参照と連携して動作し、より高速なTypeScriptビルドを可能にします。
 
 ## yarn.lockがコンフリクトしたら
 [参考URL](https://scrapbox.io/yuizho-tech/yarn%E3%81%AEyarn.lock%E3%81%8C%E3%82%B3%E3%83%B3%E3%83%95%E3%83%AA%E3%82%AF%E3%83%88%E3%81%97%E3%81%9F%E3%82%89%EF%BC%9F)
-
-
 
