@@ -21,11 +21,10 @@ npmの管理ファイルであるpackage.jsonについて記載する。
 会社など、プライベートな空間がある場合に、Node.jsパッケージ管理にnpm private registryという手法がある。  
 **npmのレジストリ**にprivateでパッケージをpublishする形式
 
-**注意**
+**注意**  
 >この移行が終わったタイミングで、GitHubがnpmを買収することが発表され、将来的にnpm private registryはGitHub Packages Registryへと統合される予定です。
 
 ## pre/postがついたスクリプト
-
 [参考URL](https://www.twilio.com/blog/npm-scripts-jp)
 
 ```json
@@ -40,7 +39,7 @@ npmの管理ファイルであるpackage.jsonについて記載する。
 ここで`npm run build`をすると以下のものが自動的にトリガーされる。
 上記のスクリプトがあるとする。
 
-1. prebuildが呼び出され、rimrafツールを実行し、distフォルダを削除
+1. prebuildが呼び出され、rimrafツールを実行し、distフォルダーを削除
 2. buildが実行され、TypeScriptコンパイラが実行される
 3. postbuildが呼び出され、npm run testが実行される
 4. testが実行され、jest test runnerが実行される
