@@ -13,26 +13,74 @@ Amazon AuroraはMySQLおよびPostgreSQLと互換性のあるクラウド向け�
 Amazon AuroraはAmazon RDSが提供しているデーターベースエンジンのひとつで、MySQLの最大5倍・PostgreSQL最大3倍のパフォーマンスを提供できるとのこと  
 ※AuroraはRDSとは違うアーキテクチャを持っている
 
+- クラスタボリューム
+Amazon AuroraはひとつのDBクラスターボリュームに複数のDBインスタンスがアクセスするような設計となっています。このボリュームはAmazon Auroraが自動的に複数のAZ (Availability Zone) にデータをレプリケートすることで高可用性を実現しています。
+
 ## Amazon RDSとAmazon Auroraの違い
-[Aurora Serverlessについての整理](https://dev.classmethod.jp/articles/aurora-serverless-summary/)
 
 大きい違いはストレージ。  
 RDSはひとつのDBインスタンスにひとつのインスタンスとEBSが連結されている。  
 Auroraは分散ストレージです。すべてのデータは最小3つのAZ、AZあたり2つのデータコピー本にあるたくさんのストレージノードに保存されます。そのおかげで迅速なファイルオーバ高い可用性の実装ができます。
 
+## サーバーレスアーキテクチャでRDSを使いたい時
+
+サーバレスアーキテクチャでDBを使うためにRDBMSを諦めてNoSQLのDynamoDBを使ったり、RDBMSを使いたいがAmazon RDSとLambdaのコネクションのオーバヘッド問題があるのでRDS Proxy使ったりするなど他の手間がかかる方法をしなければいけない  
+しかしAurora ServerlessがでRDBMS(Aurora)も順調に使えることになった
+
+---
+
 ## Amazon Aurora Serverless
+[Aurora Serverlessについての整理](https://dev.classmethod.jp/articles/aurora-serverless-summary/)  
+[Aurora Serverless とは（zozo）](https://techblog.zozo.com/entry/aurora-serverless-v2)
 
 Auroraのサーバレスバージョン（Aurora ServerlessとAuroraはアーキテクチャから違う）  
 Aurora Serverlessはインスタンスの管理が要らないので予想不可能なトラフィックやテストを行う時に有用に使える。  
+オンデマンド（要求に応じて）Auto Scaling設定が行えるDB。
 
-### この章での単語説明
+### Amazon Aurora Serverless 注意点
+
+Aurora  Serverlessを使うためには注意すること
+
+- Aurora ServerlessはシングルAZ
+  - 障害対策はMulti-AZ Failoverで、DBに障害が発生した時に自動的に他のAZに復旧されます。しかしプロビジョニングされたAuroraより時間がかかる。
+  - ストレージはコンピューティングと別にマルチAZで分離させているので障害が発生してもストレージ利用できます。
+- 使用可能バージョンは3つ
+  - Aurora MySQL 5.6.10a / 5.7 2.07.1　の2つ、かつ必ず3306ポート
+  - Aurora PostgreSQL　10.14 　1つ、かつ必ず5432ポート
+- バックアップの制約事項
+  - DBクラスターの基本バックアップ期間は設定できない
+  - DBクラスターのスナップショットをs3バケットにアクスポートできません。
+- VPCの外部からアクセスできません。
+  - パブリックIPの付与ができませんのでVPCの中しか接続できないです。
+- Data APIまたはBastion Host（踏み台）で接続できます。
+同じAZで複数のサーブネットを持つことはできません。
+
+## この章での単語説明
+
+### プロビジョニング
+
+プロビジョニングとは、リソースやサービスの準備や確保、設定を行うことを指す。  
+とくにクラウドコンピューティングや仮想化技術の分野では、ユーザーの要求に応じてサーバーやストレージ、ネットワークリソースなどを動的に確保・提供するプロセスを指すことが多い。
 
 ### フェイルオーバ
 
 フェイルオーバとは、システムに障害や故障が発生した場合に、自動的に別のリソースやサーバに処理を切り替えることを指す。  
 これにより、システムのダウンタイムを最小限に抑えることができる。
+
+AWS RDSの文脈での「Single AZ」と「Multi AZ」に関して  
+Single AZ: RDSインスタンスが1つのアベイラビリティーゾーン（AZ）に配置されます。障害耐性はその1つのAZに依存します。
+
+Multi AZ: RDSはプライマリのAZと異なるセカンダリAZにスタンバイレプリカを持ちます。プライマリAZに障害が発生した場合、AWSは自動的にデータベース操作をスタンバイレプリカにフェイルオーバします。これにより、データベースのダウンタイムを大幅に短縮することができる。
+
+Multi AZ配置は、高い可用性を求める本番環境のデータベースに推奨されます。
+
+### DBクラスター
+
+DBクラスターとは、複数のデータベースサーバーまたはインスタンスがひとつの論理ユニットとして動作するグループのことを指す。  
+クラスタリングは、データベースの高可用性、負荷分散、などの目的として使用される。
+
 ### バックアップ
 
 メンテナンス時間を設定すると、その時間にバックアップが取られる（差分で）
 
-## リストア
+### リストア
