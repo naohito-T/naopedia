@@ -10,6 +10,9 @@ AWS関連やAWSユビキタスについて記載する。
 タグ名は？
 タグはパスカルケースがオススメ
 
+## AWSのコストを削減する方法
+[AWSのコストを削減する９の方法](https://aws.amazon.com/jp/blogs/news/9ways-to-optimize-aws-cost/)
+
 ## AWS セキュリティ
 [本番環境で実践したいAWSセキュリティのベストプラクティス26選](https://sysdig.jp/blog/26-aws-security-best-practices/)
 
