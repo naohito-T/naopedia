@@ -152,3 +152,12 @@ CFnのテンプレートセクションのひとつ。
 このセクションを利用して、開発者はテンプレートに関する追加情報を付与することが可能。
 任意項目なので無くても問題ありません。
 
+
+```sh
+# dev
+env AWS_XRAY_CONTEXT_MISSING=LOG_ERROR STAGE=local TYPEORM_HOST=127.0.0.1 TYPEORM_PORT=23306 TYPEORM_USERNAME=albdev001admin TYPEORM_PASSWORD=0qASCyg9kj6Xj-jgVse12rgAAQamGHZg yarn client:manage register -n 'renew anycolor id' -r 'https://dev.albatross.anycolorid.com/callback' -p read
+
+
+# stg
+env AWS_XRAY_CONTEXT_MISSING=LOG_ERROR STAGE=local TYPEORM_HOST=127.0.0.1 TYPEORM_PORT=23306 TYPEORM_USERNAME=albstg001admin TYPEORM_PASSWORD=eFTX9TaDrKc8CylxsyKznSQI6t-CO0gB  yarn client:manage register -n 'にじさんじオフィシャルサイト（ログイン確認用）' -r 'https://dev1.smccms.aws.yuu-inc.jp/s/sample33/ichikara/callback' -p read
+```
