@@ -1,5 +1,7 @@
 # Route53
 
+AWS Route53を使用して新しいドメイン名を購入する機能は、AWS CDKやTerraformといったIaC（Infrastructure as Code）ツールのスコープ外
+
 ## ホスティングゾーン(Hosted Zone)
 
 Hosted Zoneは、ドメイン名に関連するDNSレコードを保持するためのコンテナーのようなものです。ドメイン名（例: `example.com`）ごとにホスティングゾーンを作成します。その中に、そのドメイン名やそのサブドメイン（例: `www.example.com`や `api.example.com`）のためのDNSレコードを追加します。

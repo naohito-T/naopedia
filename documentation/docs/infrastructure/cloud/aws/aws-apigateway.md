@@ -1,5 +1,6 @@
 # Amazon API Gateway
 [参考URL](https://dev.classmethod.jp/articles/what-does-amazon-api-gateway-do/)  
+[RestとHTTP違い](https://dev.classmethod.jp/articles/amazon-api-gateway-http-or-rest/)
 [Amazon CloudFrontでAPI Gatewayの痒いところに手を届ける](https://dev.classmethod.jp/articles/cache-api-gateway-by-cloudfront/)
 
 アプリケーションをユーザに公開する場合、それがGUIであってもインターフェイスが必要になる。  
