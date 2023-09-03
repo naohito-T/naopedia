@@ -2,9 +2,10 @@
 
 ネットワーク関連のPage
 
-[ネットワーク技術者](https://www.itbook.info/study/mag.html)  
-[JPNIC（network講座）](https://www.nic.ad.jp/ja/basics/terms/cidr.html)  
-[ipアドレスを確認できるサイト](https://www.ipvx.info/)
+[日本ネットワークインフォメーションセンターJPNIC（network講座）](https://www.nic.ad.jp/ja/basics/terms/cidr.html)  
+[ipアドレスを確認できるサイト](https://www.ipvx.info/)  
+[総務省（情報通信）](https://www.soumu.go.jp/hakusho-kids/)
+
 
 
 ## AWSで作成するネットワーク依存関係
