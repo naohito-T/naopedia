@@ -16,10 +16,113 @@ AWS CloudFormationを使用する際には、テンプレートとスタック�
 テンプレートは、AWSリソースとそのプロパティを記述するために作成します。
 スタックを作成するたびに、CloudFormationはテンプレートに記述されているリソースをプロビジョニングします。
 
-## テンプレート
 
-CloudFormationテンプレートはJSONまたはYAML形式のテキストファイルです。これらのファイルは、.json、.yaml、.template、.txtなどの拡張子を使用して保存できます。
 
+## フォーマット
+
+CloudFormationテンプレートはJSONまたはYAML形式のテキストファイル。  
+
+---
+
+## AWS CloudFormationテンプレートの各セクションについて
+
+### AWSTemplateFormatVersion
+
+このセクションでは、テンプレートのバージョンを定義します。これはオプションです。
+
+```yaml
+AWSTemplateFormatVersion: '2010-09-09'
+```
+
+### Description
+
+このセクションはテンプレートの説明を提供します。これはオプションです。
+
+```yaml
+Description: An example template
+```
+
+### Metadata
+
+このセクションはテンプレートの追加情報、たとえば関連するドキュメントや設定情報などを格納します。
+
+```yaml
+Metadata: 
+  Instances: 
+    Description: Information about the instances
+```
+
+### Parameters
+
+このセクションでテンプレートに入力パラメーターを定義します。これによってテンプレートは再利用可能になります。
+
+```yaml
+Parameters:
+  InstanceType:
+    Description: EC2 instance type
+    Type: String
+    Default: t2.micro
+```
+
+### Mappings
+
+このセクションでは、マッピングテーブルを作成できます。  
+これはある値に基づいて他の値を参照する際に使用されます。
+
+```yaml
+Mappings: 
+  RegionMap: 
+    us-east-1: 
+      HVM64: ami-0123456789abcdef0
+```
+
+### Conditions
+
+このセクションでは、リソースの作成条件を定義する。  
+たとえば、特定の環境に依存するリソースを制御する際に使用されます。
+
+```yaml
+Conditions:
+  CreateProdResources: !Equals [ !Ref EnvType, prod ]
+```
+
+### Transform
+
+このセクションでは、マクロを指定してテンプレートをプリプロセッシングできます。
+
+```yaml
+Transform:
+  - AWS::Serverless-2016-10-31
+```
+
+**プリプロセッシングとは**  
+ソフトウェアのビルドプロセスやデータ変換の一部として行われる、事前の処理ステップを指す。
+
+### Resources (必須)
+
+このセクションは必須であり、AWSリソースを定義する  
+テンプレート内で作成・更新・または削除するAWSリソースを定義する場所。  
+各リソースは一意の論理IDと一連のプロパティを持ち、これによってCloudFormationがリソースをどのように作成または設定するかが決まります。
+
+
+```yaml
+Resources:
+  MyBucket:
+    Type: AWS::S3::Bucket
+```
+
+### Outputs
+
+このセクションでは、スタック作成後に出力する値を定義します。
+
+```yaml
+Outputs:
+  BucketName:
+    Value: !Ref MyBucket
+    Description: Name of the S3 bucket
+```
+
+これらのセクションを組み合わせて、AWSのリソースと設定を効率的に管理するテンプレートを作成することができます。
 
 ## スタック
 
