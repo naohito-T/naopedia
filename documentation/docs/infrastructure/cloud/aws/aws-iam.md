@@ -1,7 +1,10 @@
 # AWS IAM
-[AWSセキュリティのベストプラクティス](https://blog.usize-tech.com/contents/uploads/2022/01/AWS_Security_Best_Practices.pdf)
+[AWSセキュリティのベストプラクティス](https://blog.usize-tech.com/contents/uploads/2022/01/AWS_Security_Best_Practices.pdf)  
 [iamベストプラティクス](https://qiita.com/c60evaporator/items/0121399880625cc1de51)  
 [AWSにおけるクレデンシャル](https://dev.classmethod.jp/articles/iam-bestpractice-1/)  
+
+## 参考
+[多分普通に作る流れのやつ](https://dev.classmethod.jp/articles/create-iam-users-login-profiles-that-can-only-manipulate-data-in-specific-dynamodb-tables/)
 
 ## AWSアカウント整理
 [![Image from Gyazo](https://i.gyazo.com/8342b4e4d930c6adfaab794a37b7f078.png)](https://gyazo.com/8342b4e4d930c6adfaab794a37b7f078)
