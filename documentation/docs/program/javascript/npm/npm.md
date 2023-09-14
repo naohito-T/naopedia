@@ -176,3 +176,8 @@ tscまた、--buildフラグの新しいモードを導入しています。こ�
 ## yarn.lockがコンフリクトしたら
 [参考URL](https://scrapbox.io/yuizho-tech/yarn%E3%81%AEyarn.lock%E3%81%8C%E3%82%B3%E3%83%B3%E3%83%95%E3%83%AA%E3%82%AF%E3%83%88%E3%81%97%E3%81%9F%E3%82%89%EF%BC%9F)
 
+どちらか正にして対応してあげなければならない
+```sh
+$ git checkout --theirs yarn.lock # merge先
+$ git checkout --ours yarn.lock # merge元
+```
