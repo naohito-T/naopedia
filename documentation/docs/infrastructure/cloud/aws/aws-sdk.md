@@ -5,6 +5,10 @@
 ## S3 v3
 [S3 v3操作](https://qiita.com/taisuke101700/items/d7efaca27b33adf29833)
 
+## CDK仕組み
+
+CDKはスタック間に依存関係がある場合、依存関係の親スタックからdeployする
+
 ## スタック設計
 
 AWS CDKには複数のスタック設計がある。  
@@ -40,4 +44,7 @@ export class NidInfraStack extends Stack {
 ### スタックを分ける基準
 [スタックの分け方について](https://tmokmss.hatenablog.com/entry/20221121/1669032738)
 
-CloudFormationの制約に引っかかる時に分けたほうがいいらしい
+CloudFormationの制約に引っかかる時に分けたほうがいいらしい  
+[![Image from Gyazo](https://i.gyazo.com/a76f6c8980d0a063b368c6d048860bfc.png)](https://gyazo.com/a76f6c8980d0a063b368c6d048860bfc)
+
+
