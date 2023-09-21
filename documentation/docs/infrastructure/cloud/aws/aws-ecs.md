@@ -81,5 +81,7 @@ Secrets Managerの値はARNで取得が可能。
 ## ecspresso(エスプレッソ)
 [参考URL](https://dev.classmethod.jp/articles/ecs_deploy_ecspresso/)
 
-ECSデプロイツール
+ecspressoは、AWS ECS（Elastic Container Service）を管理するためのCLIツールで、既存のaws ecs CLIやAWS Management Consoleの一部の操作をより便利に、また自動化できるよう設計されています。ecspressoを使うことで以下の点で簡略化や改善が見られるかもしれません:
+
+
 
