@@ -4,12 +4,10 @@ Webは世界規模のハイパーメディアであり、分散システム
 Webはもっとも成功したシステム。Webの設計思想であるRESTを知ることが肝心
 
 ## 3層クライアントと2層クライアントの違い
-
 [参考](https://itmanabi.com/3-layer-2-layer/)
 
 ## 3層クライアントに分ける理由
-
-[セキュリティなどかなり詳しい](https://ja.stackoverflow.com/questions/18417/web%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%81%A8ap%E3%82%B5%E3%83%BC%E3%83%90%E3%81%AE%E5%88%86%E9%9B%A2%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)
+[セキュリティなどかなり詳しい](https://ja.stackoverflow.com/questions/18417/web%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%81%A8ap%E3%82%B5%E3%83%BC%E3%83%90%E3%81%AE%E5%88%86%E9%9B%A2%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)  
 [なぜAPサーバーをWebサーバーとして利用しないのか](https://qiita.com/yCroma/items/e46476e2ac7c372bb2a3)
 
 
