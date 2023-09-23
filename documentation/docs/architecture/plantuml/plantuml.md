@@ -13,7 +13,7 @@
 
 ## PlantUML とは
 
-以下のような図をテキストで素早く描くためのオープンソースプロジェクト。
+以下のような図をテキストで素早く描くためのオープンソースプロジェクト。  
 PlantUMLは**DSL（ドメイン特化言語）**でUMLの図を描く
 
 ## VS Codeでの見方
@@ -24,7 +24,7 @@ PlantUMLは**DSL（ドメイン特化言語）**でUMLの図を描く
 
 PlantUMLの実行には、Javaの実行環境が必要。
 
-[使い方ガイド](https://zenn.dev/wtkn25/articles/vscode-plantuml)
+[使い方ガイド](https://zenn.dev/wtkn25/articles/vscode-plantuml)  
 [使い方ガイド(基本の書き方)](https://zenn.dev/msksgm/articles/20211218-robustness-with-plantuml-vscode)
 
 ---
