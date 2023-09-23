@@ -48,4 +48,49 @@ class Employee {
 ```
 
 
-## 依存性逆転の原則
+## Solidとデザインパターンの違い
+
+SOLID原則とデザインパターンは、ともにソフトウェア設計において良い設計をするための原則やパターンですが、目的や対象が異なります。
+
+### SOLID原則
+
+SOLID原則は、オブジェクト指向プログラムの設計原則の集まりで、以下の5つの原則から成り立っています。
+
+1. **S: Single Responsibility Principle (単一責任の原則)**
+   - 一つのクラスは、一つの責任だけを持つべきです。
+
+2. **O: Open/Closed Principle (開放閉鎖の原則)**
+   - ソフトウェアのエンティティ（クラス、モジュール、関数など）は、拡張に対しては開かれていて、修正に対しては閉じているべきです。
+
+3. **L: Liskov Substitution Principle (リスコフの置換原則)**
+   - サブタイプは、そのスーパータイプと置換可能であるべきです。
+
+4. **I: Interface Segregation Principle (インターフェース分離の原則)**
+   - クライアントは、不必要なインターフェースに依存するべきではありません。
+
+5. **D: Dependency Inversion Principle (依存関係逆転の原則)**
+   - 高レベルのモジュールは、低レベルのモジュールに依存すべきではなく、抽象に依存すべきです。
+
+SOLID原則は、コードの可読性や保守性、拡張性を向上させるための基本的なガイドラインとなります。
+
+### デザインパターン
+
+デザインパターンは、特定の問題を解決するための一般的な設計のテンプレートやパターンです。再利用可能な設計のソリューションであり、ソフトウェア開発において一般的に遭遇する設計上の問題に対するベストプラクティスです。
+
+代表的なデザインパターンには、以下のようなものがあります。
+
+- **Creational Patterns (生成パターン)**
+  - オブジェクトの生成方法を定義します。例：Singleton、Factory Method、Abstract Factory、Builder、Prototype。
+
+- **Structural Patterns (構造パターン)**
+  - クラスやオブジェクトの組み合わせ方を定義します。例：Adapter、Bridge、Composite、Decorator、Facade、Flyweight、Proxy。
+
+- **Behavioral Patterns (振る舞いパターン)**
+  - オブジェクト間の協力や責任の分担の仕方を定義します。例：Chain of Responsibility、Command、Interpreter、Iterator、Mediator、Memento、Observer、State、Strategy、Template Method、Visitor。
+
+### まとめ
+
+- SOLID原則は、オブジェクト指向設計の基本的な原則であり、クラス設計のガイドラインを提供します。
+- デザインパターンは、特定の設計上の問題を解決するための再利用可能なソリューションです。
+
+これらは互いに補完関係にあり、SOLID原則を守ることでデザインパターンが適切に適用されやすくなり、デザインパターンを利用することでSOLID原則に従った設計が容易になります。
