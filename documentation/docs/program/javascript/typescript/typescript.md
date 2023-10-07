@@ -2,6 +2,22 @@
 [TypeScript特有の組み込み型関数](https://log.pocka.io/ja/posts/typescript-builtin-type-functions/#thistype)  
 [Type challenge](https://github.com/type-challenges/type-challenges)
 
+## TypeScript導入にあたって
+[LINE参考](https://engineering.linecorp.com/ja/blog/benefits-and-costs-to-consider-when-installing-typescript)
+
+JavaScriptを熟知した人間にとっては、静的型の制限があることによりJavaScriptでは簡単に実現できていた設計がTypeScriptでは困難になるという場面がある。
+
+## コンパイル時評価 or コンパイル時計算
+[TypeScript のコンパイル時計算はどこまでできるのか？](https://qiita.com/Kuniwak/items/983ba68fcf68d915b07d)
+
+TypeScriptはJavaScriptへのトランスパイル時に実行時に振る舞いを変えるような最適化や評価は行いない。
+そのため、コードがJavaScriptにトランスパイルされたとしても、style1とstyle3の比較やオブジェクトの作成はランタイム時（ブラウザやNode.jsでコードが実際に実行される時）に行われます。
+
+
+TypeScriptの主要な役割は型チェックにあります。これはコンパイル時（具体的にはトランスパイル時）に行われ、型の不整合や他の型関連のエラーを検出できます。これにより、実行時のエラーを減少させ、コードの品質を向上させることが期待されます。
+しかし、TypeScriptはJavaScriptへのシンプルなトランスパイルを目指しており、コンパイル時の最適化や変数の評価、インライン化などの高度な最適化は行いません。そのため、TypeScriptでの評価や計算は、トランスパイル後のJavaScriptコードが実際に実行される際（ランタイム）に行われます。
+これはTypeScriptがJavaScriptのスーパーセットであり、結果として出力されるJavaScriptの振る舞いや性能を直感的に理解することを目指しているためです。
+
 ## overloadから型定義を取得する
 [参考URL](https://zenn.dev/uhyo/articles/typescript-overload-infer)
 
