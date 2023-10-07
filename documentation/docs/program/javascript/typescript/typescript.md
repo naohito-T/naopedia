@@ -18,6 +18,28 @@ TypeScriptの主要な役割は型チェックにあります。これはコン�
 しかし、TypeScriptはJavaScriptへのシンプルなトランスパイルを目指しており、コンパイル時の最適化や変数の評価、インライン化などの高度な最適化は行いません。そのため、TypeScriptでの評価や計算は、トランスパイル後のJavaScriptコードが実際に実行される際（ランタイム）に行われます。
 これはTypeScriptがJavaScriptのスーパーセットであり、結果として出力されるJavaScriptの振る舞いや性能を直感的に理解することを目指しているためです。
 
+## staticキーワードは評価されるのか
+
+JavaScriptやTypeScriptにおける`static`キーワードに関連するフィールドやメソッドは、そのクラスのインスタンスを生成しなくてもアクセスできるメンバーを示します。しかし、`static`が評価済みという意味ではありません。
+
+以下に例を示します。
+```typescript
+class MyClass {
+    static staticValue = "This is a static value";
+
+    static staticMethod() {
+        console.log("This is a static method.");
+    }
+}
+
+console.log(MyClass.staticValue); // This is a static value
+MyClass.staticMethod(); // This is a static method.
+```
+
+上記の例では、`MyClass`の`staticValue`という静的フィールドと`staticMethod`という静的メソッドにアクセスしています。これらはインスタンス化せずとも直接アクセス可能です。
+しかしこの`staticValue`の初期化や`staticMethod`の定義自体は、スクリプトが読み込まれて実行されるタイミング（ランタイム）で行われます。ですので、`static`キーワードが評価済みというわけではなく、実行時に評価されることを意味しています。
+ただし、一部のJavaScriptエンジンやツールは、特定のパターンを検出して最適化を行うことがありますが、これはTypeScriptやJavaScriptの言語仕様に基づくものではありません。
+
 ## overloadから型定義を取得する
 [参考URL](https://zenn.dev/uhyo/articles/typescript-overload-infer)
 
