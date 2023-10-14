@@ -1,9 +1,8 @@
 # SOLID原則
 
-SOLID原則とは、オブジェクト指向において**変更しやすい・理解しやすい・再利用しやすい**モジュール（クラスや関数などのソフトウェアを構成する部品）を設計・開発するため
-の原則
-
 [TypeScriptでSOLID原則](https://www.membersedge.co.jp/blog/typescript-solid-single-responsibility-principle/#:~:text=SOLID%E5%8E%9F%E5%89%87%E3%81%A8%E3%81%AF%E3%80%81%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88,%E3%81%AE%E5%8E%9F%E5%89%87%E3%81%AE%E3%81%93%E3%81%A8%E3%81%A7%E3%81%99%E3%80%82)
+
+SOLID原則とは、オブジェクト指向において**変更しやすい・理解しやすい・再利用しやすい**モジュール（クラスや関数などのソフトウェアを構成する部品）を設計・開発するための原則
 
 S : The Single Responsibility Principle（単一責任の原則）
 O : The Open Closed Principle（オープン・クローズドの原則）

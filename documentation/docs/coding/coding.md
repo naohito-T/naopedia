@@ -474,3 +474,83 @@ console.log(Math.random());
 一方、ビルダー（Builder）は、レスポンスの実際のデータ構造を組み立てるためのツールやクラスを指します。ビルダーは、シリアライザーが指示したデータの形式や構造にしたがって、最終的なAPIレスポンスのデータを組み立てます。ビルダーは通常、データの追加や削除、ネスト、整形などの操作を行います。
 
 つまり、シリアライザーはAPIレスポンスの形式を定義し、ビルダーはその定義に基づいて実際のデータを組み立てる役割を担っています。シリアライザーは抽象的な概念であり、ビルダーは具体的な操作を行うための具現化です。
+
+## 設計について
+
+SOLID原則とデザインパターンを始めとするソフトウェア設計の種類を以下にリストアップ
+
+### 1. **原則 (Principles)**
+これらは、クリーンで保守性のあるコードを書くためのガイドラインやベストプラクティスです。
+
+- **SOLID原則**: 
+  - Single Responsibility Principle (単一責任の原則)
+  - Open/Closed Principle (開放/閉鎖の原則)
+  - Liskov Substitution Principle (リスコフの置換原則)
+  - Interface Segregation Principle (インターフェース分離の原則)
+  - Dependency Inversion Principle (依存性逆転の原則)
+  
+- **DRY (Don't Repeat Yourself)**: 同じコードや機能を繰り返さない。
+  
+- **KISS (Keep It Simple, Stupid)**: シンプルに保つ。
+
+- **YAGNI (You Ain't Gonna Need It)**: 本当に必要なものだけを実装する。
+
+- **Law of Demeter (最少知識の原則)**: オブジェクトは直接関連するクラスの情報のみを知るべきであり、関連性の薄いクラスの詳細を知ってはいけない。
+
+### 2. **デザインパターン (Design Patterns)**
+これらは、特定の問題を解決するための再利用可能なソリューションです。Gang of Four (GoF) によって23のクラシックなデザインパターンが紹介されました。
+
+- **Creational Patterns (生成パターン)**:
+  - Singleton
+  - Factory Method
+  - Abstract Factory
+  - Prototype
+  - Builder
+
+- **Structural Patterns (構造パターン)**:
+  - Adapter
+  - Bridge
+  - Composite
+  - Decorator
+  - Facade
+  - Flyweight
+  - Proxy
+
+- **Behavioral Patterns (振る舞いパターン)**:
+  - Chain of Responsibility
+  - Command
+  - Interpreter
+  - Iterator
+  - Mediator
+  - Memento
+  - Observer
+  - State
+  - Strategy
+  - Template Method
+  - Visitor
+
+### 3. **アーキテクチャパターン (Architectural Patterns)**
+
+これは、システム全体の高レベルの構造や組織のパターンです。
+
+- **MVC (Model-View-Controller)**
+
+- **MVVM (Model-View-ViewModel)**
+
+- **Layered Architecture (階層型アーキテクチャ)**
+
+- **Microservices**
+
+- **Event-Driven Architecture**
+
+- **Serverless Architecture**
+
+### 4. **その他の設計アプローチやテクニック**
+
+- **DDD (Domain-Driven Design)**: ドメインの複雑さを捉え、それに基づいてソフトウェアを設計するアプローチ。
+
+- **TDD (Test-Driven Development)**: テストを先に書き、そのテストを通過するコードを書く開発方法。
+
+- **BDD (Behavior-Driven Development)**: ソフトウェアの動作を定義し、それに基づいて開発を進めるアプローチ。
+
+これらはソフトウェア設計の多岐にわたる概念や手法の一部です。どれも重要であり、プロジェクトやチームの状況に応じて適切に選択・採用することが重要です。
