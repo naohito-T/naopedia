@@ -6,6 +6,27 @@ headerについてまとめる
 ##　勘所
 
 - ホスト名はHTTPヘッダーには含まれないため、IPアドレスから逆引きして取得する
+ホスト名はHTTPヘッダーには含まれないため、IPアドレスから逆引きして取得する。  
+Node.jsのdns.lookupServiceメソッドを使用してDNSサーバに問い合わせを行う。
+
+```ts
+import {lookupService} from "dns";
+
+const getHostName = (ipAddress: string): Promise<string> => {
+    return new Promise(function(resolve, reject) {
+        lookupService(ipAddress, 22, function (error, hostname, service) {
+            if (error) {
+                return reject(error);
+            }
+            resolve(hostname);
+        });
+    });
+};
+const hostName = await getHostName(ipAddress);
+```
+
+dns.lookupServiceメソッドは、問い合わせ成功時にコールバック関数を介してホスト名を返却する。
+任意の変数などに初期化するには、Promiseオブジェクトでラップして返却させる。
 
 ##　リクエスト
 
