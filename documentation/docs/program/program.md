@@ -292,18 +292,26 @@ function addToCart(item: Item, cart: Cart): Cart {
 3. インスタンス変数にアクセスできない: 静的なメソッドやクラスメソッドは、インスタンス変数に直接アクセスすることはできません。代わりに、クラス変数や他の引数を使用してデータの受け渡しを行う必要があります。
 
 
-## 高階関数(こうかいかんすう)
+## 高階関数(こうかいかんすう)(Higher-Order Function)
 
-関数を受け取る関数を高階関数と呼ぶ。 
-そして関数を返す関数は高階関数と呼ぶ。  
+高階関数は、関数を引数として受け取り、関数を返す関数のことを指します。
+1. 関数を引数として受け取ることができる。
+2. 関数を戻り値として返すことができる。
+
+高階関数は、関数型プログラミングの基本的な概念のひとつであり、多くの場面で活用されます。高階関数を使用することで、コードの再利用性や柔軟性を高め、より抽象的な操作を行うことができます。  
+とくにJavaScriptやTypeScriptなどの関数型プログラミングがサポートされている言語では、高階関数がよく使用される。
+※高階関数は、最初に呼び出された段階では内部の関数が実行されないという特徴がある（つまりセットする感じ）
 
 ```ts
+// 一番簡単な例
 function sayHello() {
   return () => {
     console.log('hello!');
   }
 }
 ```
+
+[高度な例](https://www.typescriptlang.org/play?ssl=26&ssc=1&pln=1&pc=1#code/C4TwDgpgBAglC8UB2BXAtgIwgJwNwCh8BjAeyQGdgoALEgMwSgAo6AuKAMRSSOAEsyASgQA+KAENyIHs1JJgEAB7B2MYfDEBvfFChzKUbBHIoANlUR0mgnXrLkSpiADpTJAOZMjJ8zd37HFzdPAHIAJhDBXCgAehioMOcoQGUGQDsGQFuGQAaGQBkGQAsIwC5PQFUGQBiGQGiGWwCnVw8mAAM5BWUoABJNBqVgAF9aqNj4gGYkwFR9QAdTO3kOqFTAEgU8orLbI2AUbCQJKRkmduVVdS1bf3tA6tCAFkjouKhTpLSsuZLy3V0llbXtZ+ewbBIwcnYPp9nttgAAaA7PTrgz6dAi6WH4BH4K5pQCt1oA4tMA5gyAewZAPnagBkIkqAKwZACIMgCAGYj2KjeMwWGj0JjWURQQGVII1EIARgufSgnNuGRyBUeFSpEkYnLhhggy1WEgInSihCubJOXmMtKYpzCgl6VwArAL7sLioBABm1UAeCyAA)
 
 ## コールバック関数
 
