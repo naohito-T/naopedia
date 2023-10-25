@@ -6,7 +6,7 @@
 [参考URL](https://coliss.com/articles/build-websites/operation/css/about-css-layout-algorithms.html)
 
 CSSを理解するには、レイアウトアルゴリズムがどのように機能するかを理解する必要がある。  
-プロパティを知るだけでは不十分
+そのためプロパティを知るだけでは不十分
 
 ## cssとは
 
@@ -156,7 +156,7 @@ CSS変数 : ブラウザで実行できる動的なCSSプロパティ
 CSS上でグローバル変数として使用するために:rootに定義してグローバルに使用する。
 
 - 呼び出す
-var（--変数名）
+var（`--変数名`）
 
 ```css
 /* カスタムプロパティの宣言 */
