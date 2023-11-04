@@ -1,21 +1,131 @@
-# クリーンアーキテクチャー: Clean Architecture
+# Clean Architecture(クリーンアーキテクチャー)
+
+## 概要
 [クリーンアーキテクチャを完全に理解した](https://gist.github.com/mpppk/609d592f25cab9312654b39f1b357c60)
 
-クリーンアーキテクチャはRobert C. Martin(Uncle Bob)が2012年に提唱した、**DBやフレークワークからの独立性を確保するためのアーキテクチャである**
+クリーンアーキテクチャはRobert C. Martin(Uncle Bob)が2012年に提唱した、**DBやフレークワークからの独立性を確保するためのアーキテクチャである**  
+前節のレイヤードアーキテクチャが提案されて以降も、ヘキサゴナルアーキテクチャ、オニオンアーキテクチャなどが提案されてき
+た。  
+これらのアーキテクチャで用いられる用語は異なるが、目指すところは同じであるとクリーンアーキテクチャ（The Clean Architecture）では述べている。
 
-前節のレイヤードアーキテクチャが提案されて以降も、ヘキサゴナルアーキテクチャ、オニオンアーキテクチャなどが提案されてきました。これらのアーキテクチャで用いられる用語は異なりますが、目指すところは同じであるとクリーンアーキテクチャ（The Clean Architecture）では述べられている。
-
+関心の分離が共通しているという話。  
 >これらのアーキテクチャはどれも細部は異なるけれども、とてもよく似ている。これらはいずれも同じ目的を持っている。関心の分離だ。これらはいずれも、ソフトウェアをレイヤーに分けることによって、関心の分離を達成する。どれも、最低ひとつは、ビジネスルールのためのレイヤーと、インターフェイスのためのレイヤーがある。
 
-## 有名な図について
+## 有名な図についての解説
 [![Image from Gyazo](https://i.gyazo.com/967a21ac36ce9f61e5ed693e8aeb7c12.png)](https://gyazo.com/967a21ac36ce9f61e5ed693e8aeb7c12)
 
-一般的な図やアーキテクチャの表現では、インフラストラクチャ層は円の外側に配置されるが、
-これは、上位のレイヤー（ドメイン層やアプリケーション層）がインフラストラクチャ層に依存していることを示すため。
+一般的な図やアーキテクチャの表現では、インフラストラクチャ層は円の外側に配置されるが、これは**上位のレイヤー（ドメイン層やアプリケーション層）がインフラストラクチャ層に依存していること**を示すため。  
+これは、上位のレイヤーが下位のレイヤーに依存するという依存関係を視覚的に表現するためのもの  
+ただし、これはあくまで一般的な表現であり、図やアーキテクチャの具体的な表現方法は組織やプロジェクトによって異なる場合がある。  
+重要なのは**各レイヤーが適切な責務を持ち、依存関係が適切に管理されていること**です。
 
-このような表現では、円の内側にはドメイン層やアプリケーション層が配置され、円の外側にはインフラストラクチャ層が配置されます。これは、上位のレイヤーが下位のレイヤーに依存するという依存関係を視覚的に表現するためのものです。
+## 基本的なディレクトリ構成
 
-ただし、これはあくまで一般的な表現であり、図やアーキテクチャの具体的な表現方法は組織やプロジェクトによって異なる場合があります。重要なのは、各レイヤーが適切な責務を持ち、依存関係が適切に管理されていることです。
+クリーンアーキテクチャ（Clean Architecture）は、ソフトウェアをメンテナンスしやすく、ビジネスロジックを明確に区別し、プラットフォームやフレームワークから独立させることを目的としています。クリーンアーキテクチャーを採用する際の一般的なディレクトリ構成は以下のようになります。
+
+```sh
+.
+├── domain/
+│   ├── entities/
+│   ├── value_objects/
+│   ├── repositories/
+│   └── use_cases/
+│       ├── interfaces/
+│       └── implementations/
+├── application/
+│   ├── services/
+│   ├── interfaces/
+│   ├── dtos/
+│   └── mappers/
+├── infrastructure/
+│   ├── persistence/
+│   │   ├── repositories/
+│   │   └── models/
+│   ├── web/
+│   │   ├── controllers/
+│   │   └── views/
+│   ├── cli/
+│   └── external_services/
+└── presentation/
+    ├── cli/
+    ├── web/
+    └── api/
+```
+
+- **domain**: これは、アプリケーションのビジネスロジックが含まれる中心的なレイヤーです。ここには、アプリケーションが扱うエンティティ、バリューオブジェクト、リポジトリのインターフェイス、およびユースケースが含まれます。
+- **application**: アプリケーションのユースケースをオーケストレーションするサービス層であり、ドメインレイヤーとインフラストラクチャレイヤーの間のメディエーターとして機能します。
+- **infrastructure**: データベース、ウェブフレームワーク、外部APIとの統合など、外部の世界との接続ポイントを提供します。
+- **presentation**: エンドユーザーに対するインタフェースを提供します。これにはウェブアプリケーションのUI、APIエンドポイント、CLIなどが含まれます。
+
+クリーンアーキテクチャーの実装は、採用する技術スタックやチームの好みによっても変わってきます。したがって、上記のディレクトリ構造はあくまで一例であり、プロジェクトのニーズに応じて調整することが重要です。実装の詳細や、特定のプログラミング言語やフレームワークに対するクリーンアーキテクチャの適用方法については、さらにリサーチする必要があります。
+
+## 大事なこと
+
+クリーンアーキテクチャーでは、依存関係が**外側へ向かってのみ**発生することが原則。  
+つまり、コードは**内側のレイヤー（より高レベルのポリシーを持つ）に依存することはできますが、外側のレイヤー（より詳細な実装を持つ）に依存することはできません。**これを「依存関係の逆転の原則（Dependency Inversion Principle）」と呼びます。
+
+例（内側のレイヤー（より高レベルのポリシーを持つ）に依存することはできますが、外側のレイヤー（より詳細な実装を持つ）に依存することはできません。）  
+```ts
+// Domain Layer (内側レイヤー)
+// user.entity.ts
+export class User {
+  constructor(public id: string, public name: string) {}
+}
+
+// user.repository.ts
+export interface UserRepository {
+  findById(userId: string): User | undefined;
+  save(user: User): void;
+}
+
+// Application Layer
+// UserService（アプリケーションレイヤー）はUserRepositoryインターフェース（ドメインレイヤー）に依存していますが、具体的なSqlUserRepository実装（インフラストラクチャレイヤー）には依存していません。依存関係はインターフェースを通じて逆転しています。
+
+// user.service.ts
+import { UserRepository } from "../domain/user.repository";
+import { User } from "../domain/user.entity";
+
+export class UserService {
+  constructor(private userRepository: UserRepository) {}
+
+  public getUser(userId: string): User | undefined {
+    return this.userRepository.findById(userId);
+  }
+
+  public createUser(user: User): void {
+    this.userRepository.save(user);
+  }
+}
+
+// Infrastructure Layer (外側レイヤー)
+// user.repository.impl.ts
+import { User } from "../domain/user.entity";
+import { UserRepository } from "../domain/user.repository";
+
+export class SqlUserRepository implements UserRepository {
+  findById(userId: string): User | undefined {
+    // Implement the logic to find a user by ID using SQL
+  }
+
+  save(user: User): void {
+    // Implement the logic to save a user using SQL
+  }
+}
+
+// プレゼンテーションレイヤー（コントローラー）
+// プレゼンテーションレイヤーであるuser.controller.tsは、ユーザーを取得するためにUserServiceに依存しています。ここでの依存もインターフェースを介しており、アプリケーションレイヤーからドメインレイヤーへと内側に向かっています。
+// user.controller.ts
+import { UserService } from "../application/user.service";
+import { SqlUserRepository } from "../infrastructure/user.repository.impl";
+
+const userRepository = new SqlUserRepository();
+const userService = new UserService(userRepository);
+
+export function getUserEndpoint(userId: string): User | undefined {
+  return userService.getUser(userId);
+}
+```
+
 
 ## 代表的な上位のレイヤーから下位のレイヤー
 
@@ -30,7 +140,7 @@
 
 ## 実現できること
 
-クリーンアーキテクチャはソフトウェアを**レイヤー**に分離することで、関心事の分離を実現し以下の特性を持ったシステムを生み出す。
+クリーンアーキテクチャはソフトウェアを**レイヤー**に分離することで**関心事の分離を実現**し以下の特性を持ったシステムを生み出す。
 
 - フレームワーク非依存：システムをフレームワークの制約で縛るのではなく、フレームワークをツールとして使用する
 - テスト可能：ビジネスルールはUIやDB、サーバー、その他の外部要素がなくてもテストできる
