@@ -4,7 +4,7 @@
 [ruby リファレンス](https://www.ruby-lang.org/ja/documentation/)  
 [Ruby paint](https://hawksnowlog.blogspot.com/2020/09/output-ansi-color-code-with-ruby-paint.html)  
 
-## ruby document
+## Ruby document
 [参考URL](https://techblg.app/articles/how-to-generate-document-by-yard-ruby/)
 
 YARDで書くというのがある。やはり`@example`が重要。
@@ -12,8 +12,12 @@ YARDで書くというのがある。やはり`@example`が重要。
 ## Ruby gem管理
 [Gemfileの書き方](https://qiita.com/morioka1206/items/19410fe414f441583998)
 
-## Rubyを書く時意識すること
+## Ruby 文字列がimmutable(不変)ではない
+[frozen_string_literalマジックコメントでImmutable Stringを実現する](https://blog.toshimaru.net/ruby-immutable-string/)
 
+ruby3でも不変にはしないということ。そのためマジックコメントが必要。
+
+## Rubyを書く時意識すること
 文字列も数値も配列もすべてクラスから生成されたインスタンス（その上の基底クラスが定義されているから文字列ならこのメソッドみたいに使える）
 つまり、何が言いたいのかは
 型を意識しながら書く。そこで調査する範囲が狭まる（stringか、ならstringのメソッド一覧を探すかみたいな）
@@ -37,7 +41,6 @@ Rubyでは？
 Rubyでも変数の宣言は必要だが、スクリプト上で**変数にはじめて値を格納したタイミングで変数のための領域が自動的にメモリ上に確保される。**
 
 ### require, include, extend
-
 [違いについて](https://qiita.com/suzukiry/items/db936ff7312ba7d97315)
 
 require  
@@ -1126,4 +1129,3 @@ REVIEW
 Rubyで実現するにはReflectionを使う。
 >Rubyが本来持つ言語機能で十分に疎結合・高凝集が達成できるので、DIコンテナを利用することは複雑さを増すだけになりかねない、ということらしい
 >RubyはJavaのような言語と比べて動的であり一度生成したインスタンスであっても変更が容易であり依存の変更も容易である。よって静的な言語において必要性があったDIコンテナのような仕組みを導入しても複雑性が増してしまうだけなのではないか、ということらしい。
-
