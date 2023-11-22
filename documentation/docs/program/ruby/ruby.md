@@ -1097,26 +1097,6 @@ bundle exec rubocop --auto-gen-config
 ## rubocop version up作業
 [参考URL](https://qiita.com/tonluqclml/items/e41bceece33e000e0b53)
 
----
-
-## アノテーションコメント
-[参考URL](https://qiita.com/tbpgr/items/1c046a877c6be4d89876)
-
-TODO
-あとで追加すべき不足している機能を記す
-
-FIXME
-修正すべき壊れたコードを記す
-
-OPTIMIZE
-パフォーマンスに影響を与える最適化すべき箇所を記す
-
-HACK
-リファクタリングすべきコードの臭いのする箇所を記す
-
-REVIEW
-レビューすべき箇所を記す
-
 ## ruby 記号の意味
 [参考URL](https://docs.ruby-lang.org/ja/latest/doc/symref.html)
 
@@ -1126,6 +1106,6 @@ REVIEW
 ## RubyにDI(Dependency Injection)がない理由
 [参考URL](https://qiita.com/iwsksky/items/9598f0b01a20846fe495)
 
-Rubyで実現するにはReflectionを使う。
+Rubyで実現するにはReflectionを使う。  
 >Rubyが本来持つ言語機能で十分に疎結合・高凝集が達成できるので、DIコンテナを利用することは複雑さを増すだけになりかねない、ということらしい
 >RubyはJavaのような言語と比べて動的であり一度生成したインスタンスであっても変更が容易であり依存の変更も容易である。よって静的な言語において必要性があったDIコンテナのような仕組みを導入しても複雑性が増してしまうだけなのではないか、ということらしい。
