@@ -1,7 +1,6 @@
-# Go
-
-Go言語 = golang  
-[日本のGophers代表? 解説記事がある](https://docs.google.com/presentation/d/1RVx8oeIMAWxbB7ZP2IcgZXnbZokjCmTUca-AbIpORGk/edit#slide=id.g935656cef3_0_12)
+# Golang 
+[日本のGophers代表? 解説記事がある](https://docs.google.com/presentation/d/1RVx8oeIMAWxbB7ZP2IcgZXnbZokjCmTUca-AbIpORGk/edit#slide=id.g935656cef3_0_12)  
+[メルカリ（プログラミング言語Go完全入門）](https://docs.google.com/presentation/d/1RVx8oeIMAWxbB7ZP2IcgZXnbZokjCmTUca-AbIpORGk/edit#slide=id.g4f417182ce_0_80)
 
 ## コードの長さ
 
@@ -16,7 +15,6 @@ C++やRust、Javaなど
 Goは実行速度では遅いが、コンパイルが圧倒的に早くネットワークなどのI/O速度が支配的なネットワークアプリケーションやコンテナーで動作するアプリケーションであれば十分な速度が出せる。
 
 ## Go 1.16からのモジュール管理
-
 [参考URL](https://text.baldanders.info/golang/manage-modules/)
 
 GO111MODULE既定値の変更
