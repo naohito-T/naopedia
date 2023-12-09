@@ -1,5 +1,4 @@
 # docker-compose
-
 Docker操作の補佐をするPython製のツール（ver2ではGo製に変わっている）  
 Docker Engineの一部ではない。  
 **docker-compose.yml内ではホスト側のシェルの環境変数が使える。**  
@@ -232,15 +231,15 @@ volumes:
       - node_modules_data:/app/backend/node_modules # バインドマウントするフォルダ中のnode_modulesのみvolumeマウントの対象とする
 ```
 
-## volumes の pathの指定
+## volumesのpathの指定
 
-絶対パスではホストの環境が変わった時に動かなくなるため相対パスを指定するのが慣例。
+絶対パスではホストの環境が変わった時に動かなくなるため相対パスを指定するのが慣例。  
 相対パスはdocker-composeのymlファイルが基準となります。
-このため，ホストの環境が変わっても問題ないですが，プロジェクト内でのymlファイルの場所を変更する時は修正が必要になります。
+このためホストの環境が変わっても問題ないですがプロジェクト内でのymlファイルの場所を変更する時は修正が必要になります。
 
 ## volumes 省略記法
 
-いつも上記の例のように記載するのは面倒なので短い表記法があります`[SOURCE:]TARGET[:MODE]と指定します`たとえば，以下で，sourceの./dataディレクトリとtargetの/tmp/dataディレクトリを指定します．
+いつも上記の例のように記載するのは面倒なので短い表記法があります`[SOURCE:]TARGET[:MODE]と指定します`たとえば以下でsourceの`./data`ディレクトリとtargetの/tmp/dataディレクトリを指定します
 
 ```yml
   volumes:
