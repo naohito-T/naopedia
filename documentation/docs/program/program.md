@@ -687,30 +687,36 @@ const obj = {
 
 ## クロージャー
 
-クロージャーとは、ある関数の外側で定義された変数を参照する関数のこと。  
-クロージャーを使用することで、関数内部で参照できる変数を制限できる。  
-また、関数が実行された後も、クロージャー内で参照された変数は存在し続ける。
+クロージャー（Closure）は、関数とその関数が宣言されたレキシカル環境（スコープ）の組み合わせ。  
+クロージャーは、関数が外部のスコープから変数を「キャプチャ」する能力を持ち、その関数が宣言されたスコープ外で実行されたとしても、その変数にアクセスできる
 
-簡単なサンプル
+TypeScript（およびJavaScript）でのクロージャーの一般的な使用例は、プライベート変数を持つ関数を作成すること。
+これは、とくにデータをカプセル化し、外部からの直接的なアクセスを防ぐために役立つ。
+
 ```ts
-function counter() {
-  let count = 0;
+function createCounter() {
+  let count = 0; // この変数はcreateCounterのスコープ内に閉じ込められている
 
-  return function() {
-    count++;
-    console.log(count);
-  }
+  return {
+    increment: () => {
+      count++;
+      console.log(count);
+    },
+    decrement: () => {
+      count--;
+      console.log(count);
+    }
+  };
 }
 
-const increment = counter();
-
-increment(); // 1
-increment(); // 2
-increment(); // 3
+const counter = createCounter();
+counter.increment(); // 1
+counter.increment(); // 2
+counter.decrement(); // 1
 ```
 
->この例では、counter()関数が実行されると、countという変数が定義されます。その後、counter()関数から関数を返すことで、クロージャーを作成しています。返された関数は、外部の変数countを参照し、その値をインクリメントしてコンソールに出力します。
->このように、クロージャーを使用することで、関数内で変数を保持し、その値を引き継いで利用することができます。また、ReactのuseEffectフックでは、クロージャーを使用することで、副作用を制御することができます。
+クロージャーは、状態（この場合はcount変数）を保持する関数を作成する際に非常に便利。  
+また、クロージャーを使用すると、関数のプライベートな状態を作成し、その状態を関数の外部から直接変更することを防ぐことができる。
 
 ## デコレーター
 
