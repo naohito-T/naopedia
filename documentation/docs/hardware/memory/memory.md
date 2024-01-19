@@ -1,6 +1,9 @@
 # memory
 [知らないと恥ずかしい？　メモリの「RAM」と「ROM」の違い](https://www.itmedia.co.jp/news/articles/1706/01/news051.html)
 
+## メモリ領域の分類
+
+プログラムから使用されるメモリは**静的領域**、**スタック領域**、**ヒープ領域**という大きく分けて3種類の領域に分けられます。
 
 ## RAM(ラム) Random Access Memory
 
