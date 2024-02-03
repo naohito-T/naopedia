@@ -46,6 +46,10 @@ Next.js 10.0.0から専用の画像コンポーネントが追加され、**配�
 3. ゼロコンフィグ
 webpack等の設定の必要がない。
 
+## Next.jsのdefault cache
+
+[![Image from Gyazo](https://i.gyazo.com/76ede82fc4c13a9aaad0b58a3d9daf53.png)](https://gyazo.com/76ede82fc4c13a9aaad0b58a3d9daf53)
+
 ---
 
 ## データフェッチ仕組み
