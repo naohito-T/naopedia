@@ -2,25 +2,25 @@
   "name": "naopedia",
   "version": "1.1.1",
   "description": "Naopedia",
-  "directories": {
-    "doc": "docs"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/naohito-T/naopedia.git"
-  },
   "keywords": [
     "code",
     "Tips",
     "Knowledge",
     "book"
   ],
-  "author": "naohito-T",
-  "license": "ISC",
+  "homepage": "https://naopedia.netlify.app/",
   "bugs": {
     "url": "https://github.com/naohito-T/naopedia/issues"
   },
-  "homepage": "https://naopedia.netlify.app/",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/naohito-T/naopedia.git"
+  },
+  "license": "MIT",
+  "author": "naohito-T",
+  "directories": {
+    "doc": "docs"
+  },
   "scripts": {
     "c": "yarn changeset",
     "c:v": "yarn changeset version"

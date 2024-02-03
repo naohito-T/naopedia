@@ -12,13 +12,15 @@
 
 2通りある
 
-パススタイル: https://s3.amazonaws.com/<bucketName>/<key>  
-名称不明（ドメインスタイル？）: https://<bucketName>.s3.amazonaws.com/<key>
-
+```ts
+// パススタイル
+const url = 'https://s3.amazonaws.com/<bucketName>/<key>'
+// 名称不明（ドメインスタイル？）
+const domainUrl = 'https://<bucketName>.s3.amazonaws.com/<key>'
+```
 
 ## ForcePathStyle
 [S3のForcePathStyleに2時間つまづいた](https://zenn.dev/hiroga/scraps/cbb721e2a496f8)
 
 localStackはドメインスタイルを処理できない。
 そのためlocalではパススタイルを強制して上げないといけない。
-
