@@ -11,6 +11,47 @@ Dependency Injection (DI)は、オブジェクトの作成と依存関係の解�
 しかし、注入された依存関係が正しく解決されない場合、DIのメリットを十分に享受できなくなる。  
 つまり、DIコンテナーを使用しながらも、依然として依存関係がハードコーディングされたり、誤った型が注入されたりする可能性があるため、DIのメリットが十分に発揮されなくなるということです。
 
+## 手動での依存性注入
+
+このコードは、依存性を手動で解決し、インスタンス化して注入するアプローチを取っている。  
+これは、依存性の注入（DI: Dependency Injection）の原理にしたがっていますが、具体的には「手動での依存性注入」の例。
+```ts
+export const commandContainer = (): CommandRouter['controller'] => ({
+  ...new CommandController(
+    controllerLogger,
+    new CommandResourceInteracts(usecaseLogger, new JwtAdapter(usecaseLogger), ClientAdapter),
+  ),
+});
+```
+
+一方、`tsyringe`はDIを容易にするためのライブラリであり、「自動での依存性注入」を提供する。
+
+### `tsyringe`を使用した自動での依存性注入
+
+`tsyringe`はTypeScriptのための軽量な依存性注入コンテナーで、クラスのコンストラクターを通じて自動的に依存関係を解決します。`tsyringe`を使用すると、依存関係を「登録」し、アプリケーションのどこからでもそれらを「解決」できるようになります。
+
+```typescript
+import { container, injectable } from 'tsyringe';
+
+@injectable()
+class CommandController {
+  constructor(private logger: Logger, private commandResourceInteracts: CommandResourceInteracts) {}
+}
+
+container.register('Logger', { useClass: Logger });
+container.register('CommandResourceInteracts', { useClass: CommandResourceInteracts });
+
+const commandController = container.resolve(CommandController);
+```
+
+### 違い
+
+- **明示性 vs. 暗黙性**: 手動での依存性注入は明示的であり、依存関係の構築を完全に制御できますが、`tsyringe`のようなDIコンテナを使用すると、依存関係の解決が暗黙的になり、コードがより宣言的になります。
+- **管理の簡便性**: 複雑なアプリケーションでは、`tsyringe`のようなDIコンテナを使用することで、依存関係の管理が簡単になります。DIコンテナは、依存関係のライフサイクル管理やスコープ管理を自動化し、コードの再利用性とテストのしやすさを向上させます。
+- **設定の集中化**: `tsyringe`を使用すると、依存関係の設定をアプリケーションの一箇所に集中化できるため、依存関係の構成が一目でわかりやすくなります。
+
+結論として、`tsyringe`のようなDIライブラリを使用する主な利点は、依存関係の解決を自動化し、管理を簡素化することにあります。これにより、アプリケーションの拡張性と保守性が向上しますが、DIライブラリの学習曲線と、その使用に伴う追加の抽象化レイヤーを受け入れる必要があります。
+
 ## DIが動作する前提
 [関数型プログラミングとDIコンテナーの相性が悪い理由](https://mond.how/topics/2lwly60o0vgkvvg/0eeqkccgew0dyd0)
 
@@ -60,9 +101,3 @@ DIコンテナーファイルとしてクラスの対応リストを保持して
 
 ## Decoratorとは
 [参考URL](https://info.drobe.co.jp/blog/engineering/typescript-decorator)
-
-
-
-
-
-

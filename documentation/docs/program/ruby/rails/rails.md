@@ -1,18 +1,26 @@
 # Ruby on Rails
-[Railsガイド(これを見ろ)(本リファレンス)](https://railsguides.jp/)  
-[Rails](https://atmarkit.itmedia.co.jp/ait/articles/1102/23/news109_3.html)  
-[Railsのクリーンアーキテクチャ](https://qiita.com/shunjikonishi/items/e39ed8091e1dca817468)  
+
+## Rails作者
+[大規模開発に強い理由](https://pr.forkwell.com/articles/dhh-rails-large-scale-development/)
+
+## 参考
+[Railsガイド](https://railsguides.jp/)  
+[RailsとClean Architectureに関する考察](https://qiita.com/shunjikonishi/items/e39ed8091e1dca817468)  
 [【Rails】hashid-railsを用いてIDを難読化・暗号化させる方法](https://techtechmedia.com/hashid-rails/)  
-[Railsでの名前空間について(わかりやすい)](https://ja.stackoverflow.com/questions/86424/rails%E3%81%AE%E5%90%8D%E5%89%8D%E7%A9%BA%E9%96%93%E3%81%AE%E7%9B%AE%E7%9A%84%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E7%96%91%E5%95%8F)
 
 ## Rails処理概要
 [![Image from Gyazo](https://i.gyazo.com/f932132c9b8d23e980053158fd9eece8.png)](https://gyazo.com/f932132c9b8d23e980053158fd9eece8)
 
 ## Rails 名前空間について
-[参考URL](https://ja.stackoverflow.com/questions/86424/rails%E3%81%AE%E5%90%8D%E5%89%8D%E7%A9%BA%E9%96%93%E3%81%AE%E7%9B%AE%E7%9A%84%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E7%96%91%E5%95%8F)  /
-[入れ子とショートシンタックスの違い](https://ninoseki.hatenablog.com/entry/2014/05/31/%E3%83%8D%E3%82%B9%E3%83%88%E3%81%97%E3%81%9F%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%82%92%E6%9B%B8%E3%81%8F%E5%A0%B4%E5%90%88%E3%81%AE%E6%B3%A8%E6%84%8F%E7%82%B9)
+[参考URL](https://ja.stackoverflow.com/questions/86424/rails%E3%81%AE%E5%90%8D%E5%89%8D%E7%A9%BA%E9%96%93%E3%81%AE%E7%9B%AE%E7%9A%84%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E7%96%91%E5%95%8F)  
+[入れ子とショートシンタックスの違い](https://ninoseki.hatenablog.com/entry/2014/05/31/%E3%83%8D%E3%82%B9%E3%83%88%E3%81%97%E3%81%9F%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%82%92%E6%9B%B8%E3%81%8F%E5%A0%B4%E5%90%88%E3%81%AE%E6%B3%A8%E6%84%8F%E7%82%B9)  
+[Railsでの名前空間について(わかりやすい)](https://ja.stackoverflow.com/questions/86424/rails%E3%81%AE%E5%90%8D%E5%89%8D%E7%A9%BA%E9%96%93%E3%81%AE%E7%9B%AE%E7%9A%84%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E7%96%91%E5%95%8F)
 
-Rubyにおいて、モジュールを定義する方法には2つの異なるスタイルがありますが、それぞれが異なる文脈で使用されることがあります。
+>Ruby自体には「名前空間」という名前の機能がありません。しかし、「名前空間」を実現出来ないというわけではありません。モジュールが「名前空間」の機能を提供するとなっています。
+>まず、勘違いしてはいけないのは、モジュールは「名前空間」のためだけの機能ではないことです。他のクラスやモジュールにMix-inしたり、オブジェクトそのものの拡張(extend)したり、再定義(refine)の機能を使うためにusingしたりします。それら多くの機能の一つとして、「名前空間」の機能があると言うことです。なお、クラスもモジュールを拡張しているため、同じように「名前空間」に使用することができます。
+
+Rubyにおいて、モジュールを定義する方法には2つの異なるスタイルがある  
+それぞれが異なる文脈で使用される。
 
 ### 1. ネストされたモジュールの定義:
 
@@ -36,13 +44,12 @@ end
 
 ### 主な違い
 
-- **前提条件**: 修飾されたモジュール名を使用する方法では、親モジュールが既に存在している必要があります。ネストされた定義では、親モジュールが存在しない場合でも、その場で定義することができます。
+- **前提条件**: 修飾されたモジュール名を使用する方法では、親モジュールがすでに存在している必要があります。ネストされた定義では、親モジュールが存在しない場合でも、その場で定義することができます。
 - **コンテキストの明確化**: ネストされた定義の方が、モジュールの階層が明確になります。これは、特に大きなアプリケーションや複雑な名前空間の構造を持つ場合に役立ちます。
 
 どちらのスタイルを使用するかは、そのモジュールがどのような文脈で使用されるか、およびコードの可読性や整理のしやすさによって決まります。ただし、両者の間には機能的な違いはありません。モジュールの振る舞いやアクセス可能性に影響を与えることはありません。
 
-## Rails作者
-[大規模開発に強い理由](https://pr.forkwell.com/articles/dhh-rails-large-scale-development/)
+
 
 DHH（作者）が語っているシリーズ
 
