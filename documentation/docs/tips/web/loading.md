@@ -19,20 +19,3 @@ window.onload = function() {
   spinner.classList.add('loaded'); // 読み込み終了
 }
 ```
-
-## 難しくなる原因
-
-これを最新のフロントで？ってなると
-
-## ローディングの確認をするとき
-
-```js
-  const load = async () => {
-    try {
-      // simulate delay
-      await new Promise(resolve => {
-        setTimeout(resolve, 2000)
-      })
-    } catch (err) {
-  }
-```
