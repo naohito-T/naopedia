@@ -11,6 +11,15 @@
 ## Rails処理概要
 [![Image from Gyazo](https://i.gyazo.com/f932132c9b8d23e980053158fd9eece8.png)](https://gyazo.com/f932132c9b8d23e980053158fd9eece8)
 
+## Rails APIモード
+
+`Ruby on Rails`をバックエンドサーバーとして使用する場合、通常はアプリを API として設定するだけで、セッション、Cookie、レンダリングビューなどの一部の機能がデフォルトで無効になります。
+
+## Rails APIモードでactive adminを導入する方法
+
+[参考URL](https://medium.com/alturasoluciones/how-to-set-up-rails-api-app-to-use-activeadmin-79b418df8aad)
+
+
 ## Rails 名前空間について
 [参考URL](https://ja.stackoverflow.com/questions/86424/rails%E3%81%AE%E5%90%8D%E5%89%8D%E7%A9%BA%E9%96%93%E3%81%AE%E7%9B%AE%E7%9A%84%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E7%96%91%E5%95%8F)  
 [入れ子とショートシンタックスの違い](https://ninoseki.hatenablog.com/entry/2014/05/31/%E3%83%8D%E3%82%B9%E3%83%88%E3%81%97%E3%81%9F%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%82%92%E6%9B%B8%E3%81%8F%E5%A0%B4%E5%90%88%E3%81%AE%E6%B3%A8%E6%84%8F%E7%82%B9)  

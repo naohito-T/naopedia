@@ -6,9 +6,10 @@
 deviseとはRailsアプリケーションに柔軟な認証機能を追加するためのライブラリ。
 deviseを理解するには、下記の点を抑えておくと良い。
 
-- Rails エンジンの仕組みを利用している
+- Railsエンジンの仕組みを利用している
 - 認証機能毎にモジュールがある
 - 導入するだけで利用できるメソッドがある
+- `current_user`の利用しており、他のgemでもdefaultでcurrent_userを用いる。
 
 ### Railsエンジンとは
 
@@ -30,4 +31,3 @@ deviseは認証機能ごとに複数のモジュールに分かれている。
 ### postgres install error
 
 [参考URL](https://mebee.info/2020/12/18/post-26202/)
-
