@@ -1,5 +1,5 @@
 # AWS IAM
-[AWSセキュリティのベストプラクティス](https://blog.usize-tech.com/contents/uploads/2022/01/AWS_Security_Best_Practices.pdf)  
+[AWSセキュリティのベストプラクティス（reference）](https://blog.usize-tech.com/contents/uploads/2022/01/AWS_Security_Best_Practices.pdf)  
 [iamベストプラティクス](https://qiita.com/c60evaporator/items/0121399880625cc1de51)  
 [AWSにおけるクレデンシャル](https://dev.classmethod.jp/articles/iam-bestpractice-1/)  
 
@@ -17,6 +17,8 @@
 ## IAMとは
 [IAMユーザーを作ってみよう](https://www.idaten.ne.jp/portal/page/out/secolumn/multicloud/column005.html)
 
+「Identity and Access Management」の略。  
+公式ドキュメントによると、IAMは「誰」が「どのAWSのサービスやリソース」に「どのような条件」でアクセスできるかを指定できるサービス  
 アカウント番号（ルートユーザー）に対して複数ユーザーを作成可能。  
 利用者ごとに作成する。  
 1ユーザーを複数共有すると誰が何の操作をしたのか追跡ができなくなる。  
@@ -98,4 +100,3 @@ EC2などにIAMロールをアサインした際にも内部で同一の処理�
 ## AWSに必要なこと
 
 これらの組み合わせとして「AWSアカウントのパスワード」「AWSアカウントのAPIキー」「IAMユーザのパスワード」「IAMユーザのAPIキー」という4つのクレデンシャルがあることになります。
-
