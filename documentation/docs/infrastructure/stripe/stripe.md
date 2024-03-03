@@ -3,7 +3,7 @@
 [Stripe Docs](https://stripe.com/docs/stripe-cli)
 [Stripe card Docs](https://stripe.com/docs/testing#cards)
 
-決済代行サービス(類似サービスとしてはPayPalがある)
+決済代行サービス（類似サービスとしてはPayPalがある）
 stripeのAPIを使うと、自身のサービスの決済処理を担ってくれる。
 
 ユーザーにお金を請求してその支払を受け取りたい！
@@ -30,4 +30,3 @@ localではそれができないが、Stripe CLIを使えばそれを実行で�
 >それはなぜかと言うと、この顧客ID（cus_xxxxxxxxxxxxxx）を取得してしまえば、その顧客に対して定期課金や登録しているクレジットカードの削除などの処理を行えば良いからです！
 
 ## Stripe APIを利用するための準備
-
