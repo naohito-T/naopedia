@@ -1,6 +1,10 @@
 # Route53
 
-AWS Route53を使用して新しいドメイン名を購入する機能は、AWS CDKやTerraformといったIaC（Infrastructure as Code）ツールのスコープ外
+## Overview
+
+## 注意点
+
+AWS Route53を使用して新しいドメイン名を購入する機能は、AWS CDKやTerraformといったIaC（Infrastructure as Code）ツールのスコープ外となる。
 
 ## ホスティングゾーン(Hosted Zone)
 
@@ -21,4 +25,6 @@ Hosted Zoneは、ドメイン名に関連するDNSレコードを保持するた
 
 ## エイリアスレコード
 
-Route53の独自の機能で、簡単にいえばIPアドレスを直接入力しなくても裏でいい感じに設定してくれる機能。
+Route53の独自の機能で、簡単にいえばIPアドレスを直接入力しなくても裏でいい感じに設定してくれる機能。  
+エイリアスレコードと呼ばれる特別なDNSレコードがある。  
+エイリアスレコードはCNAMEレコードでは登録できない「Zone Apex」の別名を登録できます。Zone Apexとは最上位のドメイン名のことで、たとえば「www.example.com」や「sub.example.com」のZone Apexが「example.com」です
