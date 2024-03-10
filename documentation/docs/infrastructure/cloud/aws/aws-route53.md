@@ -2,6 +2,14 @@
 
 ## Overview
 
+Amazon Route 53は、AWSが提供するDNS（Domain Name System）運用サービスです。Route 53は非常に高い可用性と信頼性を備えており稼働率100%が保証されています。
+Route 53は以下の機能を備えています。
+- 権威DNSサーバー
+- ドメイン名の購入
+- ドメイン名の登録・管理
+
+[![Image from Gyazo](https://i.gyazo.com/e16bd2a9ac0661dfe79768557f72f1cb.png)](https://gyazo.com/e16bd2a9ac0661dfe79768557f72f1cb)
+
 ## 注意点
 
 AWS Route53を使用して新しいドメイン名を購入する機能は、AWS CDKやTerraformといったIaC（Infrastructure as Code）ツールのスコープ外となる。
