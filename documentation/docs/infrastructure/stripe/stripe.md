@@ -1,7 +1,9 @@
 # Stripe
 
-[Stripe Docs](https://stripe.com/docs/stripe-cli)
+[Stripe Docs](https://stripe.com/docs/stripe-cli)  
 [Stripe card Docs](https://stripe.com/docs/testing#cards)
+
+## Overview
 
 決済代行サービス（類似サービスとしてはPayPalがある）
 stripeのAPIを使うと、自身のサービスの決済処理を担ってくれる。
@@ -17,6 +19,10 @@ localで3D secureをしたい
 3dセキュアは本人認証後、Stripeに送信されStripeで認証が取れたことを確認した後、Webhookでどこかに送信する流れ、
 そのためapi側ではwebhookを受けた後、その処理をする必要がある。
 localではそれができないが、Stripe CLIを使えばそれを実行できる。
+
+## Stripeを導入するにあたり検討する
+
+[タイミーの場合](https://tech.timee.co.jp/entry/2020/12/10/131108)
 
 ---
 
