@@ -12,6 +12,3 @@ sidebar_position: 1
 <a href="mailto:naohito.tanaka0523@gmail.com">Contact to MAIL</a>
 <br/>
 <a href="https://mobile.twitter.com/naohito___t" target="_blank" rel="noopener noreferrer">Contact to Twitter</a>
-
-大項目
-

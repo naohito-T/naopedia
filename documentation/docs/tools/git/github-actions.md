@@ -1,5 +1,8 @@
 # GitHub Actionsとは
-[GitHub Actionsベストプラティクス](https://developers.cyberagent.co.jp/blog/archives/36423/)
+[GitHub Actionsベストプラティクス](https://developers.cyberagent.co.jp/blog/archives/36423/)  
+[GitHub Actions料金 Datadogによる可視化と削減のヒント](https://kakehashi-dev.hatenablog.com/entry/2023/08/22/103000)  
+[モノレポで GitHub Actions の jest coverage report を動かす](https://azukiazusa.dev/blog/monorepo-github-actions-jest-coverage-report-action/)
+
 
 - 現在のソフトウェア開発における課題
 >ソフトウェア開発を取り巻く環境は日々変化し、様々なツールやライブラリが次々と登場する時代がやってきました。これまで人が行っていた作業やハードウェアが実行していたタスクは、どんどんソフトウェアに置き換えられ、我々はソフトウェアに覆われた世界に向かって加速しています。これは喜ばしいことですが、一方で新しいツールができることや、それらを正しく連携させるための設定はどんどん複雑化し、本来の目的だったソフトウェア開発のために十分な時間を取れないといったケースが増えています。
