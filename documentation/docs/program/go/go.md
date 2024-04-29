@@ -678,11 +678,106 @@ Goのアプリケーションから呼び出すためのAPI（DBドライバー�
 ドライバー向けのパッケージ
 **アプリケーションのコードからdriverパッケージを利用することはない。**
 
-## ポインターレシーバーの使い所
+## Go言語でメソッドのレシーバータイプ（ポインタ vs 値）を選択する際のガイドライン
 
-レシーバーに渡す構造体がメモリ上で大きい領域を占めている場合にポインタレシーバーを使う  
-値レシーバーでコピーを渡す場合、その大きなものをメモリ上の別の領域にコピーしてから、そのコピーしたものを渡す必要がある  
-一方ポインタレシーバーではコピーなどせず、そのデータのメモリ上でのアドレスを渡すだけでいいのでメモリにやさしい
+- レシーバーに渡す構造体がメモリ上で大きい領域を占めている場合にポインタレシーバーを使う
+- 値レシーバーでコピーを渡す場合、その大きなものをメモリ上の別の領域にコピーしてから、そのコピーしたものを渡す必要がある
+- 一方ポインタレシーバーではコピーなどせず、そのデータのメモリ上でのアドレスを渡すだけでいいのでメモリにやさしい
+
+以下は、Go言語でメソッドのレシーバータイプ（ポインタ vs 値）を選択する際のガイドラインを考慮した例です。この例では、いくつかの異なるシナリオを示し、それぞれの場合に適したレシーバータイプを使用しています。
+
+### 例1: レシーバが大きな構造体の場合（ポインタを使用）
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+// LargeStruct は多くのフィールドを持つ大きな構造体です。
+type LargeStruct struct {
+	Data [1024]int
+}
+
+// Update は LargeStruct の内容を更新するメソッドです。大きな構造体なので、ポインタレシーバを使用します。
+func (l *LargeStruct) Update(index int, value int) {
+	l.Data[index] = value
+}
+
+func main() {
+	l := LargeStruct{}
+	l.Update(10, 100)
+	fmt.Println(l.Data[10]) // 出力: 100
+}
+```
+
+### 例2: レシーバが小さな構造体で、値の変更がない場合（値レシーバを使用）
+
+```go
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+// TimeWrapper は time.Time を包含する小さな構造体です。
+type TimeWrapper struct {
+	t time.Time
+}
+
+// Day は TimeWrapper の日を返します。変更を加えないので、値レシーバを使用します。
+func (tw TimeWrapper) Day() int {
+	return tw.t.Day()
+}
+
+func main() {
+	tw := TimeWrapper{t: time.Now()}
+	fmt.Println(tw.Day()) // 現在の日にちを出力
+}
+```
+
+### 例3: レシーバが sync.Mutex または同期を必要とするフィールドを含む場合（ポインタを使用）
+
+```go
+package main
+
+import (
+	"fmt"
+	"sync"
+)
+
+// SafeCounter は安全にカウントアップするための構造体です。sync.Mutex を含むのでポインタレシーバを使用します。
+type SafeCounter struct {
+	mu    sync.Mutex
+	count int
+}
+
+// Increment はカウンタを1つ増やします。
+func (s *SafeCounter) Increment() {
+	s.mu.Lock()
+	s.count++
+	s.mu.Unlock()
+}
+
+// Value は現在のカウンタの値を返します。
+func (s *SafeCounter) Value() int {
+	s.mu.Lock()
+	defer s.mu.Unlock()
+	return s.count
+}
+
+func main() {
+	s := SafeCounter{}
+	s.Increment()
+	fmt.Println(s.Value()) // 出力: 1
+}
+```
+
+これらの例は、レシーバを選択する際の一般的なガイドラインを反映しています。構造体が大きい、または変更可能な状態を持つ場合はポインタレシーバを使用し、小さくて不変のデータの場合は値レシーバを使用します。また、同期が必要な場合や、内部状態が外部から変更される可能性がある場合もポインタレシーバが推奨されます。
+
+
 
 ## Goには「大域脱出」を例外処理としてない
 
