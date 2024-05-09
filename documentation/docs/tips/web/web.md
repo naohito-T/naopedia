@@ -1,6 +1,5 @@
 # web application
 [色々なサイトの作り方](https://commte.net/4266)
-[login 機能関連](./login.md)
 
 webアプリケーションでの機能や概念などをまとめていくディレクトリ
 ## web画面遷移の仕組み
