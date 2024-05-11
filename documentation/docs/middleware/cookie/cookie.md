@@ -1,9 +1,10 @@
 # Cookie
-[参考URL](https://www.kwbtblog.com/entry/2019/04/20/005423)
+
+[参考URL](https://www.kwbtblog.com/entry/2019/04/20/005423)  
 [参考URL](https://www.ecbeing.net/contents/detail/235)
 
 **Cookieはブラウザがパソコンのハードディスクに保存する小さなデータ**
-Cookieとは、クライアント（ブラウザ）に保存される簡易なテキストファイルのこと。
+Cookieとは、クライアント（ブラウザ）に保存される簡易なテキストファイルのこと。  
 サーバー（Rails）が**クライアントに一時的に情報を記録させるときに使用する**
 
 ## Cookieとは
@@ -54,6 +55,7 @@ JavaScriptで参照できるローカルストレージよりはマシなだけ�
 ### cookieの種類
 
 クッキーには2種類ある
+
 - セッションクッキー（sessionと共に利用する）
 セッションクッキーは、Webサイトにアクセスしている間、ブラウザに一時的に作成され、ユーザーがサイトを離れると、セッションクッキーは削除される。
 - 永続クッキー
@@ -75,7 +77,7 @@ JavaScriptで参照できるローカルストレージよりはマシなだけ�
 
 **credentials（クレデンシャル）**
 リクエストヘッダーのwithCredentials（ウィズ クレデンシャル）フラグをtrueにする。
-withCredentialsは、クロスオリジンのクライアント資格情報を使用して、リクエストを行うことを許容するか否かを設定するフラグです。（デフォルトはfalse)
+withCredentialsは、クロスオリジンのクライアント資格情報を使用して、リクエストを行うことを許容するか否かを設定するフラグです。（デフォルトはfalse）
 
 trueにすることで、
 クロスオリジンリクエストの際に、Cookieを送信することができ、クロスオリジンレスポンスのCookieを受け取ることができます。
@@ -93,6 +95,7 @@ trueにすることで、
 >ウェブサーバーとウェブブラウザとの間でやりとりできる小さなデータとして「クッキー (Cookies)」というものがあります。このクッキーは属性を持たせることができるのですが、その中にはセキュリティを高めるための属性がいくつかあります。
 
 ## Set-Cookie
+
 [参考URL](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Set-Cookie)
 
 Set-CookieはHTTPのレスポンスヘッダーで、サーバーからユーザーエージェントへクッキーを送信するために使用され、ユーザーエージェントはそれを後でサーバーに送り返すことができます。
@@ -103,6 +106,7 @@ Set-CookieはHTTPのレスポンスヘッダーで、サーバーからユーザ
 >Secure 属性がついたクッキーは HTTPS プロトコル上の暗号化されたリクエストでのみサーバーに送信され、安全でない HTTP では決して送信されない
 
 ## SameSite
+
 [参考URL](https://www.ecbeing.net/contents/detail/235)
 [Chrome で SameSite=None に関する Cookieについての警告が表示される](https://laboradian.com/warning-about-cookie-samesite-none/)
 
@@ -135,3 +139,8 @@ Chrome84からCookieの属性であるSameSiteのデフォルト値がNoneから
 つまりproxyを立てて通信を行う（local）、devでも行う必要があるのか気になる。
 
 [Next Http Proxy Middlewareで Next.js × Rust間のリクエストをproxyする](https://sayu-do.com/2022-2-3/196/)
+
+## HttpOnly
+
+HttpOnly属性は、サーバー側で付与してCookieを送信することで、JavaScriptからCookieにアクセスを行えなくするためのもの。  
+ここ最近の主要ブラウザはサポートしている。そのためCookieに保存することが推奨されている（JWT）
