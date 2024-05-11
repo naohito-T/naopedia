@@ -41,7 +41,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         },
         items: [
           {
-            label: 'docs',
+            label: 'Docs',
             to: '/docs/intro',
           },
           {
@@ -52,12 +52,11 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
                 href: 'https://github.com/naohito-T/',
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/naohito___t',
+                label: 'X',
+                href: 'https://x.com/naohito___t',
               },
             ],
           },
-          //
           {
             label: 'Product',
             items: [
