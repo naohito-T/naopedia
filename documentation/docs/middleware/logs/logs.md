@@ -1,4 +1,15 @@
 # logs
+
+## Overview
+
+[IPA:「企業における情報システムのログ管理に関する実態調査」報告書について](https://warp.da.ndl.go.jp/info:ndljp/pid/11440710/www.ipa.go.jp/security/fy28/reports/log_kanri/index.html)  
+[NIST: コンピュータセキュリティログ管理ガイド](https://www.ipa.go.jp/security/reports/oversea/nist/ug65p90000019cp4-att/000025363.pdf)
+
+>「ログ」は、組織のシステムおよびネットワーク内で発生するイベント（事象）の記録である。ログは複数のログ項目から構成される記録であり、個々のログ項目は、システムまたはネットワークにおいて発生する特定の１件のイベント（事象）に関連した情報を含む。組織におけるログの多くは、コンピュータセキュリティに関する記録を含む。これらのコンピュータセキュリティのログは、数多くの情報源によって生成される。たとえば、ウイルス対策ソフトウェア、ファイアウォール、侵入検知および防止システムなどのセキュリティソフトウェアや、サーバ、ワークステーション、ネットワーク装置上のオペレーティングシステム、およびアプリケーションなどである。
+>コンピュータセキュリティログ管理が必要となっている。コンピュータセキュリティログ管理とは、コンピュータセキュリティログデータの生成、通信、格納、分析、廃棄するプロセスのことである。
+
+## 出力レベルの考え方
+
 [log level](https://en.wikipedia.org/wiki/Syslog#Severity_level)
 [log perfectガイド](https://betterstack.com/community/guides/logging/how-to-install-setup-and-use-pino-to-log-node-js-applications/)
 
