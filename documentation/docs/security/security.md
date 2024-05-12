@@ -9,6 +9,12 @@
 ## Overview
 
 
+## 情報セキュリティの際に参考にする機構
+
+[ISMSとPマークの違い](https://www.lrm.jp/security_magazine/about-isms/)
+
+[![Image from Gyazo](https://i.gyazo.com/df16a083ebbb0f95af2d48193ff3c67d.png)](https://gyazo.com/df16a083ebbb0f95af2d48193ff3c67d)
+
 ## IPA
 
 [IPAについて](https://www.ipa.go.jp/about/index.html)
