@@ -1,22 +1,57 @@
 # JavaScript
+
 [JavaScriptのすべての仕組み](https://ja.javascript.info/)
 [JavaScript Primer（めちゃくちゃわかりやすい）](https://jsprimer.net/)
 [next/script には JavaScript の基本がつまっていた](https://zenn.dev/aiji42/articles/9a6ab12ab5f6e6)
 [JavaScript アニメーション仕組み](https://ja.javascript.info/js-animation)
 
 ## npm人気なパッケージを見つける
+
 [本当に必要なnpmパッケージを見つけるために知っておきたい5つのサイト](https://www.gaji.jp/blog/2022/06/29/10259/)
 
 ## JavaScriptの時間
+
 [参考URL](https://qiita.com/shirokurotaitsu/items/5efd855900ec6135bbab)
 
 `Date`がミリ秒のため`* 1000`が必要
 ※UNIXタイムスタンプは10桁
+
 ```js
 // 13桁でミリ秒までやっている
 new Date().getTime()
 // 1668826244442
 ```
+
+### アロー関数と`this`
+
+アロー関数は特別な関数ですが、一番の特徴は`this`キーワードの扱い方。
+アロー関数は`this`をレキシカルに捉える、つまり`this`はアロー関数が定義されたスコープの`this`を指すようになります。  
+通常の関数宣言を使用すると、`this`は呼び出し時のコンテキストを指します。したがって、オブジェクトのメソッドとして関数を呼び出すと、`this`はそのオブジェクトを指します。
+
+#### 例
+
+```javascript
+const obj = {
+  value: 'hello',
+  getValue: function() {
+    console.log(this.value);
+  },
+  getArrowValue: () => {
+    console.log(this.value); // ここでの `this` は `obj` を指していない
+  }
+};
+
+obj.getValue(); // "hello" と出力される
+obj.getArrowValue(); // undefinedと出力される
+```
+
+この例でわかるように、アロー関数内の`this`は`obj`を指さない。そのため`this.value`は`undefined`となります。
+
+### あなたのケースで
+
+アロー関数をメソッドとして使用すると、そのメソッド内の`this`はそのメソッドが属するオブジェクトを指さなくなります。そのため、`this`キーワードをメソッド内で使用する場合、通常の関数宣言を使用するのが一般的です。または、`this`を変数にアサインしてからアロー関数を使用することもあります。
+
+この概念はJavaScriptおよびTypeScriptの中心的な概念であり、`this`の扱いはとくに初心者には混乱を招くことが多いです。このため、どのように機能するかを理解することは非常に重要です。
 
 ## JavaScriptの実行環境
 
@@ -26,6 +61,7 @@ new Date().getTime()
 JavaScriptのサンドボックスによる代表的な制約のひとつに同一オリジンポリシー (same-origin policy) がある。
 
 ## JSのスレッド
+
 [参考URL](https://jsprimer.net/basic/async/)
 
 JSの同期処理&非同期処理はメインスレッドで実行される（UIスレッドとも呼ばれる）

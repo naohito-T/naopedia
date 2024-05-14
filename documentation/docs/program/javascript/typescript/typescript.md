@@ -1,28 +1,31 @@
 # TypeScript
+
 [TypeScript特有の組み込み型関数](https://log.pocka.io/ja/posts/typescript-builtin-type-functions/#thistype)  
 [Type challenge](https://github.com/type-challenges/type-challenges)
 
 ## TypeScript導入にあたって
+
 [LINE参考](https://engineering.linecorp.com/ja/blog/benefits-and-costs-to-consider-when-installing-typescript)
 
 JavaScriptを熟知した人間にとっては、静的型の制限があることによりJavaScriptでは簡単に実現できていた設計がTypeScriptでは困難になるという場面がある。
 
 ## コンパイル時評価 or コンパイル時計算
+
 [TypeScript のコンパイル時計算はどこまでできるのか？](https://qiita.com/Kuniwak/items/983ba68fcf68d915b07d)
 
-TypeScriptはJavaScriptへのトランスパイル時に実行時に振る舞いを変えるような最適化や評価は行いない。
-そのため、コードがJavaScriptにトランスパイルされたとしても、style1とstyle3の比較やオブジェクトの作成はランタイム時（ブラウザやNode.jsでコードが実際に実行される時）に行われます。
+TypeScriptはJavaScriptへのトランスパイル時に実行時に振る舞いを変えるような最適化や評価は行いない。  
+そのため、コードがJavaScriptにトランスパイルされたとしても、style1とstyle3の比較やオブジェクトの作成はランタイム時（ブラウザやNode.jsでコードが実際に実行される時）に行われる。
 
-
-TypeScriptの主要な役割は型チェックにあります。これはコンパイル時（具体的にはトランスパイル時）に行われ、型の不整合や他の型関連のエラーを検出できます。これにより、実行時のエラーを減少させ、コードの品質を向上させることが期待されます。
+TypeScriptの主要な役割は型チェックにある。  
+これはコンパイル時（具体的にはトランスパイル時）に行われ、型の不整合や他の型関連のエラーを検出できる。　　
+これにより、実行時のエラーを減少させ、コードの品質を向上させることが期待できる。  
 しかし、TypeScriptはJavaScriptへのシンプルなトランスパイルを目指しており、コンパイル時の最適化や変数の評価、インライン化などの高度な最適化は行いません。そのため、TypeScriptでの評価や計算は、トランスパイル後のJavaScriptコードが実際に実行される際（ランタイム）に行われます。
 これはTypeScriptがJavaScriptのスーパーセットであり、結果として出力されるJavaScriptの振る舞いや性能を直感的に理解することを目指しているためです。
 
 ## staticキーワードは評価されるのか
 
-JavaScriptやTypeScriptにおける`static`キーワードに関連するフィールドやメソッドは、そのクラスのインスタンスを生成しなくてもアクセスできるメンバーを示します。しかし、`static`が評価済みという意味ではありません。
+JavaScriptやTypeScriptにおける`static`キーワードに関連するフィールドやメソッドは、そのクラスのインスタンスを生成しなくてもアクセスできるメンバーを示します。しかし、`static`が評価済みという意味ではない。
 
-以下に例を示します。
 ```typescript
 class MyClass {
     static staticValue = "This is a static value";
@@ -41,9 +44,51 @@ MyClass.staticMethod(); // This is a static method.
 ただし、一部のJavaScriptエンジンやツールは、特定のパターンを検出して最適化を行うことがありますが、これはTypeScriptやJavaScriptの言語仕様に基づくものではありません。
 
 ## overloadから型定義を取得する
+
 [参考URL](https://zenn.dev/uhyo/articles/typescript-overload-infer)
 
-## TypeScriptのエラー
+## TypeScript クラス内でアロー関数を使用する場合
+
+```ts
+class ParentClass {
+  // これはプロパティ
+  //hoge : () => void = () => console.log("Hoge");
+  // これはメソッド
+  hoge() {
+    console.log("Hoge");
+  }
+}
+```
+
+TypeScript（およびJavaScript）において、アロー関数で定義するとクラスのインスタンスプロパティとして扱われます。これは、関数が実際にはそのインスタンスのプロパティ値として保存されるためです。この挙動は、関数の`this`のスコープをクラスインスタンスに自動的にバインドする利点があります。したがって、アロー関数を用いたプロパティの定義は、特にイベントハンドラやコールバック関数として利用する場合に便利です。
+
+### クラス内のアロー関数をプロパティとして定義する例
+
+```typescript
+class ParentClass {
+  // アロー関数をプロパティとして定義
+  hoge: () => void = () => {
+    console.log("Hoge from property");
+  };
+
+  // 通常のメソッド定義
+  normalMethod() {
+    console.log("Hoge from method");
+  }
+}
+
+const instance = new ParentClass();
+instance.hoge();         // "Hoge from property" が出力される
+instance.normalMethod();  // "Hoge from method" が出力される
+```
+
+このコード例では、`hoge`はクラスのインスタンスを通じて呼び出すことができるプロパティとして定義されています。アロー関数を使うと、`this`が関数が定義された時点のコンテキスト（この場合はクラスのインスタンス）に永続的にバインドされるため、クラスの他のメソッドやプロパティに簡単にアクセスできます。これに対して、`normalMethod`は通常のメソッドとして定義されており、特に`this`の挙動に注意が必要な場合（例えばコールバックとして使用する場合など）は、適切にバインドするかアローファンクションを使用する必要があります。
+
+
+
+
+## TypeScriptのエラーハンドリング
+
 [セオリーなerrorハンドリング](https://qiita.com/shibukawa/items/ffe7264ecff78f55b296)
 
 >TypeScript には Java の throws のように**関数が throw する例外を宣言する方法がない**ので、どのような例外が throw され得るかを知るにはコードを読むしかありません。
@@ -51,12 +96,15 @@ result型は確かにいいけど可読性がいいかと言われたら違う�
 そのためこれが一番セオリーかも。プロジェクトに導入した。
 
 ## TypeScriptは構造型
+
 [参考URL](https://qiita.com/suin/items/52cf80021361168f6b0e)
 
 ## TSDoc
+
 [参考URL](https://blog.pokutuna.com/entry/tsdoc-tag-list)
 
 ## 参考 URL集
+
 [仕事ですぐに使える TypeScript](https://future-architect.github.io/typescript-guide/index.html)
 [高度な型定義](https://golang.hateblo.jp/entry/2021/03/15/202502?utm_source=feed)
 [URL](https://log.pocka.io/ja/posts/typescript-builtin-type-functions/)
@@ -70,13 +118,16 @@ result型は確かにいいけど可読性がいいかと言われたら違う�
 [Three.js TypeScript webpack（これいつかやりたいな）](https://ics.media/entry/16329/)
 
 ## TypeScriptでグローバルな型定義ファイルを用意する
+
 [参考URL](https://zenn.dev/fagai/articles/7f76a3b3b5a415)
 
 ## .d.ts
+
 [型定義ファイル (.d.ts)](https://typescriptbook.jp/reference/declaration-file)
 `.d.ts`ファイルは`.ts`と`.js`ファイルの間をつなぐブリッジ。
 
 ## 自作の型定義ファイル .ts or d.ts？
+
 [自作の型定義ファイルに ".d.ts" と付けない方がいい](https://techlab.q-co.jp/articles/41/)
 TypeScriptで型定義用のファイルを作る際に、ライブラリが生成する型定義ファイルの名前にならって`.d.ts`と付けると、定義していない型がanyとして使えてしまい型チェック時にもエラーになりません。
 よって`.ts`で宣言する。
@@ -92,6 +143,7 @@ named importだと呼び出し側で名前を変更することができなく�
 2. 1がなければ、 declare module “package-name"; を含んだ .d.tsを自分で追加する
 
 ## TypeScript ジェネリクスを書くチートシート
+
 [参考URL](https://qiita.com/suin/items/03baa7cf7dd8e9a9f010)
 
 ## TypeScriptコンパイラについて
@@ -99,7 +151,8 @@ named importだと呼び出し側で名前を変更することができなく�
 [参考URL](https://typescriptbook.jp/overview/typescript-is-not-that)
 
 結論はTypeScriptの実行パフォーマンスはJavaScriptと同じ。  
-これを理解するには理解するべきことがある。  
+これを理解するには理解するべきことがある。
+
 - TypeScriptのランタイムはない
 - TypeScriptコンパイラは最適化しない。
 
@@ -136,6 +189,7 @@ ts → tsx → d.ts
 typesRootsがtsconfig.jsonに指定されている場合は**そのパッケージのみが対象となる。**
 
 ## TypeScript インデックスシグネチャを安全に使う
+
 [インデックスシグネチャで特定の文字だけのIndexを扱う](https://blog.mitsuruog.info/2019/03/typescript-limited-set-of-index-signature)
 
 動的に任意のプロパティを作成・使用したいときに使うかもしれないが、だいたいは`Map`などで代用ができる。
@@ -465,4 +519,3 @@ TypeScript 2.8で導入された。
 ```ts
 type MyCondition<T, U, X, Y> = T extends U ? X : Y;
 ```
-
