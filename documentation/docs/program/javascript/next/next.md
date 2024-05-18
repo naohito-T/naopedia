@@ -1,4 +1,5 @@
 # Next
+
 [NextJS リファレンス](https://nextjs.org/docs/api-reference/next/image)  
 [next/routerをmockする](https://fwywd.com/tech/next-testing-mock)
 
@@ -32,6 +33,12 @@ JSをNextがpre-Renderingをおこなっているため
 Nuxtだと、SSRにした場合はすべてのページがSSRとなってしまうが
 Nextだと、**このページはCSR、次はSSRなど分けることができる。もちろんSSGも**
 Next.jsの大きな特徴として、ひとつのプロジェクトの中で、SSGとSSRを混在して利用することができる
+
+## API Routeでcookieを設定する方法
+
+[Next JS Client と Express Server によるセッション Cookie の処理](https://medium.com/@rejukg/session-cookie-handling-with-next-js-client-and-express-server-3f23cc743740)
+
+[![Image from Gyazo](https://i.gyazo.com/bb4574ee02b54402aa3625cd0706f416.png)](https://gyazo.com/bb4574ee02b54402aa3625cd0706f416)
 
 ## Nextを使うべき理由
 
