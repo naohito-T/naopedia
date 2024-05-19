@@ -1,7 +1,9 @@
 # Next
 
 [NextJS リファレンス](https://nextjs.org/docs/api-reference/next/image)  
-[next/routerをmockする](https://fwywd.com/tech/next-testing-mock)
+[next/routerをmockする](https://fwywd.com/tech/next-testing-mock)  
+[Session Cookie Handling with Next JS Client and Express Server — a blog from Snippet Commerce 360](https://medium.com/@rejukg/session-cookie-handling-with-next-js-client-and-express-server-3f23cc743740)
+[A Complete Guide To Using Cookies in Next.js](https://www.propelauth.com/post/cookies-in-next-js)
 
 ## SPAで軽視されがちな部分
 
