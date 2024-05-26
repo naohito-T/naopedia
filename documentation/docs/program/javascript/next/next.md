@@ -2,8 +2,11 @@
 
 [NextJS リファレンス](https://nextjs.org/docs/api-reference/next/image)  
 [next/routerをmockする](https://fwywd.com/tech/next-testing-mock)  
-[Session Cookie Handling with Next JS Client and Express Server — a blog from Snippet Commerce 360](https://medium.com/@rejukg/session-cookie-handling-with-next-js-client-and-express-server-3f23cc743740)
+[Session Cookie Handling with Next JS Client and Express Server — a blog from Snippet Commerce 360](https://medium.com/@rejukg/session-cookie-handling-with-next-js-client-and-express-server-3f23cc743740)  
 [A Complete Guide To Using Cookies in Next.js](https://www.propelauth.com/post/cookies-in-next-js)
+
+## Overview
+
 
 ## SPAで軽視されがちな部分
 
@@ -12,14 +15,13 @@
 - UI状態の復元
 [参考URL](https://zenn.dev/akfm/articles/react-state-scope)
 
-## 歴史
+## Next.js API RouteとgetServerSideでCookieを参照するには
 
-NextJsバージョン > v12.0.1とSWCコンパイラを使用している。
+[参考URL](https://stackoverflow.com/questions/69057271/why-are-cookies-not-sent-to-the-server-via-getserversideprops-in-next-js)
 
 ## Reactとの違い
 
 ブラウザは受信したJSファイルを処理することでh1タグとその内容を描写していることがわかる
-
 ブラウザ ページソースを確認すればわかる
 
 Client Rendering
@@ -32,8 +34,8 @@ JSをNextがpre-Renderingをおこなっているため
 
 ## Next強み
 
-Nuxtだと、SSRにした場合はすべてのページがSSRとなってしまうが
-Nextだと、**このページはCSR、次はSSRなど分けることができる。もちろんSSGも**
+Nuxtだと、SSRにした場合はすべてのページがSSRとなってしまうが  
+Nextだと、**このページはCSR、次はSSRなど分けることができる。もちろんSSGも**  
 Next.jsの大きな特徴として、ひとつのプロジェクトの中で、SSGとSSRを混在して利用することができる
 
 ## API Routeでcookieを設定する方法
@@ -42,19 +44,6 @@ Next.jsの大きな特徴として、ひとつのプロジェクトの中で、S
 
 [![Image from Gyazo](https://i.gyazo.com/bb4574ee02b54402aa3625cd0706f416.png)](https://gyazo.com/bb4574ee02b54402aa3625cd0706f416)
 
-## Nextを使うべき理由
-
-1. 開発サーバの高速リロード（これはNuxtと比べると本当に早い）
-React(webpack)の開発サーバは変更を検知してページ全体をリロードします。Next.jsの開発サーバはソースコードの変更を検知して、stateを保持したまま変更があった個所だけを更新してくれます。これにより、開発体験が大幅に向上します。たとえば**フォームに入力した内容を保持したまま**タイトルのfont-sizeを変更することなどができる。
-
-2. 画像最適化
-Next.js 10.0.0から専用の画像コンポーネントが追加され、**配置されるサイズに応じて元画像をトリミングして配信してくれるようになった。**
-必要なサイズのデータだけをダウンロードするので画像の表示を大幅に高速化できる。
-※レスポンス表示で幅が小さくなった場合も自動でそのサイズにトリミングした画像を生成してくれる。
-
-3. ゼロコンフィグ
-webpack等の設定の必要がない。
-
 ## Next.jsのdefault cache
 
 [![Image from Gyazo](https://i.gyazo.com/76ede82fc4c13a9aaad0b58a3d9daf53.png)](https://gyazo.com/76ede82fc4c13a9aaad0b58a3d9daf53)
@@ -62,7 +51,8 @@ webpack等の設定の必要がない。
 ---
 
 ## データフェッチ仕組み
-[SSGとSSRの違い](https://blog.microcms.io/nextjs-sg-ssr/)
+
+[SSGとSSRの違い](https://blog.microcms.io/nextjs-sg-ssr/)  
 [リファレンス](https://nextjs.org/docs/basic-features/data-fetching/overview)
 
 Next.jsでは、**ブラウザへ送信する前にpre-Rendering**をおこなっている。
@@ -75,6 +65,7 @@ CSRのデータフェッチは相対パスでもいい。
 
 SSRのデータフェッチが絶対パスではないといけない理由
 >エラーではありません。isomorphic-unfetch は SSR モードで実行されているため、Node.js はそこから取得する絶対 URL を知る必要があります。これは、バックエンドがブラウザーの設定を認識していないためです。
+
 ## SSRとSSGについて
 
 [参考URL](https://www.gaji.jp/blog/2022/03/17/9343/)
@@ -83,6 +74,7 @@ Nextでクエリ文字列を使いたい時は`getServerSideProps`を使う
 `getStaticProps`では使えない。
 
 ### SSRフロー
+
 [参考URL](https://maasaablog.com/development/frontend/nextjs/3512/)
 
 1. ブラウザからサーバー（Node.js）へリクエスト
@@ -91,12 +83,15 @@ Nextでクエリ文字列を使いたい時は`getServerSideProps`を使う
   2. 動的なデータがない場合は`HTML`をそのままブラウザに返却
 
 ### SSR回避させる
+
 [SSR回避 実装パターン集](https://nishinatoshiharu.com/next-exec-only-client/)
 
 #### getServerSidePropsが実行されるタイミング
+
 [リファレンス](https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props)
 
 #### next/link next/routerを介したgetServerSidePropsとURL直接アクセスのgetServerSidePropsの違い
+
 [参考URL](https://zenn.dev/yami_beta/articles/f31a8a496a7073)
 
 - /nowへ直接アクセス
@@ -108,8 +103,8 @@ getServerSidePropsはクライアントサイドルーティングでページ�
 このときgetServerSidePropsの実行結果は`JSON`で返ってくる。
 
 ### CSR と SSRのデータフェッチ違い
-[参考URL](https://stackoverflow.com/questions/44342226/next-js-error-only-absolute-urls-are-supported)
 
+[参考URL](https://stackoverflow.com/questions/44342226/next-js-error-only-absolute-urls-are-supported)
 
 ### SSG
 
@@ -117,6 +112,7 @@ Static（通称SSG、SG）を利用するメリット
 **CDNに静的ファイルをキャッシュ**することで表示のスピードUPを実現
 
 ### ISG（Incremental Static Generation）
+
 [Link と ISR が引き起こす Next.js の過負荷](https://zenn.dev/takepepe/articles/nextjs-isr-prefetch)
 
 ISG（Incremental Static Generation）は、Next.jsがオンデマンドでページを静的生成するアプローチです。「オンデマンドで静的生成する」ことで、ビルドタイムの静的生成をスキップできる。
@@ -141,38 +137,23 @@ ISGの「再生成が起こらない」課題を解決するアプローチ（�
 
 #### LinkとISRの関係
 
-
-
-
-### Next.js12での仕組み
-
->Next.jsでは、すべてのアプリケーションが本番環境でより速くビルドされ、ローカル開発では即座にフィードバックが得られるようにしたいと考えています。Next.js 12には、ネイティブ・コンパイルの利点を活かしたまったく新しいRustコンパイラが搭載されています。
-
-SWCは**Rust製の高速なトランスパイラ。**
-Next.jsがSWCの利用を推進しており、Next.js 12からはデフォルトのトランスパイラがBabelからSWCに変更。
-またSWCのソースコードはいくつかに分けてクレート化されており、Next.jsのみならずDeonの内部でも利用されています。
-
-**Babel vs SWC**
-
-
-
 #### Serverless Componentsでdeployした場合のLambda@Edge レスポンス制限
-[海外の方記事](https://backbencher.dev/nextjs-serverless-502-error-lambda-invalid-json)
 
+[海外の方記事](https://backbencher.dev/nextjs-serverless-502-error-lambda-invalid-json)
 
 ## ISR(Incremental Static Regeneration)
 
-[リファレンス](https://nextjs.org/docs/basic-features/data-fetching/overview#incremental-static-regeneration)
-
+[リファレンス](https://nextjs.org/docs/basic-features/data-fetching/overview#incremental-static-regeneration)  
 [Next ISRで動的コンテンツをキャッシュするときの戦略](https://zenn.dev/catnose99/articles/8bed46fb271e44)
-ISRとは、動的なコンテンツを含むページも静的ページとしてCDNにキャッシュすることが可能になる。
 
+ISRとは、動的なコンテンツを含むページも静的ページとしてCDNにキャッシュすることが可能になる。
 ISRを使うことで動的なコンテンツを含むページも静的ページとしてCDNにキャッシュすることが可能になる。Next.jsのISRはドキュメントに書かれているようにstale-while-revalidateという考え方でキャッシュが行われる。
 具体的には、リクエスト時にページのキャッシュを作成し、次のアクセスではキャッシュされた古いデータを返します。その裏で次のアクセスに向けてキャッシュが再生成されるというイメージです。
 
 getStaticProps単体だと長期間キャッシュされる静的なページが出力される（いわゆるSSGというやつ）ここに`revalidate`を追加するとISRになる。
 
 `revalidate: 10`の挙動は以下
+
 - キャッシュが作られた後、10秒間はそのキャッシュを返し続ける（10秒以内に100回アクセスされてもキャッシュの再生成はされない）
 - 10秒経ったあとはキャッシュが古くなったとみなされる。ただし次のリクエストでもいったんはそのキャッシュを返す（1時間後にアクセスがあった場合もいったん古いキャッシュを返す）
   - その裏でキャッシュを再生成する
@@ -190,14 +171,11 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 };
 ```
 
-
 ### 各コマンド仕組み
 
 [仕組み参考](https://qiita.com/st2222/items/827407bc146ef9886f06)
 
 `$ npx next -h`で各コマンドの詳細を確認できる
-
-
 `$ next dev`
 ローカルでアプリケーションを起動します。
 `getStaticProps`（SSGで利用するmethod）を利用した場合でも**SSR動作**になる。
@@ -205,8 +183,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 ただし、create-next-appでスキャフォールディングしたプロジェクトに用意されているdevコマンドで起動したアプリはサーバーサイドレンダリング（以下SSR）が有効になっており、**静的HTMLのみの確認ができない**
 
 そこでNext.jsで静的HTMLエクスポートしたアプリをローカルで確認する方法を調べました。
-[参考URL ](https://qiita.com/Nossa/items/bdc6a9705e89ea8fc250)
-
+[参考URL](https://qiita.com/Nossa/items/bdc6a9705e89ea8fc250)
 
 `$ next build`
 .nextフォルダーにプロダクション用のコードを吐き出す
@@ -231,14 +208,15 @@ localで確認する場合は
 SWRはRenderingの種類ではない。Stale-While-Revalidateというキャッシュ戦略の略。
 
 ## SWRとは
+
 [SWRを使ってハマったところ](https://zenn.dev/yodaka/articles/f5f93877b7a19f)
 
 Vercelが開発する、HTTP RFC 5861で提唱された、SWRというキャッシュ無効化戦略に基づくライブラリ。
 簡単に言うと、最初は普通にデータを取得してキャッシュとしてセット、次に参照された時にいったんキャッシュを返し裏でまたフェッチして、フェッチが完了したらキャッシュを最新のものに置き換えるというキャッシュ戦略をよしなにやってくれる。
 
 ## Next.jsにimport React from 'react'はいるのか？
-[参考URL](https://stackoverflow.com/questions/63090037/importing-react-into-pages-in-next-js-and-also-react-and-cra-apps)
 
+[参考URL](https://stackoverflow.com/questions/63090037/importing-react-into-pages-in-next-js-and-also-react-and-cra-apps)  
 結論いらない。
 
 ## pages/apiとは(API Route)
@@ -251,6 +229,7 @@ next.jsでは`pages/api`ディレクトリ以下にTypeScript (JavaScript) コ�
 - サーバーレス関数として配置される
 
 ### 注意
+
 [リファレンス](https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props)
 
 >サーバーからデータを取得したい場合にAPI ルートにアクセスしてから、その API ルートを呼び出したいと思うかもしれませんgetServerSideProps。getServerSidePropsこれは不要で非効率的な方法です。サーバー上で と API ルートの両方が実行されているために、余分なリクエストが行われることになるからです。
