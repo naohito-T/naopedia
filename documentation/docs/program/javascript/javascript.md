@@ -1,8 +1,8 @@
 # JavaScript
 
-[JavaScriptのすべての仕組み](https://ja.javascript.info/)
-[JavaScript Primer（めちゃくちゃわかりやすい）](https://jsprimer.net/)
-[next/script には JavaScript の基本がつまっていた](https://zenn.dev/aiji42/articles/9a6ab12ab5f6e6)
+[JavaScriptのすべての仕組み](https://ja.javascript.info/)  
+[JavaScript Primer（めちゃくちゃわかりやすい）](https://jsprimer.net/)  
+[next/script には JavaScript の基本がつまっていた](https://zenn.dev/aiji42/articles/9a6ab12ab5f6e6)  
 [JavaScript アニメーション仕組み](https://ja.javascript.info/js-animation)
 
 ## npm人気なパッケージを見つける
