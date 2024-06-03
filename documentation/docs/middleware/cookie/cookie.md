@@ -210,6 +210,7 @@ SameSiteには3つの設定を行うことが可能で、`None、Lax、Strict`�
 SameSiteが設定されていない時のデフォルトの動作。
 
 #### None
+
 ブラウザーがクロスサイトと同一サイトの両方のリクエストでクッキーを送信する。
 同時に、Secure属性も設定する必要がある（例:SameSite=None; Secure）。
 
