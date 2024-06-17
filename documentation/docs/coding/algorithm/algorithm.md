@@ -28,6 +28,7 @@ Node.jsはシングルスレッドで動作します。これは、JavaScriptコ
 ### 例を用いた説明
 
 #### O(n)のアルゴリズム（線形時間）
+
 ```javascript
 function linearAlgorithm(arr) {
   for (let i = 0; i < arr.length; i++) {
