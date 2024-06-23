@@ -1,5 +1,11 @@
 # CPU
 
+## Overview
+
+OSは、パソコンを使う人をサポートしてくれるソフト。CPUはデータ処理してくれるパソコンの頭脳  
+OSはソフトウェアで、CPUはハードウェア  
+パソコンのいろんな処理の速さはCPUの性能にかかってくることが多い。CPUの計算が遅いとパソコンも動作が遅い。
+
 ## CPUを動かすには
 
 [参考URL](https://onoredekaiketsu.com/x86-64-x64-amd64-what-is-the-difference-between-these/)
@@ -8,8 +14,8 @@ CPUを動かすには**CPUが理解できる命令のセット**が必要。
 
 ## instruction set architecture
 
-CPUを動かすために体系化したものを命令セットアーキテクチャ(instruction set architecture) ISAと呼ぶ
-※昔の言い方では機械語(マシン語)の仕様みたいなもの。
+CPUを動かすために体系化したものを命令セットアーキテクチャ（instruction set architecture）ISAと呼ぶ
+※昔の言い方では機械語（マシン語）の仕様みたいなもの。
 
 そして、「x86-64」や「x64」「AMD64」はこの命令セットアーキテクチャ（ISA）の名前
 
