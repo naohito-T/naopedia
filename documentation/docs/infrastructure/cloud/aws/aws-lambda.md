@@ -5,10 +5,13 @@
 
 ## Lambdaを採用する方針
 
-非同期な通信処理、イベント駆動で処理をするサービスにはLambdaを採用する。  
-同期的な通信処理、APIなどを提供するサービスにはECSを採用する。
+- 非同期な通信処理
+  - イベント駆動で処理をするサービスにはLambdaを採用する。
+- 同期的な通信処理
+  - APIなどを提供するサービスにはECSを採用する。
 
-## Lambdaにそぐわないアーキテクチャ
+## Lambdaに合わないアーキテクチャー
+
 [コスト効率の悪いLambdaアプリケーションの性質に関する考察](https://blog.yuuk.io/entry/2017/lambda-disadvantages-from-a-cost-viewpoint)
 
 ## Lambdaを採用する例文
@@ -23,7 +26,32 @@
 
 に応じて料金が発生する。
 
-### cliから実行する場合  
+## Lambda パフォーマンスチューニング
+
+[Lambda パフォーマンスチューニング](https://dev.classmethod.jp/articles/lambda-performance-tuning/)
+
+1. コールドスタートの解決
+Lambdaを定期実行する方法があるが、これは根本的に解決にならない。  
+メモリ量を上げてもコールドスタートの起動時間は解決されない。
+
+2. 依存ライブラリを減らす
+外部モジュールの展開は非常にコストが高い。  
+依存ライブラリを減らすことでコールドスタート時のオーバーヘッドを改善できる。
+
+## Lambda 並列起動（同期・非同期）・再利用の動作検証
+
+[AWS Lambda+Node.jsのコンテナ並列起動（同期・非同期）・コンテナ再利用の動作検証](https://www.grandream.jp/blog/understanding-aws-lambda-container)
+
+- Lambdaは1実行で1プロセスを占有する。
+- 同期処理を実行しても他のLambda（プロセス）実行に影響しない。
+- 非同期処理を実行しても実行中のLambda（プロセス）で他のLambda実行が処理されることはない。
+- コンテナー同時実行数の上限に達すると実行中のコンテナーが終了されるまで特定回数リトライされる。
+- コンテナー実行後一定時間内に同じ関数を再実行するとコンテナーが再利用される。
+- Lambda実行毎にプロセスが完全に分離しているため、コンテナー再利用+グローバル変数を変化させるコードを書いても問題なし。
+
+
+
+### CLIから実行する場合
 
 ```sh
 $ aws lambda invoke --function-name alb-backend-anycolor-dev-migration --cli-binary-format raw-in-base64-out --payload '{"type": "show"}' a.json
@@ -37,19 +65,12 @@ export const handler: Handler<RequestSchema> = async (event, context) => {
 };
 ```
 
-### httpで叩きたい場合
-
->Lambda関数を（AWS認証無しの）HTTPS経由で実行するには、Lambdaの前段にAmazon API Gatewayを設置する必要があった。
-
-API Gatewayをかます必要があったが、現在はLambda自体がURLを持てるようになっている。
-
-
-
-
 ## Lambdaのセキュリティ
+
 [Lambdaの落とし穴 - 脆弱なライブラリによる危険性とセキュリティ対策](https://blog.flatt.tech/entry/lambda_library_security#AWS-Lambda-%E3%81%A7%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3%E7%9A%84%E3%81%AB%E6%B0%97%E3%81%AB%E3%81%99%E3%81%B9%E3%81%8D%E7%82%B9)
 
 ## LambdaにはEIP(Elastic IP)を割り当てられない
+
 [Lambda用 VPCネットワーク](https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/foundation-networking.html)
 
 ## Lambdaが実行されるところ
@@ -58,21 +79,20 @@ Lambda関数は常に**Lambdaサービスが所有するVPC内で実行される
 LambdaはこのVPCにネットワークアクセスとセキュリティルールを適用し、VPCを自動的に維持および監視します。
 
 ## LambdaをVPC外のリソースにアクセスさせる
+
 [参考URL](https://valmore.work/aws-lambda-s3/)
 
-NATを使う
-VPC Endpointを使用する
-
+defaultではNATを使って対応する。  
+その場合はloggerなどの出力はインターネットを介して取得される。
+そのため、セキュリティ的な懸念がある場合は`VPC Endpoint`を使用する
 
 ## Lambdaを用いたサーバーレスメリット
 
 - 対比概念はEC2を使った汎用的な構成とする。
   - 運用がシンプルになる
-
 - デプロイが、 Serverless Frameworkの仕組みをそのまま使えば良いため、車輪の再発明をせずに済む
 - インフラ観点のセキュリティアップデートが不要
   - LambdaのインフラはAWSが管理しているため
-
 - コストメリットがある
   - 繁忙期とそうでないときのアクセス数に大きな差があるALBでは、EC2などのコンピューティングリソースを確保しっぱなしの構成と比較して、コストを抑える事ができる。
 - Infrastructure as Codeを強制される
@@ -80,6 +100,7 @@ VPC Endpointを使用する
   - EC2にSSHして手で直接設定を触り、その設定変更の記録を残し忘れ、EC2再作成時永遠にその設定が失われる…などというよくある事故を防げる
 
 ## Lambdaが台頭した理由
+
 [Lambdaが台頭した理由](https://service.plan-b.co.jp/blog/tech/30863/)  
 [AWSのLambdaを色々暴く](https://qiita.com/Keisuke69/items/9951a93fd711360a61c5)
 
@@ -89,29 +110,23 @@ VPC Endpointを使用する
 >結果、案件も終わりが見えた頃には、「Lambda Functionいっぱい問題」発生。 このパターンが日常的にあり、修正や管理のコストが大きくなることが多いです。
 
 ## Lambda関数に求められる実装
+
 [実装&キャッシュについてまとまっている](https://enterprisegeeks.hatenablog.com/entry/2017/04/21/150204)
 
 AWSの公式ドキュメントによると、AWS Lambdaの関数は**ステートレス**な実装にする必要がある。  
 一方でステートレスな実装を追求すると、外部サーバからのデータ取得処理が増え、結果として処理パフォーマンス悪化を引き起こす場合が多い。  
 
-
 ステートレスな実装を謳っているが`/tmp`ファルダの提供があるため少なからずキャッシュの利用は可能そう。
 >Lambda関数はあらゆる状態を持たない実装にすべき」ことを示すのではなく、「外部にマスタがある静的なデータはLambda関数上のキャッシュとして保持し、次回リクエスト時に再利用して良い」
 
-
 ## Lambdaを最低限ローカルで実行しテストする(簡単)
+
 [参考URL](https://qiita.com/zaburo/items/d78a0a4462007e57d5d8)
-
-## Lambda Layersにnode_modulesを含めないといけない理由
-
-Lambdaの実行環境には追加ライブラリが存在しないため、ライブラリを使用する際はデプロイパッケージにライブラリを含める必要がある（node_moduleなど）
-※だがwebpackなどでnode_modules内のライブラリを含めてバンドルすればnode_modulesなしでいける。
-
----
 
 ## Lambda Layers
 
 ## Lambda Layersを作成(GUI版)
+
 [Lambda Layersでライブラリを共通化（GUI版）](https://qiita.com/t_okkan/items/394a15577bd1aad46ec3)
 
 Lambda Layersとは、複数のLambda関数で外部ライブラリやビジネスロジックを共有できる仕組み。
@@ -129,11 +144,18 @@ Lambda Layersとは、複数のLambda関数で外部ライブラリやビジネ�
 >Pythonを例にとると、Lambdaの実行環境は/opt/python/とディレクトリが構成されているため、作成するLayerは展開される構成が/opt/python/"作成したLayer"となる必要があります
 
 ## Lambda Layersを作成(Serverless版)
+
 [参考URL](https://dev.classmethod.jp/articles/serverless-framework-node-modules-to-lambda-layers/)
+
+## Lambda Layersにnode_modulesを含めないといけない理由
+
+Lambdaの実行環境には追加ライブラリが存在しないため、ライブラリを使用する際はデプロイパッケージにライブラリを含める必要がある（node_moduleなど）
+※だがwebpackなどでnode_modules内のライブラリを含めてバンドルすればnode_modulesなしでいける。
 
 ---
 
 ## Lambda コールドスタートとウォームスタート
+
 [これまでの常識は間違っていた？！Lambdaのコールドスタート対策にはメモリ割り当てを減らすという選択肢が有効に働く場面も](https://dev.classmethod.jp/articles/lambda-memory-alloc-and-coldstart/)
 
 グローバルな環境で変数を設定すると再利用される可能性がある。
@@ -166,7 +188,7 @@ S3のイベント発生（ファイルアップロード）などをトリガー
 
 ## Lambda 関数URL
 
-これまでHTTPS経由でLambdaを実行するためには前段にAPI Gatewayなどが必要だった。
+これまでHTTPS経由でLambdaを実行するためには前段にAPI Gatewayなどが必要だった。  
 Lambda関数URLを使用することで、API GatewayなしでHTTPSから直接Lambdaを実行できる。
 Lambdaをパブリックに公開したり、シンプルな認証でも問題ない場合は、Lambda関数URLは便利。
 
@@ -175,6 +197,7 @@ Lambdaをパブリックに公開したり、シンプルな認証でも問題�
 >S3に画像ファイルがアップロードされたら、リサイズしたサムネイル画像を生成する、とかは分かりやすいですかね。
 
 ## 料金
+
 [Lambdaでgoを実装](https://techblog.kiramex.com/entry/2020/01/23/173128)
 
 毎月100万リクエストまで無料なんです。くり返します。毎月100万リクエストまで無料です！
@@ -185,12 +208,13 @@ API Gatewayと連携するLambdaはAWSが用意しているサンプルを参考
 
 Lambdaではexports.handler以下が実行されます。
 
-
 ## AWS Serverless Application Model (AWS SAM) とは
+
 [参考URL](https://docs.aws.amazon.com/ja_jp/serverless-application-model/latest/developerguide/what-is-sam.html)
 
 
 ## Lambdaでディレクトリを使用したい場合
+
 [参考URL](https://cloud5.jp/lambda_tmp_directory/)
 
 /tmpディレクトリ
@@ -202,8 +226,7 @@ Lambdaの公式ドキュメントに、/tmpディレクトリに対して以下�
 Lambda上でAWS CLIを実行したいと思いました。 AWS CLIにはs3 syncコマンドのような、SDKには未実装の便利な機能があるためです。  
 Lambdaの実行環境にはAWS CLIはプリインストールされていないので、ひと工夫が必要になります。
 
-
-## LambdaでのAWS-SDK
+## LambdaではAWS-SDKが必要ない
 
 LambdaにはAWS SDKがインストールされる。
 >npm install で NPM パッケージをインストールするとき、実行時に必要なものは --save で、開発時のみ必要なものは --save-dev でインストールします。 この考え方からすると、AWS SDK (@aws-sdk) は --save オプションでインストールするのが自然なのですが、Lambda 関数用のプロジェクトではちょっと事情が違ってきます。
@@ -222,22 +245,23 @@ Lambda Functionは大きく3つのレイヤーに分かれたレイヤー化ア�
 簡単な実行であればexport.handlerを呼び出すやつで十分
 
 ## Lambda容量制限
+
 [参考URL](https://zenn.dev/xxpiyomaruxx/articles/d7419ec1138d6a)
 
 以下である必要がある。
+
 - zip圧縮後50MB
 - zip圧縮前250MB
 ※これ`or`かもしれない。
 
 また、Lambda deployに関してコンテナーイメージのサポートが導入されておりその場合は10GBで良いとのこと。コンテナーイメージにするのもいいかもしれない。
 
-
----
-
 ## Tips
+
 [LambdaのJest Test](https://dev.classmethod.jp/articles/serverless-unit-test-with-jest/)
 
 ### Lambdaをexpressでdeployする
+
 [参考URL](https://dev.classmethod.jp/articles/vendia-serverless-express/)
 
 `@vendia/serverless-express`を使用する。
@@ -253,6 +277,7 @@ APIGateway+Lambda上でExpressを動かせるというライブラリ。
 >- 気になる点を挙げるとすれば、王道のAPIgw+Lambda Wayとはいえず、ややHackyな手法ではあると思います。ExpressのようなWeb Application Frameworkを使うならECSやAppRunnerを使う方が素直な感じはします。それでもECSなどを使う場合と比べてLambdaにはゼロスケール1できるという強みがあるので、存外悪くない手法だと思います。
 
 ## Lambda TypeScript middy
+
 [middyについて](https://kiririmode.hatenablog.jp/entry/20220702/1656752084)
 
 middyはLambda関数用のミドルウェアエンジン。
@@ -264,6 +289,7 @@ Lambdaには、サードパーティーライブラリをアップロードし�
 もし導入しているライブラリに脆弱性がある場合、ライブラリを通して脆弱性攻撃が行われる可能性があるためなるべくなら含まない方がいい。
 
 ## Lambdaの前段
+
 [AWS Lambda：API GatewayとApplication Load Balancerの違い](https://qiita.com/unhurried/items/5a497ec81e4fefe22396)
 
 ## Lambdaのアーキテクチャ
