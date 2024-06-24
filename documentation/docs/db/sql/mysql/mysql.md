@@ -1,21 +1,28 @@
 # MySQL
 
 ## dumpとリストアについて
+
 [参考URL](https://tex2e.github.io/blog/database/mysql-dump-restore)
+[参考URL](https://qiita.com/PlanetMeron/items/3a41e14607a65bc9b60c)
 
 ---
+
+## MySQLの文字コードについて
+
+[MySQLの文字コード関連設定を1つ1つ説明する](https://qiita.com/TanakanoAnchan/items/dc03ac7402c7075e1cad)
 
 ## デフォルト文字コード
 
 MySQLのデフォルトの文字コードは、UTF-8ではなく`latin1`となっている。
 
-- dbの文字コードを確認する
+dbの文字コードを確認する
 ` SHOW VARIABLES LIKE 'character_set_database';`
 
-- mysqlクライアントの文字コードを確認する
+mysqlクライアントの文字コードを確認する
 `status;`
 
 ## 文字コードをUTF-8にする
+
 [utf8とutf8mb4](https://penpen-dev.com/blog/mysql-utf8-utf8mb4/)
 
 MySQLではなぜ2種類あるのか
@@ -31,6 +38,20 @@ utf8mb4
 本来のUTF8は`1~4`バイトで文字を表すルール  
 そのため、MySQLのutf8はそもそもUTF-8と呼べない。
 
+## MySQL 8.0 での UTF-8 サポートについて
+
+[MySQL 8.0 での UTF-8 サポートについて](https://labs.gree.jp/blog/2017/04/16406/)
+
+## UTF-8をサポートしないといけない理由
+
+- >私たちが utf8mb4 を使っている理由の一つは、iPhone などのスマートフォンから 4byte の UTF-8 の絵文字を入力できるからです。ユーザが入力してくるデータを、我々はデータベースに INSERT し、適切に扱えるようにする必要があります。
+- >MySQL が utf8mb4 をサポートしているのは、 iPhone や Android 向けにサービスを提供している私たちとしては、 MySQL を使う強いモチベーションの一つと言えます。
+- >MySQL が strict に Unicode を扱ってくれることを望みます。日本のエンジニアは、かつて CP932 などでめんどくさい思いをしました。
+- >日本語の Collation は、使う人によって求める答えが異なってしまうと思います。 MySQL は Collaion を XML で拡張できるようになっているので、 MySQL にdefaultで組み込まれる Collaction は、strict に Unicode を扱ってくれれば良いのではないでしょうか。
+- >MySQL 8.0.1 で Unicode 9.0.0 対応してくれたことを歓迎します。
+- >今後、 iOS や Android で扱える絵文字が増えていくとしたならば、 MySQL がそれらをネイティブサポートしてくれるのは、 我々がMySQL のバージョンアップを続けていく大きな理由になりえます。 Apple や Google がスマートフォンで使える絵文字を増やしていったとき、MySQLがそれに追随してくれると助かります。
+
+
 ---
 
 ## MySQLのSQLについて
@@ -43,13 +64,10 @@ utf8mb4
 
 ---
 
-## mysqldump
-[参考URL](https://qiita.com/PlanetMeron/items/3a41e14607a65bc9b60c)
-
 ## Dockerで起動時に複数DBを立ち上げる
+
 [参考URL](https://ysuzuki19.github.io/post/docker-mysql-postgres-multiple-databases)  
 [参考URL](https://onexlab-io.medium.com/docker-compose-mysql-multiple-database-fe640938e06b)
-
 
 ## Grant系
 
