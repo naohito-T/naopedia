@@ -1,17 +1,13 @@
 # security
 
-セキュリティ関連について記す
-
-[APIテクニカルガイドブック（内閣官房情報通信技術（IT）総合戦略室）](https://cio.go.jp/sites/default/files/uploads/documents/1020_api_tecnical_guidebook.pdf)
-
-以下は、提供された内容の校正版です。必要に応じて情報を追加・整理し、明確に表現を修正しました。
-
 ## Overview
 
+ITセキュリティ関連について記す
 
 ## 情報セキュリティの際に参考にする機構
 
-[ISMSとPマークの違い](https://www.lrm.jp/security_magazine/about-isms/)
+[ISMSとPマークの違い](https://www.lrm.jp/security_magazine/about-isms/)  
+[APIテクニカルガイドブック（内閣官房情報通信技術（IT）総合戦略室）](https://cio.go.jp/sites/default/files/uploads/documents/1020_api_tecnical_guidebook.pdf)  
 
 [![Image from Gyazo](https://i.gyazo.com/df16a083ebbb0f95af2d48193ff3c67d.png)](https://gyazo.com/df16a083ebbb0f95af2d48193ff3c67d)
 
@@ -22,7 +18,11 @@
 独立行政法人情報処理推進機構（IPA）は経済産業省のIT政策実施機関。  
 多彩な施策でデータとデジタルの時代を牽引し、安全で信頼できるIT社会を実現する。
 
----
+## PII
+
+[PIIとは？個人を特定できる情報とセキュリティ対策](https://www.proofpoint.com/jp/threat-reference/personal-identifiable-information)
+
+>個人を特定できる情報（PII）とは、特定の個人を識別するために使用される一連のデータのことです。これは機密データとみなされ、個人情報の窃盗にも使用される情報です。PIIは、ユーザーの名前、住所、生年月日のような単純なものから、フルネーム、住所、社会保障番号、財務データのような機密性の高いものまであります。データ漏洩では、PIIはダークネット市場で販売されると高い価値を持つため、攻撃者のターゲットになります。
 
 ## セキュリティの3大要素
 
@@ -220,13 +220,15 @@ ruby gemsとかはチェックサムが表記されているためダウンロ�
 ## SQL インジェクション
 
 ## XSS
- 
+
 ## クリックジャッキング
 
 ## Webhookとセキュリティー
+
 [参考URL](https://qiita.com/en30/items/6a5dfae217c1f9ebc2dd)
 
 ## SPAセキュリティ
+
 [わかりやすい](https://www.slideshare.net/ockeghem/phpconf2021spasecurity)
 
 SPAでもセキュリティの基本は同じ
@@ -241,17 +243,23 @@ SQLインジェクション
 クロスサイトスクリプティング（反射型、持続型）
 クロスサイトリクエストフォージェリ（CSRF）
 
-
 ## 暗号鍵の管理
+
 [参考URL](https://www.ogis-ri.co.jp/otc/hiroba/technical/security/operation-cryptographic-key.html)
 
 暗号鍵を利用すると主に次の2つのことが実現できる。  
+
 - 情報資産を第三者へ読み取られないようにする【暗号化】
 - 情報資産が改ざんされていないかどうかを確認する【改ざん防止】
 
 ## パスワードポリシー
+
 [パスワードポリシーとは](https://www.cyclonis.com/ja/what-is-password-policy-how-to-create-good-one/)
 
 ## パスワードローテーション
 
 従業員に定期的にパスワードの変更を強制する
+
+## DBのセキュリティ
+
+[データベースの安全性を維持するための5つのポイント](https://eset-info.canon-its.jp/malware_info/special/detail/180412.html)
