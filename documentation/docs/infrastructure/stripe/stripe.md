@@ -29,13 +29,15 @@ localではそれができないが、Stripe CLIを使えばそれを実行で�
 
 [Stripe拒否コード](https://docs.stripe.com/declines/codes?locale=ja-JP)
 
-## サブスクリプション
+## Stripe Billing(サブスクリプション)
 
-[Stripe のサブスクリプション（すばらしいblog）](https://tech.actindi.net/2021/03/02/083000)
+[Stripe のサブスクリプション（すばらしいblog）](https://tech.actindi.net/2021/03/02/083000)  
 [Stripe Subscription 開始パターンごとの作成方法まとめ](https://qiita.com/phigasui/items/8bdc20ecd46a0d504bec)
 
-サブスクリプションに関連するリソース
+サブスクリプションに関連するリソース図
 [![Image from Gyazo](https://i.gyazo.com/a0a696f408a19c12cad73bab1c50e674.png)](https://gyazo.com/a0a696f408a19c12cad73bab1c50e674)
+
+今まで`Stripe Subscriptions`として出してきた製品が`Stripe Billing`としてパワーアップし、新しくなった。
 
 | リソース                    | 概要                                                                                                                                              |
 |-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -82,7 +84,28 @@ trial_endは本来であればトライアル期間を設定するために使�
 基本的にイベントは`update`が発行される。  
 しかし一度サブスクリプションをキャンセルした後に、再度入り直すとイベントはcreateになる。
 
-## インボイス
+### Stripe Billing - 定期支払いにおける比例配分の考え方
+
+[Stripe Billing - 定期支払いにおける比例配分の考え方](https://qiita.com/y_toku/items/404b3c99632161f18579)  
+[Stripe document比例配分の仕組み](https://docs.stripe.com/billing/subscriptions/prorations?locale=ja-JP)
+
+Stripe Billingでサブスクリプションを提供している場合、契約期間中のプラン変更で「使った分だけ支払う」決済ができる。  
+stripeではこれを「比例配分」と呼んでいる
+
+覚えた方がいい単語
+
+- 按分（あんぶん）
+  - 割合に応じて分けること
+  - [按分とは](https://www.diners.co.jp/ja/entry_form/corporate/kajianbun.html)
+
+
+比例配分する日を決める
+
+
+
+
+
+## Stripe インボイス
 
 Stripeにおけるインボイスは、顧客に対する請求や決済を管理するためのひとつの手段。  
 Stripeのインボイスは柔軟性が高く、異なる支払いシナリオやビジネスモデルに応じて設定することが可能。  
@@ -193,6 +216,7 @@ Stripe::Coupon.create({
 - **times_redeemed:** 現在までのプロモーションコード利用回数
 
 #### 利用例
+
 ```ruby
 Stripe::PromotionCode.create({
   coupon: '25OFF',  # 事前に作成されたクーポンのID
