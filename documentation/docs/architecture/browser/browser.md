@@ -1,4 +1,25 @@
 # browser
+
+ブラウザの仕組みやセキュリティ、Tipsなど
+
+[Next.jsで高パフォーマンスにする](https://www.docswell.com/s/ashphy/KM1NQ6-you-dont-need-nextjs#p9)
+
+## ブラウザの仕組み
+
+ブラウザは**すべてのリクエストにOriginヘッダーを追加する。**  
+リクエストがサーバーに届くと、リクエストのオリジンがリソース取得許可リストに含まれている場合に、サーバーが`Access-Control-Allow-Origin`ヘッダーをレスポンスに追加する。
+この情報からブラウザはコンテンツがこのオリジンにアクセスできると判断する。
+
+### 同一オリジンポリシー
+
+[リファレンス](https://developer.mozilla.org/ja/docs/Web/Security/Same-origin_policy)
+
+同一オリジンポリシーは重要なセキュリティの仕組みであり、あるオリジンによって読み込まれた文書やスクリプトが、他のオリジンにあるリソースへアクセスできる方法を制限するもの。
+
+### オリジンの定義
+
+2つのページのプロトコル、ポート番号（もしあれば）ホストが等しい場合、両者のページは同じオリジンとみなす。
+
 [参考URL](https://zenn.dev/silverbirder/articles/e10295948e17ca)
 [リファレンス](https://developer.mozilla.org/ja/docs/Web/Performance/How_browsers_work)
 
@@ -46,7 +67,8 @@ express-sessionはCookieにセッションIDのみを保存して、セッショ
 
 画面のないVPSサーバーでSeleniumを使ってChromeブラウザを操作してみる
 
-## フロントエンジニアなら知っておきたいブラウザレンダリングの仕組みをわかりやすく解説！
+## フロントエンジニアなら知っておきたいブラウザレンダリングの仕組みをわかりやすく解説
+
 [参考URL](https://blog.leap-in.com/lets-learn-how-to-browser-works/)
 
 スクロールをしていてカクつく。またはアニメーションがカクカクしている時というのはブラウザがどういう状態なのでしょうか？
@@ -82,10 +104,3 @@ CSS → Style Rulesの作成
 2. Style
 この工程では先ほど作成したDOM TreeとStyle Rulesの紐付けが行われる。
 >具体的にはどのスタイルがどの要素に適用されるのかをマッチングし、複数個のスタイルが一致する要素に関しては、スタイル適用の優先順位に従って最終的に適用されるスタイルを割り出します。
-
-
-
-
-
-
-
