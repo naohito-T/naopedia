@@ -1,4 +1,5 @@
-# OAuth(認可)
+# OAuth
+
 [一番分かりやすい OAuth の説明](https://qiita.com/TakahikoKawasaki/items/e37caf50776e00e733be)  
 [passportの説明](https://www.passportjs.org/concepts/oauth2/?utm_source=github&utm_medium=referral&utm_campaign=passport-google-oauth20&utm_content=nav-concept)
 
@@ -31,6 +32,7 @@ OAuth = 認可（権限の認可:行動やリソースの許可をすること�
 >その仕組みとして、OpenID Connectという認証プロトコルが登場しました。
 
 ## OAuthにとってのGoogleやFacebook
+
 [参考URL](https://www.passportjs.org/concepts/oauth2/terminology/)
 
 OAuth2.0の用語では、Facebookは**承認サーバー（AS）**  
@@ -42,14 +44,15 @@ OAuthにSNSサービスを利用する意味
 
 ## OAuthがない場合
 
-OAuthは、第三者となるアプリケーションに対して安全にアクセス権限を提供するためのプロトコル。
+OAuthは、第三者となるアプリケーションに対して安全にアクセス権限を提供するためのプロトコル。  
 たとえば、GitHubのAPIを利用するアプリケーションAをOAuthなしで使うとすると、通常はGitHubのユーザIDとパスワードをアプリケーションAに預ける必要がある。
 
-この手法ではパスワード漏洩の危険が増しますし、アプリケーションAはGitHubに対してユーザと同じ権限を持つことになってしまう。
-アプリケーションAの運営者がその気になれば、ユーザをGitHubから退会させることもできるでしょう。
+この手法ではパスワード漏洩の危険が増しますし、アプリケーションAはGitHubに対してユーザと同じ権限を持つことになってしまう。  
+アプリケーションAの運営者がその気になれば、ユーザをGitHubから退会させることもできるでしょう。  
 OAuthを利用すると、パスワードをアプリケーションAに渡さずともよくなります。さらに、アプリケーションAがその機能を提供するのに必要な権限だけを与えることができる、
 
 ## OAuth 認証フロー
+
 [参考URL](https://qiita.com/TakahikoKawasaki/items/200951e5b5929f840a1f)  
 [これ実装するのにいいかもしれない](https://qiita.com/TakahikoKawasaki/items/e508a14ed960347cff11)
 
@@ -62,8 +65,7 @@ OAuth2は、サードパーティからの権限移譲で、`Scope`という概�
 
 OAuth2は認可、OpenID Connectは認証の仕組みといわれるのは、技術的関心の中心がどこにあるか、を示したものに過ぎない。
 
-OAuth2を用いたシステムにも（アクセストークンベースの）認証の仕組みはもちろんあり、
-OpenID Connectを用いるシステムでも、認可のシステムを実現することはもちろん可能。
+OAuth2を用いたシステムにも（アクセストークンベースの）認証の仕組みはもちろんあり、OpenID Connectを用いるシステムでも、認可のシステムを実現することはもちろん可能。
 
 ## OpenID Connect(認証)
 
@@ -92,6 +94,7 @@ OpenID Connectを利用した**認証フローがどの方式を利用してい�
 どのフローで認証を行ったとしても、最終的にはID TokenとAccess Tokenがクライアントに返却される。
 
 ## OpenID Connect利用される ID Token(JWT)
+
 [IDトークンが分かれば OpenID Connect が分かる](https://qiita.com/TakahikoKawasaki/items/8f0e422c7edd2d220e06)  
 [OpenID ConnectとJWT の関わり - Oauth2.0 との違いなど](https://zenn.dev/mikakane/articles/tutorial_for_openid)
 
@@ -106,6 +109,7 @@ OpenID Connectで規程されるID Tokenは、JWTのpayload部に一定のフォ
 また、ID Tokenを利用した認証フローの流れなどトークンの利用方法についても細かい規定を追加しています。
 
 ## OAuthとJWTの関わり
+
 [参考URL](https://zenn.dev/mikakane/articles/tutorial_for_openid)
 
 IDトークンは**JWTの一種**  
@@ -118,6 +122,7 @@ IDトークンの仕様では、RFC 7519で定義されているクレームの�
 具体的には`iss, sub, aud, exp, iat`は必須とされている。
 
 ## IDトークンでの各クレーム
+
 [参考URL](https://qiita.com/TakahikoKawasaki/items/8f0e422c7edd2d220e06#7-id-%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3)  
 JWTにある識別子と同名のものもあるが、少し指定内容が変わる。  
 IDトークンでは`iss, sub, aud, exp, iat`が必須とされている。
@@ -157,14 +162,15 @@ IDトークンでは、Unixエポック (1970年1月1日（世界標準時）か
 iatクレームはJWTが発行された日時を示しています。  
 expクレームと同様、Unixエポックからの経過秒数で表現されています。
 
-
 ## OAuth 2.0 認可コードグラント概要
 
 OAuth2.0には、**アクセス権の付与の方法（グラントタイプ）**が複数定義されている。  
 その中のひとつ、認可コードグラント（Authorization Code Grant）について説明する。  
 パブリッククライアント用のグラントタイプとして「PKCEを用いた認可コードグラント」も存在するが、ここでは記載しない。
 
+## OAuth2.０におけるCSRF
 
+[OAuth2.０におけるCSRF](https://securesky-plus.com/engineerblog/1848/)
 
-
-
+OAuth2.0におけるCSRFとは、被害者のクライアントアカウントに攻撃者のリソースが意図せず紐づけされる脆弱性のこと。  
+注意しておきたいのが、攻撃者のクライアントアカウントに被害者のリソースを紐づけられる脆弱性ではないということ。
