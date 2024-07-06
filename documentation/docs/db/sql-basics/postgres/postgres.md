@@ -10,11 +10,11 @@
 
 ## 仕組み
 
-PostgreSQL では「ロール」という用語を使用して「ユーザー」または「ログイン」を意味するため、エラー メッセージは、ユーザー名 で PostgreSQL データベースに接続しようとしているubuntuが、そのようなユーザーが存在しないことを意味します。
+PostgreSQLでは「ロール」という用語を使用して「ユーザー」または「ログイン」を意味するため、エラー メッセージは、ユーザー名でPostgreSQLデータベースに接続しようとしているubuntuが、そのようなユーザーが存在しないことを意味します。
 
-ログインするユーザーを PostgreSQL に明示的に指定しない場合、オペレーティング システムの資格情報が使用されます。つまり、ユーザーとして Linux にログインしている場合ubuntu、PostgreSQL は という名前の PostgreSQL ユーザーとしてログインしようとしますubuntu。
+ログインするユーザーをPostgreSQLに明示的に指定しない場合、オペレーティング システムの資格情報が使用されます。つまり、ユーザーとしてLinuxにログインしている場合ubuntu、PostgreSQLはという名前のPostgreSQLユーザーとしてログインしようとしますubuntu。
 
-PostgreSQL 認証は、.xml というファイルで構成されますpg_hba.conf。http://www.postgresql.org/docs/current/static/auth-pg-hba-conf.htmlを参照してください。pg_hba.confただし、Rails を使用している場合は、ファイルを手動で編集せずに PostgreSQL の認証設定を制御する方法があるのではないかと思います。
+PostgreSQL認証は、.xmlというファイルで構成されますpg_hba.conf。http://www.postgresql.org/docs/current/static/auth-pg-hba-conf.htmlを参照してください。pg_hba.confただし、Rails を使用している場合は、ファイルを手動で編集せずにPostgreSQLの認証設定を制御する方法があるのではないかと思います。
 
 ## Ubuntu postgres
 
