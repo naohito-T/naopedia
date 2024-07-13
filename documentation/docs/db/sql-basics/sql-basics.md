@@ -2,10 +2,49 @@
 
 SQLの普遍的なものについて記載していく。
 
+## SQLを手元で試したいとき
+
+```sh
+docker run --platform linux/amd64 --name mysql-container -e MYSQL_ROOT_PASSWORD=rootpassword -d mysql:5.7
+# 20秒ぐらい時間を空ける
+docker exec -it mysql-container mysql -uroot -prootpassword
+
+# DB作成
+mysql> CREATE DATABASE my_database;
+# DB一覧
+mysql> SHOW DATABASES;
+# 現在どこのDBにuseしているのか
+mysql> SELECT DATABASE();
+# テーブル一覧コマンド
+mysql> SHOW TABLES;
+# 以下で mysql>　のpromptを変更できる。
+mysql> prompt Transaction A> 
+# テーブル作成コマンド
+mysql> create table t1(i1 int not null primary key, v2 varchar(20)) engine = innodb;
+
+# 現在のトランザクションレベルを確認するコマンド
+mysql> SELECT @@tx_isolation;
+# MySQL 8.0以降では次のコマンドを使用
+mysql> SELECT @@transaction_isolation;
+
+# トランザクションを始める
+mysql> start transaction;
+```
+
 ## SQLがオンラインでできる
 
 [SQL Fiddle](http://sqlfiddle.com/)
 [使い方説明](https://osakanav.com/sql-fiddle)
+
+## DML・DCL・DDL
+
+SQLは、いくつかのキーワードと、テーブル名や列名などを組み合わせて1つの文とし、操作の内容を記述する  
+キーワードは最初から意味や使い方が決められている特別な英単語。  
+SQL文はDBMSに与える命令の種類により、次の3つに分類される
+
+1. DDL（Data Definition Language：データ定義言語）
+2. DML（Data Manipulation Language：データ操作言語）
+3. DCL（Data Control Language：データ制御言語）
 
 ## Selectの落とし穴
 
