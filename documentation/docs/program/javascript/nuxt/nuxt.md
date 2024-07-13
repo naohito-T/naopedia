@@ -1,11 +1,8 @@
 # Nuxt
 
-nodeのconsole.logはターミナル上、つまりSSR時
-csr（ブラウザ）のconsole.logは検証で出力される
-※Nextjs
+## Overview
 
 [nuxtでのfetchについてめちゃくちゃ詳しい](https://medium.com/veltra-engineering/in-ssr-vue-js-is-created-twice-7f9122de9b77)
-
 [これは素晴らしいBlog](https://www.i-ryo.com/entry/2020/02/13/083521)
 [composition apiの違いについて](https://nansystem.com/nuxt-composition-api-v2-diff/)
 
@@ -303,7 +300,7 @@ storeの情報を扱ったりもできる
 
 middlewareの指定方法は3つある
 
-1 プロジェクト全体で指定する
+1. プロジェクト全体で指定する
 すべてのページ遷移で呼び出す場合は、nuxt.config.jsに登録します。
 
 ```js
@@ -316,7 +313,7 @@ export default {
 }
 ```
 
-2 特定のページで指定する
+2. 特定のページで指定する
 ページ単位で指定する場合は、Vueファイルのmiddlewareプロパティにファイル名を指定します。
 レイアウト単位でも指定可能です。
 
@@ -552,10 +549,6 @@ Vue.jsのrouter-linkを拡張しているもの
 - asyncData
 Vueインスタンスが生成される前に実行されるメソッド
 thisは使えない。contextは使える
-
-
-SSR実行時のnodeにはlocalstorageがありませんから、window.localstorageはさわれません。
-そのため、今回のプラグインも{... , ssr; false}として、SSR時は起動しないようにする必要があります。
 
 ## nuxt.config
 

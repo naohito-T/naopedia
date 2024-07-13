@@ -1,4 +1,9 @@
 # Docker
+
+## Overview
+
+## 参考
+
 [Dockerfile(リフェレンス)](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)  
 [入門Docker](https://y-ohgi.com/introduction-docker/)  
 [軽量なDockerfileの作り方](https://qiita.com/watawuwu/items/d547d0cb1ab1db5e079c)  
@@ -14,6 +19,7 @@ docker volume prune -f
 ## そもそもコンテナーとは
 
 コンテナーとはアプリケーションの実行環境をパッケージ化し、それをデプロイ、実行するためのテクノロジーのこと。  
+
 - アプリケーションコード
 - ライブラリ
 - プログラミング言語のランタイム
@@ -305,7 +311,6 @@ ENV HOME=/${WORKDIR}
 
 1. environment
 
-environmentを使用する場合は<キー: 値>形式で環境変数を指定する。
 **※これは扱う環境変数が少ない場合に使用する。**
 
 ```yml
@@ -317,7 +322,7 @@ services:
       - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
 ```
 
-2. env_file
+1. env_file
 
 env_fileを使用する場合は、環境変数を格納したファイルパスを指定します。
 相対パス、絶対パスどちらでも良い。

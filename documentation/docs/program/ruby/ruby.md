@@ -1,4 +1,5 @@
 # Ruby
+
 [他言語からRuby入門について](https://www.ruby-lang.org/ja/documentation/ruby-from-other-languages/)  
 [Rubyist Magazine](https://magazine.rubyist.net/articles/0061/0061-ForeWord.html)  
 [ruby リファレンス](https://www.ruby-lang.org/ja/documentation/)  
@@ -752,7 +753,7 @@ class A
 end
 ```
 
-## class << self
+## `class << self`
 
 - クラスメソッドの書き方（別）
 こちらの書き方が好きなプログラマーも多い
