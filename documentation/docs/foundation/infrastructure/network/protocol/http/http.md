@@ -1,21 +1,6 @@
 # HTTP(HyperText Transfer Protocol)
-[リファレンス(一番わかりやすい)](https://developer.mozilla.org/ja/docs/Web/HTTP)  
-[HTTP入門](https://www.tohoho-web.com/ex/http.htm)  
-[冪等性について](https://qiita.com/suin/items/316cb8aaf8dfcf11abae)  
-[ブラウザからサーバまでわかりやすい](https://techracho.bpsinc.jp/hachi8833/2022_08_02/77493)  
-[プロトコル](https://atmarkit.itmedia.co.jp/ait/articles/1507/31/news004.html)  
-[HTTPの仕組み再入門](https://atmarkit.itmedia.co.jp/ait/articles/1508/31/news016.html)
 
-## HTTP仕組み
-[これをみて参考にする（一番いいためまとめる）](https://www.itmanage.co.jp/column/http-www-request-response-statuscode/)
-
-## HTTPリクエスト種類
-
-- form: 同期通信
-- XMLHttpRequests: 非同期通信（CORS対象）
-- fetch: 非同期通信（CORS対象）
-
-## HTTPとは
+## Overview
 
 HTTP(HyperText Transfer Protocol)は**サーバとクライアント(ブラウザ)の間でウェブページを送受信するためのプロトコル**
 また、World Wide Web上の通信方法を示すものであり、この通信はクライアントからサーバーへのリクエストとサーバーからクライアントへのレスポンスで構成される。
@@ -41,9 +26,63 @@ SMTPのように複数の手続きを踏む必要はなく、その時の状態�
 1.1以降も議論が続けられているが、**HTTPそのものの価値をRESTアーキテクチャスタイルに見出した結果、HTTP1.1を有効に活用していこう。**  
 というのが現代的な開発スタイルとなっている。
 
-## HTTP 仕組み
+## 参考
+
+[リファレンス(一番わかりやすい)](https://developer.mozilla.org/ja/docs/Web/HTTP)  
+[HTTP入門](https://www.tohoho-web.com/ex/http.htm)  
+[冪等性について](https://qiita.com/suin/items/316cb8aaf8dfcf11abae)  
+[ブラウザからサーバまでわかりやすい](https://techracho.bpsinc.jp/hachi8833/2022_08_02/77493)  
+[プロトコル](https://atmarkit.itmedia.co.jp/ait/articles/1507/31/news004.html)  
+[HTTPの仕組み再入門](https://atmarkit.itmedia.co.jp/ait/articles/1508/31/news016.html)
+
+## HTTP仕組み
 
 BASEとなっているのはTCP/IP  
+[これをみて参考にする（一番いいためまとめる）](https://www.itmanage.co.jp/column/http-www-request-response-statuscode/)
+
+### HTTPリクエストの種類
+
+#### Form: 同期通信
+
+- **説明**: HTMLフォームを使用して送信されるリクエスト。通常、ページが再読み込みされる。
+- **特徴**:
+  - デフォルトでは、ページがリロードされる同期通信。
+  - データはURLエンコードされて送信される。
+  - サーバーからのレスポンスに基づいてページが更新される。
+
+#### XMLHttpRequest (XHR): 非同期通信（CORS対象）
+
+- **説明**: JavaScriptを使用して非同期にサーバーと通信するためのオブジェクト。
+- **特徴**:
+  - 非同期通信をサポートし、ページの一部を更新できる。
+  - CORS（Cross-Origin Resource Sharing）の制約を受ける。
+  - レスポンス形式としてXML、JSON、HTML、テキストなどを扱える。
+  - 同期通信も可能だが、推奨されない。
+
+#### Fetch: 非同期通信（CORS対象）
+
+- **説明**: モダンなJavaScript APIで、XHRに代わるものとして設計された。
+- **特徴**:
+  - 非同期通信をサポートし、Promiseベースのインターフェイスを提供。
+  - CORSの制約を受ける。
+  - よりシンプルで直感的な構文。
+  - レスポンスをストリームとして扱えるため、部分的なデータ取得が可能。
+
+##### JSONP
+
+- **説明**: JSON with Padding。クロスドメインリクエストを行うための古い方法。
+- **特徴**:
+  - `<script>`タグを使用してリクエストを送信する。
+  - サーバーがJavaScriptの関数をラップしたJSONを返す。
+  - 主にGETリクエストに使用。
+
+#### AJAX（Asynchronous JavaScript and XML）
+
+- **説明**: 非同期通信の総称。XMLHttpRequestやFetchを用いた通信方法を指す。
+- **特徴**:
+  - サーバーと非同期でデータのやり取りを行い、ページの一部を更新できる。
+  - リクエストは非同期で行われるため、ページのリロードが不要。
+  - JSON、XML、HTMLなどさまざまな形式のデータを扱える。
 
 ## 通常のHTTPリクエストのおさらい
 
@@ -534,8 +573,8 @@ Cache-Controlはさまざまなキャッシュのコントロールを行うヘ�
 条件付きリクエストを行う際に、最終更新日付とエンティティタグのどちらかを指標として用いる。
 エンティティタグは**ある特定のリソースのバージョンを表す識別子**、フィンガープリントである文字列のこと。
 
-
 ## Preflight request (プリフライトリクエスト)
+
 [リファレンス](https://developer.mozilla.org/ja/docs/Glossary/Preflight_request#:~:text=CORS%20%E3%81%AE%E3%83%97%E3%83%AA%E3%83%95%E3%83%A9%E3%82%A4%E3%83%88%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88,%E3%81%97%E3%81%A6%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%81%97%E3%81%BE%E3%81%99%E3%80%82)
 
 Content-Typeフィールドに`application/json`という値をセットすると、プリフライト・リクエストが発生することになる。
@@ -544,7 +583,6 @@ Content-Typeフィールドに`application/json`という値をセットする�
 プリフライトリクエストはそもそもセキュリティのための機能ではない。  
 プリフライトリクエストが発生するということは、**HTTPメッセージのやり取りが1回増えるということ**なので、パフォーマンス上、望ましくない。
 
-
 1. CORS許可してないAPIをContent-Typeをapplication/jsonでPOSTリクエストする
 →CORSとかプリフライトリクエストに関するエラーが出て失敗するはず
 
@@ -552,6 +590,7 @@ Content-Typeフィールドに`application/json`という値をセットする�
 →プリフライトリクエストが送られるはず（つまりOPTIONSメソッドとPOSTメソッドのリクエストが飛ぶ）
 
 ## Referer(リファラー)
+
 [知ってるようで知らないRefererとReferrer-Policyのお話](https://qiita.com/c0ridrew/items/7f2c9dad12543fa2662f)
 
 Refererを送っているのはwebブラウザ  
@@ -576,8 +615,6 @@ URLにセキュアな情報を入れないようにすることは大事です�
 
 Referrer-Policyは以下のようなmetaタグに設定することでrefererを送信するブラウザの挙動を変更することができる。
 
-
 ```html
 <meta name="referrer" content="strict-origin-when-cross-origin" />
 ```
-
