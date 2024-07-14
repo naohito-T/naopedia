@@ -1,4 +1,5 @@
 # Makefile
+
 [参考URL](http://masahir0y.blogspot.com/2012/02/linuxmakefile-4.html)  
 
 ビルドツールになる、しかしよく使用されるタスクランナーとしても使用される場合がある  
@@ -92,13 +93,14 @@ clean:
 ```
 
 ## 疑似ターゲット
+
 [参考URL](https://yu-nix.com/archives/makefile-phony/)
 ターゲットは基本的にターゲット名と同名のファイルを生成する処理
 そのためmakeはターゲットと同名のファイルがすでにあると（依存関係がある時以外は）処理を行なわない。
 
 ## PHONYターゲット
 
-.PHONY ${ターゲット名} という記載で、そのターゲットは、**ファイルは生成しない**という事をmakeに知らせることができる
+.PHONY `${ターゲット名}` という記載で、そのターゲットは、**ファイルは生成しない**という事をmakeに知らせることができる
 
 - ターゲットの概念が必要
 
@@ -111,11 +113,9 @@ $ make clean
 make: `clean' is up to date.
 ```
 
----
-
 ## Makefile条件文
-[リファレンス](http://quruli.ivory.ne.jp/document/make_3.79.1/make-jp_6.html)
 
+[リファレンス](http://quruli.ivory.ne.jp/document/make_3.79.1/make-jp_6.html)
 
 ## make データ型
 
@@ -136,16 +136,17 @@ FROM_DEPLOY_BRANCH := $$(git branch | head -n 1)
 
 ### Makefile変数参照
 
-$(name)、または${name}
+`$(name)`または`${name}`
+
 ```makefile
 objects = program.o foo.o utils.o # => program.o foo.o utils.o
 program : $(objects)
         cc -o program $(objects) 
 $(objects) : defs.h
 ```
----
 
 ## Makefile env
+
 [Makefile 内のコマンドに .env file の環境変数を渡す](https://qiita.com/k_ikasumipowder/items/4136884d98cc8c7c7339)
 
 ## Makefile デバッグ方法

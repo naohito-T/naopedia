@@ -26,6 +26,7 @@
 3. WebSocket API
 
 ## Google blog
+
 [API 設計: gRPC、OpenAPI、REST の概要と、それらを使用するタイミングを理解する](https://cloud.google.com/blog/ja/products/api-management/understanding-grpc-openapi-and-rest-and-when-to-use-them)
 
 ## 上記のAPI種類が決まったら
@@ -36,6 +37,7 @@
 - 監視、可観測性、ログ
 
 ## API設計に関するまとめ
+
 [参考URL](https://qiita.com/kudojp/items/47b7486ee2f02e841a95)  
 [REST_APIのコツ](https://www.slideshare.net/pospome/rest-api-57207424)
 
@@ -163,7 +165,7 @@ Web APIを作るとき、JSONのデータ構造をどうするか悩んだこと
 
 ## path tips
 
-- APIにける/users/{userId}と/meについて　どっちを採用するか
+- APIにおける`/users/{userId}`と`/me`について　どっちを採用するか
 [参考URL](https://www.utakata.work/entry/20190112/1547262000)
 
 `/v1/me/images`でアクセスした場合は非公開の画像が帰ってくるようにする。
@@ -187,4 +189,3 @@ jsonのpostが10kbにするとか
 
 ## apiの権限設計
 [参考URL](https://kenfdev.hateblo.jp/entry/2020/01/13/115032)
-
