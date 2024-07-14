@@ -1,4 +1,4 @@
-# コーディング(program)
+# Coding
 
 [新人プログラマに知ってもらいたいメソッドを読みやすくするいくつかの原則](https://qiita.com/hirokidaichi/items/c9a76191216f3cc6c4b2)  
 [プログラミング英語検定(これみれば変数名とか付けられる)](https://progeigo.org/learning/essential-words-600-plus/)
