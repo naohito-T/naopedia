@@ -12,3 +12,7 @@ We have placed them in Gyazo.
 ## Contributors
 
 [CONTRIBUTING](./CONTRIBUTING.md)
+
+## LICENSE
+
+[LICENSE](./LICENSE)

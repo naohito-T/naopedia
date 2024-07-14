@@ -1,8 +1,6 @@
 {
-  "workbench.colorCustomizations": {
-    "activityBar.activeBorder": "#00ff3d"
-  },
-  "peacock.color": "#ff3d00",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "cSpell.words": [
     "adduser",
     "Autoload",
