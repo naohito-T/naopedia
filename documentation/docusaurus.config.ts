@@ -10,8 +10,8 @@ const config: Config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'naohito-T', // Usually your GitHub org/user name.
-  projectName: 'naopedia', // Usually your repo name.
+  organizationName: 'naohito-T',
+  projectName: 'naopedia',
   i18n: {
     defaultLocale: 'ja',
     locales: ['ja', 'en'],
