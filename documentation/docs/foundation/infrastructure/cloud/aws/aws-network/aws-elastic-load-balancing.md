@@ -28,5 +28,3 @@ ELBとは「Elastic Load Balancing」の略称で、元々はこのELBがAWSに�
 
 ## API GatewayとALBの比較
 [HTTPSの終端：API GatewayとALBの比較とセキュリティ上の考察](https://zenn.dev/mizuba/articles/a3e47dd750bee6)
-
-
