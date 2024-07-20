@@ -3,6 +3,7 @@
 AWS関連やAWSユビキタスについて記載する。
 
 ## AWSのリソース命名規則
+
 [命名規則](https://dev.classmethod.jp/articles/aws-name-rule/)
 
 ケバブケースが推奨（S3のバケット名に大文字とアンダースコアを含めることができないため）
@@ -11,17 +12,21 @@ AWS関連やAWSユビキタスについて記載する。
 タグはパスカルケースがオススメ
 
 ## AWSのコストを削減する方法
+
 [AWSのコストを削減する９の方法](https://aws.amazon.com/jp/blogs/news/9ways-to-optimize-aws-cost/)
 
 ## AWS セキュリティ
+
 [本番環境で実践したいAWSセキュリティのベストプラクティス26選](https://sysdig.jp/blog/26-aws-security-best-practices/)
 
 ## AWS 勉強サイト
+
 [AWS Cloud Quest](https://www.itmedia.co.jp/news/articles/2203/17/news092.html)
 
 ---
 
 ## EIP(Elastic IP)
+
 [EIPについて](https://orange-operation.jp/sharing/11919.html)
 
 Elastic IPアドレスは、AWSに登録したアカウントに紐つけされるIPアドレスです。
