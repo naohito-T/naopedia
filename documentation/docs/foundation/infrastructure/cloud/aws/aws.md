@@ -4,7 +4,6 @@ AWS関連やAWSユビキタスについて記載する。
 
 ## Overview
 
-
 ## AWS海外展開
 
 AWSはいつでもグローバルにサービスを展開できる。  
@@ -224,13 +223,11 @@ IPアドレスは基本的にパブリックIPアドレスとプライベートI
 
 パブリックIPもプライベートIPもサーバーを再起動すると変更されてしまうという特性を持っているのですが、このElastic IPは**サーバーを再起動しても同じIPアドレスを割り当てることができる性質を持っています。**
 
-
 ## AWSを操作方法種類
 
 - GUI（マネジメントコンソール）
 - CLI（AWS CLI）
 - SDK（プログラム）
-※pythonでのSDKは`boto3`という   
 
 ## config credentialsを作成する
 
@@ -245,15 +242,18 @@ aws configureで指定された**機密性の高い**認証情報を保存する
 AWSに接続するための認証情報
 
 ## config credentials
+
 [リファレンス](https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/cli-configure-files.html)
 
 頻繁に利用される構成設定および認証情報をAWS CLIが維持するファイルに保存できる。
 CLIは`default`という名前のプロファイルにある設定を使用する。
 
 ## 名前付きプロファイル
+
 [リファレンス](https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/cli-configure-profiles.html)
 
 ## アベイラビリティーゾーン
+
 [参考URL](https://bluepixel.hatenablog.com/entry/2020/05/12/225619)
 
 東京リージョン`ap-northeast-1`では4つの利用可能なAZ（アベイラビリティゾーン）が提供されている。
@@ -267,6 +267,7 @@ CLIは`default`という名前のプロファイルにある設定を使用す�
 いわゆるマルチAZ構成にして、片方のDCに隕石が直撃したときでもサービスを継続できるようにするため。
 
 ## AWS単語
+
 [参考URL](https://biz.nuro.jp/column/aws-mama-031/#:~:text=%E3%81%A0%E3%81%9D%E3%81%86%E3%81%A7%E3%81%99%E3%80%82-,NAT%20Gateway,%E3%82%8C%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82)
 
 
@@ -638,3 +639,7 @@ DynamoDBが動いているネットワークが指定されちゃってるので
 
 HTTPSの終端とは、HTTPS接続のセキュリティ層がどこで解除されるかを指す用語  
 >たとえば、クライントがHTTPSリクエストを送信し、そのリクエストがロードバランサーに到達したとします。ロードバランサーが設定されていてHTTPSの終端を行う場合、ロードバランサーはHTTPS通信を「終端」させ、その後の通信はHTTP（非暗号化）または再度HTTPSで行われます。これはロードバランサーがクライアントからの暗号化された通信を受け取り、それを解読（デコード）し、バックエンドのサーバにその情報を送るために必要です。
+
+## AWS 試験
+
+[AWS Certified Solutions Architect - Associate (SAA-C03) 試験ガイド](https://d1.awsstatic.com/ja_JP/training-and-certification/docs-sa-assoc/AWS-Certified-Solutions-Architect-Associate_Exam-Guide.pdf)
