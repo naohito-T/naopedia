@@ -8,7 +8,8 @@ DNS（Domain Name System）とは「example.com」のようなドメイン名を
 
 ## DNSルートサーバとは
 
-[【図解】DNSルートサーバはどこにある？世界13か所の場所や運用組織を紹介！](https://ryonotes.com/where-is-route-dns-server/)
+[【図解】DNSルートサーバはどこにある？世界13か所の場所や運用組織を紹介！](https://ryonotes.com/where-is-route-dns-server/)  
+[[初心者向け] APEX ドメインと CNAME レコード制約についてまとめてみた](https://dev.classmethod.jp/articles/tsnote-dns-record-apex-domain/)
 
 世界で13か所にしかない。  
 DNSルートサーバは、クライアントのDNSサーバ（これをフルサービスリゾルバーと呼びます）が名前解決する際にアクセスしていくDNSサーバの中でもっとも上位にあるサーバのこと。  

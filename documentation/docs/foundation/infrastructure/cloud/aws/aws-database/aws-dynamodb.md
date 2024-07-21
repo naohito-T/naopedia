@@ -1,4 +1,5 @@
-## Amazon DynamoDB
+# Amazon DynamoDB
+
 [Amazon DynamoDBリファレンス](https://docs.aws.amazon.com/ja_jp/amazondynamodb/latest/developerguide/Introduction.html)  
 [aws dynamodb local](https://www.wakuwakubank.com/posts/675-aws-cli-dynamodb/#index_id10)
 
