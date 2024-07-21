@@ -1,6 +1,9 @@
-# Authentication(認証): オーゼンティケーション
-[参考URL](https://dev.classmethod.jp/articles/authentication-and-authorization-again/)
+# Authentication
+
+[参考URL](https://dev.classmethod.jp/articles/authentication-and-authorization-again/)  
 [認証と認可の歴史](https://dev.classmethod.jp/articles/authentication-and-authorization/)
+
+## Overview
 
 認証とは相手の身元を確認すること。
 
@@ -34,11 +37,6 @@
 認証の  の仕組み
 IDトークンという証明書を利用して、本人確認済みであることを証明します。
 (+ そのユーザーの属性（プロフィール）情報を知ることができます。)
-
-
-
-
-
 
 OAuthと
 AuthOというのがあるらしい
@@ -156,5 +154,3 @@ Google認証やFacebook認証などSNSの認証を利用した認証方式が利
 OpenID Connectについて書きましたが、実際のところGoogleやTwitterの認証はOpenID Connectではありません。GoogleはOpenID Connectの仕様に準拠しつつ、OAuth 2.0を採用しています。TwitterはOAuth 1.0aという仕様で、OpenID Connectには準拠していません。
 
 いずれにしてもOAuthをベースにした認証を行なっていますが、ここではわかりやすさのためにOpenID Connectという用語に統一して説明しています。
-
-
