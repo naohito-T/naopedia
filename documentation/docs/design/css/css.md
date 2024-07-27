@@ -1,8 +1,10 @@
 # CSS
+
 [CSSリファレンス](https://developer.mozilla.org/ja/docs/Learn/CSS/First_steps)  
 [Webの教科書](https://web-design-textbook.com/css-textbook.html)
 
 ## CSSを本当に理解するには
+
 [参考URL](https://coliss.com/articles/build-websites/operation/css/about-css-layout-algorithms.html)
 
 CSSを理解するには、レイアウトアルゴリズムがどのように機能するかを理解する必要がある。  
