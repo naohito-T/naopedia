@@ -1,5 +1,7 @@
 # Amazon Route53
 
+[Amazon Route53は何ができるの？](https://www.sunnycloud.jp/column/20210602-01/)
+
 ## Overview
 
 Amazon Route 53は、AWSが提供するDNS（Domain Name System）運用サービス。  
@@ -137,9 +139,10 @@ Amazon Route 53のホストゾーンのユースケースとして次のよう�
 
 ## ホスティングゾーン(Hosted Zone)
 
-Hosted Zoneは、ドメイン名に関連するDNSレコードを保持するためのコンテナーのようなものです。ドメイン名（例: `example.com`）ごとにホスティングゾーンを作成します。その中に、そのドメイン名やそのサブドメイン（例: `www.example.com`や `api.example.com`）のためのDNSレコードを追加します。
+Hosted Zoneは**ドメイン名に関連するDNSレコードを保持するため**のコンテナーのようなもの。  
+ドメイン名（例: `example.com`）ごとにホスティングゾーンを作成します。その中に、そのドメイン名やそのサブドメイン（例: `www.example.com`や `api.example.com`）のためのDNSレコードを追加します。
 
-ホスティングゾーンには2種類あります：
+ホスティングゾーンには2種類ある。
 
 1. **パブリックホスティングゾーン（Public Hosted Zone）**:
    - インターネット上のユーザーがアクセスできるDNSレコードを持っています。

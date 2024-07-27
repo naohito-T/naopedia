@@ -4,7 +4,6 @@
 [next-react-server-components sample](https://github.com/shilman/next-react-server-components/tree/main?ref=storybookblog.ghost.io)
 [next-react-server-components blog](https://storybook.js.org/blog/build-a-nextjs-app-with-rsc-msw-storybook/)
 
-
 ## Overview
 
 Storybookは、UIコンポーネントの開発、テスト、およびドキュメント作成を容易にするためのオープンソースツール。  
