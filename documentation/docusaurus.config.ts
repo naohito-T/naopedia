@@ -1,6 +1,9 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import npm2yarn from '@docusaurus/remark-plugin-npm2yarn';
+import type { Options as DocsOptions } from '@docusaurus/plugin-content-docs';
+import type { Options as BlogOptions } from '@docusaurus/plugin-content-blog';
 
 const config: Config = {
   title: 'Naopedia',
@@ -21,20 +24,25 @@ const config: Config = {
     [
       'classic',
       {
+        debug: true,
         docs: {
-          routeBasePath: '/',
           sidebarPath: './sidebars.ts',
-          // docsをホームに変更
-        },
+          remarkPlugins: [[npm2yarn, { sync: true }]],
+          tags: 'tags.yml',
+          showLastUpdateTime: true,
+        } satisfies DocsOptions,
         blog: {
           showReadingTime: true,
-        },
+        } satisfies BlogOptions,
         theme: {
           customCss: './src/css/custom.css',
         },
       } satisfies Preset.Options,
     ],
   ],
+  markdown: {
+    mermaid: true,
+  },
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
@@ -46,8 +54,17 @@ const config: Config = {
       },
       items: [
         {
-          label: 'Docs',
-          to: '/docs/index.md',
+          label: 'Documentation',
+          items: [
+            {
+              label: 'Naopedia',
+              to: '/docs/',
+            },
+            {
+              label: 'Tags',
+              to: '/docs/tags/',
+            },
+          ],
         },
         {
           label: 'Community',
@@ -97,8 +114,8 @@ const config: Config = {
               href: 'https://github.com/naohito-T/',
             },
             {
-              label: 'Twitter',
-              href: 'https://twitter.com/naohito___t',
+              label: 'X',
+              href: 'https://x.com/naohito___t',
             },
           ],
         },
@@ -118,9 +135,23 @@ const config: Config = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} naopedia.`,
     },
+    // https://docusaurus.io/docs/next/markdown-features/code-blocks
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      theme: prismThemes.nightOwl,
+      // 追加後additionalLanguages、Docusaurusを再起動する必要
+      additionalLanguages: ['java', 'php', 'ruby', 'bash', 'diff', 'json', 'scss', 'css'],
+      // コードブロック内にマジックコメントを追加することで、特定の行を強調表示したり、エラー行をマークしたりできる
+      magicComments: [
+        {
+          className: 'theme-code-block-highlighted-line',
+          line: 'highlight-next-line',
+          block: { start: 'highlight-start', end: 'highlight-end' },
+        },
+        {
+          className: 'code-block-error-line',
+          line: 'This will error',
+        },
+      ],
     },
     colorMode: {
       defaultMode: 'dark',

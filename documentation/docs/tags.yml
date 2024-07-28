@@ -1,0 +1,4 @@
+api:
+  label: 'API'
+  permalink: '/architecture/api'
+  description: 'All the releases related to the project'

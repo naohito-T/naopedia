@@ -1,13 +1,10 @@
----
-id: index
-title: Naopedia
----
-
 # Naopedia
 
 筆者である[naohito-T](https://github.com/naohito-T)がITエンジニアとして役立つTipsやよく忘れることを記したナレッジ。  
 
+:::caution
 ※当ドキュメントの正誤性には保証はありません。
+:::
 
 ## Contact to naohito-T
 
