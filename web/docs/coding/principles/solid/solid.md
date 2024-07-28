@@ -7,7 +7,7 @@ SOLID原則とは、オブジェクト指向において**変更しやすい・�
 S : The Single Responsibility Principle（単一責任の原則）
 O : The Open Closed Principle（オープン・クローズドの原則）
 L : The Liskov Substitution Principle（リスコフの置換原則）
-I : The Interface Segregation Principle（インターフェイス分離の原則）
+I : The Interface Segregation Principle（インターフェース分離の原則）
 D : The Dependency Inversion Principle（依存性逆転の原則）
 
 ## 単一責任の原則
@@ -44,5 +44,3 @@ class Employee {
   private getRegularHours = (): number => {...};
 }
 ```
-
-

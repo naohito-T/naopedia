@@ -10,9 +10,10 @@
 2. コンテンツの上部に表示させるCSSを作成しのせるようにする
 3. アニメーションは@keyframeを使って表現する。
 4. jsで制御させる。表示と非表示
-※表示と非表示は`表示 → 処理 → 非表示`とする流れが一般的そう。
+※表示と非表示は `表示 → 処理 → 非表示` とする流れが一般的そう。
 
 3.の例
+
 ```js
 window.onload = function() {
   const spinner = document.getElementById('loading');

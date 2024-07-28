@@ -1,4 +1,5 @@
 # InnerSource
+
 [インナーソースで文化を変えるMicrosoftの挑戦](https://codezine.jp/article/detail/13685)
 [GitHubが公開しているInnerSource](https://github.com/helaili/enterprise-showcase)
 
@@ -16,9 +17,6 @@
 
 　インナーソースの活動に貢献することは、社内に対するセールス活動にもなる。強いエンジニアが魅力的なプロジェクトを見つけ、自らの貢献度をアピールしやすいよう、簡単に問題を報告したり、新しい機能を提案したりできる環境を整え、参加の障壁を低くしておくこと。
 
-
-
 ## GitHubで取り組む
 
-GitHubのリポジトリは`Public` `Internal` `Private`の3種ある。
-
+GitHubのリポジトリは `Public` `Internal` `Private` の3種ある。

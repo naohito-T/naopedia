@@ -1,20 +1,26 @@
 # ShellScript
+
 [作成する前に見ろ](https://qiita.com/jpshadowapps/items/d6f9b55026637519347f)  
 [コーディング規約](https://qiita.com/mashumashu/items/f5b5ff62fef8af0859c5)  
 
 ## ShellScript Tips
+
 [シェルスクリプトを書く時の注意](https://qiita.com/youcune/items/fcfb4ad3d7c1edf9dc96)
 
 ## シェルスクリプト コーディングスタイル
+
 [参考URL](https://sechiro.hatenablog.com/entry/2013/05/12/%E3%82%B7%E3%82%A7%E3%83%AB%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E3%81%AE%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%BC)
 
 ## ShellScript echo 色付ける
+
 [参考URL](https://qiita.com/ko1nksm/items/095bdb8f0eca6d327233#%E3%81%8A%E3%81%BE%E3%81%911-%E8%89%B2%E6%8C%87%E5%AE%9A%E6%96%B9%E6%B3%95-%E4%B8%80%E8%A6%A7)
 
 ## ShellScript 変数格納一覧
+
 [【シェル芸人への道】Bashの変数展開と真摯に向き合う](https://qiita.com/t_nakayama0714/items/80b4c94de43643f4be51)
 
 ### ShellScript が落ちた時にスクリプトを止める
+
 [setコマンドオプション一覧](https://atmarkit.itmedia.co.jp/ait/articles/1805/10/news023.html)  
 [set euxについて](https://qiita.com/keitean/items/83c7d0d6221ec1b9c63c)
 setコマンドを先頭に記載する
@@ -44,9 +50,10 @@ set -euox pipefail
 
 ## コマンドのlogを表示させたくない
 
-`> /dev/null 2>&1`をつけるとログが表示されない
+`> /dev/null 2>&1` をつけるとログが表示されない
 
 ## 改行コードを反映し出力する
+
 [GNU sedでの改行変換とBSD sedでの改行出力](https://rcmdnk.com/blog/2014/09/21/computer-bash/)
 
 ## OSを分別する
@@ -73,14 +80,17 @@ fi
 データをファイルに出力するテクニックが結構使われる。
 
 ## if文 オプション
+
 [参考URL](https://shellscript.sunone.me/if_and_test.html)
 
 ## 実行場所を気にしなくてもいいシェルスクリプト
 
 シェルスクリプトの冒頭に以下を記載すると実行場所を気にしなくてよいスクリプトになる。
+
 ```sh
-$ cd `dirname $0`
+cd `dirname $0`
 ```
+
 [参考URL](https://www.qoosky.io/techs/927115250f)
 [参考URL2](https://developers-book.com/2021/06/12/656/)
 
@@ -131,7 +141,7 @@ $ echo $0
 `getopt` 高機能だが環境依存が多くなる。
 
 **一番大事な考え方**
-複雑なオプション解析が必要な処理の場合は、シェルスクリプトでやるのではなく`rust`や`go`でCLI実装するのがいい選択。
+複雑なオプション解析が必要な処理の場合は、シェルスクリプトでやるのではなく `rust` や `go` でCLI実装するのがいい選択。
 
 ## シェルスクリプト errorハンドリング
 

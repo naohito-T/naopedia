@@ -8,17 +8,18 @@
 サーバーがない ×
 サーバーの存在を意識しない ◯
 
-
 簡潔にいうと**常時起動しているサーバーを使わずにアーキテクチャ（仕組み）が実現できている状態**というニュアンスが近い
 メリットとしては、常時起動サーバーがなくなり、以下のサーバーあるあるの問題がなくなること。
 
 **サーバー確保型**
+
 - 処理量を予測して環境を確保しないといけない
 - 確保分の課金
 - 使わない時は（意識して）解放
 - 自分で冗長化
 
 **サーバーレス**
+
 - 処理要求に応じて自動で環境を確保
 - 負荷なし = ゼロ課金
 - ms単位の実行時間課金（AWS Lambda）
@@ -54,6 +55,7 @@ AWSデプロイするためには？
 [AWS setup方法](https://www.serverless.com/framework/docs/providers/aws/guide/credentials)
 
 要は以下を実施すればいい
+
 - Serverless用のIAMユーザを発行
 - IAMユーザにAdministratorAccessの管理ポリシーを与える
 
@@ -95,16 +97,15 @@ Serverless FrameworkでAWS上にデプロイするためには以下の設定が
 - aws-cliをインストールしてクレデンシャルを設定しておく
 
 ## 事前準備が終われば
+
 [serverless概要](https://serverless.co.jp/blog/25/)
-
-
 
 ## 各プロバイダーによって
 
-Amazon Web Servicesの一部としてAmazonが提供するサーバーレスコンピューティングプラットフォーム「AWS Lambda」で、アプリケーションを構築するために開発されたその最初のフレームワークである。 現在、サーバレスで開発されたアプリケーションは、Azure FunctionsでマイクロソフトAzure、Apache OpenWhiskを基盤とするIBM Cloud FunctionsでIBM Bluemix 、 Google Cloud Functionsを使用するGoogle Cloud Platform(GCP) 、 OracleのFn[1] を使用するOracle Cloud 、Kubernetesを基盤とするKubeless[※ 2] 、Spotinst 、およびAuth0によるWebtask、など他のFunction as a serviceのプロバイダーに展開する事（デプロイ[※ 3]）も可能である[2]。
+Amazon Web Servicesの一部としてAmazonが提供するサーバーレスコンピューティングプラットフォーム「AWS Lambda」で、アプリケーションを構築するために開発されたその最初のフレームワークである。 現在、サーバレスで開発されたアプリケーションは、Azure FunctionsでマイクロソフトAzure、Apache OpenWhiskを基盤とするIBM Cloud FunctionsでIBM Bluemix 、 Google Cloud Functionsを使用するGoogle Cloud Platform(GCP) 、 OracleのFn[1]を使用するOracle Cloud 、Kubernetesを基盤とするKubeless[※ 2]、Spotinst 、およびAuth0によるWebtask、など他のFunction as a serviceのプロバイダーに展開する事（デプロイ[※ 3]）も可能である[2]。
 
 サーバーレスアプリは、単にいくつかのタスクを実行するための2つのラムダ関数か、または数百のラムダ関数で構成されるバックエンド全体に過ぎない可能性がある。 サーバーレスは、選択したクラウドプロバイダー内で提供されるすべてのランタイムをサポートする。
-サイト「Serverless」はAusten Collins [3]によって開発され、フルタイムのチームによって維持されている。
+サイト「Serverless」はAusten Collins[3]によって開発され、フルタイムのチームによって維持されている。
 
 ## Serverless Framework の単位
 
@@ -148,9 +149,10 @@ Lambdaファンクションが他のAWSリソースを連携する場合は、�
 ServerlessのCLIでファンクションを実行する際に入力値となるデータを定義するファイルです。Lambdaファンクション内でevent変数に展開されます。
 
 ## dynamoDB
+
 [ServerlessFrameworkでDynamoDBLocalを使う](https://qiita.com/marchin_1989/items/1a5ad220bee030fef111)
 
 DynamoDB Local自体はそもそもaws公式のツール
 JRE上で動作するので、Java6以上の実行環境が必要。
-それを`Serverless Framework`で使うためのServerless DynamoDB Localというプラグインがある。
+それを `Serverless Framework` で使うためのServerless DynamoDB Localというプラグインがある。
 プラグインを利用しなくてもDynamoDB Localを利用することはできますが、serverless frameworkの設定と一緒にかけたり、seedなどのオプションがあり便利です。

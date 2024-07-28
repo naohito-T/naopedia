@@ -7,11 +7,9 @@
 zshにはオプションというものがある。
 オプションとはzshの動作を切り替えるためのオン/オフのフラグのこと。
 
-
-
 ## ZLE(Zsh Line Editor)
 
-ZLEはコマンドラインに打ち込む`ls -l`などの文字列（バッファーという）をプログラム的に編集する機能
+ZLEはコマンドラインに打ち込む `ls -l` などの文字列（バッファーという）をプログラム的に編集する機能
 
 [Macがzshになるなら、ZLEを習得するっきゃない！](https://dev.classmethod.jp/articles/zsh-zle-introduction/)
 
@@ -50,19 +48,20 @@ zshログイン時の1回だけ読み込まれる
 - .zlogin
 ログインシェルに必要な設定だけを記述する
 最後に読み込まれる
-役割は .zprofile とほぼ一緒。混乱を避けるため併用しないこと
+役割は .zprofileとほぼ一緒。混乱を避けるため併用しないこと
 
 - .zlogout
-exit コマンドで zsh を抜けたときに読み込まれる
+exitコマンドでzshを抜けたときに読み込まれる
 
 ## prezto
 
 **zshを拡張してくれるツール**
 Zshでいい感じのテーマを使いたい
-補完の設定とか楽をしたい など
+補完の設定とか楽をしたいなど
 
 [参考URL](https://qiita.com/gilly/items/5ff7bd7142e963cdbb9b)
 
 ## abbr
+
 TODO
 [参考URL](https://qiita.com/n3_x/items/2a7d5aa0cdc6cdcff40a)

@@ -1,4 +1,5 @@
 # React Hooks
+
 [主要なhooks参考](https://qiita.com/seira/items/0e6a2d835f1afb50544d)
 
 React HooksはReact 16.8で追加された新機能であり、stateなどのReact機能をクラスコンポーネントを使用せず使えるようになるもの
@@ -11,6 +12,7 @@ React HooksはReact 16.8で追加された新機能であり、stateなどのRea
 一番トップのコンポーネントでuseStateを宣言して子コンポーネントで共有する。
 
 ## useEffect
+
 [useEffect が API 呼び出しを行うのに適していない理由](https://medium.com/wesionary-team/why-useeffect-is-a-bad-place-to-make-api-calls-98a606735c1c)
 
 関数内の**ある状態に着目して処理**をほどこす。
@@ -23,7 +25,7 @@ React HooksはReact 16.8で追加された新機能であり、stateなどのRea
 ## useRef
 
 関数コンポーネントでは、Classコンポーネント時のref属性の代わりにuseRefを使って要素への参照を行う。  
-※useRefではuseStateのようにコンポーネント内での値を保持することができる。
+※useRefではuseStateのようにコンポーネント内での値を保持できる。
 
 - DOMの参照例
 
@@ -68,9 +70,11 @@ dispatchを実行すればレンダリングが走る
 ```ts
 const [_, dispatch] = useReducer((boolean) => !boolean, false);
 ```
+
 あとはdispatchを特定の場所で実行すればレンダリングがかかる。
 
 ## useContext
+
 [React Context APIわかりやすい](https://gotohayato.com/content/523/)  
 [useContextでundefinedを抜く](https://medium.com/@rivoltafilippo/typing-react-context-to-avoid-an-undefined-default-value-2c7c5a7d5947)
 
@@ -82,11 +86,10 @@ useContext() + Contextオブジェクト + Providerコンポーネント
 
 ## Context APIについて
 
-
 Context APIとは、Contextオブジェクトとそれに備わったProviderとConsumer 、この3つを提供するもの。  
 
-フックのひとつであるuseContext()はこの`Consumer`の代わりになるものです。  
-Consumerをそのまま使うと複雑になりがちな処理が`useContext()`を使うとシンプルに書ける。  
+フックのひとつであるuseContext()はこの `Consumer` の代わりになるものです。  
+Consumerをそのまま使うと複雑になりがちな処理が `useContext()` を使うとシンプルに書ける。  
 
 ### useContext重要なこと
 
@@ -118,9 +121,10 @@ Context Providerとは、Contextオブジェクトが持つコンポーネント
 - Context Consumer
 Context Consumerとは、Context Providerと同じくContextオブジェクトに備わったコンポーネントのひとつで**コンテキスト値を利用したい場合で使うもの**
 
-Context Consumerを使えばコンポーネントツリーを外に見ていって一番近くにあるContext ProviderのContextに紐付けられた値にアクセスすることができる。  
+Context Consumerを使えばコンポーネントツリーを外に見ていって一番近くにあるContext ProviderのContextに紐付けられた値にアクセスできる。  
 
 ## React パフォーマンス最適化API
+
 [以下のは参考から](https://zenn.dev/nus3/articles/1978a344cfaa4d3359c1)
 [useCallbackはとにかく使え](https://blog.uhy.ooo/entry/2021-02-23/usecallback-custom-hooks/)
 
@@ -133,26 +137,27 @@ Context Consumerを使えばコンポーネントツリーを外に見ていっ�
 メモ化とは同じ結果を返す処理について、初回のみ処理を実行記録しておき、値が必要となった2回目以降は前回の処理結果を計算することなく呼び出し値を得られるようにすること。
 
 - 前提再レンダリングについて
-自分の`state`が更新されたときに自分自身+使っている子コンポーネントが再レンダリングされる
+自分の `state` が更新されたときに自分自身+使っている子コンポーネントが再レンダリングされる
 
 - 注意
 最適化のためのツールなので**過度な最適化**を避けるように啓蒙する言説がよく見られる。
 すなわち、ちゃんと本当に最適化のために必要なところにだけこれらを使おうということ。
-とくに`React.memo`は**propsが以前と変わっているかどうかを判定するためのオーバーヘッドがあるし、**useMemoやuseCallbackもフック呼び出しのオーバーヘッドがあります。 意味がないところでReact.memoを使うと、オーバーヘッドによりむしろ悪影響があるかもしれません。
+とくに `React.memo` は**propsが以前と変わっているかどうかを判定するためのオーバーヘッドがあるし、**useMemoやuseCallbackもフック呼び出しのオーバーヘッドがあります。 意味がないところでReact.memoを使うと、オーバーヘッドによりむしろ悪影響があるかもしれません。
 
 >……とは言っても、実際に無駄なReact.memoの使用が悪影響になったという報告がデータ付きで上がっているのは、筆者は寡聞にして見たことがありません。 正直なところ、余計なuseMemoやuseCallbackが実際的なパフォーマンスに与える影響は基本的に無視できる程度であり、それ以外の論点から考察するのが筋が良いと思っています。 そこで、この記事ではuseCallbackとカスタムフックに焦点を当て、「設計」の観点から考察します。
 >結論は、カスタムフックが関数を返すなら常にuseCallbackで囲めです
 
 ## React.memo
+
 [React.memoを使ったレンダリング最適化入門](https://zenn.dev/nus3/articles/1978a344cfaa4d3359c1)
 React.memoを使うと親から子コンポーネントに渡しているpropsが更新されない限り、子コンポーネントは再レンダリングされない。
 
 ### React.memo 化された子コンポーネントの props に callback 関数を渡したときの挙動
 
-親で定義した関数を子コンポーネントに`props`として渡すと子コンポーネントを`memo`化しても再レンダリングされてしまう。
+親で定義した関数を子コンポーネントに `props` として渡すと子コンポーネントを `memo` 化しても再レンダリングされてしまう。
 
 親がレンダリングされるたびに親で定義した関数も再生成されるため。
-結果として子コンポーネントを`memo`化しても親の`state`が更新されると子コンポーネントも再レンダリングされてしまう。
+結果として子コンポーネントを `memo` 化しても親の `state` が更新されると子コンポーネントも再レンダリングされてしまう。
 その対策がuseCallback
 
 ## useMemo(React.memoとは違う)
@@ -163,16 +168,19 @@ useMemoで囲まれた関数コンポーネントはpropsが以前と変わっ�
 またuseMemoやuseCallbackは、関数コンポーネント内での値の再計算を抑制する効果を持ちます。
 
 ## useCallback
+
 [参考URL](https://qiita.com/seira/items/8a170cc950241a8fdb23)
 
 親がレンダリングされるたびに親で定義した関数も再生成されないようにuseCallbackで関数をメモ化する
 >useEffectと同じように、依存配列(=[deps] コールバック関数が依存している要素が格納された配列)の要素のいずれかが変化した場合のみ、メモ化した値を再計算します。
 
-※`useCallback`は`useMemo`のシュガーシンタックス（useCallbackは関数に特化していると認識していい）
+※`useCallback` は `useMemo` のシュガーシンタックス（useCallbackは関数に特化していると認識していい）
 >useCallback(fn, deps) は useMemo(() => fn, deps) と等価です。
 
 ### 処理内容
+
 [useCallbackはとにかく使え！　特にカスタムフックでは](https://blog.uhy.ooo/entry/2021-02-23/usecallback-custom-hooks/)
+
 ```ts
 const App: React.VFC = () => {
   const handleClick = useCallback((e: React.MouseEvent) => {
@@ -189,12 +197,12 @@ const App: React.VFC = () => {
 
 >逆の見方をすれば、useCallbackの使用に常に意味があるわけではないということです。 このように、**React.memoで囲われたコンポーネントに関数を渡すような場合でなければuseCallbackが無駄**ということになります。 useMemoやuseCallbackの使用に慎重になる人はこのような無駄を気にしているのでしょう。
 
-
 ## カスタムフック
+
 [カスタムフック参考URL](https://qiita.com/sonatard/items/617f324228f75b9c802f)
 
 コンポーネントのロジックを分割できる。  
-※ルールとしてプレフィックスに`use`をつけないといけない  
+※ルールとしてプレフィックスに `use` をつけないといけない  
 
 >React Hooks以前は、ロジックの再利用がコンポーネントに依存してしまいロジック単独でのモジュール化が難しいという問題がありました。
 >しかしReact Hooksのカスタムフックという独自のフックを作成する機能を使うことで、Viewに依存するこなくロジックだけを再利用することができるようになります。
@@ -203,6 +211,5 @@ const App: React.VFC = () => {
 
 カスタムフックを作る理由は、普通の関数を作る理由とまったく同じ。  
 すなわち責務の分離とかカプセル化。  
-一度カスタムフックとして分離された以上、インターフェイスの内側のことはカスタムフック内で完結すべきです。  
+一度カスタムフックとして分離された以上、インターフェースの内側のことはカスタムフック内で完結すべきです。  
 カスタムフックを使う側はカスタムフックの内側のことを知るべきではなく、その逆も然りです。
-

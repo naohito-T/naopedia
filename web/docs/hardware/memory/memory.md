@@ -1,4 +1,5 @@
 # memory
+
 [知らないと恥ずかしい？　メモリの「RAM」と「ROM」の違い](https://www.itmedia.co.jp/news/articles/1706/01/news051.html)
 
 ## メモリ領域の分類
@@ -21,23 +22,24 @@
 どうやらこの表現を使っているのは日本だけのようで、海外では「Internal Memory Storage」（内部メモリストレージ）としっかり表記しているほうが多い。
 
 ## PCがもっさりする理由
+
 [参考URL](https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q14237302854)
 
 - Chrome
 Chromeはメモリがあればあるだけ食う、メモリ食いアプリで有名。
 タブを開きまくるのは気をつける。
 
-- ターミナルで`sudo purge`コマンドを用いてメモリを解放する。
+- ターミナルで `sudo purge` コマンドを用いてメモリを解放する。
 アプリを開いている状態で実行しても気休めレベル  
-行うとしたらアプリすべてを起動した逆順に終了していき`Finder`のみの状態で行わないと本来の価値半減（macOSの場合）
+行うとしたらアプリすべてを起動した逆順に終了していき `Finder` のみの状態で行わないと本来の価値半減（macOSの場合）
 
 ## PC もっさり改善
 
 最低でも週1再起動した方がいい。  
 使用頻度が高いのであれば2、3日に1度は再起動をするべき。
 
-
 ## メモリで意識すべきこと
+
 [参考URL](https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q14237302854)
 
 **メモリデフラグ**を気にすることが重要。  
@@ -75,8 +77,8 @@ Macなら常に20GB以上、理想35GB以上の空き容量確保。
 もし内蔵ストレージがSSDなら、空き容量はより重要になります。
 全体の最低でも25%以上の空き容量を常に確保しないとSSD本来の速度が出ません。
 
-
 ## デフラグについて
+
 [参考URL](https://aprico-media.com/posts/1370)
 
 >デフラグとはコンピュータのファイルを書き込んだり、削除したりを繰り返していると、ファイルがあちこちに点在した状態となります。データは順序よく並べて書き込まれているのではなく状況によっては飛び飛びの領域に書き込まれます。
@@ -106,16 +108,18 @@ OS側でファイルに書き込むときはディスク領域を最適化して
 そのため再起動やディスクユーティリティの修復を使って改善する。
 
 ## Macでのメモリ使用量を把握する。
+
 [Macのメモリ使用量を簡単に減らす7つの方法 (MacBook Pro、Air、iMacで適用可)](https://macpaw.com/ja/how-to/reduce-memory-usage-on-mac)  
 [アクティビティモニターの見方](https://apple.stackexchange.com/questions/420445/what-is-this-qemu-system-aarch64-process-and-why-is-it-using-almost-3-gb-of-ram)
 
 アクティビティモニター初期表示では仮装メモリ使用量のため実メモリ使用量のタブを増やしてみること。  
 
 ## Macのハードディスクの空き容量を開放する
+
 [参考URL](https://qiita.com/kiyodori/items/0fcc87bb8ab1cb31c731)
 
 ## LRU【Least Recently Used】LRU方式 / LRU制御方式
-[参考URL](https://e-words.jp/w/LRU.html)
 
+[参考URL](https://e-words.jp/w/LRU.html)
 
 >LRUとは、広さの限られた一時的な保管場所が満杯になったとき何を棄てるか決定する基準の一つで、**最も過去に使用されたものから順に破棄する**方式。IT分野以外でも書類の整理方法などに応用されている。

@@ -39,7 +39,7 @@ rakeコマンドはデフォルトでカレントディレクトリ内のRakefil
 
 gemパッケージの仕組みを利用して、開発しているプロジェクト内でどのgemパッケージを使っているのか、そしてどのバージョンを利用しているのかを明示する仕組みを提供する。
 
-Bundlerを使って使用するgemパッケージをまとめるには`Gemfile`という設定ファイルにgemパッケージ名を記載する。  
+Bundlerを使って使用するgemパッケージをまとめるには `Gemfile` という設定ファイルにgemパッケージ名を記載する。  
 そしてstepGemfileに記載されているgemパッケージのバージョンや依存関係を解決した結果をGemfile.lockとして保存する
 
 Bundlerでよく利用するサブコマンド
@@ -81,6 +81,7 @@ mechanize (2.7.6)
 $ gem environment
 - INSTALLATION DIRECTORY: /home/ubuntu/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0
 ```
+
 で確認
 INSTALLATION DIRECTORYの項目
 
@@ -93,7 +94,7 @@ Bundlerでライブラリを管理するためにはGemfileを作成する必要
 bundle init
 ```
 
-Gemfile内にコメントアウトされている行はコメントアウトを外し`bundle install`をすると`bundle exec rails -v`ができる
+Gemfile内にコメントアウトされている行はコメントアウトを外し `bundle install` をすると `bundle exec rails -v` ができる
 
 Gemfileに必要なgemを記載しておくことで、特定のプロジェクトでのみ利用するgemを簡単に管理できる。
 Railsではプロジェクトの雛形を作成すると自動的にGemfileが作成される
@@ -113,9 +114,10 @@ Railsは以下の4つの思想を強く打ち出しています。
 
 設定より規約という意味。  
 **規約に従うことでプログラム内に規律が生まれる**  
+
 - データベースのテーブル名はモデル名の複数形にする（モデル名がEmployeeの場合、テーブル名はemployeesとなる）
 - /employeesというURLは社員の一覧を表す
-- 社員ID: 1の社員情報を表すURLは`/employees/1`である。
+- 社員ID: 1の社員情報を表すURLは `/employees/1` である。
 
 このような規約に従うことでそれぞれのコンポーネントに紐付けを行う作業を省略できる。
 
@@ -133,7 +135,7 @@ Railsは以下の4つの思想を強く打ち出しています。
 ### bin/
 
 Railsアプリケーションを開発するために利用する実行コマンドを格納しているディレクトリ
-通常Bundlerを使って依存関係を解決している場合、その依存関係を解決した上で実行するために`$ bundle exec rails`のように`exec`をつける。しかしRailsでは利便性や一貫性のため`bundle exec`をつけなくても実行できるコマンドをbin/に用意している。
+通常Bundlerを使って依存関係を解決している場合、その依存関係を解決した上で実行するために `$ bundle exec rails` のように `exec` をつける。しかしRailsでは利便性や一貫性のため `bundle exec` をつけなくても実行できるコマンドをbin/に用意している。
 →このようなファイルをbinstubと呼ぶ
 
 [binstubについて](https://techracho.bpsinc.jp/hachi8833/2021_11_22/25037)
@@ -172,19 +174,19 @@ scaffold : 足場
 ## DB操作
 
 - migration実行
-`rake db:migrate`を実行すると最初にschema_migrationsというテーブルを参照しmigration IDを確認する。
+`rake db:migrate` を実行すると最初にschema_migrationsというテーブルを参照しmigration IDを確認する。
 そして実行されていないmigrationを検知すると未適用のmigrationファイルを実行しmigration IDを記録する。
-そのため`rake db:migrate`を複数回実行しても、実行のたびにCREATE TABLE文が実行されることはない。
+そのため `rake db:migrate` を複数回実行しても、実行のたびにCREATE TABLE文が実行されることはない。
 
 - migration ID確認（schema_migrationsテーブル確認）
-`rake db:migrate:statusP`というタスクを実行する。
+`rake db:migrate:statusP` というタスクを実行する。
 
 ## Rails URL設計の確認
 
 確認する方法は2つある。
 
-1. developmentで動作している時に`http://localhost:3000/rails/info/routes`へ確認する
-2. デフォルトで定義されているrakeタスクを実行`rails routes`
+1. developmentで動作している時に `http://localhost:3000/rails/info/routes` へ確認する
+2. デフォルトで定義されているrakeタスクを実行 `rails routes`
 
 GET → show
 POST → create
@@ -227,7 +229,7 @@ ActiveRecord::Relationインスタンスを返すやつであればメソッド�
 
 ## 任意の箇所でSQLを発行したい
 
-`to_a`メソッドで即座にSQLを発行するテクニック
+`to_a` メソッドで即座にSQLを発行するテクニック
 
 ### scope(よく利用する検索条件に名前をつけてひとまとめにしたもの)
 
@@ -243,11 +245,11 @@ scopeで結果がnilの場合は該当Scopeの検索条件を除外したクエ�
 ## 1対多
 
 本ひとつ、出版社たくさん（出版社が所有している本はたくさんだから）
-出版社側に`has_many`を宣言
+出版社側に `has_many` を宣言
 
 ## 多対1
 
-`belongs_to`を宣言
+`belongs_to` を宣言
 本側にbelongs_toを宣言
 
 ## 多対多
@@ -255,7 +257,6 @@ scopeで結果がnilの場合は該当Scopeの検索条件を除外したクエ�
 本と著者の関係がわかりやすい
 本は共著という形で複数の著者に書かれることもあり、逆にある著者には複数の著作が存在する場合もある。
 ActiveRecordでこれを表現するには中間モデルを作成することになる。
-
 
 ---
 
@@ -265,13 +266,13 @@ ActiveRecordでこれを表現するには中間モデルを作成すること�
 
 [Rackかなりわかりやすい](https://techracho.bpsinc.jp/hachi8833/2022_08_02/77493)
 
-Rackとは**Webアプリケーションサーバ（Pumaなど）**と**Webアプリケーションフレームワーク（rails）**間のインターフェイスを共通化した仕様であり実装となっているライブラリ。
+Rackとは**Webアプリケーションサーバ（Pumaなど）**と**Webアプリケーションフレームワーク（rails）**間のインターフェースを共通化した仕様であり実装となっているライブラリ。
 
-Rackを仲介できるインターフェイスを持つことでUnicornやPumaといったアプリケーションサーバとRailsをはじめとするフレームワーク間でスムーズなやりとりが行える。
+Rackを仲介できるインターフェースを持つことでUnicornやPumaといったアプリケーションサーバとRailsをはじめとするフレームワーク間でスムーズなやりとりが行える。
 
 ### Railsとの関係性
 
-`rails new`すると生成されるファイル群の中に`config.ru`がある。
+`rails new` すると生成されるファイル群の中に `config.ru` がある。
 これこそがRailsもRackの仕様に則ったアプリケーションであるという証拠。
 
 ```ru
@@ -285,16 +286,16 @@ Rails.application.load_server
 
 ### RailsにRackミドルウェアを追加する
 
-各環境共通の場合は、`lib/middleware/`ディレクトリを作成しそこに配置。
+各環境共通の場合は、`lib/middleware/` ディレクトリを作成しそこに配置。
 
-環境限定で動作したい場合は、`config/environments/development.rb`などのファイルに処理を追加する。
+環境限定で動作したい場合は、`config/environments/development.rb` などのファイルに処理を追加する。
 `config.middleware.use`
 
 ---
 
 ## DB
 
-ユーティリティコマンドの`db:create`と`db:drop`は`config/database.yml`に定義されているdatabaseの値を使って作成する。
+ユーティリティコマンドの `db:create` と `db:drop` は `config/database.yml` に定義されているdatabaseの値を使って作成する。
 ※RAILS_ENVを指定しない場合はdevelopmentとtest環境のスキーマを作成する。
 
 ### マイグレーション確認
@@ -311,17 +312,17 @@ upとdownどちらも呼ばれる。
 
 ## スキーマファイル
 
-Railsでは**DBの構成**を`db/schema.rb`として残している。
-`db:migrate`を実行した時に作成されるものだが、このファイルに書き出される内容はマイグレーションファイルではなく**DBに定義されている内容を反映したもの**
+Railsでは**DBの構成**を `db/schema.rb` として残している。
+`db:migrate` を実行した時に作成されるものだが、このファイルに書き出される内容はマイグレーションファイルではなく**DBに定義されている内容を反映したもの**
 
 ### 利用用途
 
-- `schema.rb`を読み込んでマイグレーションを実行することなく現在のDB環境を作成することができる。
+- `schema.rb` を読み込んでマイグレーションを実行することなく現在のDB環境を作成できる。
 - スキーマファイルを読みこむことで大まかなDBの構成を把握する役にも立つ。
 
 ### seed
 
-`db:seed`を実行すると`db/seeds.rb`を実行してデータを読み込む。
+`db:seed` を実行すると `db/seeds.rb` を実行してデータを読み込む。
 簡単にデータ投入ができるのでデータ投入の際は!付きのメソッドを利用する
 
 ### 複数DB対応
@@ -334,14 +335,14 @@ Webアプリケーションの規模が大きくなると応答速度の低下�
 書き込み用データベースを**プライマリーDB**
 レプリケートした読み取り専用データベースを**レプリカDB**
 
-上記の構成の場合、レプリカDBへ直接マイグレーションの適用やデータの書き込みは行わない（RailsではレプリカDBであると明示するため`database.yml`にreplicaを指定する）
+上記の構成の場合、レプリカDBへ直接マイグレーションの適用やデータの書き込みは行わない（RailsではレプリカDBであると明示するため `database.yml` にreplicaを指定する）
 
 実運用ではレプリカDBへの接続は参照権限のみのユーザで接続するのが望ましい。
 
 ## 秘密情報
 
 歴史では、以前から設定値や秘密の文字列を取り扱う方法を用意しているが取り扱い方法はより現実に即したものへバージョンアップを繰り返している。その結果Rails5.1では複数の取り扱いが出てきてしまった。
-そのため5.2ではそれらの機能を統合した`credentials`と呼ばれる機能を作成し6.0ではより拡張されている。
+そのため5.2ではそれらの機能を統合した `credentials` と呼ばれる機能を作成し6.0ではより拡張されている。
 
 ---
 第4章
@@ -354,15 +355,14 @@ webpackをRailsから扱いやすくするためのラッパー。
 
 webpackerで扱うエントリーポイント
 
-`app/javascript`配下で作業。ビルド結果はpublic/packs/jsへ出力。
-
+`app/javascript` 配下で作業。ビルド結果はpublic/packs/jsへ出力。
 
 ---
 第5章
 
 ## Active Jobによる非同期実行
 
-`app/jobs`配下にファイルがある。
+`app/jobs` 配下にファイルがある。
 
 Rails4.2で追加された。
 Active Jobを使うことでさまざまなバックエンド（ジョブを管理実行するインフラ）上で実行する非同期処理を統一的に利用する。
@@ -381,6 +381,7 @@ performメソッドが非同期処理時に呼ばれる。
 2. SidekiqのAPIを直接使う方法
 
 Active Jobを使うといいケース
+
 - 標準的な機能のみを使う
 - プロジェクト初期段階で、バックエンド選択をまだしていない
 - バックエンドを差し替える可能性がある
@@ -401,7 +402,6 @@ railsを作成する際に不要なコンポーネントを生成しないよう
 
 サービスオブジェクト
 
-
 ---
 第12章
 
@@ -416,7 +416,6 @@ Railsのモデルはアプリケーションが対象とする問題領域のロ
 
 しかしアプリケーションへの機能要求が複雑になると、このアプローチは機能しなくなる。
 
-
 ## データベースと紐づかないモデルを作る
 
 ActiveModelについて  
@@ -427,7 +426,7 @@ ActiveModelについて
 ## ActiveModel
 
 ActiveModelはモデルに関するモジュール群を提供するライブラリであり、ActiveRecordの実装に利用されています。  
-ActiveModelを利用することで、自分で定義した素のRubyクラスにもActiveRecordと同等のインタフェースや機能を追加できます。   
+ActiveModelを利用することで、自分で定義した素のRubyクラスにもActiveRecordと同等のインターフェースや機能を追加できます。
 いわば、データベースと紐づかないモデルを作ることができるのです。
 本節では、ActiveModelが提供するモジュール群の中でも代表的なものを紹介します
 

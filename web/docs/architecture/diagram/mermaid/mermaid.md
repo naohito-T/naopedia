@@ -17,6 +17,7 @@ Mermaidが対応する図の種類を示し、それぞれの用途とツール�
    - **ツール**: Lucidchart, Draw.io, Microsoft Visio, **Mermaid**
    - **例**: システムフローチャート、ビジネスプロセス
    - **Mermaid例**:
+
      ```mermaid
      flowchart TD
          A[Start] --> B{Is it?}
@@ -29,6 +30,7 @@ Mermaidが対応する図の種類を示し、それぞれの用途とツール�
    - **ツール**: Microsoft Project, Trello, Asana, **Mermaid**
    - **例**: プロジェクト計画、タスク管理
    - **Mermaid例**:
+
      ```mermaid
      gantt
          title A Gantt Diagram
@@ -43,6 +45,7 @@ Mermaidが対応する図の種類を示し、それぞれの用途とツール�
    - **ツール**: MySQL Workbench, Lucidchart, **Mermaid**
    - **例**: データベース設計、データモデル
    - **Mermaid例**:
+
      ```mermaid
      erDiagram
          CUSTOMER ||--o{ ORDER : places
@@ -55,6 +58,7 @@ Mermaidが対応する図の種類を示し、それぞれの用途とツール�
    - **ツール**: Lucidchart, Microsoft Visio, **Mermaid**
    - **例**: ユースケース、システムインタラクション
    - **Mermaid例**:
+
      ```mermaid
      sequenceDiagram
          Alice->>Bob: Hello Bob, how are you?
@@ -72,6 +76,7 @@ Mermaidが対応する図の種類を示し、それぞれの用途とツール�
    - **ツール**: Enterprise Architect, Lucidchart, **Mermaid**
    - **例**: クラスの関係性、継承構造
    - **Mermaid例**:
+
      ```mermaid
      classDiagram
          Animal <|-- Duck
@@ -101,6 +106,7 @@ Mermaidが対応する図の種類を示し、それぞれの用途とツール�
    - **ツール**: Lucidchart, Microsoft Visio, **Mermaid**
    - **例**: システムの状態管理、状態遷移
    - **Mermaid例**:
+
      ```mermaid
      stateDiagram
          [*] --> Still

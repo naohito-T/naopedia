@@ -64,7 +64,7 @@ BASEとなっているのはTCP/IP
 
 - **説明**: モダンなJavaScript APIで、XHRに代わるものとして設計された。
 - **特徴**:
-  - 非同期通信をサポートし、Promiseベースのインターフェイスを提供。
+  - 非同期通信をサポートし、Promiseベースのインターフェースを提供。
   - CORSの制約を受ける。
   - よりシンプルで直感的な構文。
   - レスポンスをストリームとして扱えるため、部分的なデータ取得が可能。
@@ -73,7 +73,7 @@ BASEとなっているのはTCP/IP
 
 - **説明**: JSON with Padding。クロスドメインリクエストを行うための古い方法。
 - **特徴**:
-  - `<script>`タグを使用してリクエストを送信する。
+  - `<script>` タグを使用してリクエストを送信する。
   - サーバーがJavaScriptの関数をラップしたJSONを返す。
   - 主にGETリクエストに使用。
 
@@ -104,6 +104,7 @@ JSやCSSなどアセットのリクエストはレスポンスを受診し**HTML
 HTTPにはpreloadという仕組みがあり、**HTTPレスポンスヘッダーやHTMLのタグ中にこのアセットを先にロードしてください**と指定ができる。
 
 レスポンスヘッダーに次の要素を追加する
+
 ```
 Link: </css/something.css>; rel=preload; as=style
 Link: </js/main.js>; rel=preload; as=script
@@ -134,38 +135,39 @@ HTTP内でのクライアント
 >ですが、ブラウザからGETメソッドでリクエストを送信する場合、通常はメッセージボディではなくHTTPパラメータとして設定されます。
 >このため、サーバー側の処理としてGETメソッドの処理ではメッセージボディに何かデータが設定されてくるということは一般的には期待しません。
 
-
 ## クエリパラメーター
 
 ?以降のフォーマットに関してどういう値設計にするのかのルールはとくに明言されていない（RFC）
 
 >しかし,query構成要素はしばしば key=valueの対の形式で識別するための情報を運ぶために使用され、そこで頻繁に使用された値は別のURIの参照のため時にはそれあらの文字をパーセントエンコーディングすることを避ける方がユーザビリティのためには良い
 
-とあるように一般論として`key=value`の形式であるぐらいしかRFC上では語られていない。
+とあるように一般論として `key=value` の形式であるぐらいしかRFC上では語られていない。
 
 ## クエリパラメーターを配列で渡したいとき
 
 `https://stg.www.yumenographia.com/tickets/?dates=2021-10-07,2021-10-10,2021-10-11,2021-10-12`
 
-?の後に`,(カンマ)`区切りで渡す。それをserver側で配列に変換するのがひとつのやり方。
+?の後に `,(カンマ)` 区切りで渡す。それをserver側で配列に変換するのがひとつのやり方。
 
 ## クエリパラメーター変換
 
 numberなどで送ってもどうやらstringに変換されるっぽい。
 
 ## localhostのhttps化
+
 [参考URL](https://blog.jxck.io/entries/2020-06-29/https-for-localhost.html)
 
 ## 閲覧ページのHTTP versionを調べる
+
 [参考URL](https://laboradian.com/hot-to-know-http-version/)
 
 ---
 
 ## HTTP content negotiation(コンテントネゴシエーション)
+
 [リファレンス](https://developer.mozilla.org/ja/docs/Web/HTTP/Content_negotiation)
 
 >HTTP においてコンテンツ交渉 (content negotiation) は、同じ URI におけるさまざまな表現のリソースを提供するために使用する仕組みであり、ユーザーエージェントはどのリソースがユーザーにもっとも適しているか (例えば文書の言語はどれか、画像形式はどれか、コンテンツエンコード方式はどれか) を指定することができます。
-
 
 ## HTTP body-parserとは
 
@@ -183,6 +185,7 @@ body-parserは、この**メッセージボディを解析してプログラム�
 WEBサーバーとしては、この処理は定形処理といっていいぐらい、どのようなアプリケーションでも必要となることが予想される処理で、毎回個別にプログラムを書くのはあまりにもムダなのでbody-parserという拡張モジュールが担ってくれるということです。
 
 ## HTTP上で認証を行う場合
+
 [参考URL](https://qiita.com/h_tyokinuhata/items/ab8e0337085997be04b1)
 
 - セッションによる認証
@@ -194,16 +197,18 @@ WEBサーバーとしては、この処理は定形処理といっていいぐ�
 などがある。
 
 ## Bearer認証 : bearerは担い手や使いといった意味を持つ
+
 [Authorization Bearer ヘッダを用いた認証 API の実装](https://www.getto.systems/entry/2017/10/19/004734)  
 
 Bearer認証は、トークンを利用した認証・認可に利用されることを想定しており、OAuth 2.0の仕様の一部として定義されているがその仕様内でHTTPでも使用しても良いと記述されている。
 
-HTTPの**Authorizationヘッダーにスキーム**として指定でき`Authorization: Bearer <token>`のようにして指定する。
+HTTPの**Authorizationヘッダーにスキーム**として指定でき `Authorization: Bearer <token>` のようにして指定する。
 トークンの形式は**token68の形式**で指定することが定められている。
 
 ## Authorization ヘッダー
 
 Authorizationヘッダーに指定できるスキームには以下がある。
+
 - Basic
 - Digest
 - Bearer
@@ -216,9 +221,9 @@ Authorizationヘッダーに指定できるスキームには以下がある。
 
 ## リクエストとレスポンスの流れ
 
-まずクライアントから`Authorization: Bearer <token>`を含めたリクエストが投げられる。
-それを受け取ったサーバは`WWW-Authenticate: Bearer realm="XXXX"`形式を返す。
-又は`WWW-Authenticate: Bearer error="XXXX"`形式のヘッダーを含めたレスポンスを返す。
+まずクライアントから `Authorization: Bearer <token>` を含めたリクエストが投げられる。
+それを受け取ったサーバは `WWW-Authenticate: Bearer realm="XXXX"` 形式を返す。
+又は `WWW-Authenticate: Bearer error="XXXX"` 形式のヘッダーを含めたレスポンスを返す。
 
 成功パターン
 とくに返したいパラメーターがない場合はrealmを空にして返す。
@@ -261,9 +266,9 @@ HTTPは基本的に1つのリクエストと1つのレスポンスだけで完�
 ## Origin(オリジン)
 
 ウェブコンテンツのオリジンOriginは、ウェブコンテンツにアクセスするために使われる。
-`URLのスキーム（プロトコル）・ホスト（ドメイン）ポート`によって定義される。
+`URLのスキーム（プロトコル）・ホスト（ドメイン）ポート` によって定義される。
 **スキーム、ホスト、ポートがすべて一致した場合のみ、二つのオブジェクトは同じオリジンであると言える。**
-操作によっては同じオリジンのコンテンツに限定されており、**この制約は CORS を使用して緩和することができる。**
+操作によっては同じオリジンのコンテンツに限定されており、**この制約は CORS を使用して緩和できる。**
 
 - 同一オリジンの例
 
@@ -304,6 +309,7 @@ http://example.com:8080
 
 ヘッダーはコロンで区切られたキーと値のペアで構成される。
 ※値はディレクティブ（指示）と呼ばれる。
+
 ```sh
 # key: 値,値
 cache-control: public, max-age=14400
@@ -325,6 +331,7 @@ cache-control: public, max-age=14400
 >またデメリットとしては、データ送信前とデータ受信後に圧縮・解凍の処理が必要になるため、平文でデータを送受信するよりも処理負荷が高まることがあげられます。
 
 **ポイント**  
+
 1. コンテンツを圧縮して送信すれば、ネットワークを流れるデータ量を減らすことができる
 2. 通信データを圧縮するには、クライアントとサーバが共通した圧縮アルゴリズムをサポートする必要がある。
 3. 通信データを圧縮した場合、データ送信前とデータ受信後に圧縮・解答の処理を行うため処理負荷は高まる。
@@ -339,13 +346,14 @@ Accept-Encodingヘッダーは、HTTPクライアントがサーバーにHTTPリ
 `Allow: GET, HEAD, PUT`
 
 - Authorization（要求）
-認証が必要なリソースに対して認証情報を伝えます。たとえば、BASIC認証の場合は、Basic の文字と、ユーザ名とパスワードをコロン（:）で連結したものを`BASE64形式`にエンコードしたものを転送する。
+認証が必要なリソースに対して認証情報を伝えます。たとえば、BASIC認証の場合は、Basicの文字と、ユーザ名とパスワードをコロン（:）で連結したものを `BASE64形式` にエンコードしたものを転送する。
 
 `Authorization: Basic dGFuYWthOmhpbWl0c3U=`
 
 ---
 
 ## Referer(リファラー)
+
 [リファレンス](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Referer)
 
 >Referer リクエストヘッダーには、現在リクエストされているページへのリンク先を持った直前のウェブページのアドレスが含まれています。 Referer ヘッダーにより、サーバーは人々がどこから訪問しに来たかを識別し、分析、ログ、キャッシュの最適化などに利用することができます。
@@ -372,7 +380,6 @@ Accept-Encodingヘッダーは、HTTPクライアントがサーバーにHTTPリ
 
 ## Bearer認証について
 
-
 ## Webhookとは
 
 [参考URL](https://qiita.com/soarflat/items/ed970f6dc59b2ab76169)
@@ -380,7 +387,6 @@ Accept-Encodingヘッダーは、HTTPクライアントがサーバーにHTTPリ
 アプリケーションの更新情報を他のアプリケーションへリアルタイム提供する仕組みや概念のこと
 
 **通知する、Webhookを送るなどの言葉はPOSTリクエストのことを指している。**
-
 
 ## httpでの冪等性(べきとうせい): idempotence
 
@@ -418,16 +424,14 @@ POSTは冪等性がない
 Referer: ~ # headerのkeyのあとはディレクティブという。
 ```
 
-
 ## Content-Type
+
 [リファレンス](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Content-Type)
 [わかりやすい](https://tech.stmn.co.jp/entry/2021/03/15/183722)
-`Content-Type`表現ヘッダーは、リソースのメディア種別を示すために使用する（リクエストボディのメディアタイプを指定）
-※GETに`Content-Type`は必要ない
+`Content-Type` 表現ヘッダーは、リソースのメディア種別を示すために使用する（リクエストボディのメディアタイプを指定）
+※GETに `Content-Type` は必要ない
 
 - application/json
-
-
 
 - application/x-www-form-urlencoded
 フォームの送信の際に、クライアントがWebサーバに送信するContent-Type名のひとつ
@@ -437,13 +441,13 @@ dataはURLエンコードされる。
 
 [参考URL](https://www.wdic.org/w/WDIC/application/x-www-form-urlencoded#:~:text=%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E3%81%AE%E9%80%81%E4%BF%A1%E3%81%AE%E3%81%95%E3%81%84,Type%E5%90%8D%E3%81%AE%E4%B8%80%E3%81%A4%E3%80%82)
 
-
 ## withCredentials
+
 [参考URL](https://developer.mozilla.org/ja/docs/Web/API/XMLHttpRequest/withCredentials)
 
 >クロスオリジンのAJAXリクエストでクレデンシャル（クッキーの送信またはBASIC認証）を必要とする場合は、それを許可するオプションをフロント側Javascriptで付けておく必要があります。デフォルトではCORSリクエストでクッキーは送信されませんし、BASIC認証は送れません。
 
-`XMLHttpRequest.withCredentials`プロパティは論理値で、サイト間のAccess-ControlリクエストがCookie、認証ヘッダー、 TLSクライアント証明書などの資格情報を使用して行うべきかどうかを示します。 
+`XMLHttpRequest.withCredentials` プロパティは論理値で、サイト間のAccess-ControlリクエストがCookie、認証ヘッダー、 TLSクライアント証明書などの資格情報を使用して行うべきかどうかを示します。
 
 ---
 
@@ -451,12 +455,11 @@ dataはURLエンコードされる。
 
 [参考URL](https://e-words.jp/w/%E3%83%AA%E3%83%95%E3%82%A1%E3%83%A9.html)
 
-
 ---
 
 ## ヘッダーーの認証
-[参考URL](https://atmarkit.itmedia.co.jp/ait/articles/1608/10/news021.html)
 
+[参考URL](https://atmarkit.itmedia.co.jp/ait/articles/1608/10/news021.html)
 
 ### WWW-Authenticate: 訳 認証
 
@@ -486,8 +489,6 @@ HTTPで利用できる認証方法（認証スキーム）のうち、恐らく�
 Basic認証では、Authorizationヘッダーーに、「Basic」の文字とその後に1つ空白を挟んで、ユーザー名とパスワードから生成した認証情報を指定します。
 この認証情報は、「ユーザー名：パスワード」の形で、ユーザー名とパスワードをコロン（：）でつなぎ、それ全体をBase64と呼ばれる方式で変換して作成します
 
-
-
 ---
 
 ## キャッシュとHTTPの仕様
@@ -516,6 +517,7 @@ HTTPにはキャッシュの仕組みが用意されているためAPIからの�
 RFC7234で定義されている。
 
 2種類ある。
+
 - Expiration Model（期限切れモデル）
 - Validation Model（検証モデル）
 
@@ -543,7 +545,7 @@ Cache-Control: max-age=3600
 ### Cache-Control(Expiration Model(期限切れモデル))の一つ
 
 Cache-Controlは現在時刻からの秒数を返す。
-Cache-Controlはさまざまなキャッシュのコントロールを行うヘッダーーで`max-age`以外にもさまざまな指定が可能。
+Cache-Controlはさまざまなキャッシュのコントロールを行うヘッダーーで `max-age` 以外にもさまざまな指定が可能。
 
 ## Expires or Cache-Controlどっちを返す？
 
@@ -552,7 +554,7 @@ Cache-Controlはさまざまなキャッシュのコントロールを行うヘ�
 
 例（Expires）
 特定の日時に更新されることがあらかじめわかっているデータ
-天気情報が**毎日同じ時間に更新される場合**などはExpiresでその日時を指定することができる。
+天気情報が**毎日同じ時間に更新される場合**などはExpiresでその日時を指定できる。
 今後更新される可能性がないデータや静的データの場合には**遠い将来の日時を指定することで**一度とったキャッシュをずっと保存する指示を出せる。
 
 例（Cache-Control）
@@ -578,7 +580,7 @@ Cache-Controlはさまざまなキャッシュのコントロールを行うヘ�
 
 [リファレンス](https://developer.mozilla.org/ja/docs/Glossary/Preflight_request#:~:text=CORS%20%E3%81%AE%E3%83%97%E3%83%AA%E3%83%95%E3%83%A9%E3%82%A4%E3%83%88%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88,%E3%81%97%E3%81%A6%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%81%97%E3%81%BE%E3%81%99%E3%80%82)
 
-Content-Typeフィールドに`application/json`という値をセットすると、プリフライト・リクエストが発生することになる。
+Content-Typeフィールドに `application/json` という値をセットすると、プリフライト・リクエストが発生することになる。
 
 シンプルリクエストに当てはまらないリクエストがプリフライトリクエストとなる。  
 プリフライトリクエストはそもそもセキュリティのための機能ではない。  
@@ -599,22 +601,22 @@ Refererを送っているのはwebブラウザ
 
 ## Refererが生じる脆弱性
 
-登録ボタンを押すとメールが送信され、そのメールに以下のようなメールアドレスとパスワードが埋め込まれたhttps://example.com/auth?email=hogehoge@gmail.com&password=hugahuga123&token=ndjask819Sjksというリンクが貼られています。
+登録ボタンを押すとメールが送信され、そのメールに以下のようなメールアドレスとパスワードが埋め込まれた<https://example.com/auth?email=hogehoge@gmail.com&password=hugahuga123&token=ndjask819Sjksというリンクが貼られています。>
 
 URLに情報がすでに入っていることにより、このリンクをクリックすることでメアドとパスワードを再度入力することなく、認証に成功します。
 
-そしてサイト内に貼ってある外部リンクhttps://insecure.example.comに遷移したとしましょう。そうするとreferer情報としてReferer: https://example.com/auth?email=hogehoge@gmail.com&password=hugahuga123&token=ndjask819Sjksがhttps://insecure.example.comに送られてしまいます。
+そしてサイト内に貼ってある外部リンク<https://insecure.example.comに遷移したとしましょう。そうするとreferer情報としてReferer>: <https://example.com/auth?email=hogehoge@gmail.com&password=hugahuga123&token=ndjask819Sjksがhttps://insecure.example.comに送られてしまいます。>
 
-もしこのサイトの運営者が悪意のある人だった場合、Referer情報から個人情報を取得し、悪用することができてしまう。
+もしこのサイトの運営者が悪意のある人だった場合、Referer情報から個人情報を取得し、悪用できてしまう。
 
-どうすればこの脆弱性を回避することができるでしょうか？
+どうすればこの脆弱性を回避できるでしょうか？
 URLにセキュアな情報を入れないようにすることは大事ですがUX向上のためどうしても入れたい場合（認証でのリダイレクトログインなど）もあるかと思います。
 
 そんな時に登場するのがReferrer-Policyです。
 
 ## Referrer-Policyの役割
 
-Referrer-Policyは以下のようなmetaタグに設定することでrefererを送信するブラウザの挙動を変更することができる。
+Referrer-Policyは以下のようなmetaタグに設定することでrefererを送信するブラウザの挙動を変更できる。
 
 ```html
 <meta name="referrer" content="strict-origin-when-cross-origin" />

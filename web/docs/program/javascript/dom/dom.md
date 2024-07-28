@@ -18,11 +18,11 @@ NodeはサーバサイドでのJSを扱う方法。
 
 ※font-size: 1em;となっていた場合もその要素のサイズも計算されて返す
 
-## `<video>`タグに対して
+## `<video>` タグに対して
 
 [リファレンス](https://developer.mozilla.org/ja/docs/Web/API/HTMLMediaElement/srcObject)
 
-HTMLMedia​Element​.src​Object
+HTMLMediaElement.srcObject
 
 >HTMLMediaElement インターフェイスの srcObject プロパティは HTMLMediaElement に関連付けられたメディアソースを提供するオブジェクトを設定または取得します。 このオブジェクトは MediaStream、MediaSource、Blob や(Blobから派生している) File です。
 
@@ -57,14 +57,15 @@ pageが表示される際状態は3つの状態があると思われる。
 
 上記のよういに記載すると、**そのJavascriptファイルの読み込みと実行が完了するまで、HTMLの読み込み処理は止まる**
 **閲覧者の環境によっては別ページにリダイレクトさせたい場合には、このような位置に記述する方が良いかも知れない。**
+
 ## 2. 直後：ウェブページのHTMLが読み込み完了できた時点で何らかの処理をする について
 
 **DOMContentLoadedイベントはウェブページのHTMLを最後まで読んだ直後のタイミングを示す。**
 
 実現方法
 
-1. HTMLの末尾(`</body>`要素の直前)でスクリプトを実行するように書く。
-2. JavaScriptソースに DOMContentLoadedイベントのタイミングで実行されるように書く。
+1. HTMLの末尾(`</body>` 要素の直前)でスクリプトを実行するように書く。
+2. JavaScriptソースにDOMContentLoadedイベントのタイミングで実行されるように書く。
 
 ナビゲーションだけは表示したいなどがあればいい
 
@@ -73,21 +74,8 @@ pageが表示される際状態は3つの状態があると思われる。
 実現方法
 
 1. (A) HTMLでbody要素に「onload」属性を指定して、値に処理を書く。
-2. (B) JavaScriptソースに window.onloadメソッドを利用して、値に処理を書く。
+2. (B) JavaScriptソースにwindow.onloadメソッドを利用して、値に処理を書く。
 
 ウェブページ上に掲載された「すべてのオブジェクト(画像などを含む)の読み込みが完了」した時点で何らかの処理をしたい場合は、onloadイベントに合わせてスクリプトが実行されるように記述する方法。
 
 addEventListenerの場合はloadで記載する。
-
-
-
-
-
-
-
-
-
-
-
-
-

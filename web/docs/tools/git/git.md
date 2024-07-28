@@ -1,18 +1,21 @@
 # Git
 
 ## wiki
+
 [これをやる](https://dev.classmethod.jp/articles/editing-wiki-content-locally-on-github/)
 
 ## 多分一番これがいい
+
 [参考URL(御作法)](https://zenn.dev/mstssk/articles/4051e3df72a84c)
 
 これ取り入れる
 
 PRをレビュー依頼出す前にrebaseする
+
 ```sh
-$ git fetch
-$ git rebase origin/master topic
-$ git push origin topic --force-with-lease
+git fetch
+git rebase origin/master topic
+git push origin topic --force-with-lease
 ```
 
 --force-with-leaseとは
@@ -20,6 +23,7 @@ PUSHの際、ローカルrefとリモートrefを比較しローカルが最新�
 ※ただし、直前にfetchしているとPUSHが成功してしまうので注意
 
 ## git reset (git commitを取り消す)
+
 [参考URL](https://tech-blog.rakus.co.jp/entry/20210528/git)
 
 - リモートにpushしていないコミットを取り消す際に使用する。
@@ -125,11 +129,12 @@ GitHubはプロジェクト（ディレクトリ）を管理するものだが�
 Webアプリケーションの他にデスクトップアプリがあります。
 
 ---
+
 ## GitHub pagesとは
 
 [github page作り方](https://techacademy.jp/magazine/6445)
 
-GitHub PagesはGitHubが提供する静的なウェブページをホスティングするサービスで、ウェブページをインターネット上に公開することができる。
+GitHub PagesはGitHubが提供する静的なウェブページをホスティングするサービスで、ウェブページをインターネット上に公開できる。
 ※DBを用いるような動的なウェブページは公開できない。
 ※プライベートリポジトリであっても、GitHub Pagesはインターネット上で公開されるため注意が必要。
 
@@ -141,7 +146,6 @@ GitHub Pages用のリポジトリの作成、ウェブページの作成GitHub�
 - GitHub Pages種類
 GitHub Pagesには大きく分けて2つの種類がある。
 ユーザのウェブページを公開するユーザサイト（User site）とプロジェクトのウェブページを公開するプロジェクトサイト。
-
 
 ### ユーザサイト用リポジトリの作成
 
@@ -158,6 +162,7 @@ GitHub Pagesには大きく分けて2つの種類がある。
 
 3. _book内のファイルをすべて**ルートディレクトリ**にコピーする。
 ディレクトリ構成は以下の通り
+
 ```sh
 $ tree
 .
@@ -250,7 +255,7 @@ $ tree
 5. リポジトリのAboutでURLを編集
 
 example
-https://naohito-T.github.io/e2e-test-cypressで見れる。
+<https://naohito-T.github.io/e2e-test-cypressで見れる。>
 
 ---
 
@@ -261,19 +266,16 @@ Gitのタグには**軽量版と通釈付き版の二通り**がある
 注釈付きのタグはGitデータベース内に完全なオブジェクトとして格納される。チェックサムが付き、タグを作成した人の名前・メールアドレス・作成日時・タグ付け時のメッセージなども含まれる。
 >また、署名をつけて GNU Privacy Guard (GPG) で検証することもできます。 一般的には、これらの情報を含められる注釈付きのタグを使うことをおすすめします。
 
-
-
 軽量版のtag
 `$ git tag [tag name]`
 
 注釈版のtag
 `$ git tag -a v1.4 -m "my version 1.4"`
 
-
 ## gitignore
 
 .gitignoreはgit add実行時に新規ステージングしないためのファイル
-→これが仕様のためすでに追跡が開始しているファイルは`.gitignore`に追記しただけでは反映されない。
+→これが仕様のためすでに追跡が開始しているファイルは `.gitignore` に追記しただけでは反映されない。
 実際のファイルを削除しないように注意!!!!
 
 ```sh
@@ -318,7 +320,7 @@ masterリポジトリはcommitした際に更新される。
 ## Git Hooks
 
 gitには**コミット時やプッシュ時に特定のコマンドを自動実行**するGit Hooksという仕組みがある。
-`./git/hooks/`配下に各フック用のスクリプトをおくことで実行される。
+`./git/hooks/` 配下に各フック用のスクリプトをおくことで実行される。
 **しかし、基本的には/.git/配下はGit管理対象にいれられないため、リポジトリ単位で管理したり他の開発者と共用するのがやや難しい。**
 
 ## Lefthook
@@ -336,7 +338,7 @@ HuskyはNode.js実装のみだが、LefthookはNode.js, Ruby実装のほかGoや
 Husky(+lint-staged)と比較するとそれが依存しているライブラリもあるため、単一ライブラリのLefthookのほうが良いだろ？との主張がある。
 
 **設定一覧**
-以下は`.git`ディレクトリがあるところに`lefthook.yml`が作成される
+以下は `.git` ディレクトリがあるところに `lefthook.yml` が作成される
 `$ lefthook install`
 
 Git Hooks追加（.git/hooksの中に作成される）
@@ -355,7 +357,7 @@ Git Hooks追加（.git/hooksの中に作成される）
 
 サブモジュール前提で作るとデフォルトブランチはmainがいいのかも
 
-rootディレクトリは`git init`を初期に行っている状態。サブディレクトリは作成されている状態。
+rootディレクトリは `git init` を初期に行っている状態。サブディレクトリは作成されている状態。
 
 git initされている状態であれば
 apiディレクトリ（もともとはmasterとなっていた）
@@ -380,16 +382,15 @@ rootリポジトリもコミットする
 
 `$ git remote -vv` 設定されていない
 `$ git remote add origin [new repository ssh url]`
-`$ git push -u `
+`$ git push -u`
 
 ルートディレクトリに戻りサブモジュール追加をする
 `$ git submodule add git@github.com:naohito-T/Neams-ui.git neams-ui`
 
 .gitmodulesファイルが作成されている
 [submodule "neams-ui"]
-	path = neams-ui
-	url = git@github.com:naohito-T/Neams-ui.git
-
+ path = neams-ui
+ url = <git@github.com>:naohito-T/Neams-ui.git
 
 サブモジュールに追加されているか確認する（ディレクトリ名のみの情報であればOK）
 `$ git ls-files`
@@ -407,7 +408,7 @@ rootリポジトリもコミットする
 リモートレポジトリに含まれているすべてのサブモジュールのコミット履歴などの情報を更新するには「–remote」オプションを付けて、「submodule update」コマンドを実行する。
 
 ```sh
-$ git submodule update --remote
+git submodule update --remote
 ```
 
 指定したサブモジュールのみを更新する
@@ -467,15 +468,13 @@ $ git clean -f
 
 ## git stash
 
-`git stash save`がdeprecatedだった。
-これかはこちらに移行する`git stash push`
+`git stash save` がdeprecatedだった。
+これかはこちらに移行する `git stash push`
 
 git stashよりもgit branchで一時的ブランチを作った方がいいといっている記事
 [参考URL](https://qiita.com/jkr_2255/items/ea3e50a99baca37a42de)
 
-
 ## revert
-
 
 ## git add -A
 
@@ -523,7 +522,7 @@ git rev-parseから取れる情報もたくさんあるんですよ！
 
 [参考URL](https://qiita.com/ymm1x/items/b22bddc9fbc192ae1a70)
 
-`$ git clone`をするとその時点でのデフォルトブランチの情報が`git/refs/remotes/origin/HEAD`に書き込まれる。
+`$ git clone` をするとその時点でのデフォルトブランチの情報が `git/refs/remotes/origin/HEAD` に書き込まれる。
 clone後にデフォルトブランチの設定を変更したりしても更新されず古い情報が残る。
 
 手順
@@ -537,7 +536,6 @@ $ git remote set-head origin --auto
 # 同期したデフォルトブランチを表示する
 $ git symbolic-ref refs/remotes/origin/HEAD | awk -F'[/]' '{print $NF}'
 ```
-
 
 ---
 
@@ -595,12 +593,10 @@ GitHub Appsとは、GitHubと連携するアプリケーションの新しい形
 ## 何も変更せずpushし
 
 ```sh
-$ git commit --allow-empty
+git commit --allow-empty
 
-$ git push
+git push
 ```
-
-
 
 # GitHub Tips
 
@@ -612,8 +608,8 @@ $ git diff HEAD 'HEAD@{2015-06-01}'
 $ git diff HEAD 'HEAD@{2015-06-01 0:00}'  
 ```
 
-
 ## コミットメッセージ
+
 [参考URL](https://qiita.com/konatsu_p/items/dfe199ebe3a7d2010b3e)
 プレフィックスにつけsるとわかりやすいかも
 
@@ -637,8 +633,8 @@ $ git diff HEAD 'HEAD@{2015-06-01 0:00}'
 ```
 
 ## コミットメッセージの仕様
-[Conventional Commitsでコミットメッセージを分かりやすくする](https://soudai-s.com/align-commit-messages-by-conventional-commits)
 
+[Conventional Commitsでコミットメッセージを分かりやすくする](https://soudai-s.com/align-commit-messages-by-conventional-commits)
 
 ## ブランチ戦略
 

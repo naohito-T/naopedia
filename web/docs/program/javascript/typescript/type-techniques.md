@@ -5,6 +5,7 @@ TypeScriptの型テクニックについて記す。
 ## Objectから該当する型のキーを取得する型定義
 
 純正にUnion Typesとして取得できる。
+
 ```ts
 type Keys = KeysOfType<{
   id: number;

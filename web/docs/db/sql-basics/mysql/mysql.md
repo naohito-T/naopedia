@@ -13,10 +13,10 @@
 
 ## デフォルト文字コード
 
-MySQLのデフォルトの文字コードは、UTF-8ではなく`latin1`となっている。
+MySQLのデフォルトの文字コードは、UTF-8ではなく `latin1` となっている。
 
 dbの文字コードを確認する
-` SHOW VARIABLES LIKE 'character_set_database';`
+`SHOW VARIABLES LIKE 'character_set_database';`
 
 mysqlクライアントの文字コードを確認する
 `status;`
@@ -35,7 +35,7 @@ utf8mb4
 
 ## 本来のUTF8
 
-本来のUTF8は`1~4`バイトで文字を表すルール  
+本来のUTF8は `1~4` バイトで文字を表すルール  
 そのため、MySQLのutf8はそもそもUTF-8と呼べない。
 
 ## MySQL 8.0 での UTF-8 サポートについて
@@ -62,7 +62,6 @@ utf8mb4
 >といった機能があるため、 binary に変換するとき、最上位ビットにナノ秒が格納されないため、 Clustered Index で使ったとしても、フラグメントしにくくなりました。
 >MySQL 8.0 以降では、 UUID_TO_BIN(string_uuid, swap_flag) を使うならば、 UUID を Primary Key として使うことも検討して良いかもしれません。
 
-
 ---
 
 ## MySQLのSQLについて
@@ -70,7 +69,7 @@ utf8mb4
 ### UNSIGNED
 
 符号なし（UNSIGNED）の意味。  
-整数型は正の数と負の数を扱うことができますが、データ型の後に`UNSIGNED`を付けると  
+整数型は正の数と負の数を扱うことができますが、データ型の後に `UNSIGNED` を付けると  
 **0と正の数しか格納できなくなる**このようなデータ型を符号なし整数型という。
 
 ---

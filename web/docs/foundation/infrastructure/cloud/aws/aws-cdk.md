@@ -1,4 +1,5 @@
 # AWS CDK（AWS Cloud Development Kit）
+
 [5分で理解するAWS CDK](https://qiita.com/Brutus/items/6c8d9bfaab7af53d154a)  
 
 TypeScriptおよびPythonなどのプログラミング言語を使用して、AWSリソースを定義し、Terraformの様に**Infrastructure as Code（以降、IaC）**を実現する手段として、クラウドインフラのリソースをプロビジョニングすることが可能。
@@ -6,6 +7,7 @@ TypeScriptおよびPythonなどのプログラミング言語を使用して、A
 CDKには**L1 ~ L3**までの概念があるため忘れないこと。
 
 ## serverless frameworkとcdkの違い
+
 [serverless frameworkとcdkの違い](https://sst.dev/chapters/using-aws-cdk-with-serverless-framework.html)
 
 ## はじめてCDKで作成するとき
@@ -20,14 +22,16 @@ AWS CDKのアプリを環境（アカウント/リージョン）にはじめて
 
 AWS CDKのデプロイ単位は**スタック**と呼ばれる  
 アプリケーションのstackを表示する
+
 ```sh
-$ cdk ls
+cdk ls
 ```
 
 ## cdk deployコマンドが優秀
 
 このコマンドだけで差分デプロイができる  
 CloudFormationで同じことをしようとしたら  
+
 - 初回実行時は普通にデプロイ
 - 二度目以降は変更セットを作成して差分デプロイ
 みたいなヘルパースクリプトが必要となってしまう。
@@ -50,6 +54,7 @@ AWS CDKをはじめて利用する際は、アカウントのブートストラ�
 >その作業をブートストラップと呼んでおります。
 
 ブートストラップにおいて必要な情報が2つです。
+
 - アカウントID
 - リージョン
 
@@ -71,13 +76,14 @@ ap-northeast-1
 ```
 
 ## AWS CDK 実践
+
 [参考URL](https://dev.classmethod.jp/articles/cdk-practice-1-introduction/)
 
 VPCから作成するのが慣例（自分の陣地をとるみたいな）
 
 ## Construct
 
-CDK上においてクラウドコンポーネントは`Construct`という単位の**基本ビルディングブロック**として提供されており、リソース作成に必要なすべてがカプセル化されています。  
+CDK上においてクラウドコンポーネントは `Construct` という単位の**基本ビルディングブロック**として提供されており、リソース作成に必要なすべてがカプセル化されています。  
 そしてこのConstructは以下の3つのレイヤーに分けられています。
 
 - L3: Patterns
@@ -87,12 +93,12 @@ CDK上においてクラウドコンポーネントは`Construct`という単位
 - L1: Low-level constructs
   - CFnリソースおよびプロパティと1:1で対応（**Cfn**というプレフィックスがついたもの）
 
-
-クラス（Construct）Vpcは`L2`であり、それを作成することでネットワーク構築に必要な（ベストプラクティスとされる）他のリソースが適切な設定値で軒並み一緒に作られてしまう。  
+クラス（Construct）Vpcは `L2` であり、それを作成することでネットワーク構築に必要な（ベストプラクティスとされる）他のリソースが適切な設定値で軒並み一緒に作られてしまう。  
 インフラエンジニアとしては各リソースのプロパティは細かくカスタマイズしたいもの。
 その場合はL1のLow-level Constructを使用する
 
 ## Context
+
 [参考URL](https://dev.classmethod.jp/articles/cdk-practice-4-context/)
 
 **CFnのパラメーター**のように使える機能
@@ -110,10 +116,9 @@ CDK上においてクラウドコンポーネントは`Construct`という単位
 - ~/.cdk.jsonファイルのcontextキー
 - construct.node.setContextメソッド
 
-6つの方法はいずれも暗黙的に`App Construct`に設定されるためアプリケーション内のConstructインスタンスでContextの値を取得できる。
+6つの方法はいずれも暗黙的に `App Construct` に設定されるためアプリケーション内のConstructインスタンスでContextの値を取得できる。
 
 ### パラメーターとの棲み分け
-
 
 Contextを使う。
 CfnParameterというクラスも存在するのですが、AWS公式から非推奨となっている。
@@ -146,12 +151,12 @@ Constructが無効なデータを受け取った時にエラー（例外）を�
 以下のサンプルはretentionDaysに無効な値を入れた場合に意図した例外が発生することを確認しています。
 
 ## Metadata
+
 [参考URL](https://dev.classmethod.jp/articles/cdk-practice-6-metadata/)
 
 CFnのテンプレートセクションのひとつ。  
 このセクションを利用して、開発者はテンプレートに関する追加情報を付与することが可能。
 任意項目なので無くても問題ありません。
-
 
 ```sh
 # dev

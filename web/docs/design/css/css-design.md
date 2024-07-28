@@ -6,6 +6,7 @@
 
 animationプロパティの理解が必須になるため以下リンクを貼る
 [参考URL](https://web-designer.cman.jp/css_ref/abc_list/animation/)
+
 ## 横からアニメーションで塗りつぶす
 
 - 実装要件

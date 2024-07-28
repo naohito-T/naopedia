@@ -1,4 +1,5 @@
 # Indexed DB
+
 [リファレンス](https://developer.mozilla.org/ja/docs/Web/API/IndexedDB_API/Basic_Terminology)
 
 IndexedDBは、ユーザーのブラウザー内にデータを永続的に保存するための方法。
@@ -6,7 +7,6 @@ IndexedDBは、ユーザーのブラウザー内にデータを永続的に保�
 
 データベースはRDB（リレーショナルデータベース）ではなく、キーバリューストア。
 SQLは使えませんし、JOINなどの機能も使用できない。
-
 
 ## Indexed DBが削除される場合
 

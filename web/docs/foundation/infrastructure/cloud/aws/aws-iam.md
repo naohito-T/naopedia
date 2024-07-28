@@ -1,13 +1,16 @@
 # AWS IAM
+
 [初心者にも分かりやすいIAM入門～ロールとグループとポリシーの違い,設計・設定手順について～](https://milestone-of-se.nesuke.com/sv-advanced/aws/iam-policy-role-group/#toc3)  
 [AWSセキュリティのベストプラクティス（reference）](https://blog.usize-tech.com/contents/uploads/2022/01/AWS_Security_Best_Practices.pdf)  
 [iamベストプラティクス](https://qiita.com/c60evaporator/items/0121399880625cc1de51)  
 [AWSにおけるクレデンシャル](https://dev.classmethod.jp/articles/iam-bestpractice-1/)  
 
 ## 参考
+
 [多分普通に作る流れのやつ](https://dev.classmethod.jp/articles/create-iam-users-login-profiles-that-can-only-manipulate-data-in-specific-dynamodb-tables/)
 
 ## AWSアカウント整理
+
 [![Image from Gyazo](https://i.gyazo.com/8342b4e4d930c6adfaab794a37b7f078.png)](https://gyazo.com/8342b4e4d930c6adfaab794a37b7f078)
 
 - AWSでアカウントを作る（ルートユーザー）
@@ -16,6 +19,7 @@
 - サービスごとのロールをアタッチする。
 
 ## IAMとは
+
 [IAMユーザーを作ってみよう](https://www.idaten.ne.jp/portal/page/out/secolumn/multicloud/column005.html)
 
 「Identity and Access Management」の略。  
@@ -61,14 +65,16 @@ IAMユーザを10も20も作る際に、同じ権限を一ユーザずつ付与�
 
 ロールおよびIAMユーザーに色々アタッチしていくのはポリシーのこと。  
 IAMポリシーとは  
+
 - どのAWSサービスの
 - どのリソースに対して
 - どんな操作を
 - 許可するか（許可しないか）
-を権限とし、利用者（IAMユーザーなど）に対して設定することができる定義をIAMポリシーと呼ぶ  
+を権限とし、利用者（IAMユーザーなど）に対して設定できる定義をIAMポリシーと呼ぶ  
 ※よくあるパターンのIAMポリシーは事前にAWSで用意されている。
 
 ### ポリシーを自身で作りたい場合
+
 [[初心者向け] IAMカスタムポリシーを最初から作る方法の一つ](https://dev.classmethod.jp/articles/how2make-custompolicy/)
 
 1. まず、類似したポリシーのサンプルが公式ドキュメントにないか検索する
@@ -81,6 +87,7 @@ IAMポリシーとは
 自分達でロールは作成する  
 
 ## PassRole
+
 [IAM ロールの PassRole と AssumeRole をもう二度と忘れないために絵を描いてみた](https://dev.classmethod.jp/articles/iam-role-passrole-assumerole/)
 
 ## AssumeRole
@@ -89,6 +96,7 @@ IAMユーザを作成してCredentialを発行しなくても、一時的にAWS�
 EC2などにIAMロールをアサインした際にも内部で同一の処理が発生している
 
 ## クレデンシャル
+
 [AWSにおけるクレデンシャル](https://dev.classmethod.jp/articles/iam-bestpractice-1/)
 
 まず、AWSにおけるクレデンシャルは大きく2種類に分かれる。

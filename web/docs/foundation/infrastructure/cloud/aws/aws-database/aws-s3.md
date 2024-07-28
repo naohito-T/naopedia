@@ -20,6 +20,7 @@ const domainUrl = 'https://<bucketName>.s3.amazonaws.com/<key>'
 ```
 
 ## ForcePathStyle
+
 [S3のForcePathStyleに2時間つまづいた](https://zenn.dev/hiroga/scraps/cbb721e2a496f8)
 
 localStackはドメインスタイルを処理できない。

@@ -1,4 +1,5 @@
 # OpenAPI
+
 [参考URL](https://zenn.dev/chida/articles/25f4016560f6bf)  
 [参考URL(これが一番参考になる)](https://zenn.dev/mabubu0203/articles/a34937c9d5892f)  
 [openapiをチームに共有する](https://zenn.dev/d_forest/articles/bec25d3a1b111ed37a09)  
@@ -21,6 +22,7 @@ components:     # 共通部分をここにまとめておきます
 ```
 
 ## 各フィールド
+
 [わかりやすい](https://zenn.dev/peraichi_blog/articles/01ges56ak79g2rket9wm27w9pc)  
 [参考URL](https://www.alpha.co.jp/blog/202208_02)
 
@@ -35,12 +37,12 @@ components:     # 共通部分をここにまとめておきます
 
 summaryは短く、descriptionはより詳細に。  
 要約は、その要素の意図する目的が何であるかを1～2文の短い文章で説明したものだと考える。  
-微妙なディテールをすべて記述することはできないでしょうが、高いレベルで、その要素の目的を説明することができるはず。
+微妙なディテールをすべて記述することはできないでしょうが、高いレベルで、その要素の目的を説明できるはず。
 
 ### serverフィールド
 
 サーバの情報を定義するフィールド  
-※`server`は必須でないのでなくてもいい。  
+※`server` は必須でないのでなくてもいい。  
 
 ただし記載するとAPIエンドポイントに対するベースURLとして機能する（3.0から）
 [リファレンス](https://swagger.io/docs/specification/api-host-and-base-path/)
@@ -57,6 +59,7 @@ APIで使用されるタグの情報を定義するフィールドのリスト�
 各エンドポイントでtagsに指定することで**定義をタグで分類できる。**  
 
 ## エンドポイント
+
 [参考URL](https://zenn.dev/mabubu0203/articles/a34937c9d5892f)
 
 エンドポイントの情報を定義するフィールド。これがメイン  
@@ -70,6 +73,7 @@ APIで使用されるタグの情報を定義するフィールドのリスト�
 **serversで定義したURLにこのパスを結合したもの**が最終的なエンドポイントとなる。
 
 書式としては以下
+
 ```yml
 paths:
   /health:
@@ -87,12 +91,13 @@ paths:
 [OpenAPIにはoperationIdを書こう](https://joe-noh.hatenablog.com/entry/2017/05/02/234247#:~:text=operationId%20%E3%81%A3%E3%81%A6%E3%81%AA%E3%81%AB,%E6%96%87%E5%AD%97%E5%88%97%E3%81%AE%E3%81%93%E3%81%A8%E3%81%A7%E3%81%99%E3%80%82)
 
 付与するとパーマリンクが発行できるみたい（ReDocだと）  
-OpenAPIを利用するツールで`operationId`を利用することができるため付与する。  
+OpenAPIを利用するツールで `operationId` を利用できるため付与する。  
 
 ### components
+
 [参考URL](https://qiita.com/shigeru10/items/8f20fafd04f7901da939)
 
-componentsはpaths等から使えるコンポーネントを書く（別フィールドから`$ref`で参照する。）  
+componentsはpaths等から使えるコンポーネントを書く（別フィールドから `$ref` で参照する。）  
 componentsを使うと記述量が減る、APIのSchemaとして登録されるのでAPI利用者によりわかりやすく表記される。
 
 - schemas
@@ -116,13 +121,13 @@ header : HTTPヘッダー
 path : パス
 body : ボディー
 
-
 API定義で**再利用可能なオブジェクト**を定義できる。
 
 ## allOf
 
 allOfは**スキーマを合わせるとき**に使用する。  
 下記の例はMessagesのcomponentとWebhooksのcomponentを合わせるという意味になる。  
+
 ```yml
 allOf:
     - $ref: '#/components/schemas/Messages'
@@ -130,9 +135,11 @@ allOf:
 ```
 
 ## oneOf
+
 [１つのステータスコードに対して複数のレスポンスを定義 (oneOf)](https://thinline196.hatenablog.com/entry/2019/09/18/181947)
 
 oneOfは**どちらかが適用されるという意味**で、選択肢を表したい時に便利。  
+
 ```yml
 oneOf:
     - $ref: '#/components/schemas/Messages'
@@ -140,6 +147,7 @@ oneOf:
 ```
 
 ## Tips
+
 - Redoc
 [参考URL](https://qiita.com/rhirabay/items/59c134aa052dbc4b982b)  
 

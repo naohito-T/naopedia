@@ -23,4 +23,5 @@ reCAPTCHA v3を配置したページで閲覧者の動きを学習し利用が�
 headersなどで、設定されているか確認する
 
 ## Tips
+
 [Next.jsに導入するときに参考になる](https://zenn.dev/angelecho/articles/daeb265bb3bf4b)

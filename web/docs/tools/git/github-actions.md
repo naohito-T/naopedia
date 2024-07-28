@@ -1,23 +1,27 @@
 # GitHub Actionsとは
+
 [GitHub Actionsベストプラティクス](https://developers.cyberagent.co.jp/blog/archives/36423/)  
 [GitHub Actions料金 Datadogによる可視化と削減のヒント](https://kakehashi-dev.hatenablog.com/entry/2023/08/22/103000)  
 [モノレポで GitHub Actions の jest coverage report を動かす](https://azukiazusa.dev/blog/monorepo-github-actions-jest-coverage-report-action/)
 
-
 - 現在のソフトウェア開発における課題
+
 >ソフトウェア開発を取り巻く環境は日々変化し、様々なツールやライブラリが次々と登場する時代がやってきました。これまで人が行っていた作業やハードウェアが実行していたタスクは、どんどんソフトウェアに置き換えられ、我々はソフトウェアに覆われた世界に向かって加速しています。これは喜ばしいことですが、一方で新しいツールができることや、それらを正しく連携させるための設定はどんどん複雑化し、本来の目的だったソフトウェア開発のために十分な時間を取れないといったケースが増えています。
 >GitHubの利用形態について分析すると、全ユーザの約60％がリポジトリと何らかの外部ツールやサービスを連携させている、という結果がわかっていました。そこでGitHubでは、ソフトウェア開発のプラットフォームとしてこの問題を解決し、開発者の体験をより良いものにするにはどうしたらいいか考え、2018年10月にGitHub Actionsを発表しました。
 >ソフトウェアのソースコードを一定の品質に保ちつつ速いサイクルで開発・デプロイするために、現代ではこれだけ多様な技術が使われるようになりました。テスト、ビルド、デプロイのパターンだけでも多くの選択肢があり、その他のツールの利用も含めると組み合わせは無限にあります。苦労してプロジェクトに最適な組み合わせを見つけ、ワークフローを作り上げたとしても、今まではそれをコードとして記述するスタンダードな方法がなかったので、GitHub上で共有したり再利用することができないという問題がありました。
 
 ## ジョブサマリー
+
 [ジョブサマリー概要](https://atmarkit.itmedia.co.jp/ait/articles/2205/12/news058.html)
 
 GitHub Actionsでジョブサマリー機能が利用可能になり、各ジョブによって生成される実行サマリーにカスタムMarkdownコンテンツを出力できるようになった。
 
 ## dependabot.yml
+
 [dependabot.yml設定リファレンス](https://docs.github.com/ja/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file#reviewers)
 
 ## GitHub actionsまとめる
+
 [GitHub ActionsのTipsやベストプラクティスを淡々と記録する](https://zenn.dev/tmknom/scraps/f05911dad51689)  
 [GitHub Appsトークン解体新書：GitHub ActionsからPATを駆逐する技術](https://zenn.dev/tmknom/articles/github-apps-token)
 
@@ -31,6 +35,7 @@ Actions secretsはGitHub側で暗号化されていますが、アクセスキ�
 ## GitHub actions debug
 
 この記述で対応可能
+
 ```yml
 - name: Debug
   if: ${{ always() }}
@@ -48,6 +53,7 @@ macOSは0.08ドル（10倍）という価格
 ## GitHub Actions実行単位
 
 3つの実行単位が存在する。  
+
 - workflow
 - Job（1つのworkflow複数指定可能）
 - Step
@@ -66,9 +72,11 @@ GitHub Actionsでもキャッシュ機能が提供されている。
 GitHub Actionsの処理では警告（warn）はsuccessとして通るので注意。
 
 ## プルリクエストのpaths条件
+
 [ベン図で記載がありわかりやすい](https://qiita.com/nacam403/items/3e2a5df5e88ba20aa76a)
 
 ## GitHub Actions ワークフローで複数のジョブ実行を制御する
+
 [GitHub Actions ワークフローで複数のジョブ実行を制御する](https://blog.kondoumh.com/entry/2021/01/22/133427)
 
 ## cache
@@ -84,7 +92,8 @@ GitHub Actionsの処理では警告（warn）はsuccessとして通るので注�
 デフォルトのブランチ キャッシュは、他のブランチで使用できる（developのは他で使える）。
 トピックブランチはトピックブランチ内でしか使えない。
 
-GitHub Actions公式のキャッシュ機能である`actions/cache`は
+GitHub Actions公式のキャッシュ機能である `actions/cache` は
+
 - Pull Requestでコケた時にRe-run jobsするとactions/cacheアクションが正常に動作しない
 - actions/cacheアクションは時折キャッシュの取得に失敗することがある
 
@@ -108,6 +117,7 @@ GitHubにはこう書いてありますが、falseが空値で返ってくるこ
 path, keyは必須で、restore-keysのみオプションです。
 
 次に、このactionが何をやっているのか、簡単に整理します。
+
 1. keyやrestore-keysに基づいて、キャッシュが存在するか調査します。
 2. 調査結果ごとの処理を行います。
 
@@ -125,7 +135,7 @@ path, keyは必須で、restore-keysのみオプションです。
 2022年6月27日以降
 GitHub Actions Cache APIを介してキャッシュのクエリと管理ができるようになった。
 
-新しいキャッシュを使用したい場合は`key`および`restore-keys`どちらかを変更する必要。
+新しいキャッシュを使用したい場合は `key` および `restore-keys` どちらかを変更する必要。
 
 ## GitHub アクションのキャッシュが古くなる。
 
@@ -137,6 +147,7 @@ GitHub Actions Cache APIを介してキャッシュのクエリと管理がで�
 
 - post処理
 ジョブのステップが全部終わった後に行う処理のこと。
+
 >基本的には action で設定したものをもとに戻したり、docker コンテナを停止したりするのに利用されています。
 
 ## GitHub Actions動作環境遍歴
@@ -191,10 +202,10 @@ ymlのjogsのtest名がnameに紐付きじゃばらで出る
 
 ## 拡張子
 
-`.yml` `.yaml`のどちらでも可能。
-
+`.yml` `.yaml` のどちらでも可能。
 
 ## job
+
 [Job間での共有（リファレンス）](https://github.blog/changelog/2020-04-15-github-actions-new-workflow-features/)
 [複数Job間でデータを共有する](https://qiita.com/yokawasa/items/dc46ae6936b745af8b80)
 
@@ -208,7 +219,6 @@ needsなどを指定しない場合は並列で実行される
 - 共有したい場合
 解決策の1つにArtifactsのUpload/Downloadがある。
 残念ながら今のところGitHub ActionsにはJob間で共有可能なグローバルスコープの変数などはない。
-
 
 ```yml
 # job1の成果物をjob2にはdefaultでは共有ができない。
@@ -227,7 +237,7 @@ GitHub Actionsでは**Stepごとに1つのシェルが与えられる。**（つ
 jobが実行する処理の集合
 同じjobのstepは同じ仮想環境で実行されるので**ファイルやセットアップ処理は共有できる。**  
 しかし各ステップは別プロセスなので**ステップ内で定義した環境変数は共有できない。**  
-`jobs.<job_id>.env`で定義した環境変数は全stepで利用できる  
+`jobs.<job_id>.env` で定義した環境変数は全stepで利用できる  
 ※jobの中にさらに細かい粒度で、stepが存在:stepはjobと違い**上から順に実行される**
 
 ```yml
@@ -271,7 +281,7 @@ Freeアカウントで2,000分/月無料。
 
 ## ファイルシステム
 
-Dockerコンテナーで実行されるアクションには、`/github`パスの下に静的なディレクトリがある。  
+Dockerコンテナーで実行されるアクションには、`/github` パスの下に静的なディレクトリがある。  
 Dockerコンテナーで実行されないアクションでは3つのディレクトリが作成される。これらのディレクトリパスは動的に生成されるので一定ではない。  
 各ディレクトリの位置は対応する環境変数で取得する。
 home（HOME）： ユーザ認証情報などのユーザ関連データが書き込まれる
@@ -293,7 +303,6 @@ GitHub自身が作成しているActionがリポジトリで公開されてい�
 **ワークフローの状態バッチを作成する**
 プロジェクトトップのREADMEにはバッチを作成し、現状の状態を視覚で表現するのが通例とのこと。
 [参考URL](https://docs.microsoft.com/ja-jp/dotnet/devops/dotnet-test-github-action)
-
 
 **複数のコマンドを run: したい**
 通常のYAML文法にしたがってマルチラインのテキストとして記載すればいい
@@ -346,12 +355,14 @@ GitHub自身が作成しているActionがリポジトリで公開されてい�
 ```
 
 ## GitHub action local実行 (act)
+
 [参考(これがいい)](https://dev.classmethod.jp/articles/act-for-github-actions-local-execution-tool/)  
 [参考URL](https://zenn.dev/usagiga/articles/f44be764419e15700247)
 
 ----
 
 ## workflows 各コマンド名について
+
 [チートシート](https://zenn.dev/masaaania/articles/c930f2f755a577)
 
 ```yml
@@ -384,6 +395,7 @@ on:
 ```
 
 ## workflow_dispatch
+
 [Workflow Dispatch最高](https://note.com/watura/n/nd9e55ceb77ac)
 
 このコンテキストは、GitHub上のGitHub Actionsの画面からworkflowを実行できるようにするTrigger
@@ -396,8 +408,6 @@ on:
 ## workflowの構造
 
 **ワークフローは並列で実行される。**
-
-
 
 ```yml
 ワークフロー（YAMLファイル）
@@ -492,11 +502,11 @@ jobs: # jobsの内容がname配下に表示される
 ```
 
 ## envについて
+
 [github secret KEY](https://qiita.com/inouet/items/c7d39ac4641c05eec4a0)
 
 仮想環境でactionが実行されるため、それを反映させるためにdirenvで反映させるのはめんどくさそう
 GitHub上で使用できるenvがある
-
 
 ```yml
 # .github/workflows/hello.yml
@@ -524,7 +534,7 @@ jobs:
 
 - パブリックなアクション
 
-GitHub Actionsでは開発者がアクション（Lintやテストといったジョブなど）を使って公開することができる。
+GitHub Actionsでは開発者がアクション（Lintやテストといったジョブなど）を使って公開できる。
 この公開されたアクションは世界中の人が使える。もちろん自分のプロジェクトに持ってきて使用が可能。
 この**公開されたアクションのことをパブリックアクション**という。
 
@@ -554,8 +564,8 @@ GitHub Actionsでは開発者がアクション（Lintやテストといった�
 
 プライベートアクションを使用するときはチェックアウトが必須。
 プライベートなアクションはそれを利用するリポジトリで定義する。
-パブリックなアクションと同じく`action.yaml`というファイルを作ってアクションを定義する。
-action.yamlの置き場所はどこでも構わない。たとえば、`.github/actions/<アクション名>/action.yml`でアクションを定義したら、それを利用するワークフロー定義で`use: .github/actions/<アクション名> `の様に`action.yaml`を置いたディレクトリをリポジトリのルートからの相対パスで指定すればよい。
+パブリックなアクションと同じく `action.yaml` というファイルを作ってアクションを定義する。
+action.yamlの置き場所はどこでも構わない。たとえば、`.github/actions/<アクション名>/action.yml` でアクションを定義したら、それを利用するワークフロー定義で `use: .github/actions/<アクション名>` の様に `action.yaml` を置いたディレクトリをリポジトリのルートからの相対パスで指定すればよい。
 
 ```yml
 name: Greet Everyone
@@ -595,8 +605,7 @@ actions/checkoutのREADMEの説明がとても分かりやすい。
 
 ↑ これを実現するためのもの
 プライベートアクションはネット上に公開されていないから、
-手元にあるアクション本体（コード）を`GitHub Actions`の実行環境に持っていったというだけですね。
-
+手元にあるアクション本体（コード）を `GitHub Actions` の実行環境に持っていったというだけですね。
 
 ## Tips
 
@@ -644,6 +653,7 @@ jobs:
 ```
 
 ## Tips
+
 GitHub cdがダサいとき
 [参考URL](https://blog.takuchalle.dev/post/2020/02/20/github_actions_change_directory/)
 
@@ -676,8 +686,8 @@ jobs:
 モノレポの時に設定ディレクトリが困るため以下を設定しろ
 
 working-directory
-実行するときのワーキングディレクトリを`working-directory`で設定している。
-これは`jobs.<job_id>.steps[*].run` でその都度指定してもいいが、面倒なので`defaults.run`を使用すれば設定できる。
+実行するときのワーキングディレクトリを `working-directory` で設定している。
+これは `jobs.<job_id>.steps[*].run` でその都度指定してもいいが、面倒なので `defaults.run` を使用すれば設定できる。
 
 ```yml
 defaults:
@@ -686,12 +696,14 @@ defaults:
 ```
 
 注意点
-`jobs.<job_id>.steps[*].uses`を使うと、自分でrunを書かなくても、誰かが公開したactionを使える。だがactionによっては、今回のユースケースに合わず、使えないものがある。
+`jobs.<job_id>.steps[*].uses` を使うと、自分でrunを書かなくても、誰かが公開したactionを使える。だがactionによっては、今回のユースケースに合わず、使えないものがある。
 
 ## 今回のpushはCIをスキップしたい
+
 [参考URL](https://zenn.dev/snowcait/articles/ef60401313a3fc)
 
 ## Jest coverage report
+
 [Jest coverage report でプルリクエスト毎にコードカバレッジを可視化する](https://oikawa.dev/posts/20210810_jest-coverage-report-action)
 
 ## artifacts: 成果物をuploadする。
@@ -699,18 +711,17 @@ defaults:
 [参考URL](https://littleengineer.jp/github-actionsunittest%E3%81%AE%E6%88%90%E6%9E%9C%E7%89%A9%E3%81%AE%E4%BF%9D%E5%AD%98%E3%81%A8%E5%8F%96%E5%BE%97/)
 
 GitHub Actionsには成果物といって
+
 1. ジョブからジョブに受け渡したいもの
 2. Test結果など保存しておきたいもの
 
 上記をActions上に保存できる機能がある。
 
-
 [参考URL2](https://zenn.dev/jordan/articles/b6c1e905adab31)
 
 Artifactsとはfileやfileのコレクションのことをartifactという
-引用の内容はartifactsはjobの終了後にデータを保持し、同じworkflow内の他のjobとデータを共有することができると書いてます。
+引用の内容はartifactsはjobの終了後にデータを保持し、同じworkflow内の他のjobとデータを共有できると書いてます。
 たとえばbuildとtest終了後のデータをartifactとして保存が可能
-
 
 ## GitHub Actions ワークフローファイル共通化
 
@@ -728,13 +739,13 @@ Artifactsとはfileやfileのコレクションのことをartifactという
 
 GitHub Enterprise Serverはオンプレミス用のアプライアンス（意:特化）サーバ
 
-
 [DeNAのblog](https://engineering.dena.com/blog/2019/12/dena-github-enterprise-server/#:~:text=GHES%E3%81%AF%E5%88%A9%E7%94%A8%E8%80%85%E3%81%AE,%E3%81%A8%E5%A4%A7%E3%81%8D%E3%81%8F%E7%95%B0%E3%81%AA%E3%82%8B%E7%89%B9%E6%80%A7%E3%81%A7%E3%81%99%E3%80%82)
 
 GHESはGitHubサービスアプライアンスサーバ。
 以前は単にGitHub Enterpriseと呼ばれていましたが、GitHub.comのbusiness cloudサービスを拡充し、クラウド側のGitHub.com business cloudとオンプレミス側のGitHub Enterpriseを合わせて、GitHub Enterpriseと呼ぶようになりました。そしてクラウド側に限定する場合はGitHub Enterprise Cloud、そしてここで取り上げるオンプレミス側をGitHub Enterprise Serverと呼ぶようになりました。昨今は単に「GitHub Enterprise」で検索などすると、GitHub Enterprise Cloudな記事が多くなったような気がして寂しい限りです。
 
 ## Private ActionsWorkflow Stepを共有する
+
 [PrivateリポジトリのActionsWorkflow内Stepを共有するためCompositeRunStepを外部参照無しに同リポジトリ内で完結させてみた](https://dev.classmethod.jp/articles/composite-run-step-with-private-repos/)
 
 ## private リポジトリをcloneする
@@ -749,19 +760,16 @@ GHESはGitHubサービスアプライアンスサーバ。
 
 GitHub Appsは、Organizationや個人アカウントに直接インストールでき、特定のリポジトリへのアクセス権を付与することが可能です。GitHub Appsの主な特長は次の3つです。
 
-- アクセス権限を細かく設定することができる。
+- アクセス権限を細かく設定できる。
 - インストール単位がUser/Organizationの保持するリポジトリ単位になる。
 - リポジトリにおけるイベントの発生も受け取ることができる（Webhookを備える）。
 またGitHub Appsは、パーソナルアクセストークン（personal access token）と異なり、個人アカウントに紐づかないので会社組織等で使う際の管理に向いています。
 
 パーソナルアクセストークンを採用してしまうと、**ユーザーに紐付いたアクセスキーが発行されてしまうため、設定したユーザーが退職したり、異動したりしてアカウントが停止されたりするとアクセスキーも無効になり、認証エラーになってしまいます。**
 
-
-
-
 ## ホームディレクトリ
 
-debugで試しに`ls -a`をしたらホームディレクトリがこんな感じだった。
+debugで試しに `ls -a` をしたらホームディレクトリがこんな感じだった。
 
 ```sh
 Run mkdir -p ~/.cache/yarn
@@ -792,9 +800,11 @@ work
 ```
 
 ## 作業ディレクトリ(default)
+
 [参考URL](https://www.bioerrorlog.work/entry/github-actions-default-workspace)
 
 ## 重複したStepを分ける 'Composite Run Step'
+
 [参考URL](https://dev.classmethod.jp/articles/composite-run-step-with-private-repos/)  
 [usesも使えるようになった](https://dev.classmethod.jp/articles/using-uses-on-composite-steps/)
 
@@ -808,6 +818,7 @@ public & privateどっちもできる。
 
 >現時点では、steps の中で run を使う際は必ず shell を指定する必要があります。defaults の設定はできないので毎回書くのはちょっと面倒と感じたり...
 >以下のような | を使った multi line でのコマンドも実行もできないってのも注意ですね。
+
 ```yml
 # "|" を使うと syntax error になる
 run: |
@@ -821,14 +832,15 @@ run: |
 if: contains(github.event_name, '***')
 ```
 
-
 ## concurrency
+
 [一つのジョブが終われずにおなじジョブが再度実行された時に止める](https://zenn.dev/korosuke613/scraps/4e465aad5538d0)
 
-トップレベルで`concurrency`を設定することで同じ名前の`concurrency`ワークフローは同時実行されない。
+トップレベルで `concurrency` を設定することで同じ名前の `concurrency` ワークフローは同時実行されない。
 ※キャンセルすることなども可能。
 
 ## Composite Action: 複合アクション
+
 [リファレンス（様々なモジュール化）](https://docs.github.com/ja/actions/creating-actions/about-custom-actions)  
 [リファレンス（composite）](https://docs.github.com/ja/actions/creating-actions/creating-a-composite-action)  
 [Composite Action実践ガイド](https://zenn.dev/tmknom/books/pragmatic-composite-action/viewer/introduction)  
@@ -838,11 +850,11 @@ Composite ActionはGitHub Actionsのモジュール化技法の1つ。
 よくある処理をまとめ、再利用性・メンテナンス性・一貫性を高めます。
 >GitHub Actions での処理の共有方法として action がありますが、現在この action は javascript と docker そして composite の3つの方法で作成することができます。
 
-
 ### 制約
+
 [制約一覧](https://dev.classmethod.jp/articles/use-composite-run-steps-wisely/)
 
-ファイル名は`action.yml` or `action.yaml`でないといけない。
+ファイル名は `action.yml` or `action.yaml` でないといけない。
 
 ### 作成するときに考慮するべきこと
 
@@ -865,7 +877,7 @@ jsなども使える。
 
 ---
 
-
 ## Tips
+
 [GitHub Actionsによる作業自動化 実例集](https://qiita.com/technote-space/items/253290d1f2a0f99409ae)
 [後で読め](https://blog.sa2taka.com/post/github-actions-diff-branches/)

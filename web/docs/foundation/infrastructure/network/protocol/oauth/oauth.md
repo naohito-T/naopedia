@@ -14,7 +14,7 @@ OAuth = 認可（権限の認可:行動やリソースの許可をすること�
 
 **このOAuthは前述のとおりアクセストークンを発行する仕組みであって、認証については定められていません。認証に必要な、ユーザー情報などの取得については決まっていない。**
 
-このOAuthを拡張し**ユーザー情報の取得についてなど**を標準化したのが`OpenID Connect`
+このOAuthを拡張し**ユーザー情報の取得についてなど**を標準化したのが `OpenID Connect`
 
 例文  
 サードパーティアプリによるユーザーのリソースを保持する（Google）HTTPサービスへの限定的なアクセス（一部の操作）を可能にする認可フレームワーク（アクセストークンの発行方法に関するルールのこと）
@@ -59,7 +59,7 @@ OAuthを利用すると、パスワードをアプリケーションAに渡さ�
 ## OAuth OpenID Connectの役割違い
 
 一般的にOAuth2は認可、OpenID Connectは認証の仕組みという形で区別される。
-OAuth2は、サードパーティからの権限移譲で、`Scope`という概念を用いた権限の認可システムを構築するもの。  
+OAuth2は、サードパーティからの権限移譲で、`Scope` という概念を用いた権限の認可システムを構築するもの。  
 もちろんOauth2も認可の過程で認証の仕組みを用意していますが、その実態はアクセストークンと言う形でサービス提供者によって**比較的バラバラの運用**が取られてました。  
 ここに、OpenID ConnectはID Tokenという形で**トークンのフォーマットや利用形態を定義したもの。**
 
@@ -87,8 +87,8 @@ OpenID Connectでは、Oauth2.0のAuthorization Request送信後のトークン�
 
 OpenID Connectを利用した**認証フローがどの方式を利用しているか**は、Oauth2.0のAuthorization Requestにおけるresponse_type値を確認することで判断できる。
 
-- response_typeの値が`code -> Authorization Code Flow`
-- response_typeの値が`code を含まず id_token を含む -> Implicit Flow`
+- response_typeの値が `code -> Authorization Code Flow`
+- response_typeの値が `code を含まず id_token を含む -> Implicit Flow`
 - その他 -> `Hybrid Flow`
 
 どのフローで認証を行ったとしても、最終的にはID TokenとAccess Tokenがクライアントに返却される。
@@ -116,16 +116,16 @@ IDトークンは**JWTの一種**
 [参考URL](https://qiita.com/TakahikoKawasaki/items/8f0e422c7edd2d220e06#7-id-%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3)
 
 OpenID ConnectがOAuth 2.0に対しておこなった主要な拡張が、IDトークンというデータ構造。  
-IDトークンが`JWT`として表現されることも明記されている。
+IDトークンが `JWT` として表現されることも明記されている。
 
 IDトークンの仕様では、RFC 7519で定義されているクレームのいくつかを必須のクレームとしている。  
-具体的には`iss, sub, aud, exp, iat`は必須とされている。
+具体的には `iss, sub, aud, exp, iat` は必須とされている。
 
 ## IDトークンでの各クレーム
 
 [参考URL](https://qiita.com/TakahikoKawasaki/items/8f0e422c7edd2d220e06#7-id-%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3)  
 JWTにある識別子と同名のものもあるが、少し指定内容が変わる。  
-IDトークンでは`iss, sub, aud, exp, iat`が必須とされている。
+IDトークンでは `iss, sub, aud, exp, iat` が必須とされている。
 
 ### issクレーム
 

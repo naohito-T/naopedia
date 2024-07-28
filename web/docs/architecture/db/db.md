@@ -8,6 +8,7 @@
 2. 導入している企業はあるか
 
 ## DB設計をするときに考えるステップ
+
 [参考URL](https://qiita.com/kenzo-ta/items/4a3b0e0f0d4f37bb2dd8)
 
 1. ユースケースを考える

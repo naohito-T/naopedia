@@ -8,7 +8,6 @@ presenceはオブジェクトが存在すればそのオブジェクトを返し
 
 [参考URL](https://techacademy.jp/magazine/20210)
 
-
 `object.present? ? object : 'オブジェクト'`
 
 Railsでは以下の様に書ける

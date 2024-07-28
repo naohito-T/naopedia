@@ -7,7 +7,6 @@
 
 ## Overview
 
-
 ## SPAで軽視されがちな部分
 
 - ブラウザバックによるスクロール位置の復元
@@ -70,17 +69,17 @@ SSRのデータフェッチが絶対パスではないといけない理由
 
 [参考URL](https://www.gaji.jp/blog/2022/03/17/9343/)
 
-Nextでクエリ文字列を使いたい時は`getServerSideProps`を使う
-`getStaticProps`では使えない。
+Nextでクエリ文字列を使いたい時は `getServerSideProps` を使う
+`getStaticProps` では使えない。
 
 ### SSRフロー
 
 [参考URL](https://maasaablog.com/development/frontend/nextjs/3512/)
 
 1. ブラウザからサーバー（Node.js）へリクエスト
-2. サーバー（Node.js）で`HTML`をレンダリングしてブラウザに返却
-  1. 動的なデータが含まれる場合はgetServerSideProps()でApiサーバーリクエスト
-  2. 動的なデータがない場合は`HTML`をそのままブラウザに返却
+2. サーバー（Node.js）で `HTML` をレンダリングしてブラウザに返却
+1. 動的なデータが含まれる場合はgetServerSideProps()でApiサーバーリクエスト
+2. 動的なデータがない場合は `HTML` をそのままブラウザに返却
 
 ### SSR回避させる
 
@@ -95,12 +94,12 @@ Nextでクエリ文字列を使いたい時は`getServerSideProps`を使う
 [参考URL](https://zenn.dev/yami_beta/articles/f31a8a496a7073)
 
 - /nowへ直接アクセス
-`http://localhost:3000/now`に直接アクセスします。
-返ってくるHTMLは`getServerSideProps`の処理が実行され、取得したデータが埋め込まれています。
+`http://localhost:3000/now` に直接アクセスします。
+返ってくるHTMLは `getServerSideProps` の処理が実行され、取得したデータが埋め込まれています。
 
-- / から /nowへ`<Link>`で遷移
+- / から /nowへ `<Link>` で遷移
 getServerSidePropsはクライアントサイドルーティングでページにアクセスした場合も実行されます。
-このときgetServerSidePropsの実行結果は`JSON`で返ってくる。
+このときgetServerSidePropsの実行結果は `JSON` で返ってくる。
 
 ### CSR と SSRのデータフェッチ違い
 
@@ -126,14 +125,14 @@ ISG（Incremental Static Generation）は、Next.jsがオンデマンドでペ�
 実行されるタイミングは以下となる。
 
 1. ページが直叩きされたとき
-2. `Link`コンポーネントにマウスオーバーした時
-3. `Link`コンポーネントが画面内に入った時（prefetch={true}時）
+2. `Link` コンポーネントにマウスオーバーした時
+3. `Link` コンポーネントが画面内に入った時（prefetch={true}時）
 
 ### ISR（Incremental Static Regeneration）
 
 ISGの「再生成が起こらない」課題を解決するアプローチ（データ陳腐化防止）
-`revalidate`オプションを付与することで、一度生成したページであっても、指定経過時間後に再生成を試む。
-`revalidate`オプションの付与でISGはISRになるが、あまりにも短い指定をするとタイトルのような過負荷を引き起こすことが懸念されます。
+`revalidate` オプションを付与することで、一度生成したページであっても、指定経過時間後に再生成を試む。
+`revalidate` オプションの付与でISGはISRになるが、あまりにも短い指定をするとタイトルのような過負荷を引き起こすことが懸念されます。
 
 #### LinkとISRの関係
 
@@ -150,9 +149,9 @@ ISRとは、動的なコンテンツを含むページも静的ページとし�
 ISRを使うことで動的なコンテンツを含むページも静的ページとしてCDNにキャッシュすることが可能になる。Next.jsのISRはドキュメントに書かれているようにstale-while-revalidateという考え方でキャッシュが行われる。
 具体的には、リクエスト時にページのキャッシュを作成し、次のアクセスではキャッシュされた古いデータを返します。その裏で次のアクセスに向けてキャッシュが再生成されるというイメージです。
 
-getStaticProps単体だと長期間キャッシュされる静的なページが出力される（いわゆるSSGというやつ）ここに`revalidate`を追加するとISRになる。
+getStaticProps単体だと長期間キャッシュされる静的なページが出力される（いわゆるSSGというやつ）ここに `revalidate` を追加するとISRになる。
 
-`revalidate: 10`の挙動は以下
+`revalidate: 10` の挙動は以下
 
 - キャッシュが作られた後、10秒間はそのキャッシュを返し続ける（10秒以内に100回アクセスされてもキャッシュの再生成はされない）
 - 10秒経ったあとはキャッシュが古くなったとみなされる。ただし次のリクエストでもいったんはそのキャッシュを返す（1時間後にアクセスがあった場合もいったん古いキャッシュを返す）
@@ -175,7 +174,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
 [仕組み参考](https://qiita.com/st2222/items/827407bc146ef9886f06)
 
-`$ npx next -h`で各コマンドの詳細を確認できる
+`$ npx next -h` で各コマンドの詳細を確認できる
 `$ next dev`
 ローカルでアプリケーションを起動します。
 `getStaticProps`（SSGで利用するmethod）を利用した場合でも**SSR動作**になる。
@@ -190,7 +189,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 本番用に最適化されたビルドを行い、各ルートの情報がコンソールに出力されます。
 
 `$ next start`
-このコマンドは`next build`でビルドした後に実行すると、本番用としてサーバが立ち上がる。
+このコマンドは `next build` でビルドした後に実行すると、本番用としてサーバが立ち上がる。
 プロダクション環境でアプリケーションを実行する
 envはproduction
 
@@ -199,7 +198,7 @@ outディレクトリに静的HTMLをエクスポートする。
 サーバーにNode.jsを必要とせずにクライアントのみで実行できる静的HTMLを出力する。
 
 localで確認する場合は
-`$ yarn add -D serve`というパッケージをインストールする
+`$ yarn add -D serve` というパッケージをインストールする
 ※静的ファイルをホスティングするローカルサーバ
 
 ## 各メソッド
@@ -223,8 +222,8 @@ Vercelが開発する、HTTP RFC 5861で提唱された、SWRというキャッ�
 
 [参考URL](https://maku.blog/p/qcp2coz/)
 
-next.jsでは`pages/api`ディレクトリ以下にTypeScript (JavaScript) コードを配置するだけで、クライアントサイドJavaScriptから呼び出せるAPIを定義することができる。
-※`pages/api`ディレクトリ以下の実装内容が**クライアントに見られてしまうことはない。**
+next.jsでは `pages/api` ディレクトリ以下にTypeScript (JavaScript) コードを配置するだけで、クライアントサイドJavaScriptから呼び出せるAPIを定義できる。
+※`pages/api` ディレクトリ以下の実装内容が**クライアントに見られてしまうことはない。**
 
 - サーバーレス関数として配置される
 
@@ -234,7 +233,7 @@ next.jsでは`pages/api`ディレクトリ以下にTypeScript (JavaScript) コ�
 
 >サーバーからデータを取得したい場合にAPI ルートにアクセスしてから、その API ルートを呼び出したいと思うかもしれませんgetServerSideProps。getServerSidePropsこれは不要で非効率的な方法です。サーバー上で と API ルートの両方が実行されているために、余分なリクエストが行われることになるからです。
 
-とあるように`getServerSideProps`からAPI Routeへアクセスするのは冗長（同じNode.jsプロセス内のため）
+とあるように `getServerSideProps` からAPI Routeへアクセスするのは冗長（同じNode.jsプロセス内のため）
 
 ## middleware
 
@@ -261,6 +260,7 @@ Cookieの値に応じてルーティングを振り分けたり、Basic認証を
 VercelとNext.jsの組み合わせが強いのは、VercelにNext.jsをデプロイするとこのmiddleware部分をEdge Functionsで捌いてくれるという点です。つまり、**静的なページに対するリクエストに対して、オリジンサーバーに触れことなくmiddlewareを実行できるということです。**
 
 _middleware.jsファイルが複数のディレクトリに配置されている場合は、**階層が浅い方から順に実行されていく。**
+
 ### middlewareがなかった時は？
 
 _app.tsxを継承したクラスがあるファイルを作成してったっぽい
@@ -271,17 +271,15 @@ _app.tsxを継承したクラスがあるファイルを作成してったっぽ
 
 Appはすべてのコンポーネントの初期化に使われる
 
-
 ## _document.js(tsx)によるカスタマイズ
 
 [参考URL](https://qiita.com/Yuki-Kurita/items/6a0eae00999e1294a3b1)
 
-Next.jsのPageコンポーネントはデフォルトでは`<html> & <body>`タグの定義を行うが、それらを拡張したい場合は_document.js(tsx) を作成し、その中でDocumentコンポーネントを継承したクラスを実装する。
+Next.jsのPageコンポーネントはデフォルトでは `<html> & <body>` タグの定義を行うが、それらを拡張したい場合は_document.js(tsx) を作成し、その中でDocumentコンポーネントを継承したクラスを実装する。
 
 注意点
+
 - SSR（サーバサイドレンダリング）のみの実行
-
-
 
 ---
 
@@ -306,20 +304,19 @@ React Server Componentsではこれまでとは別のアプローチで、**SPA�
 React Server ComponentsはHTMLをサーバ側で生成する従来のSSRとは根本的に異なる。 **サーバ側では仮想DOMの生成まで**を行う。
 サーバコンポーネントのレンダリングの結果（仮想DOM）はHTTPリクエストを介してブラウザに渡り、ブラウザ側でクライアントコンポーネントと合わせてレンダリングを完成させます。
 
-
 3種類のコンポーネント
 React Server Componentsでは次の3種類のコンポーネントが登場します。
 
 **サーバコンポーネント**
 サーバ（Node）でのみレンダリングされるコンポーネント。
-ファイル名の末尾が`.server.js` → `.server.tsx`に変更可能
+ファイル名の末尾が `.server.js` → `.server.tsx` に変更可能
 このコンポーネントで使用するコードはブラウザがダウンロードするJSにはバンドルされない
 サイズの大きいライブラリも使いやすい
 DBなどのサーバリソースにアクセス可能
 状態を持てず、イベントのハンドリングができない（要はwindowオブジェクトにアクセスできない）
 
 **クライアントコンポーネント**
-ブラウザでのみレンダリングされるコンポーネント。ファイル名の末尾が`.client.js`
+ブラウザでのみレンダリングされるコンポーネント。ファイル名の末尾が `.client.js`
 
 状態が持てる
 ブラウザAPIにアクセス可能
@@ -336,15 +333,16 @@ DBなどのサーバリソースにアクセス可能
 ---
 
 ## next/image
+
 [参考URL](https://www.wantedly.com/companies/wantedly/post_articles/385515)
 
-`next/image`が自身で持っている画像サーバが処理をしてくれるようになる。
-仕組みとして、`next/image`画像配信用のエンドポイントを立ててそこから配信される。
+`next/image` が自身で持っている画像サーバが処理をしてくれるようになる。
+仕組みとして、`next/image` 画像配信用のエンドポイントを立ててそこから配信される。
 エンドポイントとしてのURLは以下となる。  
 `https://igsr5.dev/_next/image?url=OOOO`  
-このURLの中にある`_next/image`がデフォルトで持つ画像配信用のエンドポイント。  
+このURLの中にある `_next/image` がデフォルトで持つ画像配信用のエンドポイント。  
 ンドポイントがリクエスト毎に画像加工やキャッシュなどを行っています。反対にビルド時には画像の加工は行われておらず全てオンデマンドで行われている。  
-気をつけポイントとして Vercel 以外で Next.js をデプロイするときに _next/image もアクセス可能な状態にしておくことが挙げられます。（_next/ 配下は他にも Next.js 的に大事なエンドポイントが詰まっているのでミスらないためには _next/* で公開してしまうのもあり）  
+気をつけポイントとしてVercel以外でNext.jsをデプロイするときに _next/imageもアクセス可能な状態にしておくことが挙げられます。（_next/ 配下は他にもNext.js的に大事なエンドポイントが詰まっているのでミスらないためには _next/* で公開してしまうのもあり）  
 
 - レイアウトシフトが起きない
 - サーバサイドでの画像リサイズ
@@ -355,14 +353,11 @@ DBなどのサーバリソースにアクセス可能
 next/imageでは必ずしも指定したサイズの画像が返ってくるとは限らない。
 next/imageでは画像の表示領域やユーザのディスプレイ解像度に合わせて適切な画像サイズを返す。
 
-
 ## next/imageを仕事で使う際に気をつけたい仕様
 
 [参考URL](https://zenn.dev/yukishinonome/articles/da315b1be98a9c)
 
 ## Next.js状態管理
-
-
 
 ---
 
@@ -375,7 +370,6 @@ next/imageでは画像の表示領域やユーザのディスプレイ解像度�
 
 ときおり普通のReactで動くライブラリがNext.jsでビルドすると動かなかったりします。
 こうした場合は、動的インポート（Dynamic Import）という機能で対処できる場合があります。動的インポートしたコンポーネントはクライアントサイドでレンダリングされるため、実質的にReactと同じように処理されるためです。
-
 
 ## モダンなCSS → CSS in JS
 
@@ -399,7 +393,7 @@ CSSを別管理でひとまとめにするよりもコンポーネントとセ�
 
 ThemeProviderの利用
 styled-componentsにはThemeProviderというAPIがあります。これはContext APIを使って、子のコンポーネントに、propsでスタイルを渡すことができます。
-これで、スタイルを共通化することができる。
+これで、スタイルを共通化できる。
 ThemeProviderは、_app.jsで使用する。
 
 ## styled-media-query
@@ -412,7 +406,6 @@ Next.jsとstyled-componentsが実行される前提とする環境が異なり�
 
 上記を対応するために、Next.js 12以前はBabel用styled-componentsのライブラリをダウンロードしなければいけず、めんどくさかった。
 [参考URL](https://code-log.hatenablog.com/entry/2020/01/26/200134)
-
 
 ## next/dynamic
 
@@ -428,25 +421,27 @@ Next.jsにおけるdynamic importのつかいどころは主に『SSR回避』�
 [default exportとnamed exportでdynamic importする](https://nishinatoshiharu.com/overview-next-dynamic-import/)
 
 ## next locale
+
 [参考URL](https://postd.cc/localizing-your-nextjs-app/)
+
 ## next router
 
 Next.jsのrouterにはstateがありません。
 
 ## next error
+
 [参考URL](https://zenn.dev/mizuneko4345/articles/c576dfce8a49be)
 [参考URL](https://blog.shibayu36.org/entry/2020/01/08/193000)
 
-- `pages/_error.tsx`を作ると、SSR時やCSR時、例外が起きるなどした時やルーティング存在しないエラーが発生した時にそのページを表示してくれる。
+- `pages/_error.tsx` を作ると、SSR時やCSR時、例外が起きるなどした時やルーティング存在しないエラーが発生した時にそのページを表示してくれる。
 ※このページで400エラー、404エラー、500エラーをハンドリングして、自前のページを作成すれば良い。
 
-- `pages/_error.tsx`はproduction環境時（next build -> next start）にしか使われないので注意。
+- `pages/_error.tsx` はproduction環境時（next build -> next start）にしか使われないので注意。
 ※デバッグするときはnext buildをする必要がある
 
 - next/errorのgetInitialPropsではCSR時に例外が起きた時、err.statusCodeに何も入っていないという問題がある
 
-- ビルトインのエラーページを表示させたい場合は`Error`コンポーネントをインポートする。
-
+- ビルトインのエラーページを表示させたい場合は `Error` コンポーネントをインポートする。
 
 ```ts
 import React from 'react';
@@ -480,13 +475,13 @@ export default Error;
 ```
 
 ### カスタムエラーページ
+
 [参考URL](https://nextjs.org/docs/advanced-features/custom-error-page)
 [デフォルト挙動](https://zenn.dev/kobayashi_m42/scraps/dedcf88361928b)
 [プライベートでやれば綺麗にできそう](https://zenn.dev/nalo/articles/next-api-routes-error-handling)
 
 >page/404.tsxを作成せずに、page/ _error.tsxを設定すると下記の警告が表示される。
->なお、存在しないURLにアクセスするとpage/ _error.tsxの内容が表示されている。
-
+>なお、存在しないURLにアクセスするとpage/_error.tsxの内容が表示されている。
 
 優先順位
 pages/404.tsx or pages/500.tsx
@@ -506,7 +501,7 @@ pages/_error.tsx
 
 **pages/_error.tsx**
 pages/_error.jsを設定した場合の挙動
-getServerSidePropsで`{notFound: true}`を返した場合、_error.jsが表示される (pages/404.jsがない場合)
+getServerSidePropsで `{notFound: true}` を返した場合、_error.jsが表示される (pages/404.jsがない場合)
 getServerSidePropsでErrorをthrowした場合、_error.jsが表示される
 下記のようにstatusCodeを指定した場合、デフォルトのエラーページが表示される。
 -> pages/_error.jsを定義したからといって、 next/errorが変更される訳ではない
@@ -530,25 +525,24 @@ pages/500.jsを設定した場合の挙動
 
 - メッセージ表示は一部のみ
 HTTP 400 / 404 / 405 / 500以外のステータスコードを投げ込むと、「An unexpected error has occurred」扱いされる。
-※他のメッセージを使用したい場合は`titleプロパティ`を使う。
+※他のメッセージを使用したい場合は `titleプロパティ` を使う。
 
 - HTTP Status Code
 **SSGではerrorを出してもHTTP上は200が返る。**
 
 ### Next error ハンドリング
+
 [リファレンス](https://nextjs.org/docs/advanced-features/error-handling)
 [参考URL](https://zenn.dev/mizuneko4345/articles/c576dfce8a49be)
-
-
-
 
 ---
 
 ## next env
+
 [これを見れば大体わかる](https://blog.ojisan.io/next-env/)
 
 `.env.local`
-`$ next dev`のときに読み込まれる。
+`$ next dev` のときに読み込まれる。
 
 `.env.development`
 NODE_ENVがdevelopmentのとき読み込まれる。
@@ -576,6 +570,7 @@ frontend/.next
 ```
 
 ## Serverless Componentsでのdeployした際の処理フロー
+
 [参考URL](https://www.keisuke69.net/entry/2020/11/27/163208)
 
 ## Tips
@@ -587,6 +582,7 @@ frontend/.next
 [参考URL](https://qiita.com/fumiki/items/5f4408ce844520a922c2)
 
 # SWR
+
 [とても参考になる](https://www.wantedly.com/companies/wantedly/post_articles/386129)  
 [参考URL](https://dev.classmethod.jp/articles/getting-started-swr-with-nextjs/)  
 [SWRを使おうぜって話（導入についてわかりやすい）](https://zenn.dev/mast1ff/articles/5b48a87242f9f0)
@@ -606,6 +602,7 @@ Next.jsと同じチームによって作成されている、データ取得の�
 ## メリット
 
 SWRのメリットは以下
+
 - fetchを使用したクライアントサイドのデータ取得
 - データ取得状態の管理
 - エラー処理
@@ -614,11 +611,13 @@ SWRのメリットは以下
 ## useSWRが何をしているのか
 
 関数が受け取るもの
+
 - key: リクエストするユニークな文字列（通常URLを指定する）
-- fetcher: （任意）第一引数に渡したURLを引数に取るfetch関数
-- options: （任意）SWRのオプション
+- fetcher:（任意）第一引数に渡したURLを引数に取るfetch関数
+- options:（任意）SWRのオプション
 
 関数が返すもの
+
 - data: fetcherによって取得したデータ
 - error: fetcherによってthrowされたエラー
 - isValidating: リクエストまたは再検証の読み込みがあるか否かのBool値

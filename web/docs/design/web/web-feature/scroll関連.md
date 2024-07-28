@@ -37,11 +37,11 @@ const returnTop = () => {
 
 ```js
 window.onmousewheel = function(event){
-	if(event.wheelDelta > 0){
-	//mainCamera.zoomTo(4, 100);
-	}else{
-		//mainCamera.zoomTo(1, 100);
-	}
+ if(event.wheelDelta > 0){
+ //mainCamera.zoomTo(4, 100);
+ }else{
+  //mainCamera.zoomTo(1, 100);
+ }
 }
 ```
 
@@ -62,12 +62,12 @@ console.log(n1,n2);
 
 [CSSだけで実現する](https://www.miso.blog/css-position-sticky/)
 
-- position fixed と sticky違い
+- position fixedとsticky違い
 
 - position: fixedの仕様
 ウィンドウ全体の左上を基準にした絶対位置に配置される。
 固定ヘッダーを作成するときなど使用するとのこと。
-- position: fixed 注意
+- position: fixed注意
 fixedを指定したコンテンツは高さが無くなるため後に続く要素が下に埋もれてしまう。
 この場合メインコンテンツにpadding等でheaderの高さ分余白をとると疑似的に回避できる。
 
@@ -85,8 +85,6 @@ overflow:hidden;、overflow:auto;があるとstickyが効きません。
 
 [スクロールバーをカスタマイズする](https://kouhekikyozou.com/css_scrollbar_design)
 
-
 ## いけてるマウスカーソルを作成
 
 [参考URL](https://www.evoworx.co.jp/blog/mouse-stoker-gsap/)
-

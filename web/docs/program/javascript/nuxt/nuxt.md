@@ -33,7 +33,6 @@ SSRはAjaxデータをフェッチし、**Vue.jsのコンポーネントをサ�
 すべての非同期ロジックが完了すると、それらを直接ブラウザに送信し、最後にスタティックなマークアップをクライアント上の完全にインタラクティブなアプリに提供する。
 この機能により、GoogleSEOパーサーを使ってDOM要素を通して素晴らしい解析を行うことができます
 
-
 **SSR(Server Side レンダリング)**
 Nuxt.jsでSSRを使う場合は、**初回の描画時はSSRとCSR**
 それ以降の再描画時はCSRのみとなっている。
@@ -52,7 +51,7 @@ Nuxt.jsでSSRを使う場合は、**初回の描画時はSSRとCSR**
 ## middleware
 
 指定したページで**asyncDataやfetchよりも先に呼ばれる共通処理の置き場**
-`nuxt.config.js`で全ページ指定するケースもあれば、必要なページからのみ呼び出して使うこともある。
+`nuxt.config.js` で全ページ指定するケースもあれば、必要なページからのみ呼び出して使うこともある。
 
 利用用途が多い例
 **ユーザ認証に使われる**
@@ -73,9 +72,7 @@ Vueインスタンスの設定を行うファイル置き場。ここに置い�
 コンポーネント間の値の管理。小規模なプロジェクトであれば、index.jsの1つのファイルで十分かと思います。
 途中からindex.jsのファイルを複数に分けることは可能ですが、地味に手間なので、storeをガンガン使う予定のサイトの場合は、初めからある程度分けて始めることをおすすめします。
 
-
 ## はまりどころ
-
 
 SSRについて
 >SSRはNuxt.jsが提供している機能だと思っていましたが、大元は vue-server-render が提供しているのですね。だからVue.jsのドキュメントにもSSRについての記載があります。困ったらまずは公式ドキュメントに立ち戻
@@ -87,9 +84,7 @@ SSRについて
 [設計参考](https://logmi.jp/tech/articles/322003)
 [設計参考2compositionapi](https://zenn.dev/koudaiishigame/articles/810ce2d0ee8ade)
 
-
 ## フレームワークはまりどころポイント欄
-
 
 ## Nuxt 導入に必要なサーバ要件について
 
@@ -112,7 +107,7 @@ nuxt start : 静的なホスティング（Netlify, Vercel, Surgeなど）のよ
 
 - build
 アプリケーションをwebpackでビルドし、JSとCSSをminifyするコマンド
-ビルドファイルの出力先は`.nuxt/`配下
+ビルドファイルの出力先は `.nuxt/` 配下
 **buildコマンドはtarget: server専用**
 
 - generate
@@ -149,9 +144,7 @@ setup(props) {
 
 [Vue.jsのcreated、mounted、data](https://medium.com/veltra-engineering/in-ssr-vue-js-is-created-twice-7f9122de9b77)
 
-nuxtの前にそもそもVue.jsのライフサイクルフックとして用意されている created と mounted 、およびデータをリアクティブにする dataプロパティについて理解する。
-
-
+nuxtの前にそもそもVue.jsのライフサイクルフックとして用意されているcreatedとmounted 、およびデータをリアクティブにするdataプロパティについて理解する。
 
 ## Nuxt2と3の違い(非同期関数について)
 
@@ -162,7 +155,7 @@ nuxtの前にそもそもVue.jsのライフサイクルフックとして用意�
 
 >Nuxt 2 では Options API の asyncData() や Composition API の useAsync(), useFetch(), useStatic() などを使用し、おもに SSG などにおいて画面描画に必要なデータを非同期に取得するといった使い方をしてきました。
 >Nuxt 3 ではそれらが新たに useFetch() と useAsyncData() のふたつにアップデートされています。
-（くわえてデータ取得時に画面描画をブロックしない`useLazyFetch()`と`useLazyAsyncData()`も加わりました）
+（くわえてデータ取得時に画面描画をブロックしない `useLazyFetch()` と `useLazyAsyncData()` も加わりました）
 
 **Nuxt2**
 Options APIのasyncData()やComposition APIのuseAsync(), useFetch(), useStatic()
@@ -175,11 +168,11 @@ Options APIのasyncData()やComposition APIのuseAsync(), useFetch(), useStatic(
 
 API通信を行うもの。基本はcreated()を使用しDOMを操作しないといけない時にmounted()を使用する手法
 createdは、Vueインスタンスが作成された直後に呼ばれる関数で、Vueインスタンスの各種プロパティ、メソッドは利用できますが、レンダリングが完了していないため、エレメントは利用できません。
-mounted は、レンダリングが完了した直後に呼ばれる関数で、エレメントへのアクセスも可能となります。なお、子コンポーネントのレンダリング完了は保証されていません。
+mountedは、レンダリングが完了した直後に呼ばれる関数で、エレメントへのアクセスも可能となります。なお、子コンポーネントのレンダリング完了は保証されていません。
 
 ### useAsync() Options APIベースで言うとasyncDataでやっていたことに対応する場合
 
-@nuxtjs/composition-apiにあるuseAsync は、setup() 時に呼ぶ関数で、SSR時はサーバサイドで情報を取得し、SPA時にはページ遷移時に呼び出したいものを用意できるという代物。
+@nuxtjs/composition-apiにあるuseAsyncは、setup() 時に呼ぶ関数で、SSR時はサーバサイドで情報を取得し、SPA時にはページ遷移時に呼び出したいものを用意できるという代物。
 
 **useAsync の利用上の注意**
 asyncDataのようにuseAsyncはサーバサイドでロードされ、結果をHTMLに書き出す挙動になっている。
@@ -211,14 +204,12 @@ return {foo}
 ### useFetch
 
 useAsyncとは別に単純に非同期な関数をSSR時と画面遷移時に実行したいという目的のためにuseFetchが存在するが、これはcomputedと同時に利用しようとするとエラーが発生する
-非常にやっかみのある問題である。。解決としては現状は、、useFetch を使いたい場合は computed を使わないか、 useAsync を使うということになりそうだ。
-
+非常にやっかみのある問題である。。解決としては現状は、、useFetchを使いたい場合はcomputedを使わないか、 useAsyncを使うということになりそうだ。
 
 ----
 
-
 **Nuxt3(アップデートされている)**
-useFetch() と useAsyncData()
+useFetch() とuseAsyncData()
 加えて、データ取得時に画面描画をブロックしないuseLazyFetch()と、useLazyAsyncData()も加わった。
 
 **今後 Page Component は、いわばページレイアウトを記述するだけのラッパー的な存在になっていくかもしれません。**
@@ -231,6 +222,7 @@ useFetch() と useAsyncData()
 CSR : ブラウザで動作する部分
 
 以下例
+
 ```html
 <p id="mode"></p>
 <script>
@@ -296,8 +288,6 @@ created() { // or mounted()
 **pagesの前のため、まだrouterの設定もされていない状態で関数が実行される**
 storeの情報を扱ったりもできる
 
-
-
 middlewareの指定方法は3つある
 
 1. プロジェクト全体で指定する
@@ -325,7 +315,7 @@ export default {
 </script>
 ```
 
-3 特定のページで関数を指定する
+3特定のページで関数を指定する
 
 ```js
 <script>
@@ -342,7 +332,7 @@ export default {
 ## Nuxt.jsのライフサイクル(深堀り)
 
 **初回アクセス時やリロード時には SSR処理とCSR処理がどちらも動作する。**
-lugins と created（beforeCreate）が 2 回走る点に注意です。
+luginsとcreated（beforeCreate）が2回走る点に注意です。
 
 - created
 createdはVueインスタンスが作成された直後に呼ばれる関数で、Vueインスタンスの各種プロパティ、メソッドは利用できるがレンダリングが完了していないためElementは利用できな
@@ -361,7 +351,7 @@ createdはVueインスタンスが作成された直後に呼ばれる関数で�
 ## Pluginsディレクトリで忘れてはいけないこと
 
 初回アクセス時やリロード時には、SSR処理とCSR処理がどちらも動作する。
-plugins と created（beforeCreate）が 2 回走る点に注意。
+pluginsとcreated（beforeCreate）が2回走る点に注意。
 
 >認証系は middleware や plugins に記述することが多いかもしれませんが、middleware の場合は内部ナビゲーション遷移時は CSR 側でしか呼ばれないため、どちらの処理も書いておく必要があります。 plugins の場合は、内部ナビゲーション遷移時は呼ばれないので注意が必要。
 **plugins の場合は、内部ナビゲーション遷移時は呼ばれないので注意が必要**
@@ -370,12 +360,10 @@ plugins と created（beforeCreate）が 2 回走る点に注意。
 
 **プラグイン**
 $rootやcontextから呼び出すことができる何かを提供する
-Vue インスタンスと、サーバコンテキストから特定のオブジェクトを利用できるようにするために利用されるもの。
+Vueインスタンスと、サーバコンテキストから特定のオブジェクトを利用できるようにするために利用されるもの。
 
 **モジュール**
 ビルドの動きを変えたい場合。設定により動的な挙動を持つプラグインとして提供したい場合
-
-
 
 ## 内部リンクとは(nuxt-link)
 
@@ -407,17 +395,17 @@ Nuxt.jsはこのディレクトリ内の.vueファイルをすべて読み込み
 
 - componentsディレクトリ
 componentsディレクトリにはページにインポートするすべてのVue.jsのコンポーネントファイルを入れる
-Nuxt.jsを使用すると作成したコンポーネントを.vueファイルに自動でインポートすることができる。
+Nuxt.jsを使用すると作成したコンポーネントを.vueファイルに自動でインポートできる。
 nuxt.config.js内のcomponentsをtrueに設定するとNuxt.jsがスキャンして自動でインポートしてくれる。
 
 - layoutディレクトリ
 layoutディレクトリのdefault.vueファイルを追加することですべてのpageに適用ができるデフォルトレイアウトを定義できる。
 これは特定のレイアウトを持たないすべてのページで使用される。
-レイアウトに含める必要があるのは、ページコンポーネントをレンダリングする```<Nuxt />```だけ
+レイアウトに含める必要があるのは、ページコンポーネントをレンダリングする ```<Nuxt />``` だけ
 
 - middlewareディレクトリ
 アプリケーションミドルウェアが含まれている。ミドルウェアを使用すると、**ページまたはページのグループ(レイアウト)をレンダリングする前に実行できるカスタム関数を定義できる。**
-共有ミドルウェアはmiddleware/ディレクトリに配置する必要がある。ファイル名はミドルウェアの名前になる```(middleware/auth.js)```はauthミドルウェアになる。
+共有ミドルウェアはmiddleware/ディレクトリに配置する必要がある。ファイル名はミドルウェアの名前になる ```(middleware/auth.js)``` はauthミドルウェアになる。
 
 ## Nuxtでの SPA・SSR・SSG とは
 
@@ -442,13 +430,13 @@ Vuexは**これまでprops, emitを利用した親子間のコンポーネント
 
 ## Vuexを使用するにあたっての弊害
 
-・TypeScriptとの相性が悪い
+できる・TypeScriptとの相性が悪い
 ・アーキテクチャが複雑で手軽に扱うことが難しい
 ・コンポーネントをテストすることが難しい
 
 こういった課題を解決するためにVue.jsの2.2以降にprovide、injectといったDIを行うことができる関数が追加された
 
-- DI 依存性の注入
+- DI依存性の注入
 依存性の注入とはコンポーネント間の依存関係をプログラムのソースコードから排除するために、外部の設定ファイルなどでオブジェクトを注入できるようにするソフトウェアパターンである。
 
 ## 今日のVuexとは
@@ -559,15 +547,12 @@ tsにする方法を記載する。
 >一部のモジュールは開発時およびビルド時にのみ必要になります。buildModules を使うことで本番環境の起動を速くし、本番環境にデプロイされる node_modules のサイズを大幅に減らすことができます。それぞれのモジュールのドキュメントを参照して、modules と buildModules どちらを使うのが推奨されているかを確認してください。
 
 使用方法の違いは以下のとおりです:
-nuxt.config.js に modules を追加するかわりに buildModules を使います
-package.json に dependencies を追加するかわりに devDependencies を使います（yarn add --dev または npm install --save-dev）
+nuxt.config.jsにmodulesを追加するかわりにbuildModulesを使います
+package.jsonにdependenciesを追加するかわりにdevDependenciesを使います（yarn add --devまたはnpm install --save-dev）
 
 ## tips
 
 [Vue2.xで、composition-api + TypeScript使っているときのメモ](https://zenn.dev/kawahara/scraps/38cc622c73f27a)
-
-
-
 
 ## watch
 
@@ -578,7 +563,6 @@ package.json に dependencies を追加するかわりに devDependencies を使
 
 watch(() => {},() => {}, [method1の結果, method2の結果])
 ```
-
 
 ## setup内でのdocument使用について
 
@@ -607,16 +591,15 @@ useAsync()はgenerate後もページ遷移時には非同期通信を行って�
 Nuxt Composition APIのv0.20.0未満ではuseFetch()を利用してgenerateを行っても静的化されない不具合がありました。最新のバージョンでは修正されているので、完全静的化を行う場合にはuseFetch()を使うのが便利でしょう。
 
 **useFetch()はasyncData()とは違い、ページコンポーネント以外でも利用できます。最新の記事を表示するサイドバーのようなコンポーネントからでも呼び出せます。**
-## useFetch, useAsyncの違い
 
+## useFetch, useAsyncの違い
 
 ## nuxt error
 
-process.server, process.client による条件分岐により、必要なコードだけをそれぞれの環境（Nuxt サーバー上、ブラウザ上）で実行できるようにする
-ブラウザ上の JavaScript に慣れていると window オブジェクトはあることが当たり前だけれど、Nuxt サーバー上にはもちろん存在しない
-Nuxt サーバーによる SSR（Server Side Rendering）では、created 時までのライフサイクルのコードが実行されるため、created までに書いている API 通信結果は DOM に格納されるが、CSR（Client Side Rendering）時にも実行されるため、通信が無駄になることがある。その場合 beforeMount に書くのが良い
-SSR 時と CSR 時の情報の差がある場合、エラーを吐く。そのため、ホットリロードではなく全画面リロードして動作の確認をする必要がある。条件分岐をコントロールする変数が、asyncData や created で更新される場合は要注意
-
+process.server, process.clientによる条件分岐により、必要なコードだけをそれぞれの環境（Nuxtサーバー上、ブラウザ上）で実行できるようにする
+ブラウザ上のJavaScriptに慣れているとwindowオブジェクトはあることが当たり前だけれど、Nuxtサーバー上にはもちろん存在しない
+NuxtサーバーによるSSR（Server Side Rendering）では、created時までのライフサイクルのコードが実行されるため、createdまでに書いているAPI通信結果はDOMに格納されるが、CSR（Client Side Rendering）時にも実行されるため、通信が無駄になることがある。その場合beforeMountに書くのが良い
+SSR時とCSR時の情報の差がある場合、エラーを吐く。そのため、ホットリロードではなく全画面リロードして動作の確認をする必要がある。条件分岐をコントロールする変数が、asyncDataやcreatedで更新される場合は要注意
 
 **Nuxtでアプリを作る際は、SSRでもCSRでも問題なく表示できるように作る必要がある。**
 
@@ -651,7 +634,6 @@ NuxtではNodeの環境変数processを拡張する形で、process.server, proc
 
 ## Nuxtライフサイクルフック
 
-
 mounted()
 CSR(クライアントサイドレンダリング)の略。
 
@@ -659,7 +641,6 @@ created()
 **SSRでも呼ばれる**
 createdで使う場合はSSRかCSRどちらで動作させるか明確にする。
 まずはじめに、Nuxt.jsはSSRとCSRの境界が曖昧で、明確に分けて設計・実装することが慣れるまでは意外と難しかったりします。たとえばcreated()はSSRでもCSRでもどちらでも動きますので、createdで初期化処理をする際、初回アクセス時は2回同じ処理をしていることはご存知ない方もいらっしゃるかもしれません。
-
 
 ```js
 created() {
@@ -722,7 +703,7 @@ mounted（CSR）
 
 [参考URL](https://dev.appswingby.com/nuxt/nuxt-js%E3%81%AEserver-middleware%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E6%89%8B%E8%BB%BD%E3%81%ABbffbackends-for-frontends%E3%82%92%E5%B0%8E%E5%85%A5%E3%81%99%E3%82%8B/)
 
-Nuxt.jsには、serverMiddlewareという機能があります。この機能を利用するとNuxt.js内部でAPIサーバを構築することができる。
+Nuxt.jsには、serverMiddlewareという機能があります。この機能を利用するとNuxt.js内部でAPIサーバを構築できる。
 
 ## NuxtのTokenの作成
 
@@ -731,7 +712,6 @@ nuxtはSSRで動作をさせるのであれば、SSRとCSRのどちらでもlogi
 こんな感じでapiに問い合わせてjwtを取得している。
 取得後はlocalStorageに保存。かつencordしている
 decordできないものはおかしいと判断。
-
 
 ```ts
 /** トークンの取得 */
@@ -754,26 +734,25 @@ export async const fetchTokens(code: string): Promise<ApiTokens> => {
 
 - targetプロパティ
 
-設定可能な値はserverかstaticのどちらかで、デフォルトは`target: server`
+設定可能な値はserverかstaticのどちらかで、デフォルトは `target: server`
 **これから開発するアプリのデプロイ先によってこの値を判断する**
 
 サーバーホスティング
 
-`target: server`とする
+`target: server` とする
 サーバ上でNuxtを動かすとき
 EC2, ECS, レンタルサーバーなど
 
 静的サイトホスティング
 
-`target: static`とする
+`target: static` とする
 ホスティングサービスへブラウザがそのまま実行できるHTMLやJSをデプロイするとき
 
-S3+CloudFront、Netlify、Vercel、Firebase Hosting など
+S3+CloudFront、Netlify、Vercel、Firebase Hostingなど
 
 - modeプロパティ
 
-設定可能な値はspaかuniversalのどちらかで、デフォルトは`mode: 'universal'`
-
+設定可能な値はspaかuniversalのどちらかで、デフォルトは `mode: 'universal'`
 
 ## Nuxt envについて
 
@@ -785,11 +764,10 @@ S3+CloudFront、Netlify、Vercel、Firebase Hosting など
 
 **nuxt.config.jsのenvがサーバーからもクライアントからも読み取れるようになってしまうのが原因**
 
-
 2.13以降に使える
 
 publicRuntimeConfig : CSR時・SSR時どちらでも利用したいもの
-**※publicRuntimeConfigに登録した値は`window.__NUXT__.config`に登録されHTMLに展開される。**
+**※publicRuntimeConfigに登録した値は `window.__NUXT__.config` に登録されHTMLに展開される。**
 
 privateRuntimeConfig : SSR時のサーバーサイド限定で利用したいもの
 **ただ、SPAモードでは、クライアントでレンダリングを行なっているため、ここに登録した値を参照することはできません。**
@@ -814,7 +792,7 @@ export default {
 
 envプロパティに登録した環境変数はコンパイル中に変換され値がセットされる
 **コンパイルが実行されるタイミングは、nuxt buildコマンドが実行された時**
-buildコマンド以前に環境変数の値を定義していないとenvプロパティで参照することができない。
+buildコマンド以前に環境変数の値を定義していないとenvプロパティで参照できない。
 >envプロパティに定義する環境変数は、DockerfileのENVで定義する必要があります。
 
 ---
@@ -837,6 +815,7 @@ NuxtでSassを使うにはnode-sass、sass-loader2種類のパッケージが必
 `$ yarn add --dev node-sass sass-loader @nuxtjs/style-resources`
 
 nuxt.config.tsに以下を記載する。
+
 ```ts
 modules: ['@nuxtjs/style-resources'],
 ```
@@ -859,10 +838,9 @@ modules: ['@nuxtjs/style-resources'],
 SSRの場合、buildで生成されるdistディレクトリの中身をそのままデプロイすれば良いわけではない。
 
 **SSRを静的サイトホスティング**でdeployする方法
-Nuxt.jsのSSRサイトの成果物であるJavaScriptのファイル郡とその他の必要な静的なassetsをFirebase Hosting にデプロイし、
-そのURLに対するアクセスをFirebase Hosting の rewrites ルールによって、同じく Firebase で提供されている Cloud Functions に作った HTTP 関数に向けるようにし、その HTTP 関数で Nuxt.js のレンダリング関数を実行するという流れを実現すれば良いということです。
-ディレクトリ構成や使用しているパッケージ、Nuxt.js の各種設定などはこれを実現するための唯一の方法はなく、どのような方法でも上記の流れを実現することができれば問題がない
-
+Nuxt.jsのSSRサイトの成果物であるJavaScriptのファイル郡とその他の必要な静的なassetsをFirebase Hostingにデプロイし、
+そのURLに対するアクセスをFirebase Hostingのrewritesルールによって、同じくFirebaseで提供されているCloud Functionsに作ったHTTP関数に向けるようにし、そのHTTP関数でNuxt.jsのレンダリング関数を実行するという流れを実現すれば良いということです。
+ディレクトリ構成や使用しているパッケージ、Nuxt.jsの各種設定などはこれを実現するための唯一の方法はなく、どのような方法でも上記の流れを実現できれば問題がない
 
 ## Tips(参考書類)
 

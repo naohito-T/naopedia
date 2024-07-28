@@ -81,7 +81,6 @@ Webではこの概念を使用し作成する
 Key frame → frame → frame → frame → Key frame
 この**frameのプロセスをTween**という。
 
-
 ひとつのtweenをまとめると
 
 - ターゲットオブジェクト
@@ -91,8 +90,7 @@ Key frame → frame → frame → frame → Key frame
 
 ### key frame
 
-
-**キーフレームとは、CGのアニメーションの中で主となる変化が定義されているフレームのこと。**物体の形や位置の変化ポイントが指定され、その間を補完することで滑らかな動画像が作成される。**動画の再生に何らかの変化を起こすフレームアクションは、キーフレームにしか設定することができない。**
+**キーフレームとは、CGのアニメーションの中で主となる変化が定義されているフレームのこと。**物体の形や位置の変化ポイントが指定され、その間を補完することで滑らかな動画像が作成される。**動画の再生に何らかの変化を起こすフレームアクションは、キーフレームにしか設定できない。**
 
 アニメーションやコンピューターーグラフィックに置いて、**動画像の作成や記録の基点となるフレーム**
 キーフレーム間の画像を保管することでアニメーションを作成したり、キーフレームからのずれ（差分フレーム）のみを記録することで動画データを圧縮できる。
@@ -120,7 +118,6 @@ set: 状態を指定します（CSSを使わずに、GSAP内で指定できる�
 タイムラインは情報を整理する方法
 **イベントを時系列に並べることによって**情報を整理する方法
 
-
 ### position parameter
 
 [リファレンス](https://greensock.com/position-parameter/)
@@ -147,7 +144,6 @@ resume() // 方向を変更せずに再生を再開する
 
 ```
 
-
 ---
 
 ## タイムリマップとは
@@ -156,12 +152,9 @@ resume() // 方向を変更せずに再生を再開する
 
 考え方は下図の通りで、モーションシーケンスのいち部分だけをゆっくり再生させるｋとでその部分だけがスローモーションとなり、全体的に緩急のある動きに仕上げることができる。
 
-
 **プログラムによってタイムリマップを実現する最大のメリットはフレームレートが落ちないという点**
 
-
 ## gsapでのイージング
-
 
 GSAPは初めからイージングがかかっている
 
@@ -170,23 +163,24 @@ GSAPは初めからイージングがかかっている
 [参考URL](https://designsupply-web.com/media/programming/6916/)
 gsapの**アニメーションの長さは設定されていない場合は、default 0.5秒**
 
-opacity	透明度(0～1の間)
-x	x軸方向に移動(単位はpx) ※translateX()のショートカット
-y	y軸方向に移動(単位はpx) ※translateY()のショートカット
-scale	大きさ(単位は倍)
-width	数値の他に、"auto"に対してもアニメーションできる
-height	数値の他に、"auto"に対してもアニメーションできる
-top	上配置
-left	左配置
-backgroundColor	背景色
-margin	マージン
-padding	パディング
-rotation	回転
-skew	傾斜変形
+opacity 透明度(0～1の間)
+x x軸方向に移動(単位はpx) ※translateX()のショートカット
+y y軸方向に移動(単位はpx) ※translateY()のショートカット
+scale 大きさ(単位は倍)
+width 数値の他に、"auto"に対してもアニメーションできる
+height 数値の他に、"auto"に対してもアニメーションできる
+top 上配置
+left 左配置
+backgroundColor 背景色
+margin マージン
+padding パディング
+rotation 回転
+skew 傾斜変形
 
 ## from
 
 スタートの状態を表す
+
 ```js
 gsap.from(
   アニメーションさせる要素,
@@ -258,6 +252,7 @@ gsap.set(
   },
 );
 ```
+
 状態を指定します
 (CSSを使わずに、GSAP内で指定できます)
 fromは、実行されると初期状態に戻るアニメーションが起きてしまうので、位置は変更してそのままにしたい時に使います
@@ -275,14 +270,13 @@ complete … アニメーション直後の状態にする
 reverse … アニメーションを逆再生する
 none … 何も指定しない
 
-
 ```ts
 toggleActions: 'play pause resume reverse',
 ```
 
 一番左から順番に説明していきます。
 
-① onEnter （上の例ではplayの部分）
+① onEnter（上の例ではplayの部分）
 スクロール位置が「開始」を超えて下に移動したときのコールバック（通常、トリガーがスクロールされて表示されたとき）
 
 ② onLeave（上の例ではpauseの部分）
@@ -291,10 +285,11 @@ toggleActions: 'play pause resume reverse',
 ③ onEnterBack（上の例ではresumeの部分）
 スクロール位置が「終了」を超えて上に移動したときのコールバック（通常、トリガーがスクロールしてビューに戻ったとき）
 
-④ onLeaveBack （上の例ではreverseの部分）
+④ onLeaveBack（上の例ではreverseの部分）
 スクロール位置が「開始」を超えて上に移動したときのコールバック（通常、トリガーが開始を超えて後方にスクロールされたとき）
 
 ## ScrollTrigger 独立型
+
 [参考URL](https://devsakaso.com/gsap-scrolltrigger-pin/)
 
 ```ts
@@ -305,11 +300,13 @@ ScrollTrigger.create({
   // end: 'bottom 30%' //などと設定するとfixedの期間がより短くなる
 })
 ```
-pinは、gsapのscrollTriggerとは独立して生成することができます。
+
+pinは、gsapのscrollTriggerとは独立して生成できます。
 ScrollTriggerと大文字なので注意しましょう。
-pinはリンクさせる必要がないので大文字ScrollTriggerでcreateすることができます。
-pinはposition: fixedが付与されることで、固定することができます。
+pinはリンクさせる必要がないので大文字ScrollTriggerでcreateできます。
+pinはposition: fixedが付与されることで、固定できます。
 そして、triggerに指定した要素の高さを超えると動き出します。
 
 ## ScrollTrigger プロパティ一覧
+
 [参考URL](https://qiita.com/heeroo_ymsw/items/ae22e4cee8c6a08ff852)

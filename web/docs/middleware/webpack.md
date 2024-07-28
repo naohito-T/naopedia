@@ -131,6 +131,7 @@ webpack4に入っていたnode module一式install
 ```
 
 webpack.config.jsに以下を追加する
+
 ```js
  resolve: {
     extensions: ['.ts', '.js'],
@@ -163,5 +164,3 @@ webpack.config.jsに以下を追加する
   target: ['node', 'es5'],
 
 ```
-
-

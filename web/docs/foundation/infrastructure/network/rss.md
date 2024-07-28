@@ -17,12 +17,9 @@ SmartNewsは、WebやSmartFormatから取得した情報を「SmartView（スマ
 ## SmartNews
 
 **SmartNewsについて知る**
+
 - 独自のアルゴリズムで記事を自動的に表示している
 - 記事の配信にはSmartFormatというフィードの開発が必要になる
 - 規約・コンテンツポリシーを厳守する必要がある
 
 SmartNewsは、WebやSmartFormatから取得した情報を「SmartView（スマートビュー）」という機能で高速表示し、ユーザーに快適な閲読体験を提供しています。
-
-
-
-

@@ -44,7 +44,6 @@ has_many
 
 [参考URl](https://teratail.com/questions/157411)
 
-`rails db:migrate`や`rails db:create`に関してはrails側からdbへ接続して実行する（コアライブラリがあれば良い）
+`rails db:migrate` や `rails db:create` に関してはrails側からdbへ接続して実行する（コアライブラリがあれば良い）
 
-`rails db`に関してはrailsから`database.yml`で設定されているDBに対して、各DBに対応した「コマンドラインインタフェース」を起動する。PostgreSQLであれば、psqlコマンドが必要。
-
+`rails db` に関してはrailsから `database.yml` で設定されているDBに対して、各DBに対応した「コマンドラインインターフェース」を起動する。PostgreSQLであれば、psqlコマンドが必要。

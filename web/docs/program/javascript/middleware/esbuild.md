@@ -1,4 +1,5 @@
 # esbuild
+
 [リファレンス](https://esbuild.github.io/getting-started/#deno)
 [参考URL](https://qiita.com/hedrall/items/2548718cfdf7bef3efc0)
 
@@ -6,6 +7,7 @@ buildツールでぐいぐいきてるやつ
 webpackなどに変わるフロントエンドのコード変換+バンドルツールで、なんとwebpackと比較して10-100倍速度が早いそうです。
 
 ## esbuild configファイルは？
+
 [オプション一覧](https://aloerina01.github.io/blog/2021-09-15-1#esbuild-%E3%81%A8%E3%81%AF)
 configファイルなしで実行できるので、npm installして即利用できます。基本的なオプションも揃っています。
 
@@ -20,12 +22,13 @@ tsconfigの特定フィールドのみ参照される、詳細は公式にて
 パフォーマンス優先のためできるだけシンプルな機能群に絞っている。
 
 以下は対応できない。
+
 - 型チェックはしない
 - es5への変換
 - CSS Modules
-- Code Splitting と import() による lazy loading
+- Code Splittingとimport() によるlazy loading
 - next.jsでの利用 ( next-babel-loaderの置き換えが難しい )
-- 議論 => https://github.com/vercel/next.js/discussions/16152
+- 議論 => <https://github.com/vercel/next.js/discussions/16152>
 - ポストCSSの利用
 - HMR（ホットモジュール）→あまり開発が盛んではない。
 - 型定義ファイルの出力
@@ -35,7 +38,7 @@ tsconfigの特定フィールドのみ参照される、詳細は公式にて
 型ファイルを出力する
 esbuildでは型定義ファイルは出力されません。
 型定義ファイルはtscコマンドで作成します。
---declarationと--emitDeclarationOnlyのオプションを渡すことで型定義ファイルのみを出力することができます。
+--declarationと--emitDeclarationOnlyのオプションを渡すことで型定義ファイルのみを出力できます。
 
 ```json
 package.json
@@ -56,6 +59,5 @@ package.json
 
 ### esbuild-register
 
-`ts`ファイルを直接実行したい場合に使用する。
-従来であれば`ts-node`を利用することが多いが、esbuild-registerを利用すると、高速にTSファイルを実行することが可能。
-
+`ts` ファイルを直接実行したい場合に使用する。
+従来であれば `ts-node` を利用することが多いが、esbuild-registerを利用すると、高速にTSファイルを実行することが可能。

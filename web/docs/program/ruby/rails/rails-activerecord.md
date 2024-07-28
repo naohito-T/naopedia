@@ -12,12 +12,12 @@ ActiveRecordによるモデルには大きく分けて3つの側面がある。
 
 3. ビジネスロジックの実装的な振る舞いに関するところ、すなわちバリデーションやレコード保存時などに実行するさまざまなコールバックなどを実行する役割。
 
-
 ## Active record モデル命名規則
 
 [![Image from Gyazo](https://i.gyazo.com/f02b7d1d3b91557b6e119f9fa8d2dea5.png)](https://gyazo.com/f02b7d1d3b91557b6e119f9fa8d2dea5)
 
 ## Active record モデル関連　コマンド
+
 [参考URL](https://qiita.com/zaru/items/cde2c46b6126867a1a64)
 
 ※/db/migrate/ 以下にマイグレーションファイルが作成されるので、NOT NULLだったり、**カラム名の修正とかをしたい場合は、ここで直接修正してしまう。**
@@ -55,8 +55,6 @@ $ rake db:migrate:status
    up     20140909072813  Change options to user spot
 ```
 
-
-
 ---
 
 [参考URL](https://railsdoc.com/migration)
@@ -79,7 +77,7 @@ has_manyは関連づけの中でも参照される側(親側)。一多対の関�
 
 ## where
 
-whereメソッドに`カラム名:配列`というハッシュを渡すと、カラムの値が複数の候補のどれかと同じ
+whereメソッドに `カラム名:配列` というハッシュを渡すと、カラムの値が複数の候補のどれかと同じ
 
 ```ruby
 members = Member.where(number: [15, 17, 19]) # 15 or 17 or 19
@@ -89,6 +87,7 @@ members = Member.where.("name = ?", name) # プレースホルダ
 ```
 
 ---
+
 ## Railsのモデル(ActiveRecord) クラスのクラスメソッドについて
 
 Railsのモデル（ActiveRecord）はDBからデータを取り出したり検索したりするための強力な機能を備えている
@@ -121,7 +120,7 @@ ActiveRecord::RecordNotFoundが発生する
 
 検索対象のカラムはいくつも設定し1件取得したい場合
 あるカラムを使ってレコードを検索し、**最初に一致したものを返す**
-引数には`name: "Taro"`のようにハッシュでカラム名: 値を指定する。
+引数には `name: "Taro"` のようにハッシュでカラム名: 値を指定する。
 
 ```ruby
 member = Member.find_by(sex: 1, administrator: false)
@@ -144,15 +143,14 @@ ActiveRecord:Relationというクラスのインスタンスで検索結果の�
 
 即座に明治的に任意の箇所でSQLを発行したい場合。
 
-
 ## ActiveRecord::Relation
 
-配列と同様のアクセスのためのインターフェイスを持っている。このインターフェイスを利用することでSQLの実行結果のデータを普通の配列と同じような感覚で扱える。
+配列と同様のアクセスのためのインターフェースを持っている。このインターフェースを利用することでSQLの実行結果のデータを普通の配列と同じような感覚で扱える。
 
 ActiveRecordのQuery Interfaceによる操作結果をオブジェクトとして表現したもの
 
 SQLのそれぞれの表現に対応したメソッドをチェインさせることが可能。
-これらのインターフェイスをQuery Interfaceと呼ぶ
+これらのインターフェースをQuery Interfaceと呼ぶ
 
 - メソッド実行について
 
@@ -170,11 +168,9 @@ SQLのそれぞれの表現に対応したメソッドをチェインさせる�
 このように設計されている理由はメソッドいチェインによるクエリの構築を行うため。
 検索メソッドを実行した途端、即座にSQLが実行されてしまう設計の場合最初のメソッド呼び出しの時点ですべての条件を準備して一度にメソッドへ渡す必要が出てきてしまうため出てきてしまうため。
 
-
 ---
 
 ## クエリーメソッド
-
 
 以下はクエリーメソッドというらしい
 **クエリーメソッドのつなげる順番は自由**
@@ -241,6 +237,7 @@ whereメソッドで検索を行うときは以下にしてはいけない
 ```ruby
 @member = Member.where("name = '#{name}'")
 ```
+
 変数の中にSQL文にとって意味のある文字(1重引用符)が含まれると、データベースが不正に利用されることがあるため
 ハッシュで指定するかプレースホルダで変数を展開すれ。
 
@@ -279,7 +276,6 @@ members = Members.find_by_sql("SELECT * FROM members WHERE number = 11")
 前提
 **バリデーションを設定しただけでは保存に失敗したときのメッセージは表示されない。**
 
-
 - presence
 presenceで値が空とみなされるのは、nil, false, 空文字
 ※これはblank?メソッドがtrueを返す場合と同じ
@@ -311,7 +307,6 @@ Railsではvalid?メソッドを実行するとバリデーションが実行さ
 バリデーションが通ればtrueを返し、引っかかればfalseを返します。
 ちなみにinvalid?メソッドは逆の振る舞いをします。
 
-
 ## validatesメソッドの書き方
 
 シンボルでモデルの属性名を指定し、その後にハッシュでバリデーションの種類: trueを並べれば、その種類のバリデーションが行われる。
@@ -321,7 +316,6 @@ validates :number, :name, presence: true
 # validates :シンボルでモデルの属性名
 ```
 
-
 ## Rails ActiveRecord まとめ
 
 モデルはデータベースのテーブルに対応するオブジェクト。モデルクラスのインスタンスはテーブルの1つのレコードにあたる
@@ -330,11 +324,12 @@ validates :number, :name, presence: true
 データベースの作成やマイグレーションにはbin/railsコマンドを使う
 saveメソッドがバリデーションを実行する。
 
-
 ## Rails ポリモーフィック
+
 [参考URL](https://blog.agile.esm.co.jp/entry/rails-polymorphic-story)
 
 ## STI(Single Table Inheritance) 単一テーブル継承(STI)
+
 [参考URL](https://qiita.com/niwa1903/items/218713c076fb0075712f)  
 [参考URL](https://sakaishun.com/2021/08/08/stisingle-table-inheritance/)
 
@@ -342,6 +337,3 @@ saveメソッドがバリデーションを実行する。
 
 同一テーブル内に継承関係のあるクラスのカラムをすべて持ってしまうことを言います。
 たとえば次のような継承関係にあるモデルがあるとします。
-
-
-

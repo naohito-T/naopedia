@@ -44,7 +44,7 @@
 VS Codeのビルドタスク設定（tasks.json）をしておくと、Cmd + Shift + Bで任意のビルドタスクを実行できるようになる。
 
 メリット
-VS Codeで作成したコードを実行するときに毎回ターミナルから`node main`や`npm start`とか入力するのは面倒
+VS Codeで作成したコードを実行するときに毎回ターミナルから `node main` や `npm start` とか入力するのは面倒
 VS Codeのビルドタスクを設定すると、こういったコマンドをCmd + Shift + Bというショートカット一発で実行できる
 ※デバッグ起動などをtasks.jsonに記載しておくと便利
 
@@ -69,7 +69,7 @@ VS Codeのビルドタスクを設定すると、こういったコマンドをC
 
 ## launch.json
 
-[参考URL](https://amateur-engineer-blog.com/VS Code-launchjson/)
+[参考URL](<https://amateur-engineer-blog.com/VS> Code-launchjson/)
 
 VS Codeでデバッグ実行するための設定ファイル
 どの言語でどのファイルを実行するかなどを設定する。
@@ -105,7 +105,6 @@ VS Code自体が**Electron**を用いて作られているのを考えると当�
 
 プログラミング言語の開発環境は目まぐるしく進化しています。近年登場したlanguage server protocol (LSP) という枠組みは中でもとくに強力であり、VimやEmacs、 Visual Studio Code (VS Code) といった著名なテキストエディターで広く使われるようになった。
 
-
 [language server protocolについて (前編)](https://qiita.com/atsushieno/items/ce31df9bd88e98eec5c4)
 
 language ServerとはID#が必要とするプログラムのプロジェクトソースを解析して情報を提供する機能をサービスとして実現するもの
@@ -113,13 +112,13 @@ language ServerとはID#が必要とするプログラムのプロジェクト�
 
 **特徴**
 LSPの特徴は、テキスト補完などの**開発支援機能**をサーバとクライアント（エディター）の2つに分け、特定のプロトコルで互いにやり取りするという方式にある。
-従来は**各々のテキストエディターが言語ごとにそれぞれプラグインや拡張機能を開発する必要があったが、** 
+従来は**各々のテキストエディターが言語ごとにそれぞれプラグインや拡張機能を開発する必要があったが、**
 LSPの登場により**言語固有の機能はサーバ側**で、**テキストエディター側の機能はクライアント側**で各々開発すれば良くなった。
 その結果、開発にかかる手間が大幅に減少しただけでなく、マイナーな言語や新興テキストエディターでもリッチな開発体験を気軽に提供できるようになった。
 
 ## tips
 
-[参考URL](https://coliss.com/articles/build-websites/operation/work/removebg-for-VS Code.html)
+[参考URL](<https://coliss.com/articles/build-websites/operation/work/removebg-for-VS> Code.html)
 
 VS Codeで画像から背景を1クリックで切り抜けるようになった。
 
@@ -134,7 +133,7 @@ recommendationsの書き方は少々癖があって、`著者名.拡張機能名
 
 ## vscode拡張機能無効(ワークスペース)
 
-ワークスペース単位で拡張機能を無効にすることができるが、管理されているファイルなどがないため大変という話
+ワークスペース単位で拡張機能を無効にできるが、管理されているファイルなどがないため大変という話
 [参考URL](https://take4-blue.com/program/visual-studio-code%EF%BC%8D%E6%A9%9F%E8%83%BD%E6%8B%A1%E5%BC%B5%E3%81%AE%E7%84%A1%E5%8A%B9%E5%8C%96/)
 
 ## vscode リモートエクスプローラーをCLIから開く
@@ -142,6 +141,7 @@ recommendationsの書き方は少々癖があって、`著者名.拡張機能名
 [参考URL](https://qiita.com/Slowhand0309/items/293fc5db362df9ceba67)
 
 パスがこれへ変更になっていた。
+
 ```sh
 $ pwd
 /Users/naohito.tanaka/Library/Application Support/Code/User/globalStorage

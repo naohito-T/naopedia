@@ -1,14 +1,14 @@
 # SPA
+
 [SPA/SSR/プリレンダリングの違い](https://qiita.com/amakawa_/items/e7d0720e1ab8632769bf)
 
 ## SPAとは
+
 [参考URL](https://www.azusuki.com/spa-mpa/)
 
 通信パターンの単語とのこと（Webサイトの通信について）
 
 ## ブラウザバック時のUI状態復元
-
-
 
 ## SPAで軽視されがちな部分
 
@@ -27,8 +27,8 @@ Browser historyなライフタイムStateの代表格の1つに、スクロー�
 しかし現実には復元されないSPAが多いように感じますし、関連ライブラリの少なさなどから実装難易度高いのが現状。
 [スコープとライフタイムで考えるReact State再考](https://zenn.dev/akfm/articles/react-state-scope)
 
-
 ## Stateの分類
+
 [スコープとライフタイムで考えるReact State再考(これは素晴らしい)](https://zenn.dev/akfm/articles/react-state-scope)
 
 Stateの種類
@@ -57,6 +57,7 @@ Server State: SWR
 
 スコープによって大きく3つに分けられたstateの分類を**ライフタイムでより細分化する**
 先に分類したStateをライフタイムで細分化すると以下のようになります。
+
 - Local State
   - Component unmount
 
@@ -65,21 +66,17 @@ Server State: SWR
   JavaScriptのメモリが解放されるまで、つまりSPAにおいては「リロードや離脱が発生するまで」になる。
 
   - Browser history
-  ブラウザの履歴が破棄されるまで、実装的には`history.push`や`replaceState`によって履歴に対してState Objectが関連付けられるので、このObjectが破棄されるまでになります
-  実際にObjectが破棄されるタイミングは以下仕様を確認した限りブラウザの実装によりそうですが`document`が非アクティブなタイミングで破棄されうるようです。
+  ブラウザの履歴が破棄されるまで、実装的には `history.push` や `replaceState` によって履歴に対してState Objectが関連付けられるので、このObjectが破棄されるまでになります
+  実際にObjectが破棄されるタイミングは以下仕様を確認した限りブラウザの実装によりそうですが `document` が非アクティブなタイミングで破棄されうるようです。
 
   - URL Persistence
-  URL PersistenceはBrowser historyに近しいですが、こちらは**URLが履歴やブックマークに存在する限り生存可能**なライフタイムです。URLに基づきStateを初期化・Stateが更新されるたびにURLを更新をおこないます。こちらも`history.push`や`replaceState`を駆使して実装する（もしくはライブラリを通して利用する）ことになります。
+  URL PersistenceはBrowser historyに近しいですが、こちらは**URLが履歴やブックマークに存在する限り生存可能**なライフタイムです。URLに基づきStateを初期化・Stateが更新されるたびにURLを更新をおこないます。こちらも `history.push` や `replaceState` を駆使して実装する（もしくはライブラリを通して利用する）ことになります。
 
   - Browser storage
-  Browser storageはLocal StorageやSession StorageなどのWeb Storageに保存した場合、つまりこれらがブラウザによって破棄されるまでになります。要件・要望としては多いようで、State管理の関連ライブラリでStorageと一部同期するもの（後述のrecoil-persist やredux-persist ）が多数存在します。
-
+  Browser storageはLocal StorageやSession StorageなどのWeb Storageに保存した場合、つまりこれらがブラウザによって破棄されるまでになります。要件・要望としては多いようで、State管理の関連ライブラリでStorageと一部同期するもの（後述のrecoil-persistやredux-persist）が多数存在します。
 
 - Server State
   - Server
-
-
-
 
 ## SPA 仕組み
 
@@ -87,7 +84,6 @@ Server State: SWR
 そこでブラウザ上のJSがAPIを叩くことで、APIからのレスポンスをもとに初期表示との差分を更新する形でDOMを構築しHTML要素がレンダリングされる。
 **※返ってくるHTMLファイルは単一のためSingle Pageと呼ばれている。**
 **後述するSSRと対比してClient Side Renderingと呼ばれることも**
-
 
 ホスティングサーバはS3の場合もある。
 
@@ -114,9 +110,10 @@ SPAでOGPを生成するにはなにかあるらしい
 
 まず大前提でNuxtやReactなどのJSで呼ばれる時、SSRとCSRの処理に分かれる
 
-CSR ブラウザで動作する部分
+CSRブラウザで動作する部分
 
 以下例
+
 ```html
 <p id="mode"></p>
 <script>

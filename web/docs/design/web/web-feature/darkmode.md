@@ -2,7 +2,7 @@
 
 [CSSだけでもWebページをダークモード対応](https://note.com/psephopaiktes/n/n878424784a1b)
 
->prefers-color-scheme という Media Query を主要ブラウザがサポートしたため、Webでもダークモードに対応がしやすくなりましたね。CSSファイルに「ユーザがダークモードにしていたらこのCSS、ライトモードにしていたらこのCSSを適応」というように簡単に指定できるようになります。
+>prefers-color-scheme という Media Query を主要ブラウザがサポートしたため、Webでもダークモードに対応がしやすくなりましたね。CSSファイルに「ユーザがダークモードにしていたらこのCSS、ライトモードにしていたらこのCSSを適用」というように簡単に指定できるようになります。
 
 ```scss
 @media (prefers-color-scheme: light) {

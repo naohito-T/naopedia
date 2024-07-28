@@ -1,4 +1,5 @@
 # API permission 設計
+
 [参考URL](https://kenfdev.hateblo.jp/entry/2020/01/13/115032)
 [権限管理の苦い思い出を新規サービスで昇華した話](https://link-and-motivation.hatenablog.com/entry/20220401-authorization)
 [システムの権限管理を設計するときの考え方とは](https://applis.io/posts/how-to-manage-authorization#%E6%A8%A9%E9%99%90%E7%AE%A1%E7%90%86%E3%82%92%E8%A8%AD%E8%A8%88%E3%81%99%E3%82%8B%E3%83%95%E3%83%AD%E3%83%BC)
@@ -22,10 +23,10 @@ routerでやるとエンドポイントをみただけで一発でわかる
 同じapiを叩けるが、クライアントによって出力を変えるなどの属性
 
 ## 設計をする時に考えること
+
 [![Image from Gyazo](https://i.gyazo.com/5c28b8f0c3dcfdcf9b3bb8ac0e089a66.png)](https://gyazo.com/5c28b8f0c3dcfdcf9b3bb8ac0e089a66)
 
 [![Image from Gyazo](https://i.gyazo.com/89d50ad8ccb2b010782413ebe6fdaa49.png)](https://gyazo.com/89d50ad8ccb2b010782413ebe6fdaa49)
-
 
 ## RBAC: Role-Based Access Control
 
@@ -40,4 +41,3 @@ RBACは「ユーザーの役割によって権限のチェックを行う」や�
 ABACは「ユーザーの属性によって権限のチェックを行う」やり方です。たとえばツイートの投稿者かどうか、あるいは同じグループに所属しているかどうか、です。
 
 ABACは柔軟な権限管理ができる一方で実装が大変だったり、ものによってはデータベースへのアクセスがふえてパフォーマンスが悪くなったりします。RBACとABACは、システムの種類によって使い分けるとよいです。ひとつのシステム内で両方を使うことももちろんあります。
-

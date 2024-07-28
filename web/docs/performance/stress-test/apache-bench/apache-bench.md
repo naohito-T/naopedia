@@ -1,11 +1,12 @@
 # Apache Bench
+
 [参考URL](https://qiita.com/wifecooky/items/1fc87bcdf6fdcf80637e)
 
 Webサーバの負荷テストならApache Bench（ab）がいい。
 ※macには標準でインストールされている。
 
 ```sh
-$ ab -n [総リクエスト数] -c [同時リクエスト数] [URL]
+ab -n [総リクエスト数] -c [同時リクエスト数] [URL]
 ```
 
 サーバーの限界を測定するには、

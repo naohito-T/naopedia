@@ -1,4 +1,5 @@
 # Golang
+
 [日本のGophers代表? 解説記事がある](https://docs.google.com/presentation/d/1RVx8oeIMAWxbB7ZP2IcgZXnbZokjCmTUca-AbIpORGk/edit#slide=id.g935656cef3_0_12)  
 [メルカリ（プログラミング言語Go完全入門）](https://docs.google.com/presentation/d/1RVx8oeIMAWxbB7ZP2IcgZXnbZokjCmTUca-AbIpORGk/edit#slide=id.g4f417182ce_0_80)
 
@@ -16,6 +17,7 @@ Goは実行速度では遅いが、コンパイルが圧倒的に早くネット
 ---
 
 ## Goのモジュール管理
+
 [参考URL](https://text.baldanders.info/golang/manage-modules/)
 
 ```sh
@@ -25,24 +27,25 @@ GO111MODULE=""
 ```
 
 ### GOPATH モードとモジュール対応モード
+
 [Go のモジュール管理](https://zenn.dev/spiegel/articles/20210223-go-module-aware-mode)  
-バージョン`1.11`以降からGoツールーチェーンは以下の2つのモードのどちらかで動作する。
+バージョン `1.11` 以降からGoツールーチェーンは以下の2つのモードのどちらかで動作する。
 
 - GOPATHモード（GOPATH mode）
-  - バージョン`1.10`までのモード。標準ライブラリを除くすべてのパッケージのコード管理とビルドを環境変数GOPATHで指定されたディレクトリ下で行う。パッケージの管理はリポジトリの最新リビジョンのみが対象となる
+  - バージョン `1.10` までのモード。標準ライブラリを除くすべてのパッケージのコード管理とビルドを環境変数GOPATHで指定されたディレクトリ下で行う。パッケージの管理はリポジトリの最新リビジョンのみが対象となる
 - モジュール対応モード（module-aware mode）
   - 標準ライブラリを除くすべてのパッケージをモジュールとして管理する。コード管理とビルドは任意のディレクトリで可能で、モジュールはリポジトリのバージョンタグまたはリビジョン毎に管理される
 
 ### モジュールとは
 
 モジュール対応モードでは、標準ライブラリを除くパッケージを**モジュール**として管理する。  
-パッケージが単一のディレクトリを指すのに対し、モジュールは`go.mod`ファルのあるディレクトリ以下の（go.modは含まない）すべてのパッケージがモジュールの配下となる。
+パッケージが単一のディレクトリを指すのに対し、モジュールは `go.mod` ファルのあるディレクトリ以下の（go.modは含まない）すべてのパッケージがモジュールの配下となる。
 
 ### go.sum
 
-### `SHA-256`チェックサム
+### `SHA-256` チェックサム
 
-`SHA-256`チェックサムは、データの整合性を確認するために使用されるハッシュ関数の出力。  
+`SHA-256` チェックサムは、データの整合性を確認するために使用されるハッシュ関数の出力。  
 SHA-256は「Secure Hash Algorithm 256-bit」という意味で、256ビット（32バイト）のハッシュ値を生成する。  
 このハッシュ値は、ファイルやデータの内容が変更されていないかどうかを確認するのに役立つ。
 
@@ -69,14 +72,15 @@ Go言語のモジュールシステムでは、`go.sum` ファイルに各依存
 go getやgo mod tidyによってインストールされたパッケージは$GOPATH/pkg/modに保存される。
 
 ```sh
-$ go get [パッケージ名] # 指定したパッケージのインストール
-$ go get # importに記載されたパッケージのインストール
-$ go mod tidy	# importに記載されたパッケージのインストール。不要なパッケージの削除
+go get [パッケージ名] # 指定したパッケージのインストール
+go get # importに記載されたパッケージのインストール
+go mod tidy # importに記載されたパッケージのインストール。不要なパッケージの削除
 ```
 
-パッケージのインストールが必要なGoファイルを実行する場合、Go 1.16では`go mod tidy` or `go get`⇨`go build`という手順。
+パッケージのインストールが必要なGoファイルを実行する場合、Go 1.16では `go mod tidy` or `go get`⇨`go build` という手順。
 
 ## go get オプション
+
 [参考URL](https://qiita.com/tadaken/items/9f8fd9c8e7096b6bffde)
 
 ## go mod tidy, go get, go install違い
@@ -85,20 +89,20 @@ $ go mod tidy	# importに記載されたパッケージのインストール。�
 
 1. `go mod tidy`:
    - `go mod tidy` コマンドは、Goモジュールの依存関係を整理するためのコマンドです。
-   - プロジェクトの`go.mod`ファイルに記載されている依存関係を解決し、不要な依存関係を削除します。
+   - プロジェクトの `go.mod` ファイルに記載されている依存関係を解決し、不要な依存関係を削除します。
    - 使用されていないモジュールがある場合は削除し、モジュールのバージョンを最新に更新します。
    - プロジェクトの依存関係を最新の状態に保つことができます。
 
 2. `go install`:
    - `go install` コマンドは、Goプログラムをビルドして実行可能なバイナリファイルを作成し、指定されたパッケージをインストールします。
    - ソースコードをビルドして実行ファイルを生成し、その実行ファイルを `$GOPATH/bin` に配置します。
-   - インストールされた実行ファイルは、コマンドラインから直接実行することができる。
-   - `go install` を使用することで、自作のパッケージやツールを利用する他のプロジェクトから利用することができる。
+   - インストールされた実行ファイルは、コマンドラインから直接実行できる。
+   - `go install` を使用することで、自作のパッケージやツールを利用する他のプロジェクトから利用できる。
 
 3. `go get`:
    - `go get` コマンドは、指定したパッケージを取得し、依存関係を解決してインストールするためのコマンドです。
    - `go get` を使用することで、公開されているパッケージやモジュールを取得し、ローカルにダウンロードします。
-   - インストールされたパッケージは、他のプロジェクトで `import` 文を使用して利用することができる。
+   - インストールされたパッケージは、他のプロジェクトで `import` 文を使用して利用できる。
 
 メリットとしては、以下のような特徴があります：
 
@@ -123,7 +127,7 @@ $ go mod tidy	# importに記載されたパッケージのインストール。�
 Goのアプリケーションとライブラリは、それぞれモジュールと呼ばれる塊になっている。
 **1つのフォルダーが1つのモジュール**となる。
 
-実行ファイルorライブラリでもまず次のコマンドを叩いてプロジェクトの中心となるファイル`go.mod`を作る
+実行ファイルorライブラリでもまず次のコマンドを叩いてプロジェクトの中心となるファイル `go.mod` を作る
 
 最後に付与するのはパッケージ名
 `$ go mod init hello`
@@ -137,7 +141,7 @@ Goのアプリケーションとライブラリは、それぞれモジュール
 
 ### Go モジュール・パッケージをGitHubで外部に公開する場合
 
-`github.con/アカウント名/リポジトリ名/`を使う
+`github.con/アカウント名/リポジトリ名/` を使う
 
 ```sh
 ### サンプルコードなどであれば以下のような感じでOK
@@ -163,8 +167,8 @@ godoc：コードからAPIドキュメントを作るツール
 
 ## Go 歴史
 
-昔（Go1.11以前）は`$GOPATH/src`配下でしか開発できなかった。
-その後**Go modules**の導入により`$GOPATH/src`にプロジェクトを置かなければならないという制約からは解放されたので、各プロジェクト毎に`GOPATH`を指定するみたいなことがいらなくなったという経緯
+昔（Go1.11以前）は `$GOPATH/src` 配下でしか開発できなかった。
+その後**Go modules**の導入により `$GOPATH/src` にプロジェクトを置かなければならないという制約からは解放されたので、各プロジェクト毎に `GOPATH` を指定するみたいなことがいらなくなったという経緯
 そのため、こちらも現在はデフォルトから変える必要性はないです。
 
 現在の最新歴史。これを見れば大体わかる
@@ -193,6 +197,7 @@ Googleが開発したプログラミング言語
 Go言語は比較的新しいプログラミング言語でありながら、世界的な動画配信サービスであるYouTubeのサーバー構築や有名Webアプリの開発などにも使用されており、人気の高い言語として世界中で愛されています。
 
 ---
+
 ## Go 特徴
 
 強力でシンプルな言語設計と文法
@@ -217,6 +222,7 @@ Go言語は、近年注目の集まるクラウドやコンテナーー技術、
 ## クロスコンパイル対応をするには
 
 環境変数を設定する必要がある。
+
 ```sh
 # Windows(32ビット)向けにコンパイル
 $ GOOS=windows GOARCH=386 go build
@@ -234,19 +240,19 @@ $ GOOS=linux GOARCH=amd64 go build
 golangにはgo testツールなる便利なものがある。
 
 制約
+
 1. ファイル名の最後を_test.goとしなければいけない。
 2. testingをimportする必要
-3. テストロジックの関数は`Test**`と始める。TestA or TestAbcdefgでOK
+3. テストロジックの関数は `Test**` と始める。TestA or TestAbcdefgでOK
 4. 引数には*testing.Tを入れる。
-
 
 Goでのテスト結果
 Goはテストのアサーションを提供していない。テストが失敗した通知に関しては、テストが失敗したことを開発者自ら実装する必要がある。
-失敗したことを示すには`T.Error (T.Errorf)`や`T.Fatal (T.Fatalf)`を用いることができる。
+失敗したことを示すには `T.Error (T.Errorf)` や `T.Fatal (T.Fatalf)` を用いることができる。
 
-`T.Fatal`を用いると`T.Fatal`が**実行された以降のテストは呼び出されずに終了する。**
-テストが失敗したことを示すには`T.Error`を使い、テストの初期化など、処理が失敗するとその後のテストが無意味になる場合は`T.Fatal`を用いると良い。
-以下のように`t.Fatalf`を用いた場合は、それ以降は呼び出されないが、`defer`や`T.Cleanup`といった後処理は呼び出されます。
+`T.Fatal` を用いると `T.Fatal` が**実行された以降のテストは呼び出されずに終了する。**
+テストが失敗したことを示すには `T.Error` を使い、テストの初期化など、処理が失敗するとその後のテストが無意味になる場合は `T.Fatal` を用いると良い。
+以下のように `t.Fatalf` を用いた場合は、それ以降は呼び出されないが、`defer` や `T.Cleanup` といった後処理は呼び出されます。
 
 ## Goにおける静的解析
 
@@ -263,7 +269,7 @@ Goはソースコードを実行せずに解析する静的解析の機能を提
 
 Goの関数や変数は、**大文字からスタートするとほかのパッケージから参照できる**ようになる。
 ※小文字だと参照できない
-Go言語では一度宣言した変数を使わなかったら怒られる。そのため関数の戻り値を使用しない場合は`_（アンスコ）`などを使用し使用しない宣言をする。
+Go言語では一度宣言した変数を使わなかったら怒られる。そのため関数の戻り値を使用しない場合は `_（アンスコ）` などを使用し使用しない宣言をする。
 
 変数の宣言と代入を同時に行う場合には := 演算子がある。
 **これは関数の中でしか使えない**
@@ -279,16 +285,16 @@ Goの変数名は長い名前よりも短い名前が好まれる
 
 Goのconstは**コンパイル時に決定できないものはconstにできない(たとえばnewとか)**
 
-
 ## パッケージ名
 
 パッケージ名は小文字が基本
 internalという名前だけはモジュール外から読めないパッケージとなる。
 
-テストへ用いるパッケージに`パッケージ名 + _test`という名前を用いることがある。
+テストへ用いるパッケージに `パッケージ名 + _test` という名前を用いることがある。
 _testがついたパッケージからは公開されているパッケージの型、関数のみしか参照できない参照できないため**Exampleテストややブラックボックステスト**のような用途で使用される。
 
 これもやめた方がいい（変数名および関数名は**パッケージ名も含み**考える）
+
 ```go
 // http.Serverであって、http.HTTPServerではない。
 
@@ -323,10 +329,10 @@ Goの場合は暗黙の型変換がなく、明示的に型変換をしなけれ
 
 ## Go 制御構文
 
-Goが持つ制御構文は`if / for / switch`
+Goが持つ制御構文は `if / for / switch`
 
 if
-他の言語にはたいてい`falsy`の概念があるが、Goにはif文の暗黙変換がない。  
+他の言語にはたいてい `falsy` の概念があるが、Goにはif文の暗黙変換がない。  
 boolean値のみしかif文で使用できない
 
 for
@@ -348,24 +354,24 @@ deferは関数のブロックを抜けるタイミングで処理の予約がで
 
 ## エラー処理
 
-関数の返り値にerrがある場合は`err`と呼ばれる変数に代入し、その次の行でerrがnilではない（何か値が入っている）
+関数の返り値にerrがある場合は `err` と呼ばれる変数に代入し、その次の行でerrがnilではない（何か値が入っている）
 これがエラー処理の基本。例外処理はない。
 
 昔から変わらないGoの慣習は以下
 失敗する可能性のある関数の末尾をerror型とする
 
-
 ## Go 構造体
+
 [参考URL](https://golang.hateblo.jp/entry/golang-how-to-use-struct)
 
 構造体は中にメソッドを定義できない
 
 ```go
 type Book struct {
-	Title string
-	Author string
-	Publisher string
-	ReleasedAt time.Time
+ Title string
+ Author string
+ Publisher string
+ ReleasedAt time.Time
 }
 
 // インスタンス作成(フィールドはすべてゼロ値に初期化)
@@ -373,18 +379,17 @@ var b Book
 
 // フィールドを初期化しながらインスタンス作成
 b2 := Book{
-	Title: "sample"
+ Title: "sample"
 }
 
 // フィールドを初期化しながらインスタンス作成(変数にはポインター)
 b3 := &Book{
-	Title: "sample"
+ Title: "sample"
 }
 ```
 
 Goではアプリケーションの実装では構造体をよく利用する。
 jsonタグを定義しておくと、この定義にしたがって構造体のフィールドをJSONに書き出したり、JSONの情報フィールドにマッピングできる
-
 
 ## Go Optional
 
@@ -396,28 +401,29 @@ jsonタグを定義しておくと、この定義にしたがって構造体の�
 // フィールドが未指定だったのか，ゼロ値が指定されたのかを
 // 区別するため，型はポインタにする
 type GreetOpts struct {
-	GreetingWord *string
+ GreetingWord *string
 }
 
 // オプショナルパラメータを構造体で受け取る
 func Greet(name string, opts *GreetOpts) {
-	greetingWord := "Hello"
-	if opts.GreetingWord != nil {
+ greetingWord := "Hello"
+ if opts.GreetingWord != nil {
       // 引数がnilだったら未指定なのでデフォルト値で埋める
-		greetingWord = *opts.GreetingWord
-	}
-	fmt.Printf("%s, %s!\n", greetingWord, name)
+  greetingWord = *opts.GreetingWord
+ }
+ fmt.Printf("%s, %s!\n", greetingWord, name)
 }
 
 func main() {
-	Greet("gopher", &GreetOpts{}) // Hello, gopher!
+ Greet("gopher", &GreetOpts{}) // Hello, gopher!
 
-	word := "Hey"
-	Greet("gopher", &GreetOpts{GreetingWord: &word}) // Hey, gopher!
+ word := "Hey"
+ Greet("gopher", &GreetOpts{GreetingWord: &word}) // Hey, gopher!
 }
 ```
 
 ## Go 型
+
 [参考URL](https://raahii.github.io/posts/optional-parameters-in-go/)
 
 ```go
@@ -425,6 +431,7 @@ Greet("gopher", &GreetOpts{}) // &nnn &はポインタで渡す（参照）)
 ```
 
 ## Go import
+
 [参考URL](https://qiita.com/shiena/items/c1ac3192af3b00f413ac)
 
 period importとblank importという別のimportがある。
@@ -443,7 +450,6 @@ interface -> type structの下に関数群を紐付ける書き方。オブジ�
 
 他の言語でのクラス・メンバー変数に当たる部分はGoでは**構造体・フィールドとして存在する**
 
-
 ---
 
 ## GOROOT
@@ -458,6 +464,7 @@ GoのSDKの場所を定義している
 ※Macなら$HOME/goに自分で設定してなくても勝手に設定されてるはず（Go1.8以降）
 
 ---
+
 ## Editor
 
 vscodeで全然いい
@@ -467,28 +474,30 @@ vscodeで全然いい
 Goをインストールすればいいだろう
 
 ## Go Language Server Protocol
+
 [参考URL](https://qiita.com/ryysud/items/1cf66ee4363aec22394a)
 
 現状ではgoplsができており、ジャンプなどもすぐにできるようになる。
-※ただし、`go.mod`があるディレクトリ内でファイルを開かないといけない
+※ただし、`go.mod` があるディレクトリ内でファイルを開かないといけない
 
 ## go getと installの違い
+
 [参考URL](https://hodalog.com/use-go-install-instead-of-go-get/)
 [参考URL](https://qiita.com/eihigh/items/9fe52804610a8c4b7e41)
 
-go1.17から`go get`を使わなくなったが`go get`が完全に使えなくなるわけではない（警告はでる）
+go1.17から `go get` を使わなくなったが `go get` が完全に使えなくなるわけではない（警告はでる）
 
 go1.16から以下の通りとなる。
 `go install`
 バイナリのビルドとインストールのため
 `go get`
-go.mod編集のための`go get`
+go.mod編集のための `go get`
 
-`go build`や`go test`で自動的に`go.mod`が更新されることはなくなった。
-go.modの編集は`go get or go mod tidy`あるいは手作業で行います。
+`go build` や `go test` で自動的に `go.mod` が更新されることはなくなった。
+go.modの編集は `go get or go mod tidy` あるいは手作業で行います。
 
-**モジュール内**で管理したいパッケージについてはこれまで通り`go get`
-`go install`は**モジュール外**で使いたいパッケージのインストールに使用する
+**モジュール内**で管理したいパッケージについてはこれまで通り `go get`
+`go install` は**モジュール外**で使いたいパッケージのインストールに使用する
 
 ## Go とは
 
@@ -567,7 +576,7 @@ Go moduleモードでは、**GOPATH配下にプロジェクトを置かなけれ
 
 - go mod initの名前は？
 
-書くべきなのは importpath
+書くべきなのはimportpath
 一般的な用途ではリポジトリルートのURLを「importpath」としてgo mod initの引数に使うのが良いでしょう。
 go mod init sampleについてはリポジトリと紐づけない一時的なものとして利用することはできます。こうして作られたモジュールは公開する条件を満たせないので例えリポジトリに置いて公開しても第三者がgo-getすることはできないモジュールになります。もちろんこの形での公開は推奨はされません。（手元で書き捨てる用途とか学習用途とお考え下さい）
 
@@ -585,15 +594,13 @@ go mod init sampleについてはリポジトリと紐づけない一時的な�
 
 ## ライブラリのインポート
 
-他のパッケージで公開されている機能を利用するには`import文`を使用
+他のパッケージで公開されている機能を利用するには `import文` を使用
 Goでは中央集権的なライブラリのリポジトリはない（npmみたいな）
 github.comやgitlab.comなどのリポジトリや独自ドメインで運用しているサーバなどを使ってライブラリの配布が行われる
 
 そのためパッケージの識別子はそのライブラリの情報が取得可能なURL
 
-
 ## go プロジェクト version固定
-
 
 ## go get
 
@@ -609,7 +616,6 @@ github.comやgitlab.comなどのリポジトリや独自ドメインで運用し
 -fixオプション : 依存関係を修正。ダウンロードしたパッケージを修正。修正してからgetをしてくれる。
 -insecureオプション : HTTP等の安全性が確保されていない方式を使いリポジトリから取得するためのコマンド。危険が伴うため、使用はオススメしません。
 
-
 ---
 
 ## Tips Go
@@ -622,7 +628,7 @@ Goにもいくつかの代表的なORMライブラリがありますが、標準
 
 ただ、
 データベースとやり取りする部分はWEBアプリケーションでは頻繁に登場するにもかかわらず、**似たようなコードを都度実装することになりがち。**
-ORMライブラリを使うことで、そのようないわゆるボイラープレートコードを減らし、本質的な実装に注力することができる。
+ORMライブラリを使うことで、そのようないわゆるボイラープレートコードを減らし、本質的な実装に注力できる。
 
 [Go ORM種類](https://zenn.dev/gami/articles/0fb2cf8b36aa09)
 [Go並列処理](https://zenn.dev/hsaki/books/golang-concurrency/viewer)
@@ -634,24 +640,24 @@ ORMライブラリを使うことで、そのようないわゆるボイラー�
 [参考URL](https://future-architect.github.io/articles/20190713/)
 
 ---
+
 ## GoDoc
 
 [GoDoc](https://qiita.com/shibukawa/items/8c70fdd1972fad76a5ce)
 
 godocとgo docは同じドキュメントツールだが別のツール
 
-Go製のライブラリは標準ライブラリもサードパーティのライブラリもすべてhttps://pkg.go.devで公開される。
-現在のGoは`go mod`を使ってパッケージの取得をする。
-パッケージのソースコードはGitHubやGitLabにあるが、`go mod`はproxy.golang.org経由でこのソースを取得するがこのタイミングでドキュメントも取り込まれる。
+Go製のライブラリは標準ライブラリもサードパーティのライブラリもすべて<https://pkg.go.devで公開される。>
+現在のGoは `go mod` を使ってパッケージの取得をする。
+パッケージのソースコードはGitHubやGitLabにあるが、`go mod` はproxy.golang.org経由でこのソースを取得するがこのタイミングでドキュメントも取り込まれる。
 ライブラリは一元管理されていないがドキュメントが一元化されるのはこのような仕組みによるもの。
-
 
 [チョットできるGoプログラマーになるための詳解GoDoc](https://qiita.com/shibukawa/items/8c70fdd1972fad76a5ce)
 
 ## godoc コマンド
 
-Goには`godoc`コマンドがある。
-このコマンドのおかけで**golang.orgのパッケージドキュメント**をオフラインで閲覧することができる。
+Goには `godoc` コマンドがある。
+このコマンドのおかけで**golang.orgのパッケージドキュメント**をオフラインで閲覧できる。
 
 ```sh
 # port指定
@@ -684,7 +690,7 @@ Goのアプリケーションから呼び出すためのAPI（DBドライバー�
 - 値レシーバーでコピーを渡す場合、その大きなものをメモリ上の別の領域にコピーしてから、そのコピーしたものを渡す必要がある
 - 一方ポインタレシーバーではコピーなどせず、そのデータのメモリ上でのアドレスを渡すだけでいいのでメモリにやさしい
 
-以下は、Go言語でメソッドのレシーバータイプ（ポインタ vs 値）を選択する際のガイドラインを考慮した例です。この例では、いくつかの異なるシナリオを示し、それぞれの場合に適したレシーバータイプを使用しています。
+以下は、Go言語でメソッドのレシーバータイプ（ポインタvs値）を選択する際のガイドラインを考慮した例です。この例では、いくつかの異なるシナリオを示し、それぞれの場合に適したレシーバータイプを使用しています。
 
 ### 例1: レシーバが大きな構造体の場合（ポインタを使用）
 
@@ -692,23 +698,23 @@ Goのアプリケーションから呼び出すためのAPI（DBドライバー�
 package main
 
 import (
-	"fmt"
+ "fmt"
 )
 
 // LargeStruct は多くのフィールドを持つ大きな構造体です。
 type LargeStruct struct {
-	Data [1024]int
+ Data [1024]int
 }
 
 // Update は LargeStruct の内容を更新するメソッドです。大きな構造体なので、ポインタレシーバを使用します。
 func (l *LargeStruct) Update(index int, value int) {
-	l.Data[index] = value
+ l.Data[index] = value
 }
 
 func main() {
-	l := LargeStruct{}
-	l.Update(10, 100)
-	fmt.Println(l.Data[10]) // 出力: 100
+ l := LargeStruct{}
+ l.Update(10, 100)
+ fmt.Println(l.Data[10]) // 出力: 100
 }
 ```
 
@@ -718,23 +724,23 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"time"
+ "fmt"
+ "time"
 )
 
 // TimeWrapper は time.Time を包含する小さな構造体です。
 type TimeWrapper struct {
-	t time.Time
+ t time.Time
 }
 
 // Day は TimeWrapper の日を返します。変更を加えないので、値レシーバを使用します。
 func (tw TimeWrapper) Day() int {
-	return tw.t.Day()
+ return tw.t.Day()
 }
 
 func main() {
-	tw := TimeWrapper{t: time.Now()}
-	fmt.Println(tw.Day()) // 現在の日にちを出力
+ tw := TimeWrapper{t: time.Now()}
+ fmt.Println(tw.Day()) // 現在の日にちを出力
 }
 ```
 
@@ -744,44 +750,42 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"sync"
+ "fmt"
+ "sync"
 )
 
 // SafeCounter は安全にカウントアップするための構造体です。sync.Mutex を含むのでポインタレシーバを使用します。
 type SafeCounter struct {
-	mu    sync.Mutex
-	count int
+ mu    sync.Mutex
+ count int
 }
 
 // Increment はカウンタを1つ増やします。
 func (s *SafeCounter) Increment() {
-	s.mu.Lock()
-	s.count++
-	s.mu.Unlock()
+ s.mu.Lock()
+ s.count++
+ s.mu.Unlock()
 }
 
 // Value は現在のカウンタの値を返します。
 func (s *SafeCounter) Value() int {
-	s.mu.Lock()
-	defer s.mu.Unlock()
-	return s.count
+ s.mu.Lock()
+ defer s.mu.Unlock()
+ return s.count
 }
 
 func main() {
-	s := SafeCounter{}
-	s.Increment()
-	fmt.Println(s.Value()) // 出力: 1
+ s := SafeCounter{}
+ s.Increment()
+ fmt.Println(s.Value()) // 出力: 1
 }
 ```
 
 これらの例は、レシーバを選択する際の一般的なガイドラインを反映しています。構造体が大きい、または変更可能な状態を持つ場合はポインタレシーバを使用し、小さくて不変のデータの場合は値レシーバを使用します。また、同期が必要な場合や、内部状態が外部から変更される可能性がある場合もポインタレシーバが推奨されます。
 
-
-
 ## Goには「大域脱出」を例外処理としてない
 
-`throw`などがないということ（厳密にはpanicがある）  
+`throw` などがないということ（厳密にはpanicがある）  
 そのため関数の呼び出し元が例外を正常な状態に戻すべきという思想があり、そのため。
 [「例外」がないからGo言語はイケてないとかって言ってるヤツが本当にイケてない件](https://qiita.com/Maki-Daisuke/items/80cbc26ca43cca3de4e4#fnref8/)
 

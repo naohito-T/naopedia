@@ -1,6 +1,7 @@
 # figma
 
 ## Figmaからコーディングする具体的な方法
+
 [参考URL](https://teru1213.com/coding-figma/)
 
 - 文字をコーディングする（以下プロパティが対応できる）
@@ -26,7 +27,6 @@ color
 shift
 shift押下しながら縮小すると縦横比を保ちながら縮小する。
 
-
 ## figma web design作り方
 
 1. Grid Layoutを作る
@@ -43,14 +43,11 @@ Googleが提供するWebフォントのサービスで、オープンソース�
 ## figma での斜め事情
 
 Figmaではオブジェクトを斜めに変形させることができない。
-pluginの`SkewDat`を使うと、このIllustratorの旋回と同じような効果をFigmaだけで完結できる。
-
+pluginの `SkewDat` を使うと、このIllustratorの旋回と同じような効果をFigmaだけで完結できる。
 
 ## 勉強Tips
 
 [youtube参考](https://www.youtube.com/watch?v=JuaXJ4DgItY)
-
-
 
 ## Plugin
 

@@ -1,7 +1,9 @@
 # 図について記す
+
 [状況によって使い分ける構成図](https://qiita.com/e99h2121/items/eaca084ae7b0488ab686)
 
 ## 図作成ツールについて比較
+
 [図の種類について記載がある。](https://qiita.com/ryamate/items/3779418172c4f5a83212)
 
 - Draw.io
@@ -9,6 +11,7 @@
 - Mermaid
 
 ## plantUML完全ガイド
+
 [参考URL](https://pdf.plantuml.net/PlantUML_Language_Reference_Guide_ja.pdf)
 
 ## PlantUML とは
@@ -18,7 +21,7 @@ PlantUMLは**DSL（ドメイン特化言語）**でUMLの図を描く
 
 ## VS Codeでの見方
 
-`Option + D`で見ることができる。
+`Option + D` で見ることができる。
 
 ## PlantUML 必用なもの
 
@@ -122,7 +125,7 @@ PlantUML: Object
 [参考URL](https://www.lucidchart.com/pages/ja/uml-component-diagram)
 PlantUML: Component
 コンポーネントの依存関係を表現
-※UML2.0においてコンポーネントという用語は、システムの他の部分とインターフェイスを介した接続が可能な独立したシステムやサブシステムを示すクラスのモジュールを指す。
+※UML2.0においてコンポーネントという用語は、システムの他の部分とインターフェースを介した接続が可能な独立したシステムやサブシステムを示すクラスのモジュールを指す。
 
 ### パッケージ図(Component)
 

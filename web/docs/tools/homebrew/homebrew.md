@@ -9,6 +9,7 @@ Homebrewではホームディレクトリ内でパッケージを管理するた
 フォーミュラ: Homebrewではインストールしたパッケージのこと
 
 ## Brewfileを作成
+
 [参考URL](https://kakakakakku.hatenablog.com/entry/2020/09/17/124653)
 
 ```sh
@@ -19,12 +20,13 @@ $ brew bundle dump
 ---
 
 ## コマンド
+
 [参考URL](https://parashuto.com/rriver/tools/homebrew-most-used-commands)  
 [参考URL2](https://qiita.com/fuqda/items/db8aff0ba4068aea2cc6)  
 
 ### brew info [フォーミュラ]
 
-`brew info`で表示される以下項目の説明
+`brew info` で表示される以下項目の説明
 
 ×はまだパッケージを持っていないということ。
 Build
@@ -75,7 +77,6 @@ export INFOPATH="/usr/local/share/info:${INFOPATH:-}";
 過去の仕組み（arm（m1）ではなく、インテルの）
 [参考URL](https://qiita.com/omega999/items/6f65217b81ad3fffe7e6)
 
-
 ```sh
 # コマンド実体
 /usr/local/Cellar
@@ -83,7 +84,6 @@ export INFOPATH="/usr/local/share/info:${INFOPATH:-}";
 # コマンドのエイリアス
 /usr/local/bin
 ```
-
 
 | キーワード | 本来の意味|  たとえ|
 | --- | --- | --- |
@@ -96,8 +96,8 @@ export INFOPATH="/usr/local/share/info:${INFOPATH:-}";
 ## Homebrew リポジトリディレクトリ
 
 現時点のHomebrewのインストーラーは、
-Rosettaを有効にしているターミナルでは`/usr/local/`を基準にしたディレクトリ下でIntel向けのバイナリを
-Rosettaを無効にしているターミナルでは`/opt/homebrew/`を基準にしたディレクトリ下でM1向けのバイナリを
+Rosettaを有効にしているターミナルでは `/usr/local/` を基準にしたディレクトリ下でIntel向けのバイナリを
+Rosettaを無効にしているターミナルでは `/opt/homebrew/` を基準にしたディレクトリ下でM1向けのバイナリを
 展開するように動きます。(2021年1月初めごろにはすでにこの挙動になっていました）
 
 /usr/local/binはもともとパスが通っているのでそこに入ったbrewコマンドはそのまま動きますが、/opt/homebrew/binにはパスが通っていないのでそこに入ったbrewコマンドを動かすにはパスを通す必要があります。
@@ -173,7 +173,6 @@ $ which openssl
 homebrewを指さないときは
 PATHを変更する
 
-
 ## Brewfileを使う
 
 [参考URL](https://qiita.com/d0ne1s/items/90974ad472c2d891e784)
@@ -210,7 +209,7 @@ Homebrew自体を消すと、**インストールしたpackageも全部消える
 
 ## homebrew 環境構築手助け
 
-環境構築を手助けしてくれる`brew doctor`というコマンドがある。
+環境構築を手助けしてくれる `brew doctor` というコマンドがある。
 ※基本的には指示にしたがって、表示されたコマンドを実行していけば良い。
 
 ## homebrew 通常版とarm版
@@ -231,12 +230,14 @@ Linux版がmacOS版に統合されたため使える。
 ## homebrewをubuntuやcentosなどにインストールする意味
 
 Ubuntu標準パッケージマネージャー aptと比べて次のような特徴
+
 - ホームディレクトリにパッケージをインストールできるためsudoが不要
 - 使用しているディストリビューションでパッケージ化されていないソフトウェアもインストール可能
 - 最新バージョンのパッケージをインストールできる
 - クロスプラットフォームであるためmacOSとWindows（WSL）とLinuxで同じパッケージマネージャーを使える
 
 ## 自作Formulaの作成
+
 [参考URL](https://qiita.com/sh0nk/items/6bbc241b7c0d9f18fcfa)
 
-自身のGitHubレポジトリの中身をまるっとインストール対象にしたい場合は、Download Zipからzipファイルのリンクを取得して指定することができる。
+自身のGitHubレポジトリの中身をまるっとインストール対象にしたい場合は、Download Zipからzipファイルのリンクを取得して指定できる。

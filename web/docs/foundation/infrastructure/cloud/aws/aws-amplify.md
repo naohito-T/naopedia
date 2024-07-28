@@ -1,4 +1,5 @@
 # AWS Amplify
+
 [AWS Amplify について](https://whnyab.com/amplify-ssr-cicd/)
 AWS AmplifyとはAWSサービスを使用したウェブ・モバイルの迅速な開発を支援するツールとサービスのセットのこと。  
 AWS Amplifyではサービスを、ホスティング、認証、ストレージというようにカテゴリと呼ばれる機能単位で追加して使用する。

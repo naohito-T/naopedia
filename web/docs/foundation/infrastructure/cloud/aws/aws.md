@@ -90,7 +90,7 @@ AWSではセキュリティの強化に必要なサービスが多数用意さ�
 信頼性の高い設計とは、障害の発生を抑えこもうするのではなく、障害の発生を前提としてあらかじめ迅速な復旧手順を整備したり、復旧そのものを自動化するなどあらかじめ対策しておくこと。AWSではこのような設計方針を「Design for Failure」（故障のための設計）と表現して推奨している。
 
 - 障害から自動的に復旧する
-  - 障害が発生した際に手動で対応するとなると、それだけ復旧は遅くなってしまいます。復旧を自動化する手段はいくつかありますが、とくに重要なのがMulti-AZです。`Multi-AZ`とは、複数のAZ（アベイラビリティゾーン）にリソースを冗長化する設計のことで、ひとつのAZに障害が発生しても他のAZに配置したリソースでシステムの運用を維持できます。
+  - 障害が発生した際に手動で対応するとなると、それだけ復旧は遅くなってしまいます。復旧を自動化する手段はいくつかありますが、とくに重要なのがMulti-AZです。`Multi-AZ` とは、複数のAZ（アベイラビリティゾーン）にリソースを冗長化する設計のことで、ひとつのAZに障害が発生しても他のAZに配置したリソースでシステムの運用を維持できます。
   - Multi-AZの利点は他の信頼性向上策と比較して非常に費用対効果が高いと言われており、優先的に設定することが推奨されている。たとえば、データベースサービスであるRDSは、Multi-AZ配置を機能として備えています。
 - 復旧手順をテストする
   - 復旧手順は事前にテストをしておく必要があります。擬似的に障害を発生させ、正しく復旧できることをテストします。テストをしておかないと実際に障害が発生したときに復旧ができなかったり、誤った手順により別の障害を誘発し二次被害が発生する可能性があります。
@@ -231,7 +231,7 @@ IPアドレスは基本的にパブリックIPアドレスとプライベートI
 
 ## config credentialsを作成する
 
-AWS CLIはaws configureで指定された機密性の高い認証情報を**ホームディレクトリの`.aws`という名前のフォルダーにあるcredentialsへ保存する**
+AWS CLIはaws configureで指定された機密性の高い認証情報を**ホームディレクトリの `.aws` という名前のフォルダーにあるcredentialsへ保存する**
 
 **config**
 aws configureで指定された**機密性の低い**オプションを保存する
@@ -246,7 +246,7 @@ AWSに接続するための認証情報
 [リファレンス](https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/cli-configure-files.html)
 
 頻繁に利用される構成設定および認証情報をAWS CLIが維持するファイルに保存できる。
-CLIは`default`という名前のプロファイルにある設定を使用する。
+CLIは `default` という名前のプロファイルにある設定を使用する。
 
 ## 名前付きプロファイル
 
@@ -256,7 +256,7 @@ CLIは`default`という名前のプロファイルにある設定を使用す�
 
 [参考URL](https://bluepixel.hatenablog.com/entry/2020/05/12/225619)
 
-東京リージョン`ap-northeast-1`では4つの利用可能なAZ（アベイラビリティゾーン）が提供されている。
+東京リージョン `ap-northeast-1` では4つの利用可能なAZ（アベイラビリティゾーン）が提供されている。
 
 - ap-northeast-1a
 - ap-northeast-1b
@@ -270,7 +270,6 @@ CLIは`default`という名前のプロファイルにある設定を使用す�
 
 [参考URL](https://biz.nuro.jp/column/aws-mama-031/#:~:text=%E3%81%A0%E3%81%9D%E3%81%86%E3%81%A7%E3%81%99%E3%80%82-,NAT%20Gateway,%E3%82%8C%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82)
 
-
 ## インターネットゲートウェイ
 
 VPCからインターネット間の接続をする。  
@@ -283,13 +282,13 @@ NAT-GWはプライベートIPとパブリックIPが多対1で変換されます
 複数のEC2インスタンスから発する通信が、各々のプライベートIPでNAT-GWを通過する際、NAT-GWで1つのパブリックIPに変換されます。  
 ただし、複数のプライベートIPを1つのパブリックIPに変換してしまうと、戻りの通信においてどの通信がどのプライベートIPに変換すればいいか一意に定まらなくなってしまうので、**TCP/UDPポート番号**も変換することでそれを回避しています。このようなNAT方式を「動的NAPT（ナプト）=Dynamic NAPT」と呼びます。
 
-
 インターネットとの接続にはインターネットGWが必要なためこれひとつではどうにもできない。  
 Private Subnet内のEC2インスタンスプライベートIPとパブリックIPを多対1変換  
 NATゲートウェイに関連付けるためのElastic IPを作ります。  
 ※NATゲートウェイの生成にはElastic IPとサブネットが必須なためです。
 
 ## インターネットゲートウェイとNATゲートウェイの違い
+
 [参考URL](https://milestone-of-se.nesuke.com/sv-advanced/aws/internet-nat-gateway/)
 
 [![Image from Gyazo](https://i.gyazo.com/3632f1c1769e2d8c25478d24939f11a2.png)](https://gyazo.com/3632f1c1769e2d8c25478d24939f11a2)
@@ -301,51 +300,53 @@ NATゲートウェイに関連付けるためのElastic IPを作ります。
 ---
 
 ## AWS CDK
+
 [5分で理解するAWS CDK](https://qiita.com/Brutus/items/6c8d9bfaab7af53d154a)
 [リファレンス](https://aws.amazon.com/jp/cdk/faqs/)
 AWSクラウド開発キット (AWS CDK) は、最新のプログラミング言語を使用してクラウドインフラストラクチャをコードとして定義し、それを**AWS CloudFormation**を通じてデプロイするためのオープンソースのソフトウェア開発フレームワーク。
 
-TypeScriptおよびPythonなどのプログラミング言語を使用して、AWSリソースを定義し、Terraformの様にInfrastructure as Code（以降、IaC）を実現する手段として、クラウドインフラのリソースをプロビジョニングすることができる。
+TypeScriptおよびPythonなどのプログラミング言語を使用して、AWSリソースを定義し、Terraformの様にInfrastructure as Code（以降、IaC）を実現する手段として、クラウドインフラのリソースをプロビジョニングできる。
 
 `CDK（TypeScripts or Python ...etc → CloudFormation Template（JSON or YAML）`
 
 ## CDK メリット
 
-`$ cdk deploy`コマンドが優秀
+`$ cdk deploy` コマンドが優秀
 CloudFormationで同じことをしようとしたら
+
 - 初回実行時は普通にデプロイ
 - 二度目以降は変更セットを作成して差分デプロイ（みたいなヘルパースクリプトが必要）
-- クロスリージョン参照ができる（cdk-remote-stackパッケージを使用）（us-east-1 で作らないといけないリソースがあっても安心）
-- S3 バケットの同期や CloudFront のキャッシュ削除までできる
+- クロスリージョン参照ができる（cdk-remote-stackパッケージを使用）（us-east-1で作らないといけないリソースがあっても安心）
+- S3バケットの同期やCloudFrontのキャッシュ削除までできる
 
 ## AWS CDK と CloudFormationの関係
 
-`AWS CDK`は、最新のプログラミング言語のすべての機能を活用して`AWS Infrastructure as Code`を定義する、デベロッパー中心のツールキットと考えることができる。
+`AWS CDK` は、最新のプログラミング言語のすべての機能を活用して `AWS Infrastructure as Code` を定義する、デベロッパー中心のツールキットと考えることができる。
 AWS CDKアプリケーションが実行されると、それらは**完全に形成されたCloudFormation JSON/YAMLテンプレートにコンパイル**され、プロビジョニング用にCloudFormationサービスへ送信される。
 AWS CDKはCloudFormationを利用しているため、CloudFormationの安全なデプロイ、自動ロールバック、ドリフト検出などのすべての利点がそのまま提供されます。
 
 ## AWS CDK と AWS SAMの関係
 
->AWS サーバーレスアプリケーションモデル（SAM）と AWS CDK はどちらも`AWSインフラストラクチャをコード`として抽象化しているため、クラウドインフラストラクチャを簡単に定義できる。
+>AWS サーバーレスアプリケーションモデル（SAM）と AWS CDK はどちらも `AWSインフラストラクチャをコード` として抽象化しているため、クラウドインフラストラクチャを簡単に定義できる。
 >AWS SAM は特にサーバーレスのユースケースとアーキテクチャに焦点を当てており、コンパクトで宣言型の JSON/YAMLテンプレートでインフラストラクチャを定義できる。
 >AWS CDK は、AWS のすべてのサービスを幅広くカバーしており、TypeScript、Python、C#、Java などの最新のプログラミング言語でクラウドインフラストラクチャを定義できます。AWS SAM と AWS CDK は、どちらも CloudFormation をインフラストラクチャスタックのプロビジョニングエンジンとして利用します。
 
 つまりAWS SAMはサーバーレスに特化している。
 
 ## アベイラビリティゾーン(AZ):Availability Zone
+
 [参考URL](https://e-words.jp/w/%E3%82%A2%E3%83%99%E3%82%A4%E3%83%A9%E3%83%93%E3%83%AA%E3%83%86%E3%82%A3%E3%82%BE%E3%83%BC%E3%83%B3.html)
 
 アベイラビリティゾーンとは、AWSである地域に立地する**データセンター群をひとつの論理的な管理単位**にまとめたもの。
 各リージョン内は2つ以上のAZで構成されている。
 
 ## マルチAZ
+
 [参考URL](https://e-words.jp/w/%E3%83%9E%E3%83%AB%E3%83%81AZ.html#:~:text=%E3%83%9E%E3%83%AB%E3%83%81AZ%E3%81%A8%E3%81%AF%E3%80%81%E7%B1%B3,%E3%81%AE%E9%85%8D%E7%BD%AE%E3%82%92%E8%A1%8C%E3%81%86%E6%96%B9%E5%BC%8F%E3%80%82)
 
 マルチAZ配置は同じリージョンのAZを同時に2つ以上使用し、サーバや機能、データを分散して配置する。
 バックアップやフェイルオーバーをAZをまたいで行うことで可用性や耐障害性を高めることができる。
 サービスの種類にもよるが、単一のAZのみで運用するシングルAZ（Single-AZ）に比べ利用料金が高額となる（他の構成が同じなら2倍程度
-
-
 
 ## IAM(Identity and Access Management)
 
@@ -361,11 +362,9 @@ S3からCloudfrontを一意に特定する識別子
 お客様がポリシードキュメントに与える任意の識別子。
 Sid値は、ステートメント配列内の各ステートメントに割り当てることができる。
 
-
 ## Lambdaなどのerrorに関して
 
 LambdaなどのerrorはcloudWatchに紐づいているため、デフォルトで通知される。とのこと
-
 
 ## AWS アクセスキー
 
@@ -403,6 +402,7 @@ AWS Cloud DEvelopment Kitが必要とされる理由は、AWSを操作するそ�
 **AWSを操作する方法**
 一番有名なのはマネジメントコンソール
 マネジメントコンソールを始めるのは簡単だが以下の課題もある。
+
 - 操作のために操作手順書が必要になる
 - 画面を使った操作なので、繰り返し人間の操作が必要になる。
 - 人間の操作はヒューマンエラーのリスクがある
@@ -420,7 +420,7 @@ AWS Cloud Development Kit (CDK)は、AWSの環境を一般のプログラム言�
 AWS Cloud Development Kit (CDK)では、専門的な知識が必要ではなく新たに学習することなく今まで活用してきた知識とスキルで使用が可能なため、AWSサービスを使ったアプリケーション開発を簡単に取り入れることができます。
 
 - 現在使っているプログラミング言語やツールを使用できる
-アプリケーション開発のために新しいプログラミング言語やツールが必要になると、時間と労力がかかります。AWS Cloud Development Kit (CDK)は、下記のような多くのプログラミング言語が使用でき、既に使用しているIDEやテストツール、ワークフローパターンを使用することができます。
+アプリケーション開発のために新しいプログラミング言語やツールが必要になると、時間と労力がかかります。AWS Cloud Development Kit (CDK)は、下記のような多くのプログラミング言語が使用でき、既に使用しているIDEやテストツール、ワークフローパターンを使用できます。
 
 TypeScript
 Phthon
@@ -428,13 +428,12 @@ Java
 .NET
 
 - AWS CloudFormationとの連携
-AWS Cloud Development Kit (CDK)を使ってインフラストラクチャを定義すれば、AWS CloudFormationに連携することで、Amazon EC2 インスタンスやAmazon RDSDB インスタンスといったAWSリソースを使ったプロビジョニングができます。
+AWS Cloud Development Kit (CDK)を使ってインフラストラクチャを定義すれば、AWS CloudFormationに連携することで、Amazon EC2インスタンスやAmazon RDSDBインスタンスといったAWSリソースを使ったプロビジョニングができます。
 
 - コンポーネントをカスタマイズしてスピードを加速する
 AWS Cloud Development Kit (CDK)では、開発チームや組織でAWSサービスをいくつか組み合わせて使う必要がある場合の組み合わせや、定型文、ロジックなどのコンポーネントを組織のセキュリティやコンプライアンス、ガバナンスなどを考慮したかたちでカスタマイズできます。
 
 カスタマイズされたコンポーネントは繰り返し使用でき、開発チームや組織で簡単に共有できます。そのことで、新規のプロジェクトなどが発生してもスピーディーに開発を進めることが可能となります。
-
 
 開発言語にTypeScriptを使用する場合はデプロイする前にCDKテンプレートがビルド(コンパイル)されている必要がある。
 
@@ -444,7 +443,7 @@ AWS Cloud Development Kit (CDK)では、開発チームや組織でAWSサービ�
 
 ## AWS CDKとは？
 
-一言で言うとCloud Formation テンプレートジェネレーター
+一言で言うとCloud Formationテンプレートジェネレーター
 TypeScript等のプロブラム言語で、CloudFormationテンプレートを出力するプログラムが書けます。
 
 また、出力したテンプレートを使ってCloudFormationへのデプロイもAWS CDK上で行うこともできます
@@ -483,18 +482,15 @@ CDNのキャッシュサーバはアクセスされたキャッシュサーバ�
 
 - 無料のHTTPS証明書を提供している
 
-
 ## S3とAmazon CloudFrontの違い
 
 [参考URL](https://www.acrovision.jp/service/aws/?p=1441)
 
 ファイルのダウンロードを目的として場合、AmazonS3だけでも事足りるように思えるが、CloudFrontを利用した際のメリットとは
-Amazon CloudFront を利用しないで直接 Amazon S3 などのオリジンサーバーからオブジェクトを取得した場合を比較したとき、一番大きな特徴がエッジデリバリーによるメリットの有無となります。
-
+Amazon CloudFrontを利用しないで直接Amazon S3などのオリジンサーバーからオブジェクトを取得した場合を比較したとき、一番大きな特徴がエッジデリバリーによるメリットの有無となります。
 
 [nuxt.js S3と CloudFrontを使用してAWSへデプロイ](https://develop365.gitlab.io/nuxtjs-2.8.X-doc/ja/faq/deployment-aws-s3-cloudfront/)
 [S3とCloudFrontでホストしたNuxtjsをGithub Actionsでデプロイする](https://www.blog.danishi.net/2021/04/30/post-4897/)
-
 
 AWS CDKを使ってS3とCloudFrontを作成する
 作成した後、SPAをdeployする
@@ -515,7 +511,7 @@ Serverless Frameworkは、AWS以外のプラットフォームでも使用でき
 
 ## CloudFormation
 
-CloudFormationはプログラミング言語やテキストファイルを使用してAWSリソースを自動で構築するサービスです。 所望のAWS環境をテンプレート化しておくことで、同じ環境を作成する時間を削減することができます。
+CloudFormationはプログラミング言語やテキストファイルを使用してAWSリソースを自動で構築するサービスです。 所望のAWS環境をテンプレート化しておくことで、同じ環境を作成する時間を削減できます。
 
 ## AWS アクセスキー
 
@@ -535,7 +531,6 @@ AWSにアクセスするにはまずアクセスキーが必要。
 ## バージニア北の理由
 
 バージニア北のが色々制限はゆるい。
-
 
 ## CloudFrontとAPI Gatewayの違い
 
@@ -574,7 +569,6 @@ aws_secret_access_key=je7MtGbClwBF/2Zp9Utk/h3yCo8nvbEXAMPLEKEY
 
 [参考URL](https://dev.classmethod.jp/articles/switch-role-with-awscli/)
 
-
 ### CLIでのスイッチロール
 
 マネジメントコンソールからスイッチロールは可能
@@ -582,7 +576,7 @@ AWS CLIからもスイッチロールは可能
 
 ## aws configure
 
-defaultのクレデンシャルをconfigに実装することができる。
+defaultのクレデンシャルをconfigに実装できる。
 
 ## AWSアクセスキー
 
@@ -611,7 +605,6 @@ defaultのクレデンシャルをconfigに実装することができる。
 元々の鍵をマスターキー
 暗号化された鍵をデータキーとしてAWSで保存ができる。
 
-
 ## Serverless FrameworkとSAMを比較してみる
 
 AWSでサーバレスアーキテクチャ構築するときに代表的なフレームワークであるServerless FrameworkとSAMを比較してみたよ
@@ -633,7 +626,6 @@ Lambda実行のDockerプロセスが機動するネットワークを指定
 
 ……これ、デバッグが難しいです……
 DynamoDBが動いているネットワークが指定されちゃってるので、逆にローカル実行した際にネックになっちゃってるみたいでアクセスが上手くできなかったです。
-
 
 ## HTTPSの終端
 

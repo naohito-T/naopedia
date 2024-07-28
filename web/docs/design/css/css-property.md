@@ -12,7 +12,6 @@
 
 MediaQueriesをつかってwidthを上書きする場合はこちらが便利です。
 
-
 width autoだとflexのjustifyがきく
 
 >どんなシーンで使えるか
@@ -24,6 +23,7 @@ vmin(viewport minimum) ビューポートの幅と高さのうち、値が小さ
 vmax(viewport max) ビューポートの幅と高さのうち、値が大きい方に対する割合
 
 ## vw, vh, vmin, vmaxについて
+
 [参考URL(一番わかりやすい)](https://coliss.com/articles/build-websites/operation/css/css-viewport-units.html)
 
 ### vw
@@ -64,6 +64,7 @@ linear-gradient(to left top, blue, red);
 子要素にscroll-snap-align: start;を指定する
 widthやheightで幅の指定をする
 親要素にoverflow: scroll;を指定
+
 >※幅の指定やoverflow: scroll;を指定していないと、動かないときがあります。
 >scroll-snapの指定をしているはずなのにちゃんと機能しない場合は、この辺りを疑うようにしましょう。
 
@@ -97,6 +98,7 @@ marginに指定するautoは**余白を自動で調整してくれるプロパ�
 >そのため指定する際はwidthプロパティで横幅を指定するようにしましょう。
 
 ## CSSのmin()、max()、clamp()を使いこなす(比較関数)
+
 [参考URL](https://www.greenwich.co.jp/blog-archives/p/22906)
 [参考URL](https://pengi-n.co.jp/blog/min-max-clamp/)
 
@@ -108,7 +110,7 @@ marginに指定するautoは**余白を自動で調整してくれるプロパ�
 
 ### min
 
-`min()`はカンマ区切りで計算された最小の値が選択される。
+`min()` はカンマ区切りで計算された最小の値が選択される。
 **最大値**を設定したい場合はmin()を使う。
 
 ```css
@@ -120,6 +122,7 @@ marginに指定するautoは**余白を自動で調整してくれるプロパ�
 ```
 
 今までの書き方を変えることができる
+
 ```css
 .box {
 　width: 50vw;
@@ -134,6 +137,7 @@ marginに指定するautoは**余白を自動で調整してくれるプロパ�
 ## max()
 
 今までの書き方を変えることができる
+
 ```css
 /*　いままでの書き方 */
 .box {
@@ -177,31 +181,38 @@ clamp()を使うと記述が1行で済むうえに、可読性とデザインの
 用途にもよりますが、演出のために位置を変化させたい場合は、leftやtopよりもxとyで検討するといいでしょう。
 
 ## transform 訳: 変化 変身
+
 [参考URL](https://web-camp.io/magazine/archives/87247)
 
 動きをつけるためのプロパティ。
 
 ## transform 3D関連
+
 [参考URL](https://ics.media/entry/210519/)
 
 ## CSSのz-index: 10000;はいらなくなる。
+
 [参考URL](https://coliss.com/articles/build-websites/operation/css/what-is-the-top-layer.html)
 
 ## box-shadowは古い？
+
 [参考URL](https://ferret-plus.com/8961?page=2)
 
 ## object-fit
+
 [わかりやすい](https://webdesignday.jp/inspiration/technique/css/7976/)
 
 `object-fit: fill`  
 object-fitはCSSだけで画像をコンテナーにフィットさせてトリミングもできるプロパティ
 
 ## fit-content
+
 [参考URL](https://pulpxstyle.com/fit-content/)
 
 `width: fit-content`
 
 ## calc()
+
 [参考URL(コリス)](https://coliss.com/articles/build-websites/operation/css/how-calc-works-by-ire.html)
 
 calc()は計算された値がブラウザに反映されるのではなく**ブラウザによって解析された値が実際のcalc()の計算式となる。**

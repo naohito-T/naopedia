@@ -1,11 +1,13 @@
 # Passport
+
 [参考URL](https://www.kwbtblog.com/entry/2019/05/04/094338#:~:text=%E3%83%AD%E3%82%B0%E3%82%A4%E3%83%B3%E7%8A%B6%E6%85%8B-,Passport.,%E3%81%95%E3%82%8C%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%AA%E3%82%8B%E3%80%82)
 
-`Passport.js`とは、Node.js+Expressで作ったWebサイトにユーザーがログインできるユーザー認証を入れるためのライブラリ。  
+`Passport.js` とは、Node.js+Expressで作ったWebサイトにユーザーがログインできるユーザー認証を入れるためのライブラリ。  
 ユーザー認証の種類は、自分でユーザー管理する「ユーザーID＋パスワード認証」だけでなく、GoogleやTwitterなどといったSNS認証など、さまざまな種類がある。  
 各種の**認証周りの実装はライブラリ化**されていて、認証の仕組みを意識しないでユーザー認証を導入することができる
 
 ## passportを理解する前にセッションを理解していないといけない。
+
 [セッションの理解](https://www.kwbtblog.com/entry/2019/04/20/005423)
 
 ## 仕組み
@@ -36,21 +38,20 @@ Passport.jsは一般的に、セッション（session）と組み合わせて�
 
 ## passportとStrategyの紐づけ
 
-- passportとStrategyの紐づけは`passport.use(new Strategy(～))`で行う。
+- passportとStrategyの紐づけは `passport.use(new Strategy(～))` で行う。
 - new Strategy()の2番目の引数に**認証が成功した後に呼ばれる関数**を定義する
 
 ストラテジーは検証用コールバック（verify callback）と呼ばれるものを必要とします。  
 このコールバックの目的は、認証情報を照合し、ユーザーを特定することです。
 
 ## passport.session()
+
 [passport.session()が実際に行っていること](https://applingo.tokyo/article/1700)
 
-`app.use(passport.session())`は、`app.use(passport.authenticate('session'))`
+`app.use(passport.session())` は、`app.use(passport.authenticate('session'))`
 と同じ。  
 つまり、sessionでアクセス認証を行っている。
-また`req.user`を管理していてクライアントCookieから`session id`を読み込んでそれをもとにユーザー情報へ`deserialize`している。
-
-
+また `req.user` を管理していてクライアントCookieから `session id` を読み込んでそれをもとにユーザー情報へ `deserialize` している。
 
 ## passportとセッションの紐づけ
 
@@ -74,13 +75,13 @@ passport.deserializeUser(async function(id, done) {
 });
 ```
 
-
-
 ## 認証を実装(ログイン)
+
 [Express.js(Node.js)で認証(ハッシュ化/JWT)](https://www.memory-lovers.blog/entry/2021/11/19/033401)
 
 パスワードのハッシュ化やJWTトークン周りは自前で用意する必要がある。
 以下がセオリー
+
 - パスワードのハッシュ化はBcrypt or Crypto
 - JWTトークンはjsonwebtoken
 

@@ -1,10 +1,12 @@
 # web application
+
 [色々なサイトの作り方](https://commte.net/4266)
 
 webアプリケーションでの機能や概念などをまとめていくディレクトリ
+
 ## web画面遷移の仕組み
 
-webブラウザでは`<a>`タグで示されたハイパーリンクをユーザがクリックすると画面がリンク先に繊維して、閲覧履歴にリンク先が追加される。ここでユーザが戻るボタンを押下すると、もとの画面に遷移して閲覧履歴から先のリンク先ページが削除される（pop）
+webブラウザでは `<a>` タグで示されたハイパーリンクをユーザがクリックすると画面がリンク先に繊維して、閲覧履歴にリンク先が追加される。ここでユーザが戻るボタンを押下すると、もとの画面に遷移して閲覧履歴から先のリンク先ページが削除される（pop）
 
 ## 横スクロール Tips
 
@@ -25,17 +27,17 @@ webブラウザでは`<a>`タグで示されたハイパーリンクをユーザ
 [参考URL](https://qiita.com/shisama/items/be0e432711de359598ed)
 
 ## hoverでのスマホ対応
+
 [参考URL](https://pengi-n.co.jp/blog/hover/)
 
 ## font-size問題
 
-画像など`max-width: 100%`としていると画面幅に応じてある程度大きくなるが、font-sizeなどを固定値でコーディングすると画像に比べて小さくなってしまう。
+画像など `max-width: 100%` としていると画面幅に応じてある程度大きくなるが、font-sizeなどを固定値でコーディングすると画像に比べて小さくなってしまう。
 デザイナーの本来の意図を汲み取るのであれば、画面幅が広くなったときはフォントサイズなどもそれに応じて大きくなるのが一番良いのではないかという考えがある。
 
 固定値でもいいのではないか
 >ただし、個人的にfont-sizeを拡縮できるようにして思ったのはどんなプロダクトでも推奨できるものではないなということです。場合によっては初期のcss読込の際に文字サイズなどがグッと変わるのをはっきり見てとれてしまうこともあり、font-sizeがpx固定で問題ないようなプロダクトであればそれが一番いいと今は思っています。本当にfont-sizeを拡縮する必要があるか、それは一部なのか全体なのか、
 >よく考えて導入することが大事だなと思いました。
-
 
 ## font-sizeをレスポンシブ対応にする
 
@@ -43,6 +45,7 @@ webブラウザでは`<a>`タグで示されたハイパーリンクをユーザ
 [参考2](https://coliss.com/articles/build-websites/operation/css/how-calc-works-by-ire.html)
 
 ## Grid Layout or Flexbox
+
 [参考URL](https://zero-plus.io/media/grid-layout/)
 
 Flexboxは縦・横いずれか一方向へのレイアウトに特化しているのに対し
@@ -59,8 +62,9 @@ Grid Layoutは縦横自由なレイアウトが可能。
 
 [参考URL](https://www.ipentec.com/document/css-block-scroll-using-position-property)
 
-注意点 
-- `overflow: hidden`をhtml, bodyに指定するとスクロールができなくなるがiOSには効かない。そのためevent listenerの設定が結局必要になる。
+注意点
+
+- `overflow: hidden` をhtml, bodyに指定するとスクロールができなくなるがiOSには効かない。そのためevent listenerの設定が結局必要になる。
 
 ## flash メッセージ
 
@@ -77,7 +81,9 @@ userが電話番号で送る。一意な認証コードを発行しSMSでユー�
 公開・非公開のステータスを持つのではなく、ある時間を過ぎた時から公開するの方がいい。
 
 ## コピーライトについて
+
 [参考URL](https://www.evoworx.co.jp/blog/small-tags-in-copyright/)
 
 ## 画像をトリミングする
+
 [動きがわかりやすい](https://codesandbox.io/s/react-image-crop-demo-with-react-hooks-forked-8iq6w3?file=/src/canvasPreview.ts)

@@ -2,7 +2,6 @@
 
 webでのデザインをまとめていく
 
-
 ## checkbox
 
 - 覚えておくべきこと
@@ -23,17 +22,11 @@ input[ type=checkbox] {
 
 2. チェックボックスのラベルに装飾する.
 
-
 ## Tips
 
 [シンプルなcheckbox](https://copypet.jp/774/)
 
-
-
-
 ## Webサイトの作り方
-
-
 
 ### ブレークポイントの選び方
 
@@ -44,7 +37,6 @@ input[ type=checkbox] {
 1. スマホサイズで見やすいレイアウトを作成する。
 2. 次に要素間に**空白が多きすぎるまでブラウザのサイズを変更する。**
 
-
 ## Blob(Binary Large Object)
 
 バイナリーデータを表すオブジェクト。格納するための型。
@@ -54,9 +46,6 @@ immutable = 不変
 
 [JSでのBlobの扱い](https://ja.javascript.info/blob)
 
-
 ## ファイルダウンロードの仕組み
 
 [参考URL](https://javascript.keicode.com/newjs/download-files.php#1)
-
-

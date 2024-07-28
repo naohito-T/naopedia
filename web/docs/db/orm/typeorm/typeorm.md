@@ -15,7 +15,7 @@
 [リファレンス](https://typeorm.io/caching)
 
 デフォルトのキャッシュの有効期間は1000ms（1秒）
-これは、クエリ ビルダー コードが呼び出されてから1秒後にキャッシュが無効になることを意味します。実際には、これは、ユーザーが3秒以内にユーザー ページを150回開いた場合、この期間中に実行されるクエリは3つだけであることを意味します。1 秒間のキャッシュ ウィンドウの間に挿入されたユーザーは、ユーザーに返されません。  
+これは、クエリ ビルダー コードが呼び出されてから1秒後にキャッシュが無効になることを意味します。実際には、これは、ユーザーが3秒以内にユーザー ページを150回開いた場合、この期間中に実行されるクエリは3つだけであることを意味します。1秒間のキャッシュ ウィンドウの間に挿入されたユーザーは、ユーザーに返されません。  
 デフォルトでは、TypeORMは別のテーブルを参照しquery-result-cache、そこにすべてのクエリと結果を格納します
 
 ## 0.3系 参考
@@ -43,7 +43,7 @@
 1655392769030-UserMigration.tsのように空のマイグレーションファイルが作られる。
 
 - generate（entityからのマイグレーションファイル作成）
-※0.3からDB接続設定ファイルがtsファイルの場合は、typeormではなく同時にコンパイルも行う`typeorm-ts-node-commonjs`を使う必要
+※0.3からDB接続設定ファイルがtsファイルの場合は、typeormではなく同時にコンパイルも行う `typeorm-ts-node-commonjs` を使う必要
 `npx typeorm-ts-node-commonjs migration:generate src/migration/UserMigration -d src/data-source.ts`
 
 - run（マイグレーション実行）
@@ -85,7 +85,7 @@ entityはDBのテーブルと一対一で構成する。
 [postgres entity 種類](https://github.com/typeorm/typeorm/blob/master/test/functional/database-schema/column-types/postgres/entity/Post.ts)
 [全entity](https://github.com/typeorm/typeorm/tree/master/test/functional/database-schema/column-types)
 
-`@Entity`をつけたものがテーブル対象になる。
+`@Entity` をつけたものがテーブル対象になる。
 データベースの列の型は、使用したプロパティの型から推測
 
 データ型
@@ -129,13 +129,10 @@ JoinTable
 
 ## 1対1
 
-
-
 ## @OneToOne(() => )
 
 参照される側。サッカーチーム　から　コーチを参照(コーチに@OneToOne()を付与)
 @JOinColumnは必須
-
 
 ## @OneToMany()
 
@@ -148,7 +145,6 @@ JoinTable
 ```
 
 上を見ればわかるだろう。ひとつのチケットに対して複数のオプションがある。S
-
 
 ## Tips
 
@@ -173,7 +169,7 @@ Entityと関連Entityを同じタイミングで読み込む。
 
 Lazy relations  
 Promiseを使って任意のタイミングで遅延して読み込む。
-オプションで`{lazy: true}`を設定しなくても型として`Promise`を指定するとTypeORMは自動的に`Lazy relations`として扱います。 
+オプションで `{lazy: true}` を設定しなくても型として `Promise` を指定するとTypeORMは自動的に `Lazy relations` として扱います。
 
 ## TypeORMをREPLで実行する
 

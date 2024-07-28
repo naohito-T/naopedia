@@ -14,11 +14,11 @@
     "prettier:c": "prettier -c './**/*.{js,jsx,ts,tsx,json}'",
     "prettier:f": "prettier -w './**/*.{js,jsx,ts,tsx,json}'",
     "markdown:c": "markdownlint-cli2 \"**/*.md\"",
-    "markdown:f": "markdownlint-cli2 \"**/*.md\"",
+    "markdown:f": "markdownlint-cli2 --fix \"**/*.md\"",
     "text:c": "textlint \"**/*.md\"",
     "text:f": "textlint --fix \"**/*.md\"",
     "text:debug": "textlint --debug \"**/*.md\"",
-    "lint:cspell": "cspell \"**\" .",
+    "cspell": "cspell \"**\" .",
     "write-heading-ids": "docusaurus write-heading-ids",
     "write-translations": "docusaurus write-translations"
   },

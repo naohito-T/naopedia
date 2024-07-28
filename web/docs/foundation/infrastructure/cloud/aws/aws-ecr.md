@@ -25,10 +25,10 @@ AWS CLIを使用してECSでアプリケーションをデプロイする基本�
 2. **DockerイメージのECRへのプッシュ**: 作成したDockerイメージをAmazon Elastic Container Registry (ECR)にプッシュします。
 
 ```sh
-$ aws ecr get-login-password --region region | docker login --username AWS --password-stdin your-account-id.dkr.ecr.region.amazonaws.com
-$ docker build -t your-app .
-$ docker tag your-app:latest your-account-id.dkr.ecr.region.amazonaws.com/your-app:latest
-$ docker push your-account-id.dkr.ecr.region.amazonaws.com/your-app:latest
+aws ecr get-login-password --region region | docker login --username AWS --password-stdin your-account-id.dkr.ecr.region.amazonaws.com
+docker build -t your-app .
+docker tag your-app:latest your-account-id.dkr.ecr.region.amazonaws.com/your-app:latest
+docker push your-account-id.dkr.ecr.region.amazonaws.com/your-app:latest
 ```
 
 3. **タスク定義の作成**: ECSタスク定義を作成します。タスク定義はJSON形式のファイルで、タスクの各コンテナーのプロパティを定義します。
@@ -54,10 +54,10 @@ $ docker push your-account-id.dkr.ecr.region.amazonaws.com/your-app:latest
 }
 ```
 
-このJSONファイルを`task-definition.json`として保存し、以下のコマンドでタスク定義を登録します。
+このJSONファイルを `task-definition.json` として保存し、以下のコマンドでタスク定義を登録します。
 
 ```sh
-$ aws ecs register-task-definition --cli-input-json file://task-definition.json
+aws ecs register-task-definition --cli-input-json file://task-definition.json
 ```
 
 4. **ECSクラスターの作成**: 次に、ECSクラスターを作成します。
@@ -69,13 +69,13 @@ $ aws ecs register-task-definition --cli-input-json file://task-definition.json
 5. **ECSサービスの作成**: クラスター内でサービスを作成してタスクを実行します。
 
 ```sh
-$ aws ecs create-service --cluster your-app-cluster --service-name your-app-service --task-definition your-app --desired-count 1 --launch-type "EC2" --scheduling-strategy "REPLICA" --load-balancers "targetGroupArn=arn:aws:elasticloadbalancing:region:account-id:targetgroup/target-group-name/load-balancer-id,containerName=your-app,containerPort=80" --role ecsServiceRole
+aws ecs create-service --cluster your-app-cluster --service-name your-app-service --task-definition your-app --desired-count 1 --launch-type "EC2" --scheduling-strategy "REPLICA" --load-balancers "targetGroupArn=arn:aws:elasticloadbalancing:region:account-id:targetgroup/target-group-name/load-balancer-id,containerName=your-app,containerPort=80" --role ecsServiceRole
 ```
 
 6. **サービスの更新**: アプリケーションを更新する場合は、新しいDockerイメージをECRにプッシュし、タスク定義を更新してサービスを更新します。
 
 ```sh
-$ aws ecs update-service --cluster your-app-cluster --service your-app-service --task-definition new-task-definition
+aws ecs update-service --cluster your-app-cluster --service your-app-service --task-definition new-task-definition
 ```
 
 注意: これらのコマンドは基本的な例を示しており、実際にはさまざまなオプションや設定が必要になります。また、これらのコマンドを実行する前に、適切なIAMロールやセキュリティグループ、VPC、サブネットなど、必要なAWSリソースがすでにセットアップされていることを確認する必要がある。

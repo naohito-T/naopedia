@@ -1,4 +1,5 @@
 # AWS Secrets Manager
+
 [リファレンス](https://aws.amazon.com/jp/secrets-manager/)
 [AWS Secrets Manager」をチュートリアル2種](https://dev.classmethod.jp/articles/secrets-manager-tutorials/)
 
@@ -12,7 +13,7 @@
 
 ## シークレットタイプ
 
-暗号化キー`DefaultEncryptionKey`はAWSシークレットマネージャーが作成するデフォルト暗号化キーのため、費用はかからない。
+暗号化キー`DefaultEncryptionKey` はAWSシークレットマネージャーが作成するデフォルト暗号化キーのため、費用はかからない。
 もし、自分で作ったカスタムマスターキー（CMK）を利用するのであれば、別途KMSの料金が必要となります
 
 ## ローテーション
@@ -22,6 +23,7 @@
 シークレットは30日ごとにローテーションすることをオススメします。
 
 ## AWSのParameter StoreとSecrets Manager、結局どちらを使えばいいのか？比較
+
 [参考URL](https://qiita.com/tomoya_oka/items/a3dd44879eea0d1e3ef5)
 
 ## AWS Systems Manager (旧SSM) とは

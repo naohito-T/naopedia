@@ -1,10 +1,11 @@
 # Web Vitals
+
 [Sentryでのリファレンス](https://docs.sentry.io/product/performance/web-vitals/)
 [説明ブログ](https://www.suzukikenichi.com/blog/web-vitals-chrome-extension-is-now-available-on-web-store/)
 [seoブログ](https://gmotech.jp/semlabo/seo/blog/core-web-vitals/)
 
-
 Web Vitalsはを以下の項目を測定するためにGoogleによって定義された一連の指標。
+
 - レンダリング時間
 - 応答時間
 - レイアウト シフト
@@ -12,13 +13,12 @@ Web Vitalsはを以下の項目を測定するためにGoogleによって定義�
 これらのWeb Vitalsは、Googleによってもっとも重要であると見なされ、ユーザー エクスペリエンスを直接測定する。
 Googleは、2021年5月の時点で、これらの指標が検索ランキングにも影響すると報告している。
 
-
 ## LCP(Largest Contentful Paint) : 読み込み時間
 
 LCPは2.5秒未満が良好な数値。
 GoogleはLCPという基準を採用することによって、読み込みの早いページを優先的に表示させるようになった。
 LCPはページ読み込みから2.5秒以内がGOOD（良好）、4.0秒以上かかってしまうとPOOR（不十分）と評価されてしまう。
-尚、LCPと似たような用語に`First Contentful Paint（FCP）`があります。
+尚、LCPと似たような用語に `First Contentful Paint（FCP）` があります。
 FCPはテキストや画像などの何らかのコンテンツがレンダリングされるまでの時間を表す指標です。
 LCPはページの中でもっとも大きなコンテンツ（画像またはテキストブロック）のレンダリング時間を指します。
 
@@ -34,7 +34,6 @@ FIDをSEO対策の基準とすることで、よりページ内でのアクシ�
 FIDの値が小さいほど、高いユーザー体験（UX）を提供できている状態です。
 
 具体的には、ユーザーが何らかのアクションを起こしてから100ミリ秒未満がGOOD（良好）、300ミリ秒以上かかってしまうとPOOR（不十分）と評価されてしまいます。
-
 
 ## CLS（Cumulative Layout Shift ）：ページコンテンツの視聴的安全性
 
@@ -52,6 +51,3 @@ Web Vitals Extension
 閲覧しているページのコアウェブバイタルデータ（LCP・FID・CLS）をバックグランドで自動計測してくれるので、特別な操作は必要ありません。 計測中のデータは、Chrome上の右上に出るアイコンをクリックすることでいつでも簡単にチェックすることが可能。
 
 ## 検索ランキングの要因となるコアウェブバイタル（Core Web Vitals）と4つのシグナル
-
-
-

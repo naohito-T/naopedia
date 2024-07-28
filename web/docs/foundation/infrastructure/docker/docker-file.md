@@ -33,9 +33,9 @@
   > →alpine よりも slim のが良い。
 
 - .dockerignoreを使用する
-  Dockerのビルド時に無視するファイル/ディレクトリを指定することができる。
-  .gitのようなコンテナー内に不要な情報`node_modules`のような上書きされると困るものを記述する。
-  .dockerignoreは基本的に`.gitignore`と書き方は一緒
+  Dockerのビルド時に無視するファイル/ディレクトリをできる。る。
+  .gitのようなコンテナー内に不要な情報 `node_modules` のような上書きされると困るものを記述する。
+  .dockerignoreは基本的に `.gitignore` と書き方は一緒
 
 2. Build
 
@@ -73,12 +73,10 @@ CMD ["npm", "start"]
 マウントキャッシュを利用してホストマシン上のディレクトリをビルド中のコンテナー内にマウントすると、ファイルのuid,gid,modeはホストマシン上の値と同じになります。一方でコンテナ内でファイルを作成するとrootとして操作したことになり、ファイルはuid=0で作成されます。
 もしそれがホストマシン上のディレクトリをマウントした場所なら、ホストマシン上のディレクトリにuid=0のファイルが作成されることになります。ファイルのownerやパーミッションの値に注意しましょう。
 
-
 ## 開発環境とlocal環境でのDockerfile違い
 
 開発環境と本番環境では大きく異なる点がある。
 ソースコードを編集した結果は即座に稼働中のサーバに反映されて欲しいものだが、その度にDockerイメージを構築し直しコンテナーを再起動するのは手間が大きい。
-
 
 ### 開発環境
 
@@ -99,8 +97,9 @@ $ docker run -it \
   -v myrailsapp_bundle:/app/vendor/bundle \
   -v myrailsapp_node_modules:/app/node_modules -p 3000:3000 myrailsapp
 ```
+
 上記コマンドで、カレントディレクトリを/appにマウントし、そのディレクトリ上でbashが起動します。後はbundle install、yarn install、bin/rails sを実行すればサーバが起動します。
-この開発環境では`:cached`を追加するなどをする（macが遅いため）
+この開発環境では `:cached` を追加するなどをする（macが遅いため）
 
 手順
 
@@ -122,13 +121,13 @@ yarn installする。
 ### CMD
 
 - shell形式
-`CMD "yarn" "start"`のように文字列のみで記述するのをshell形式
-`/bin/sh -c "yarn start"`のように解釈される。
+`CMD "yarn" "start"` のように文字列のみで記述するのをshell形式
+`/bin/sh -c "yarn start"` のように解釈される。
 
 - exec形式
-`CMD ["yarn" "start"]`のようにJSON配列の形式で記述するのをexec形式
+`CMD ["yarn" "start"]` のようにJSON配列の形式で記述するのをexec形式
 
-shell形式で記述すると`PID 1`のプロセスがシェルとなり、kubernetesなどのオーケストレータから送られたシグナルがアプリケーションまで伝搬しない可能性がある。
+shell形式で記述すると `PID 1` のプロセスがシェルとなり、kubernetesなどのオーケストレータから送られたシグナルがアプリケーションまで伝搬しない可能性がある。
 実際に、コンテナーを動かしているプロンプト上でCtrl+Cを押してもコンテナーが停止しない。
 
 ## ADD

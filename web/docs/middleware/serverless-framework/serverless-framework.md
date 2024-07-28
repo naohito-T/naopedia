@@ -48,7 +48,6 @@ functions:
 
 [【Serverless Framework】version3の新機能＆知らなかった機能](https://makky12.hatenablog.com/entry/2022/08/22/120500)
 
-
 ## serverless-framework AWS認証情報セットアップ
 
 [リファレンス](https://www.serverless.com/framework/docs/providers/aws/guide/credentials)
@@ -89,20 +88,20 @@ AWSをプロバイダーとしてNode.jsでサービスを開設する場合は�
 
 ## serverless 初期化コマンド
 
-- 実行フォルダー直下にファイル群を作成するか（`-p`をつける）
-- フォルダーの中にまとめた状態で作成するか（`-p`をつけない）
+- 実行フォルダー直下にファイル群を作成するか（`-p` をつける）
+- フォルダーの中にまとめた状態で作成するか（`-p` をつけない）
 
 ## 初期化コマンド終了後
 
 serverlessのパッケージが存在していないため以下のコマンドを実行する。
 
-`yarn` or ` yarn add serverless`
+`yarn` or `yarn add serverless`
 
 ## serverlessが実行できることの確認
 
-`$ sls create`をした時点で、エンドポイントを叩くとサンプルのJSONが返ってくる参考用の`helloメソッド`が用意されています
+`$ sls create` をした時点で、エンドポイントを叩くとサンプルのJSONが返ってくる参考用の `helloメソッド` が用意されています
 
-localのメソッドを試すには`$ sls invoke`コマンドを使用します。
+localのメソッドを試すには `$ sls invoke` コマンドを使用します。
 
 ```sh
 # ローカルのsls invokeを使い hello メソッドを試す
@@ -113,7 +112,7 @@ $ npx sls invoke local -f hello
 ```
 
 - deployされたメソッドを試す
-デプロイしたものは`$ sls invoke hello`とすればOK！
+デプロイしたものは `$ sls invoke hello` とすればOK！
 
 ## serverless invoke
 
@@ -122,9 +121,9 @@ Serverless Frameworkで作成するメソッドは、
 - エンドポイントを叩く
 - cronで決めた時間に実行する
 等、何かしらトリガーがある。そのため
-`$ sls invoke`はそれらのメソッドをすぐに実行し試す事ができる。
+`$ sls invoke` はそれらのメソッドをすぐに実行し試す事ができる。
 ※**ローカルだけではなくデプロイしたもの**も実行できる
-デプロイしたものは`$ sls invoke hello`とすればOK！
+デプロイしたものは `$ sls invoke hello` とすればOK！
 
 ## serverless.yml
 
@@ -194,8 +193,8 @@ functions:
 Serverlessのデプロイにはstageという概念が導入されています。
 いわゆる本番環境とテスト環境といった環境をstageという単位で切り分けています。
 
-Serverlessはデフォルトで`dev`というステージかつ`us-east-1`リージョンへデプロイされるようになっている。
-もしこれを変更したければ`serverless.yml`に以下のように設定する。
+Serverlessはデフォルトで `dev` というステージかつ `us-east-1` リージョンへデプロイされるようになっている。
+もしこれを変更したければ `serverless.yml` に以下のように設定する。
 
 ```yml
 service: service-name
@@ -208,7 +207,7 @@ provider:
 ## ファンクション単位のデプロイ
 
 serverless deploy -vはサービス全体のデプロイを行います。ファンクションの一部を修正したなどのケースで、サービス全体がデプロイされるのは大変。  
-Serverlessはファンクション単位でのデプロイも`serverless deploy function -f <your-function>`にて可能です。
+Serverlessはファンクション単位でのデプロイも `serverless deploy function -f <your-function>` にて可能です。
 
 ## serverlessで使用できる変数
 
@@ -217,7 +216,7 @@ Serverlessはファンクション単位でのデプロイも`serverless deploy 
 
 ### 環境変数を参照する場合
 
-> 環境変数を参照する場合は`${env:SOME_VAR}`というシンタックスをserverless.ymlに記述します。以下がその例です。serverless.yml
+> 環境変数を参照する場合は `${env:SOME_VAR}` というシンタックスをserverless.ymlに記述します。以下がその例です。serverless.yml
 
 ```yml
 service: new-service
@@ -235,7 +234,7 @@ functions:
 
 ### CLIオプションを参照する
 
-> serverlessコマンド実行時のオプションを参照させたい場合は`${opt:SOME_VAR}`というシンタックスをserverless.ymlに記述します。以下がその例です。
+> serverlessコマンド実行時のオプションを参照させたい場合は `${opt:SOME_VAR}` というシンタックスをserverless.ymlに記述します。以下がその例です。
 
 ```yml
 serverless.yml
@@ -250,7 +249,7 @@ functions:
       handler: handler.world
 ```
 
-serverless deploy --stage devとした場合は`${opt:stage}`はdevが返ります。また、serverless deploy --stage productionとした場合は、productionが返ります。
+serverless deploy --stage devとした場合は `${opt:stage}` はdevが返ります。また、serverless deploy --stage productionとした場合は、productionが返ります。
 
 ### 自身で定義した変数を参照する
 
@@ -276,8 +275,8 @@ serverless deploy --stage devとした場合は`${opt:stage}`はdevが返りま�
 
 ## CLI同梱問題
 
-serverless v2までに関しては`@serverless/cli`が同梱されていたが、serverless v3に関しては`@serverless/cli`が同梱されなくなった。
-そのため、serverless v3をinstallした場合は`@serverless/cli`もinstallしなければいけない。そしてcliのインターフェイスは`components-v1`
+serverless v2までに関しては `@serverless/cli` が同梱されていたが、serverless v3に関しては `@serverless/cli` が同梱されなくなった。
+そのため、serverless v3をinstallした場合は `@serverless/cli` もinstallしなければいけない。そしてcliのインターフェースは `components-v1`
 
 ## CLI のオプション指定方法
 
@@ -309,8 +308,8 @@ serverlessが提供するコマンド（3系のみ？）
 [参考URL](https://blog.serverworks.co.jp/sls-v3-update-summary)
 
 - dotenv
-serverless-dotenv-pluginを使用して`${env:xxx}`のような環境変数の参照ができなくなった。
-v3（2系後半のバージョンも含む）以降は、ネイティブでサポートされているため、`useDotenv: true`を設定することで参照できます。
+serverless-dotenv-pluginを使用して `${env:xxx}` のような環境変数の参照ができなくなった。
+v3（2系後半のバージョンも含む）以降は、ネイティブでサポートされているため、`useDotenv: true` を設定することで参照できます。
 
 ## プラグインのインストール
 
@@ -325,7 +324,7 @@ v3（2系後半のバージョンも含む）以降は、ネイティブでサ�
 
 - npm or yarnなどを使ってインストールする。
 `$ yarn add -D [plugin name]`
-そのあとは`serverless.yml`内のプラグインに自身で記載する。
+そのあとは `serverless.yml` 内のプラグインに自身で記載する。
 
 ## serverlessでnode_modulesをレイヤー
 
@@ -335,14 +334,14 @@ v3（2系後半のバージョンも含む）以降は、ネイティブでサ�
 
 serverless v2コマンドに関しては
 
-`serverless.yml`で`component: '@sls-next/serverless-component@3.7.0'`などを使用するとそっちのコンポーネントを使うことになるため`serverless package`など通常通りにはできず`component: '@sls-next/serverless-component@3.7.0'`に実装されていないと実行できない。  
+`serverless.yml` で `component: '@sls-next/serverless-component@3.7.0'` などを使用するとそっちのコンポーネントを使うことになるため `serverless package` など通常通りにはできず `component: '@sls-next/serverless-component@3.7.0'` に実装されていないと実行できない。  
 ひとつのファイルにはひとつのコンポーネントのみが使用できる。  
-※理解としてはcomponentを使うと`serverless.yml`がそのコンポーネント仕様になる
+※理解としてはcomponentを使うと `serverless.yml` がそのコンポーネント仕様になる
 
 ## serverlessとlocalStack
 
 [参考URL](https://tech.sawa-lab.net/archives/473)
 
 localStackはプラグインよりもdockerで準備する。  
-serverlessにはプラグイン（serverless-localsStack）があり、設定することで簡単にS3やRDSなどのモックを利用することができるようになる。  
+serverlessにはプラグイン（serverless-localsStack）があり、設定することで簡単にS3やRDSなどのモックを利用できるようになる。  
 しかし、これはあくまでLambdaを実行する時に作成されてLambdaから利用する前提の仕組みになっている。

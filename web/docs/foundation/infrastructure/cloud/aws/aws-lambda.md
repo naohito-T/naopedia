@@ -49,15 +49,13 @@ Lambdaを定期実行する方法があるが、これは根本的に解決に�
 - コンテナー実行後一定時間内に同じ関数を再実行するとコンテナーが再利用される。
 - Lambda実行毎にプロセスが完全に分離しているため、コンテナー再利用+グローバル変数を変化させるコードを書いても問題なし。
 
-
-
 ### CLIから実行する場合
 
 ```sh
-$ aws lambda invoke --function-name alb-backend-anycolor-dev-migration --cli-binary-format raw-in-base64-out --payload '{"type": "show"}' a.json
+aws lambda invoke --function-name alb-backend-anycolor-dev-migration --cli-binary-format raw-in-base64-out --payload '{"type": "show"}' a.json
 ```
 
-`--payload`はLambdaがリクエストを受け取ったときによしなにjsonとしてparseしてくれる。
+`--payload` はLambdaがリクエストを受け取ったときによしなにjsonとしてparseしてくれる。
 
 ```typescript
 export const handler: Handler<RequestSchema> = async (event, context) => {
@@ -84,7 +82,7 @@ LambdaはこのVPCにネットワークアクセスとセキュリティルー�
 
 defaultではNATを使って対応する。  
 その場合はloggerなどの出力はインターネットを介して取得される。
-そのため、セキュリティ的な懸念がある場合は`VPC Endpoint`を使用する
+そのため、セキュリティ的な懸念がある場合は `VPC Endpoint` を使用する
 
 ## Lambdaを用いたサーバーレスメリット
 
@@ -116,7 +114,7 @@ defaultではNATを使って対応する。
 AWSの公式ドキュメントによると、AWS Lambdaの関数は**ステートレス**な実装にする必要がある。  
 一方でステートレスな実装を追求すると、外部サーバからのデータ取得処理が増え、結果として処理パフォーマンス悪化を引き起こす場合が多い。  
 
-ステートレスな実装を謳っているが`/tmp`ファルダの提供があるため少なからずキャッシュの利用は可能そう。
+ステートレスな実装を謳っているが `/tmp` ファルダの提供があるため少なからずキャッシュの利用は可能そう。
 >Lambda関数はあらゆる状態を持たない実装にすべき」ことを示すのではなく、「外部にマスタがある静的なデータはLambda関数上のキャッシュとして保持し、次回リクエスト時に再利用して良い」
 
 ## Lambdaを最低限ローカルで実行しテストする(簡単)
@@ -130,16 +128,16 @@ AWSの公式ドキュメントによると、AWS Lambdaの関数は**ステー�
 [Lambda Layersでライブラリを共通化（GUI版）](https://qiita.com/t_okkan/items/394a15577bd1aad46ec3)
 
 Lambda Layersとは、複数のLambda関数で外部ライブラリやビジネスロジックを共有できる仕組み。
-使用するライブラリや共通のビジネスロジックをZIPアーカイブしLayerに追加することができる。
+使用するライブラリや共通のビジネスロジックをZIPアーカイブしLayerに追加できる。
 
 ### 制限
 
-1つのLambda関数では**5つのLayerのみ**使用することができる。
+1つのLambda関数では**5つのLayerのみ**使用できる。
 また、Lambda関数とLayerの解凍後の合計サイズが250MB以下となる必要があり
 
 ### Lambda Layersの配置先
 
-作成したLayerは、Lambdaの実行環境の`/opt`ディレクトリに展開されます。
+作成したLayerは、Lambdaの実行環境の `/opt` ディレクトリに展開されます。
 /optディレクトリ以下に、ランタイムの言語ごとのディレクトリが構成されているので、ランタイムに合わせてLayerを構築する必要があります。
 >Pythonを例にとると、Lambdaの実行環境は/opt/python/とディレクトリが構成されているため、作成するLayerは展開される構成が/opt/python/"作成したLayer"となる必要があります
 
@@ -212,7 +210,6 @@ Lambdaではexports.handler以下が実行されます。
 
 [参考URL](https://docs.aws.amazon.com/ja_jp/serverless-application-model/latest/developerguide/what-is-sam.html)
 
-
 ## Lambdaでディレクトリを使用したい場合
 
 [参考URL](https://cloud5.jp/lambda_tmp_directory/)
@@ -222,7 +219,7 @@ Lambdaの公式ドキュメントに、/tmpディレクトリに対して以下�
 
 >各実行環境は、/tmp ディレクトリ内のディスク領域を 512 MB に提供します。ディレクトリのコンテンツは、実行環境が停止された際に維持され、複数の呼び出しに使用できる一時的なキャッシュを提供します。キャッシュに保存したデータが存在するかどうかを確認するための追加コードを追加できます。デプロイのサイズ制限の詳細については、「Lambda のクォータ」を参照してください。
 
-512MBの一時領域（`/tmp`ディレクトリ）が提供されている。そのためそちらを使用しファイルの出力と書き込みを行える。  
+512MBの一時領域（`/tmp` ディレクトリ）が提供されている。そのためそちらを使用しファイルの出力と書き込みを行える。  
 Lambda上でAWS CLIを実行したいと思いました。 AWS CLIにはs3 syncコマンドのような、SDKには未実装の便利な機能があるためです。  
 Lambdaの実行環境にはAWS CLIはプリインストールされていないので、ひと工夫が必要になります。
 
@@ -237,7 +234,7 @@ LambdaにはAWS SDKがインストールされる。
 Lambda Functionは大きく3つのレイヤーに分かれたレイヤー化アーキテクチャと相性がよいと考えられている。
 
 - ハンドラー層: API Gatewayなどから入力を受け取り、バリデーションやオブジェクトの変換を行う
-- ドメイン層: ユースケースに対するビジネスロジックとインタフェースを定義する
+- ドメイン層: ユースケースに対するビジネスロジックとインターフェースを定義する
 - インフラストラクチャ層: AWS SDKを利用したAWSサービスとのやりとりや外部APIへのアクセスを行う
 
 ## Lambda local実行
@@ -252,7 +249,7 @@ Lambda Functionは大きく3つのレイヤーに分かれたレイヤー化ア�
 
 - zip圧縮後50MB
 - zip圧縮前250MB
-※これ`or`かもしれない。
+※これ `or` かもしれない。
 
 また、Lambda deployに関してコンテナーイメージのサポートが導入されておりその場合は10GBで良いとのこと。コンテナーイメージにするのもいいかもしれない。
 
@@ -264,16 +261,18 @@ Lambda Functionは大きく3つのレイヤーに分かれたレイヤー化ア�
 
 [参考URL](https://dev.classmethod.jp/articles/vendia-serverless-express/)
 
-`@vendia/serverless-express`を使用する。
+`@vendia/serverless-express` を使用する。
 APIGateway+Lambda上でExpressを動かせるというライブラリ。
 ※昔はaws-serverless-expressというパッケージがあってこちらが使われていた認識なのですが、@vendia/serverless-expressがその後継という形。
 
 >この手法のメリットとは
-- 1つのLambda関数だけを用いた構成だと、Lambda関数が1つであるためデプロイの時間を短くすることができるというメリット
+
+- 1つのLambda関数だけを用いた構成だと、Lambda関数が1つであるためデプロイの時間を短くできるというメリット
 - 通常のだるさを解消
 だるさはこれ→複数のAPIを作るために1つのLambda関数内で、httpメソッド（GET,POST,PUT,DELETE）ごとに条件分岐を行い、さらにURLごとに条件分岐する必要があります。
 
 >この手法のデメリット
+>
 >- 気になる点を挙げるとすれば、王道のAPIgw+Lambda Wayとはいえず、ややHackyな手法ではあると思います。ExpressのようなWeb Application Frameworkを使うならECSやAppRunnerを使う方が素直な感じはします。それでもECSなどを使う場合と比べてLambdaにはゼロスケール1できるという強みがあるので、存外悪くない手法だと思います。
 
 ## Lambda TypeScript middy
@@ -308,4 +307,4 @@ AWS Lambdaの実行モデルは、従来のサーバーベースのアプリケ�
 
 5. **スロットリング**: 上記の同時実行数の制限に達した場合、Lambdaは新しい関数の実行リクエストをスロットル（一時制限）する可能性があります。
 
-要するに、Lambdaはスケールアウトの能力を持ち、多数のリクエストを並行して処理することができますが、その上限や同時実行数の制限には注意が必要です。
+要するに、Lambdaはスケールアウトの能力を持ち、多数のリクエストを並行して処理できますが、その上限や同時実行数の制限には注意が必要です。

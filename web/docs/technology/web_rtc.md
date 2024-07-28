@@ -3,19 +3,20 @@
 Webブラウザからリアルタイム通信を行うことができるAPI
 
 ## シグナリングサーバ
+
 firebaseで代用可能
 誰かが書き込めばそれを誰かが読み取れる
 
 ## STUNサーバ
-インターネットからuserのIPがわかるサーバー
 
+インターネットからuserのIPがわかるサーバー
 
 ## 手順
 
 mediaDevices.getUserMedia : カメラやマイクなどのメディアデバイスへアクセスする許可を求める
 →引数には音声・映像をどのような条件で取得するかを指定するためのMediaStreamConstraintsオブジェクトを指定します。
 →.getUserMedia(MEDIA_CONSTRAINTS) @example audio: true, video: true
-ビデオ会議ツールは自分の声はミュートにする.
+ビデオ会議ツールは自分の声はミュートにする。
 
 ---
 ここから以下を参考にしている
@@ -58,24 +59,20 @@ open source stunサーバ
 NAT付ネットワーク外にいる場合： 自PCの知っているIPアドレス = STUNの返すIPアドレス
 NAT付ネットワーク内にいる場合： 自PCの知っているIPアドレス ≠ STUNの返すIPアドレス
 
-
 になるはずなので、比較によって自PCがNAT付ネットワーク内かどうか判定できます。
 自PCがNAT内の場合、「NAT越え」が必要だということがわかります。
-
 
 ## TURNサーバ(ターンサーバ)
 
 TURNサーバはP2P通信したいPCの間に立ってデータをリレーするもの
-
 
 TURNサーバにそれぞれ代理人(PC1', PC4')を立てて、代理人同士がデータのやり取りを行うことで、PC1-PC4間の擬似的な直接通信を行います。
 
 ここまで
 
 ---
-## Tips
 
+## Tips
 
 [Vue3_TypeScriptでWebRTCを扱う](https://tec.tecotec.co.jp/entry/2021/07/02/090000)
 [React_TypeScript](https://qiita.com/watanabeso/items/028800170aa17789b26e)
-

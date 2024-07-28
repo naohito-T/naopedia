@@ -24,7 +24,7 @@ TypeScriptの主要な役割は型チェックにある。
 
 ## staticキーワードは評価されるのか
 
-JavaScriptやTypeScriptにおける`static`キーワードに関連するフィールドやメソッドは、そのクラスのインスタンスを生成しなくてもアクセスできるメンバーを示します。しかし、`static`が評価済みという意味ではない。
+JavaScriptやTypeScriptにおける `static` キーワードに関連するフィールドやメソッドは、そのクラスのインスタンスを生成しなくてもアクセスできるメンバーを示します。しかし、`static` が評価済みという意味ではない。
 
 ```typescript
 class MyClass {
@@ -39,8 +39,8 @@ console.log(MyClass.staticValue); // This is a static value
 MyClass.staticMethod(); // This is a static method.
 ```
 
-上記の例では、`MyClass`の`staticValue`という静的フィールドと`staticMethod`という静的メソッドにアクセスしています。これらはインスタンス化せずとも直接アクセス可能です。
-しかしこの`staticValue`の初期化や`staticMethod`の定義自体は、スクリプトが読み込まれて実行されるタイミング（ランタイム）で行われます。ですので、`static`キーワードが評価済みというわけではなく、実行時に評価されることを意味しています。
+上記の例では、`MyClass` の `staticValue` という静的フィールドと `staticMethod` という静的メソッドにアクセスしています。これらはインスタンス化せずとも直接アクセス可能です。
+しかしこの `staticValue` の初期化や `staticMethod` の定義自体は、スクリプトが読み込まれて実行されるタイミング（ランタイム）で行われます。ですので、`static` キーワードが評価済みというわけではなく、実行時に評価されることを意味しています。
 ただし、一部のJavaScriptエンジンやツールは、特定のパターンを検出して最適化を行うことがありますが、これはTypeScriptやJavaScriptの言語仕様に基づくものではありません。
 
 ## overloadから型定義を取得する
@@ -60,7 +60,7 @@ class ParentClass {
 }
 ```
 
-TypeScript（およびJavaScript）において、アロー関数で定義するとクラスのインスタンスプロパティとして扱われます。これは、関数が実際にはそのインスタンスのプロパティ値として保存されるためです。この挙動は、関数の`this`のスコープをクラスインスタンスに自動的にバインドする利点があります。したがって、アロー関数を用いたプロパティの定義は、特にイベントハンドラやコールバック関数として利用する場合に便利です。
+TypeScript（およびJavaScript）において、アロー関数で定義するとクラスのインスタンスプロパティとして扱われます。これは、関数が実際にはそのインスタンスのプロパティ値として保存されるためです。この挙動は、関数の `this` のスコープをクラスインスタンスに自動的にバインドする利点があります。したがって、アロー関数を用いたプロパティの定義は、特にイベントハンドラやコールバック関数として利用する場合に便利です。
 
 ### クラス内のアロー関数をプロパティとして定義する例
 
@@ -82,10 +82,7 @@ instance.hoge();         // "Hoge from property" が出力される
 instance.normalMethod();  // "Hoge from method" が出力される
 ```
 
-このコード例では、`hoge`はクラスのインスタンスを通じて呼び出すことができるプロパティとして定義されています。アロー関数を使うと、`this`が関数が定義された時点のコンテキスト（この場合はクラスのインスタンス）に永続的にバインドされるため、クラスの他のメソッドやプロパティに簡単にアクセスできます。これに対して、`normalMethod`は通常のメソッドとして定義されており、特に`this`の挙動に注意が必要な場合（例えばコールバックとして使用する場合など）は、適切にバインドするかアローファンクションを使用する必要があります。
-
-
-
+このコード例では、`hoge` はクラスのインスタンスを通じて呼び出すことができるプロパティとして定義されています。アロー関数を使うと、`this` が関数が定義された時点のコンテキスト（この場合はクラスのインスタンス）に永続的にバインドされるため、クラスの他のメソッドやプロパティに簡単にアクセスできます。これに対して、`normalMethod` は通常のメソッドとして定義されており、特に `this` の挙動に注意が必要な場合（例えばコールバックとして使用する場合など）は、適切にバインドするかアローファンクションを使用する必要があります。
 
 ## TypeScriptのエラーハンドリング
 
@@ -124,19 +121,20 @@ result型は確かにいいけど可読性がいいかと言われたら違う�
 ## .d.ts
 
 [型定義ファイル (.d.ts)](https://typescriptbook.jp/reference/declaration-file)
-`.d.ts`ファイルは`.ts`と`.js`ファイルの間をつなぐブリッジ。
+`.d.ts` ファイルは `.ts` と `.js` ファイルの間をつなぐブリッジ。
 
 ## 自作の型定義ファイル .ts or d.ts？
 
 [自作の型定義ファイルに ".d.ts" と付けない方がいい](https://techlab.q-co.jp/articles/41/)
-TypeScriptで型定義用のファイルを作る際に、ライブラリが生成する型定義ファイルの名前にならって`.d.ts`と付けると、定義していない型がanyとして使えてしまい型チェック時にもエラーになりません。
-よって`.ts`で宣言する。
+TypeScriptで型定義用のファイルを作る際に、ライブラリが生成する型定義ファイルの名前にならって `.d.ts` と付けると、定義していない型がanyとして使えてしまい型チェック時にもエラーになりません。
+よって `.ts` で宣言する。
 
 ## named import と default import
 
-named importだと呼び出し側で名前を変更することができなくなるため、基本named importの方がいい。
+named importだと呼び出し側で名前を変更できなくなるため、基本named importの方がいい。
 
 ## import した時に、TypeScriptの型定義がない場合取れる対策
+
 [参考URL](https://medium.com/@ryutamaki/npm-module-%E3%81%AB-typescript-%E3%81%AE%E5%9E%8B%E5%AE%9A%E7%BE%A9%E3%81%8C%E3%81%AA%E3%81%84%E6%99%82%E3%81%AB-%E3%81%A8%E3%82%8A%E3%81%82%E3%81%88%E3%81%9A%E3%83%93%E3%83%AB%E3%83%89%E3%81%8C%E9%80%9A%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B-fcc090804b21)
 
 1. `npm install --save-dev @types/package-name` をためす
@@ -192,7 +190,7 @@ typesRootsがtsconfig.jsonに指定されている場合は**そのパッケー�
 
 [インデックスシグネチャで特定の文字だけのIndexを扱う](https://blog.mitsuruog.info/2019/03/typescript-limited-set-of-index-signature)
 
-動的に任意のプロパティを作成・使用したいときに使うかもしれないが、だいたいは`Map`などで代用ができる。
+動的に任意のプロパティを作成・使用したいときに使うかもしれないが、だいたいは `Map` などで代用ができる。
 
 ## TypeScript 型定義集
 
@@ -244,6 +242,7 @@ export class typeSampleModel {
 ```
 
 ## tsconfig.json
+
 [サバイバルTypeScript](https://typescriptbook.jp/reference/tsconfig/tsconfig.json-settings)
 [tsconfigあらかた設定](https://www.pg-fl.jp/program/tips/tsconfig_dirs.htm)
 
@@ -267,6 +266,7 @@ typeRoots
 
 1. tsconfig.jsonが使用される場合
 →存在するディレクトリがプロジェクトディレクトリになる
+
 >コンパイラー処理実行時に設定ファイルが明示的に指定された場合は、そのファイルが存在するディレクトリとなります。
 >コンパイラー処理実行時にディレクトリが明示的に指定された場合は、そのディレクトリとなります。
 
@@ -276,9 +276,10 @@ typeRoots
 
 - outDir
 この設定項目はコンパイル結果（JSファイル）を生成するディレクトリ（出力ディレクトリ）を表す
-outFile設定が存在する場合は指定することができない。
+outFile設定が存在する場合は指定できない。
 
 - rootDir
+
 >この設定項目は出力ファイルのディレクトリ構造を決定する際にのみ使用されます。具体的には、rootDir で指定されたディレクトリをベースに入力ファイルの相対パスを計算し、その相対パスを出力ディレクトリに適用してファイルを出力します。なお、rootDir はプロジェクトディレクトリを基準としたパスとして扱われます。
 
 >例: outDir が「dist」、rootDir が「src」である場合 → ファイル「src/hoge/Hoge.ts」は計算された相対パスが「hoge/Hoge.ts」になるので「dist/hoge/Hoge.js」にコンパイルされます。
@@ -287,13 +288,13 @@ outFile設定が存在する場合は指定することができない。
 - typeRoots
 typeRoots設定はこれまで説明した設定項目と若干異なり、コンパイル時に自動的に型定義ファイル（.d.ts）を持つパッケージを読み込む際の検索パスを指定する。
 ここへ指定されたディレクトリ下にあるパッケージ内の型定義ファイルが自動的に使用されます。
-また、`<reference types='...' />`ディレクティブでの型定義読み込みの検索パスとしても利用されます。
+また、`<reference types='...' />` ディレクティブでの型定義読み込みの検索パスとしても利用されます。
 typeRoots設定に指定するディレクトリはプロジェクトディレクトリを基準としたパスになる。
 
-※typeRootsに指定するディレクトリはパッケージの検索パスであるため、指定されたディレクトリには`<subdir>/index.d.ts`のようにサブディレクトリを伴ってファイルを設置するか、package.jsonのあるディレクトリ（パッケージディレクトリ）を置く必要があります。
+※typeRootsに指定するディレクトリはパッケージの検索パスであるため、指定されたディレクトリには `<subdir>/index.d.ts` のようにサブディレクトリを伴ってファイルを設置するか、package.jsonのあるディレクトリ（パッケージディレクトリ）を置く必要があります。
 
 なお、自動的に型定義を読み込むかどうかはtypes設定で制御されます。
-types設定が「[]」（空配列）である場合は、typeRoots設定にかかわらず自動的な読み込みが行われません（「includes」に含めた場合や`<reference types='...' />`ディレクティブで明示的に指定した場合を除く）
+types設定が「[]」（空配列）である場合は、typeRoots設定にかかわらず自動的な読み込みが行われません（「includes」に含めた場合や `<reference types='...' />` ディレクティブで明示的に指定した場合を除く）
 
 ```json
 
@@ -303,21 +304,22 @@ types設定が「[]」（空配列）である場合は、typeRoots設定にか�
 ```
 
 ## アロー関数が連続しているのは共通処理をしたいためのカリー化
+
 [参考URL](https://zenn.dev/tsucchiiinoko/articles/54076f7b135246)
 
 ## namespace 名前空間
 
 **名前空間はグローバルな名前空間でJavaScriptのオブジェクトに単純に名前がつけられたもの。**  
-`namespace`ではなくモジュールの仕組みを使う方がいい。  
-TypeScriptでゃnamespaceキーワードを使って名前空間を定義することができるが、通常はより柔軟性の高い**モジュールの仕組み**を使うのが推奨されている（といってもファイルを分けるだけ）
+`namespace` ではなくモジュールの仕組みを使う方がいい。  
+TypeScriptでゃnamespaceキーワードを使って名前空間を定義できるが、通常はより柔軟性の高い**モジュールの仕組み**を使うのが推奨されている（といってもファイルを分けるだけ）
 
 - namespaceが非推奨な理由
 namespaceを使うと同じファイル内で階層化された名前空間を作ることができるが、あくまでその階層構造はグローバルに占有されている。
 一方モジュールの仕組みを使うと、ファイル単位で**名前空間のコンテキストを分けることができる**（大きなプロジェクトであっても、適切な単位でモジュールを分割している限り、名前の衝突は本格的に発生しない。）
 
-## トリプルスラッシュ・ディレクティブMapped Typesの基本形は`{ [P in K]: T }`です。 P は T の中で使える型変数です。このとき、
+## トリプルスラッシュ・ディレクティブMapped Typesの基本形は `{ [P in K]: T }` です。 P は T の中で使える型変数です。このとき、
 
-Mapped Typesの基本形は`{ [P in K]: T }`。
+Mapped Typesの基本形は `{ [P in K]: T }`。
 ※PはTの中で使える型変数
 
 - PはこのMapped Typeの引数型 (parameter type)
@@ -337,14 +339,17 @@ Mapped Typesの基本形は`{ [P in K]: T }`。
 [参考URL](https://tech-1natsu.hatenablog.com/entry/2019/02/09/014218)
 
 ## TypeScript バリデーション種類
+
 [zod](https://zenn.dev/ynakamura/articles/65d58863563fbc)
 
 ## JSに型をつける
+
 [アンビエント宣言から既存ライブラリがJSしかない場合につける方法](https://maku.blog/p/s7wk5k3/)
 
-TypeScriptのアンビエント宣言 (Ambient Declarations) を行うと、既存のJavaScriptライブラリに型情報を付加することができる。
+TypeScriptのアンビエント宣言 (Ambient Declarations) を行うと、既存のJavaScriptライブラリに型情報を付加できる。
 
 この仕組みを利用すると、
+
 - サードパーティ製のJavaScriptライブラリ（npmパッケージ）や、自作のJavaScriptライブラリ（ただしTypeScript化はしたくないもの）をTypeScriptから使用する
 - jQueryなどのブラウザ上でロードされるライブラリをTypeScriptから使用する
 といったことが可能になる。
@@ -356,7 +361,6 @@ TypeScriptのアンビエント宣言 (Ambient Declarations) を行うと、既�
 ## DefinitelyTyped
 
 @typesスコープを管理しているDefinitely Typedは、Microsoftから支援を受けているものの、**Microsoftの脆弱性報奨金制度におけるセーフハーバーの対象ではない。**
-
 
 @typesで提供されているライブラリ
 `yarn add @types/xxx`
@@ -371,9 +375,11 @@ TypeScriptのアンビエント宣言 (Ambient Declarations) を行うと、既�
 interface宣言結合を利用したテクニックであり、さまざまなライブラリ型定義でも採用されている。
 
 ### Uncaught (in promise)
+
 [リファレンス](https://developer.mozilla.org/ja/docs/Web/API/Window/unhandledrejection_event)
 
 以下の場合が起こる。そしてブラウザでハンドリングができる。
+
 ```ts
 window.addEventListener('unhandledrejection', function(event) {
   // イベントオブジェクトは2つの特別なプロパティを持っています:
@@ -393,9 +399,10 @@ new Promise(function() {
 ### ts-node
 
 tsファイルをjsファイルにコンパイルすることなく実行する。
-`ts-node`のデフォルトでは、指定ファイルと依存関係にないファイルは読み込んでくれない。
+`ts-node` のデフォルトでは、指定ファイルと依存関係にないファイルは読み込んでくれない。
 
 オプション
+
 ```sh
 # 型チェックを行わず、トランスパイル(ts->js)のみ行う
 # 高速な起動が可能
@@ -413,9 +420,8 @@ tsファイルをjsファイルにコンパイルすることなく実行する�
 
 ### ts-node-dev
 
-tsファイルをjsファイルにコンパイルすることなく、起動することができ、さらに監視モードで素早く再起動が使用できる。  
+tsファイルをjsファイルにコンパイルすることなく、起動でき、さらに監視モードで素早く再起動が使用できる。  
 nodemonよりts-node-devのほうが大幅に再起動の速度が早いと公式に記載がある。
-
 
 ---
 
@@ -432,6 +438,7 @@ Type assertions（キャスト）Type assertionsを使うと、実際のデー�
 [こっちのが参考になるのかも](https://qiita.com/suin/items/cda9af4f4f1c53c05c6f)
 
 ## any vs unknown
+
 [参考URL](https://book.yyts.org/reference/statements/any-vs-unknown)
 
 anyはmethodが使えるが、unknownはmethodが使えないため少しだけ保守性があがる。
@@ -446,7 +453,6 @@ anyはmethodが使えるが、unknownはmethodが使えないため少しだけ�
 
 ### in演算子
 
-
 ### is演算子
 
 [参考URL](https://www.wakuwakubank.com/posts/767-typescript-user-defined-type-guards/)
@@ -456,6 +462,7 @@ anyはmethodが使えるが、unknownはmethodが使えないため少しだけ�
 unknown型やany型、Union型の型の絞り込みを行える。
 
 ## keyof演算子
+
 [参考URL](https://typescriptbook.jp/reference/type-reuse/keyof-type-operator)
 
 keyofはオブジェクト型からプロパティ名を型として返す型演算子です。
@@ -485,6 +492,7 @@ console.log(pilot.name); //
 ---
 
 ## インデックス型 (index signature)
+
 [参考URL](https://typescriptbook.jp/reference/values-types-variables/object/index-signature)
 
 TypeScriptで、オブジェクトのフィールド名をあえて指定せず、プロパティのみを指定したい場合があります。そのときに使えるのがこのインデックス型（index signature）
@@ -495,13 +503,14 @@ let obj: {
 };
 ```
 
-
 ## Mapped Types
+
 [参考URL](https://zenn.dev/qnighy/articles/dde3d980b5e386)
 
 Mapped Typeとは、あるオブジェクトのプロパティ名を利用して新しい型を作り出す機能
 
-## Indexed Access Types 
+## Indexed Access Types
+
 [参考URL](https://typescriptbook.jp/reference/type-reuse/indexed-access-types)
 
 TypeScriptのインデックスアクセス型(indexed access type)は、プロパティの型や配列要素の型を参照する方法を提供します。
@@ -512,10 +521,12 @@ type Foo = A["foo"]; // type Foo = number
 ```
 
 ## Conditional Types
+
 [Conditional Types](https://qiita.com/Quramy/items/b45711789605ef9f96de)
 
 TypeScript 2.8で導入された。  
 型定義における条件分岐（三項演算子と同じ）  
+
 ```ts
 type MyCondition<T, U, X, Y> = T extends U ? X : Y;
 ```

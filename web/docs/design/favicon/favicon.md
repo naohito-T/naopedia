@@ -1,4 +1,5 @@
 # favicon
+
 [参考URL(これが一番参考になる)](https://zenn.dev/pacchiy/articles/e4dcd7bd29d387)
 
 ファビコンとはfavorite icon（お気に入りアイコン）の略で2000年代の初頭から存在しているコンセプト。  
@@ -10,8 +11,6 @@ favicon画像は**ルートディレクトリの直下に置く**のがセオリ
 ※一部のブラウザでルートディレクトリ以外の階層にあるfavicon画像を読み込まないため。  
 ※RSSリーダーなど一部のツールでは、サーバーから/favicon.icoをリクエストするだけで、わざわざ他の場所を探さない場合もあるため
 
-
-
 ## ICO
 
 ICOはfaviconでもっともよく使われるファイル形式。  
@@ -22,9 +21,11 @@ ICOはfaviconでもっともよく使われるファイル形式。
 ```html
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 ```
+
 SVG形式のfaviconも、モダンブラウザでサポートされている。
 
 SVGの場合
+
 - 複数サイズの画像を用意しなくて良い
 - ダークモードに対応できる
 
@@ -32,6 +33,7 @@ SVGの場合
 SVGとICO（またはPNG）を併記するのが良い。
 
 ## 2023現在 ファビコン設定方法
+
 [参考URL](https://coliss.com/articles/build-websites/operation/work/how-to-favicon.html)
 
 最近のブラウザやデバイスに対応させる最小限ファビコンセットは6種類のファイルで対応できる。  

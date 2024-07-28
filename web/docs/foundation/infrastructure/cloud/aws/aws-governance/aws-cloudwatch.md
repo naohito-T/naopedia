@@ -1,7 +1,5 @@
 # CloudWatch
 
-
-
 ## cloudwatch Events
 
 Amazon EventBrideの前身  

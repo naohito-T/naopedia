@@ -2,7 +2,6 @@
 
 >GUIがなく、コマンドラインから操作する仮想マシンのことを「ヘッドレス仮想マシン (headless virtual machine)」と呼ぶことがあります。また、「コマンドライン仮想マシン (command-line virtual machine)」とも呼ばれます。AWSの場合、CLIやAPIを使用して、コマンドラインから仮想マシンを制御することができます。
 
-
 ## リモート Linux サーバを開発環境にする
 
 以下を見て触発された
@@ -52,7 +51,9 @@ $ hostname -I
 nc -vz 18.181.164.122 3000
 
 ---
+
 ## VPSでブラウザを開く
+
 [参考URL](https://www.kagoya.jp/howto/cloud/vps/ubuntu_gui/)
 ホストマシンのメモリ枯渇が腹たつため対応。
 
@@ -64,7 +65,7 @@ CUIと同じようにTera Termなどのターミナルエミュレーターか�
 VPSではそれができないため最初に用意する必要がある。
 
 - リモートデスクトップを受け付けるライブラリをインストールする
-Windows OSやmacOSには「リモートデスクトップ接続」機能があり、これを使って接続する方法があります。リモートデスクトップ接続でUbuntuにGUIでログインできるようにするには`xrdp`をインストールしておく必要があります。インストール方法は以下の通りです。
+Windows OSやmacOSには「リモートデスクトップ接続」機能があり、これを使って接続する方法があります。リモートデスクトップ接続でUbuntuにGUIでログインできるようにするには `xrdp` をインストールしておく必要があります。インストール方法は以下の通りです。
 
 ```sh
 apt update
@@ -72,5 +73,3 @@ apt upgrade
 apt -y install xrdp tigervnc-standalone-server
 systemctl enable xrdp
 ```
-
-

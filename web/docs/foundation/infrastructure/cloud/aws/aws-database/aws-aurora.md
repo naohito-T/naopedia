@@ -30,6 +30,7 @@ Auroraは分散ストレージです。すべてのデータは最小3つのAZ�
 ---
 
 ## Amazon Aurora Serverless
+
 [Aurora Serverlessについての整理](https://dev.classmethod.jp/articles/aurora-serverless-summary/)  
 [Aurora Serverless とは（zozo）](https://techblog.zozo.com/entry/aurora-serverless-v2)
 
@@ -45,7 +46,7 @@ Aurora  Serverlessを使うためには注意すること
   - 障害対策はMulti-AZ Failoverで、DBに障害が発生した時に自動的に他のAZに復旧されます。しかしプロビジョニングされたAuroraより時間がかかる。
   - ストレージはコンピューティングと別にマルチAZで分離させているので障害が発生してもストレージ利用できます。
 - 使用可能バージョンは3つ
-  - Aurora MySQL 5.6.10a / 5.7 2.07.1　の2つ、かつ必ず3306ポート
+  - Aurora MySQL 5.6.10a / 5.7 2.07.1の2つ、かつ必ず3306ポート
   - Aurora PostgreSQL　10.14 　1つ、かつ必ず5432ポート
 - バックアップの制約事項
   - DBクラスターの基本バックアップ期間は設定できない
@@ -70,7 +71,7 @@ Aurora  Serverlessを使うためには注意すること
 AWS RDSの文脈での「Single AZ」と「Multi AZ」に関して  
 Single AZ: RDSインスタンスが1つのアベイラビリティーゾーン（AZ）に配置されます。障害耐性はその1つのAZに依存します。
 
-Multi AZ: RDSはプライマリのAZと異なるセカンダリAZにスタンバイレプリカを持ちます。プライマリAZに障害が発生した場合、AWSは自動的にデータベース操作をスタンバイレプリカにフェイルオーバします。これにより、データベースのダウンタイムを大幅に短縮することができる。
+Multi AZ: RDSはプライマリのAZと異なるセカンダリAZにスタンバイレプリカを持ちます。プライマリAZに障害が発生した場合、AWSは自動的にデータベース操作をスタンバイレプリカにフェイルオーバします。これにより、データベースのダウンタイムを大幅に短縮できる。
 
 Multi AZ配置は、高い可用性を求める本番環境のデータベースに推奨されます。
 

@@ -13,4 +13,5 @@ AWS CodePipelineはGitHubとの連携ができます。GitHubリポジトリの�
 ただ権限管理の容易さを重視する場合は、AWS CodePipelineが有力な選択肢となるでしょう
 
 ## コンテナーシナリオでのCI/CDパイプラインの処理
+
 [![Image from Gyazo](https://i.gyazo.com/86abd396eea18f3e64fa9bba77319263.png)](https://gyazo.com/86abd396eea18f3e64fa9bba77319263)

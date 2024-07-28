@@ -1,26 +1,29 @@
 # Ruby on Rails
 
 ## Rails作者
+
 [大規模開発に強い理由](https://pr.forkwell.com/articles/dhh-rails-large-scale-development/)
 
 ## 参考
+
 [Railsガイド](https://railsguides.jp/)  
 [RailsとClean Architectureに関する考察](https://qiita.com/shunjikonishi/items/e39ed8091e1dca817468)  
 [【Rails】hashid-railsを用いてIDを難読化・暗号化させる方法](https://techtechmedia.com/hashid-rails/)  
 
 ## Rails処理概要
+
 [![Image from Gyazo](https://i.gyazo.com/f932132c9b8d23e980053158fd9eece8.png)](https://gyazo.com/f932132c9b8d23e980053158fd9eece8)
 
 ## Rails APIモード
 
-`Ruby on Rails`をバックエンドサーバーとして使用する場合、通常はアプリを API として設定するだけで、セッション、Cookie、レンダリングビューなどの一部の機能がデフォルトで無効になります。
+`Ruby on Rails` をバックエンドサーバーとして使用する場合、通常はアプリをAPIとして設定するだけで、セッション、Cookie、レンダリングビューなどの一部の機能がデフォルトで無効になります。
 
 ## Rails APIモードでactive adminを導入する方法
 
 [参考URL](https://medium.com/alturasoluciones/how-to-set-up-rails-api-app-to-use-activeadmin-79b418df8aad)
 
-
 ## Rails 名前空間について
+
 [参考URL](https://ja.stackoverflow.com/questions/86424/rails%E3%81%AE%E5%90%8D%E5%89%8D%E7%A9%BA%E9%96%93%E3%81%AE%E7%9B%AE%E7%9A%84%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E7%96%91%E5%95%8F)  
 [入れ子とショートシンタックスの違い](https://ninoseki.hatenablog.com/entry/2014/05/31/%E3%83%8D%E3%82%B9%E3%83%88%E3%81%97%E3%81%9F%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%82%92%E6%9B%B8%E3%81%8F%E5%A0%B4%E5%90%88%E3%81%AE%E6%B3%A8%E6%84%8F%E7%82%B9)  
 [Railsでの名前空間について(わかりやすい)](https://ja.stackoverflow.com/questions/86424/rails%E3%81%AE%E5%90%8D%E5%89%8D%E7%A9%BA%E9%96%93%E3%81%AE%E7%9B%AE%E7%9A%84%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E7%96%91%E5%95%8F)
@@ -53,7 +56,7 @@ end
 
 ### 主な違い
 
-- **前提条件**: 修飾されたモジュール名を使用する方法では、親モジュールがすでに存在している必要があります。ネストされた定義では、親モジュールが存在しない場合でも、その場で定義することができます。
+- **前提条件**: 修飾されたモジュール名を使用する方法では、親モジュールがすでに存在している必要があります。ネストされた定義では、親モジュールが存在しない場合でも、その場で定義できます。
 - **コンテキストの明確化**: ネストされた定義の方が、モジュールの階層が明確になります。これは、特に大きなアプリケーションや複雑な名前空間の構造を持つ場合に役立ちます。
 
 どちらのスタイルを使用するかは、そのモジュールがどのような文脈で使用されるか、およびコードの可読性や整理のしやすさによって決まります。ただし、両者の間には機能的な違いはありません。モジュールの振る舞いやアクセス可能性に影響を与えることはありません。
@@ -71,6 +74,7 @@ app/mailers
 app/models
 app/views
 ```
+
 また、Railsの命名規則にしたがっているファイルも自動的に読み込まれます。具体的には、以下のようなファイル名に対応しています。
 
 - モデル名の単数形.rb
@@ -84,21 +88,20 @@ app/views
 
 ## autoload_pathsの仕様
 
-`autoload_paths`は**ディレクトリを自動で読み込むための設定**であり、その中にあるファイルやモジュールまでは自動的に読み込むわけではありません。  
+`autoload_paths` は**ディレクトリを自動で読み込むための設定**であり、その中にあるファイルやモジュールまでは自動的に読み込むわけではありません。  
 ただし、モジュール名やファイル名がRailsの命名規則に沿っている場合は、明示的にrequireする必要はありません。ただし、独自の命名規則を採用している場合は、明示的にrequireする必要があります。
 
 ---
 
 ## .ruと.rbの違い
 
-`.rbファイル`は、Rubyのソースコードが含まれるファイル  
-`.ruファイル`は、**Rackアプリケーションのエントリーポイント**として機能するRack upファイル
+`.rbファイル` は、Rubyのソースコードが含まれるファイル  
+`.ruファイル` は、**Rackアプリケーションのエントリーポイント**として機能するRack upファイル
 
-具体的には`.rbファイル`はRubyスクリプトを作成するために使用され、Rubyコードを実行するために、Rubyインタープリターまたはコンパイラによって読み込まれます。
-一方`.ruファイル`は、Rackアプリケーションのエントリーポイントであり、Webサーバーによって読み込まれ、Rackアプリケーションを起動します。
+具体的には `.rbファイル` はRubyスクリプトを作成するために使用され、Rubyコードを実行するために、Rubyインタープリターまたはコンパイラによって読み込まれます。
+一方 `.ruファイル` は、Rackアプリケーションのエントリーポイントであり、Webサーバーによって読み込まれ、Rackアプリケーションを起動します。
 
-Rackは、Webアプリケーションのインターフェイスとして機能する仕組みで、.ruファイルにはRackアプリケーションの情報が含まれています。.rbファイルとは異なり、.ruファイルには実際のアプリケーションコードが含まれていない場合があります。
-
+Rackは、Webアプリケーションのインターフェースとして機能する仕組みで、.ruファイルにはRackアプリケーションの情報が含まれています。.rbファイルとは異なり、.ruファイルには実際のアプリケーションコードが含まれていない場合があります。
 
 ## RackとRakeの違い
 
@@ -109,40 +112,42 @@ Rackは、Rubyのウェブアプリケーションフレームワークとウェ
 Rackは、ウェブリクエストとレスポンスの処理を抽象化し、ウェブアプリケーションがさまざまなウェブサーバー上で動作することを可能にします。Rackは、ウェブアプリケーションのミドルウェアを管理し、リクエストの受信からレスポンスの生成までのプロセスを制御します。
 
 Rake  
-Rakeは、Rubyのビルドツールおよびタスクランナーです。Rakeは、プロジェクトのビルド、テスト、デプロイメントなどの一連のタスクを定義し、実行するための機能を提供します。Rakeは、RubyのDSL(Domain-Specific Language)を使用してタスクを記述し、依存関係や実行順序などを指定することができます。Rakeは特に、Ruby on Railsなどのフレームワークで頻繁に使用され、開発者が独自のカスタムタスクを作成してプロジェクトの自動化を行うための強力なツールとなっています。
+Rakeは、Rubyのビルドツールおよびタスクランナーです。Rakeは、プロジェクトのビルド、テスト、デプロイメントなどの一連のタスクを定義し、実行するための機能を提供します。Rakeは、RubyのDSL(Domain-Specific Language)を使用してタスクを記述し、依存関係や実行順序などを指定できます。Rakeは特に、Ruby on Railsなどのフレームワークで頻繁に使用され、開発者が独自のカスタムタスクを作成してプロジェクトの自動化を行うための強力なツールとなっています。
 
 要約すると、Rackはウェブアプリケーションとウェブサーバーのインターフェースを提供するライブラリであり、Rakeはビルドやタスクの自動化のためのツールです。両者は異なる目的を持ち、ウェブ開発においてそれぞれ重要な役割を果たしています。
 
-
-
 ## 最新Railsについて
+
 [Rails7変更点](https://qiita.com/jnchito/items/5c41a7031404c313da1f)
 
 ## Rails apiモード
+
 [リファレンス（apiモードについて）](https://railsguides.jp/api_app.html)
 
 以下の3つが行われる。
+
 - 利用するミドルウェアを通常よりも絞り込んでアプリケーションを起動するよう設定する。特に、ブラウザ向けアプリケーションで有用なミドルウェア（cookiesのサポートなど）はデフォルトでは利用しません。
 
 - ApplicationControllerが通常のActionController::BaseではなくActionController::APIを継承します。ミドルウェアと同様、Action Controllerモジュールのうち、ブラウザ向けアプリケーションでしか使われないモジュールをすべて除外します。
 
 - ビュー、ヘルパー、アセットを生成しないようジェネレーターを設定します。
 
-
 ## Rails 7.0 Node
 
 importmap
 Rails 7といえば、Node.jsを裏で使う必要がなくなった。
-`importmap-rails`が目玉のリリース。
-`importmap-rails`を使うことで、フロントエンドのJavaScriptのライブラリを管理してくれるようになる。
+`importmap-rails` が目玉のリリース。
+`importmap-rails` を使うことで、フロントエンドのJavaScriptのライブラリを管理してくれるようになる。
 
 ## importmap-rails
+
 [参考URL](https://www.bokukoko.info/entry/2022/02/15/153751)
 
 >これで初期化した Rails アプリには なんと、package.json, yarn.lock が存在しない！
 >その代わりに、config/importmap.rb にて以下の記載がある。
 
 初期化
+
 ```sh
 $ vim Gemfile
 gem 'importmap-rails'
@@ -160,27 +165,29 @@ webpackerはなくなっている！
 
 railsではJS/CSSなどを総称してassetsと呼んでいる
 
->Rails 5-6時代に使われたwebpackerは、公式に「has been retired」とされ、Rails 7では`importmap`が標準となりました。
+>Rails 5-6時代に使われたwebpackerは、公式に「has been retired」とされ、Rails 7では `importmap` が標準となりました。
 >Rails7はimportmapとは別に、JavaScriptのバンドラやCSSのフレームワークを導入するしくみを用意している。
 
 ### Rails7.0でのアセット管理
+
 [Rails 7でフロントエンド開発が大きく変わる](https://re-engines.com/2021/12/27/rails7-frontend/)
 
 >Rails 7.0 では、新たに4つのGemが登場します。これまでとは異なり、開発者はこれらのGemを自分のプロジェクトに合う組み合わせで採用することになります。
 
-
 ---
 
 ## Rails7にあとからフロントエンドに入れる
+
 [Rails7にあとからフロントエンドに入れる](https://qiita.com/kazutosato/items/1ae1cf0ec380a75d4dc4)
 
 2つのgem
+
 1. JavaScript Bundling（jsbundling-rails）
 2. CSS Bundling（cssbundling-rails）
 
 ### JavaScript Bundling（jsbundling-rails）
 
-JSファイルを`app/assets`の下に出力するもの。
+JSファイルを `app/assets` の下に出力するもの。
 
 ### CSS Bundling（cssbundling-rails）
 
@@ -204,15 +211,16 @@ bin/rails css:install:bootstrap
 
 ### Procfile.dev
 
-アプリケーションのルートにできる`Procfile.dev`では、一度に3つのプログラム（rails、JSバンドラ、sass）が常駐するように設定してある。
-`--watch`オプションによってファイルを監視し、変更があれば自動的に変換する。
+アプリケーションのルートにできる `Procfile.dev` では、一度に3つのプログラム（rails、JSバンドラ、sass）が常駐するように設定してある。
+`--watch` オプションによってファイルを監視し、変更があれば自動的に変換する。
 
-binディレクトリの下のdevコマンドでは、foremanを使って`Procfile.dev`のコマンドを動かしている。
+binディレクトリの下のdevコマンドでは、foremanを使って `Procfile.dev` のコマンドを動かしている。
 foremanがないときは自動的にインストールされる。
 
 ---
 
 ## Railsスタイルガイド
+
 シンボル名、メソッド名、変数名は**スネークケース**にする
 
 ## Rails generateコマンド
@@ -224,7 +232,7 @@ $ rails generate form signUpForm
 
 ## フォームオブジェクト（Form Object）
 
-`app/forms`ディレクトリは、Railsアプリケーション内でフォームオブジェクトを作成するためのディレクトリ。  
+`app/forms` ディレクトリは、Railsアプリケーション内でフォームオブジェクトを作成するためのディレクトリ。  
 フォームオブジェクトは、モデルとは異なり、DBに保存されないデータの処理やバリデーションを行うために使われる。
 
 フォームオブジェクトは、ActiveModelをincludeして作成されるため、ActiveModelの機能やバリデーションを使うことができます。  
@@ -291,14 +299,14 @@ RailsではMVCでの役割をフォルダーごとに分けることで開発も
 ※モデルはただのクラスだがDBと連携するクラスをRailsではモデルと呼ぶ。
 
 ## Rails ディレクトリ詳細
-[参考URL](http://www.code-magagine.com/?p=4326)
 
+[参考URL](http://www.code-magagine.com/?p=4326)
 
 ---
 
 ## Rails 便利コマンド
 
-Railsでは`rails generate controller`などのコマンドでcontrollerやmodelをコマンドラインから生成することができる。
+Railsでは `rails generate controller` などのコマンドでcontrollerやmodelをコマンドラインから生成できる。
 ※設定で生成するファイルを絞ることができる。
 
 ### bin/railsとbundle exec railsの違い
@@ -316,8 +324,7 @@ Railsでは`rails generate controller`などのコマンドでcontrollerやmodel
 ## Rails タイムゾーン
 
 デフォルトではUTC
-そのため`created_at`や`update_at`は日本時刻の9時間前になる。
-
+そのため `created_at` や `update_at` は日本時刻の9時間前になる。
 
 ## Railsで新規タグ
 
@@ -353,14 +360,12 @@ publicディレクトリからの静的ファイルを提供してもらう（ap
 
 ## Railsで使われているMVCのデザインパターン
 
-
 **APIモードではViewは存在しない。**
 
 - モデル
 モデルはデータとビジネスロジックを表す。ビジネスロジックとはたとえば給与計算ロジックのようなアプリケーションドメイン特有の処理のこと(localhost/api/users)→userの一覧を出すみたいな
 Railsではモデル層はActiveModelという概念に抽象化され、デフォルトではActiveRecordというO/Rマッピングの機能を提供するライブラリが使われる。
 ActiveRecordでは、リレーショナルデータベースのテーブルに対応するモデルクラスにアプリケーションのデータとロジックを実装していきます。データの永続化に関する処理の多くはActiveRecordが担当してくれるので、単純なモデルであれば、プログラマが書かなければならないコードの量は、ごくわずかです。一般的にプログラマがモデルに追加することの多いコードとしては、クラスの持つ値の検証や、他モデルとの連携が挙げられます。
-
 
 - コントローラ
 ユーザのリクエストを受けて、モデルに適切な動作を要求する。
@@ -387,7 +392,6 @@ API作成に特化したモードのことで、Rails5で実装された機能�
 - APIモードの違い
 [参考URL](https://note.com/icchoco/n/nd408d2a9b2c8)
 
-
 ---
 
 ## gemとは
@@ -396,7 +400,7 @@ gemはRubyGemsと呼ばれるRuby用のパッケージ管理システムによ�
 RubyGemsが提供するgemコマンドを通じてインストール等ができます。
 
 **インストールしたgemを削除する**
-Gemfileから記述を消し`bundle install`する。
+Gemfileから記述を消し `bundle install` する。
 
 ## gem version up 作成
 
@@ -414,18 +418,19 @@ gemのバージョンを上げていくには**まずテストを書き、その
 
 Ruby on RailsでWebアプリケーション（以降ではRailsアプリと略します）を開発をするにあたり、gemの活用は開発効率をあげるために重要
 
-
 ### bundler（yarn, npmと同一）
+
 bundlerは依存関係にあるgemの依存関係やバージョンを管理してくれるgem
 **bundlerを利用することで依存関係にあるgemの一括インストール。gemのバージョン管理ができるようになる**
-`$ bundle install`を使って、Gemfileに記載されたgemをインストールする。
-※`--without`なしに`bundle install`した場合は、すべてのgemがインストールされる。
+`$ bundle install` を使って、Gemfileに記載されたgemをインストールする。
+※`--without` なしに `bundle install` した場合は、すべてのgemがインストールされる。
 
 bundle configとは
 [参考URL](https://qiita.com/ren0826jam/items/1a2131f8e0f6921a0b98)
 Bundlerの設定システムと対話をできるもの。
 
 Bundlerは設定を下記の優先順位にしたがって取得する。
+
 1. ローカルアプリケーション（app/.bundle/configp）
 2. 環境変数
 3. ユーザのホームディレクトリ（~/.bundle/config）
@@ -437,10 +442,11 @@ Bundlerは設定を下記の優先順位にしたがって取得する。
 
 [bundle install時に--path vendor/bundleを付ける必要性は本当にあるのか、もう一度よく考えてみよう](https://qiita.com/jnchito/items/99b1dbea1767a5095d85)
 
-`bundle install`コマンドを実行するときRuby界には大きく分けて2つの流派がある。
+`bundle install` コマンドを実行するときRuby界には大きく分けて2つの流派がある。
 それは「--path vendor/bundleを付ける派」と「付けない派」
 
 ### Gemfile（package.jsonみたいな）
+
 GemfileとはRailesアプリで利用されるgemの一覧を管理するファイル
 bundlerによってインストールされるgemはどこで管理されているのか。
 
@@ -451,7 +457,9 @@ bundlerによってインストールされるgemはどこで管理されてい�
 Railsには開発モードと本番モードという2つのモードがあり、それぞれ**役割ごとにデータベースを切り替えて使う機能**が備わっている。
 
 本番環境への切り替え方は以下の用にする
+
 1. 環境変数の設定
+
 ```sh
 # Linuxの場合
 export RAILS_ENV=production
@@ -461,8 +469,8 @@ set RAILS_ENV=production
 
 2. モードが変わったかどうかは以下のコマンドで確認
 
-`rails console`でコンソールを開く。
-`Rails.env`とコマンドを叩く、これで現在の開発モードが出てくる。
+`rails console` でコンソールを開く。
+`Rails.env` とコマンドを叩く、これで現在の開発モードが出てくる。
 
 3.precompileをする。
 assetsの圧縮ファイルを作成する事が目的？SASSのbuild、JSファイルの圧縮などを行っておくのだと思われる。これを行う事により高速に動作する。
@@ -504,8 +512,8 @@ store            … アプリケーションのルートディレクトリ
     plugin       … Railsプラグイン
 ```
 
-`app`にはモデル、コントローラー、ヘルパー等の決まった物以外は置かない方がいい。
-`app`内のパス構成は、Railsで決められた通りであることが前提となっているため、将来のバージョンアップで予期せぬ衝突が発生する可能性。
+`app` にはモデル、コントローラー、ヘルパー等の決まった物以外は置かない方がいい。
+`app` 内のパス構成は、Railsで決められた通りであることが前提となっているため、将来のバージョンアップで予期せぬ衝突が発生する可能性。
 それらではない自作のクラスやモジュールは"lib"内に置く方が良いでしょう。
 
 ### initializers
@@ -530,6 +538,7 @@ PUT /users/:id        users#update
 DELETE /users/:id     users#destroy
 
 ### リソースベースのルーティング(Rails default)
+
 [リファレンス](https://railsguides.jp/routing.html)
 
 リソースベースのルーティング（以下リソースルーティング）を使うことで以下が勝手に定義される。
@@ -549,26 +558,26 @@ photo_path(:id)は/photos/:idを返します（photo_path(10)であれば/photos
 
 [参考URL](https://sakurawi.hateblo.jp/entry/rails-route)
 
-ファイルで確認する方法は`config/routes.rb`でみる
+ファイルで確認する方法は `config/routes.rb` でみる
 
 Railsの流れとしては
 URLにアクセス（+アクションメソッド）すれば、どのコントローラーアクションが実行されるかを示したもの。
 
 CLI上
 `$ rails routes`
-`config/routes.rb`の中身がCLIで見られる。
+`config/routes.rb` の中身がCLIで見られる。
 
 ブラウザで確認
-
 
 ## Puma
 
 [参考URL](https://nekorails.hatenablog.com/entry/2018/10/12/101011)
 
-Pumaとは、複数のリクエストを並行しうて処理することができる高速化を目的としたWebサーバ
+Pumaとは、複数のリクエストを並行しうて処理できる高速化を目的としたWebサーバ
 Rails5以降はデフォルトでpumaが導入されており、自ら導入する必要はありません。
 
 ## docker  rails
+
 [参考URL](https://qiita.com/eighty8/items/0288ab9c127ddb683315)
 
 ---
@@ -601,13 +610,12 @@ puts new_external_id
 ```
 
 ## Rails logger
+
 [参考URL](https://qiita.com/NaokiIshimura/items/dbf072c313f36c2d9dcc)
-`puts` or `logger`がある。
+`puts` or `logger` がある。
 
-`puts`はどの環境（ENV）でも標準出力に吐かれる。
-`logger`はdevelopmentのみが標準出力される。
-
-
+`puts` はどの環境（ENV）でも標準出力に吐かれる。
+`logger` はdevelopmentのみが標準出力される。
 
 ## -b 0.0.0.0
 
@@ -616,9 +624,9 @@ Rails側がとくに説明しなく仕様変更したっぽい
 >実は、rails のプロジェクトのポカです。
 >危ないので、デフォルトを、ローカルからしか接続できない様に変更したのに
 >マニュアルを変更するのを忘れているのです。
->http://localhost:3000
+><http://localhost:3000>
 >と、表示されているので、実は、分かりますけどもね。
->http://0.0.0.0:3000
+><http://0.0.0.0:3000>
 >と表示されていないと、グローバルアドレスからは、接続できません。
 >起動時に
 >rails server -b 0.0.0.0
@@ -655,6 +663,7 @@ Railsにはアプリのタイムゾーンとは別に、DBの読み書きに使�
 ※これはどのバックエンドでも言えることだろう
 
 ## 定数管理
+
 [参考URL](https://techblog.kyamanak.com/entry/2017/07/05/002655)
 [config](https://qiita.com/srockstyle/items/daed31a78c343e607822)
 [config/gem初期設定](http://vdeep.net/rubyonrails-config-gem)
@@ -662,17 +671,17 @@ Railsにはアプリのタイムゾーンとは別に、DBの読み書きに使�
 自分で作るパターンもあればgemを使うパターンもある。
 gemを使わないパターンがあるとしたら以下がオーソドックス
 
-1. `application_controller.rb`で定数を管理する方法
-2. `config/initializers/constants.rb`のようなファイルを用意して、そこで定数を管理する方法
+1. `application_controller.rb` で定数を管理する方法
+2. `config/initializers/constants.rb` のようなファイルを用意して、そこで定数を管理する方法
 
-`application_controller.rb`は**アプリケーション共通の処理を管理する場所**なので、ここで定数を管理するのはあまり相応しくない。
+`application_controller.rb` は**アプリケーション共通の処理を管理する場所**なので、ここで定数を管理するのはあまり相応しくない。
 
-`config/initializers/constants.rb`のようにファイルを用意して、そこで定数を管理する方法のがいい。
+`config/initializers/constants.rb` のようにファイルを用意して、そこで定数を管理する方法のがいい。
 
 - gemを使うパターン
 [参考URL](https://qiita.com/sazumy/items/8d3b06d0d42af114a383)
 
-`config`が一番定番。
+`config` が一番定番。
 Settingslogic→あまり使われていない。
 
 ---
@@ -687,8 +696,6 @@ Settingslogic→あまり使われていない。
 Zeitwerkという仕組みがRailsには組み込まれているから
 
 Rails6から自動読み込みモードZeitwerkが追加された。
-
-
 
 ---
 
@@ -729,7 +736,7 @@ fixtureとは、Railsが用意しているテストデータを生成するた�
 
 Rubyのgemライブラリ
 **認可の仕組みを提供してくれる**
-ユーザによってページ表示の許可・拒否をしたり表示情報の範囲を変えたりすることができるgem
+ユーザによってページ表示の許可・拒否をしたり表示情報の範囲を変えたりできるgem
 
 ## module
 
@@ -739,6 +746,7 @@ moduleには部品の集まりや区分という意味になる。
 Rubyの**moduleはclassと同じようにmodule内に関数の定義ができること、**プログラム上での役割や振る舞いをまとめることができる。
 
 classとの違いは？
+
 1. moduleからインスタンスが生成できないこと
 2. moduleは継承ができない
 
@@ -799,7 +807,6 @@ obj.cryCat  # Catクラスのmethodを利用
 
 ## Rails処理順序(基本)
 
-
 1. ブラウザからのリクエストを受け取ると、Railsはパスを調べroutes.rbにしたがってどのコントローラのどのアクションを選べば良いかを決める(Controllerの中にアクションは複数ある)
 2. Railsは選ばれたアクション(メソッド)を実行する(アクションにはモデルとの間で情報のやり取りをするプログラム)を書く
 3. モデルはDBのテーブルと対応している、アクションはモデルから取得した情報のうち、表示に必要なものをインスタンス変数に保存し返す
@@ -812,14 +819,13 @@ RailsアプリケーションではRESTの原則にしたがってデータを�
 ## Railsにおけるリソースとは
 
 **コントローラーが扱う対象に名前をつけたもの。**
-リソース名を設定するには`config/routes.rb`にresourcesメソッドを追加するだけ
+リソース名を設定するには `config/routes.rb` にresourcesメソッドを追加するだけ
 
 `resources: リソース名の複数形で記述する`
 
 **上記で7つのアクションのルーティングが設定できる。**
 
 これをRESTフルなルーティング、またはリソースベースのルーティングと呼ぶ
-
 
 ## controllers コントローラー
 
@@ -834,23 +840,23 @@ DHH（railsを作った人）が述べているコントローラーの作りか
 ```ruby
 resources :orders, only: [:index]
 ```
+
 必ずorderのモデルが必要ではない。
 リソース名に対応したコントローラーに対して、**7つのアクションのルーティングを自動的に設定するだけ**
 
 ## strong parameter
+
 [参考URL](https://qiita.com/ozackiee/items/f100fd51f4839b3fdca8)
 ストロングパラメーターは**Web上から受けつけたパラメーターが本当に安全なデータかどうか**を検証した上で、取得するための仕組み。Rails4から実装されている。
 フォームから送信されてきたparameterで**どのparameterを許可するかホワイトリストを実装する。**
 
 命名規則慣例
-メソッド名に命名規則はないようですが`モデル名_params`とするのが一般的。
+メソッド名に命名規則はないようですが `モデル名_params` とするのが一般的。
 また実行結果として、許可されたカラムの値だけを抽出しハッシュ形式で呼び出し元に値を返す。
 
 permit
-permitメソッドを使用する事で**許可された値のみ**を取得することができる。
+permitメソッドを使用する事で**許可された値のみ**を取得できる。
 そのため、permitメソッドの引数には登録を許可するすべてのカラム名を指定しておく必要があります。もし、許可されいないカラムがparams内に存在した場合、そのデータは取得されず無視されます。
-
-
 
 ## リソースを扱うコントローラー
 
@@ -904,12 +910,11 @@ HTTPメソッドの組み合わせを使う。
 
 ## 7つのアクション以外の追加
 
-任意のアクションを追加するには resourcesメソッドにブロックを渡しブロックの中でもHTTPメソっドを表すメソッド アクション名を記述
+任意のアクションを追加するにはresourcesメソッドにブロックを渡しブロックの中でもHTTPメソっドを表すメソッド アクション名を記述
 
 ## パスを返すメソッドが使える(resource)
 
 リソースを指定すると、コントローラーのアクションを表すパスを取得できる
-
 
 ## 特定のアクションを使わない場合
 
@@ -947,6 +952,7 @@ require 'bootsnap/setup' # Speed up boot time by caching expensive operations.
 
 2が終わると、次に**コマンドの別名を拡張するrails/commandsをrequireする**
 拡張されたのは以下
+
 ```ruby
 require "rails/command"
 
@@ -989,13 +995,11 @@ membersリソースの重要な特徴は、それが集合的な概念である�
 
 単数リソースのルーティングを設定するには、config/routes.rbの中でresourcesメソッドではなく、単数系のresourceメソッドを使う。
 
-
 ```ruby
 resource :account
 ```
 
-上記のように書いてもこのリソースを扱うコントローラーの名前は`AccountsController(複数形のs)に注意`
-
+上記のように書いてもこのリソースを扱うコントローラーの名前は `AccountsController(複数形のs)に注意`
 
 **単数リソースのため集合を扱うindexアクションはない**
 
@@ -1006,7 +1010,7 @@ Railsはセッションデータを符号化してクッキーに保存するが
 
 ## Railsでの暗号化カラムを使う準備
 
-パスワードのハッシュ値(ダイジェスト)をホゾのするためのカラムは password_digestのカラム名を指定する必要がある。
+パスワードのハッシュ値(ダイジェスト)をホゾのするためのカラムはpassword_digestのカラム名を指定する必要がある。
 
 1. カラムにpassword_digestを追加する
 2. クラスメソッドを追加
@@ -1020,7 +1024,7 @@ class Member < ApplicationRecord
 end
 ```
 
-この変更の結果、Memberクラスにpasswordおよびpassword_confirmationという2つの属性が定義される。
+この変更の結果、Memberクラスにpasswordおよびpassword_confirmationという2つの属性が定できるこの義される。
 
 passwordカラム : パスワードそのもの
 password_confirmationカラム : 確認用のパスワード
@@ -1028,12 +1032,11 @@ password_confirmationカラム : 確認用のパスワード
 ## Rails Auth
 
 deviseが有名
-通常Railsのモデル作成は`rails g model User`などだが、deviseで新規登録やログインをしたいためdeviseのgenerateコマンドを使用する。
+通常Railsのモデル作成は `rails g model User` などだが、deviseで新規登録やログインをしたいためdeviseのgenerateコマンドを使用する。
 
 ## devise
 
 [Rails deviseで使えるようになるヘルパーメソッド一覧](https://qiita.com/tobita0000/items/866de191635e6d74e392)
-
 
 ## アクション・コールバック
 
@@ -1129,8 +1132,6 @@ end
 
 ## 外部キー成約
 
-
-
 ---
 
 ## 名前空間
@@ -1175,7 +1176,6 @@ end
 引数に名前空間の名前をシンボルで指定し、ブロックの内部で名前空間に属するルーティングを記述する
 上記の変更の結果として、URLパス/adminからAdmin::TopControllerのindexアクションにルーティングが設定されます。URLパスを生成するメソッドはadmin_root_path
 
-
 ## 定数
 
 [参考URL](https://railsguides.jp/autoloading_and_reloading_constants.html)
@@ -1219,9 +1219,11 @@ Railsではこの機能を提供するため、いくつものZeitwerkローダ�
 ## マイグレーション
 
 ### マイグレーションファイルとスキーマファイルの関係
+
 [参考URL](https://pick-up-tech.com/blog/%E3%83%9E%E3%82%A4%E3%82%B0%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%A8%E3%82%B9%E3%82%AD%E3%83%BC%E3%83%9E%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%EF%BC%88migration-schema-rake%EF%BC%89)
 
 ### マイグレーションファイルの削除
+
 [参考URL](https://qiita.com/ISSO33/items/33a935cb3255c269bef2)
 
 ## Railsでのミドルウェア
@@ -1235,13 +1237,14 @@ OSとアプリケーションの間に入って動作するソフトウェアの
 `$ bundle exec rake middleware`
 
 - どこで読み込むのか
+
 >config.middleware.useの引数に読み込みたいミドルウェアを指定します！
->※ initializers配下のファイルであれば、ある程度どこに書いてもOKっぽい？けどカオスになるので、`/config/application.rb`に書くのが安全な気がします。
+>※ initializers配下のファイルであれば、ある程度どこに書いてもOKっぽい？けどカオスになるので、`/config/application.rb` に書くのが安全な気がします。
 
 ## Rake
 
 rakeはcronみたいに使えるやつ
-引数を渡すのに癖があるため`thor`を使う場合が多い。
+引数を渡すのに癖があるため `thor` を使う場合が多い。
 
 ## thro
 
@@ -1254,6 +1257,7 @@ rakeはcronみたいに使えるやつ
 RuboCopを使用する
 
 ---
+
 ## ruby使用者に今すぐ伝えたいwebpackとwebpacker
 
 webpackerは、自前でwebpackをRailsに導入せずとも簡単にwebpackをRailsに取り込んで、Railsの仕様と融合させる（押し付ける？）事が出来るようにする為のGemです。
@@ -1285,6 +1289,7 @@ webpackerは、自前でwebpackをRailsに導入せずとも簡単にwebpackをR
 [参考URL](https://qiita.com/tomokazu0112/items/89f69c47761ac782ce13)
 
 ## Rails Formオブジェクト
+
 [参考URL](https://qiita.com/ren0826jam/items/0effb716067a861e71f2)
 
 モデルとフォームの責務を切り分けられることで、単体のモデルに依存しない場合やフォーム専用の特別な処理をモデルに書きたくない場合に用いたりする。
@@ -1313,7 +1318,7 @@ Object/Class/String/Numeric/Enumerableなど**標準ライブラリを拡張**�
 i18nの理由 => internationalizationが「i」から「n」まで18文字あるから
 
 Railsにはユーザーの国ごとに表示を簡易に切り替えられる国際化機能（i18n）が搭載されている。
-日本のみで使用する場合でもこの機能を利用することでエラーメッセージの表示やラベルの表示を簡潔に記述することができるようになる（つまりはmessage定数管理）
+日本のみで使用する場合でもこの機能を利用することでエラーメッセージの表示やラベルの表示を簡潔に記述できるようになる（つまりはmessage定数管理）
 
 ### 導入
 
@@ -1325,9 +1330,9 @@ touch config/initializers/locale.rb
 ### 翻訳ファイルの管理は
 
 翻訳ファイルはライブラリごと、モデルごとにディレクトリやファイルを分割して管理。
-たとえばdeviseの翻訳ファイルであればconfig/locales/gemsディレクトリで日本語翻訳ファイルは`devise.ja.yml`として管  理できるようにする。``
+たとえばdeviseの翻訳ファイルであればconfig/locales/gemsディレクトリで日本語翻訳ファイルは `devise.ja.yml` として管  理できるようにする。``
 
-ユーザーモデルの翻訳ファイルは`config/locales/models`ディレクトリで、日本語翻訳ファイルは`user.ja.yml`として管理できるようにします。
+ユーザーモデルの翻訳ファイルは `config/locales/models` ディレクトリで、日本語翻訳ファイルは `user.ja.yml` として管理できるようにします。
 config/locales以下に作成したディレクトリ、ファイルが翻訳ファイルとして読み込まれるように設定をする。
 
 ### localeファイルが提供されている。
@@ -1341,10 +1346,10 @@ config/locales以下に作成したディレクトリ、ファイルが翻訳フ
 ## enum
 
 enumを追加すると自動でメソッドが追加される。
-`User.male`とすると男性一覧 (users.gender が 1 のレコード) のレコードを取得することが可能になる。
-またUserモデルのインスタンスに`#male?`とすると男性の場合は`true`, 男性ではない場合は`false`が 返る。
-`#male!`とすると`update`文が実行される
-unanswered,female に対しても 同様のメソッドが自動で追加されます。
+`User.male` とすると男性一覧 (users.genderが1のレコード) のレコードを取得することが可能になる。
+またUserモデルのインスタンスに `#male?` とすると男性の場合は `true`, 男性ではない場合は `false` が返る。
+`#male!` とすると `update` 文が実行される
+unanswered,femaleに対しても同様のメソッドが自動で追加されます。
 
 ```rb
 # 0, 1, 2はdbに保存されてしまうので後から変更は難しい
@@ -1360,16 +1365,19 @@ end
 ```
 
 ## Ruby on Rails で lib ディレクトリの自作クラスを使用する
+
 [Ruby on Rails で lib ディレクトリの自作クラスを使用する](https://qiita.com/azusanakano/items/885fe3236977580b00c9)
 
 ## rails routing constraints
 
-routingにさまざまな制限を設定することができる。
+routingにさまざまな制限を設定できる。
 
 ## beforeバリデーションをやめてセッターメソッドにする。
+
 [参考URL](https://techracho.bpsinc.jp/hachi8833/2022_03_09/59016)
 
 ## ridgepole
+
 [GitHub](https://github.com/ridgepole/ridgepole)
 [参考URL](https://qiita.com/tetz-akaneya/items/d10570aeb028fc603b86)
 
@@ -1394,4 +1402,4 @@ Ruby on Railsフレームワークで使用されるセキュリティ機能の�
 2. パラメーターを許可するためのストロングパラメーターメソッドを定義します。通常はprivateセクション内に記述する。
 3. ストロングパラメーターメソッド内で、許可するパラメーターのキーを指定します。通常はparams.require(:model_name).permit(:attribute1, :attribute2)のように記述します。model_nameはモデルの名前、attribute1やattribute2は許可する属性の名前。
 
-ストロングパラメーターを使用することで、不正なパラメーターの割り当てを防ぎ、安全なデータ操作を実現することが可能。これにより、アプリケーションのセキュリティを強化することができる。
+ストロングパラメーターを使用することで、不正なパラメーターの割り当てを防ぎ、安全なデータ操作を実現することが可能。これにより、アプリケーションのセキュリティを強化できる。

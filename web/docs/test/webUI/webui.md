@@ -1,6 +1,5 @@
 # WebUIテストの違い
 
-
 ## UIテスト
 
 [参考URL](https://qiita.com/akameco/items/519f7e4d5442b2a9d2da)

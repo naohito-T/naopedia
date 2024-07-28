@@ -8,10 +8,11 @@
 - Single Responsibility Principle（単一責任の原則）
 - Open/Closed Principle（開放/閉鎖の原則）
 - Liskov Substitution Principle（リスコフの置換原則）
-- Interface Segregation Principle（インターフェイス分離の原則）
+- Interface Segregation Principle（インターフェース分離の原則）
 - Dependency Inversion Principle（依存性逆転の原則）
 
 ## DRY (Don't Repeat Yourself)
+
 同じコードや機能を繰り返さない。
 
 ## KISS (Keep It Simple, Stupid)

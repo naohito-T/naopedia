@@ -11,7 +11,5 @@ Webのインタラクションデザインを簡単に作成できる。
 
 ## ユビキタス
 
-ステージ - ステージは`createjs.Stage`
-役者 - 表示オブジェクト`createjs.DisplayObject`
-
-
+ステージ - ステージは `createjs.Stage`
+役者 - 表示オブジェクト `createjs.DisplayObject`

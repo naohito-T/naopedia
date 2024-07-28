@@ -65,13 +65,12 @@ Webサービス、キュー、データベースがリクエスト、エラー�
 
 >一番の理由はアプリケーションのパフォーマンスがビジネスにおいてより重要な役割を果たすようになってきたからでしょう。 そして、アプリケーションがどんどん複雑化していて、パフォーマンスの改善やエラーの特定が難しくなってきているからです。
 
-
-
 ### browser-logs
 
 安価にフロントエンドのError収集ができる。
 
 メリット
+
 - 所管ではSentryの代わりになれる
 - 余計なheaderを追加しない（Sentryだど追加するためCORSに引っかかる）
 
@@ -94,33 +93,39 @@ AWS Integration機能によって、 AWS上のリソースを統合的に監視�
 
 ## datadog-browser
 
-フロントエンドでのエラーを収集することができるライブラリ。
-※`Next.js`や`Nuxt.js`の導入事例などはとくに用意されていない。
+フロントエンドでのエラーを収集できるライブラリ。
+※`Next.js` や `Nuxt.js` の導入事例などはとくに用意されていない。
 
 ## フロントエンドのエラー
+
 [リファレンス](https://docs.datadoghq.com/ja/real_user_monitoring/data_collected/error/)
 
 フロントエンドのエラーは**リアルタイムモニタリング（RUM）**で自動的に収集されます。エラーメッセージとスタックトレースが利用できる場合は含まれます。
-フロントエンドのエラーは、それぞれの`error.origin`により3つのカテゴリーに分類されます。
+フロントエンドのエラーは、それぞれの `error.origin` により3つのカテゴリーに分類されます。
 
 ## Datadog を利用したブラウザのエラー収集
+
 [Datadog を利用したブラウザのエラー収集](https://zenn.dev/kurosame/articles/482601fa0f422df9390d)
 [こっちも参考になる。参考URL](https://qiita.com/kotarella1110/items/0a1578e8a1be09dc7c1a)
 
 デフォルトの挙動は以下のようになっています
+
 - console.errorのログ
 - キャッチしてないException
 - ネットワークエラーログを自動的にDatadogにPost
 - すべてのセッションでエラーを収集する
 - エラーの分析を改修目的ではなく統計目的で利用する場合などは、sampleRateというパラメーターを調整するのかなと思います
 - 同じサイトのサブドメイン間でセッションを保持しない
-- `セッションCookie`、`クロスサイトセッション Cookie`は使わない
+- `セッションCookie`、`クロスサイトセッション Cookie` は使わない
 
 ## Datadogの活用ノウハウを一挙に公開・それを支える全社管理者の工夫とは #datadog_japan_meetup
+
 [Datadogの活用ノウハウを一挙に公開・それを支える全社管理者の工夫とは](https://techblog.zozo.com/entry/datadog-japan-meetup-2022-summer)
 
 ## beforeSend を使用してブラウザ RUM データを強化および制御する
+
 [beforeSend を使用してブラウザ RUM データを強化および制御する](https://docs.datadoghq.com/ja/real_user_monitoring/guide/enrich-and-control-rum-data/?tab=%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88)
 
 ## datadog nextjs
+
 sentryにあるソースマップ対応もしているとのこと。

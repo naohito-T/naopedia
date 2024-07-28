@@ -1,9 +1,8 @@
 # OpenSSL
 
-
 ## pemファイルとは
 
-pem はただ鍵や証明書などbase64エンコードしてつなげただけのファイル
+pemはただ鍵や証明書などbase64エンコードしてつなげただけのファイル
 
 [参考URL](https://www.ecoop.net/memo/archives/guide-for-pem.html)
 

@@ -1,19 +1,21 @@
 # docker-compose
+
 Docker操作の補佐をするPython製のツール（ver2ではGo製に変わっている）  
 Docker Engineの一部ではない。  
 **docker-compose.yml内ではホスト側のシェルの環境変数が使える。**  
 →つまり、host側で環境変数が設定されているためdirenvなどで読み込ませるのが良いのではないか？  
-設定した環境変数にどのような値が挿入されるかは、 `docker-compose config`コマンドで確認ができる。  
+設定した環境変数にどのような値が挿入されるかは、 `docker-compose config` コマンドで確認ができる。  
 
 > docker-compose はローカルで Docker のオーケストレーションを行うためのツールです。Docker のビルドから Network や Volume の管理をコードベースで定義して行ってくれます。  
 docker-compose.ymlをdocker-compose.ymlというツールで読み込ませて実行すると**ボリュームやネットワークが作られ**、まとめてコンテナーが起動する。
 
 ## docker-compose 優先度
 
-`docker run`と同様に、Dockerfileで指定されたオプションがデフォルトとして尊重されます（例：CMD,EXPOSE,VOLUME,ENV）  
+`docker run` と同様に、Dockerfileで指定されたオプションがデフォルトとして尊重されます（例：CMD,EXPOSE,VOLUME,ENV）  
 そのため、docker-compose.ymlで再び定義する必要はありません。
 
 ## docker-composeでポート番号を考えなくてもよくなる方法
+
 [参考URL](https://wand-ta.hatenablog.com/entry/2020/05/23/011001)
 
 ## docker-compose で解決できるもの
@@ -29,22 +31,24 @@ Docker Composeを使えば、今までdocker runの引数で1つひとつ指定�
 
 depends_onはあくまで**起動状態を制御**しているだけであり、dbがtcp受け付ける状態（mysqld)が起動するまで待つ。みたいなのができない。
 以前までは、シェルで対応して欲しいと公式サイトが記載。
-そのため幾つもプロジェクトはwait.shを使用し`nc`コマンドなどでdbに意思疎通をしていた。
+そのため幾つもプロジェクトはwait.shを使用し `nc` コマンドなどでdbに意思疎通をしていた。
 最新だと、それはしなくて良くなった。
 [Docker Compose の depends_on の使い方まとめ](https://gotohayato.com/content/533/)
 
 **注意**
+
 ```yml
 depends_on:
   service_a:
     condition: service_started
 ```
 
-`depends_on.condition.service_started`は1回非推奨になったが、3.8ぐらいでまた元に戻った。しかしdocker-compose 2系じゃないと使えない。
+`depends_on.condition.service_started` は1回非推奨になったが、3.8ぐらいでまた元に戻った。しかしdocker-compose 2系じゃないと使えない。
 
 ## docker-compose オプション
 
 基本オプション
+
 ```sh
 -f, --f ファイル名
 # プロジェクト名は現在いるディレクトリがデフォルトになるが明示的に指定することができる。
@@ -52,6 +56,7 @@ depends_on:
 ```
 
 upオプション
+
 ```sh
 # バックグランドで実行する。
 -d, --detach
@@ -70,7 +75,7 @@ docker-composeを使ってサーバ環境を構築した際に、ホストOSを�
 
 **docker-composeで作成したコンテナーはdockerコマンドではなく、docker-composeを使った管理(コマンド)に一元化すべき**
 
-`$docker-compose down`はコンテナーやネットワークを停止するだけではなく、それらの破棄までしてくれる。
+`$docker-compose down` はコンテナーやネットワークを停止するだけではなく、それらの破棄までしてくれる。
 **※規定ではボリュームは削除しない。**
 これのメリットとしてDBなどのキャッシュ問題を回避する。
 
@@ -82,6 +87,7 @@ docker-composeで管理しているプロジェクトで、dockerコマンドを
 Docker開発を進めていく上でコンテナーは常に削除することをオススメ。
 
 理由として
+
 1. psコマンドで確認すると一覧にコンテナーリストが溜まってくる
 2. コンテナーに直接インストールしたgemやパッケージがそのまま残ってしまう。
 本番環境ではDockerfileから作成されたコンテナーをデプロイしますので、コンテナーに直接インストールしたものは反映されません。
@@ -153,7 +159,7 @@ services: # 起動するコンテナーの定義を行う。
 
 - stdin_open: true
 stdin_openとは標準入出力とエラー出力をコンテナーに結びつける設定です。
-`docker run -it <container_name>`の`-i`にあたる設定
+`docker run -it <container_name>` の `-i` にあたる設定
 
 ---
 
@@ -169,7 +175,7 @@ stdin_openとは標準入出力とエラー出力をコンテナーに結びつ�
 
 ボリュームのマウントを行う。  
 volumesでは**パスを指定するとDockerエンジンはボリュームを作成する**  
->コマンドの場合、`sh -v $(pwd)/public:/var/www/html/public:ro <IMAGE ID>`オプションと同一。
+>コマンドの場合、`sh -v $(pwd)/public:/var/www/html/public:ro <IMAGE ID>` オプションと同一。
 
 1行で記述
 [SOURCE:]TARGET[:MODE]
@@ -224,7 +230,6 @@ external: の中にnameを指定することで、docker-compose外で作成し�
 
 ## volume trick
 
-
 ```yml
 volumes:
       - $PWD/backend:/app/backend:cached # バインドマウント
@@ -239,7 +244,7 @@ volumes:
 
 ## volumes 省略記法
 
-いつも上記の例のように記載するのは面倒なので短い表記法があります`[SOURCE:]TARGET[:MODE]と指定します`たとえば以下でsourceの`./data`ディレクトリとtargetの/tmp/dataディレクトリを指定します
+いつも上記の例のように記載するのは面倒なので短い表記法があります `[SOURCE:]TARGET[:MODE]と指定します` たとえば以下でsourceの `./data` ディレクトリとtargetの/tmp/dataディレクトリを指定します
 
 ```yml
   volumes:
@@ -247,6 +252,7 @@ volumes:
 ```
 
 **docker-composeでのvolumes指定方法**
+
 1. バインドマウント
 2. Docker内に存在しているボリューム
 **※external: の中にnameを指定することで、docker-compose外で作成したボリュームを指定できる。**
@@ -379,7 +385,7 @@ djangoはホストのブラウザーからアクセスするのでportsを使用
 
 - depends_on
   service同士の依存関係を記す
-  docker-compose up を実行したら、依存関係のほうが先に実行していなければいけない。
+  docker-compose upを実行したら、依存関係のほうが先に実行していなければいけない。
 
 - external
   Docker compose管理外のネットワークやボリュームであることを示す。
@@ -414,7 +420,7 @@ ttyとは
 - down
   カレントディレクトリのdocker-compose.yamlに紐づいてるContainerとNetworkを削除する
   `docker-compose down`
-  ※`docker-compose volume ls`で確認するとわかるが、ボリュームは残っている。そのため再度`up`するとMySQLコンテナーが保持しているボリュームが再利用される。
+  ※`docker-compose volume ls` で確認するとわかるが、ボリュームは残っている。そのため再度 `up` するとMySQLコンテナーが保持しているボリュームが再利用される。
 
 imageも削除する。
 `docker-compose down --rmi all`
@@ -434,4 +440,5 @@ imageも削除する。
 [postgres health check](https://kobe-systemdesign.work/2022/03/29/dockerpostgresql%E3%81%AE%E3%83%98%E3%83%AB%E3%82%B9%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%82%92%E5%AE%9F%E8%A1%8C%E3%81%99%E3%82%8B%E9%9A%9B%E3%81%AE%E6%B3%A8%E6%84%8F%E7%82%B9/)
 
 ## ローカル環境の異なるDocker Compose間の通信をhost.docker.internalで解決する
+
 [参考URL](https://nishinatoshiharu.com/access-container-via-localhost/#_Railshostdockerinternal)

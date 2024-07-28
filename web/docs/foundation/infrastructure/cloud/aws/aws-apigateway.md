@@ -1,9 +1,10 @@
 # Amazon API Gateway
+
 [参考URL](https://dev.classmethod.jp/articles/what-does-amazon-api-gateway-do/)  
 [RestとHTTP違い](https://dev.classmethod.jp/articles/amazon-api-gateway-http-or-rest/)
 [Amazon CloudFrontでAPI Gatewayの痒いところに手を届ける](https://dev.classmethod.jp/articles/cache-api-gateway-by-cloudfront/)
 
-アプリケーションをユーザに公開する場合、それがGUIであってもインターフェイスが必要になる。  
+アプリケーションをユーザに公開する場合、それがGUIであってもインターフェースが必要になる。  
 Webアプリケーションを公開する場合にはWeb APIを利用するのが一般的であり、AWSもAPIをフルマネージドで活用するためのAPI Gatewayを提供している。
 
 ## Amazon API Gatewayとは？
@@ -31,13 +32,15 @@ AWS Cognitoやカスタム認証基盤と統合することでユーザー認証
 リクエスト数やデータ転送量に基づく
 
 ## HTTPプロキシとして進化した経緯
+
 [参考URL](https://qiita.com/_mogaming/items/4e9d8c62739399b076b7)
 
 >今までのAPI Gatewayでは、HTTPプロキシとして利用するには、通したいリクエストのすべてのリソースパスとメソッドを設定する必要がありました。これが非常に面倒でした。
 
-だが、大量に設定する必要のあったものが`/{proxy+}`だけで簡単にオールスルーのプロキシが作れるようになった。  
+だが、大量に設定する必要のあったものが `/{proxy+}` だけで簡単にオールスルーのプロキシが作れるようになった。  
 
 利用シーンの抜粋  
+
 - レートリミットをかける
   API Gatewayは比較的楽にレートリミットをかけることができるので、既存APIにGatewayを挟んで使う
 - とりあえず全部Lambdaに飛ばしてゴニョゴニョする
@@ -60,6 +63,7 @@ AWS Cognitoやカスタム認証基盤と統合することでユーザー認証
 API GatewayがListenするのはHTTPSのみで、HTTPリクエストを受け付けることはできません。 一方CloudFrontはHTTPとHTTPSの両方のリクエストを受けられるので、CloudFrontを経由することでAPI GatewayへのリクエストをHTTPで受けることができます。
 
 ## API Gatewayの種類
+
 [参考URL](https://zenn.dev/marokanatani/articles/aws_api_gateway_behavior_go_around)
 
 2種類ある。  
@@ -67,6 +71,7 @@ REST API（v1）やHTTP API（v2）
 ※HTTP APIの方が後発で機能が少ない分、高速かつ料金が安い。
 
 ## Serverless Frameworkを使用する場合
+
 [API GatewayでServerless Frameworkを使用する場合の注意点](https://zenn.dev/marokanatani/articles/aws_api_gateway_behavior_go_around)
 
 Serverless Frameworkを使用する場合
@@ -86,14 +91,15 @@ HTTP APIを使用する場合はhttpApiを設定する。
 
 ## キャッシュを細かく設定したい
 
-
 ## API Gateway の API キー
+
 [Amazon API GatewayでAPIキー認証を設定する](https://dev.classmethod.jp/articles/apigateway-apikey-auth/)
 [参考URL](https://nasrinjp1.hatenablog.com/entry/2019/10/08/212938)
 
 Amazon API GatewayでAPIキー認証を設定すればip制限よりもう少し手軽にセキュアにできる。
 
 ## API GatewayをCloudFrontでラップする。
+
 [参考URL](https://dev.classmethod.jp/articles/api-gateway-with-cloudfront-distribution/)
 
 >API Gatewayの前にCloudFront Distribution を使用することで、APIGatewayのパフォーマンスを向上させることができます。API Gatewayのエッジ最適化 API エンドポイントを使用すると、最寄りのCloudFront Point of PresenceでAPI呼び出しを終了できます。
@@ -101,12 +107,14 @@ Amazon API GatewayでAPIキー認証を設定すればip制限よりもう少し
 cloudfrontが前段にくる。利用する理由としてはキャッシング動作を制御するが主な理由。
 
 API Gatewayの前でCloudFront Distributionを使用する理由
+
 - レイテンシーを削減
 - セキュリティを強化する
 - キャッシング動作を制御する
 - APIのTLS設定を制御する。
 
 ## Lambdaからエラーレスポンスが返ってきた時に処理をする
+
 [参考URL](https://docs.aws.amazon.com/ja_jp/apigateway/latest/developerguide/handle-errors-in-lambda-integration.html)
 
 エラーをthrowしても処理できないっぽい（できそうだけど）  

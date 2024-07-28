@@ -2,7 +2,14 @@
   "version": "0.2",
   "gitignoreRoot": ".",
   "useGitignore": true,
-  "ignorePaths": ["**/node_modules/**", "**/.docusaurus/**", "**/build/**"],
+  "ignorePaths": [
+    "**/node_modules/**",
+    "**/.docusaurus/**",
+    "**/build/**",
+    "**/coverage/**",
+    "**/static/**",
+    "**/package.json/**"
+  ],
   "words": [
     "adduser",
     "Autoload",
