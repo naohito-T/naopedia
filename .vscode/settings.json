@@ -1,4 +1,17 @@
 {
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.configPath": "./web/.prettierrc",
+  "prettier.ignorePath": "./web/.prettierignore",
+  "prettier.prettierPath": "./web/node_modules/prettier",
+  "[markdown]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.markdownlint": "explicit"
+    }
+  },
+  "textlint.configPath": "./web/.textlintrc.json",
+  "textlint.autoFixOnSave": true,
+  "textlint.nodePath": "./web/node_modules"
 }

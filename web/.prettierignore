@@ -5,3 +5,4 @@ static
 *.md
 *.yml
 *.yaml
+.markdownlint-cli2.jsonc

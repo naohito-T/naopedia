@@ -1,13 +1,16 @@
 {
   // オススメの拡張機能
   "recommendations": [
-    // check spelling
+    // VSCodeのエディタ上で英単語の誤字をチェック
     "streetsidesoftware.code-spell-checker",
+    // VSCodeのエディタ上でテキストを解析
+    "taichi.vscode-textlint",
+    // VSCodeのエディタ上でマークダウン構造を解析
+    "davidanson.vscode-markdownlint",
     "esbenp.prettier-vscode",
     "dbaeumer.vscode-eslint",
     "stylelint.vscode-stylelint",
-    "EditorConfig.EditorConfig",
-    "ics.japanese-proofreading"
+    "EditorConfig.EditorConfig"
   ],
   // 非推奨な拡張機能
   "unwantedRecommendations": []

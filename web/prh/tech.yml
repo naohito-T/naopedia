@@ -1,0 +1,27 @@
+# expected：正しい表記
+# patterns：誤った表記
+# prh：ルールの名前
+# 無効化したい場合は、以下のように記述する
+# <!-- textlint-disable -->
+# 本文
+# <!-- textlint-enable -->
+
+
+meta:
+  - title: 技術用語の固有名詞ルール
+rules:
+  - expected: インターフェース
+    patterns:
+      - インターフェイス
+      - インタフェース
+      - インタフェイス
+    prh: 技術用語
+  - expected: ソフトウェア
+    pattern: ソフトウェアー
+    prh: 技術用語
+  - expected: ハードウェア
+    pattern: ハードウェアー
+    prh: 技術用語
+  - expected: デフォルト
+    pattern: ディフォルト
+    prh: 技術用語
