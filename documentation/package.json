@@ -8,7 +8,7 @@
     "deploy": "docusaurus deploy",
     "docusaurus": "docusaurus",
     "serve": "docusaurus serve",
-    "start": "docusaurus start -p 3500",
+    "start": "docusaurus start -p 53500",
     "swizzle": "docusaurus swizzle",
     "tsc:c": "tsc --noEmit",
     "prettier:c": "prettier -c './**/*.{js,jsx,ts,tsx,json}'",

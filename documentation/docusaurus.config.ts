@@ -7,9 +7,10 @@ const config: Config = {
   tagline: 'Tips book for engineers by naohito-T',
   url: 'https://naopedia.netlify.app',
   baseUrl: '/',
+  trailingSlash: true,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'static/img/favicon.ico',
   organizationName: 'naohito-T',
   projectName: 'naopedia',
   i18n: {
@@ -21,8 +22,12 @@ const config: Config = {
       'classic',
       {
         docs: {
+          routeBasePath: '/',
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/naohito-T/naopedia/edit/main/documentation/',
+          // docsをホームに変更
+        },
+        blog: {
+          showReadingTime: true,
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -42,7 +47,7 @@ const config: Config = {
       items: [
         {
           label: 'Docs',
-          to: '/docs/intro',
+          to: '/docs/index.md',
         },
         {
           label: 'Community',
@@ -80,7 +85,7 @@ const config: Config = {
           items: [
             {
               label: 'Naopedia',
-              to: '/docs/intro',
+              to: '/docs/',
             },
           ],
         },
