@@ -1,8 +1,14 @@
 {
-    "recommendations": 
-    [
-        "streetsidesoftware.code-spell-checker", "ics.japanese-proofreading"
-    ],
-    // 非推奨な拡張機能
-    "unwantedRecommendations": []
+  // オススメの拡張機能
+  "recommendations": [
+    // check spelling
+    "streetsidesoftware.code-spell-checker",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "stylelint.vscode-stylelint",
+    "EditorConfig.EditorConfig",
+    "ics.japanese-proofreading"
+  ],
+  // 非推奨な拡張機能
+  "unwantedRecommendations": []
 }

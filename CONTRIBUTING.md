@@ -11,4 +11,4 @@
 
 ## Project start
 
-[README](./documentation/README.md)
+[README](./web/README.md)
