@@ -69,8 +69,6 @@ VS Codeのビルドタスクを設定すると、こういったコマンドをC
 
 ## launch.json
 
-[参考URL](<https://amateur-engineer-blog.com/VS> Code-launchjson/)
-
 VS Codeでデバッグ実行するための設定ファイル
 どの言語でどのファイルを実行するかなどを設定する。
 
@@ -118,7 +116,7 @@ LSPの登場により**言語固有の機能はサーバ側**で、**テキス�
 
 ## tips
 
-[参考URL](<https://coliss.com/articles/build-websites/operation/work/removebg-for-VS> Code.html)
+[まじか！VS Codeでできることがまた増えた、エディタで画像から背景を1クリックで切り抜けるようになったぞ](https://coliss.com/articles/build-websites/operation/work/removebg-for-VSCode.html)
 
 VS Codeで画像から背景を1クリックで切り抜けるようになった。
 

@@ -134,8 +134,6 @@ Contextとは
 - stateなどのデータをpropsのバケツリレーで深い階層のコンポーネントに渡すことなく、データアクセスができる
 - コンポーネントの再利用を難しくするため、慎重に使う必要がある
 
-<https://github.com/rpearce/react-medium-image-zoom/issues>
-
 ## useRef
 
 [useRefの基本的な使い方・活用術・注意点](https://qiita.com/cheez921/items/9a5659f4b94662b4fd1e)

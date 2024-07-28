@@ -321,16 +321,17 @@ fakerなどを使って手書きで書いていいが、その言語にあるFac
 
 ## mockデータ作成ツール
 
-<https://fakerjs.dev/api/>
+[faker](https://fakerjs.dev/api/)
 
 ## Flaky Test(フレーキーテスト)
 
-Flaky Testとは、実行結果が不安定なテストのこと
+Flaky Testとは、実行結果が不安定なテストのこと。
 
 ## フロントエンドのテスト
 
 [zozoフロントエンド自動テスト構成](https://techblog.zozo.com/entry/wear-web-test-config2023)
-フロントでのテスト種別はこの5種類が一般的
+
+フロントでのテスト種別はこの5種類が一般的。
 
 - 単体テスト（ユニットテスト）
 - 結合テスト（インテグレーションテスト）

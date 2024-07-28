@@ -8,10 +8,6 @@
 
 [参考URL(御作法)](https://zenn.dev/mstssk/articles/4051e3df72a84c)
 
-これ取り入れる
-
-PRをレビュー依頼出す前にrebaseする
-
 ```sh
 git fetch
 git rebase origin/master topic
@@ -54,7 +50,7 @@ Gitではファイル名の**大文字/小文字**の変更を検知しない。
 [チーム開発におけるプルリクの作法](https://qiita.com/ikuwow/items/fb52a54c086398eb5b92)
 
 経験談
-大きすぎるのもレビュワーに疲れが出るため粒度低くてもいいかも。
+大きすぎるのもレビュワーに疲れが出るため粒度低くてもいい
 
 ### プルリク開発フロー
 
@@ -254,9 +250,6 @@ $ tree
 
 5. リポジトリのAboutでURLを編集
 
-example
-<https://naohito-T.github.io/e2e-test-cypressで見れる。>
-
 ---
 
 ## git tag
@@ -388,9 +381,6 @@ rootリポジトリもコミットする
 `$ git submodule add git@github.com:naohito-T/Neams-ui.git neams-ui`
 
 .gitmodulesファイルが作成されている
-[submodule "neams-ui"]
- path = neams-ui
- url = <git@github.com>:naohito-T/Neams-ui.git
 
 サブモジュールに追加されているか確認する（ディレクトリ名のみの情報であればOK）
 `$ git ls-files`
@@ -598,7 +588,7 @@ git commit --allow-empty
 git push
 ```
 
-# GitHub Tips
+## GitHub Tips
 
 ## Git diffで特定の日付からの変更を確認したい場合
 
@@ -611,7 +601,8 @@ $ git diff HEAD 'HEAD@{2015-06-01 0:00}'
 ## コミットメッセージ
 
 [参考URL](https://qiita.com/konatsu_p/items/dfe199ebe3a7d2010b3e)
-プレフィックスにつけsるとわかりやすいかも
+
+プレフィックスにつけるとわかりやすい
 
 ```sh
 # 新しい機能
@@ -651,7 +642,7 @@ $ git diff HEAD 'HEAD@{2015-06-01 0:00}'
 - mergeルール
 - コミットルール
 
-この2点を決める必要がある
+この2点を決める必要がある。
 
 ## スカッシュマージ
 

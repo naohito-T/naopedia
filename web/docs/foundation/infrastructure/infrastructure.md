@@ -54,25 +54,3 @@ HTTPに則り、HTMLや画像の情報を返してくれるもの、イメージ
 [ngrok](https://hirooooo-lab.com/development/https-for-localhost/)
 
 ## ドメイン切り替え手順
-
-1 Parrot本番用アカウントにホストゾーン（www.nijisanji.jp）を作成する。  済
-2 "Peacock用アカウントのホストゾーン（www.nijisanji.jp）から、Parrot本番用アカウントに作成したホストゾーンに、
-NSレコードとSOAレコード以外のレコードをコピーする。"  済
-3 大元アカウントのホストゾーン（nijisanji.jp）からParrot本番用アカウントのホストゾーンに権限を委譲する。 "ns-1285.awsdns-32.org.
-ns-638.awsdns-15.net.
-ns-1556.awsdns-02.co.uk.
-ns-188.awsdns-23.com." 済
-4 Parrot本番用アカウントのus-east-1リージョンでSSL証明書を作成する。 <www.nijisanji.jp> 済
-5 ParrotフロントエンドのディストリビューションのCNAMEをワイルドカード形式に変更し、SSL証明書を設定する。 *.nijisanji.jp 済
-6 Parrot本番用アカウントのホストゾーンのALIASレコードの値をParrotフロントエンドのドメイン名に変更する。 d31a565p7tmfip.cloudfront.net 済
-7 PeacockアカウントのホストゾーンのALIASレコードの値をParrotフロントエンドのドメイン名に変更する。 d31a565p7tmfip.cloudfront.net 済
-8 PeacockフロントエンドのディストリビューションのCNAMEをブランクに変更する。  済
-9 ParrotフロントエンドのディストリビューションのCNAMEを非ワイルドカード形式に変更する。 <www.nijisanji.jp> 済
-   
- 切り戻し手順  
-10 PeacockフロントエンドのディストリビューションのCNAMEをワイルドカード形式に変更する。 *.nijisanji.jp 
-11 大元アカウントのホストゾーン（nijisanji.jp）からPeacock用アカウントのホストゾーンに権限を委譲する。  
-12 Parrot本番用アカウントのホストゾーンのALIASレコードの値をPeacockフロントエンドのドメイン名に変更する。 d1mo6gg8g3fke7.cloudfront.net 
-13 PeacockアカウントのホストゾーンのALIASレコードの値をPeacockフロントエンドのドメイン名に変更する。 d1mo6gg8g3fke7.cloudfront.net 
-14 ParrotフロントエンドのディストリビューションのCNAMEをブランクに変更する。  
-15 PeacockフロントエンドのディストリビューションのCNAMEを非ワイルドカード形式に変更する。 <www.nijisanji.jp> 

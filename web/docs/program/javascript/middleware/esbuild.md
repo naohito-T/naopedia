@@ -27,8 +27,7 @@ tsconfigの特定フィールドのみ参照される、詳細は公式にて
 - es5への変換
 - CSS Modules
 - Code Splittingとimport() によるlazy loading
-- next.jsでの利用 ( next-babel-loaderの置き換えが難しい )
-- 議論 => <https://github.com/vercel/next.js/discussions/16152>
+- next.jsでの利用
 - ポストCSSの利用
 - HMR（ホットモジュール）→あまり開発が盛んではない。
 - 型定義ファイルの出力

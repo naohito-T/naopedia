@@ -601,11 +601,10 @@ Refererを送っているのはwebブラウザ
 
 ## Refererが生じる脆弱性
 
-登録ボタンを押すとメールが送信され、そのメールに以下のようなメールアドレスとパスワードが埋め込まれた<https://example.com/auth?email=hogehoge@gmail.com&password=hugahuga123&token=ndjask819Sjksというリンクが貼られています。>
+登録ボタンを押すとメールが送信され、そのメールに以下のようなメールアドレスとパスワードが埋め込まれた
 
 URLに情報がすでに入っていることにより、このリンクをクリックすることでメアドとパスワードを再度入力することなく、認証に成功します。
-
-そしてサイト内に貼ってある外部リンク<https://insecure.example.comに遷移したとしましょう。そうするとreferer情報としてReferer>: <https://example.com/auth?email=hogehoge@gmail.com&password=hugahuga123&token=ndjask819Sjksがhttps://insecure.example.comに送られてしまいます。>
+そしてサイト内に貼ってある外部リンク
 
 もしこのサイトの運営者が悪意のある人だった場合、Referer情報から個人情報を取得し、悪用できてしまう。
 
