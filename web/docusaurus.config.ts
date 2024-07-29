@@ -133,7 +133,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} naopedia.`,
+      copyright: `© NAOPEDIA`,
     },
     // https://docusaurus.io/docs/next/markdown-features/code-blocks
     prism: {
