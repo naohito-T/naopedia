@@ -21,7 +21,7 @@
     },
     "preset-ja-technical-writing": {
       "sentence-length": {
-        "max": 150
+        "max": 300
       },
       "no-exclamation-question-mark": {
         "allowFullWidthExclamation": true,
