@@ -1,6 +1,61 @@
-# CSS property 一覧
+# CSS Property
 
-よくわからないプロパティを記していく
+## Overview
+
+よくわからないプロパティや、考え方を記載していく。
+
+論理プロパティと物理プロパティは、CSSにおけるプロパティの分類の一種で、特にレイアウトやデザインの柔軟性に関連しています。それぞれの違いについて詳しく説明します。
+
+## 物理プロパティと論理プロパティ
+
+[CSSのボックスモデルにおける古い方法とこれからの方法 -論理プロパティにおける考え方](https://coliss.com/articles/build-websites/operation/css/new-css-logical-properties.html)
+
+- **適用方向の固定性**
+  - 物理プロパティは常に特定の物理的方向に影響を与える。
+  - 一方、論理プロパティは書字方向に応じて動的に変わる。
+- **柔軟性**
+  - 論理プロパティは、国際化対応や複数の言語設定をサポートするデザインにおいて、より柔軟で適応性がある。
+
+この違いを理解することで、より適切にCSSを使用し、グローバルなユーザーベースに対応した柔軟なデザインを作成できます。
+
+### 物理プロパティ(Physical Properties)
+
+物理プロパティは、具体的な方向（上、下、左、右）に基づいて要素のスタイルを定義する。  
+これらのプロパティは、ページの方向に関係なく常に同じ方向を指す。
+
+- 左から右 (LTR)
+- 右から左 (RTL)
+
+- `margin-top`, `margin-right`, `margin-bottom`, `margin-left`
+- `padding-top`, `padding-right`, `padding-bottom`, `padding-left`
+- `border-top`, `border-right`, `border-bottom`, `border-left`
+
+これらのプロパティは、ページがどの言語設定であっても、**常に物理的な位置に影響**を与える。
+
+```css
+.element {
+  margin-right: 20px;
+}
+```
+
+### 論理プロパティ (Logical Properties)
+
+論理プロパティは、要素のスタイルを文書の書字方向に基づいて定義します。これにより、左から右 (LTR) か右から左 (RTL) かに関わらず、プロパティが動的に適用されます。
+
+- `margin-block-start`, `margin-block-end`
+- `margin-inline-start`, `margin-inline-end`
+- `padding-block-start`, `padding-block-end`
+- `padding-inline-start`, `padding-inline-end`
+- `border-block-start`, `border-block-end`
+- `border-inline-start`, `border-inline-end`
+
+これらのプロパティは、ページの方向に依存してスタイルを適用するため、レイアウトの柔軟性が向上します。
+
+```css
+.element {
+  margin-inline-start: 20px;
+}
+```
 
 ## width
 
@@ -99,19 +154,17 @@ marginに指定するautoは**余白を自動で調整してくれるプロパ�
 
 ## CSSのmin()、max()、clamp()を使いこなす(比較関数)
 
-[参考URL](https://www.greenwich.co.jp/blog-archives/p/22906)
+[参考URL](https://www.greenwich.co.jp/blog-archives/p/22906)  
 [参考URL](https://pengi-n.co.jp/blog/min-max-clamp/)
 
->marginやpaddingを変動値（%など）で設定している場合**変動値の最小値・最大値**を設定したいと思うはず。
->widthやheightであればmax-width、min-heightのように設定できますが、marginやpaddingにmin-paddingやmax-marginのようなプロパティはない。
->ではどうすればいいか、比較関数のmin()、max()、clamp()を使いましょう。
-
->※最大値はmin()、最小値はmax()とmin-width、max-widthの感覚と逆になるのでしっかり覚えましょう。
+> marginやpaddingを変動値（%など）で設定している場合**変動値の最小値・最大値**を設定したいときあるはず。
+> widthやheightであればmax-width、min-heightのように設定できますが、marginやpaddingにmin-paddingやmax-marginのようなプロパティはない。
+> ではどうすればいいか、比較関数のmin()、max()、clamp()を使いましょう。
+> ※最大値はmin()、最小値はmax()とmin-width、max-widthの感覚と逆になるのでしっかり覚えましょう。
 
 ### min
 
-`min()` はカンマ区切りで計算された最小の値が選択される。
-**最大値**を設定したい場合はmin()を使う。
+`min()` はカンマ区切りで計算された**最小の値が選択**される。
 
 ```css
 /* marginの最大値を設定する */
@@ -121,7 +174,7 @@ marginに指定するautoは**余白を自動で調整してくれるプロパ�
 /* 20%の値が50px以内であれば20%が選択され、50pxより大きい場合は50pxが選択されます。 */
 ```
 
-今までの書き方を変えることができる
+今までの書き方を変えることができる。
 
 ```css
 .box {
@@ -136,7 +189,7 @@ marginに指定するautoは**余白を自動で調整してくれるプロパ�
 
 ## max()
 
-今までの書き方を変えることができる
+今までの書き方を変えることができる。
 
 ```css
 /*　いままでの書き方 */
@@ -146,7 +199,7 @@ marginに指定するautoは**余白を自動で調整してくれるプロパ�
 }
 /* ↓これに変える */
 .box {
-  width: max(50vw, 400px); 
+  width: max(50vw, 400px);
 }
 ```
 

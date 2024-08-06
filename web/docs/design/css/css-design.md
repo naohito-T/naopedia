@@ -1,8 +1,8 @@
 # CSS Designまとめ
 
-デザインを作るときに必要となるさまざまなdesign Tips
+## Overview
 
----
+デザインを作成する際に使用するCSSの具体的な方法をまとめ。
 
 animationプロパティの理解が必須になるため以下リンクを貼る
 [参考URL](https://web-designer.cman.jp/css_ref/abc_list/animation/)
